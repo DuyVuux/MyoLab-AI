@@ -1,0 +1,45 @@
+# ==============================================================================
+# OS & Line Endings
+# ==============================================================================
+# Cấu hình mặc định cho tất cả các file là LF (chuẩn quốc tế/Linux)
+* text=auto eol=lf
+
+# Ép buộc LF cho các script và config file để chạy an toàn trên server/Docker
+*.sh text eol=lf
+*.bash text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+
+# Ép buộc CRLF cho các script chạy riêng trên Windows
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# ==============================================================================
+# Git LFS (Large File Storage) cho dữ liệu Y khoa, Signal và ML Models
+# ==============================================================================
+# Dữ liệu tín hiệu raw
+*.edf filter=lfs diff=lfs merge=lfs -text
+*.bdf filter=lfs diff=lfs merge=lfs -text
+*.mat filter=lfs diff=lfs merge=lfs -text
+*.parquet filter=lfs diff=lfs merge=lfs -text
+
+# Các mô hình ML và nhị phân
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.onnx filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.pkl filter=lfs diff=lfs merge=lfs -text
+
+# Các tệp báo cáo (Reports) & Assets tĩnh
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.svg text eol=lf
