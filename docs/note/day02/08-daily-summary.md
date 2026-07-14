@@ -28,3 +28,4 @@ Readable file
 ## Trạng thái
 - Engineering foundation: ready for Day 3.
 - Clinical approval: pending external review.
+- Commit hash: `b582b0c` (day2: define protocol input contract and quality gate)
