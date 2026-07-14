@@ -27,3 +27,6 @@ This repository contains an offline-first Clinical Intelligence layer for sEMG/M
 
 ## Day 1 status
 Day 1 establishes the product boundary, intended use, safety language, quality gate, abstention behavior, and human-in-the-loop rule for MVP-0.
+
+## Day 2 status
+Day 2 establishes the data import contract (Generic CSV + JSON sidecar manifest) and the first versioned clinical protocol (`quad-isometric-60s`). It implements a multi-layer signal validation pipeline and quality gate (L0-L4) to explicitly block invalid data and separate basic sEMG eligibility from advanced MFCV analysis.
