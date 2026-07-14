@@ -155,7 +155,10 @@ def validate_manifest(manifest: dict[str, Any]) -> list[Issue]:
             )
 
     try:
-        declared_fs = float(manifest.get("sampling_rate_hz"))
+        fs_raw = manifest.get("sampling_rate_hz")
+        if fs_raw is None:
+            raise TypeError
+        declared_fs = float(fs_raw)
         if not math.isfinite(declared_fs) or declared_fs <= 0:
             raise ValueError
     except (TypeError, ValueError):
