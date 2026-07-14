@@ -1,0 +1,29 @@
+# sEMG/MFCV Fatigue Clinical Intelligence Platform
+# Runtime dependencies for MVP-0 offline pipeline.
+# Recommended Python: 3.11 or 3.12.
+#
+# Scope intentionally kept small:
+# - protocol/schema validation
+# - CSV/metadata ingestion
+# - numerical and biomedical signal processing
+# - tabular feature outputs
+#
+# Do not add web, database, deep-learning, or clinical integration packages
+# until the corresponding phase is approved.
+
+# -----------------------------------------------------------------------------
+# Configuration and machine-readable contracts
+# -----------------------------------------------------------------------------
+PyYAML>=6.0,<7.0
+jsonschema>=4.21,<5.0
+
+# -----------------------------------------------------------------------------
+# Numerical computing and signal processing
+# -----------------------------------------------------------------------------
+numpy>=1.26,<3.0
+scipy>=1.12,<2.0
+
+# -----------------------------------------------------------------------------
+# Tabular data, CSV import, feature tables, and offline analysis outputs
+# -----------------------------------------------------------------------------
+pandas>=2.2,<3.0
