@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${1:-semg-fatigue-platform}"
+ROOT="${1:-.}"
 TODAY="${TODAY:-$(date +%F)}"
 
 mkdir -p "$ROOT"
@@ -463,5 +463,5 @@ PY
 
 chmod +x scripts/dev/check_day1_artifacts.py
 
-echo "\nDay 1 bootstrap finished under: $(pwd)"
-echo "Next: python scripts/dev/check_day1_artifacts.py"
+printf "\nDay 1 bootstrap finished under: %s\n" "$(pwd)"
+echo "Next: python3 scripts/dev/check_day1_artifacts.py"
