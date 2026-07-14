@@ -1,0 +1,92 @@
+schema_version: qc-config.v0.1
+config_id: qc_v0.1
+status: provisional_engineering_defaults
+scope: synthetic_and_generic_csv_mvp0
+clinical_validation_status: not_validated
+
+policy:
+  critical_failure_blocks_analysis: true
+  warning_allows_analysis: true
+  warning_requires_visibility: true
+  warning_reduces_or_qualifies_confidence: true
+  mfcv_ineligibility_blocks_basic_semg: false
+  absolute_amplitude_thresholds_enabled: false
+
+structural_checks:
+  required_metadata:
+    enabled: true
+    severity: critical
+  forbidden_phi_keys:
+    enabled: true
+    severity: critical
+  csv_parse:
+    enabled: true
+    severity: critical
+  timestamps_monotonic:
+    enabled: true
+    severity: critical
+  sampling_rate:
+    enabled: true
+    severity: critical
+    relative_tolerance: 0.01
+    protocol_minimum_enforced: true
+  active_duration:
+    enabled: true
+    severity: critical
+    minimum_fraction_of_protocol_duration: 0.90
+  nonfinite_ratio:
+    enabled: true
+    warning_fraction: 0.001
+    fail_fraction: 0.01
+  usable_channels:
+    enabled: true
+    minimum_count: 1
+    severity: critical
+
+signal_heuristics:
+  flatline:
+    enabled: true
+    status_in_v0_1: warning_or_critical_if_extreme
+    minimum_contiguous_duration_ms: 250
+    warning_total_fraction: 0.01
+    fail_total_fraction: 0.05
+    amplitude_tolerance_policy: unit_or_scale_aware_required
+  clipping:
+    enabled: true
+    status_in_v0_1: warning_only_until_device_calibrated
+    repeated_extrema_warning_fraction: 0.005
+    repeated_extrema_fail_candidate_fraction: 0.02
+    threshold_status: provisional
+  powerline_noise:
+    enabled: true
+    status_in_v0_1: warning_only
+    default_line_frequency_hz: 50
+    integration_half_width_hz: 1
+    warning_power_ratio: 0.20
+    fail_candidate_power_ratio: 0.40
+    threshold_status: provisional
+  low_frequency_motion_artifact:
+    enabled: true
+    status_in_v0_1: warning_only
+    low_band_hz: [0.5, 20.0]
+    analysis_band_hz: [20.0, 400.0]
+    warning_power_ratio: 0.30
+    fail_candidate_power_ratio: 0.60
+    threshold_status: provisional
+  baseline_noise:
+    enabled: true
+    requires_phase: baseline_rest
+    status_in_v0_1: warning_only
+    absolute_threshold_enabled: false
+
+mfcv_eligibility:
+  enabled: true
+  behavior: capability_gate_only
+  requirements:
+    linear_array_confirmed: true
+    interelectrode_distance_known: true
+    orientation_along_fibres_confirmed: true
+    minimum_adjacent_channels: 3
+    minimum_sampling_rate_hz: 1000
+    adjacent_correlation_threshold_reference: 0.75
+  threshold_status: research_reference_not_clinically_validated

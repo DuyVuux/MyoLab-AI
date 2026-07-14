@@ -1,0 +1,146 @@
+# =============================================================================
+# sEMG Protocol Definition — MVP-0 Technical Draft
+#
+# Executable source of truth:
+#   clinical/protocols/quad-isometric-60s.v0.1.yaml
+# Structural contract:
+#   clinical/protocols/protocol-schema.json
+# Human-readable rationale and review debt:
+#   docs/02-clinical/protocol-library.md
+#
+# IMPORTANT:
+# - Technical-development protocol only.
+# - Not approved for patient use or clinical acquisition.
+# - The 30% MVC value below is synthetic-demo metadata, not a prescription.
+# - QC, preprocessing, feature definitions, and report wording are versioned
+#   separately and referenced under `references`.
+# =============================================================================
+
+protocol_id: quad-isometric-60s
+version: 0.1.0
+display_name: Quadriceps sustained isometric 60-second protocol
+status: draft_technical_demo_only
+
+purpose: >
+  Provide a versioned protocol context for synthetic and offline MVP-0
+  development, protocol-compatibility checks, signal-pipeline verification,
+  and reproducible feature extraction. This protocol is not approved as a
+  patient exercise prescription, clinical acquisition SOP, or treatment guide.
+
+clinical_approval:
+  required: true
+  status: not_reviewed
+
+task:
+  contraction_type: isometric
+  target_muscle: vastus_lateralis
+  body_side: session_parameter
+  active_duration_s: 60
+  effort:
+    parameter: target_mvc_percent
+    required_at_session_level: true
+    synthetic_demo_default_percent: 30
+    clinical_value_requires_external_approval: true
+
+acquisition:
+  minimum_sampling_rate_hz: 1000
+  preferred_sampling_rate_hz: 2000
+  allowed_units:
+    - uV
+    - mV
+    - V
+  minimum_basic_semg_channels: 1
+  raw_signal_required: true
+  # Preferred for checking whether the participant maintained the target effort.
+  # It is not mandatory for MVP-0 basic sEMG feature extraction.
+  synchronized_force_preferred: true
+
+phases:
+  - id: baseline_rest
+    duration_s: 5
+    required: true
+
+  - id: active_contraction
+    duration_s: 60
+    required: true
+
+  - id: recovery
+    duration_s: 5
+    required: false
+
+metadata:
+  required_fields:
+    - session_id
+    - data_source
+    - sampling_rate_hz
+    - protocol_id
+    - protocol_version
+    - target_muscle
+    - side
+    - target_mvc_percent
+    - channel_map
+    - signal_unit
+    - phase_markers
+    - processing_history
+
+analysis:
+  active_phase_id: active_contraction
+
+  # Provisional engineering defaults for MVP-0 verification only.
+  # Scientific/clinical suitability must be reassessed with real device data.
+  default_windowing:
+    time_domain_window_ms: 500
+    frequency_domain_window_ms: 1000
+    overlap_fraction: 0.5
+
+  required_features:
+    - rms
+    - mav
+    - mdf
+    - mnf
+    - rms_slope
+    - mdf_slope
+    - mnf_slope
+
+  longitudinal_comparison_requires:
+    - same_protocol_family
+    - same_target_muscle
+    - same_side_convention
+    - compatible_device_and_units
+    - compatible_sampling_configuration
+    - same_preprocessing_version
+    - same_feature_version
+    - compatible_windowing_configuration
+    - comparable_effort_metadata
+    - valid_phase_markers
+
+mfcv:
+  required_for_basic_analysis: false
+  eligibility:
+    linear_array_required: true
+    known_interelectrode_distance_required: true
+    orientation_along_fibres_required: true
+    minimum_adjacent_channels: 3
+    minimum_sampling_rate_hz: 1000
+    # Research reference from the current evidence base; not a locally
+    # validated clinical operating threshold.
+    adjacent_correlation_threshold_reference: 0.75
+    threshold_status: research_reference_not_clinically_validated
+
+safety:
+  human_review_required_for_clinical_report: true
+  automated_stop_or_treatment_decision_allowed: false
+  stop_criteria: external_clinical_sop_required
+  clinical_use_allowed: false
+
+references:
+  - docs/02-clinical/protocol-library.md
+  - docs/02-clinical/quality-escalation-policy.md
+  - docs/06-ai-signal-processing/signal-import-spec.md
+  - docs/06-ai-signal-processing/signal-validation-spec.md
+  - docs/06-ai-signal-processing/preprocessing-spec.md
+  - docs/06-ai-signal-processing/feature-extraction-spec.md
+  - services/quality-gate-service/configs/qc_v0.1.yaml
+  - packages/common-schemas/json/qc-result.schema.json
+  - After-Fatigue_Condition_A_Novel_Analysis_Based_on_.pdf
+  - sEMG-quy-trinh-van-hanh.md

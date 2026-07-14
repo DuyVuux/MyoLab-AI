@@ -1,0 +1,571 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.semg-fatigue.local/clinical/protocol/v0.1.0/protocol-schema.json",
+  "title": "sEMG Clinical Protocol Structural Schema v0.1.0",
+  "description": "sEMG Protocol Schema v0.1. Structural contract for versioned sEMG assessment protocols used by the MVP-0/MVP-1 pipeline. Clinical approval, signal-quality thresholds, preprocessing rules, and feature formulas remain separately versioned artifacts.",
+  "type": "object",
+  "required": [
+    "protocol_id",
+    "version",
+    "display_name",
+    "status",
+    "purpose",
+    "clinical_approval",
+    "task",
+    "acquisition",
+    "phases",
+    "metadata",
+    "analysis",
+    "mfcv",
+    "safety",
+    "references"
+  ],
+  "properties": {
+    "protocol_id": {
+      "$ref": "#/$defs/kebabCaseId"
+    },
+    "version": {
+      "$ref": "#/$defs/semver"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 160
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_technical_demo_only",
+        "draft_clinical_review",
+        "approved_for_controlled_pilot",
+        "approved_for_clinical_use",
+        "retired"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 2000
+    },
+    "clinical_approval": {
+      "$ref": "#/$defs/clinicalApproval"
+    },
+    "task": {
+      "$ref": "#/$defs/task"
+    },
+    "acquisition": {
+      "$ref": "#/$defs/acquisition"
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/phase"
+      }
+    },
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "analysis": {
+      "$ref": "#/$defs/analysis"
+    },
+    "mfcv": {
+      "$ref": "#/$defs/mfcv"
+    },
+    "safety": {
+      "$ref": "#/$defs/safety"
+    },
+    "references": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "draft_technical_demo_only",
+              "draft_clinical_review",
+              "retired"
+            ]
+          }
+        },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "safety": {
+            "properties": {
+              "clinical_use_allowed": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "safety": {
+            "properties": {
+              "clinical_use_allowed": {
+                "const": true
+              }
+            },
+            "required": ["clinical_use_allowed"]
+          }
+        },
+        "required": ["safety"]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "approved_for_controlled_pilot",
+              "approved_for_clinical_use"
+            ]
+          },
+          "clinical_approval": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+    },
+    "kebabCaseId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "snakeCaseId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "clinicalApproval": {
+      "type": "object",
+      "required": [
+        "required",
+        "status"
+      ],
+      "properties": {
+        "required": {
+          "const": true
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_reviewed",
+            "in_review",
+            "approved",
+            "rejected"
+          ]
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "review_notes_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "required": [
+              "reviewed_by",
+              "reviewed_at"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "contraction_type",
+        "target_muscle",
+        "body_side",
+        "active_duration_s",
+        "effort"
+      ],
+      "properties": {
+        "contraction_type": {
+          "type": "string",
+          "enum": [
+            "isometric",
+            "dynamic",
+            "repeated_contraction"
+          ]
+        },
+        "target_muscle": {
+          "$ref": "#/$defs/snakeCaseId"
+        },
+        "body_side": {
+          "type": "string",
+          "enum": [
+            "session_parameter",
+            "left",
+            "right",
+            "bilateral",
+            "not_applicable"
+          ]
+        },
+        "active_duration_s": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3600
+        },
+        "effort": {
+          "$ref": "#/$defs/effort"
+        }
+      },
+      "additionalProperties": false
+    },
+    "effort": {
+      "type": "object",
+      "required": [
+        "parameter",
+        "required_at_session_level",
+        "synthetic_demo_default_percent",
+        "clinical_value_requires_external_approval"
+      ],
+      "properties": {
+        "parameter": {
+          "const": "target_mvc_percent"
+        },
+        "required_at_session_level": {
+          "type": "boolean"
+        },
+        "synthetic_demo_default_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "clinical_value_requires_external_approval": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "acquisition": {
+      "type": "object",
+      "required": [
+        "minimum_sampling_rate_hz",
+        "preferred_sampling_rate_hz",
+        "allowed_units",
+        "minimum_basic_semg_channels",
+        "raw_signal_required",
+        "synchronized_force_preferred"
+      ],
+      "properties": {
+        "minimum_sampling_rate_hz": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 20000
+        },
+        "preferred_sampling_rate_hz": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 20000
+        },
+        "allowed_units": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "uV",
+              "mV",
+              "V"
+            ]
+          }
+        },
+        "minimum_basic_semg_channels": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 512
+        },
+        "raw_signal_required": {
+          "type": "boolean"
+        },
+        "synchronized_force_preferred": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "phase": {
+      "type": "object",
+      "required": [
+        "id",
+        "duration_s",
+        "required"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/snakeCaseId"
+        },
+        "duration_s": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 3600
+        },
+        "required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "required_fields"
+      ],
+      "properties": {
+        "required_fields": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "session_id",
+              "data_source",
+              "sampling_rate_hz",
+              "protocol_id",
+              "protocol_version",
+              "target_muscle",
+              "side",
+              "target_mvc_percent",
+              "channel_map",
+              "signal_unit",
+              "phase_markers",
+              "processing_history",
+              "device_id",
+              "device_model",
+              "operator_id",
+              "force_signal_available",
+              "electrode_configuration",
+              "interelectrode_distance_mm"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "analysis": {
+      "type": "object",
+      "required": [
+        "active_phase_id",
+        "default_windowing",
+        "required_features",
+        "longitudinal_comparison_requires"
+      ],
+      "properties": {
+        "active_phase_id": {
+          "$ref": "#/$defs/snakeCaseId"
+        },
+        "default_windowing": {
+          "$ref": "#/$defs/windowing"
+        },
+        "required_features": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "rms",
+              "mav",
+              "mdf",
+              "mnf",
+              "rms_slope",
+              "mav_slope",
+              "mdf_slope",
+              "mnf_slope",
+              "cv",
+              "mfcv",
+              "cv_slope",
+              "mfcv_slope"
+            ]
+          }
+        },
+        "longitudinal_comparison_requires": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "same_protocol_family",
+              "same_target_muscle",
+              "same_side_convention",
+              "compatible_device_and_units",
+              "compatible_sampling_configuration",
+              "same_preprocessing_version",
+              "same_feature_version",
+              "compatible_windowing_configuration",
+              "comparable_effort_metadata",
+              "valid_phase_markers"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "windowing": {
+      "type": "object",
+      "required": [
+        "time_domain_window_ms",
+        "frequency_domain_window_ms",
+        "overlap_fraction"
+      ],
+      "properties": {
+        "time_domain_window_ms": {
+          "type": "integer",
+          "minimum": 50,
+          "maximum": 10000
+        },
+        "frequency_domain_window_ms": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 10000
+        },
+        "overlap_fraction": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMaximum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "mfcv": {
+      "type": "object",
+      "required": [
+        "required_for_basic_analysis",
+        "eligibility"
+      ],
+      "properties": {
+        "required_for_basic_analysis": {
+          "type": "boolean"
+        },
+        "eligibility": {
+          "$ref": "#/$defs/mfcvEligibility"
+        }
+      },
+      "additionalProperties": false
+    },
+    "mfcvEligibility": {
+      "type": "object",
+      "required": [
+        "linear_array_required",
+        "known_interelectrode_distance_required",
+        "orientation_along_fibres_required",
+        "minimum_adjacent_channels",
+        "minimum_sampling_rate_hz",
+        "adjacent_correlation_threshold_reference",
+        "threshold_status"
+      ],
+      "properties": {
+        "linear_array_required": {
+          "const": true
+        },
+        "known_interelectrode_distance_required": {
+          "const": true
+        },
+        "orientation_along_fibres_required": {
+          "const": true
+        },
+        "minimum_adjacent_channels": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 512
+        },
+        "minimum_sampling_rate_hz": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 20000
+        },
+        "adjacent_correlation_threshold_reference": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "threshold_status": {
+          "type": "string",
+          "enum": [
+            "research_reference_not_clinically_validated",
+            "locally_validated_for_controlled_pilot",
+            "clinically_approved"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "human_review_required_for_clinical_report",
+        "automated_stop_or_treatment_decision_allowed",
+        "stop_criteria",
+        "clinical_use_allowed"
+      ],
+      "properties": {
+        "human_review_required_for_clinical_report": {
+          "const": true
+        },
+        "automated_stop_or_treatment_decision_allowed": {
+          "const": false
+        },
+        "stop_criteria": {
+          "const": "external_clinical_sop_required"
+        },
+        "clinical_use_allowed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

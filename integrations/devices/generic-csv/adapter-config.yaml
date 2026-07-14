@@ -1,0 +1,40 @@
+adapter_id: generic_csv_v0.1
+status: draft
+
+encoding: utf-8
+delimiter: ","
+decimal_separator: "."
+header_rows: 1
+
+time:
+  column_from_manifest: true
+  default_column: time_s
+  unit: s
+  strict_monotonic: true
+
+signals:
+  columns_from_manifest: true
+  shared_sampling_clock_required: true
+  supported_units:
+    - uV
+    - mV
+    - V
+  canonical_unit: uV
+  infer_muscle_or_side_from_column_name: false
+
+privacy:
+  direct_identifiers_allowed: false
+  forbidden_manifest_keys:
+    - patient_name
+    - full_name
+    - mrn
+    - medical_record_number
+    - date_of_birth
+    - dob
+    - phone
+    - email
+
+validation:
+  sampling_rate_relative_tolerance: 0.01
+  allow_nonfinite_values_for_qc: true
+  require_processing_history: true

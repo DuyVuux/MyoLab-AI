@@ -1,0 +1,37 @@
+{
+  "schema_version": "semg-session-manifest.v0.1",
+  "session_id": "SYNTH_D2_FORMAT_001",
+  "fixture_type": "format_only",
+  "analysis_ready": false,
+  "data_source": "synthetic",
+  "signal_file": "sample_file.csv",
+  "sampling_rate_hz": 1000,
+  "time_column": "time_s",
+  "notes": "One-second numeric format fixture only; not a physiological or analysis-ready recording. Phase marker covers 0.0–1.0 s against a 60 s protocol, so protocol validation is expected to fail with ACTIVE_DURATION_TOO_SHORT.",
+  "protocol": {
+    "id": "quad-isometric-60s",
+    "version": "0.1.0"
+  },
+  "channels": [
+    {
+      "column": "VL_R_01",
+      "channel_id": "VL_R_01",
+      "muscle": "vastus_lateralis",
+      "side": "right",
+      "unit": "uV",
+      "role": "bipolar_semg"
+    }
+  ],
+  "phase_markers": [
+    {
+      "phase_id": "active_contraction",
+      "start_s": 0.0,
+      "end_s": 1.0
+    }
+  ],
+  "processing_history": {
+    "raw_export": true,
+    "hardware_filter_known": false,
+    "software_filter_applied": false
+  }
+}

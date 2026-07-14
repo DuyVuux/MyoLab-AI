@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/qc-result.v0.1.json",
+  "title": "QC Result v0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "status",
+    "analysis_allowed",
+    "checks",
+    "reason_codes",
+    "mfcv",
+    "abstention"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "qc-result.v0.1"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "pass",
+        "warning",
+        "fail",
+        "import_rejected"
+      ]
+    },
+    "analysis_allowed": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "check_id",
+          "status",
+          "severity",
+          "reason_codes",
+          "details"
+        ],
+        "properties": {
+          "check_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "warning",
+              "fail",
+              "not_run",
+              "not_applicable"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "info",
+              "warning",
+              "critical"
+            ]
+          },
+          "reason_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "details": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "mfcv": {
+      "type": "object",
+      "required": [
+        "eligible",
+        "reason_codes"
+      ],
+      "properties": {
+        "eligible": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "abstention": {
+      "type": "object",
+      "required": [
+        "required",
+        "reason"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "analysis_allowed": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "abstention": {
+            "properties": {
+              "required": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

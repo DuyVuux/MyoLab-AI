@@ -1,21 +1,57 @@
-# Personal Decision Log
+# Stakeholder Decision Log
 
-Vì dự án này hiện tại chỉ do một mình tôi (solo developer/researcher) phát triển, tài liệu này đóng vai trò là một nhật ký cá nhân để ghi lại các quyết định quan trọng về mặt kiến trúc và sản phẩm. Việc lưu lại các quyết định này giúp duy trì ngữ cảnh theo thời gian và cung cấp lý do cho các lựa chọn kỹ thuật để tiện tham khảo trong tương lai.
+**Project:** sEMG/MFCV Fatigue Clinical Intelligence Layer  
+**Document owner:** Quân-mode  
+**Technical reviewer:** Duy-mode  
+**Last updated:** 2026-07-13  
+**Status:** Working Draft
 
-## Định dạng (Format)
-- **Ngày (Date)**: YYYY-MM-DD
-- **Ngữ cảnh (Context)**: Mô tả ngắn gọn về vấn đề hoặc tình huống.
-- **Quyết định (Decision)**: Quyết định nào đã được đưa ra.
-- **Lý do (Rationale)**: Tại sao quyết định này được đưa ra (ưu/nhược điểm, giới hạn, lợi ích).
-- **Trạng thái (Status)**: Đề xuất (Proposed) / Đã chấp thuận (Accepted) / Đã loại bỏ (Deprecated)
+## 1. Purpose
 
----
+Tài liệu này lưu các quyết định quan trọng ảnh hưởng đến phạm vi sản phẩm,
+kiến trúc kỹ thuật, tuyên bố lâm sàng, dữ liệu và kế hoạch MVP.
 
-## Danh sách Quyết định (Decisions)
+Mọi thay đổi đối với quyết định đã ghi phải:
 
-### Quyết định 1: [Tiêu đề quyết định]
-- **Ngày**: 
-- **Ngữ cảnh**: 
-- **Quyết định**: 
-- **Lý do**: 
-- **Trạng thái**: 
+1. Có lý do rõ ràng.
+2. Có owner và reviewer.
+3. Ghi lại ngày thay đổi.
+4. Đánh giá ảnh hưởng đến scope, architecture, safety và timeline.
+
+## 2. Status Definitions
+
+| Status | Meaning |
+|---|---|
+| Draft | Quyết định tạm thời, đang chờ review hoặc xác nhận stakeholder |
+| Approved | Đã được stakeholder có thẩm quyền chấp thuận |
+| Open | Chưa có đủ thông tin để quyết định |
+| Superseded | Đã được thay thế bởi quyết định mới |
+| Rejected | Đã xem xét nhưng không được chấp nhận |
+
+## 3. Decision Register
+
+| ID | Decision area | Current decision | Owner mode | Reviewer mode | Status | Target review |
+|---|---|---|---|---|---|---|
+| D-001 | Product positioning | Sản phẩm được định vị là Clinical Intelligence Layer tương thích với dữ liệu sEMG, Motion Lab và Noraxon; không phải thiết bị EMG mới và không tự động chẩn đoán | Duy-mode | Quân-mode | Draft | End of Day 1 |
+| D-002 | Initial MVP mode | MVP-0 triển khai offline-first. Chỉ sử dụng wording “near-real-time demo” cho mô phỏng trình diễn, chưa claim realtime clinical | Duy-mode | Quân-mode | Draft | Gate 1 |
+| D-003 | MFCV/CV claim | MFCV/CV là capability tùy chọn và chỉ được tính khi cấu hình điện cực, khoảng cách điện cực, hướng sợi cơ, sampling rate và chất lượng kênh đủ điều kiện | Duy-mode | Quân-mode | Draft | Sau Motion Lab audit |
+| D-004 | Output wording | Output là decision-support, có confidence, reason codes, abstention và human review; không đưa ra chẩn đoán hoặc quyết định điều trị tự động | Duy-mode | Quân-mode | Draft | Clinical wording review |
+| D-005 | First protocol focus | Cơ mục tiêu và protocol đầu tiên chưa chốt; quyết định sẽ được thực hiện trong Day 2 dựa trên khả năng thu dữ liệu, tính lặp lại và giá trị lâm sàng | Duy-mode | Quân-mode | Open | Day 2 |
+| D-006 | Data source priority | Ưu tiên synthetic data và generic CSV cho MVP-0; tiếp theo audit Noraxon export trước khi xây adapter vendor-specific | Quân-mode | Duy-mode | Draft | Sau technical audit |
+| D-007 | Operations | Single-operator mode được chấp thuận | Duy-mode | Quân-mode | Approved | Day 2 |
+| D-008 | Protocol | First protocol = quad-isometric-60s v0.1 | Duy-mode | Quân-mode | Approved | Day 2 |
+| D-009 | Data Import | First adapter = Generic CSV + JSON sidecar | Duy-mode | Quân-mode | Approved | Day 2 |
+| D-010 | Quality Control | Structural QC blocks; spectral heuristics provisional | Duy-mode | Quân-mode | Approved | Day 2 |
+| D-011 | Capability | MFCV remains capability-gated | Duy-mode | Quân-mode | Approved | Day 2 |
+## 4. Decision Change Log
+
+| Date | Decision ID | Change | Reason | Approved by |
+|---|---|---|---|---|
+| 2026-07-13 | D-001 to D-006 | Initial creation | Day 1 product and architecture alignment | Pending |
+
+## 5. Pending Approvals
+
+- Product positioning cần được xác nhận bởi Product/Clinical stakeholder.
+- Wording lâm sàng cần được bác sĩ hoặc clinical advisor review.
+- MFCV eligibility cần được xác nhận với Motion Lab/Noraxon setup.
+- First protocol cần được chốt trước khi viết protocol và QC specification.

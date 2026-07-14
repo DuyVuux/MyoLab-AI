@@ -334,19 +334,19 @@ flowchart TD
 
 ### 7.1 Architectural layers
 
-| Layer | Primary purpose | MVP-0 implementation |
-|---|---|---|
-| Acquisition boundary | Receive exported or synthetic data | File input only |
-| Ingestion | Parse and normalize external formats | Python adapter interface + CSV adapter |
-| Context mapping | Establish protocol, muscle, side, device and session meaning | Validated manifest/schema |
-| Quality and eligibility | Decide whether analysis is permitted | Deterministic QC checks and reason codes |
-| Signal processing | Filter and normalize signal consistently | Versioned offline pipeline |
-| Feature/evidence | Calculate measurable fatigue-related features | RMS/MAV/MDF/MNF/slopes |
-| Inference | Aggregate evidence conservatively | Versioned explainable rules |
-| Routing | Map output to the correct clinical/product use case | Metadata-driven rules |
-| Interpretation | Generate controlled clinical-safe wording | Template and phrase rules |
-| Presentation/review | Display, review, approve and export | JSON + Markdown/HTML prototype |
-| Governance | Reproduce and audit output | Run manifest, hashes, versions and logs |
+| Layer                   | Primary purpose                                              | MVP-0 implementation                     |
+| -------------------------| --------------------------------------------------------------| ------------------------------------------|
+| Acquisition boundary    | Receive exported or synthetic data                           | File input only                          |
+| Ingestion               | Parse and normalize external formats                         | Python adapter interface + CSV adapter   |
+| Context mapping         | Establish protocol, muscle, side, device and session meaning | Validated manifest/schema                |
+| Quality and eligibility | Decide whether analysis is permitted                         | Deterministic QC checks and reason codes |
+| Signal processing       | Filter and normalize signal consistently                     | Versioned offline pipeline               |
+| Feature/evidence        | Calculate measurable fatigue-related features                | RMS/MAV/MDF/MNF/slopes                   |
+| Inference               | Aggregate evidence conservatively                            | Versioned explainable rules              |
+| Routing                 | Map output to the correct clinical/product use case          | Metadata-driven rules                    |
+| Interpretation          | Generate controlled clinical-safe wording                    | Template and phrase rules                |
+| Presentation/review     | Display, review, approve and export                          | JSON + Markdown/HTML prototype           |
+| Governance              | Reproduce and audit output                                   | Run manifest, hashes, versions and logs  |
 
 ---
 
