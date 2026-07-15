@@ -30,3 +30,6 @@ Day 1 establishes the product boundary, intended use, safety language, quality g
 
 ## Day 2 status
 Day 2 establishes the data import contract (Generic CSV + JSON sidecar manifest) and the first versioned clinical protocol (`quad-isometric-60s`). It implements a multi-layer signal validation pipeline and quality gate (L0-L4) to explicitly block invalid data and separate basic sEMG eligibility from advanced MFCV analysis.
+
+## Day 3 status
+Day 3 implements the generic CSV ingestion pipeline and the canonical normalized signal contract (`NormalizedSignal`). It enforces read-only arrays after construction, strips raw data from the output JSON summary, and verifies file formats, metadata, and deterministic source hashing before moving to downstream processing.
