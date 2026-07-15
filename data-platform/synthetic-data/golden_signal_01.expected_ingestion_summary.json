@@ -1,0 +1,11 @@
+{
+  "schema_version": "normalized-signal.v0.1",
+  "session_id": "SYNTH_D3_GOLDEN_001",
+  "sampling_rate_hz": 1000.0,
+  "sample_count": 70000,
+  "channel_count": 1,
+  "active_phase_sample_count": 60000,
+  "canonical_unit": "uV",
+  "source_hash_sha256": "3be03655b3d10fbc243a6b00fa23a6849bf8d90ff33922fe899c0da46d3f6b7e",
+  "mfcv_expected_eligible": false
+}

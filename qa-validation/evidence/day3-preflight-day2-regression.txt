@@ -1,0 +1,15 @@
+PASS: protocol is structurally and semantically valid
+  schema_id=https://schemas.semg-fatigue.local/clinical/protocol/v0.1.0/protocol-schema.json
+  protocol_id=quad-isometric-60s
+  version=0.1.0
+  status=draft_technical_demo_only
+  clinical_use_allowed=False
+Validation mode: format
+samples=3 channels=1 duration=0.002000s Fs_inferred=1000.000000Hz jitter=0 nonfinite_ratio=0
+PASS: validation completed without blocking errors
+Validation mode: protocol
+samples=3 channels=1 duration=0.002000s Fs_inferred=1000.000000Hz jitter=0 nonfinite_ratio=0
+BLOCK: ACTIVE_DURATION_TOO_SHORT: Active duration=1.000s; minimum=54.000s
+PASS: expected blocking code(s) observed: ['ACTIVE_DURATION_TOO_SHORT']
+DAY 2 ARTIFACT CHECK PASSED (18 files checked)
+All Day 2 checks passed.

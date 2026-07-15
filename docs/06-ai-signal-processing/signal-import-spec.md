@@ -57,14 +57,14 @@ Quy tắc liên kết:
 
 ### 3.1. Encoding và format
 
-| Property | Requirement |
-|---|---|
-| Encoding | UTF-8 |
-| Delimiter | Comma (`,`) |
-| Decimal separator | Period (`.`) |
-| Header rows | Đúng 1 header row |
-| Data rows | Một row trên mỗi sampling instant |
-| Line ending | `\n` hoặc `\r\n` |
+| Property          | Requirement                       |
+| -------------------| -----------------------------------|
+| Encoding          | UTF-8                             |
+| Delimiter         | Comma (`,`)                       |
+| Decimal separator | Period (`.`)                      |
+| Header rows       | Đúng 1 header row                 |
+| Data rows         | Một row trên mỗi sampling instant |
+| Line ending       | `\n` hoặc `\r\n`                  |
 
 ### 3.2. Time column
 

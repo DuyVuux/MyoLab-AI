@@ -1,0 +1,21 @@
+# Day 3 Acceptance Criteria
+
+- [ ] Day 2 checks still pass.
+- [ ] The generated fixture has exactly 70,000 rows of samples at 1000 Hz.
+- [ ] Phase markers are baseline `[0,5)`, active `[5,65)`, recovery `[65,70)`.
+- [ ] The active slice contains exactly 60,000 samples.
+- [ ] The generator is seed-controlled and records its version/seed.
+- [ ] The CSV SHA-256 is recorded and verified during import.
+- [ ] The manifest explicitly sets `clinical_use_allowed: false`.
+- [ ] The fixture explicitly sets `mfcv_candidate: false`.
+- [ ] `uV`, `mV`, and `V` conversion tests pass.
+- [ ] The importer rejects forbidden PHI keys.
+- [ ] The importer rejects non-monotonic timestamps.
+- [ ] The importer rejects a source-hash mismatch.
+- [ ] The canonical object preserves protocol/channel/phase/provenance metadata.
+- [ ] Canonical arrays are read-only.
+- [ ] The JSON summary contains no raw signal arrays.
+- [ ] Summary JSON validates against `normalized-signal-summary.schema.json`.
+- [ ] No filtering, feature extraction, FRS, ML, MFCV estimate, or clinical interpretation is added.
+- [ ] `bash scripts/dev/run_day3_checks.sh` exits with code 0.
+- [ ] External-review questions remain explicitly open.

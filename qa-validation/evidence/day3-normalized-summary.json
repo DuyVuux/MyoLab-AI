@@ -1,0 +1,62 @@
+{
+  "ok": true,
+  "blocking_codes": [],
+  "warning_codes": [],
+  "issues": [],
+  "normalized_signal": {
+    "schema_version": "normalized-signal.v0.1",
+    "session_id": "SYNTH_D3_GOLDEN_001",
+    "data_source": "synthetic",
+    "sampling_rate_hz": 1000.0,
+    "sample_count": 70000,
+    "channel_count": 1,
+    "elapsed_duration_s": 69.999,
+    "record_span_s": 70.0,
+    "protocol_ref": {
+      "id": "quad-isometric-60s",
+      "version": "0.1.0"
+    },
+    "phase_markers": [
+      {
+        "phase_id": "baseline_rest",
+        "start_s": 0.0,
+        "end_s": 5.0,
+        "duration_s": 5.0
+      },
+      {
+        "phase_id": "active_contraction",
+        "start_s": 5.0,
+        "end_s": 65.0,
+        "duration_s": 60.0
+      },
+      {
+        "phase_id": "recovery",
+        "start_s": 65.0,
+        "end_s": 70.0,
+        "duration_s": 5.0
+      }
+    ],
+    "channels": [
+      {
+        "channel_id": "VL_R_01",
+        "muscle": "vastus_lateralis",
+        "side": "right",
+        "role": "bipolar_semg",
+        "source_column": "VL_R_01",
+        "source_unit": "uV",
+        "canonical_unit": "uV",
+        "sample_count": 70000,
+        "finite_ratio": 1.0
+      }
+    ],
+    "source_file_name": "golden_signal_01.csv",
+    "source_hash_sha256": "3be03655b3d10fbc243a6b00fa23a6849bf8d90ff33922fe899c0da46d3f6b7e",
+    "processing_history": {
+      "raw_export": true,
+      "hardware_filter_known": false,
+      "software_filter_applied": false,
+      "synthetic_generator": "synthetic-semglike.v0.1",
+      "generator_seed": 20260714
+    }
+  }
+}
