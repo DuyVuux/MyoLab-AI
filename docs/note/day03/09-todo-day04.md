@@ -15,10 +15,10 @@ qa-validation/test-data/synthetic QC failure fixtures
 
 Prerequisites from Day 3:
 
-- [ ] Generic CSV importer deterministic.
-- [ ] Canonical unit/shape contract stable.
-- [ ] Source hash verified.
-- [ ] Full fixture imports without blocking issues.
-- [ ] Negative importer tests pass.
+- [x] Generic CSV importer deterministic.
+- [x] Canonical unit/shape contract stable.
+- [x] Source hash verified.
+- [x] Full fixture imports without blocking issues.
+- [x] Negative importer tests pass.
 
 Do not start Day 4 if source hash, unit conversion, time-axis validation, or phase slicing is unresolved.

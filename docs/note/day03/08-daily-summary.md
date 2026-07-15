@@ -2,13 +2,13 @@
 
 ## Outputs created
 
-- [ ] Canonical object
-- [ ] Validation helpers
-- [ ] Full synthetic fixture
-- [ ] CSV importer
-- [ ] CLI
-- [ ] Tests
-- [ ] Evidence
+- [x] Canonical object
+- [x] Validation helpers
+- [x] Full synthetic fixture
+- [x] CSV importer
+- [x] CLI
+- [x] Tests
+- [x] Evidence
 
 ## Verification result
 
@@ -32,6 +32,6 @@ Paste final output of: bash scripts/dev/run_day3_checks.sh
 
 ## Scope-control check
 
-- [ ] I did not add filtering/features/FRS/ML.
-- [ ] I did not claim clinical use.
-- [ ] I did not infer MFCV eligibility.
+- [x] I did not add filtering/features/FRS/ML.
+- [x] I did not claim clinical use.
+- [x] I did not infer MFCV eligibility.
