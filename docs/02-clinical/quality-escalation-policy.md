@@ -18,12 +18,12 @@ Khi dữ liệu không đủ điều kiện, hệ thống phải **abstain** và
 
 ## 2. Outcome và hành vi hệ thống
 
-| Status | `analysis_allowed` | Hành vi |
-|---|---:|---|
-| `pass` | `true` | Tiếp tục phân tích. |
-| `warning` | `true` | Tiếp tục, giữ warning trong kết quả và yêu cầu review. |
-| `fail` | `false` | Block analysis, trả về abstention và hướng dẫn khắc phục. |
-| `import_rejected` | `false` | Không tạo analysis run; yêu cầu sửa file hoặc metadata rồi import lại. |
+| Status            | `analysis_allowed` | Hành vi                                                                |
+| -------------------| -------------------:| ------------------------------------------------------------------------|
+| `pass`            | `true`             | Tiếp tục phân tích.                                                    |
+| `warning`         | `true`             | Tiếp tục, giữ warning trong kết quả và yêu cầu review.                 |
+| `fail`            | `false`            | Block analysis, trả về abstention và hướng dẫn khắc phục.              |
+| `import_rejected` | `false`            | Không tạo analysis run; yêu cầu sửa file hoặc metadata rồi import lại. |
 
 ## 3. Quy tắc escalation
 

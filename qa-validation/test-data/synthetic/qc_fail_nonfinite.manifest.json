@@ -1,0 +1,67 @@
+{
+  "schema_version": "semg-session-manifest.v0.1",
+  "session_id": "SYNTH_D4_FAIL_NONFINITE",
+  "fixture_type": "qc_critical_nonfinite_ratio",
+  "analysis_ready": true,
+  "clinical_use_allowed": false,
+  "data_source": "synthetic",
+  "signal_file": "qc_fail_nonfinite.csv",
+  "source_hash_sha256": "9b4dbe305125461f056a1b8e721f896d66b63087f58bf7ffe901399a5b418172",
+  "sampling_rate_hz": 1000,
+  "time_column": "time_s",
+  "protocol": {
+    "id": "quad-isometric-60s",
+    "version": "0.1.0"
+  },
+  "session_parameters": {
+    "target_mvc_percent": 30,
+    "parameter_status": "synthetic_demo_only_not_prescription"
+  },
+  "channels": [
+    {
+      "column": "VL_R_01",
+      "channel_id": "VL_R_01",
+      "muscle": "vastus_lateralis",
+      "side": "right",
+      "unit": "uV",
+      "role": "bipolar_semg"
+    }
+  ],
+  "phase_markers": [
+    {
+      "phase_id": "baseline_rest",
+      "start_s": 0.0,
+      "end_s": 5.0
+    },
+    {
+      "phase_id": "active_contraction",
+      "start_s": 5.0,
+      "end_s": 65.0
+    },
+    {
+      "phase_id": "recovery",
+      "start_s": 65.0,
+      "end_s": 70.0
+    }
+  ],
+  "electrode_config": {
+    "configuration": "single_bipolar_synthetic",
+    "linear_array_confirmed": false,
+    "interelectrode_distance_mm": null,
+    "orientation_along_fibres_confirmed": false,
+    "mfcv_candidate": false
+  },
+  "processing_history": {
+    "raw_export": true,
+    "hardware_filter_known": false,
+    "software_filter_applied": false,
+    "synthetic_generator": "synthetic-semglike.v0.1",
+    "generator_seed": 20260714
+  },
+  "limitations": [
+    "Synthetic signal; not physiological ground truth",
+    "Not valid for clinical thresholds or model-performance claims",
+    "MFCV is not eligible because no linear electrode array is represented",
+    "Contains deterministic 2% active-phase NaN samples."
+  ]
+}

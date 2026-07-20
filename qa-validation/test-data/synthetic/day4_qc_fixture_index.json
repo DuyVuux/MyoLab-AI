@@ -1,0 +1,61 @@
+{
+  "schema_version": "day4-qc-fixture-index.v0.1",
+  "source_manifest": "data-platform/synthetic-data/golden_signal_01.manifest.json",
+  "clinical_use_allowed": false,
+  "fixtures": [
+    {
+      "stem": "qc_fail_nonfinite",
+      "session_id": "SYNTH_D4_FAIL_NONFINITE",
+      "fixture_type": "qc_critical_nonfinite_ratio",
+      "csv": "qa-validation/test-data/synthetic/qc_fail_nonfinite.csv",
+      "manifest": "qa-validation/test-data/synthetic/qc_fail_nonfinite.manifest.json",
+      "source_hash_sha256": "9b4dbe305125461f056a1b8e721f896d66b63087f58bf7ffe901399a5b418172",
+      "sample_count": 70000
+    },
+    {
+      "stem": "qc_fail_flatline",
+      "session_id": "SYNTH_D4_FAIL_FLATLINE",
+      "fixture_type": "qc_critical_flatline",
+      "csv": "qa-validation/test-data/synthetic/qc_fail_flatline.csv",
+      "manifest": "qa-validation/test-data/synthetic/qc_fail_flatline.manifest.json",
+      "source_hash_sha256": "7471e3d2d20fb7b37c04177943d8fe42ab1ae753108c69a08a9d03903ec6b4d4",
+      "sample_count": 70000
+    },
+    {
+      "stem": "qc_warning_clipping",
+      "session_id": "SYNTH_D4_WARN_CLIPPING",
+      "fixture_type": "qc_warning_repeated_extrema",
+      "csv": "qa-validation/test-data/synthetic/qc_warning_clipping.csv",
+      "manifest": "qa-validation/test-data/synthetic/qc_warning_clipping.manifest.json",
+      "source_hash_sha256": "659a1452f8218d14e59c530b5bd122ec7e5c7605f64ec149ea5cc1812d4a65f8",
+      "sample_count": 70000
+    },
+    {
+      "stem": "qc_warning_powerline",
+      "session_id": "SYNTH_D4_WARN_POWERLINE",
+      "fixture_type": "qc_warning_powerline_50hz",
+      "csv": "qa-validation/test-data/synthetic/qc_warning_powerline.csv",
+      "manifest": "qa-validation/test-data/synthetic/qc_warning_powerline.manifest.json",
+      "source_hash_sha256": "29d706f83641d5d2409ff0a286da0ea802c249573a07594704c9b06f3b8cb3e2",
+      "sample_count": 70000
+    },
+    {
+      "stem": "qc_warning_motion_artifact",
+      "session_id": "SYNTH_D4_WARN_MOTION",
+      "fixture_type": "qc_warning_low_frequency_motion",
+      "csv": "qa-validation/test-data/synthetic/qc_warning_motion_artifact.csv",
+      "manifest": "qa-validation/test-data/synthetic/qc_warning_motion_artifact.manifest.json",
+      "source_hash_sha256": "09154938ae12dfb8eee034676e46bc22285af55d569bb22b32733aad9f908c0b",
+      "sample_count": 70000
+    },
+    {
+      "stem": "qc_fail_short_duration",
+      "session_id": "SYNTH_D4_FAIL_SHORT_DURATION",
+      "fixture_type": "qc_critical_active_duration_short",
+      "csv": "qa-validation/test-data/synthetic/qc_fail_short_duration.csv",
+      "manifest": "qa-validation/test-data/synthetic/qc_fail_short_duration.manifest.json",
+      "source_hash_sha256": "f374f60f1737e29697209d9e5c55d2bd1c348a88238dc4b82aae688ec463ae46",
+      "sample_count": 40000
+    }
+  ]
+}
