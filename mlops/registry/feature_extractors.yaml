@@ -100,3 +100,37 @@ feature_extractors:
   - Chưa tính MDF/MNF hoặc trend theo thời gian.
   - Không tạo fatigue status, FRS hoặc khuyến nghị lâm sàng.
   - Evidence hiện tại là synthetic/software verification, không phải clinical validation.
+- config_id: frequency_features_v0.1
+  schema_version: feature-extractor-registry-entry.v0.1
+  lifecycle_status: implemented_for_mvp0
+  analytical_verification_status: passed
+  clinical_validation_status: not_validated
+  implemented_features:
+  - mdf
+  - mnf
+  input_profile_id: frequency_domain
+  required_spectral_estimator_id: spectral_estimation_v0.1
+  frequency_unit: Hz
+  fatigue_inference_in_scope: false
+  ml_training_in_scope: false
+  artifacts:
+    config:
+      path: services/feature-extraction-service/configs/frequency_features_v0.1.yaml
+      sha256: 5564cee72bab9a8430d65cdb7e21130be2f6e9aed14b4d8850c39ea585b04657
+    core:
+      path: packages/semg-core/semg_core/spectral_features.py
+      sha256: 42a0102ae706304c94a42768e5c0b4f6dddaac7d5aabc21c29277c1c8c718786
+    extractor:
+      path: services/feature-extraction-service/src/frequency_feature_extractor.py
+      sha256: 646e2aca7d6f30066241794789a8940a2f3f6187d1676d79a5012788acd22c59
+    result_schema:
+      path: packages/common-schemas/json/frequency-feature-extraction-result.schema.json
+      sha256: 129f2e74c0cb7d448ffdfa211e28f2bc10074bb140131e3d5da58df6cdcd0783
+  evidence:
+    analytical_verification: qa-validation/evidence/day10-mdf-mnf-verification.json
+    golden_e2e: qa-validation/evidence/day10-frequency-features.json
+    golden_result_hash_sha256: 12c32ad7c55be93baef4e04abf2248e9bafd5bde4079b5d1785f5dbaf43d3c1b
+    golden_computed_row_count: 119
+  limitations:
+  - MDF/MNF chỉ là feature theo từng cửa sổ; chưa có slope hoặc fatigue inference.
+  - Cấu hình chưa được xác nhận lâm sàng.

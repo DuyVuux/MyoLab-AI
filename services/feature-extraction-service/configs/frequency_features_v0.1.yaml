@@ -1,0 +1,77 @@
+schema_version: frequency-feature-config.v0.1
+config_id: frequency_features_v0.1
+status: provisional_engineering_defaults
+scope: offline_mvp0_mdf_mnf
+clinical_validation_status: not_validated
+
+input_contract:
+  require_spectral_downstream_allowed: true
+  required_spectral_config_id: spectral_estimation_v0.1
+  required_spectral_result_schema_version: spectral-estimation-result.v0.1
+  required_profile_id: frequency_domain
+  required_psd_unit: uV^2/Hz
+  required_frequency_unit: Hz
+  required_analysis_band_low_hz: 20.0
+  required_analysis_band_high_hz: 400.0
+  require_uniform_frequency_axis: true
+  require_computed_spectral_row: true
+  upstream_not_computed_policy: emit_not_computed_row
+
+power_guard:
+  minimum_band_power_uV2: 1.0e-12
+  reject_nonfinite_psd: true
+  reject_negative_psd: true
+
+features:
+  mdf:
+    enabled: true
+    output_field: mdf
+    unit: Hz
+    definition: spectral_power_quantile
+    quantile: 0.5
+    method: cdf_bin_edge_linear_v0.1
+  mnf:
+    enabled: true
+    output_field: mnf
+    unit: Hz
+    definition: power_weighted_centroid
+    method: power_weighted_centroid_v0.1
+
+consistency_checks:
+  recompute_band_power_from_psd: true
+  band_power_relative_tolerance: 1.0e-9
+  require_feature_inside_analysis_band: true
+
+output_contract:
+  include_all_window_rows: true
+  include_not_computed_rows: true
+  include_raw_samples: false
+  include_psd_vector: false
+  include_window_geometry: true
+  include_channel_context: true
+  include_provenance: true
+  row_schema_version: frequency-feature-row.v0.1
+  result_schema_version: frequency-feature-extraction-result.v0.1
+  result_hash_algorithm: sha256_canonical_json
+
+future_features:
+  slope: {enabled: false, planned_day: 11}
+  normalized_change: {enabled: false, planned_day: 11}
+  fatigue_evidence: {enabled: false, planned_day: 12}
+  fatigue_rule: {enabled: false, planned_stage: inference_rule_engine}
+  mfcv: {enabled: false, planned_stage: optional_eligibility_gated_extension}
+
+safety:
+  block_if_no_computed_rows: true
+  do_not_impute_upstream_not_computed_rows: true
+  do_not_interpret_fatigue: true
+  do_not_generate_frs: true
+  do_not_train_ml: true
+  synthetic_data_is_not_clinical_evidence: true
+
+limitations:
+  - MDF/MNF được tính trên PSD 20-400 Hz từ spectral_estimation_v0.1; thay đổi dải hoặc estimator sẽ thay đổi feature.
+  - MDF dùng quy ước nội suy tuyến tính trong bin; kết quả phụ thuộc frequency resolution và PSD estimator.
+  - MDF/MNF của một cửa sổ chưa phải bằng chứng mỏi cơ; cần xu hướng theo thời gian và bối cảnh protocol.
+  - Không có clinical threshold hoặc classification trong Day 10.
+  - Evidence hiện tại là synthetic/software verification, không phải clinical validation.
