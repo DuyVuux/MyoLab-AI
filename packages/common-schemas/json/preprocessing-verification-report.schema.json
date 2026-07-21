@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "preprocessing-verification-report.schema.json",
+  "title": "Preprocessing Verification Report v0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "config",
+    "profile",
+    "theoretical",
+    "empirical",
+    "zero_phase",
+    "edge",
+    "determinism",
+    "overall",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "preprocessing-verification-report.v0.1"
+    },
+    "config": {
+      "type": "object",
+      "required": [
+        "config_id",
+        "path",
+        "sha256",
+        "clinical_validation_status"
+      ],
+      "properties": {
+        "config_id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "clinical_validation_status": {
+          "const": "not_validated"
+        }
+      },
+      "additionalProperties": true
+    },
+    "profile": {
+      "type": "object"
+    },
+    "theoretical": {
+      "$ref": "#/$defs/checkSection"
+    },
+    "empirical": {
+      "$ref": "#/$defs/checkSection"
+    },
+    "zero_phase": {
+      "type": "object",
+      "required": [
+        "passed"
+      ]
+    },
+    "edge": {
+      "type": "object",
+      "required": [
+        "passed"
+      ]
+    },
+    "determinism": {
+      "type": "object",
+      "required": [
+        "passed",
+        "hashes"
+      ]
+    },
+    "overall": {
+      "type": "object",
+      "required": [
+        "all_passed",
+        "analytical_verification_status",
+        "clinical_validation_status"
+      ],
+      "properties": {
+        "all_passed": {
+          "type": "boolean"
+        },
+        "analytical_verification_status": {
+          "enum": [
+            "passed",
+            "failed"
+          ]
+        },
+        "clinical_validation_status": {
+          "const": "not_validated"
+        }
+      },
+      "additionalProperties": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "checkSection": {
+      "type": "object",
+      "required": [
+        "measurements",
+        "criteria",
+        "passed"
+      ],
+      "properties": {
+        "measurements": {
+          "type": "object"
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "passed"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "passed": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "passed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

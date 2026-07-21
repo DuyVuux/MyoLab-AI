@@ -1,0 +1,63 @@
+schema_version: preprocessing-verification-profile.v0.1
+profile_id: preprocess_verification_v0.1
+target_config_id: preprocess_v0.1
+status: engineering_acceptance_profile
+clinical_validation_status: not_validated
+
+sampling_rate_hz: 1000.0
+numerical_floor: 1.0e-15
+
+fixture:
+  duration_s: 20.5
+  analysis_edge_guard_s: 0.25
+  components:
+    - {frequency_hz: 5.0, amplitude_uV: 40.0, phase_rad: 0.10}
+    - {frequency_hz: 30.0, amplitude_uV: 30.0, phase_rad: 0.30}
+    - {frequency_hz: 50.0, amplitude_uV: 40.0, phase_rad: 0.50}
+    - {frequency_hz: 80.0, amplitude_uV: 50.0, phase_rad: 0.80}
+    - {frequency_hz: 200.0, amplitude_uV: 30.0, phase_rad: 1.10}
+    - {frequency_hz: 350.0, amplitude_uV: 20.0, phase_rad: 1.40}
+    - {frequency_hz: 450.0, amplitude_uV: 20.0, phase_rad: 1.70}
+
+criteria:
+  theoretical:
+    - {id: TH_BP_5_STOP, path: bandpass, frequency_hz: 5.0, max_gain_db: -40.0}
+    - {id: TH_BP_30_PASS, path: bandpass, frequency_hz: 30.0, min_gain_db: -1.5, max_gain_db: 0.5}
+    - {id: TH_BP_80_PASS, path: bandpass, frequency_hz: 80.0, min_gain_db: -0.5, max_gain_db: 0.5}
+    - {id: TH_BP_200_PASS, path: bandpass, frequency_hz: 200.0, min_gain_db: -0.5, max_gain_db: 0.5}
+    - {id: TH_BP_350_PASS, path: bandpass, frequency_hz: 350.0, min_gain_db: -1.5, max_gain_db: 0.5}
+    - {id: TH_BP_450_STOP, path: bandpass, frequency_hz: 450.0, max_gain_db: -30.0}
+    - {id: TH_NOTCH_50_STOP, path: bandpass_plus_notch, frequency_hz: 50.0, max_gain_db: -30.0}
+    - {id: TH_NOTCH_80_COLLATERAL, path: bandpass_plus_notch, frequency_hz: 80.0, min_gain_db: -0.5, max_gain_db: 0.5}
+
+  empirical:
+    - {id: EM_BP_5_STOP, path: bandpass, frequency_hz: 5.0, max_gain_db: -40.0}
+    - {id: EM_BP_30_PASS, path: bandpass, frequency_hz: 30.0, min_gain_db: -1.5, max_gain_db: 0.5}
+    - {id: EM_BP_50_PRESERVED_WITHOUT_NOTCH, path: bandpass, frequency_hz: 50.0, min_gain_db: -0.5, max_gain_db: 0.5}
+    - {id: EM_BP_80_PASS, path: bandpass, frequency_hz: 80.0, min_gain_db: -0.5, max_gain_db: 0.5}
+    - {id: EM_BP_200_PASS, path: bandpass, frequency_hz: 200.0, min_gain_db: -0.5, max_gain_db: 0.5}
+    - {id: EM_BP_350_PASS, path: bandpass, frequency_hz: 350.0, min_gain_db: -1.5, max_gain_db: 0.5}
+    - {id: EM_BP_450_STOP, path: bandpass, frequency_hz: 450.0, max_gain_db: -30.0}
+    - {id: EM_NOTCH_50_STOP, path: bandpass_plus_notch, frequency_hz: 50.0, max_gain_db: -30.0}
+    - {id: EM_NOTCH_80_COLLATERAL, path: bandpass_plus_notch, frequency_hz: 80.0, min_gain_db: -0.5, max_gain_db: 0.5}
+
+  zero_phase:
+    impulse_sample_count: 20001
+    max_abs_peak_offset_samples: 0
+    max_normalized_symmetry_error: 1.0e-10
+
+  edge:
+    frequency_hz: 80.0
+    amplitude_uV: 100.0
+    duration_s: 10.0
+    max_interior_rmse_uV: 0.01
+    min_edge_to_interior_rmse_ratio: 100.0
+
+  determinism:
+    repeat_count: 3
+    require_identical_hashes_in_same_environment: true
+
+limitations:
+  - Profile này chỉ là engineering acceptance cho MVP-0 offline.
+  - Chưa xác nhận trên Noraxon export thật hoặc dữ liệu lâm sàng.
+  - Chỉ kiểm chứng Fs=1000 Hz trong Day 6.

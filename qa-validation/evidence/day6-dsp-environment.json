@@ -1,0 +1,23 @@
+{
+  "schema_version": "dsp-environment.v0.1",
+  "captured_at_utc": "2026-07-21T02:34:11.306989+00:00",
+  "python": {
+    "version": "3.12.3",
+    "implementation": "CPython",
+    "compiler": "GCC 13.3.0"
+  },
+  "platform": {
+    "system": "Linux",
+    "release": "6.17.0-1028-oem",
+    "machine": "x86_64",
+    "architecture": "64bit",
+    "byteorder": "little"
+  },
+  "libraries": {
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "pyyaml": "6.0.3"
+  },
+  "numpy_build_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.13/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.13/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.33.112.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.33.112.0\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.13/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.13/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.33.112.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.33.112.0\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.8\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-kd0sw37v/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - X86_V2\n  found:\n  - X86_V3\n  not found:\n  - X86_V4\n  - AVX512_ICL\n  - AVX512_SPR\n\n",
+  "privacy_note": "Không lưu username, home directory, secret hoặc PHI."
+}

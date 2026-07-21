@@ -1,0 +1,48 @@
+schema_version: preprocessing-config-registry.v0.1
+preprocessing_configs:
+- config_id: preprocess_v0.1
+  lifecycle_status: frozen_for_mvp0
+  analytically_verified_for_mvp0: true
+  clinical_validation_status: not_validated
+  execution_mode: offline_zero_phase
+  realtime_compatible: false
+  verified_sampling_rates_hz:
+  - 1000.0
+  config:
+    path: services/preprocessing-service/configs/preprocess_v0.1.yaml
+    sha256: 844e19bb7da7161deadd51c3aeece0ddebf314e0c57b112f96bbf269454e56fa
+  implementation_files:
+  - path: packages/semg-core/semg_core/preprocessing.py
+    sha256: 5c160d89bd0627427a5e93ea1a0b22e884cc9ec3d458d054009986d06bb5f631
+  - path: services/preprocessing-service/src/filters.py
+    sha256: b9e563afb46851f4c6bf3228dca054921aa00236078cea1fecea4f17e88cedfd
+  - path: services/preprocessing-service/src/pipeline.py
+    sha256: 141f59aa41edbf13486e6099c868d32eeada1d76dd1962d083ae3d882b70ead1
+  - path: services/preprocessing-service/src/preprocess_config.py
+    sha256: 9135d49ed6b3add109d502e0d99eec2648f1d3dc3eb1637d97568db64a66a2a7
+  verification:
+    report_path: qa-validation/evidence/day6-preprocessing-verification.json
+    report_sha256: 967dacb546e4f3c012b797b0687ac987083a0ceb3dbcbb769259351712d3e9c8
+    profile_id: preprocess_verification_v0.1
+    profile_sha256: 675093368c38980d85ee72ffa711e5e35c2970446289c07af6f6168896610340
+  environment:
+    report_path: qa-validation/evidence/day6-dsp-environment.json
+    report_sha256: 5b8bff38388efb005421ec5f70e488efc6ff516e6ccd69decc3fab04e9081be4
+    python_version: 3.12.3
+    numpy_version: 2.5.1
+    scipy_version: 1.18.0
+  frozen_at_utc: '2026-07-21T02:34:11.386728+00:00'
+  change_policy: 'Bất kỳ thay đổi hành vi nào sau đây đều phải tạo version mới, ví
+    dụ preprocess_v0.2: cutoff; filter family; order; SOS/filtfilt behavior; notch
+    policy; edge guard; resampling; dtype; cách xử lý NaN/Inf. Sửa typo trong Markdown
+    không cần bump preprocessing version. Sửa code có thể thay output số học thì phải
+    bump hoặc re-verify và ghi change decision.'
+  limitations:
+  - Profile này chỉ là engineering acceptance cho MVP-0 offline.
+  - Chưa xác nhận trên Noraxon export thật hoặc dữ liệu lâm sàng.
+  - Chỉ kiểm chứng Fs=1000 Hz trong Day 6.
+  - Exact output hash được yêu cầu trong cùng environment; qua environment khác cần
+    numerical tolerance.
+  - Không kiểm chứng electrode placement, crosstalk, protocol adherence hoặc clinical
+    interpretation.
+  - Không kiểm chứng MFCV/CV preprocessing.
