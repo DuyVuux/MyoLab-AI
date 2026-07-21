@@ -42,3 +42,61 @@ feature_extractors:
   - Không có MVC/baseline normalization.
   - Không tạo fatigue status, FRS hoặc khuyến nghị lâm sàng.
   - Evidence hiện tại là synthetic/software verification, không phải clinical validation.
+- config_id: spectral_estimation_v0.1
+  schema_version: feature-extractor-registry-entry.v0.1
+  lifecycle_status: implemented_for_mvp0
+  analytical_verification_status: passed
+  clinical_validation_status: not_validated
+  implemented_features:
+  - welch_psd
+  planned_features_not_implemented:
+  - mdf
+  - mnf
+  - spectral_slope
+  input_profile_id: frequency_domain
+  canonical_amplitude_unit: uV
+  psd_unit: uV^2/Hz
+  analysis_band_hz:
+  - 20.0
+  - 400.0
+  estimator:
+    method: welch
+    taper: hann
+    detrend: constant
+    scaling: density
+    nperseg_policy: full_outer_window
+    noverlap_samples: 0
+    nfft_policy: equal_outer_window_length
+    zero_padding_enabled: false
+  fatigue_inference_in_scope: false
+  ml_training_in_scope: false
+  artifacts:
+    config:
+      path: services/feature-extraction-service/configs/spectral_estimation_v0.1.yaml
+      sha256: 5d61d0e5bad62e0caabda49df6593eb160fdc45fef91086554177cc3d95b134e
+    core:
+      path: packages/semg-core/semg_core/spectral.py
+      sha256: 4d81715c0fbabd7b2d59cb9f448519ac83fba293da9ca975b01d9e5df7f379be
+    frequency_domain:
+      path: services/feature-extraction-service/src/frequency_domain.py
+      sha256: 56826f09f19c08fa1787a4aa3dcb8c782671d233d9684aff63354f82f5e4e29d
+    extractor:
+      path: services/feature-extraction-service/src/spectral_estimator.py
+      sha256: cf5780a43db46360b62e6ff1dc704a7b70c03928e6041a4c785089e285656516
+    row_schema:
+      path: packages/common-schemas/json/spectral-window-row.schema.json
+      sha256: b8ab2c5f9ada38a2358383cfa2a8ee402ba81a204520b9eb838aa42cf1fc4a60
+    result_schema:
+      path: packages/common-schemas/json/spectral-estimation-result.schema.json
+      sha256: 0dfedbc46a46e903fc48c9829b20733a0b71bcc1cfe103e86e553e871b80ce76
+  evidence:
+    analytical_verification: qa-validation/evidence/day9-spectral-verification.json
+    golden_e2e: qa-validation/evidence/day9-spectral-estimation.json
+    golden_result_hash_sha256: 69e52524b99d0be6dc4305ed06bd7382cfb6ab30aa14e0929d8bc5dadb9d350f
+    golden_computed_row_count: 119
+    golden_frequency_bin_count: 381
+  limitations:
+  - Welch v0.1 dùng một full-window segment; chưa có variance reduction từ nhiều subsegments.
+  - Chưa tính MDF/MNF hoặc trend theo thời gian.
+  - Không tạo fatigue status, FRS hoặc khuyến nghị lâm sàng.
+  - Evidence hiện tại là synthetic/software verification, không phải clinical validation.

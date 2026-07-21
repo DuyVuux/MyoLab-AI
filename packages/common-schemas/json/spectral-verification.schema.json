@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semg-fatigue.local/schemas/spectral-verification.schema.json",
+  "title": "Spectral Verification v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "verification_id", "verification_status",
+    "clinical_validation_status", "data_source", "configuration", "checks",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"const": "spectral-verification.v0.1"},
+    "verification_id": {"const": "day9-spectral-estimation-v0.1"},
+    "verification_status": {"enum": ["passed", "failed"]},
+    "clinical_validation_status": {"const": "not_validated"},
+    "data_source": {"const": "deterministic_synthetic_signals"},
+    "configuration": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "sampling_rate_hz", "outer_window_samples", "method", "taper",
+        "detrend", "scaling", "nperseg_samples", "noverlap_samples",
+        "nfft_samples", "analysis_band_hz"
+      ]
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "status", "metrics", "meaning_vi"],
+        "properties": {
+          "check_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["passed", "failed"]},
+          "metrics": {"type": "object"},
+          "meaning_vi": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}
