@@ -1,0 +1,23 @@
+{
+  "schema_version": "preprocessing-result.v0.1",
+  "session_id": "E2E_TEST",
+  "status": "blocked",
+  "downstream_allowed": false,
+  "config": {
+    "config_id": "preprocess_v0.1",
+    "execution_mode": "offline_zero_phase"
+  },
+  "inherited_qc": {
+    "status": "fail",
+    "reason_codes": [
+      "FLATLINE_DETECTED"
+    ]
+  },
+  "reason_codes": [
+    "PREPROCESSING_BLOCKED_BY_QC",
+    "FLATLINE_DETECTED"
+  ],
+  "steps": [],
+  "signal_summary": null,
+  "limitations": []
+}

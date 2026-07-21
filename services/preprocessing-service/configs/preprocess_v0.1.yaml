@@ -1,0 +1,82 @@
+schema_version: preprocessing-config.v0.1
+config_id: preprocess_v0.1
+status: provisional_engineering_defaults
+scope: offline_mvp0_synthetic_and_generic_csv
+clinical_validation_status: not_validated
+
+mode:
+  execution: offline
+  phase_behavior: zero_phase
+  implementation: scipy_sosfiltfilt
+  near_real_time_compatible: false
+
+input_contract:
+  canonical_unit: uV
+  require_qc_analysis_allowed: true
+  require_finite_samples: true
+  preserve_time_axis: true
+  preserve_sample_count: true
+  preserve_channel_identity: true
+
+pipeline_order:
+  - mean_center
+  - butterworth_bandpass
+  - conditional_powerline_notch
+  - edge_guard_annotation
+  - output_hash
+
+steps:
+  mean_center:
+    enabled: true
+    scope: full_recording_per_channel
+    method: subtract_finite_mean
+
+  bandpass:
+    enabled: true
+    family: butterworth
+    order: 4
+    low_cut_hz: 20.0
+    high_cut_hz: 400.0
+    representation: second_order_sections
+    implementation: sosfiltfilt
+    nyquist_margin_ratio: 0.90
+
+  notch:
+    enabled: true
+    policy: conditional_on_qc_reason_code
+    trigger_reason_code: POWERLINE_NOISE_HIGH
+    line_frequency_hz: 50.0
+    q_factor: 30.0
+    representation: second_order_sections
+    implementation: sosfiltfilt
+
+  resampling:
+    enabled: false
+    reason: preserve_native_sampling_rate_in_mvp0
+
+  rectification:
+    enabled: false
+    reason: spectral_features_must_use_unrectified_bandpassed_signal
+
+  envelope:
+    enabled: false
+    reason: visualization_path_deferred_and_not_input_to_mdf_mnf
+
+edge_policy:
+  filter_scope: full_recording
+  scipy_padding: default
+  recommended_record_edge_guard_s: 0.25
+  downstream_windowing_must_respect_edge_guard: true
+
+output_contract:
+  sample_dtype: float64
+  canonical_unit: uV
+  hash_algorithm: sha256_float64_little_endian
+  raw_arrays_in_json: false
+  allow_npz_runtime_artifact: true
+
+limitations:
+  - Thông số 20–400 Hz là mặc định kỹ thuật cho MVP-0, chưa phải ngưỡng lâm sàng đã xác nhận tại site.
+  - sosfiltfilt dùng toàn bộ bản ghi và không phù hợp cho streaming thời gian thực.
+  - Notch 50 Hz chỉ chạy khi QC phát hiện POWERLINE_NOISE_HIGH.
+  - Không nội suy NaN/Inf và không sửa clipping hoặc motion artifact trong v0.1.

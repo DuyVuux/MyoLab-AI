@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "preprocessing-result.schema.json",
+  "title": "Preprocessing Result v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "session_id",
+    "status",
+    "downstream_allowed",
+    "config",
+    "inherited_qc",
+    "reason_codes",
+    "steps",
+    "signal_summary",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "preprocessing-result.v0.1"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "blocked"
+      ]
+    },
+    "downstream_allowed": {
+      "type": "boolean"
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "config_id",
+        "execution_mode"
+      ],
+      "properties": {
+        "config_id": {
+          "const": "preprocess_v0.1"
+        },
+        "execution_mode": {
+          "const": "offline_zero_phase"
+        }
+      }
+    },
+    "inherited_qc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reason_codes"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pass",
+            "warning",
+            "fail",
+            "import_rejected"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step_id",
+          "status",
+          "parameters",
+          "reason"
+        ],
+        "properties": {
+          "step_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "applied",
+              "skipped"
+            ]
+          },
+          "parameters": {
+            "type": "object"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "signal_summary": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "session_id",
+            "sampling_rate_hz",
+            "sample_count",
+            "channel_count",
+            "protocol_ref",
+            "phase_markers",
+            "source_file_name",
+            "source_hash_sha256",
+            "preprocess_config_id",
+            "combined_output_hash_sha256",
+            "edge_guard_samples",
+            "channels"
+          ],
+          "properties": {
+            "session_id": {
+              "type": "string"
+            },
+            "sampling_rate_hz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "sample_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "channel_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "protocol_ref": {
+              "type": "object"
+            },
+            "phase_markers": {
+              "type": "array"
+            },
+            "source_file_name": {
+              "type": "string"
+            },
+            "source_hash_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "preprocess_config_id": {
+              "const": "preprocess_v0.1"
+            },
+            "combined_output_hash_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "edge_guard_samples": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "channels": {
+              "type": "array",
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "completed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "downstream_allowed": {
+            "const": true
+          },
+          "signal_summary": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "blocked"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "downstream_allowed": {
+            "const": false
+          },
+          "signal_summary": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "preprocessing-result.v0.1",
+  "session_id": "E2E_TEST",
+  "status": "completed",
+  "downstream_allowed": true,
+  "config": {
+    "config_id": "preprocess_v0.1",
+    "execution_mode": "offline_zero_phase"
+  },
+  "inherited_qc": {
+    "status": "pass",
+    "reason_codes": []
+  },
+  "reason_codes": [],
+  "steps": [
+    {
+      "step_id": "mean_center",
+      "status": "applied",
+      "parameters": {
+        "scope": "full_recording_per_channel"
+      },
+      "reason": null
+    },
+    {
+      "step_id": "butterworth_bandpass",
+      "status": "applied",
+      "parameters": {
+        "order": 4,
+        "low_cut_hz": 20.0,
+        "high_cut_hz": 400.0,
+        "representation": "second_order_sections",
+        "implementation": "sosfiltfilt"
+      },
+      "reason": null
+    },
+    {
+      "step_id": "conditional_powerline_notch",
+      "status": "skipped",
+      "parameters": {
+        "line_frequency_hz": 50.0,
+        "q_factor": 30.0,
+        "trigger_reason_code": "POWERLINE_NOISE_HIGH"
+      },
+      "reason": "QC kh\u00f4ng ch\u1ee9a POWERLINE_NOISE_HIGH; tr\u00e1nh notch kh\u00f4ng c\u1ea7n thi\u1ebft"
+    },
+    {
+      "step_id": "resampling",
+      "status": "skipped",
+      "parameters": {},
+      "reason": "MVP-0 gi\u1eef native sampling rate"
+    },
+    {
+      "step_id": "rectification",
+      "status": "skipped",
+      "parameters": {},
+      "reason": "Kh\u00f4ng rectify \u0111\u01b0\u1eddng t\u00edn hi\u1ec7u d\u00f9ng cho MDF/MNF"
+    },
+    {
+      "step_id": "envelope",
+      "status": "skipped",
+      "parameters": {},
+      "reason": "\u0110\u01b0\u1eddng visualization \u0111\u01b0\u1ee3c ho\u00e3n sang phase sau"
+    }
+  ],
+  "signal_summary": {
+    "session_id": "E2E_TEST",
+    "sampling_rate_hz": 1000.0,
+    "sample_count": 1000,
+    "channel_count": 1,
+    "protocol_ref": {
+      "id": "test",
+      "version": "v1"
+    },
+    "phase_markers": [
+      {
+        "phase_id": "phase1",
+        "start_s": 0.0,
+        "end_s": 1.0,
+        "duration_s": 1.0
+      }
+    ],
+    "source_file_name": "fake.csv",
+    "source_hash_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "preprocess_config_id": "preprocess_v0.1",
+    "combined_output_hash_sha256": "9db4765134e90e9db29fa6877c86af85ea074375e2d0a443d2ef68f8faeef0c5",
+    "edge_guard_samples": 0,
+    "channels": [
+      {
+        "channel_id": "ch1",
+        "muscle": "Biceps",
+        "side": "Right",
+        "role": "Agonist",
+        "canonical_unit": "uV",
+        "sample_count": 1000,
+        "finite_ratio": 1.0,
+        "valid_sample_ratio": 1.0,
+        "output_hash_sha256": "8e81d03840f594889eb39b9d93fc8db91939256ba25f1c394455d4fc4f8a9230",
+        "qa_diagnostics": {
+          "input_mean_uV": -1.3145040611561853e-16,
+          "output_mean_uV": 0.010114468278265927,
+          "input_std_uV": 7.071067811865475,
+          "output_std_uV": 7.051049292919042,
+          "sample_count": 1000,
+          "output_hash_sha256": "8e81d03840f594889eb39b9d93fc8db91939256ba25f1c394455d4fc4f8a9230",
+          "notch_applied": false
+        }
+      }
+    ]
+  },
+  "limitations": []
+}

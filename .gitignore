@@ -90,3 +90,4 @@ logs/
 **/docs/repo_skeleton/
 
 .agents/
+qa-validation/evidence/day5-preprocess-golden.npz

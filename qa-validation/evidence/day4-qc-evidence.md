@@ -4,6 +4,7 @@
 **Date:** `2026-07-20`  
 **Python:** `3.12.3`  
 **NumPy:** `2.5.1`  
+**SciPy:** `1.18.0`  
 **QC config:** `qc_v0.1`
 
 ## Commands
