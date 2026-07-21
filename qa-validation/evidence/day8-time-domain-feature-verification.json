@@ -1,0 +1,94 @@
+{
+  "schema_version": "time-domain-feature-verification.v0.1",
+  "verification_status": "passed",
+  "feature_extractor_id": "features_semg_v0.1",
+  "scope": "software_dsp_analytical_verification_only",
+  "cases": [
+    {
+      "case_id": "hand_vector",
+      "observed": {
+        "rms": 2.23606797749979,
+        "mav": 2.0
+      },
+      "expected": {
+        "rms": 2.23606797749979,
+        "mav": 2.0
+      },
+      "relative_error": {
+        "rms": 0.0,
+        "mav": 0.0
+      },
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "case_id": "constant_absolute_magnitude",
+      "observed": {
+        "rms": 5.0,
+        "mav": 5.0
+      },
+      "expected": {
+        "rms": 5.0,
+        "mav": 5.0
+      },
+      "relative_error": {
+        "rms": 0.0,
+        "mav": 0.0
+      },
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "case_id": "integer_cycle_sine_80_hz",
+      "observed": {
+        "rms": 70.71067811865476,
+        "mav": 63.57817937546127
+      },
+      "expected": {
+        "rms": 70.71067811865474,
+        "mav": 63.66197723675813
+      },
+      "relative_error": {
+        "rms": 2.0097183471152324e-16,
+        "mav": 0.0013162937271838458
+      },
+      "tolerance": 0.002,
+      "passed": true
+    }
+  ],
+  "properties": [
+    {
+      "case_id": "absolute_scaling_property",
+      "observed": {
+        "rms_ratio": 2.5,
+        "mav_ratio": 2.5
+      },
+      "expected_ratio": 2.5,
+      "passed": true
+    },
+    {
+      "case_id": "rms_greater_or_equal_mav",
+      "trial_count": 100,
+      "violation_count": 0,
+      "passed": true
+    },
+    {
+      "case_id": "large_value_numerical_stability",
+      "observed": {
+        "rms": 1e+300,
+        "mav": 1e+300
+      },
+      "passed": true
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.1",
+    "platform": "Linux-6.17.0-1028-oem-x86_64-with-glibc2.39"
+  },
+  "limitations": [
+    "Kiểm chứng dùng vector toán học và synthetic signals, không dùng dữ liệu bệnh nhân.",
+    "Pass không có nghĩa RMS/MAV đã được xác nhận là biomarker lâm sàng độc lập.",
+    "Không kiểm chứng MDF/MNF, slope, FRS hoặc mô hình ML trong Day 8."
+  ]
+}

@@ -1,0 +1,87 @@
+schema_version: feature-extractor-config.v0.1
+config_id: features_semg_v0.1
+status: provisional_engineering_defaults
+scope: offline_mvp0_time_domain_features
+clinical_validation_status: not_validated
+
+input_contract:
+  require_windowing_downstream_allowed: true
+  required_windowing_config_id: windowing_v0.1
+  required_preprocess_config_id: preprocess_v0.1
+  required_profile_id: time_domain
+  required_profile_purpose: rms_mav
+  canonical_amplitude_unit: uV
+  require_window_status_valid: true
+  compute_only_valid_windows: true
+  require_finite_samples: true
+  require_untapered_samples: true
+  invalid_window_policy: emit_not_computed_row
+
+preprocessing_semantics:
+  expected_signal_path: bandpassed_unrectified
+  apply_rectification_before_rms: false
+  apply_rectification_before_mav: false
+  apply_taper: false
+  remove_window_mean_again: false
+
+features:
+  rms:
+    enabled: true
+    output_field: rms
+    unit: uV
+    formula: sqrt_mean_square
+    denominator: N
+    normalization: none
+  mav:
+    enabled: true
+    output_field: mav
+    unit: uV
+    formula: mean_absolute_value
+    denominator: N
+    normalization: none
+
+future_features:
+  mdf: {enabled: false, planned_profile_id: frequency_domain}
+  mnf: {enabled: false, planned_profile_id: frequency_domain}
+  slope: {enabled: false, planned_stage: trend_feature_extraction}
+  mfcv: {enabled: false, planned_stage: optional_eligibility_gated_extension}
+
+normalization:
+  mode: none
+  mvc_normalized: false
+  baseline_normalized: false
+  allow_cross_session_amplitude_comparison: false
+  allow_cross_subject_amplitude_comparison: false
+
+output_contract:
+  include_all_window_rows: true
+  include_not_computed_rows: true
+  include_raw_samples: false
+  include_window_geometry: true
+  include_channel_context: true
+  include_provenance: true
+  row_schema_version: feature-row.v0.1
+  result_schema_version: time-domain-feature-extraction-result.v0.1
+  result_hash_algorithm: sha256_canonical_json
+
+aggregation:
+  enabled: false
+  emit_cross_channel_aggregate: false
+  emit_session_mean: false
+  trend_features_in_scope: false
+  reason: Day 8 chỉ tạo feature theo từng window; summary trend và slope được triển khai sau.
+
+safety:
+  block_if_no_computed_rows: true
+  do_not_impute_invalid_windows: true
+  do_not_interpret_fatigue: true
+  do_not_generate_frs: true
+  do_not_train_ml: true
+  synthetic_data_is_not_clinical_evidence: true
+
+limitations:
+  - RMS và MAV phản ánh biên độ tín hiệu trong cửa sổ; chúng không phải nhãn mỏi cơ độc lập.
+  - Biên độ sEMG bị ảnh hưởng bởi lực co, recruitment, vị trí điện cực, impedance da, gain thiết bị và crosstalk.
+  - Không có chuẩn hóa MVC hoặc baseline trong Day 8; không so sánh trực tiếp giữa người, thiết bị, session hoặc protocol khác nhau.
+  - Cấu hình dùng cửa sổ time_domain 500 ms từ windowing_v0.1; chưa được xác nhận lâm sàng cho mọi cơ và task.
+  - Feature trên synthetic data chỉ là bằng chứng kiểm thử phần mềm/DSP, không phải bằng chứng hiệu quả lâm sàng.

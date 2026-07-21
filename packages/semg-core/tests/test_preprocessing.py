@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import typing
+
 import numpy as np
 import pytest
 from scipy.signal import correlate
@@ -102,7 +104,7 @@ def test_notch_reduces_50_hz_and_preserves_80_hz() -> None:
     x_50 = sine(50.0, duration_s=6.0)
     x_80 = sine(80.0, duration_s=6.0)
     
-    kwargs = dict(
+    kwargs: dict[str, typing.Any] = dict(
         sampling_rate_hz=1000.0,
         mean_center_enabled=True,
         bandpass_low_hz=20.0,
@@ -135,7 +137,7 @@ def test_notch_reduces_50_hz_and_preserves_80_hz() -> None:
 def test_output_is_deterministic_and_read_only() -> None:
     rng = np.random.default_rng(42)
     x = rng.normal(size=8000)
-    kwargs = dict(
+    kwargs: dict[str, typing.Any] = dict(
         sampling_rate_hz=1000.0,
         mean_center_enabled=True,
         bandpass_low_hz=20.0,

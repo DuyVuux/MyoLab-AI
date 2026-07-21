@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semg.local/schemas/feature-row.v0.1.schema.json",
+  "title": "Feature Row v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "feature_row_id", "session_id", "channel", "phase_id", "profile_id", "window", "status", "features", "reason_codes", "provenance"],
+  "properties": {
+    "schema_version": {"const": "feature-row.v0.1"},
+    "feature_row_id": {"type": "string", "pattern": "^FR-[0-9a-f]{24}$"},
+    "session_id": {"type": "string", "minLength": 1},
+    "channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_id", "muscle", "side", "role"],
+      "properties": {
+        "channel_id": {"type": "string", "minLength": 1},
+        "muscle": {"type": "string", "minLength": 1},
+        "side": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1}
+      }
+    },
+    "phase_id": {"const": "active_contraction"},
+    "profile_id": {"const": "time_domain"},
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["window_id", "window_index", "start_sample", "end_sample_exclusive", "start_time_s", "end_time_exclusive_s", "center_time_s", "sample_count"],
+      "properties": {
+        "window_id": {"type": "string", "pattern": "^W[0-9]{4,}$"},
+        "window_index": {"type": "integer", "minimum": 0},
+        "start_sample": {"type": "integer", "minimum": 0},
+        "end_sample_exclusive": {"type": "integer", "minimum": 1},
+        "start_time_s": {"type": "number", "minimum": 0},
+        "end_time_exclusive_s": {"type": "number", "exclusiveMinimum": 0},
+        "center_time_s": {"type": "number", "minimum": 0},
+        "sample_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "status": {"enum": ["computed", "not_computed"]},
+    "features": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rms", "mav", "sample_count"],
+          "properties": {
+            "rms": {"$ref": "#/$defs/amplitudeFeature"},
+            "mav": {"$ref": "#/$defs/amplitudeFeature"},
+            "sample_count": {"type": "integer", "minimum": 1}
+          }
+        }
+      ]
+    },
+    "reason_codes": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["feature_extractor_id", "windowing_config_id", "preprocess_config_id", "source_signal_hash_sha256", "window_plan_hash_sha256"],
+      "properties": {
+        "feature_extractor_id": {"const": "features_semg_v0.1"},
+        "windowing_config_id": {"const": "windowing_v0.1"},
+        "preprocess_config_id": {"const": "preprocess_v0.1"},
+        "source_signal_hash_sha256": {"$ref": "#/$defs/sha256"},
+        "window_plan_hash_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "computed"}}},
+      "then": {"properties": {"features": {"type": "object"}, "reason_codes": {"maxItems": 0}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "not_computed"}}},
+      "then": {"properties": {"features": {"type": "null"}, "reason_codes": {"minItems": 1}}}
+    }
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "amplitudeFeature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "unit"],
+      "properties": {"value": {"type": "number", "minimum": 0}, "unit": {"const": "uV"}}
+    }
+  }
+}

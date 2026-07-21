@@ -36,11 +36,11 @@ def create_fake_signal():
             samples_uV=samples
         )},
         protocol_ref=ProtocolRef("test", "v1"),
-        phase_markers=[PhaseMarker("phase1", 0.0, 1.0)],
+        phase_markers=(PhaseMarker("phase1", 0.0, 1.0),),
         source_file_name="fake.csv",
         source_hash_sha256="a" * 64,
         data_source="synth",
-        processing_history=[],
+        processing_history={},
     )
 
 config = {

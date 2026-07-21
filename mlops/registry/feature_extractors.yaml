@@ -1,0 +1,44 @@
+schema_version: feature-extractor-registry.v0.1
+feature_extractors:
+- config_id: features_semg_v0.1
+  schema_version: feature-extractor-registry-entry.v0.1
+  lifecycle_status: implemented_for_mvp0
+  analytical_verification_status: passed
+  clinical_validation_status: not_validated
+  implemented_features:
+  - rms
+  - mav
+  input_profile_id: time_domain
+  canonical_amplitude_unit: uV
+  normalization: none
+  mvc_normalized: false
+  cross_session_amplitude_comparison_allowed: false
+  cross_subject_amplitude_comparison_allowed: false
+  fatigue_inference_in_scope: false
+  ml_training_in_scope: false
+  artifacts:
+    config:
+      path: services/feature-extraction-service/configs/features_semg_v0.1.yaml
+      sha256: a450d807b398fcb8d99d365d8f13eb4ed5f2b102428af3d24126c17b58c768a2
+    core:
+      path: packages/semg-core/semg_core/features.py
+      sha256: e51c79352612b3c28a2b913950d5ba3c3aacd559f929644ae24a7eb5df7ee033
+    extractor:
+      path: services/feature-extraction-service/src/extractor.py
+      sha256: bb2d50453ecd1069cf70b2be09a6ee3f4b53e0925e3c9dcd9dbe41a071401e1d
+    row_schema:
+      path: packages/common-schemas/json/feature-row.schema.json
+      sha256: 2bd7321f9e80a5ca31f8289659505894af58d09401a02f5f165f36a03cc108b3
+    result_schema:
+      path: packages/common-schemas/json/time-domain-feature-result.schema.json
+      sha256: 331b67aa81a88377ad024de071c3664708c9a4f618d9730f0efbbb20c4a525f0
+  evidence:
+    analytical_verification: qa-validation/evidence/day8-time-domain-feature-verification.json
+    golden_e2e: qa-validation/evidence/day8-time-domain-features.json
+    golden_result_hash_sha256: 04145c778010bfe0946347ee56d083a84982f8e149aab0238474433345777546
+    golden_computed_row_count: 239
+  limitations:
+  - Chỉ RMS/MAV theo từng time-domain window 500 ms.
+  - Không có MVC/baseline normalization.
+  - Không tạo fatigue status, FRS hoặc khuyến nghị lâm sàng.
+  - Evidence hiện tại là synthetic/software verification, không phải clinical validation.
