@@ -33,3 +33,12 @@ Day 2 thiết lập hợp đồng nhập dữ liệu (CSV chung + Tệp tin mani
 
 ## Tiến độ Day 3
 Day 3 triển khai quy trình (pipeline) nhập CSV chung và hợp đồng tín hiệu chuẩn hóa tiêu chuẩn (`NormalizedSignal`). Hệ thống buộc các mảng dữ liệu (arrays) phải ở chế độ chỉ đọc (read-only) sau khi khởi tạo, loại bỏ dữ liệu gốc khỏi tệp tóm tắt JSON đầu ra, và xác minh định dạng tệp, siêu dữ liệu, cũng như hàm băm nguồn (source hashing) có tính xác định (deterministic) trước khi chuyển sang quá trình xử lý tiếp theo (downstream processing).
+
+## Tiến độ Day 4
+Day 4 triển khai mô-đun Cổng kiểm soát chất lượng tín hiệu (Signal Quality Gate - QC) để đánh giá tín hiệu dựa trên các tiêu chí vô hiệu hóa như Flatline (phẳng), Clipping (cắt xén), Nhiễu điện lưới (Powerline Noise), và Nhiễu chuyển động (Motion Artifact). Nó hoàn thiện lớp tích hợp dữ liệu và thiết lập chính sách từ chối xử lý sớm (fail-fast abstention) đối với dữ liệu không an toàn.
+
+## Tiến độ Day 5
+Day 5 xây dựng lõi quy trình xử lý tín hiệu và điều phối dịch vụ. Triển khai luồng tiền xử lý nhiều giai đoạn (lọc băng thông và lọc Notch động), tích hợp trực tiếp với Cổng QC để chỉ áp dụng bộ lọc khi phát hiện các cờ nhiễu cụ thể nhằm bảo toàn tối đa dữ liệu gốc.
+
+## Tiến độ Day 6
+Day 6 tập trung vào việc xác minh thực nghiệm (empirical verification) quy trình tiền xử lý tín hiệu đa tần số. Nó xác nhận cấu hình các bộ lọc thông qua một mảng tín hiệu mẫu xác định để đối chiếu với các kỳ vọng lý thuyết về rò rỉ phổ và đáp ứng tần số, qua đó hoàn thiện báo cáo kiểm chứng tiền xử lý.

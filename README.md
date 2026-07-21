@@ -33,3 +33,12 @@ Day 2 establishes the data import contract (Generic CSV + JSON sidecar manifest)
 
 ## Day 3 status
 Day 3 implements the generic CSV ingestion pipeline and the canonical normalized signal contract (`NormalizedSignal`). It enforces read-only arrays after construction, strips raw data from the output JSON summary, and verifies file formats, metadata, and deterministic source hashing before moving to downstream processing.
+
+## Day 4 status
+Day 4 implements the Signal Quality Gate (QC) module to evaluate signals against invalidation criteria like Flatline, Clipping, Powerline Noise, and Motion Artifacts. It finalizes the data integration layer and implements a fail-fast abstention policy for unsafe data.
+
+## Day 5 status
+Day 5 builds the core signal preprocessing pipeline and service orchestration. It implements a multi-stage preprocessing flow including band-pass and dynamic notch filtering, integrating directly with the QC Gate to dynamically apply noise removal only when specific noise flags are present.
+
+## Day 6 status
+Day 6 focuses on the empirical verification of the multi-frequency signal preprocessing pipeline. It validates filter implementations using a deterministic sample array against theoretical expectations for spectral leakage and frequency response, finalizing the preprocessing verification work.
