@@ -1,0 +1,72 @@
+schema_version: windowing-config.v0.1
+config_id: windowing_v0.1
+status: provisional_engineering_defaults
+scope: offline_mvp0_protocol_aligned_window_plan
+clinical_validation_status: not_validated
+
+input_contract:
+  require_preprocessing_downstream_allowed: true
+  required_preprocess_config_id: preprocess_v0.1
+  require_protocol_object: true
+  require_protocol_ref_match: true
+  canonical_unit: uV
+  require_uniform_time_axis: true
+  raw_arrays_in_json: false
+
+segmentation:
+  phase_source: protocol.analysis.active_phase_id
+  expected_phase_id: active_contraction
+  phase_boundary_convention: half_open
+  boundary_mapping: numpy_searchsorted_left
+
+protocol_alignment:
+  validate_default_windowing: true
+  duration_tolerance_ms: 0
+  overlap_tolerance: 1.0e-12
+
+profiles:
+  time_domain:
+    purpose: rms_mav
+    protocol_duration_field: time_domain_window_ms
+    duration_ms: 500
+    overlap_fraction: 0.50
+    allow_partial_final_window: false
+    sample_rounding_policy: exact_integer_required
+
+  frequency_domain:
+    purpose: psd_mdf_mnf
+    protocol_duration_field: frequency_domain_window_ms
+    duration_ms: 1000
+    overlap_fraction: 0.50
+    allow_partial_final_window: false
+    sample_rounding_policy: exact_integer_required
+
+validity:
+  minimum_valid_sample_ratio: 1.0
+  evaluate_per_channel: true
+  require_all_channels_valid_for_basic_features: false
+  require_all_profiles_for_downstream: true
+  nonfinite_policy: invalidate_window
+  invalid_mask_policy: invalidate_window
+  block_if_no_valid_windows_in_profile: true
+
+feature_preparation:
+  apply_taper_during_windowing: false
+  time_domain_sample_view: untapered_bandpassed_signal
+  spectral_taper_default: hann
+  spectral_taper_application_stage: frequency_feature_extraction
+
+output_contract:
+  create_index_plan_only: true
+  materialize_overlapping_windows: false
+  include_geometry_in_json: true
+  include_validity_in_json: true
+  include_raw_samples_in_json: false
+  hash_algorithm: sha256_canonical_json
+
+limitations:
+  - Cửa sổ miền thời gian 500 ms, miền tần số 1000 ms và overlap 50% là mặc định kỹ thuật MVP-0 lấy từ protocol v0.1; chưa phải cấu hình tối ưu cho mọi cơ, task hoặc thiết bị.
+  - Quasi-stationarity trong mỗi cửa sổ là giả định phân tích, không phải sự thật được bảo đảm.
+  - Hann taper chưa được áp dụng ở tầng windowing; tầng MDF/MNF/Welch sẽ áp dụng sau.
+  - Cửa sổ invalid không được nội suy hoặc sửa im lặng trong v0.1.
+  - So sánh longitudinal chỉ hợp lệ khi protocol, preprocessing, windowing và feature versions tương thích.

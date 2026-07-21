@@ -1,0 +1,110 @@
+{
+  "schema_version": "window-geometry-verification.v0.1",
+  "status": "pass",
+  "config_id": "windowing_v0.1",
+  "sampling_rate_hz": 1000.0,
+  "phase": {
+    "phase_id": "active_contraction",
+    "start_sample": 5000,
+    "end_sample_exclusive": 65000,
+    "sample_count": 60000
+  },
+  "masked_sample_index": 5750,
+  "profiles": [
+    {
+      "profile_id": "time_domain",
+      "purpose": "rms_mav",
+      "window_size_samples": 500,
+      "hop_size_samples": 250,
+      "overlap_fraction": 0.5,
+      "window_count": 239,
+      "remainder_samples": 0,
+      "first_window": {
+        "window_id": "W0000",
+        "window_index": 0,
+        "phase_id": "active_contraction",
+        "start_sample": 5000,
+        "end_sample_exclusive": 5500,
+        "start_time_s": 5.0,
+        "end_time_exclusive_s": 5.5,
+        "center_time_s": 5.25,
+        "sample_count": 500
+      },
+      "last_window": {
+        "window_id": "W0238",
+        "window_index": 238,
+        "phase_id": "active_contraction",
+        "start_sample": 64500,
+        "end_sample_exclusive": 65000,
+        "start_time_s": 64.5,
+        "end_time_exclusive_s": 65.0,
+        "center_time_s": 64.75,
+        "sample_count": 500
+      },
+      "all_valid_count": 239,
+      "invalid_window_indices": [
+        2,
+        3
+      ]
+    },
+    {
+      "profile_id": "frequency_domain",
+      "purpose": "psd_mdf_mnf",
+      "window_size_samples": 1000,
+      "hop_size_samples": 500,
+      "overlap_fraction": 0.5,
+      "window_count": 119,
+      "remainder_samples": 0,
+      "first_window": {
+        "window_id": "W0000",
+        "window_index": 0,
+        "phase_id": "active_contraction",
+        "start_sample": 5000,
+        "end_sample_exclusive": 6000,
+        "start_time_s": 5.0,
+        "end_time_exclusive_s": 6.0,
+        "center_time_s": 5.5,
+        "sample_count": 1000
+      },
+      "last_window": {
+        "window_id": "W0118",
+        "window_index": 118,
+        "phase_id": "active_contraction",
+        "start_sample": 64000,
+        "end_sample_exclusive": 65000,
+        "start_time_s": 64.0,
+        "end_time_exclusive_s": 65.0,
+        "center_time_s": 64.5,
+        "sample_count": 1000
+      },
+      "all_valid_count": 119,
+      "invalid_window_indices": [
+        0,
+        1
+      ]
+    }
+  ],
+  "checks": {
+    "phase_has_60000_samples": true,
+    "time_window_size_is_500": true,
+    "time_hop_is_250": true,
+    "time_window_count_is_239": true,
+    "time_first_window_is_5000_5500": true,
+    "time_last_window_ends_at_phase_end": true,
+    "time_masked_sample_affects_windows_2_3": true,
+    "frequency_window_size_is_1000": true,
+    "frequency_hop_is_500": true,
+    "frequency_window_count_is_119": true,
+    "frequency_first_window_is_5000_6000": true,
+    "frequency_last_window_ends_at_phase_end": true,
+    "frequency_masked_sample_affects_windows_0_1": true,
+    "no_partial_window_in_both_profiles": true
+  },
+  "limitations": [
+    "Cửa sổ miền thời gian 500 ms, miền tần số 1000 ms và overlap 50% là mặc định kỹ thuật MVP-0 lấy từ protocol v0.1; chưa phải cấu hình tối ưu cho mọi cơ, task hoặc thiết bị.",
+    "Quasi-stationarity trong mỗi cửa sổ là giả định phân tích, không phải sự thật được bảo đảm.",
+    "Hann taper chưa được áp dụng ở tầng windowing; tầng MDF/MNF/Welch sẽ áp dụng sau.",
+    "Cửa sổ invalid không được nội suy hoặc sửa im lặng trong v0.1.",
+    "So sánh longitudinal chỉ hợp lệ khi protocol, preprocessing, windowing và feature versions tương thích."
+  ]
+}

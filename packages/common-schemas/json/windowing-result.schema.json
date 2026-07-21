@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "windowing-result.v0.1",
+  "title": "Kết quả segmentation và windowing v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "session_id",
+    "status",
+    "downstream_allowed",
+    "config",
+    "inherited_preprocessing",
+    "reason_codes",
+    "plan",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"const": "windowing-result.v0.1"},
+    "session_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["completed", "blocked"]},
+    "downstream_allowed": {"type": "boolean"},
+    "config": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["config_id"],
+      "properties": {
+        "config_id": {"const": "windowing_v0.1"}
+      }
+    },
+    "inherited_preprocessing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["completed", "blocked"]}
+      }
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "plan": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "#/$defs/plan"}
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"downstream_allowed": {"const": true}},
+        "required": ["downstream_allowed"]
+      },
+      "then": {
+        "properties": {
+          "status": {"const": "completed"},
+          "plan": {"$ref": "#/$defs/plan"}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"downstream_allowed": {"const": false}},
+        "required": ["downstream_allowed"]
+      },
+      "then": {
+        "properties": {
+          "status": {"const": "blocked"},
+          "plan": {"type": "null"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "window_id",
+        "window_index",
+        "phase_id",
+        "start_sample",
+        "end_sample_exclusive",
+        "start_time_s",
+        "end_time_exclusive_s",
+        "center_time_s",
+        "sample_count"
+      ],
+      "properties": {
+        "window_id": {"type": "string", "pattern": "^W[0-9]{4,}$"},
+        "window_index": {"type": "integer", "minimum": 0},
+        "phase_id": {"type": "string", "minLength": 1},
+        "start_sample": {"type": "integer", "minimum": 0},
+        "end_sample_exclusive": {"type": "integer", "minimum": 1},
+        "start_time_s": {"type": "number"},
+        "end_time_exclusive_s": {"type": "number"},
+        "center_time_s": {"type": "number"},
+        "sample_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "windowValidity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "window_id",
+        "window_index",
+        "status",
+        "valid_sample_count",
+        "valid_sample_ratio",
+        "reason_codes"
+      ],
+      "properties": {
+        "window_id": {"type": "string", "pattern": "^W[0-9]{4,}$"},
+        "window_index": {"type": "integer", "minimum": 0},
+        "status": {"enum": ["valid", "invalid"]},
+        "valid_sample_count": {"type": "integer", "minimum": 0},
+        "valid_sample_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+        "reason_codes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "channel_id",
+        "muscle",
+        "side",
+        "role",
+        "window_count",
+        "valid_window_count",
+        "invalid_window_count",
+        "feature_extraction_eligible",
+        "invalid_reason_counts",
+        "windows"
+      ],
+      "properties": {
+        "channel_id": {"type": "string", "minLength": 1},
+        "muscle": {"type": "string"},
+        "side": {"type": "string"},
+        "role": {"type": "string"},
+        "window_count": {"type": "integer", "minimum": 0},
+        "valid_window_count": {"type": "integer", "minimum": 0},
+        "invalid_window_count": {"type": "integer", "minimum": 0},
+        "feature_extraction_eligible": {"type": "boolean"},
+        "invalid_reason_counts": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 1}
+        },
+        "windows": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/windowValidity"}
+        }
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile_id",
+        "purpose",
+        "windowing",
+        "geometries",
+        "channels"
+      ],
+      "properties": {
+        "profile_id": {"enum": ["time_domain", "frequency_domain"]},
+        "purpose": {"enum": ["rms_mav", "psd_mdf_mnf"]},
+        "windowing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "window_size_samples",
+            "hop_size_samples",
+            "overlap_fraction",
+            "window_count",
+            "remainder_samples",
+            "boundary_convention",
+            "partial_windows_included",
+            "spectral_taper_default",
+            "taper_applied_during_windowing"
+          ],
+          "properties": {
+            "window_size_samples": {"type": "integer", "minimum": 1},
+            "hop_size_samples": {"type": "integer", "minimum": 1},
+            "overlap_fraction": {"type": "number", "minimum": 0, "exclusiveMaximum": 1},
+            "window_count": {"type": "integer", "minimum": 1},
+            "remainder_samples": {"type": "integer", "minimum": 0},
+            "boundary_convention": {"const": "half_open"},
+            "partial_windows_included": {"const": false},
+            "spectral_taper_default": {"const": "hann"},
+            "taper_applied_during_windowing": {"const": false}
+          }
+        },
+        "geometries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/geometry"}
+        },
+        "channels": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/channel"}
+        }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_id",
+        "phase",
+        "config",
+        "upstream",
+        "plan_hash_sha256",
+        "profiles"
+      ],
+      "properties": {
+        "session_id": {"type": "string", "minLength": 1},
+        "phase": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["phase_id", "start_sample", "end_sample_exclusive", "sample_count"],
+          "properties": {
+            "phase_id": {"type": "string", "minLength": 1},
+            "start_sample": {"type": "integer", "minimum": 0},
+            "end_sample_exclusive": {"type": "integer", "minimum": 1},
+            "sample_count": {"type": "integer", "minimum": 1}
+          }
+        },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "windowing_config_id",
+            "boundary_convention",
+            "spectral_taper_default",
+            "taper_applied_during_windowing"
+          ],
+          "properties": {
+            "windowing_config_id": {"const": "windowing_v0.1"},
+            "boundary_convention": {"const": "half_open"},
+            "spectral_taper_default": {"const": "hann"},
+            "taper_applied_during_windowing": {"const": false}
+          }
+        },
+        "upstream": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["preprocess_config_id", "preprocessed_signal_hash_sha256"],
+          "properties": {
+            "preprocess_config_id": {"const": "preprocess_v0.1"},
+            "preprocessed_signal_hash_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "plan_hash_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "profiles": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/profile"},
+          "allOf": [
+            {"contains": {"properties": {"profile_id": {"const": "time_domain"}}, "required": ["profile_id"]}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"profile_id": {"const": "frequency_domain"}}, "required": ["profile_id"]}, "minContains": 1, "maxContains": 1}
+          ]
+        }
+      }
+    }
+  }
+}

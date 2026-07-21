@@ -22,16 +22,16 @@ preprocessing_configs:
     sha256: 9135d49ed6b3add109d502e0d99eec2648f1d3dc3eb1637d97568db64a66a2a7
   verification:
     report_path: qa-validation/evidence/day6-preprocessing-verification.json
-    report_sha256: 967dacb546e4f3c012b797b0687ac987083a0ceb3dbcbb769259351712d3e9c8
+    report_sha256: 740eddfbcf31f1445e272a4c70b8ae9d71badc3beedb3824d32eb6382f3b40a5
     profile_id: preprocess_verification_v0.1
     profile_sha256: 675093368c38980d85ee72ffa711e5e35c2970446289c07af6f6168896610340
   environment:
     report_path: qa-validation/evidence/day6-dsp-environment.json
-    report_sha256: 5b8bff38388efb005421ec5f70e488efc6ff516e6ccd69decc3fab04e9081be4
+    report_sha256: 06d3dbc86c47b371858d4ad3fa2cc41a42c6293523bd7a654a13452e7504ea51
     python_version: 3.12.3
     numpy_version: 2.5.1
     scipy_version: 1.18.0
-  frozen_at_utc: '2026-07-21T02:34:11.386728+00:00'
+  frozen_at_utc: '2026-07-21T03:27:55.311956+00:00'
   change_policy: 'Bất kỳ thay đổi hành vi nào sau đây đều phải tạo version mới, ví
     dụ preprocess_v0.2: cutoff; filter family; order; SOS/filtfilt behavior; notch
     policy; edge guard; resampling; dtype; cách xử lý NaN/Inf. Sửa typo trong Markdown

@@ -4,6 +4,10 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT"
 
+if [ -f .venv/bin/activate ]; then
+  source .venv/bin/activate
+fi
+
 export PYTHONPATH="packages/semg-core:services/signal-ingestion-service/src:services/quality-gate-service/src:services/preprocessing-service/src${PYTHONPATH:+:$PYTHONPATH}"
 
 printf '\n[1/8] Kiểm tra prerequisite Day 5\n'
