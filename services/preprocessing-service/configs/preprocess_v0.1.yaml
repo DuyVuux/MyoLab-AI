@@ -8,7 +8,7 @@ mode:
   execution: offline
   phase_behavior: zero_phase
   implementation: scipy_sosfiltfilt
-  near_real_time_compatible: false
+  realtime_compatible: false
 
 input_contract:
   canonical_unit: uV

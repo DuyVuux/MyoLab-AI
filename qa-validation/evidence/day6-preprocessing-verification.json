@@ -1,0 +1,307 @@
+{
+  "schema_version": "preprocessing-verification-report.v0.1",
+  "generated_at_utc": "2026-07-21T02:34:10.988202+00:00",
+  "config": {
+    "config_id": "preprocess_v0.1",
+    "path": "services/preprocessing-service/configs/preprocess_v0.1.yaml",
+    "sha256": "844e19bb7da7161deadd51c3aeece0ddebf314e0c57b112f96bbf269454e56fa",
+    "status": "provisional_engineering_defaults",
+    "clinical_validation_status": "not_validated",
+    "execution_mode": "offline_zero_phase",
+    "realtime_compatible": false
+  },
+  "profile": {
+    "profile_id": "preprocess_verification_v0.1",
+    "path": "qa-validation/configs/preprocess_verification_v0.1.yaml",
+    "sha256": "675093368c38980d85ee72ffa711e5e35c2970446289c07af6f6168896610340",
+    "sampling_rate_hz": 1000.0,
+    "clinical_validation_status": "not_validated"
+  },
+  "runtime_summary": {
+    "python_version": "3.12.3",
+    "numpy_version": "2.5.1",
+    "scipy_version": "1.18.0",
+    "platform": "Linux-6.17.0-1028-oem-x86_64-with-glibc2.39"
+  },
+  "theoretical": {
+    "measurements": {
+      "bandpass": {
+        "5": -97.76209468413917,
+        "30": -0.26625013021510696,
+        "80": -4.768112176790109e-06,
+        "200": -2.5531968280992912e-06,
+        "350": -0.18351054656016133,
+        "450": -51.05137729764509
+      },
+      "bandpass_plus_notch": {
+        "50": -300.00209301945097,
+        "80": -0.009890342448321683
+      }
+    },
+    "criteria": [
+      {
+        "id": "TH_BP_5_STOP",
+        "path": "bandpass",
+        "frequency_hz": 5.0,
+        "measured_gain_db": -97.76209468413917,
+        "min_gain_db": null,
+        "max_gain_db": -40.0,
+        "passed": true
+      },
+      {
+        "id": "TH_BP_30_PASS",
+        "path": "bandpass",
+        "frequency_hz": 30.0,
+        "measured_gain_db": -0.26625013021510696,
+        "min_gain_db": -1.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "TH_BP_80_PASS",
+        "path": "bandpass",
+        "frequency_hz": 80.0,
+        "measured_gain_db": -4.768112176790109e-06,
+        "min_gain_db": -0.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "TH_BP_200_PASS",
+        "path": "bandpass",
+        "frequency_hz": 200.0,
+        "measured_gain_db": -2.5531968280992912e-06,
+        "min_gain_db": -0.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "TH_BP_350_PASS",
+        "path": "bandpass",
+        "frequency_hz": 350.0,
+        "measured_gain_db": -0.18351054656016133,
+        "min_gain_db": -1.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "TH_BP_450_STOP",
+        "path": "bandpass",
+        "frequency_hz": 450.0,
+        "measured_gain_db": -51.05137729764509,
+        "min_gain_db": null,
+        "max_gain_db": -30.0,
+        "passed": true
+      },
+      {
+        "id": "TH_NOTCH_50_STOP",
+        "path": "bandpass_plus_notch",
+        "frequency_hz": 50.0,
+        "measured_gain_db": -300.00209301945097,
+        "min_gain_db": null,
+        "max_gain_db": -30.0,
+        "passed": true
+      },
+      {
+        "id": "TH_NOTCH_80_COLLATERAL",
+        "path": "bandpass_plus_notch",
+        "frequency_hz": 80.0,
+        "measured_gain_db": -0.009890342448321683,
+        "min_gain_db": -0.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "empirical": {
+    "fixture": {
+      "sampling_rate_hz": 1000.0,
+      "sample_count": 20500,
+      "duration_s": 20.5,
+      "analysis_edge_guard_s": 0.25,
+      "analysis_sample_count": 20000
+    },
+    "measurements": {
+      "bandpass": {
+        "5": {
+          "input_amplitude_uV": 40.00000000000027,
+          "output_amplitude_uV": 0.000517276318623418,
+          "gain_db": -97.7667478971401
+        },
+        "30": {
+          "input_amplitude_uV": 29.999999999999684,
+          "output_amplitude_uV": 29.094355981734953,
+          "gain_db": -0.2662501282309693
+        },
+        "50": {
+          "input_amplitude_uV": 40.00000000000023,
+          "output_amplitude_uV": 39.99036240684262,
+          "gain_db": -0.0020930289207299353
+        },
+        "80": {
+          "input_amplitude_uV": 50.00000000000041,
+          "output_amplitude_uV": 49.99997258289479,
+          "gain_db": -4.762840377896005e-06
+        },
+        "200": {
+          "input_amplitude_uV": 30.000000000000732,
+          "output_amplitude_uV": 29.9999911896256,
+          "gain_db": -2.5508652436784745e-06
+        },
+        "350": {
+          "input_amplitude_uV": 20.000000000000682,
+          "output_amplitude_uV": 19.581883760651046,
+          "gain_db": -0.18351054850942922
+        },
+        "450": {
+          "input_amplitude_uV": 20.00000000000049,
+          "output_amplitude_uV": 0.056035222640886825,
+          "gain_db": -51.051377876773316
+        }
+      },
+      "bandpass_plus_notch": {
+        "50": {
+          "input_amplitude_uV": 40.00000000000023,
+          "output_amplitude_uV": 0.0526712799477002,
+          "gain_db": -57.609722383856536
+        },
+        "80": {
+          "input_amplitude_uV": 50.00000000000041,
+          "output_amplitude_uV": 49.94318309668275,
+          "gain_db": -0.009875719176976914
+        }
+      }
+    },
+    "criteria": [
+      {
+        "id": "EM_BP_5_STOP",
+        "path": "bandpass",
+        "frequency_hz": 5.0,
+        "measured_gain_db": -97.7667478971401,
+        "min_gain_db": null,
+        "max_gain_db": -40.0,
+        "passed": true
+      },
+      {
+        "id": "EM_BP_30_PASS",
+        "path": "bandpass",
+        "frequency_hz": 30.0,
+        "measured_gain_db": -0.2662501282309693,
+        "min_gain_db": -1.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "EM_BP_50_PRESERVED_WITHOUT_NOTCH",
+        "path": "bandpass",
+        "frequency_hz": 50.0,
+        "measured_gain_db": -0.0020930289207299353,
+        "min_gain_db": -0.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "EM_BP_80_PASS",
+        "path": "bandpass",
+        "frequency_hz": 80.0,
+        "measured_gain_db": -4.762840377896005e-06,
+        "min_gain_db": -0.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "EM_BP_200_PASS",
+        "path": "bandpass",
+        "frequency_hz": 200.0,
+        "measured_gain_db": -2.5508652436784745e-06,
+        "min_gain_db": -0.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "EM_BP_350_PASS",
+        "path": "bandpass",
+        "frequency_hz": 350.0,
+        "measured_gain_db": -0.18351054850942922,
+        "min_gain_db": -1.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      },
+      {
+        "id": "EM_BP_450_STOP",
+        "path": "bandpass",
+        "frequency_hz": 450.0,
+        "measured_gain_db": -51.051377876773316,
+        "min_gain_db": null,
+        "max_gain_db": -30.0,
+        "passed": true
+      },
+      {
+        "id": "EM_NOTCH_50_STOP",
+        "path": "bandpass_plus_notch",
+        "frequency_hz": 50.0,
+        "measured_gain_db": -57.609722383856536,
+        "min_gain_db": null,
+        "max_gain_db": -30.0,
+        "passed": true
+      },
+      {
+        "id": "EM_NOTCH_80_COLLATERAL",
+        "path": "bandpass_plus_notch",
+        "frequency_hz": 80.0,
+        "measured_gain_db": -0.009875719176976914,
+        "min_gain_db": -0.5,
+        "max_gain_db": 0.5,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "zero_phase": {
+    "sample_count": 20001,
+    "center_index": 10000,
+    "peak_offset_samples": 0,
+    "normalized_symmetry_error": 3.3040193287766775e-16,
+    "max_abs_peak_offset_samples": 0,
+    "max_normalized_symmetry_error": 1e-10,
+    "passed": true
+  },
+  "edge": {
+    "frequency_hz": 80.0,
+    "duration_s": 10.0,
+    "edge_guard_s": 0.25,
+    "edge_guard_samples": 250,
+    "interior_rmse_uV": 6.5900507963859265e-06,
+    "edge_rmse_uV": 4.017634493436602,
+    "edge_to_interior_rmse_ratio": 609651.5212963043,
+    "max_interior_rmse_uV": 0.01,
+    "min_edge_to_interior_rmse_ratio": 100.0,
+    "passed": true
+  },
+  "determinism": {
+    "repeat_count": 3,
+    "hashes": [
+      "c7a996a480866fa3c654aa3cd8a63dc264916ebe3b263ca34c70ee182932e0f9",
+      "c7a996a480866fa3c654aa3cd8a63dc264916ebe3b263ca34c70ee182932e0f9",
+      "c7a996a480866fa3c654aa3cd8a63dc264916ebe3b263ca34c70ee182932e0f9"
+    ],
+    "identical_hashes": true,
+    "require_identical_hashes_in_same_environment": true,
+    "passed": true
+  },
+  "overall": {
+    "all_passed": true,
+    "analytical_verification_status": "passed",
+    "clinical_validation_status": "not_validated",
+    "windowing_readiness": "ready"
+  },
+  "limitations": [
+    "Profile này chỉ là engineering acceptance cho MVP-0 offline.",
+    "Chưa xác nhận trên Noraxon export thật hoặc dữ liệu lâm sàng.",
+    "Chỉ kiểm chứng Fs=1000 Hz trong Day 6.",
+    "Exact output hash được yêu cầu trong cùng environment; qua environment khác cần numerical tolerance.",
+    "Không kiểm chứng electrode placement, crosstalk, protocol adherence hoặc clinical interpretation.",
+    "Không kiểm chứng MFCV/CV preprocessing."
+  ]
+}

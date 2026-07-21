@@ -32,8 +32,8 @@ def load_preprocess_config(path: Path | str) -> dict[str, Any]:
         raise ValueError("Day 5 bắt buộc zero_phase")
     if mode.get("implementation") != "scipy_sosfiltfilt":
         raise ValueError("Day 5 bắt buộc scipy_sosfiltfilt")
-    if mode.get("near_real_time_compatible") is not False:
-        raise ValueError("Cấu hình Day 5 không được claim near-real-time compatibility")
+    if mode.get("realtime_compatible") is not False:
+        raise ValueError("MVP-0 preprocessing config phải có realtime_compatible=false (dùng cho mảng offline).")
 
     input_contract = _mapping(config.get("input_contract"), "input_contract")
     required_true = (
