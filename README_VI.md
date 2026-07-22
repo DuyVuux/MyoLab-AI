@@ -42,3 +42,18 @@ Day 5 xây dựng lõi quy trình xử lý tín hiệu và điều phối dịch
 
 ## Tiến độ Day 6
 Day 6 tập trung vào việc xác minh thực nghiệm (empirical verification) quy trình tiền xử lý tín hiệu đa tần số. Nó xác nhận cấu hình các bộ lọc thông qua một mảng tín hiệu mẫu xác định để đối chiếu với các kỳ vọng lý thuyết về rò rỉ phổ và đáp ứng tần số, qua đó hoàn thiện báo cáo kiểm chứng tiền xử lý.
+
+## Tiến độ Day 7
+Day 7 triển khai logic phân đoạn và chia cửa sổ (segmentation & windowing) bám sát phác đồ lâm sàng. Hệ thống buộc phải đối chiếu chặt chẽ giữa phác đồ và cấu hình trích xuất đặc trưng, tự động từ chối xử lý nếu phát hiện cấu hình không khớp.
+
+## Tiến độ Day 8
+Day 8 xây dựng mô-đun trích xuất đặc trưng miền thời gian (time-domain features). Triển khai logic tính toán RMS và MAV mang tính xác định (deterministic), kết hợp cùng các schema và báo cáo kiểm chứng để đảm bảo tính chính xác toán học.
+
+## Tiến độ Day 9
+Day 9 triển khai quy trình ước lượng phổ (spectral estimation) sử dụng phương pháp Welch. Xây dựng cơ sở tính toán Mật độ Phổ Công suất (PSD - Power Spectral Density) và xử lý các giới hạn độ phân giải tần số theo chuẩn phác đồ lâm sàng.
+
+## Tiến độ Day 10
+Day 10 giới thiệu phân hệ trích xuất đặc trưng miền tần số (frequency-domain features). Tính toán Tần số Trung vị (MDF) và Tần số Trung bình (MNF) dựa trên PSD, áp dụng các công thức toán học tiêu chuẩn và các schema kiểm định khắt khe.
+
+## Tiến độ Day 11
+Day 11 triển khai mô-đun trích xuất đặc trưng Khuynh hướng (Trend Features). Tính toán độ dốc hồi quy tuyến tính (slopes) cho RMS, MAV, MDF và MNF theo thời gian. Áp dụng chính sách kiểm soát nghiêm ngặt chỉ cung cấp số liệu thống kê mô tả (descriptive), loại bỏ hoàn toàn các chỉ số thống kê suy diễn (như p-value hay khoảng tin cậy) nhằm ngăn chặn việc kết luận lâm sàng vội vã.

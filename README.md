@@ -42,3 +42,18 @@ Day 5 builds the core signal preprocessing pipeline and service orchestration. I
 
 ## Day 6 status
 Day 6 focuses on the empirical verification of the multi-frequency signal preprocessing pipeline. It validates filter implementations using a deterministic sample array against theoretical expectations for spectral leakage and frequency response, finalizing the preprocessing verification work.
+
+## Day 7 status
+Day 7 implements protocol-aligned segmentation and windowing logic. It enforces strict alignment between clinical protocols and feature extraction configurations, explicitly rejecting execution on configuration mismatches.
+
+## Day 8 status
+Day 8 delivers the time-domain feature extraction module. It implements deterministic RMS and MAV feature extraction logic, associated schema definitions, and validation reports to ensure mathematical correctness.
+
+## Day 9 status
+Day 9 implements the spectral estimation pipeline using Welch's method. It establishes the robust calculation of Power Spectral Density (PSD) and handles frequency resolution bounds according to clinical protocols.
+
+## Day 10 status
+Day 10 introduces the frequency-domain feature extraction. It computes Median Frequency (MDF) and Mean Frequency (MNF) from the PSD, implementing standardized mathematical formulas and strict validation schemas.
+
+## Day 11 status
+Day 11 implements the Trend Feature extraction module. It calculates the linear regression slopes for RMS, MAV, MDF, and MNF over time windows. It strictly enforces a descriptive-only approach, stripping inferential statistics (like p-values or confidence intervals) to prevent premature clinical conclusions.
