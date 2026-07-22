@@ -14,14 +14,14 @@
   },
   "upstream_trend": {
     "config_id": "trend_features_v0.1",
-    "result_hash_sha256": "42dee74e694d15482d0a848b4caea31df8dfcf8d1ec46642f75c590ce472057c"
+    "result_hash_sha256": "8d7a037d34acb4e565704e1427a24614fff00bd0d8d69de760dbdf2c4805bf31"
   },
   "summary": {
     "total_channel_count": 1,
     "evaluated_channel_count": 1
   },
   "reason_codes": [],
-  "result_hash_sha256": "b4d11e8d14691e490f4dfae9e5e72fc94ec2bf4b5d1d0a9a5a170840f1ecc26d",
+  "result_hash_sha256": "1dd2ff872337b08009bf4a6700475ad1d45b0d31a7c6405be996ed63f1b2e367",
   "channels": [
     {
       "channel": {
@@ -44,9 +44,9 @@
           "expected_direction": "increase",
           "support_status": "supporting",
           "observed": {
-            "percent_change": 48.732067995196225,
-            "normalized_slope_percent_per_min": 62.71885107645313,
-            "r_squared": 0.6938774472453807
+            "percent_change": 48.73206799519612,
+            "normalized_slope_percent_per_min": 62.718851076453056,
+            "r_squared": 0.6938774472453799
           },
           "threshold": {
             "minimum_percent_change_magnitude": 5.0,
@@ -62,9 +62,9 @@
           "expected_direction": "increase",
           "support_status": "supporting",
           "observed": {
-            "percent_change": 49.118362960697795,
-            "normalized_slope_percent_per_min": 62.28739786074544,
-            "r_squared": 0.6756194181440354
+            "percent_change": 49.11836296069771,
+            "normalized_slope_percent_per_min": 62.287397860745344,
+            "r_squared": 0.6756194181440344
           },
           "threshold": {
             "minimum_percent_change_magnitude": 5.0,
@@ -80,9 +80,9 @@
           "expected_direction": "decrease",
           "support_status": "supporting",
           "observed": {
-            "percent_change": -23.966755010301423,
-            "normalized_slope_percent_per_min": -31.12265491230978,
-            "r_squared": 0.7307616391237219
+            "percent_change": -23.966755010301405,
+            "normalized_slope_percent_per_min": -31.1226549123098,
+            "r_squared": 0.7307616391237224
           },
           "threshold": {
             "minimum_percent_change_magnitude": 5.0,
@@ -98,7 +98,7 @@
           "expected_direction": "decrease",
           "support_status": "supporting",
           "observed": {
-            "percent_change": -29.33849108673119,
+            "percent_change": -29.338491086731164,
             "normalized_slope_percent_per_min": -37.016230533602965,
             "r_squared": 0.9646629221913212
           },
