@@ -22,7 +22,7 @@ evidence_engines:
   evidence:
     verification: qa-validation/evidence/day12-evidence-verification.json
     golden_e2e: qa-validation/evidence/day12-fatigue-evidence.json
-    golden_result_hash_sha256: b4d11e8d14691e490f4dfae9e5e72fc94ec2bf4b5d1d0a9a5a170840f1ecc26d
+    golden_result_hash_sha256: 1dd2ff872337b08009bf4a6700475ad1d45b0d31a7c6405be996ed63f1b2e367
   limitations:
   - Thresholds provisional, chưa local/clinical validation.
   - Không phải diagnosis, probability, score hoặc recommendation.
