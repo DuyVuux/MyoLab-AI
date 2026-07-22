@@ -1,6 +1,0 @@
-requirement_id,requirement,test_id,evidence,risk_controlled,status
-D16-R01,Golden pipeline phải chạy completed,D16-G01,day16-mvp0-regression-report.json,Pipeline integration regression,planned
-D16-R02,QC warning phải propagate,D16-W01|D16-W02|D16-W03,day16-mvp0-regression-report.json,Warning bị mất downstream,planned
-D16-R03,QC fail phải abstain,D16-F01|D16-F02|D16-F03,day16-mvp0-regression-report.json,Unsafe analysis after QC fail,planned
-D16-R04,Cùng input/config phải lặp lại,D16-R01,day16-mvp0-regression-report.json,Non-reproducible output,planned
-D16-R05,Không raw samples/direct identifiers,D16-S01,day16-mvp0-regression-report.json,Privacy/data leakage,planned
