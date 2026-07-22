@@ -1,0 +1,79 @@
+schema_version: fatigue-evidence-config.v0.1
+config_id: fatigue_evidence_v0.1
+status: provisional_engineering_defaults
+scope: offline_mvp0_structured_fatigue_evidence
+clinical_validation_status: not_validated
+
+input_contract:
+  require_trend_downstream_allowed: true
+  required_trend_config_id: trend_features_v0.1
+  required_trend_schema_version: trend-feature-extraction-result.v0.1
+  required_features: [rms, mav, mdf, mnf]
+  require_complete_channel: true
+  upstream_block_policy: abstain
+
+trend_quality:
+  minimum_r_squared: 0.20
+  minimum_point_count: 20
+  minimum_duration_s: 30.0
+  low_quality_policy: insufficient_evidence
+
+provisional_thresholds:
+  rms:
+    domain: amplitude
+    expected_direction: increase
+    minimum_percent_change: 5.0
+    minimum_normalized_slope_percent_per_min: 5.0
+  mav:
+    domain: amplitude
+    expected_direction: increase
+    minimum_percent_change: 5.0
+    minimum_normalized_slope_percent_per_min: 5.0
+  mdf:
+    domain: frequency
+    expected_direction: decrease
+    minimum_percent_change: 5.0
+    minimum_normalized_slope_percent_per_min: 5.0
+  mnf:
+    domain: frequency
+    expected_direction: decrease
+    minimum_percent_change: 5.0
+    minimum_normalized_slope_percent_per_min: 5.0
+
+aggregation:
+  frequency_features: [mdf, mnf]
+  amplitude_features: [rms, mav]
+  strong_domain_support_requires: all_features_supporting
+  output_probability: false
+  output_score: false
+  output_fatigue_status: false
+
+output_contract:
+  include_feature_assessments: true
+  include_domain_status: true
+  include_pattern_category: true
+  include_thresholds_and_observed_metrics: true
+  include_provenance: true
+  result_schema_version: fatigue-evidence-result.v0.1
+  result_hash_algorithm: sha256_canonical_json
+
+future_stages:
+  explainable_rule_engine: {enabled: false, planned_after_evidence_validation: true}
+  fatigue_resistance_score: {enabled: false, planned_after_rule_spec: true}
+  classical_ml: {enabled: false, planned_after_usable_local_labels: true}
+
+safety:
+  abstention_is_first_class_output: true
+  do_not_output_fatigue_detected: true
+  do_not_output_no_fatigue: true
+  do_not_output_probability: true
+  do_not_generate_frs: true
+  do_not_generate_clinical_recommendation: true
+  require_human_review_for_future_clinical_workflow: true
+  synthetic_data_is_not_clinical_evidence: true
+
+limitations:
+  - Threshold 5% và R² 0.20 chỉ là engineering defaults để kiểm thử logic, chưa được clinical/local validation.
+  - Amplitude increase không đặc hiệu cho fatigue vì còn phụ thuộc force, recruitment, electrode và normalization.
+  - Frequency decline có thể hỗ trợ fatigue-like pattern trong protocol phù hợp nhưng không phải chẩn đoán độc lập.
+  - Kết quả là structured evidence; không phải fatigue status, probability, FRS hoặc treatment recommendation.

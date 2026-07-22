@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "status",
+    "downstream_allowed",
+    "abstention",
+    "config",
+    "upstream_trend",
+    "summary",
+    "reason_codes",
+    "result_hash_sha256",
+    "channels",
+    "limitations",
+    "required_review"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "fatigue-evidence-result.v0.1"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "completed_with_exclusions",
+        "abstained"
+      ]
+    },
+    "downstream_allowed": {
+      "type": "boolean"
+    },
+    "abstention": {
+      "type": "boolean"
+    },
+    "config": {
+      "type": "object"
+    },
+    "upstream_trend": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "reason_codes": {
+      "type": "array"
+    },
+    "result_hash_sha256": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      ]
+    },
+    "channels": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "required_review": {
+      "const": "human_review_required_before_any_future_clinical_use"
+    }
+  }
+}
