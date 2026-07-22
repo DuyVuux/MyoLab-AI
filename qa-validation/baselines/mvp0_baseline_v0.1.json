@@ -1,0 +1,417 @@
+{
+  "schema_version": "mvp0-regression-baseline.v0.1",
+  "baseline_id": "mvp0_baseline_v0.1",
+  "baseline_scope": "same_environment_exact_hash_plus_profile_numeric_ranges",
+  "evidence_scope": "software_analytical_regression_on_synthetic_fixtures_only",
+  "clinical_validation_status": "not_validated",
+  "profile_id": "mvp0_regression_v0.1",
+  "profile_sha256": "1594dfdce40d16626ce7298f34eed5dbf558c8ac18f726a394d61e61f86258c0",
+  "pipeline_config_sha256": "a85e4eb503e3bd335e9c60d96e2f3e374b2399ef7ccc61538471a8f44358f6bc",
+  "regression_fingerprint_sha256": "4a4a70bcc61c06a2d3a53d63510d28b68d4d72b4150e5025030ce85cb4a1d46f",
+  "local_golden_analysis_fingerprint_sha256": "42668659cfc6c1b07b12ea1d3dd2888376c7d786285147cc0d4d9b48cb423043",
+  "scenario_signatures": {
+    "golden": {
+      "analysis_status": "completed",
+      "qc_status": "pass",
+      "qc_reason_codes": [],
+      "technical_conclusion": "supported_pattern",
+      "confidence_category": "engineering_high",
+      "inference_status": "completed",
+      "final_downstream_allowed": true,
+      "stage_statuses": {
+        "ingestion": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "qc": {
+          "status": "pass",
+          "downstream_allowed": true
+        },
+        "preprocessing": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "windowing": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "time_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "spectral_estimation": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "frequency_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "trend_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "fatigue_evidence": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "fatigue_rule": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "explainable_inference": {
+          "status": "completed",
+          "downstream_allowed": true
+        }
+      }
+    },
+    "warning_clipping": {
+      "analysis_status": "completed_with_warnings",
+      "qc_status": "warning",
+      "qc_reason_codes": [
+        "CLIPPING_SUSPECTED"
+      ],
+      "technical_conclusion": "supported_pattern",
+      "confidence_category": "engineering_high",
+      "inference_status": "completed_with_warnings",
+      "final_downstream_allowed": true,
+      "stage_statuses": {
+        "ingestion": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "qc": {
+          "status": "warning",
+          "downstream_allowed": true
+        },
+        "preprocessing": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "windowing": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "time_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "spectral_estimation": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "frequency_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "trend_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "fatigue_evidence": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "fatigue_rule": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "explainable_inference": {
+          "status": "completed_with_warnings",
+          "downstream_allowed": true
+        }
+      }
+    },
+    "warning_motion": {
+      "analysis_status": "completed_with_warnings",
+      "qc_status": "warning",
+      "qc_reason_codes": [
+        "MOTION_ARTIFACT_HIGH"
+      ],
+      "technical_conclusion": "supported_pattern",
+      "confidence_category": "engineering_high",
+      "inference_status": "completed_with_warnings",
+      "final_downstream_allowed": true,
+      "stage_statuses": {
+        "ingestion": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "qc": {
+          "status": "warning",
+          "downstream_allowed": true
+        },
+        "preprocessing": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "windowing": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "time_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "spectral_estimation": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "frequency_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "trend_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "fatigue_evidence": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "fatigue_rule": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "explainable_inference": {
+          "status": "completed_with_warnings",
+          "downstream_allowed": true
+        }
+      }
+    },
+    "warning_powerline": {
+      "analysis_status": "completed_with_warnings",
+      "qc_status": "warning",
+      "qc_reason_codes": [
+        "POWERLINE_NOISE_HIGH"
+      ],
+      "technical_conclusion": "supported_pattern",
+      "confidence_category": "engineering_high",
+      "inference_status": "completed_with_warnings",
+      "final_downstream_allowed": true,
+      "stage_statuses": {
+        "ingestion": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "qc": {
+          "status": "warning",
+          "downstream_allowed": true
+        },
+        "preprocessing": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "windowing": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "time_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "spectral_estimation": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "frequency_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "trend_features": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "fatigue_evidence": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "fatigue_rule": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "explainable_inference": {
+          "status": "completed_with_warnings",
+          "downstream_allowed": true
+        }
+      }
+    },
+    "fail_flatline": {
+      "analysis_status": "abstained",
+      "qc_status": "fail",
+      "qc_reason_codes": [
+        "FLATLINE_EXCESSIVE"
+      ],
+      "technical_conclusion": "abstained",
+      "confidence_category": "not_available",
+      "inference_status": "abstained",
+      "final_downstream_allowed": false,
+      "stage_statuses": {
+        "ingestion": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "qc": {
+          "status": "fail",
+          "downstream_allowed": false
+        },
+        "preprocessing": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "windowing": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "time_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "spectral_estimation": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "frequency_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "trend_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "fatigue_evidence": {
+          "status": "abstained",
+          "downstream_allowed": false
+        },
+        "fatigue_rule": {
+          "status": "abstained",
+          "downstream_allowed": false
+        },
+        "explainable_inference": {
+          "status": "abstained",
+          "downstream_allowed": false
+        }
+      }
+    },
+    "fail_nonfinite": {
+      "analysis_status": "abstained",
+      "qc_status": "fail",
+      "qc_reason_codes": [
+        "NONFINITE_RATIO_EXCESSIVE"
+      ],
+      "technical_conclusion": "abstained",
+      "confidence_category": "not_available",
+      "inference_status": "abstained",
+      "final_downstream_allowed": false,
+      "stage_statuses": {
+        "ingestion": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "qc": {
+          "status": "fail",
+          "downstream_allowed": false
+        },
+        "preprocessing": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "windowing": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "time_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "spectral_estimation": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "frequency_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "trend_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "fatigue_evidence": {
+          "status": "abstained",
+          "downstream_allowed": false
+        },
+        "fatigue_rule": {
+          "status": "abstained",
+          "downstream_allowed": false
+        },
+        "explainable_inference": {
+          "status": "abstained",
+          "downstream_allowed": false
+        }
+      }
+    },
+    "fail_short_duration": {
+      "analysis_status": "abstained",
+      "qc_status": "fail",
+      "qc_reason_codes": [
+        "ACTIVE_DURATION_TOO_SHORT"
+      ],
+      "technical_conclusion": "abstained",
+      "confidence_category": "not_available",
+      "inference_status": "abstained",
+      "final_downstream_allowed": false,
+      "stage_statuses": {
+        "ingestion": {
+          "status": "completed",
+          "downstream_allowed": true
+        },
+        "qc": {
+          "status": "fail",
+          "downstream_allowed": false
+        },
+        "preprocessing": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "windowing": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "time_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "spectral_estimation": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "frequency_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "trend_features": {
+          "status": "blocked",
+          "downstream_allowed": false
+        },
+        "fatigue_evidence": {
+          "status": "abstained",
+          "downstream_allowed": false
+        },
+        "fatigue_rule": {
+          "status": "abstained",
+          "downstream_allowed": false
+        },
+        "explainable_inference": {
+          "status": "abstained",
+          "downstream_allowed": false
+        }
+      }
+    }
+  },
+  "source_report_sha256": "bdd85af9d4bcf45c9f5f70be401be94ce97308902ebd8ce79e46731c891380e1",
+  "limitations": [
+    "Baseline khóa software behavior trên synthetic fixtures, không khóa clinical truth.",
+    "Exact payload hash được kỳ vọng trong cùng environment; cross-environment cần numerical review.",
+    "Mọi thay đổi profile/config/code có chủ đích phải tạo baseline version mới."
+  ]
+}

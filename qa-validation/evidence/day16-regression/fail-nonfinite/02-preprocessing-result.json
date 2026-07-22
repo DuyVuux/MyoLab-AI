@@ -1,0 +1,28 @@
+{
+  "schema_version": "preprocessing-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_NONFINITE",
+  "status": "blocked",
+  "downstream_allowed": false,
+  "config": {
+    "config_id": "preprocess_v0.1",
+    "execution_mode": "offline_zero_phase"
+  },
+  "inherited_qc": {
+    "status": "fail",
+    "reason_codes": [
+      "NONFINITE_RATIO_EXCESSIVE"
+    ]
+  },
+  "reason_codes": [
+    "PREPROCESSING_BLOCKED_BY_QC",
+    "NONFINITE_RATIO_EXCESSIVE"
+  ],
+  "steps": [],
+  "signal_summary": null,
+  "limitations": [
+    "Thông số 20–400 Hz là mặc định kỹ thuật cho MVP-0, chưa phải ngưỡng lâm sàng đã xác nhận tại site.",
+    "sosfiltfilt dùng toàn bộ bản ghi và không phù hợp cho streaming thời gian thực.",
+    "Notch 50 Hz chỉ chạy khi QC phát hiện POWERLINE_NOISE_HIGH.",
+    "Không nội suy NaN/Inf và không sửa clipping hoặc motion artifact trong v0.1."
+  ]
+}

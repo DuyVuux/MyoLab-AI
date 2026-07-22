@@ -1,0 +1,247 @@
+{
+  "schema_version": "qc-result.v0.1",
+  "session_id": "SYNTH_D4_WARN_MOTION",
+  "status": "warning",
+  "analysis_allowed": true,
+  "checks": [
+    {
+      "check_id": "protocol_compatibility",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "signal_protocol": {
+          "id": "quad-isometric-60s",
+          "version": "0.1.0"
+        },
+        "loaded_protocol": {
+          "id": "quad-isometric-60s",
+          "version": "0.1.0"
+        },
+        "target_muscle": "vastus_lateralis",
+        "channel_muscles": [
+          "vastus_lateralis"
+        ],
+        "required_session_parameter": "target_mvc_percent",
+        "required_session_parameter_present": true
+      }
+    },
+    {
+      "check_id": "sampling_rate",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "declared_sampling_rate_hz": 1000.0,
+        "inferred_sampling_rate_hz": 1000.0000000005542,
+        "protocol_minimum_sampling_rate_hz": 1000.0,
+        "relative_error": 5.542233338928781e-13,
+        "configured_relative_tolerance": 0.01,
+        "relative_timing_jitter_median": 1.776356839401235e-12
+      }
+    },
+    {
+      "check_id": "active_duration",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "active_phase_id": "active_contraction",
+        "marker_duration_s": 60.0,
+        "active_sample_count": 60000,
+        "active_sample_span_s": 60.0,
+        "required_duration_s": 60.0,
+        "minimum_fraction": 0.9,
+        "minimum_accepted_duration_s": 54.0
+      }
+    },
+    {
+      "check_id": "channel_completeness",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "minimum_usable_channel_count": 1,
+        "total_channel_count": 1,
+        "usable_channel_ids": [
+          "VL_R_01"
+        ],
+        "unusable_channel_ids": [],
+        "length_mismatch_channel_ids": []
+      }
+    },
+    {
+      "check_id": "nonfinite_ratio",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "scope": "active_phase",
+        "channel_nonfinite_ratios": {
+          "VL_R_01": 0.0
+        },
+        "maximum_nonfinite_ratio": 0.0,
+        "warning_fraction": 0.001,
+        "fail_fraction": 0.01
+      }
+    },
+    {
+      "check_id": "flatline",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "scope": "active_phase",
+        "minimum_contiguous_duration_ms": 250.0,
+        "warning_total_fraction": 0.01,
+        "fail_total_fraction": 0.05,
+        "maximum_flatline_fraction": 0.0,
+        "channels": {
+          "VL_R_01": {
+            "total_fraction": 0.0,
+            "longest_run_samples": 1,
+            "longest_run_duration_s": 0.001,
+            "tolerance_uV": 0.0002129892993974886,
+            "qualifying_run_count": 0
+          }
+        },
+        "threshold_status": "unit_or_scale_aware_required"
+      }
+    },
+    {
+      "check_id": "clipping_saturation",
+      "status": "pass",
+      "severity": "warning",
+      "reason_codes": [],
+      "details": {
+        "scope": "active_phase",
+        "channel_repeated_extrema_fractions": {
+          "VL_R_01": 3.3333333333333335e-05
+        },
+        "maximum_repeated_extrema_fraction": 3.3333333333333335e-05,
+        "warning_fraction": 0.005,
+        "fail_candidate_fraction": 0.02,
+        "status_policy": "warning_only_until_device_calibrated",
+        "interpretation": "Vendor-neutral heuristic; ADC rail is unknown."
+      }
+    },
+    {
+      "check_id": "powerline_noise",
+      "status": "pass",
+      "severity": "warning",
+      "reason_codes": [],
+      "details": {
+        "scope": "active_phase",
+        "line_frequency_hz": 50.0,
+        "integration_half_width_hz": 1.0,
+        "maximum_powerline_ratio": 0.011790760895171408,
+        "maximum_powerline_ratio_is_infinite": false,
+        "warning_power_ratio": 0.2,
+        "fail_candidate_power_ratio": 0.4,
+        "status_policy": "warning_only_in_qc_v0.1",
+        "channels": {
+          "VL_R_01": {
+            "ratio": 0.011790760895171408,
+            "ratio_is_infinite": false,
+            "numerator_power": 67.32269778111855,
+            "denominator_power": 5709.783989317328,
+            "line_band_hz": [
+              49.0,
+              51.0
+            ],
+            "analysis_band_hz": [
+              20.0,
+              400.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "check_id": "low_frequency_motion_artifact",
+      "status": "warning",
+      "severity": "warning",
+      "reason_codes": [
+        "MOTION_ARTIFACT_HIGH"
+      ],
+      "details": {
+        "scope": "active_phase",
+        "maximum_motion_ratio": 4.240470190975636,
+        "maximum_motion_ratio_is_infinite": false,
+        "warning_power_ratio": 0.3,
+        "fail_candidate_power_ratio": 0.6,
+        "status_policy": "warning_only_in_qc_v0.1",
+        "channels": {
+          "VL_R_01": {
+            "ratio": 4.240470190975636,
+            "ratio_is_infinite": false,
+            "low_band_power": 24212.16880361008,
+            "analysis_band_power": 5709.783989317328,
+            "low_band_hz": [
+              0.5,
+              20.0
+            ],
+            "analysis_band_hz": [
+              20.0,
+              400.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "check_id": "baseline_noise",
+      "status": "not_run",
+      "severity": "warning",
+      "reason_codes": [],
+      "details": {
+        "required_phase_id": "baseline_rest",
+        "phase_available": true,
+        "absolute_threshold_enabled": false,
+        "reason": "Absolute/device-calibrated baseline-noise threshold is disabled in qc_v0.1; no SNR or pass/fail value is fabricated."
+      }
+    },
+    {
+      "check_id": "mfcv_eligibility",
+      "status": "not_applicable",
+      "severity": "info",
+      "reason_codes": [
+        "MFCV_LINEAR_ARRAY_NOT_CONFIRMED",
+        "MFCV_INTERELECTRODE_DISTANCE_UNKNOWN",
+        "MFCV_ORIENTATION_NOT_CONFIRMED",
+        "MFCV_INSUFFICIENT_ADJACENT_CHANNELS"
+      ],
+      "details": {
+        "capability_only": true,
+        "linear_array_confirmed": false,
+        "interelectrode_distance_mm": null,
+        "orientation_along_fibres_confirmed": false,
+        "channel_count": 1,
+        "minimum_adjacent_channels": 3,
+        "sampling_rate_hz": 1000.0,
+        "minimum_sampling_rate_hz": 1000.0,
+        "adjacent_correlation_threshold_reference": 0.75,
+        "adjacent_correlation_evaluated": false,
+        "adjacent_correlations": [],
+        "threshold_status": "research_reference_not_clinically_validated",
+        "cv_calculated": false
+      }
+    }
+  ],
+  "reason_codes": [
+    "MOTION_ARTIFACT_HIGH"
+  ],
+  "mfcv": {
+    "eligible": false,
+    "reason_codes": [
+      "MFCV_LINEAR_ARRAY_NOT_CONFIRMED",
+      "MFCV_INTERELECTRODE_DISTANCE_UNKNOWN",
+      "MFCV_ORIENTATION_NOT_CONFIRMED",
+      "MFCV_INSUFFICIENT_ADJACENT_CHANNELS"
+    ]
+  },
+  "abstention": {
+    "required": false,
+    "reason": null
+  }
+}

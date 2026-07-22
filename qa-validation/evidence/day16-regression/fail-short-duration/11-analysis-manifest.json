@@ -1,0 +1,184 @@
+{
+  "schema_version": "offline-analysis-manifest.v0.1",
+  "analysis_id": "ANALYSIS-d25e8b03b2bd0f2f",
+  "analysis_fingerprint_sha256": "d25e8b03b2bd0f2f9a861d404ad29506831bd2ce62d22993e214dafe3636c4e2",
+  "session_id": "SYNTH_D4_FAIL_SHORT_DURATION",
+  "status": "abstained",
+  "execution_mode": "offline_file_based",
+  "source": {
+    "manifest_file_name": "qc_fail_short_duration.manifest.json",
+    "source_hash_sha256": "f374f60f1737e29697209d9e5c55d2bd1c348a88238dc4b82aae688ec463ae46"
+  },
+  "pipeline": {
+    "config_id": "offline_analysis_mvp0",
+    "config_hashes": {
+      "fatigue_evidence": "c2d7033a6272d12ed6b0c7f8affc4e2b1486ee8bcd24cd2b876adaaf8f32fa46",
+      "fatigue_rule": "803726ca4fdd8caef294e906bb375faa07347ec61f84f07849dc69d77c0216bc",
+      "frequency_features": "5564cee72bab9a8430d65cdb7e21130be2f6e9aed14b4d8850c39ea585b04657",
+      "offline_analysis_profile": "a85e4eb503e3bd335e9c60d96e2f3e374b2399ef7ccc61538471a8f44358f6bc",
+      "preprocessing": "844e19bb7da7161deadd51c3aeece0ddebf314e0c57b112f96bbf269454e56fa",
+      "protocol": "130a6a0c95d6bff0eb57880c261b343c87d0e5a54c4537815c006ec069c847f2",
+      "qc": "c93b857fca0fa392546795e74422da4ec002c3dcc21ccf7eee3c1ee73b167017",
+      "spectral_estimation": "5d61d0e5bad62e0caabda49df6593eb160fdc45fef91086554177cc3d95b134e",
+      "technical_confidence": "e5b92ff93c43da3c1f12fdc8a18f25a4e26edf188cfe0d98da7b7c2683610d80",
+      "time_features": "a450d807b398fcb8d99d365d8f13eb4ed5f2b102428af3d24126c17b58c768a2",
+      "trend_features": "c254f2ab77bed227ee211a818f93362c377fe453e822bc09fbfcd3b94232acd1",
+      "windowing": "31b8a43efb9a360369d2b2af5b15bea0eadc4f6935abe5475e299a0d3d5c33c8"
+    },
+    "stage_records": [
+      {
+        "stage_id": "ingestion",
+        "status": "completed",
+        "downstream_allowed": true,
+        "output_file": "00-ingestion-summary.json",
+        "output_payload_sha256": "76fd4858bf70881345d84f286dac44560731580ec06ed300c76bf35409344c5d",
+        "config_id": null,
+        "reason_codes": []
+      },
+      {
+        "stage_id": "qc",
+        "status": "fail",
+        "downstream_allowed": false,
+        "output_file": "01-qc-result.json",
+        "output_payload_sha256": "e67e5e50aff15ea8cba679cd0be04b20b3cc20bcea0326e19ed0b15dd1e6efed",
+        "config_id": null,
+        "reason_codes": [
+          "ACTIVE_DURATION_TOO_SHORT"
+        ]
+      },
+      {
+        "stage_id": "preprocessing",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "02-preprocessing-result.json",
+        "output_payload_sha256": "1e35a5aa94ceef6bd761ae2460821d0c202976716a5589e70025456b8daa4087",
+        "config_id": "preprocess_v0.1",
+        "reason_codes": [
+          "PREPROCESSING_BLOCKED_BY_QC",
+          "ACTIVE_DURATION_TOO_SHORT"
+        ]
+      },
+      {
+        "stage_id": "windowing",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "03-windowing-result.json",
+        "output_payload_sha256": "b47f37315fbca2df6ca48becd1feeeb6549a4b743299d1cb2cb446001f9b3f28",
+        "config_id": "windowing_v0.1",
+        "reason_codes": [
+          "WINDOWING_BLOCKED_BY_PREPROCESSING",
+          "PREPROCESSING_BLOCKED_BY_QC",
+          "ACTIVE_DURATION_TOO_SHORT"
+        ]
+      },
+      {
+        "stage_id": "time_features",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "04-time-domain-features.json",
+        "output_payload_sha256": "6934a29345620a18cd36576592482fb2b791a5e5dd5bb9e3f71f7e58c3cac653",
+        "config_id": "features_semg_v0.1",
+        "reason_codes": [
+          "FEATURE_EXTRACTION_BLOCKED_BY_WINDOWING"
+        ]
+      },
+      {
+        "stage_id": "spectral_estimation",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "05-spectral-estimation.json",
+        "output_payload_sha256": "35d89396260c3d2ba9cf34f574b8aa5715ab9b71774b1fd0af4726d517222bd5",
+        "config_id": "spectral_estimation_v0.1",
+        "reason_codes": [
+          "SPECTRAL_ESTIMATION_BLOCKED_BY_WINDOWING"
+        ]
+      },
+      {
+        "stage_id": "frequency_features",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "06-frequency-features.json",
+        "output_payload_sha256": "a5198e76a3ae6734fca778d99839a7431c0b70616ee5cc44c761852391fa7745",
+        "config_id": "frequency_features_v0.1",
+        "reason_codes": [
+          "FREQ_FEATURE_BLOCKED_BY_SPECTRAL"
+        ]
+      },
+      {
+        "stage_id": "trend_features",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "07-trend-features.json",
+        "output_payload_sha256": "614f25ad7049f3ddee18fe4d5507190a0b0dcc02794a8991a5d734932c65302a",
+        "config_id": "trend_features_v0.1",
+        "reason_codes": [
+          "TREND_BLOCKED_BY_UPSTREAM"
+        ]
+      },
+      {
+        "stage_id": "fatigue_evidence",
+        "status": "abstained",
+        "downstream_allowed": false,
+        "output_file": "08-fatigue-evidence.json",
+        "output_payload_sha256": "5ccfabe90705313aaa5209a58e1abc7e9e36f3a80cc6582646137226b0b4ce7e",
+        "config_id": "fatigue_evidence_v0.1",
+        "reason_codes": [
+          "EVIDENCE_ABSTAINED_BY_TREND"
+        ]
+      },
+      {
+        "stage_id": "fatigue_rule",
+        "status": "abstained",
+        "downstream_allowed": false,
+        "output_file": "09-fatigue-rule.json",
+        "output_payload_sha256": "b52b9a4c53650a61a1d819cf317205db0ab764fff7cce711a51f857d0d8093d0",
+        "config_id": "fatigue_rule_v0.1",
+        "reason_codes": [
+          "RULE_ABSTAINED_BY_EVIDENCE"
+        ]
+      },
+      {
+        "stage_id": "explainable_inference",
+        "status": "abstained",
+        "downstream_allowed": false,
+        "output_file": "10-explainable-inference.json",
+        "output_payload_sha256": "c9b2948993f7b064725a27c4a6fc81a0443c8b628db208660ea8feffff479721",
+        "config_id": "technical_confidence_v0.1",
+        "reason_codes": [
+          "INFERENCE_ABSTAINED_BY_RULE"
+        ]
+      }
+    ]
+  },
+  "final": {
+    "technical_conclusion": "abstained",
+    "engineering_confidence_category": "not_available",
+    "clinical_use_allowed": false,
+    "human_review_required": true
+  },
+  "runtime_versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "semg_core": "0.1.0"
+  },
+  "safety": {
+    "quality_gate_blocks_unsafe_analysis": true,
+    "abstention_is_first_class_output": true,
+    "no_raw_samples_in_json": true,
+    "no_direct_patient_identifier_in_output": true,
+    "no_probability": true,
+    "no_frs": true,
+    "no_diagnosis": true,
+    "no_treatment_recommendation": true,
+    "no_return_to_play_decision": true,
+    "human_review_required": true,
+    "clinical_use_allowed": false,
+    "synthetic_data_is_not_clinical_evidence": true
+  },
+  "limitations": [
+    "Pipeline MVP-0 chỉ được kiểm chứng trên synthetic fixtures và generic CSV contract.",
+    "Output là technical analysis package, chưa phải clinical report cuối cùng.",
+    "Không có FRS, MFCV thực tế, ML local hoặc clinical calibration trong phiên bản này."
+  ]
+}

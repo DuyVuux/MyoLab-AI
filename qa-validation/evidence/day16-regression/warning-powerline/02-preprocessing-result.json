@@ -1,0 +1,130 @@
+{
+  "schema_version": "preprocessing-result.v0.1",
+  "session_id": "SYNTH_D4_WARN_POWERLINE",
+  "status": "completed",
+  "downstream_allowed": true,
+  "config": {
+    "config_id": "preprocess_v0.1",
+    "execution_mode": "offline_zero_phase"
+  },
+  "inherited_qc": {
+    "status": "warning",
+    "reason_codes": [
+      "POWERLINE_NOISE_HIGH"
+    ]
+  },
+  "reason_codes": [],
+  "steps": [
+    {
+      "step_id": "mean_center",
+      "status": "applied",
+      "parameters": {
+        "scope": "full_recording_per_channel"
+      },
+      "reason": null
+    },
+    {
+      "step_id": "butterworth_bandpass",
+      "status": "applied",
+      "parameters": {
+        "order": 4,
+        "low_cut_hz": 20.0,
+        "high_cut_hz": 400.0,
+        "representation": "second_order_sections",
+        "implementation": "sosfiltfilt"
+      },
+      "reason": null
+    },
+    {
+      "step_id": "conditional_powerline_notch",
+      "status": "applied",
+      "parameters": {
+        "line_frequency_hz": 50.0,
+        "q_factor": 30.0,
+        "trigger_reason_code": "POWERLINE_NOISE_HIGH"
+      },
+      "reason": null
+    },
+    {
+      "step_id": "resampling",
+      "status": "skipped",
+      "parameters": {},
+      "reason": "MVP-0 giữ native sampling rate"
+    },
+    {
+      "step_id": "rectification",
+      "status": "skipped",
+      "parameters": {},
+      "reason": "Không rectify đường tín hiệu dùng cho MDF/MNF"
+    },
+    {
+      "step_id": "envelope",
+      "status": "skipped",
+      "parameters": {},
+      "reason": "Đường visualization được hoãn sang phase sau"
+    }
+  ],
+  "signal_summary": {
+    "session_id": "SYNTH_D4_WARN_POWERLINE",
+    "sampling_rate_hz": 1000.0,
+    "sample_count": 70000,
+    "channel_count": 1,
+    "protocol_ref": {
+      "id": "quad-isometric-60s",
+      "version": "0.1.0"
+    },
+    "phase_markers": [
+      {
+        "phase_id": "baseline_rest",
+        "start_s": 0.0,
+        "end_s": 5.0,
+        "duration_s": 5.0
+      },
+      {
+        "phase_id": "active_contraction",
+        "start_s": 5.0,
+        "end_s": 65.0,
+        "duration_s": 60.0
+      },
+      {
+        "phase_id": "recovery",
+        "start_s": 65.0,
+        "end_s": 70.0,
+        "duration_s": 5.0
+      }
+    ],
+    "source_file_name": "qc_warning_powerline.csv",
+    "source_hash_sha256": "29d706f83641d5d2409ff0a286da0ea802c249573a07594704c9b06f3b8cb3e2",
+    "preprocess_config_id": "preprocess_v0.1",
+    "combined_output_hash_sha256": "8b2a570a8f18e3e22dce549f8756e94185c70075516cde29d9be4b77ee97c996",
+    "edge_guard_samples": 250,
+    "channels": [
+      {
+        "channel_id": "VL_R_01",
+        "muscle": "vastus_lateralis",
+        "side": "right",
+        "role": "bipolar_semg",
+        "canonical_unit": "uV",
+        "sample_count": 70000,
+        "finite_ratio": 1.0,
+        "valid_sample_ratio": 0.9928571428571429,
+        "output_hash_sha256": "154de535d15e2fabb772542b70219265351446e374f8e1093f74b07a949c7e94",
+        "qa_diagnostics": {
+          "input_mean_uV": 0.006767632510085635,
+          "output_mean_uV": 0.00018644796073613787,
+          "input_std_uV": 160.83850702616724,
+          "output_std_uV": 70.22605764787147,
+          "sample_count": 70000,
+          "output_hash_sha256": "154de535d15e2fabb772542b70219265351446e374f8e1093f74b07a949c7e94",
+          "notch_applied": true
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Thông số 20–400 Hz là mặc định kỹ thuật cho MVP-0, chưa phải ngưỡng lâm sàng đã xác nhận tại site.",
+    "sosfiltfilt dùng toàn bộ bản ghi và không phù hợp cho streaming thời gian thực.",
+    "Notch 50 Hz chỉ chạy khi QC phát hiện POWERLINE_NOISE_HIGH.",
+    "Không nội suy NaN/Inf và không sửa clipping hoặc motion artifact trong v0.1."
+  ]
+}

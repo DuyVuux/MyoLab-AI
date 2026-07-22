@@ -1,0 +1,159 @@
+{
+  "schema_version": "explainable-inference-result.v0.1",
+  "session_id": "SYNTH_D4_WARN_MOTION",
+  "status": "completed_with_warnings",
+  "downstream_allowed": true,
+  "abstention": false,
+  "config": {
+    "config_id": "technical_confidence_v0.1",
+    "output_scope": "technical_demo_and_review_only",
+    "clinical_use_allowed": false,
+    "outputs_probability": false,
+    "outputs_frs": false,
+    "outputs_diagnosis": false,
+    "clinical_validation_status": "not_validated"
+  },
+  "upstream_rule": {
+    "config_id": "fatigue_rule_v0.1",
+    "result_hash_sha256": "dedb9e251215655ea7de5a9cbf947af3951e654d864dbf58410769f87a691254"
+  },
+  "technical_conclusion": "supported_pattern",
+  "technical_confidence": {
+    "raw_score_0_to_1": 0.8657452698358701,
+    "final_score_0_to_1": 0.8657452698358701,
+    "category": "engineering_high",
+    "score_is_probability": false,
+    "clinical_calibration_status": "not_calibrated",
+    "components": [
+      {
+        "component_id": "qc_quality",
+        "score_0_to_1": 0.75,
+        "weight": 0.35,
+        "weighted_contribution": 0.26249999999999996,
+        "reason_code": "QC_STATUS_WARNING",
+        "details": {
+          "qc_status": "warning"
+        }
+      },
+      {
+        "component_id": "usable_window_ratio",
+        "score_0_to_1": 1.0,
+        "weight": 0.25,
+        "weighted_contribution": 0.25,
+        "reason_code": "USABLE_WINDOW_RATIO_MIN_OF_FEATURE_FAMILIES",
+        "details": {
+          "time_domain_ratio": 1.0,
+          "frequency_domain_ratio": 1.0
+        }
+      },
+      {
+        "component_id": "trend_quality",
+        "score_0_to_1": 0.7662263491793508,
+        "weight": 0.2,
+        "weighted_contribution": 0.15324526983587017,
+        "reason_code": "MEAN_CLIPPED_R_SQUARED",
+        "details": {
+          "computed_trend_count": 4,
+          "mean_clipped_r_squared": 0.7662263491793508
+        }
+      },
+      {
+        "component_id": "evidence_consistency",
+        "score_0_to_1": 1.0,
+        "weight": 0.2,
+        "weighted_contribution": 0.2,
+        "reason_code": "PATTERN_CONSISTENCY_MAPPING",
+        "details": {
+          "channel_pattern_count": 1,
+          "mean_pattern_consistency": 1.0
+        }
+      }
+    ],
+    "cap_reason_code": null
+  },
+  "explainability": {
+    "summary_vi": "Quan sát thấy mẫu biến đổi tín hiệu đáp ứng quy tắc kỹ thuật v0.1 trong protocol hiện tại; cần người có chuyên môn xem xét cùng bối cảnh đo.",
+    "decision_basis": [
+      {
+        "code": "BASIS_FREQUENCY_DOMAIN_SUPPORT",
+        "text_vi": "Miền tần số có xu hướng hỗ trợ mẫu biến đổi được định nghĩa trước.",
+        "source_domains": [
+          "frequency"
+        ],
+        "source_features": [
+          "mdf",
+          "mnf"
+        ],
+        "channel_id": "VL_R_01"
+      },
+      {
+        "code": "BASIS_AMPLITUDE_DOMAIN_SUPPORT",
+        "text_vi": "Miền biên độ có xu hướng hỗ trợ mẫu biến đổi được định nghĩa trước.",
+        "source_domains": [
+          "amplitude"
+        ],
+        "source_features": [
+          "rms",
+          "mav"
+        ],
+        "channel_id": "VL_R_01"
+      }
+    ],
+    "counterevidence": [],
+    "feature_observations": [
+      {
+        "channel_id": "VL_R_01",
+        "feature_name": "rms",
+        "support_status": "supporting",
+        "percent_change": 48.732096801345925,
+        "normalized_slope_percent_per_min": 62.72307333085728,
+        "r_squared": 0.6938922781109802
+      },
+      {
+        "channel_id": "VL_R_01",
+        "feature_name": "mav",
+        "support_status": "supporting",
+        "percent_change": 49.11847546650579,
+        "normalized_slope_percent_per_min": 62.287646572253436,
+        "r_squared": 0.6755885582017029
+      },
+      {
+        "channel_id": "VL_R_01",
+        "feature_name": "mdf",
+        "support_status": "supporting",
+        "percent_change": -23.966755010288182,
+        "normalized_slope_percent_per_min": -31.122655030754714,
+        "r_squared": 0.7307616396301263
+      },
+      {
+        "channel_id": "VL_R_01",
+        "feature_name": "mnf",
+        "support_status": "supporting",
+        "percent_change": -29.338491086735175,
+        "normalized_slope_percent_per_min": -37.01623083893514,
+        "r_squared": 0.964662920774594
+      }
+    ],
+    "wording_guard": {
+      "status": "passed",
+      "hits": []
+    }
+  },
+  "reason_codes": [
+    "INFERENCE_COMPLETED_WITH_QC_WARNING"
+  ],
+  "limitations": [
+    "Engineering confidence chỉ phản ánh chất lượng nội bộ của pipeline và mức đồng thuận evidence; không phải xác suất mỏi.",
+    "Trọng số 0.35/0.25/0.20/0.20 là engineering defaults chưa được local hoặc clinical validation.",
+    "Confidence cao không khắc phục protocol sai, electrode placement sai hoặc label yếu.",
+    "Output chỉ dùng cho technical demo/review cho đến khi hoàn tất external validation."
+  ],
+  "safety": {
+    "human_review_required": true,
+    "is_diagnosis": false,
+    "is_treatment_recommendation": false,
+    "is_return_to_play_decision": false,
+    "synthetic_data_is_clinical_evidence": false
+  },
+  "result_hash_sha256": "647c150a9da78ac777e4939910117963d1a5047ff0efb62cf7941e9719626683"
+}

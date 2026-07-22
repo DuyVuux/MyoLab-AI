@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mvp0-regression-report.schema.json",
+  "title": "MVP-0 Regression Report v0.1",
+  "type": "object",
+  "required": ["schema_version", "profile", "evidence_scope", "clinical_validation_status", "passed", "scenarios", "repeatability", "safety_summary", "runtime_versions", "regression_fingerprint_sha256", "limitations"],
+  "properties": {
+    "schema_version": {"const": "mvp0-regression-report.v0.1"},
+    "generated_at_utc": {"type": "string"},
+    "profile": {
+      "type": "object",
+      "required": ["profile_id", "profile_sha256", "pipeline_config", "pipeline_config_sha256"],
+      "properties": {
+        "profile_id": {"const": "mvp0_regression_v0.1"},
+        "profile_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "pipeline_config": {"type": "string"},
+        "pipeline_config_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "evidence_scope": {"const": "software_analytical_regression_on_synthetic_fixtures_only"},
+    "clinical_validation_status": {"const": "not_validated"},
+    "passed": {"type": "boolean"},
+    "scenarios": {"type": "array", "minItems": 7, "items": {"type": "object", "required": ["scenario_id", "passed", "signature", "checks", "package_verification"]}},
+    "repeatability": {"type": "object", "required": ["same_analysis_fingerprint", "same_stage_payload_hashes"]},
+    "safety_summary": {"type": "object"},
+    "runtime_versions": {"type": "object", "required": ["python", "numpy", "scipy"]},
+    "regression_fingerprint_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

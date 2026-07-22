@@ -1,0 +1,25 @@
+{
+  "schema_version": "windowing-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_SHORT_DURATION",
+  "status": "blocked",
+  "downstream_allowed": false,
+  "config": {
+    "config_id": "windowing_v0.1"
+  },
+  "inherited_preprocessing": {
+    "status": "blocked"
+  },
+  "reason_codes": [
+    "WINDOWING_BLOCKED_BY_PREPROCESSING",
+    "PREPROCESSING_BLOCKED_BY_QC",
+    "ACTIVE_DURATION_TOO_SHORT"
+  ],
+  "plan": null,
+  "limitations": [
+    "Cửa sổ miền thời gian 500 ms, miền tần số 1000 ms và overlap 50% là mặc định kỹ thuật MVP-0 lấy từ protocol v0.1; chưa phải cấu hình tối ưu cho mọi cơ, task hoặc thiết bị.",
+    "Quasi-stationarity trong mỗi cửa sổ là giả định phân tích, không phải sự thật được bảo đảm.",
+    "Hann taper chưa được áp dụng ở tầng windowing; tầng MDF/MNF/Welch sẽ áp dụng sau.",
+    "Cửa sổ invalid không được nội suy hoặc sửa im lặng trong v0.1.",
+    "So sánh longitudinal chỉ hợp lệ khi protocol, preprocessing, windowing và feature versions tương thích."
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "schema_version": "offline-analysis-manifest.v0.1",
+  "analysis_id": "ANALYSIS-d4349558a5da2e15",
+  "analysis_fingerprint_sha256": "d4349558a5da2e1548afea3dfd45712205de16caf58e73b526f9156f63f018ee",
+  "session_id": "SYNTH_D4_FAIL_NONFINITE",
+  "status": "abstained",
+  "execution_mode": "offline_file_based",
+  "source": {
+    "manifest_file_name": "qc_fail_nonfinite.manifest.json",
+    "source_hash_sha256": "9b4dbe305125461f056a1b8e721f896d66b63087f58bf7ffe901399a5b418172"
+  },
+  "pipeline": {
+    "config_id": "offline_analysis_mvp0",
+    "config_hashes": {
+      "fatigue_evidence": "c2d7033a6272d12ed6b0c7f8affc4e2b1486ee8bcd24cd2b876adaaf8f32fa46",
+      "fatigue_rule": "803726ca4fdd8caef294e906bb375faa07347ec61f84f07849dc69d77c0216bc",
+      "frequency_features": "5564cee72bab9a8430d65cdb7e21130be2f6e9aed14b4d8850c39ea585b04657",
+      "offline_analysis_profile": "a85e4eb503e3bd335e9c60d96e2f3e374b2399ef7ccc61538471a8f44358f6bc",
+      "preprocessing": "844e19bb7da7161deadd51c3aeece0ddebf314e0c57b112f96bbf269454e56fa",
+      "protocol": "130a6a0c95d6bff0eb57880c261b343c87d0e5a54c4537815c006ec069c847f2",
+      "qc": "c93b857fca0fa392546795e74422da4ec002c3dcc21ccf7eee3c1ee73b167017",
+      "spectral_estimation": "5d61d0e5bad62e0caabda49df6593eb160fdc45fef91086554177cc3d95b134e",
+      "technical_confidence": "e5b92ff93c43da3c1f12fdc8a18f25a4e26edf188cfe0d98da7b7c2683610d80",
+      "time_features": "a450d807b398fcb8d99d365d8f13eb4ed5f2b102428af3d24126c17b58c768a2",
+      "trend_features": "c254f2ab77bed227ee211a818f93362c377fe453e822bc09fbfcd3b94232acd1",
+      "windowing": "31b8a43efb9a360369d2b2af5b15bea0eadc4f6935abe5475e299a0d3d5c33c8"
+    },
+    "stage_records": [
+      {
+        "stage_id": "ingestion",
+        "status": "completed",
+        "downstream_allowed": true,
+        "output_file": "00-ingestion-summary.json",
+        "output_payload_sha256": "c4cdeeda7a08e1769be80f16f13635de88056b31c08e51e1efedeaf15cd6bb45",
+        "config_id": null,
+        "reason_codes": []
+      },
+      {
+        "stage_id": "qc",
+        "status": "fail",
+        "downstream_allowed": false,
+        "output_file": "01-qc-result.json",
+        "output_payload_sha256": "66c228ffd14be910f980dd61d69d22275af542200b61e2c9c7f6c4faa0f7eb2c",
+        "config_id": null,
+        "reason_codes": [
+          "NONFINITE_RATIO_EXCESSIVE"
+        ]
+      },
+      {
+        "stage_id": "preprocessing",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "02-preprocessing-result.json",
+        "output_payload_sha256": "6e3e94b9d8514aa1f1e84256e937a4fe4559d5b7bbffb1427262778957805dd8",
+        "config_id": "preprocess_v0.1",
+        "reason_codes": [
+          "PREPROCESSING_BLOCKED_BY_QC",
+          "NONFINITE_RATIO_EXCESSIVE"
+        ]
+      },
+      {
+        "stage_id": "windowing",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "03-windowing-result.json",
+        "output_payload_sha256": "ebda197630124a9c2ecb35cf65da490a8213caefea46b6e84b4d6d548e487dc6",
+        "config_id": "windowing_v0.1",
+        "reason_codes": [
+          "WINDOWING_BLOCKED_BY_PREPROCESSING",
+          "PREPROCESSING_BLOCKED_BY_QC",
+          "NONFINITE_RATIO_EXCESSIVE"
+        ]
+      },
+      {
+        "stage_id": "time_features",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "04-time-domain-features.json",
+        "output_payload_sha256": "ede16f8e8fc8f10d33adb7f44e8c3b45f9d5cae3eb06e75fccd145c42be8ee1b",
+        "config_id": "features_semg_v0.1",
+        "reason_codes": [
+          "FEATURE_EXTRACTION_BLOCKED_BY_WINDOWING"
+        ]
+      },
+      {
+        "stage_id": "spectral_estimation",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "05-spectral-estimation.json",
+        "output_payload_sha256": "5de1f2a0a7ab3ede3097942a26351b64c2827f0ce8da506328d12599bb4f044f",
+        "config_id": "spectral_estimation_v0.1",
+        "reason_codes": [
+          "SPECTRAL_ESTIMATION_BLOCKED_BY_WINDOWING"
+        ]
+      },
+      {
+        "stage_id": "frequency_features",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "06-frequency-features.json",
+        "output_payload_sha256": "ccd5ec4ea87e8cb9a3079a9784c91f6db108e95e9089d22116d6996702124a45",
+        "config_id": "frequency_features_v0.1",
+        "reason_codes": [
+          "FREQ_FEATURE_BLOCKED_BY_SPECTRAL"
+        ]
+      },
+      {
+        "stage_id": "trend_features",
+        "status": "blocked",
+        "downstream_allowed": false,
+        "output_file": "07-trend-features.json",
+        "output_payload_sha256": "5ba8910ed11b064e229968565a604789fe0040ddc06683547c5907135c1bca2d",
+        "config_id": "trend_features_v0.1",
+        "reason_codes": [
+          "TREND_BLOCKED_BY_UPSTREAM"
+        ]
+      },
+      {
+        "stage_id": "fatigue_evidence",
+        "status": "abstained",
+        "downstream_allowed": false,
+        "output_file": "08-fatigue-evidence.json",
+        "output_payload_sha256": "1612328fdcf5482ed0657b758114257673816af13d482029a05a286878b9e7bc",
+        "config_id": "fatigue_evidence_v0.1",
+        "reason_codes": [
+          "EVIDENCE_ABSTAINED_BY_TREND"
+        ]
+      },
+      {
+        "stage_id": "fatigue_rule",
+        "status": "abstained",
+        "downstream_allowed": false,
+        "output_file": "09-fatigue-rule.json",
+        "output_payload_sha256": "e58a91f5fc00aac0deae201c1cc484f93b956b27aa04cb272013a9a5aea15fd6",
+        "config_id": "fatigue_rule_v0.1",
+        "reason_codes": [
+          "RULE_ABSTAINED_BY_EVIDENCE"
+        ]
+      },
+      {
+        "stage_id": "explainable_inference",
+        "status": "abstained",
+        "downstream_allowed": false,
+        "output_file": "10-explainable-inference.json",
+        "output_payload_sha256": "b77e10e284f3408b4c7d85a9d0ccdb3a3976804eb75d3ba7bbeaae40cd14c408",
+        "config_id": "technical_confidence_v0.1",
+        "reason_codes": [
+          "INFERENCE_ABSTAINED_BY_RULE"
+        ]
+      }
+    ]
+  },
+  "final": {
+    "technical_conclusion": "abstained",
+    "engineering_confidence_category": "not_available",
+    "clinical_use_allowed": false,
+    "human_review_required": true
+  },
+  "runtime_versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "semg_core": "0.1.0"
+  },
+  "safety": {
+    "quality_gate_blocks_unsafe_analysis": true,
+    "abstention_is_first_class_output": true,
+    "no_raw_samples_in_json": true,
+    "no_direct_patient_identifier_in_output": true,
+    "no_probability": true,
+    "no_frs": true,
+    "no_diagnosis": true,
+    "no_treatment_recommendation": true,
+    "no_return_to_play_decision": true,
+    "human_review_required": true,
+    "clinical_use_allowed": false,
+    "synthetic_data_is_not_clinical_evidence": true
+  },
+  "limitations": [
+    "Pipeline MVP-0 chỉ được kiểm chứng trên synthetic fixtures và generic CSV contract.",
+    "Output là technical analysis package, chưa phải clinical report cuối cùng.",
+    "Không có FRS, MFCV thực tế, ML local hoặc clinical calibration trong phiên bản này."
+  ]
+}

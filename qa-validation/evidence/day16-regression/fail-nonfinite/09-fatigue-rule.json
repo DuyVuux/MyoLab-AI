@@ -1,0 +1,36 @@
+{
+  "schema_version": "fatigue-rule-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_NONFINITE",
+  "status": "abstained",
+  "downstream_allowed": false,
+  "abstention": true,
+  "config": {
+    "config_id": "fatigue_rule_v0.1",
+    "engine_type": "explainable_rule_engine",
+    "threshold_status": "provisional_engineering_defaults",
+    "outputs_probability": false,
+    "outputs_frs": false,
+    "outputs_diagnosis": false,
+    "clinical_validation_status": "not_validated"
+  },
+  "upstream_evidence": {
+    "config_id": "fatigue_evidence_v0.1",
+    "result_hash_sha256": null
+  },
+  "overall": {
+    "technical_conclusion": "abstained",
+    "rule_strength": "not_applicable"
+  },
+  "reason_codes": [
+    "RULE_ABSTAINED_BY_EVIDENCE"
+  ],
+  "result_hash_sha256": null,
+  "channels": [],
+  "limitations": [
+    "Rule v0.1 chỉ ánh xạ structured evidence theo logic kỹ thuật tạm thời; chưa được local hoặc clinical validation.",
+    "supported_pattern không đồng nghĩa chẩn đoán mỏi cơ và không cho phép tự động điều chỉnh điều trị.",
+    "no_supported_pattern chỉ có nghĩa chưa đáp ứng rule v0.1, không có nghĩa cơ không mỏi.",
+    "Amplitude-only pattern được giữ ở trạng thái inconclusive vì RMS/MAV phụ thuộc lực, recruitment và setup điện cực."
+  ],
+  "required_review": "human_review_required_before_any_future_clinical_use"
+}

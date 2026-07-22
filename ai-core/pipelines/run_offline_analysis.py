@@ -9,7 +9,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
-from offline_analysis import run_offline_analysis
+from offline_analysis import run_offline_analysis  # type: ignore
 
 
 def parse_args() -> argparse.Namespace:

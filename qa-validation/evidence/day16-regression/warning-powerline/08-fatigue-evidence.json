@@ -1,0 +1,125 @@
+{
+  "schema_version": "fatigue-evidence-result.v0.1",
+  "session_id": "SYNTH_D4_WARN_POWERLINE",
+  "status": "completed",
+  "downstream_allowed": true,
+  "abstention": false,
+  "config": {
+    "config_id": "fatigue_evidence_v0.1",
+    "threshold_status": "provisional_engineering_defaults_not_clinically_validated",
+    "outputs_fatigue_status": false,
+    "outputs_probability": false,
+    "outputs_frs": false,
+    "clinical_validation_status": "not_validated"
+  },
+  "upstream_trend": {
+    "config_id": "trend_features_v0.1",
+    "result_hash_sha256": "344f704ee7b4e5cb04b17f014d018b3953e350a3da637fae546d35197114b6d2"
+  },
+  "summary": {
+    "total_channel_count": 1,
+    "evaluated_channel_count": 1
+  },
+  "reason_codes": [],
+  "result_hash_sha256": "bc9cce3e175627d27192a7f24ffc9b436978ebd59c1312404f98fbd9668adce1",
+  "channels": [
+    {
+      "channel": {
+        "channel_id": "VL_R_01",
+        "muscle": "vastus_lateralis",
+        "side": "right",
+        "role": "bipolar_semg"
+      },
+      "phase_id": "active_contraction",
+      "status": "evaluated",
+      "domains": {
+        "frequency": "supporting",
+        "amplitude": "supporting"
+      },
+      "pattern_category": "multi_domain_change_pattern_observed",
+      "feature_assessments": [
+        {
+          "feature_name": "rms",
+          "domain": "amplitude",
+          "expected_direction": "increase",
+          "support_status": "supporting",
+          "observed": {
+            "percent_change": 48.5810466376218,
+            "normalized_slope_percent_per_min": 62.03616621422952,
+            "r_squared": 0.6792862077082004
+          },
+          "threshold": {
+            "minimum_percent_change_magnitude": 5.0,
+            "minimum_normalized_slope_magnitude_percent_per_min": 5.0,
+            "minimum_r_squared": 0.2,
+            "status": "provisional_engineering_default_not_clinically_validated"
+          },
+          "reason_code": "EXPECTED_DIRECTION_AND_MAGNITUDE_OBSERVED"
+        },
+        {
+          "feature_name": "mav",
+          "domain": "amplitude",
+          "expected_direction": "increase",
+          "support_status": "supporting",
+          "observed": {
+            "percent_change": 49.26532806141812,
+            "normalized_slope_percent_per_min": 61.54560451495535,
+            "r_squared": 0.6611050066545627
+          },
+          "threshold": {
+            "minimum_percent_change_magnitude": 5.0,
+            "minimum_normalized_slope_magnitude_percent_per_min": 5.0,
+            "minimum_r_squared": 0.2,
+            "status": "provisional_engineering_default_not_clinically_validated"
+          },
+          "reason_code": "EXPECTED_DIRECTION_AND_MAGNITUDE_OBSERVED"
+        },
+        {
+          "feature_name": "mdf",
+          "domain": "frequency",
+          "expected_direction": "decrease",
+          "support_status": "supporting",
+          "observed": {
+            "percent_change": -23.903798593826036,
+            "normalized_slope_percent_per_min": -30.92095298270872,
+            "r_squared": 0.7287886870688469
+          },
+          "threshold": {
+            "minimum_percent_change_magnitude": 5.0,
+            "minimum_normalized_slope_magnitude_percent_per_min": 5.0,
+            "minimum_r_squared": 0.2,
+            "status": "provisional_engineering_default_not_clinically_validated"
+          },
+          "reason_code": "EXPECTED_DIRECTION_AND_MAGNITUDE_OBSERVED"
+        },
+        {
+          "feature_name": "mnf",
+          "domain": "frequency",
+          "expected_direction": "decrease",
+          "support_status": "supporting",
+          "observed": {
+            "percent_change": -29.33152662307014,
+            "normalized_slope_percent_per_min": -36.72414542218655,
+            "r_squared": 0.9595524965698294
+          },
+          "threshold": {
+            "minimum_percent_change_magnitude": 5.0,
+            "minimum_normalized_slope_magnitude_percent_per_min": 5.0,
+            "minimum_r_squared": 0.2,
+            "status": "provisional_engineering_default_not_clinically_validated"
+          },
+          "reason_code": "EXPECTED_DIRECTION_AND_MAGNITUDE_OBSERVED"
+        }
+      ],
+      "reason_codes": [],
+      "interpretation_guard": "Đây là mẫu biến đổi tín hiệu theo threshold kỹ thuật tạm thời, không phải chẩn đoán hoặc khuyến nghị."
+    }
+  ],
+  "limitations": [
+    "Threshold 5% và R² 0.20 chỉ là engineering defaults để kiểm thử logic, chưa được clinical/local validation.",
+    "Amplitude increase không đặc hiệu cho fatigue vì còn phụ thuộc force, recruitment, electrode và normalization.",
+    "Frequency decline có thể hỗ trợ fatigue-like pattern trong protocol phù hợp nhưng không phải chẩn đoán độc lập.",
+    "Kết quả là structured evidence; không phải fatigue status, probability, FRS hoặc treatment recommendation."
+  ],
+  "required_review": "human_review_required_before_any_future_clinical_use"
+}

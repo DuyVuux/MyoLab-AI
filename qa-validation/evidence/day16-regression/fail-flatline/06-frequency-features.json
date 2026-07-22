@@ -1,0 +1,44 @@
+{
+  "schema_version": "frequency-feature-extraction-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_FLATLINE",
+  "status": "blocked",
+  "downstream_allowed": false,
+  "config": {
+    "config_id": "frequency_features_v0.1",
+    "feature_names": [
+      "mdf",
+      "mnf"
+    ],
+    "profile_id": "frequency_domain",
+    "frequency_unit": "Hz",
+    "psd_unit": "uV^2/Hz",
+    "clinical_validation_status": "not_validated"
+  },
+  "inherited_spectral": {
+    "status": "blocked",
+    "config_id": "spectral_estimation_v0.1",
+    "result_hash_sha256": null
+  },
+  "analysis_band": null,
+  "summary": {
+    "channel_count": 0,
+    "total_row_count": 0,
+    "computed_row_count": 0,
+    "not_computed_row_count": 0,
+    "usable_window_ratio": 0.0,
+    "not_computed_reason_counts": {}
+  },
+  "reason_codes": [
+    "FREQ_FEATURE_BLOCKED_BY_SPECTRAL"
+  ],
+  "result_hash_sha256": null,
+  "rows": [],
+  "limitations": [
+    "MDF/MNF được tính trên PSD 20-400 Hz từ spectral_estimation_v0.1; thay đổi dải hoặc estimator sẽ thay đổi feature.",
+    "MDF dùng quy ước nội suy tuyến tính trong bin; kết quả phụ thuộc frequency resolution và PSD estimator.",
+    "MDF/MNF của một cửa sổ chưa phải bằng chứng mỏi cơ; cần xu hướng theo thời gian và bối cảnh protocol.",
+    "Không có clinical threshold hoặc classification trong Day 10.",
+    "Evidence hiện tại là synthetic/software verification, không phải clinical validation.",
+    "Spectral stage không cho phép downstream."
+  ]
+}

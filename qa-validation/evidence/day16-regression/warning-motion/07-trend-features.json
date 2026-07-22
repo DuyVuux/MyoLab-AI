@@ -1,0 +1,297 @@
+{
+  "schema_version": "trend-feature-extraction-result.v0.1",
+  "session_id": "SYNTH_D4_WARN_MOTION",
+  "status": "completed",
+  "downstream_allowed": true,
+  "config": {
+    "config_id": "trend_features_v0.1",
+    "feature_names": [
+      "rms",
+      "mav",
+      "mdf",
+      "mnf"
+    ],
+    "fit_method": "ordinary_least_squares",
+    "independent_variable": "center_time_s",
+    "inferential_statistics_emitted": false,
+    "clinical_validation_status": "not_validated"
+  },
+  "upstream": {
+    "time_domain": {
+      "config_id": "features_semg_v0.1",
+      "result_hash_sha256": "bfac159522e0e0b8aa5bca41ef032d2854547d493694d4b8e0a33d4c50525c5f"
+    },
+    "frequency_domain": {
+      "config_id": "frequency_features_v0.1",
+      "result_hash_sha256": "67cc9d8260cfd3b8927cc4f9df44bfa0cade9d94034d4fc97c256b41598ac2ca"
+    },
+    "preprocess_config_id": "preprocess_v0.1",
+    "source_signal_hash_sha256": "6f42058f150bd0660bbf194b6c14a164c6ba52407ff95bbaa4e6a52b4cb55ac1",
+    "window_plan_hash_sha256": "8a1357e086f1f2a094ff7710e41889fc8c5daf2f2eb19653b7e19b32d31b129e"
+  },
+  "summary": {
+    "total_channel_count": 1,
+    "computed_channel_count": 1,
+    "not_computed_channel_count": 0
+  },
+  "reason_codes": [],
+  "result_hash_sha256": "1d0e6206438fc01e26d6c112ffbb99a3c3e0db1d9e47bb37a4525b17f33f1699",
+  "channels": [
+    {
+      "channel": {
+        "channel_id": "VL_R_01",
+        "muscle": "vastus_lateralis",
+        "side": "right",
+        "role": "bipolar_semg"
+      },
+      "phase_id": "active_contraction",
+      "status": "computed",
+      "trends": {
+        "rms": {
+          "schema_version": "feature-trend-record.v0.1",
+          "feature_name": "rms",
+          "value_unit": "uV",
+          "source_profile_id": "time_domain",
+          "status": "computed",
+          "metrics": {
+            "point_count": 239,
+            "time_span": {
+              "start_s": 5.25,
+              "end_s": 64.75,
+              "duration_s": 59.5
+            },
+            "linear_fit": {
+              "slope_per_s": {
+                "value": 0.6253294673198587,
+                "unit": "uV/s"
+              },
+              "slope_per_min": {
+                "value": 37.519768039191526,
+                "unit": "uV/min"
+              },
+              "intercept": {
+                "value": 53.01342133058016,
+                "unit": "uV"
+              },
+              "r_squared": 0.6938922781109802,
+              "rmse": {
+                "value": 7.163800694759994,
+                "unit": "uV"
+              }
+            },
+            "early_late_summary": {
+              "early_median": {
+                "value": 59.818127599199244,
+                "unit": "uV"
+              },
+              "late_median": {
+                "value": 88.96875544559364,
+                "unit": "uV"
+              },
+              "absolute_change": {
+                "value": 29.1506278463944,
+                "unit": "uV"
+              },
+              "percent_change": {
+                "value": 48.732096801345925,
+                "unit": "%"
+              },
+              "early_block_count": 48,
+              "late_block_count": 48
+            },
+            "normalized_slope_percent_per_min": {
+              "value": 62.72307333085728,
+              "unit": "%/min"
+            }
+          },
+          "reason_codes": []
+        },
+        "mav": {
+          "schema_version": "feature-trend-record.v0.1",
+          "feature_name": "mav",
+          "value_unit": "uV",
+          "source_profile_id": "time_domain",
+          "status": "computed",
+          "metrics": {
+            "point_count": 239,
+            "time_span": {
+              "start_s": 5.25,
+              "end_s": 64.75,
+              "duration_s": 59.5
+            },
+            "linear_fit": {
+              "slope_per_s": {
+                "value": 0.4961323172518917,
+                "unit": "uV/s"
+              },
+              "slope_per_min": {
+                "value": 29.767939035113503,
+                "unit": "uV/min"
+              },
+              "intercept": {
+                "value": 42.693472486101314,
+                "unit": "uV"
+              },
+              "r_squared": 0.6755885582017029,
+              "rmse": {
+                "value": 5.929907800604529,
+                "unit": "uV"
+              }
+            },
+            "early_late_summary": {
+              "early_median": {
+                "value": 47.79108005081362,
+                "unit": "uV"
+              },
+              "late_median": {
+                "value": 71.26532998075065,
+                "unit": "uV"
+              },
+              "absolute_change": {
+                "value": 23.47424992993703,
+                "unit": "uV"
+              },
+              "percent_change": {
+                "value": 49.11847546650579,
+                "unit": "%"
+              },
+              "early_block_count": 48,
+              "late_block_count": 48
+            },
+            "normalized_slope_percent_per_min": {
+              "value": 62.287646572253436,
+              "unit": "%/min"
+            }
+          },
+          "reason_codes": []
+        },
+        "mdf": {
+          "schema_version": "feature-trend-record.v0.1",
+          "feature_name": "mdf",
+          "value_unit": "Hz",
+          "source_profile_id": "frequency_domain",
+          "status": "computed",
+          "metrics": {
+            "point_count": 119,
+            "time_span": {
+              "start_s": 5.5,
+              "end_s": 64.5,
+              "duration_s": 59.0
+            },
+            "linear_fit": {
+              "slope_per_s": {
+                "value": -0.5704466175640746,
+                "unit": "Hz/s"
+              },
+              "slope_per_min": {
+                "value": -34.22679705384447,
+                "unit": "Hz/min"
+              },
+              "intercept": {
+                "value": 117.9600118049029,
+                "unit": "Hz"
+              },
+              "r_squared": 0.7307616396301263,
+              "rmse": {
+                "value": 5.947118813985504,
+                "unit": "Hz"
+              }
+            },
+            "early_late_summary": {
+              "early_median": {
+                "value": 109.97389849941246,
+                "unit": "Hz"
+              },
+              "late_median": {
+                "value": 83.61672367079528,
+                "unit": "Hz"
+              },
+              "absolute_change": {
+                "value": -26.357174828617175,
+                "unit": "Hz"
+              },
+              "percent_change": {
+                "value": -23.966755010288182,
+                "unit": "%"
+              },
+              "early_block_count": 24,
+              "late_block_count": 24
+            },
+            "normalized_slope_percent_per_min": {
+              "value": -31.122655030754714,
+              "unit": "%/min"
+            }
+          },
+          "reason_codes": []
+        },
+        "mnf": {
+          "schema_version": "feature-trend-record.v0.1",
+          "feature_name": "mnf",
+          "value_unit": "Hz",
+          "source_profile_id": "frequency_domain",
+          "status": "computed",
+          "metrics": {
+            "point_count": 119,
+            "time_span": {
+              "start_s": 5.5,
+              "end_s": 64.5,
+              "duration_s": 59.0
+            },
+            "linear_fit": {
+              "slope_per_s": {
+                "value": -0.7309299684880745,
+                "unit": "Hz/s"
+              },
+              "slope_per_min": {
+                "value": -43.855798109284464,
+                "unit": "Hz/min"
+              },
+              "intercept": {
+                "value": 125.3121896651792,
+                "unit": "Hz"
+              },
+              "r_squared": 0.964662920774594,
+              "rmse": {
+                "value": 2.4027816621910256,
+                "unit": "Hz"
+              }
+            },
+            "early_late_summary": {
+              "early_median": {
+                "value": 118.4772115240734,
+                "unit": "Hz"
+              },
+              "late_median": {
+                "value": 83.71778538127074,
+                "unit": "Hz"
+              },
+              "absolute_change": {
+                "value": -34.75942614280265,
+                "unit": "Hz"
+              },
+              "percent_change": {
+                "value": -29.338491086735175,
+                "unit": "%"
+              },
+              "early_block_count": 24,
+              "late_block_count": 24
+            },
+            "normalized_slope_percent_per_min": {
+              "value": -37.01623083893514,
+              "unit": "%/min"
+            }
+          },
+          "reason_codes": []
+        }
+      },
+      "reason_codes": []
+    }
+  ],
+  "limitations": [
+    "OLS trên overlapping windows tạo descriptive slope; không được diễn giải p-value hoặc sample independence.",
+    "RMS/MAV dùng time-domain windows 500 ms; MDF/MNF dùng frequency-domain windows 1000 ms nên không align từng row.",
+    "Trend được fit độc lập theo feature và center_time_s, không nội suy một profile sang profile khác.",
+    "Percent change dùng median khối đầu/cuối; phụ thuộc early/late fraction đã version hóa.",
+    "Day 11 chưa tạo fatigue evidence, fatigue status, FRS hoặc khuyến nghị lâm sàng."
+  ]
+}

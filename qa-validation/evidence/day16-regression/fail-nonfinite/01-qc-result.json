@@ -1,0 +1,183 @@
+{
+  "schema_version": "qc-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_NONFINITE",
+  "status": "fail",
+  "analysis_allowed": false,
+  "checks": [
+    {
+      "check_id": "protocol_compatibility",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "signal_protocol": {
+          "id": "quad-isometric-60s",
+          "version": "0.1.0"
+        },
+        "loaded_protocol": {
+          "id": "quad-isometric-60s",
+          "version": "0.1.0"
+        },
+        "target_muscle": "vastus_lateralis",
+        "channel_muscles": [
+          "vastus_lateralis"
+        ],
+        "required_session_parameter": "target_mvc_percent",
+        "required_session_parameter_present": true
+      }
+    },
+    {
+      "check_id": "sampling_rate",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "declared_sampling_rate_hz": 1000.0,
+        "inferred_sampling_rate_hz": 1000.0000000005542,
+        "protocol_minimum_sampling_rate_hz": 1000.0,
+        "relative_error": 5.542233338928781e-13,
+        "configured_relative_tolerance": 0.01,
+        "relative_timing_jitter_median": 1.776356839401235e-12
+      }
+    },
+    {
+      "check_id": "active_duration",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "active_phase_id": "active_contraction",
+        "marker_duration_s": 60.0,
+        "active_sample_count": 60000,
+        "active_sample_span_s": 60.0,
+        "required_duration_s": 60.0,
+        "minimum_fraction": 0.9,
+        "minimum_accepted_duration_s": 54.0
+      }
+    },
+    {
+      "check_id": "channel_completeness",
+      "status": "pass",
+      "severity": "critical",
+      "reason_codes": [],
+      "details": {
+        "minimum_usable_channel_count": 1,
+        "total_channel_count": 1,
+        "usable_channel_ids": [
+          "VL_R_01"
+        ],
+        "unusable_channel_ids": [],
+        "length_mismatch_channel_ids": []
+      }
+    },
+    {
+      "check_id": "nonfinite_ratio",
+      "status": "fail",
+      "severity": "critical",
+      "reason_codes": [
+        "NONFINITE_RATIO_EXCESSIVE"
+      ],
+      "details": {
+        "scope": "active_phase",
+        "channel_nonfinite_ratios": {
+          "VL_R_01": 0.020000000000000018
+        },
+        "maximum_nonfinite_ratio": 0.020000000000000018,
+        "warning_fraction": 0.001,
+        "fail_fraction": 0.01
+      }
+    },
+    {
+      "check_id": "flatline",
+      "status": "not_run",
+      "severity": "warning",
+      "reason_codes": [],
+      "details": {
+        "reason": "Skipped because a preceding critical structural check failed.",
+        "diagnostic_mode": false
+      }
+    },
+    {
+      "check_id": "clipping_saturation",
+      "status": "not_run",
+      "severity": "warning",
+      "reason_codes": [],
+      "details": {
+        "reason": "Skipped because a preceding critical structural check failed.",
+        "diagnostic_mode": false
+      }
+    },
+    {
+      "check_id": "powerline_noise",
+      "status": "not_run",
+      "severity": "warning",
+      "reason_codes": [],
+      "details": {
+        "reason": "Skipped because a preceding critical structural check failed.",
+        "diagnostic_mode": false
+      }
+    },
+    {
+      "check_id": "low_frequency_motion_artifact",
+      "status": "not_run",
+      "severity": "warning",
+      "reason_codes": [],
+      "details": {
+        "reason": "Skipped because a preceding critical structural check failed.",
+        "diagnostic_mode": false
+      }
+    },
+    {
+      "check_id": "baseline_noise",
+      "status": "not_run",
+      "severity": "warning",
+      "reason_codes": [],
+      "details": {
+        "reason": "Skipped because a preceding critical structural check failed.",
+        "diagnostic_mode": false
+      }
+    },
+    {
+      "check_id": "mfcv_eligibility",
+      "status": "not_applicable",
+      "severity": "info",
+      "reason_codes": [
+        "MFCV_LINEAR_ARRAY_NOT_CONFIRMED",
+        "MFCV_INTERELECTRODE_DISTANCE_UNKNOWN",
+        "MFCV_ORIENTATION_NOT_CONFIRMED",
+        "MFCV_INSUFFICIENT_ADJACENT_CHANNELS"
+      ],
+      "details": {
+        "capability_only": true,
+        "linear_array_confirmed": false,
+        "interelectrode_distance_mm": null,
+        "orientation_along_fibres_confirmed": false,
+        "channel_count": 1,
+        "minimum_adjacent_channels": 3,
+        "sampling_rate_hz": 1000.0,
+        "minimum_sampling_rate_hz": 1000.0,
+        "adjacent_correlation_threshold_reference": 0.75,
+        "adjacent_correlation_evaluated": false,
+        "adjacent_correlations": [],
+        "threshold_status": "research_reference_not_clinically_validated",
+        "cv_calculated": false
+      }
+    }
+  ],
+  "reason_codes": [
+    "NONFINITE_RATIO_EXCESSIVE"
+  ],
+  "mfcv": {
+    "eligible": false,
+    "reason_codes": [
+      "MFCV_LINEAR_ARRAY_NOT_CONFIRMED",
+      "MFCV_INTERELECTRODE_DISTANCE_UNKNOWN",
+      "MFCV_ORIENTATION_NOT_CONFIRMED",
+      "MFCV_INSUFFICIENT_ADJACENT_CHANNELS"
+    ]
+  },
+  "abstention": {
+    "required": true,
+    "reason": "signal_or_protocol_not_sufficient"
+  }
+}

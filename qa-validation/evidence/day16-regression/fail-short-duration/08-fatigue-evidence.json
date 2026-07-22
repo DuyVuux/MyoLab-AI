@@ -1,0 +1,35 @@
+{
+  "schema_version": "fatigue-evidence-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_SHORT_DURATION",
+  "status": "abstained",
+  "downstream_allowed": false,
+  "abstention": true,
+  "config": {
+    "config_id": "fatigue_evidence_v0.1",
+    "threshold_status": "provisional_engineering_defaults_not_clinically_validated",
+    "outputs_fatigue_status": false,
+    "outputs_probability": false,
+    "outputs_frs": false,
+    "clinical_validation_status": "not_validated"
+  },
+  "upstream_trend": {
+    "config_id": "trend_features_v0.1",
+    "result_hash_sha256": null
+  },
+  "summary": {
+    "total_channel_count": 0,
+    "evaluated_channel_count": 0
+  },
+  "reason_codes": [
+    "EVIDENCE_ABSTAINED_BY_TREND"
+  ],
+  "result_hash_sha256": null,
+  "channels": [],
+  "limitations": [
+    "Threshold 5% và R² 0.20 chỉ là engineering defaults để kiểm thử logic, chưa được clinical/local validation.",
+    "Amplitude increase không đặc hiệu cho fatigue vì còn phụ thuộc force, recruitment, electrode và normalization.",
+    "Frequency decline có thể hỗ trợ fatigue-like pattern trong protocol phù hợp nhưng không phải chẩn đoán độc lập.",
+    "Kết quả là structured evidence; không phải fatigue status, probability, FRS hoặc treatment recommendation."
+  ],
+  "required_review": "human_review_required_before_any_future_clinical_use"
+}

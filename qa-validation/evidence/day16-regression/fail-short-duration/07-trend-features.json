@@ -1,0 +1,49 @@
+{
+  "schema_version": "trend-feature-extraction-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_SHORT_DURATION",
+  "status": "blocked",
+  "downstream_allowed": false,
+  "config": {
+    "config_id": "trend_features_v0.1",
+    "feature_names": [
+      "rms",
+      "mav",
+      "mdf",
+      "mnf"
+    ],
+    "fit_method": "ordinary_least_squares",
+    "independent_variable": "center_time_s",
+    "inferential_statistics_emitted": false,
+    "clinical_validation_status": "not_validated"
+  },
+  "upstream": {
+    "time_domain": {
+      "config_id": null,
+      "result_hash_sha256": null
+    },
+    "frequency_domain": {
+      "config_id": null,
+      "result_hash_sha256": null
+    },
+    "preprocess_config_id": null,
+    "source_signal_hash_sha256": null,
+    "window_plan_hash_sha256": null
+  },
+  "summary": {
+    "total_channel_count": 0,
+    "computed_channel_count": 0,
+    "not_computed_channel_count": 0
+  },
+  "reason_codes": [
+    "TREND_BLOCKED_BY_UPSTREAM"
+  ],
+  "result_hash_sha256": null,
+  "channels": [],
+  "limitations": [
+    "OLS trên overlapping windows tạo descriptive slope; không được diễn giải p-value hoặc sample independence.",
+    "RMS/MAV dùng time-domain windows 500 ms; MDF/MNF dùng frequency-domain windows 1000 ms nên không align từng row.",
+    "Trend được fit độc lập theo feature và center_time_s, không nội suy một profile sang profile khác.",
+    "Percent change dùng median khối đầu/cuối; phụ thuộc early/late fraction đã version hóa.",
+    "Day 11 chưa tạo fatigue evidence, fatigue status, FRS hoặc khuyến nghị lâm sàng."
+  ]
+}

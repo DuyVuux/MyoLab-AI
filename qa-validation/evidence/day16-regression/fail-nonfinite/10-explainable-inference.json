@@ -1,0 +1,57 @@
+{
+  "schema_version": "explainable-inference-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_NONFINITE",
+  "status": "abstained",
+  "downstream_allowed": false,
+  "abstention": true,
+  "config": {
+    "config_id": "technical_confidence_v0.1",
+    "output_scope": "technical_demo_and_review_only",
+    "clinical_use_allowed": false,
+    "outputs_probability": false,
+    "outputs_frs": false,
+    "outputs_diagnosis": false,
+    "clinical_validation_status": "not_validated"
+  },
+  "upstream_rule": {
+    "config_id": "fatigue_rule_v0.1",
+    "result_hash_sha256": null
+  },
+  "technical_conclusion": "abstained",
+  "technical_confidence": {
+    "raw_score_0_to_1": null,
+    "final_score_0_to_1": null,
+    "category": "not_available",
+    "score_is_probability": false,
+    "clinical_calibration_status": "not_calibrated",
+    "components": [],
+    "cap_reason_code": null
+  },
+  "explainability": {
+    "summary_vi": "Dữ liệu không đủ điều kiện để tạo kết luận kỹ thuật; xem reason codes trước khi cân nhắc đo lại.",
+    "decision_basis": [],
+    "counterevidence": [],
+    "feature_observations": [],
+    "wording_guard": {
+      "status": "passed",
+      "hits": []
+    }
+  },
+  "reason_codes": [
+    "INFERENCE_ABSTAINED_BY_RULE"
+  ],
+  "limitations": [
+    "Engineering confidence chỉ phản ánh chất lượng nội bộ của pipeline và mức đồng thuận evidence; không phải xác suất mỏi.",
+    "Trọng số 0.35/0.25/0.20/0.20 là engineering defaults chưa được local hoặc clinical validation.",
+    "Confidence cao không khắc phục protocol sai, electrode placement sai hoặc label yếu.",
+    "Output chỉ dùng cho technical demo/review cho đến khi hoàn tất external validation."
+  ],
+  "safety": {
+    "human_review_required": true,
+    "is_diagnosis": false,
+    "is_treatment_recommendation": false,
+    "is_return_to_play_decision": false,
+    "synthetic_data_is_clinical_evidence": false
+  },
+  "result_hash_sha256": null
+}

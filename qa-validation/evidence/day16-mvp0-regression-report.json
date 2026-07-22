@@ -1,0 +1,1900 @@
+{
+  "schema_version": "mvp0-regression-report.v0.1",
+  "generated_at_utc": "2026-07-22T08:16:39.024088+00:00",
+  "profile": {
+    "profile_id": "mvp0_regression_v0.1",
+    "profile_sha256": "1594dfdce40d16626ce7298f34eed5dbf558c8ac18f726a394d61e61f86258c0",
+    "pipeline_config": "ai-core/configs/offline_analysis_mvp0.yaml",
+    "pipeline_config_sha256": "a85e4eb503e3bd335e9c60d96e2f3e374b2399ef7ccc61538471a8f44358f6bc"
+  },
+  "evidence_scope": "software_analytical_regression_on_synthetic_fixtures_only",
+  "clinical_validation_status": "not_validated",
+  "passed": true,
+  "scenarios": [
+    {
+      "scenario_id": "golden",
+      "manifest_file": "golden_signal_01.manifest.json",
+      "analysis_fingerprint_sha256": "42668659cfc6c1b07b12ea1d3dd2888376c7d786285147cc0d4d9b48cb423043",
+      "passed": true,
+      "signature": {
+        "analysis_status": "completed",
+        "qc_status": "pass",
+        "qc_reason_codes": [],
+        "technical_conclusion": "supported_pattern",
+        "confidence_category": "engineering_high",
+        "inference_status": "completed",
+        "final_downstream_allowed": true,
+        "stage_statuses": {
+          "ingestion": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "qc": {
+            "status": "pass",
+            "downstream_allowed": true
+          },
+          "preprocessing": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "windowing": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "time_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "spectral_estimation": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "frequency_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "trend_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "fatigue_evidence": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "fatigue_rule": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "explainable_inference": {
+            "status": "completed",
+            "downstream_allowed": true
+          }
+        }
+      },
+      "checks": [
+        {
+          "check_id": "expected:qc_status",
+          "passed": true,
+          "expected": "pass",
+          "actual": "pass"
+        },
+        {
+          "check_id": "expected:analysis_status",
+          "passed": true,
+          "expected": "completed",
+          "actual": "completed"
+        },
+        {
+          "check_id": "expected:technical_conclusion",
+          "passed": true,
+          "expected": "supported_pattern",
+          "actual": "supported_pattern"
+        },
+        {
+          "check_id": "expected:confidence_category",
+          "passed": true,
+          "expected": "engineering_high",
+          "actual": "engineering_high"
+        },
+        {
+          "check_id": "expected:inference_status",
+          "passed": true,
+          "expected": "completed",
+          "actual": "completed"
+        },
+        {
+          "check_id": "expected:final_downstream_allowed",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        },
+        {
+          "check_id": "expected:qc_reason_codes",
+          "passed": true,
+          "expected_subset": [],
+          "actual": []
+        },
+        {
+          "check_id": "package_integrity",
+          "passed": true
+        },
+        {
+          "check_id": "time_domain_row_count",
+          "passed": true,
+          "actual": 239
+        },
+        {
+          "check_id": "frequency_domain_row_count",
+          "passed": true,
+          "actual": 119
+        },
+        {
+          "check_id": "computed_trend_channel_count",
+          "passed": true,
+          "actual": 1
+        },
+        {
+          "check_id": "engineering_confidence_range",
+          "passed": true,
+          "actual": 0.9532460713352229,
+          "expected_range": [
+            0.9,
+            1.0
+          ]
+        },
+        {
+          "check_id": "percent_change_range:rms",
+          "passed": true,
+          "actual": 48.73206799519612,
+          "expected_range": [
+            40.0,
+            60.0
+          ]
+        },
+        {
+          "check_id": "percent_change_range:mav",
+          "passed": true,
+          "actual": 49.11836296069771,
+          "expected_range": [
+            40.0,
+            60.0
+          ]
+        },
+        {
+          "check_id": "percent_change_range:mdf",
+          "passed": true,
+          "actual": -23.966755010301405,
+          "expected_range": [
+            -35.0,
+            -15.0
+          ]
+        },
+        {
+          "check_id": "percent_change_range:mnf",
+          "passed": true,
+          "actual": -29.338491086731164,
+          "expected_range": [
+            -40.0,
+            -20.0
+          ]
+        }
+      ],
+      "package_verification": {
+        "passed": true,
+        "checks": [
+          {
+            "check_id": "stage_file:ingestion",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:ingestion",
+            "passed": true,
+            "expected": "c8543eacd3f28794040b4c9861128447e183149c23135d3b0a89fa2f5f19d88d",
+            "actual": "c8543eacd3f28794040b4c9861128447e183149c23135d3b0a89fa2f5f19d88d"
+          },
+          {
+            "check_id": "stage_file:qc",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:qc",
+            "passed": true,
+            "expected": "9ed40bb6e97916b3c8dd135adaee9f2e342667fb48fdffdbad8874b9f0d1da37",
+            "actual": "9ed40bb6e97916b3c8dd135adaee9f2e342667fb48fdffdbad8874b9f0d1da37"
+          },
+          {
+            "check_id": "stage_file:preprocessing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:preprocessing",
+            "passed": true,
+            "expected": "7882e3b37810baa8d847f34c82a0fa5cf4f3bc4e8383aea6e504958f51e280aa",
+            "actual": "7882e3b37810baa8d847f34c82a0fa5cf4f3bc4e8383aea6e504958f51e280aa"
+          },
+          {
+            "check_id": "stage_file:windowing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:windowing",
+            "passed": true,
+            "expected": "9c82e4dec07bd3e3dd435040331c332b3f4277cce4e01e2a9074b2696f12e7e3",
+            "actual": "9c82e4dec07bd3e3dd435040331c332b3f4277cce4e01e2a9074b2696f12e7e3"
+          },
+          {
+            "check_id": "stage_file:time_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:time_features",
+            "passed": true,
+            "expected": "3e0ec178ad93bebf0f17821e7c4f20e5b807cf4f7d7eaeea0cc9c04289678f3f",
+            "actual": "3e0ec178ad93bebf0f17821e7c4f20e5b807cf4f7d7eaeea0cc9c04289678f3f"
+          },
+          {
+            "check_id": "stage_file:spectral_estimation",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:spectral_estimation",
+            "passed": true,
+            "expected": "c41190f1fd3ac5dfaab5f1db658bfbccc66f51432e74f361164fef28bacbfea3",
+            "actual": "c41190f1fd3ac5dfaab5f1db658bfbccc66f51432e74f361164fef28bacbfea3"
+          },
+          {
+            "check_id": "stage_file:frequency_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:frequency_features",
+            "passed": true,
+            "expected": "78a432ba73d0cf5df37100be9a1dc88dff571e7e1dd691fb1b4dee2bc6096608",
+            "actual": "78a432ba73d0cf5df37100be9a1dc88dff571e7e1dd691fb1b4dee2bc6096608"
+          },
+          {
+            "check_id": "stage_file:trend_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:trend_features",
+            "passed": true,
+            "expected": "433d75c2463b78c4b9a425f18e02e8c757a1ffc0e72361b49ac86cfdc4c241a3",
+            "actual": "433d75c2463b78c4b9a425f18e02e8c757a1ffc0e72361b49ac86cfdc4c241a3"
+          },
+          {
+            "check_id": "stage_file:fatigue_evidence",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_evidence",
+            "passed": true,
+            "expected": "c9e13394014054c666e02aa94e74ce133431da1c0a95c489b7fe7112e0eb580c",
+            "actual": "c9e13394014054c666e02aa94e74ce133431da1c0a95c489b7fe7112e0eb580c"
+          },
+          {
+            "check_id": "stage_file:fatigue_rule",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_rule",
+            "passed": true,
+            "expected": "5c2cab9a53dff8a7e4c5487846c870b4ccb6ecf753a1a4b72ee71140434d78ab",
+            "actual": "5c2cab9a53dff8a7e4c5487846c870b4ccb6ecf753a1a4b72ee71140434d78ab"
+          },
+          {
+            "check_id": "stage_file:explainable_inference",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:explainable_inference",
+            "passed": true,
+            "expected": "8112df55ed079079ea834530b3f359b2de35a86493eca9254749343e682c1e35",
+            "actual": "8112df55ed079079ea834530b3f359b2de35a86493eca9254749343e682c1e35"
+          },
+          {
+            "check_id": "forbidden_key_scan",
+            "passed": true,
+            "hits": []
+          },
+          {
+            "check_id": "clinical_use_disabled",
+            "passed": true
+          },
+          {
+            "check_id": "human_review_required",
+            "passed": true
+          }
+        ]
+      },
+      "numeric_anchors": {
+        "percent_changes": {
+          "rms": 48.73206799519612,
+          "mav": 49.11836296069771,
+          "mdf": -23.966755010301405,
+          "mnf": -29.338491086731164
+        },
+        "engineering_confidence": 0.9532460713352229,
+        "checks": [
+          {
+            "check_id": "time_domain_row_count",
+            "passed": true,
+            "actual": 239
+          },
+          {
+            "check_id": "frequency_domain_row_count",
+            "passed": true,
+            "actual": 119
+          },
+          {
+            "check_id": "computed_trend_channel_count",
+            "passed": true,
+            "actual": 1
+          },
+          {
+            "check_id": "engineering_confidence_range",
+            "passed": true,
+            "actual": 0.9532460713352229,
+            "expected_range": [
+              0.9,
+              1.0
+            ]
+          },
+          {
+            "check_id": "percent_change_range:rms",
+            "passed": true,
+            "actual": 48.73206799519612,
+            "expected_range": [
+              40.0,
+              60.0
+            ]
+          },
+          {
+            "check_id": "percent_change_range:mav",
+            "passed": true,
+            "actual": 49.11836296069771,
+            "expected_range": [
+              40.0,
+              60.0
+            ]
+          },
+          {
+            "check_id": "percent_change_range:mdf",
+            "passed": true,
+            "actual": -23.966755010301405,
+            "expected_range": [
+              -35.0,
+              -15.0
+            ]
+          },
+          {
+            "check_id": "percent_change_range:mnf",
+            "passed": true,
+            "actual": -29.338491086731164,
+            "expected_range": [
+              -40.0,
+              -20.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario_id": "warning_clipping",
+      "manifest_file": "qc_warning_clipping.manifest.json",
+      "analysis_fingerprint_sha256": "e6fabb55da91d6e100fabdb09522a4f72ee923bdf05220f57fa7b1b850ba10ae",
+      "passed": true,
+      "signature": {
+        "analysis_status": "completed_with_warnings",
+        "qc_status": "warning",
+        "qc_reason_codes": [
+          "CLIPPING_SUSPECTED"
+        ],
+        "technical_conclusion": "supported_pattern",
+        "confidence_category": "engineering_high",
+        "inference_status": "completed_with_warnings",
+        "final_downstream_allowed": true,
+        "stage_statuses": {
+          "ingestion": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "qc": {
+            "status": "warning",
+            "downstream_allowed": true
+          },
+          "preprocessing": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "windowing": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "time_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "spectral_estimation": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "frequency_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "trend_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "fatigue_evidence": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "fatigue_rule": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "explainable_inference": {
+            "status": "completed_with_warnings",
+            "downstream_allowed": true
+          }
+        }
+      },
+      "checks": [
+        {
+          "check_id": "expected:qc_status",
+          "passed": true,
+          "expected": "warning",
+          "actual": "warning"
+        },
+        {
+          "check_id": "expected:analysis_status",
+          "passed": true,
+          "expected": "completed_with_warnings",
+          "actual": "completed_with_warnings"
+        },
+        {
+          "check_id": "expected:technical_conclusion",
+          "passed": true,
+          "expected": "supported_pattern",
+          "actual": "supported_pattern"
+        },
+        {
+          "check_id": "expected:confidence_category",
+          "passed": true,
+          "expected": "engineering_high",
+          "actual": "engineering_high"
+        },
+        {
+          "check_id": "expected:inference_status",
+          "passed": true,
+          "expected": "completed_with_warnings",
+          "actual": "completed_with_warnings"
+        },
+        {
+          "check_id": "expected:final_downstream_allowed",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        },
+        {
+          "check_id": "expected:qc_reason_codes",
+          "passed": true,
+          "expected_subset": [
+            "CLIPPING_SUSPECTED"
+          ],
+          "actual": [
+            "CLIPPING_SUSPECTED"
+          ]
+        },
+        {
+          "check_id": "package_integrity",
+          "passed": true
+        }
+      ],
+      "package_verification": {
+        "passed": true,
+        "checks": [
+          {
+            "check_id": "stage_file:ingestion",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:ingestion",
+            "passed": true,
+            "expected": "5ab8d0eab13bc5ffa0dcbd38821ba949c2a0b1b07bb143d42631b8240afbb979",
+            "actual": "5ab8d0eab13bc5ffa0dcbd38821ba949c2a0b1b07bb143d42631b8240afbb979"
+          },
+          {
+            "check_id": "stage_file:qc",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:qc",
+            "passed": true,
+            "expected": "172478d1c2e6df98ce663c148ecf1047f1c2e21f986d309253917357b1e54e6b",
+            "actual": "172478d1c2e6df98ce663c148ecf1047f1c2e21f986d309253917357b1e54e6b"
+          },
+          {
+            "check_id": "stage_file:preprocessing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:preprocessing",
+            "passed": true,
+            "expected": "da4e8f85b46ab750cf4d605830ee4ea6b9d705bae401ace34393284c9a6da6c2",
+            "actual": "da4e8f85b46ab750cf4d605830ee4ea6b9d705bae401ace34393284c9a6da6c2"
+          },
+          {
+            "check_id": "stage_file:windowing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:windowing",
+            "passed": true,
+            "expected": "dcae18655f7c05510c5f98878c1ae7d7082d3d45de52b14b1322229d07ec22ba",
+            "actual": "dcae18655f7c05510c5f98878c1ae7d7082d3d45de52b14b1322229d07ec22ba"
+          },
+          {
+            "check_id": "stage_file:time_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:time_features",
+            "passed": true,
+            "expected": "924e8a2a4c710b205f2274f539dd5fdce5f32c22a48667033c6d4b7f08762340",
+            "actual": "924e8a2a4c710b205f2274f539dd5fdce5f32c22a48667033c6d4b7f08762340"
+          },
+          {
+            "check_id": "stage_file:spectral_estimation",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:spectral_estimation",
+            "passed": true,
+            "expected": "e3d166d8467f0cb884c0508dac7659740331131b49008371a274e82f6fc11607",
+            "actual": "e3d166d8467f0cb884c0508dac7659740331131b49008371a274e82f6fc11607"
+          },
+          {
+            "check_id": "stage_file:frequency_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:frequency_features",
+            "passed": true,
+            "expected": "490a8c71fcbd6bf1821bcbd8878cc9cf6441d81b7732173f786212e5869357c8",
+            "actual": "490a8c71fcbd6bf1821bcbd8878cc9cf6441d81b7732173f786212e5869357c8"
+          },
+          {
+            "check_id": "stage_file:trend_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:trend_features",
+            "passed": true,
+            "expected": "52bf5de8596c19af648be98348370506ace9503af41d12fb7381aa3c29dfb75a",
+            "actual": "52bf5de8596c19af648be98348370506ace9503af41d12fb7381aa3c29dfb75a"
+          },
+          {
+            "check_id": "stage_file:fatigue_evidence",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_evidence",
+            "passed": true,
+            "expected": "61afc2b95c505938b3fc8270f2f22366496d103d095485eb9630bc677819b46a",
+            "actual": "61afc2b95c505938b3fc8270f2f22366496d103d095485eb9630bc677819b46a"
+          },
+          {
+            "check_id": "stage_file:fatigue_rule",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_rule",
+            "passed": true,
+            "expected": "74be63148e47a1345d8faff0b55667356aa312e6d43dbeec272e924f484fff01",
+            "actual": "74be63148e47a1345d8faff0b55667356aa312e6d43dbeec272e924f484fff01"
+          },
+          {
+            "check_id": "stage_file:explainable_inference",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:explainable_inference",
+            "passed": true,
+            "expected": "cf57585b16dbbcce8738cddf6dd7b838a8c0ce861e869ea93c253142c88308d9",
+            "actual": "cf57585b16dbbcce8738cddf6dd7b838a8c0ce861e869ea93c253142c88308d9"
+          },
+          {
+            "check_id": "forbidden_key_scan",
+            "passed": true,
+            "hits": []
+          },
+          {
+            "check_id": "clinical_use_disabled",
+            "passed": true
+          },
+          {
+            "check_id": "human_review_required",
+            "passed": true
+          }
+        ]
+      },
+      "numeric_anchors": null
+    },
+    {
+      "scenario_id": "warning_motion",
+      "manifest_file": "qc_warning_motion_artifact.manifest.json",
+      "analysis_fingerprint_sha256": "27d995d60e09ed6073ccb04e4422d54671fc457a682d8cf14d1c1ae321ba3e20",
+      "passed": true,
+      "signature": {
+        "analysis_status": "completed_with_warnings",
+        "qc_status": "warning",
+        "qc_reason_codes": [
+          "MOTION_ARTIFACT_HIGH"
+        ],
+        "technical_conclusion": "supported_pattern",
+        "confidence_category": "engineering_high",
+        "inference_status": "completed_with_warnings",
+        "final_downstream_allowed": true,
+        "stage_statuses": {
+          "ingestion": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "qc": {
+            "status": "warning",
+            "downstream_allowed": true
+          },
+          "preprocessing": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "windowing": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "time_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "spectral_estimation": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "frequency_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "trend_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "fatigue_evidence": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "fatigue_rule": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "explainable_inference": {
+            "status": "completed_with_warnings",
+            "downstream_allowed": true
+          }
+        }
+      },
+      "checks": [
+        {
+          "check_id": "expected:qc_status",
+          "passed": true,
+          "expected": "warning",
+          "actual": "warning"
+        },
+        {
+          "check_id": "expected:analysis_status",
+          "passed": true,
+          "expected": "completed_with_warnings",
+          "actual": "completed_with_warnings"
+        },
+        {
+          "check_id": "expected:technical_conclusion",
+          "passed": true,
+          "expected": "supported_pattern",
+          "actual": "supported_pattern"
+        },
+        {
+          "check_id": "expected:confidence_category",
+          "passed": true,
+          "expected": "engineering_high",
+          "actual": "engineering_high"
+        },
+        {
+          "check_id": "expected:inference_status",
+          "passed": true,
+          "expected": "completed_with_warnings",
+          "actual": "completed_with_warnings"
+        },
+        {
+          "check_id": "expected:final_downstream_allowed",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        },
+        {
+          "check_id": "expected:qc_reason_codes",
+          "passed": true,
+          "expected_subset": [
+            "MOTION_ARTIFACT_HIGH"
+          ],
+          "actual": [
+            "MOTION_ARTIFACT_HIGH"
+          ]
+        },
+        {
+          "check_id": "package_integrity",
+          "passed": true
+        }
+      ],
+      "package_verification": {
+        "passed": true,
+        "checks": [
+          {
+            "check_id": "stage_file:ingestion",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:ingestion",
+            "passed": true,
+            "expected": "65451d17a2971ca7b2e9e2e73b8a4c72200b39a24af13380e7cf680585328f9c",
+            "actual": "65451d17a2971ca7b2e9e2e73b8a4c72200b39a24af13380e7cf680585328f9c"
+          },
+          {
+            "check_id": "stage_file:qc",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:qc",
+            "passed": true,
+            "expected": "342e65a7499b64151bed2e630dc16fe1e68aab5725f5f8950d0ef7ae951528a5",
+            "actual": "342e65a7499b64151bed2e630dc16fe1e68aab5725f5f8950d0ef7ae951528a5"
+          },
+          {
+            "check_id": "stage_file:preprocessing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:preprocessing",
+            "passed": true,
+            "expected": "2d7a8806e70362a2fa2fc1b042a38e888be83b3ca666e10877126d9724a2fced",
+            "actual": "2d7a8806e70362a2fa2fc1b042a38e888be83b3ca666e10877126d9724a2fced"
+          },
+          {
+            "check_id": "stage_file:windowing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:windowing",
+            "passed": true,
+            "expected": "1c123868efcbd7063a399f448b6777257f048e2a1e0429e2d989342374008170",
+            "actual": "1c123868efcbd7063a399f448b6777257f048e2a1e0429e2d989342374008170"
+          },
+          {
+            "check_id": "stage_file:time_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:time_features",
+            "passed": true,
+            "expected": "04b05ea1b111a0c9cf68e707b7acd24f87c395d247aa58b3745f6d8454161bda",
+            "actual": "04b05ea1b111a0c9cf68e707b7acd24f87c395d247aa58b3745f6d8454161bda"
+          },
+          {
+            "check_id": "stage_file:spectral_estimation",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:spectral_estimation",
+            "passed": true,
+            "expected": "25451b98e6ebef4d7d8e7b585f06ea71afc3af81a09c23a5ed4bf4ec67ace6a4",
+            "actual": "25451b98e6ebef4d7d8e7b585f06ea71afc3af81a09c23a5ed4bf4ec67ace6a4"
+          },
+          {
+            "check_id": "stage_file:frequency_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:frequency_features",
+            "passed": true,
+            "expected": "0a3095680987ad50368dbf56511f47831f12446e25f831c4cc319402ff1121e8",
+            "actual": "0a3095680987ad50368dbf56511f47831f12446e25f831c4cc319402ff1121e8"
+          },
+          {
+            "check_id": "stage_file:trend_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:trend_features",
+            "passed": true,
+            "expected": "56dbf1ed3bee1375d1e2d6ae1f6c94c87610f07304b70ae2e5aa92ba21b8be7c",
+            "actual": "56dbf1ed3bee1375d1e2d6ae1f6c94c87610f07304b70ae2e5aa92ba21b8be7c"
+          },
+          {
+            "check_id": "stage_file:fatigue_evidence",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_evidence",
+            "passed": true,
+            "expected": "f524472e02f2504730983b53a230f6fd8b7e3311903ed93eb4d71b8de41acb70",
+            "actual": "f524472e02f2504730983b53a230f6fd8b7e3311903ed93eb4d71b8de41acb70"
+          },
+          {
+            "check_id": "stage_file:fatigue_rule",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_rule",
+            "passed": true,
+            "expected": "7a396f13de86b111cd527d6a5a0c649b7af0aa6e15598fbb60d5183947fcb4c8",
+            "actual": "7a396f13de86b111cd527d6a5a0c649b7af0aa6e15598fbb60d5183947fcb4c8"
+          },
+          {
+            "check_id": "stage_file:explainable_inference",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:explainable_inference",
+            "passed": true,
+            "expected": "a7ce7e589b37bf7890f62a4ea0a6b5d3c472b401c3f0a710ce0bfdcc7c72b1d2",
+            "actual": "a7ce7e589b37bf7890f62a4ea0a6b5d3c472b401c3f0a710ce0bfdcc7c72b1d2"
+          },
+          {
+            "check_id": "forbidden_key_scan",
+            "passed": true,
+            "hits": []
+          },
+          {
+            "check_id": "clinical_use_disabled",
+            "passed": true
+          },
+          {
+            "check_id": "human_review_required",
+            "passed": true
+          }
+        ]
+      },
+      "numeric_anchors": null
+    },
+    {
+      "scenario_id": "warning_powerline",
+      "manifest_file": "qc_warning_powerline.manifest.json",
+      "analysis_fingerprint_sha256": "ed0e144a99f33a50af062b7c354113e3764fca16d001e227c7e01c307646a5c6",
+      "passed": true,
+      "signature": {
+        "analysis_status": "completed_with_warnings",
+        "qc_status": "warning",
+        "qc_reason_codes": [
+          "POWERLINE_NOISE_HIGH"
+        ],
+        "technical_conclusion": "supported_pattern",
+        "confidence_category": "engineering_high",
+        "inference_status": "completed_with_warnings",
+        "final_downstream_allowed": true,
+        "stage_statuses": {
+          "ingestion": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "qc": {
+            "status": "warning",
+            "downstream_allowed": true
+          },
+          "preprocessing": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "windowing": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "time_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "spectral_estimation": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "frequency_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "trend_features": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "fatigue_evidence": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "fatigue_rule": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "explainable_inference": {
+            "status": "completed_with_warnings",
+            "downstream_allowed": true
+          }
+        }
+      },
+      "checks": [
+        {
+          "check_id": "expected:qc_status",
+          "passed": true,
+          "expected": "warning",
+          "actual": "warning"
+        },
+        {
+          "check_id": "expected:analysis_status",
+          "passed": true,
+          "expected": "completed_with_warnings",
+          "actual": "completed_with_warnings"
+        },
+        {
+          "check_id": "expected:technical_conclusion",
+          "passed": true,
+          "expected": "supported_pattern",
+          "actual": "supported_pattern"
+        },
+        {
+          "check_id": "expected:confidence_category",
+          "passed": true,
+          "expected": "engineering_high",
+          "actual": "engineering_high"
+        },
+        {
+          "check_id": "expected:inference_status",
+          "passed": true,
+          "expected": "completed_with_warnings",
+          "actual": "completed_with_warnings"
+        },
+        {
+          "check_id": "expected:final_downstream_allowed",
+          "passed": true,
+          "expected": true,
+          "actual": true
+        },
+        {
+          "check_id": "expected:qc_reason_codes",
+          "passed": true,
+          "expected_subset": [
+            "POWERLINE_NOISE_HIGH"
+          ],
+          "actual": [
+            "POWERLINE_NOISE_HIGH"
+          ]
+        },
+        {
+          "check_id": "package_integrity",
+          "passed": true
+        }
+      ],
+      "package_verification": {
+        "passed": true,
+        "checks": [
+          {
+            "check_id": "stage_file:ingestion",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:ingestion",
+            "passed": true,
+            "expected": "a18bd960cc6fedd72e1dc0704bcf40614e272563419719c1129fa9871c82a16c",
+            "actual": "a18bd960cc6fedd72e1dc0704bcf40614e272563419719c1129fa9871c82a16c"
+          },
+          {
+            "check_id": "stage_file:qc",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:qc",
+            "passed": true,
+            "expected": "90b3825c1bfc4f701afa6fcc46b99f4cf691e09f68d1ba4ebd2c80b212ddb54e",
+            "actual": "90b3825c1bfc4f701afa6fcc46b99f4cf691e09f68d1ba4ebd2c80b212ddb54e"
+          },
+          {
+            "check_id": "stage_file:preprocessing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:preprocessing",
+            "passed": true,
+            "expected": "33d8a6f32f56c1cb5c7eb7ad9fc0ce847344a4260a001288c699cdd9d7d6e533",
+            "actual": "33d8a6f32f56c1cb5c7eb7ad9fc0ce847344a4260a001288c699cdd9d7d6e533"
+          },
+          {
+            "check_id": "stage_file:windowing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:windowing",
+            "passed": true,
+            "expected": "5d7f550bda947774e0a29daa5f2816f010cd92f0f0dfbe734187589c1a5bfd8a",
+            "actual": "5d7f550bda947774e0a29daa5f2816f010cd92f0f0dfbe734187589c1a5bfd8a"
+          },
+          {
+            "check_id": "stage_file:time_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:time_features",
+            "passed": true,
+            "expected": "06adf8bbccadc79481a82e2d2213ef84423d22fc9f02edb8aaf8f838cdc1551d",
+            "actual": "06adf8bbccadc79481a82e2d2213ef84423d22fc9f02edb8aaf8f838cdc1551d"
+          },
+          {
+            "check_id": "stage_file:spectral_estimation",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:spectral_estimation",
+            "passed": true,
+            "expected": "6d501677755ec9ae68f787a8520d4fd9821932c425cfe0279180996bc7189940",
+            "actual": "6d501677755ec9ae68f787a8520d4fd9821932c425cfe0279180996bc7189940"
+          },
+          {
+            "check_id": "stage_file:frequency_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:frequency_features",
+            "passed": true,
+            "expected": "caf6328e2c0e29172475a98dcfd891143b53b5dfc8b2d7ab18fd0ba690b62362",
+            "actual": "caf6328e2c0e29172475a98dcfd891143b53b5dfc8b2d7ab18fd0ba690b62362"
+          },
+          {
+            "check_id": "stage_file:trend_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:trend_features",
+            "passed": true,
+            "expected": "a2a4ec103ec7281bd7726c8ee5fd60ab02bb82480ace8e9f01e9b1265f8360ee",
+            "actual": "a2a4ec103ec7281bd7726c8ee5fd60ab02bb82480ace8e9f01e9b1265f8360ee"
+          },
+          {
+            "check_id": "stage_file:fatigue_evidence",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_evidence",
+            "passed": true,
+            "expected": "4c44c019092bdd8dd330dca115c7d95ff8d77aee261e1eb32d28e86b1b5df6fb",
+            "actual": "4c44c019092bdd8dd330dca115c7d95ff8d77aee261e1eb32d28e86b1b5df6fb"
+          },
+          {
+            "check_id": "stage_file:fatigue_rule",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_rule",
+            "passed": true,
+            "expected": "ab3c480b75f4b8eb2fbd9e98149d05941ab33ef97cc9341a6f9d3324238b220d",
+            "actual": "ab3c480b75f4b8eb2fbd9e98149d05941ab33ef97cc9341a6f9d3324238b220d"
+          },
+          {
+            "check_id": "stage_file:explainable_inference",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:explainable_inference",
+            "passed": true,
+            "expected": "2855c0de438897f92ccd56eadd0eacf512738676dcdabaaa64e5fa584430ab23",
+            "actual": "2855c0de438897f92ccd56eadd0eacf512738676dcdabaaa64e5fa584430ab23"
+          },
+          {
+            "check_id": "forbidden_key_scan",
+            "passed": true,
+            "hits": []
+          },
+          {
+            "check_id": "clinical_use_disabled",
+            "passed": true
+          },
+          {
+            "check_id": "human_review_required",
+            "passed": true
+          }
+        ]
+      },
+      "numeric_anchors": null
+    },
+    {
+      "scenario_id": "fail_flatline",
+      "manifest_file": "qc_fail_flatline.manifest.json",
+      "analysis_fingerprint_sha256": "6087868b625f877194c6f7501cd755e19a724e551e71f1fd65be87afdd09bebb",
+      "passed": true,
+      "signature": {
+        "analysis_status": "abstained",
+        "qc_status": "fail",
+        "qc_reason_codes": [
+          "FLATLINE_EXCESSIVE"
+        ],
+        "technical_conclusion": "abstained",
+        "confidence_category": "not_available",
+        "inference_status": "abstained",
+        "final_downstream_allowed": false,
+        "stage_statuses": {
+          "ingestion": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "qc": {
+            "status": "fail",
+            "downstream_allowed": false
+          },
+          "preprocessing": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "windowing": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "time_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "spectral_estimation": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "frequency_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "trend_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "fatigue_evidence": {
+            "status": "abstained",
+            "downstream_allowed": false
+          },
+          "fatigue_rule": {
+            "status": "abstained",
+            "downstream_allowed": false
+          },
+          "explainable_inference": {
+            "status": "abstained",
+            "downstream_allowed": false
+          }
+        }
+      },
+      "checks": [
+        {
+          "check_id": "expected:qc_status",
+          "passed": true,
+          "expected": "fail",
+          "actual": "fail"
+        },
+        {
+          "check_id": "expected:analysis_status",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:technical_conclusion",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:confidence_category",
+          "passed": true,
+          "expected": "not_available",
+          "actual": "not_available"
+        },
+        {
+          "check_id": "expected:inference_status",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:final_downstream_allowed",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "check_id": "expected:qc_reason_codes",
+          "passed": true,
+          "expected_subset": [
+            "FLATLINE_EXCESSIVE"
+          ],
+          "actual": [
+            "FLATLINE_EXCESSIVE"
+          ]
+        },
+        {
+          "check_id": "package_integrity",
+          "passed": true
+        }
+      ],
+      "package_verification": {
+        "passed": true,
+        "checks": [
+          {
+            "check_id": "stage_file:ingestion",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:ingestion",
+            "passed": true,
+            "expected": "962fd5b13dacb3fc7b31365e41982a965970ed40b34587d2b728c90a6adb9c0d",
+            "actual": "962fd5b13dacb3fc7b31365e41982a965970ed40b34587d2b728c90a6adb9c0d"
+          },
+          {
+            "check_id": "stage_file:qc",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:qc",
+            "passed": true,
+            "expected": "4a79e5a2c3ea19c9117a9c2128c08e470c5d70d15c7235f5068b3e517a1e6def",
+            "actual": "4a79e5a2c3ea19c9117a9c2128c08e470c5d70d15c7235f5068b3e517a1e6def"
+          },
+          {
+            "check_id": "stage_file:preprocessing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:preprocessing",
+            "passed": true,
+            "expected": "fd657133fcd6ab21367c545c652e429acbc2cfd6642a43d273068b92056f002e",
+            "actual": "fd657133fcd6ab21367c545c652e429acbc2cfd6642a43d273068b92056f002e"
+          },
+          {
+            "check_id": "stage_file:windowing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:windowing",
+            "passed": true,
+            "expected": "c6f3c3e8eb68f7203722164e2fd50d964a84abe04141259ba505a3fcf74ba867",
+            "actual": "c6f3c3e8eb68f7203722164e2fd50d964a84abe04141259ba505a3fcf74ba867"
+          },
+          {
+            "check_id": "stage_file:time_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:time_features",
+            "passed": true,
+            "expected": "5a3f7c90f0135ff470fff9b1ba8d64c517798c950a74c6df2f49c84eb2ba58b2",
+            "actual": "5a3f7c90f0135ff470fff9b1ba8d64c517798c950a74c6df2f49c84eb2ba58b2"
+          },
+          {
+            "check_id": "stage_file:spectral_estimation",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:spectral_estimation",
+            "passed": true,
+            "expected": "f9477d0a0938b1c8bb10fc0076dcca0deac6c38d98bbd23be0b3317eb4077874",
+            "actual": "f9477d0a0938b1c8bb10fc0076dcca0deac6c38d98bbd23be0b3317eb4077874"
+          },
+          {
+            "check_id": "stage_file:frequency_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:frequency_features",
+            "passed": true,
+            "expected": "eea21008be203db2ecdca20e39b2c903d29c6e6777e02173ad7aec3423947637",
+            "actual": "eea21008be203db2ecdca20e39b2c903d29c6e6777e02173ad7aec3423947637"
+          },
+          {
+            "check_id": "stage_file:trend_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:trend_features",
+            "passed": true,
+            "expected": "de1e8a9b8425897c363611bd49b6d9f086aaf41e2b62d711839f950944f201a9",
+            "actual": "de1e8a9b8425897c363611bd49b6d9f086aaf41e2b62d711839f950944f201a9"
+          },
+          {
+            "check_id": "stage_file:fatigue_evidence",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_evidence",
+            "passed": true,
+            "expected": "4a4f1db41989236cac66c15779091019471d27d4a789c59170924ea3775efcdb",
+            "actual": "4a4f1db41989236cac66c15779091019471d27d4a789c59170924ea3775efcdb"
+          },
+          {
+            "check_id": "stage_file:fatigue_rule",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_rule",
+            "passed": true,
+            "expected": "27e19e1053b1c269f3cf5faa920c5fd49ba1503ca2878244d9ca71c7020384ba",
+            "actual": "27e19e1053b1c269f3cf5faa920c5fd49ba1503ca2878244d9ca71c7020384ba"
+          },
+          {
+            "check_id": "stage_file:explainable_inference",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:explainable_inference",
+            "passed": true,
+            "expected": "e77316f9e036c0ab972be11ef5f91e99ee544889a51c6f72d8f4a81e3800ce30",
+            "actual": "e77316f9e036c0ab972be11ef5f91e99ee544889a51c6f72d8f4a81e3800ce30"
+          },
+          {
+            "check_id": "forbidden_key_scan",
+            "passed": true,
+            "hits": []
+          },
+          {
+            "check_id": "clinical_use_disabled",
+            "passed": true
+          },
+          {
+            "check_id": "human_review_required",
+            "passed": true
+          }
+        ]
+      },
+      "numeric_anchors": null
+    },
+    {
+      "scenario_id": "fail_nonfinite",
+      "manifest_file": "qc_fail_nonfinite.manifest.json",
+      "analysis_fingerprint_sha256": "d4349558a5da2e1548afea3dfd45712205de16caf58e73b526f9156f63f018ee",
+      "passed": true,
+      "signature": {
+        "analysis_status": "abstained",
+        "qc_status": "fail",
+        "qc_reason_codes": [
+          "NONFINITE_RATIO_EXCESSIVE"
+        ],
+        "technical_conclusion": "abstained",
+        "confidence_category": "not_available",
+        "inference_status": "abstained",
+        "final_downstream_allowed": false,
+        "stage_statuses": {
+          "ingestion": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "qc": {
+            "status": "fail",
+            "downstream_allowed": false
+          },
+          "preprocessing": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "windowing": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "time_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "spectral_estimation": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "frequency_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "trend_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "fatigue_evidence": {
+            "status": "abstained",
+            "downstream_allowed": false
+          },
+          "fatigue_rule": {
+            "status": "abstained",
+            "downstream_allowed": false
+          },
+          "explainable_inference": {
+            "status": "abstained",
+            "downstream_allowed": false
+          }
+        }
+      },
+      "checks": [
+        {
+          "check_id": "expected:qc_status",
+          "passed": true,
+          "expected": "fail",
+          "actual": "fail"
+        },
+        {
+          "check_id": "expected:analysis_status",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:technical_conclusion",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:confidence_category",
+          "passed": true,
+          "expected": "not_available",
+          "actual": "not_available"
+        },
+        {
+          "check_id": "expected:inference_status",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:final_downstream_allowed",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "check_id": "expected:qc_reason_codes",
+          "passed": true,
+          "expected_subset": [
+            "NONFINITE_RATIO_EXCESSIVE"
+          ],
+          "actual": [
+            "NONFINITE_RATIO_EXCESSIVE"
+          ]
+        },
+        {
+          "check_id": "package_integrity",
+          "passed": true
+        }
+      ],
+      "package_verification": {
+        "passed": true,
+        "checks": [
+          {
+            "check_id": "stage_file:ingestion",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:ingestion",
+            "passed": true,
+            "expected": "c4cdeeda7a08e1769be80f16f13635de88056b31c08e51e1efedeaf15cd6bb45",
+            "actual": "c4cdeeda7a08e1769be80f16f13635de88056b31c08e51e1efedeaf15cd6bb45"
+          },
+          {
+            "check_id": "stage_file:qc",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:qc",
+            "passed": true,
+            "expected": "66c228ffd14be910f980dd61d69d22275af542200b61e2c9c7f6c4faa0f7eb2c",
+            "actual": "66c228ffd14be910f980dd61d69d22275af542200b61e2c9c7f6c4faa0f7eb2c"
+          },
+          {
+            "check_id": "stage_file:preprocessing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:preprocessing",
+            "passed": true,
+            "expected": "6e3e94b9d8514aa1f1e84256e937a4fe4559d5b7bbffb1427262778957805dd8",
+            "actual": "6e3e94b9d8514aa1f1e84256e937a4fe4559d5b7bbffb1427262778957805dd8"
+          },
+          {
+            "check_id": "stage_file:windowing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:windowing",
+            "passed": true,
+            "expected": "ebda197630124a9c2ecb35cf65da490a8213caefea46b6e84b4d6d548e487dc6",
+            "actual": "ebda197630124a9c2ecb35cf65da490a8213caefea46b6e84b4d6d548e487dc6"
+          },
+          {
+            "check_id": "stage_file:time_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:time_features",
+            "passed": true,
+            "expected": "ede16f8e8fc8f10d33adb7f44e8c3b45f9d5cae3eb06e75fccd145c42be8ee1b",
+            "actual": "ede16f8e8fc8f10d33adb7f44e8c3b45f9d5cae3eb06e75fccd145c42be8ee1b"
+          },
+          {
+            "check_id": "stage_file:spectral_estimation",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:spectral_estimation",
+            "passed": true,
+            "expected": "5de1f2a0a7ab3ede3097942a26351b64c2827f0ce8da506328d12599bb4f044f",
+            "actual": "5de1f2a0a7ab3ede3097942a26351b64c2827f0ce8da506328d12599bb4f044f"
+          },
+          {
+            "check_id": "stage_file:frequency_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:frequency_features",
+            "passed": true,
+            "expected": "ccd5ec4ea87e8cb9a3079a9784c91f6db108e95e9089d22116d6996702124a45",
+            "actual": "ccd5ec4ea87e8cb9a3079a9784c91f6db108e95e9089d22116d6996702124a45"
+          },
+          {
+            "check_id": "stage_file:trend_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:trend_features",
+            "passed": true,
+            "expected": "5ba8910ed11b064e229968565a604789fe0040ddc06683547c5907135c1bca2d",
+            "actual": "5ba8910ed11b064e229968565a604789fe0040ddc06683547c5907135c1bca2d"
+          },
+          {
+            "check_id": "stage_file:fatigue_evidence",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_evidence",
+            "passed": true,
+            "expected": "1612328fdcf5482ed0657b758114257673816af13d482029a05a286878b9e7bc",
+            "actual": "1612328fdcf5482ed0657b758114257673816af13d482029a05a286878b9e7bc"
+          },
+          {
+            "check_id": "stage_file:fatigue_rule",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_rule",
+            "passed": true,
+            "expected": "e58a91f5fc00aac0deae201c1cc484f93b956b27aa04cb272013a9a5aea15fd6",
+            "actual": "e58a91f5fc00aac0deae201c1cc484f93b956b27aa04cb272013a9a5aea15fd6"
+          },
+          {
+            "check_id": "stage_file:explainable_inference",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:explainable_inference",
+            "passed": true,
+            "expected": "b77e10e284f3408b4c7d85a9d0ccdb3a3976804eb75d3ba7bbeaae40cd14c408",
+            "actual": "b77e10e284f3408b4c7d85a9d0ccdb3a3976804eb75d3ba7bbeaae40cd14c408"
+          },
+          {
+            "check_id": "forbidden_key_scan",
+            "passed": true,
+            "hits": []
+          },
+          {
+            "check_id": "clinical_use_disabled",
+            "passed": true
+          },
+          {
+            "check_id": "human_review_required",
+            "passed": true
+          }
+        ]
+      },
+      "numeric_anchors": null
+    },
+    {
+      "scenario_id": "fail_short_duration",
+      "manifest_file": "qc_fail_short_duration.manifest.json",
+      "analysis_fingerprint_sha256": "d25e8b03b2bd0f2f9a861d404ad29506831bd2ce62d22993e214dafe3636c4e2",
+      "passed": true,
+      "signature": {
+        "analysis_status": "abstained",
+        "qc_status": "fail",
+        "qc_reason_codes": [
+          "ACTIVE_DURATION_TOO_SHORT"
+        ],
+        "technical_conclusion": "abstained",
+        "confidence_category": "not_available",
+        "inference_status": "abstained",
+        "final_downstream_allowed": false,
+        "stage_statuses": {
+          "ingestion": {
+            "status": "completed",
+            "downstream_allowed": true
+          },
+          "qc": {
+            "status": "fail",
+            "downstream_allowed": false
+          },
+          "preprocessing": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "windowing": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "time_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "spectral_estimation": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "frequency_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "trend_features": {
+            "status": "blocked",
+            "downstream_allowed": false
+          },
+          "fatigue_evidence": {
+            "status": "abstained",
+            "downstream_allowed": false
+          },
+          "fatigue_rule": {
+            "status": "abstained",
+            "downstream_allowed": false
+          },
+          "explainable_inference": {
+            "status": "abstained",
+            "downstream_allowed": false
+          }
+        }
+      },
+      "checks": [
+        {
+          "check_id": "expected:qc_status",
+          "passed": true,
+          "expected": "fail",
+          "actual": "fail"
+        },
+        {
+          "check_id": "expected:analysis_status",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:technical_conclusion",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:confidence_category",
+          "passed": true,
+          "expected": "not_available",
+          "actual": "not_available"
+        },
+        {
+          "check_id": "expected:inference_status",
+          "passed": true,
+          "expected": "abstained",
+          "actual": "abstained"
+        },
+        {
+          "check_id": "expected:final_downstream_allowed",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "check_id": "expected:qc_reason_codes",
+          "passed": true,
+          "expected_subset": [
+            "ACTIVE_DURATION_TOO_SHORT"
+          ],
+          "actual": [
+            "ACTIVE_DURATION_TOO_SHORT"
+          ]
+        },
+        {
+          "check_id": "package_integrity",
+          "passed": true
+        }
+      ],
+      "package_verification": {
+        "passed": true,
+        "checks": [
+          {
+            "check_id": "stage_file:ingestion",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:ingestion",
+            "passed": true,
+            "expected": "76fd4858bf70881345d84f286dac44560731580ec06ed300c76bf35409344c5d",
+            "actual": "76fd4858bf70881345d84f286dac44560731580ec06ed300c76bf35409344c5d"
+          },
+          {
+            "check_id": "stage_file:qc",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:qc",
+            "passed": true,
+            "expected": "e67e5e50aff15ea8cba679cd0be04b20b3cc20bcea0326e19ed0b15dd1e6efed",
+            "actual": "e67e5e50aff15ea8cba679cd0be04b20b3cc20bcea0326e19ed0b15dd1e6efed"
+          },
+          {
+            "check_id": "stage_file:preprocessing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:preprocessing",
+            "passed": true,
+            "expected": "1e35a5aa94ceef6bd761ae2460821d0c202976716a5589e70025456b8daa4087",
+            "actual": "1e35a5aa94ceef6bd761ae2460821d0c202976716a5589e70025456b8daa4087"
+          },
+          {
+            "check_id": "stage_file:windowing",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:windowing",
+            "passed": true,
+            "expected": "b47f37315fbca2df6ca48becd1feeeb6549a4b743299d1cb2cb446001f9b3f28",
+            "actual": "b47f37315fbca2df6ca48becd1feeeb6549a4b743299d1cb2cb446001f9b3f28"
+          },
+          {
+            "check_id": "stage_file:time_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:time_features",
+            "passed": true,
+            "expected": "6934a29345620a18cd36576592482fb2b791a5e5dd5bb9e3f71f7e58c3cac653",
+            "actual": "6934a29345620a18cd36576592482fb2b791a5e5dd5bb9e3f71f7e58c3cac653"
+          },
+          {
+            "check_id": "stage_file:spectral_estimation",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:spectral_estimation",
+            "passed": true,
+            "expected": "35d89396260c3d2ba9cf34f574b8aa5715ab9b71774b1fd0af4726d517222bd5",
+            "actual": "35d89396260c3d2ba9cf34f574b8aa5715ab9b71774b1fd0af4726d517222bd5"
+          },
+          {
+            "check_id": "stage_file:frequency_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:frequency_features",
+            "passed": true,
+            "expected": "a5198e76a3ae6734fca778d99839a7431c0b70616ee5cc44c761852391fa7745",
+            "actual": "a5198e76a3ae6734fca778d99839a7431c0b70616ee5cc44c761852391fa7745"
+          },
+          {
+            "check_id": "stage_file:trend_features",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:trend_features",
+            "passed": true,
+            "expected": "614f25ad7049f3ddee18fe4d5507190a0b0dcc02794a8991a5d734932c65302a",
+            "actual": "614f25ad7049f3ddee18fe4d5507190a0b0dcc02794a8991a5d734932c65302a"
+          },
+          {
+            "check_id": "stage_file:fatigue_evidence",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_evidence",
+            "passed": true,
+            "expected": "5ccfabe90705313aaa5209a58e1abc7e9e36f3a80cc6582646137226b0b4ce7e",
+            "actual": "5ccfabe90705313aaa5209a58e1abc7e9e36f3a80cc6582646137226b0b4ce7e"
+          },
+          {
+            "check_id": "stage_file:fatigue_rule",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:fatigue_rule",
+            "passed": true,
+            "expected": "b52b9a4c53650a61a1d819cf317205db0ab764fff7cce711a51f857d0d8093d0",
+            "actual": "b52b9a4c53650a61a1d819cf317205db0ab764fff7cce711a51f857d0d8093d0"
+          },
+          {
+            "check_id": "stage_file:explainable_inference",
+            "passed": true
+          },
+          {
+            "check_id": "stage_hash:explainable_inference",
+            "passed": true,
+            "expected": "c9b2948993f7b064725a27c4a6fc81a0443c8b628db208660ea8feffff479721",
+            "actual": "c9b2948993f7b064725a27c4a6fc81a0443c8b628db208660ea8feffff479721"
+          },
+          {
+            "check_id": "forbidden_key_scan",
+            "passed": true,
+            "hits": []
+          },
+          {
+            "check_id": "clinical_use_disabled",
+            "passed": true
+          },
+          {
+            "check_id": "human_review_required",
+            "passed": true
+          }
+        ]
+      },
+      "numeric_anchors": null
+    }
+  ],
+  "repeatability": {
+    "scenario_id": "golden",
+    "rerun_count": 2,
+    "same_analysis_fingerprint": true,
+    "same_stage_payload_hashes": true,
+    "analysis_fingerprints": [
+      "42668659cfc6c1b07b12ea1d3dd2888376c7d786285147cc0d4d9b48cb423043",
+      "42668659cfc6c1b07b12ea1d3dd2888376c7d786285147cc0d4d9b48cb423043"
+    ],
+    "stage_payload_hashes_run_1": {
+      "ingestion": "c8543eacd3f28794040b4c9861128447e183149c23135d3b0a89fa2f5f19d88d",
+      "qc": "9ed40bb6e97916b3c8dd135adaee9f2e342667fb48fdffdbad8874b9f0d1da37",
+      "preprocessing": "7882e3b37810baa8d847f34c82a0fa5cf4f3bc4e8383aea6e504958f51e280aa",
+      "windowing": "9c82e4dec07bd3e3dd435040331c332b3f4277cce4e01e2a9074b2696f12e7e3",
+      "time_features": "3e0ec178ad93bebf0f17821e7c4f20e5b807cf4f7d7eaeea0cc9c04289678f3f",
+      "spectral_estimation": "c41190f1fd3ac5dfaab5f1db658bfbccc66f51432e74f361164fef28bacbfea3",
+      "frequency_features": "78a432ba73d0cf5df37100be9a1dc88dff571e7e1dd691fb1b4dee2bc6096608",
+      "trend_features": "433d75c2463b78c4b9a425f18e02e8c757a1ffc0e72361b49ac86cfdc4c241a3",
+      "fatigue_evidence": "c9e13394014054c666e02aa94e74ce133431da1c0a95c489b7fe7112e0eb580c",
+      "fatigue_rule": "5c2cab9a53dff8a7e4c5487846c870b4ccb6ecf753a1a4b72ee71140434d78ab",
+      "explainable_inference": "8112df55ed079079ea834530b3f359b2de35a86493eca9254749343e682c1e35"
+    },
+    "stage_payload_hashes_run_2": {
+      "ingestion": "c8543eacd3f28794040b4c9861128447e183149c23135d3b0a89fa2f5f19d88d",
+      "qc": "9ed40bb6e97916b3c8dd135adaee9f2e342667fb48fdffdbad8874b9f0d1da37",
+      "preprocessing": "7882e3b37810baa8d847f34c82a0fa5cf4f3bc4e8383aea6e504958f51e280aa",
+      "windowing": "9c82e4dec07bd3e3dd435040331c332b3f4277cce4e01e2a9074b2696f12e7e3",
+      "time_features": "3e0ec178ad93bebf0f17821e7c4f20e5b807cf4f7d7eaeea0cc9c04289678f3f",
+      "spectral_estimation": "c41190f1fd3ac5dfaab5f1db658bfbccc66f51432e74f361164fef28bacbfea3",
+      "frequency_features": "78a432ba73d0cf5df37100be9a1dc88dff571e7e1dd691fb1b4dee2bc6096608",
+      "trend_features": "433d75c2463b78c4b9a425f18e02e8c757a1ffc0e72361b49ac86cfdc4c241a3",
+      "fatigue_evidence": "c9e13394014054c666e02aa94e74ce133431da1c0a95c489b7fe7112e0eb580c",
+      "fatigue_rule": "5c2cab9a53dff8a7e4c5487846c870b4ccb6ecf753a1a4b72ee71140434d78ab",
+      "explainable_inference": "8112df55ed079079ea834530b3f359b2de35a86493eca9254749343e682c1e35"
+    }
+  },
+  "safety_summary": {
+    "all_packages_integrity_passed": true,
+    "all_fail_scenarios_abstained": true,
+    "all_warning_scenarios_propagated": true
+  },
+  "runtime_versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0"
+  },
+  "limitations": [
+    "Profile chỉ dùng synthetic fixtures và generic CSV contract.",
+    "Exact fingerprint repeatability được yêu cầu trong cùng environment; cross-environment cần numerical tolerance review.",
+    "Không ước lượng accuracy, sensitivity, specificity, ROC-AUC hoặc F1.",
+    "Không xác nhận clinical cut-off hoặc clinical usefulness."
+  ],
+  "regression_fingerprint_sha256": "4a4a70bcc61c06a2d3a53d63510d28b68d4d72b4150e5025030ce85cb4a1d46f"
+}

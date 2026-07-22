@@ -1,4 +1,4 @@
-# Analytical Validation Report MVP-0
+# Báo cáo regression MVP-0 — Day 16
 
 - **Profile:** `mvp0_regression_v0.1`
 - **Kết quả:** PASS
@@ -33,7 +33,3 @@
 ## Kết luận
 
 Báo cáo này chỉ chứng minh software/analytical regression trên synthetic fixtures. Nó không chứng minh clinical validity, clinical utility hoặc model performance trên dữ liệu người bệnh.
-
-## Quyết định Gate 4
-
-**PASS ở mức technical offline MVP-0.** Chưa được phép suy rộng thành clinical validation.
