@@ -1,0 +1,54 @@
+{
+  "schema_version": "fatigue-rule-verification.v0.1",
+  "passed": true,
+  "checks": [
+    {
+      "check_id": "multi_domain_change_pattern_observed",
+      "expected": "supported_pattern",
+      "actual": "supported_pattern",
+      "passed": true
+    },
+    {
+      "check_id": "frequency_decline_pattern_observed",
+      "expected": "supported_pattern",
+      "actual": "supported_pattern",
+      "passed": true
+    },
+    {
+      "check_id": "amplitude_increase_pattern_observed",
+      "expected": "inconclusive",
+      "actual": "inconclusive",
+      "passed": true
+    },
+    {
+      "check_id": "partial_change_pattern_observed",
+      "expected": "inconclusive",
+      "actual": "inconclusive",
+      "passed": true
+    },
+    {
+      "check_id": "evidence_mixed_or_opposite",
+      "expected": "inconclusive",
+      "actual": "inconclusive",
+      "passed": true
+    },
+    {
+      "check_id": "insufficient_evidence",
+      "expected": "inconclusive",
+      "actual": "inconclusive",
+      "passed": true
+    },
+    {
+      "check_id": "no_predefined_change_pattern_observed",
+      "expected": "no_supported_pattern",
+      "actual": "no_supported_pattern",
+      "passed": true
+    },
+    {
+      "check_id": "upstream_abstention",
+      "expected": "abstained",
+      "actual": "abstained",
+      "passed": true
+    }
+  ]
+}

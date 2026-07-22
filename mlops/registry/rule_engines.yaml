@@ -1,0 +1,11 @@
+schema_version: rule-engine-registry.v0.1
+rule_engines:
+- config_id: fatigue_rule_v0.1
+  lifecycle_status: verified_for_mvp0_synthetic_only
+  clinical_validation_status: not_validated
+  config_sha256: 803726ca4fdd8caef294e906bb375faa07347ec61f84f07849dc69d77c0216bc
+  implementation_sha256: a9320b1ece7ace626b9cde304e3e9cd6fc03f379975ef4268252bce365005ecb
+  verification_artifact: qa-validation/evidence/day13-rule-verification.json
+  outputs_probability: false
+  outputs_frs: false
+  outputs_diagnosis: false

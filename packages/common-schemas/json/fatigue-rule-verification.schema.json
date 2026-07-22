@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "passed", "checks"],
+  "properties": {
+    "schema_version": {"const": "fatigue-rule-verification.v0.1"},
+    "passed": {"type": "boolean"},
+    "checks": {"type": "array", "items": {"type": "object", "required": ["check_id", "passed"]}}
+  }
+}

@@ -1,0 +1,77 @@
+schema_version: fatigue-rule-config.v0.1
+config_id: fatigue_rule_v0.1
+status: provisional_engineering_defaults
+scope: offline_mvp0_explainable_rule_engine
+clinical_validation_status: not_validated
+
+input_contract:
+  require_evidence_downstream_allowed: true
+  required_evidence_config_id: fatigue_evidence_v0.1
+  required_evidence_schema_version: fatigue-evidence-result.v0.1
+  upstream_block_policy: abstain
+  require_at_least_one_evaluated_channel: true
+
+pattern_rules:
+  multi_domain_change_pattern_observed:
+    technical_conclusion: supported_pattern
+    rule_strength: strong
+    reason_code: RULE_MULTI_DOMAIN_PATTERN_SUPPORTED
+  frequency_decline_pattern_observed:
+    technical_conclusion: supported_pattern
+    rule_strength: moderate
+    reason_code: RULE_FREQUENCY_PATTERN_SUPPORTED
+  amplitude_increase_pattern_observed:
+    technical_conclusion: inconclusive
+    rule_strength: weak
+    reason_code: RULE_AMPLITUDE_ONLY_NOT_SPECIFIC
+  partial_change_pattern_observed:
+    technical_conclusion: inconclusive
+    rule_strength: weak
+    reason_code: RULE_PARTIAL_PATTERN_INCONCLUSIVE
+  evidence_mixed_or_opposite:
+    technical_conclusion: inconclusive
+    rule_strength: weak
+    reason_code: RULE_MIXED_OR_OPPOSITE_EVIDENCE
+  insufficient_evidence:
+    technical_conclusion: inconclusive
+    rule_strength: weak
+    reason_code: RULE_INSUFFICIENT_EVIDENCE
+  no_predefined_change_pattern_observed:
+    technical_conclusion: no_supported_pattern
+    rule_strength: moderate
+    reason_code: RULE_NO_PREDEFINED_PATTERN_SUPPORTED
+
+aggregation:
+  multiple_channel_policy: require_consensus_else_inconclusive
+  amplitude_only_policy: inconclusive
+  mixed_evidence_policy: inconclusive
+  output_probability: false
+  output_frs: false
+  output_diagnosis: false
+
+output_contract:
+  result_schema_version: fatigue-rule-result.v0.1
+  include_channel_decisions: true
+  include_decision_basis: true
+  include_counterevidence: true
+  include_reason_codes: true
+  include_provenance: true
+  result_hash_algorithm: sha256_canonical_json
+
+safety:
+  abstention_is_first_class_output: true
+  supported_pattern_is_not_diagnosis: true
+  no_supported_pattern_is_not_no_fatigue: true
+  inconclusive_requires_review: true
+  do_not_output_probability: true
+  do_not_generate_frs: true
+  do_not_generate_treatment_recommendation: true
+  do_not_generate_return_to_play_decision: true
+  require_human_review_for_future_clinical_use: true
+  synthetic_data_is_not_clinical_evidence: true
+
+limitations:
+  - Rule v0.1 chỉ ánh xạ structured evidence theo logic kỹ thuật tạm thời; chưa được local hoặc clinical validation.
+  - supported_pattern không đồng nghĩa chẩn đoán mỏi cơ và không cho phép tự động điều chỉnh điều trị.
+  - no_supported_pattern chỉ có nghĩa chưa đáp ứng rule v0.1, không có nghĩa cơ không mỏi.
+  - Amplitude-only pattern được giữ ở trạng thái inconclusive vì RMS/MAV phụ thuộc lực, recruitment và setup điện cực.

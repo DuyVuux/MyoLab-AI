@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fatigue-rule-result.schema.json",
+  "title": "Fatigue Rule Result v0.1",
+  "type": "object",
+  "required": ["schema_version", "session_id", "status", "downstream_allowed", "abstention", "config", "upstream_evidence", "overall", "reason_codes", "channels", "limitations", "required_review"],
+  "properties": {
+    "schema_version": {"const": "fatigue-rule-result.v0.1"},
+    "session_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["completed", "completed_with_exclusions", "abstained"]},
+    "downstream_allowed": {"type": "boolean"},
+    "abstention": {"type": "boolean"},
+    "config": {
+      "type": "object",
+      "required": ["config_id", "outputs_probability", "outputs_frs", "outputs_diagnosis", "clinical_validation_status"],
+      "properties": {
+        "config_id": {"const": "fatigue_rule_v0.1"},
+        "outputs_probability": {"const": false},
+        "outputs_frs": {"const": false},
+        "outputs_diagnosis": {"const": false},
+        "clinical_validation_status": {"const": "not_validated"}
+      }
+    },
+    "upstream_evidence": {"type": "object"},
+    "overall": {
+      "type": "object",
+      "required": ["technical_conclusion", "rule_strength"],
+      "properties": {
+        "technical_conclusion": {"enum": ["supported_pattern", "no_supported_pattern", "inconclusive", "abstained"]},
+        "rule_strength": {"enum": ["strong", "moderate", "weak", "not_applicable"]}
+      }
+    },
+    "reason_codes": {"type": "array", "items": {"type": "string"}},
+    "result_hash_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "channels": {"type": "array", "items": {"type": "object"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "required_review": {"const": "human_review_required_before_any_future_clinical_use"}
+  },
+  "additionalProperties": true
+}
