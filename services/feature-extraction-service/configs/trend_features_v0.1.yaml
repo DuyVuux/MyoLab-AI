@@ -1,0 +1,76 @@
+schema_version: trend-feature-config.v0.1
+config_id: trend_features_v0.1
+status: provisional_engineering_defaults
+scope: offline_mvp0_descriptive_feature_trends
+clinical_validation_status: not_validated
+
+input_contract:
+  require_time_domain_downstream_allowed: true
+  required_time_domain_config_id: features_semg_v0.1
+  required_time_domain_schema_version: time-domain-feature-extraction-result.v0.1
+  require_frequency_domain_downstream_allowed: true
+  required_frequency_domain_config_id: frequency_features_v0.1
+  required_frequency_domain_schema_version: frequency-feature-extraction-result.v0.1
+  require_same_session_id: true
+  require_same_preprocess_config_id: preprocess_v0.1
+  require_same_window_plan_hash: true
+  require_same_source_signal_hash: true
+  required_features: [rms, mav, mdf, mnf]
+  missing_required_feature_policy: channel_not_computed
+
+fit:
+  method: ordinary_least_squares
+  independent_variable: center_time_s
+  use_window_index_as_time: false
+  minimum_point_count: 20
+  minimum_duration_s: 30.0
+  early_fraction: 0.20
+  late_fraction: 0.20
+  minimum_reference_abs:
+    rms: 1.0e-9
+    mav: 1.0e-9
+    mdf: 1.0e-9
+    mnf: 1.0e-9
+  emit_p_value: false
+  emit_confidence_interval: false
+  reason: Overlap windows không độc lập; Day 11 chỉ tạo descriptive trend.
+
+feature_units:
+  rms: uV
+  mav: uV
+  mdf: Hz
+  mnf: Hz
+
+output_contract:
+  include_raw_window_values: false
+  include_per_feature_metrics: true
+  include_channel_context: true
+  include_provenance: true
+  include_early_late_summary: true
+  include_r_squared: true
+  include_rmse: true
+  row_schema_version: feature-trend-record.v0.1
+  result_schema_version: trend-feature-extraction-result.v0.1
+  result_hash_algorithm: sha256_canonical_json
+
+future_stages:
+  fatigue_evidence: {enabled: false, planned_day: 12}
+  fatigue_rule: {enabled: false, planned_stage: rule_engine}
+  frs: {enabled: false, planned_stage: score_engine}
+  ml: {enabled: false, planned_stage: after_local_labels}
+
+safety:
+  block_if_no_complete_channel: true
+  do_not_treat_windows_as_independent_subjects: true
+  do_not_emit_inferential_statistics: true
+  do_not_interpret_fatigue: true
+  do_not_generate_frs: true
+  do_not_train_ml: true
+  synthetic_data_is_not_clinical_evidence: true
+
+limitations:
+  - OLS trên overlapping windows tạo descriptive slope; không được diễn giải p-value hoặc sample independence.
+  - RMS/MAV dùng time-domain windows 500 ms; MDF/MNF dùng frequency-domain windows 1000 ms nên không align từng row.
+  - Trend được fit độc lập theo feature và center_time_s, không nội suy một profile sang profile khác.
+  - Percent change dùng median khối đầu/cuối; phụ thuộc early/late fraction đã version hóa.
+  - Day 11 chưa tạo fatigue evidence, fatigue status, FRS hoặc khuyến nghị lâm sàng.

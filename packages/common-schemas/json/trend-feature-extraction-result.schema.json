@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semg-fatigue.local/schemas/trend-feature-extraction-result.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "status",
+    "downstream_allowed",
+    "config",
+    "upstream",
+    "summary",
+    "reason_codes",
+    "result_hash_sha256",
+    "channels",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "trend-feature-extraction-result.v0.1"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "completed_with_exclusions",
+        "blocked"
+      ]
+    },
+    "downstream_allowed": {
+      "type": "boolean"
+    },
+    "config": {
+      "type": "object"
+    },
+    "upstream": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "reason_codes": {
+      "type": "array"
+    },
+    "result_hash_sha256": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      ]
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "limitations": {
+      "type": "array"
+    }
+  }
+}

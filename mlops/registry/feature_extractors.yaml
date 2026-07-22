@@ -134,3 +134,35 @@ feature_extractors:
   limitations:
   - MDF/MNF chỉ là feature theo từng cửa sổ; chưa có slope hoặc fatigue inference.
   - Cấu hình chưa được xác nhận lâm sàng.
+- config_id: trend_features_v0.1
+  schema_version: feature-extractor-registry-entry.v0.1
+  lifecycle_status: implemented_for_mvp0
+  analytical_verification_status: passed
+  clinical_validation_status: not_validated
+  implemented_features:
+  - rms_slope
+  - mav_slope
+  - mdf_slope
+  - mnf_slope
+  - early_late_change
+  fit_method: ordinary_least_squares_descriptive
+  inferential_statistics_emitted: false
+  fatigue_inference_in_scope: false
+  ml_training_in_scope: false
+  artifacts:
+    config:
+      path: services/feature-extraction-service/configs/trend_features_v0.1.yaml
+      sha256: c254f2ab77bed227ee211a818f93362c377fe453e822bc09fbfcd3b94232acd1
+    core:
+      path: packages/semg-core/semg_core/trend.py
+      sha256: db5915b625a31ab50db904b12e60fda6260184bd1150d18c3b232b6445df1f49
+    extractor:
+      path: services/feature-extraction-service/src/trend_feature_extractor.py
+      sha256: fe9c9781caba0368bb3e818b701c4426bd668085efc5a76ed0d59fe1007c143d
+  evidence:
+    analytical_verification: qa-validation/evidence/day11-trend-verification.json
+    golden_e2e: qa-validation/evidence/day11-trends.json
+    golden_result_hash_sha256: 8d7a037d34acb4e565704e1427a24614fff00bd0d8d69de760dbdf2c4805bf31
+  limitations:
+  - Overlapping windows không độc lập; trend chỉ mang tính mô tả.
+  - Chưa tạo fatigue evidence hoặc clinical output.
