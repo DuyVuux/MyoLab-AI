@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "explainable-inference-result.schema.json",
+  "title": "Explainable Inference Result v0.1",
+  "type": "object",
+  "required": ["schema_version", "session_id", "status", "downstream_allowed", "abstention", "config", "technical_conclusion", "technical_confidence", "explainability", "reason_codes", "limitations", "safety", "result_hash_sha256"],
+  "properties": {
+    "schema_version": {"const": "explainable-inference-result.v0.1"},
+    "session_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["completed", "completed_with_warnings", "abstained", "blocked_by_wording_guard"]},
+    "downstream_allowed": {"type": "boolean"},
+    "abstention": {"type": "boolean"},
+    "config": {
+      "type": "object",
+      "required": ["config_id", "clinical_use_allowed", "outputs_probability", "outputs_frs", "outputs_diagnosis", "clinical_validation_status"],
+      "properties": {
+        "config_id": {"const": "technical_confidence_v0.1"},
+        "clinical_use_allowed": {"const": false},
+        "outputs_probability": {"const": false},
+        "outputs_frs": {"const": false},
+        "outputs_diagnosis": {"const": false},
+        "clinical_validation_status": {"const": "not_validated"}
+      }
+    },
+    "technical_conclusion": {"enum": ["supported_pattern", "no_supported_pattern", "inconclusive", "abstained"]},
+    "technical_confidence": {
+      "type": "object",
+      "required": ["raw_score_0_to_1", "final_score_0_to_1", "category", "score_is_probability", "clinical_calibration_status", "components"],
+      "properties": {
+        "raw_score_0_to_1": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "final_score_0_to_1": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "category": {"enum": ["engineering_high", "engineering_moderate", "engineering_low", "engineering_very_low", "not_available"]},
+        "score_is_probability": {"const": false},
+        "clinical_calibration_status": {"const": "not_calibrated"},
+        "components": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "explainability": {
+      "type": "object",
+      "required": ["summary_vi", "decision_basis", "counterevidence", "feature_observations", "wording_guard"],
+      "properties": {
+        "summary_vi": {"type": "string", "minLength": 1},
+        "wording_guard": {
+          "type": "object",
+          "required": ["status", "hits"],
+          "properties": {
+            "status": {"enum": ["passed", "failed"]},
+            "hits": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      }
+    },
+    "reason_codes": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "safety": {
+      "type": "object",
+      "required": ["human_review_required", "is_diagnosis", "is_treatment_recommendation", "is_return_to_play_decision", "synthetic_data_is_clinical_evidence"],
+      "properties": {
+        "human_review_required": {"const": true},
+        "is_diagnosis": {"const": false},
+        "is_treatment_recommendation": {"const": false},
+        "is_return_to_play_decision": {"const": false},
+        "synthetic_data_is_clinical_evidence": {"const": false}
+      }
+    },
+    "result_hash_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

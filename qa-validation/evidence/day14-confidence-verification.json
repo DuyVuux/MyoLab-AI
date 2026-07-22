@@ -1,0 +1,24 @@
+{
+  "schema_version": "technical-confidence-verification.v0.1",
+  "passed": true,
+  "checks": [
+    {
+      "check_id": "weighted_known_answer",
+      "passed": true,
+      "actual": 0.85
+    },
+    {
+      "check_id": "category_high",
+      "passed": true
+    },
+    {
+      "check_id": "inconclusive_cap",
+      "passed": true
+    },
+    {
+      "check_id": "safe_wording",
+      "passed": true,
+      "hits": []
+    }
+  ]
+}

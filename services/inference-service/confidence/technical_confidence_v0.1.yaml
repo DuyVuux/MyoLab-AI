@@ -1,0 +1,86 @@
+schema_version: technical-confidence-config.v0.1
+config_id: technical_confidence_v0.1
+status: provisional_engineering_defaults
+scope: offline_mvp0_quality_of_technical_conclusion
+clinical_calibration_status: not_calibrated
+clinical_validation_status: not_validated
+
+input_contract:
+  required_rule_config_id: fatigue_rule_v0.1
+  required_rule_schema_version: fatigue-rule-result.v0.1
+  required_evidence_config_id: fatigue_evidence_v0.1
+  required_trend_config_id: trend_features_v0.1
+  required_time_feature_config_id: features_semg_v0.1
+  required_frequency_feature_config_id: frequency_features_v0.1
+  require_same_session_id: true
+  upstream_abstention_policy: abstain
+
+weights:
+  qc_quality: 0.35
+  usable_window_ratio: 0.25
+  trend_quality: 0.20
+  evidence_consistency: 0.20
+
+qc_status_scores:
+  pass: 1.00
+  warning: 0.75
+  fail: 0.00
+  import_rejected: 0.00
+
+pattern_consistency_scores:
+  multi_domain_change_pattern_observed: 1.00
+  frequency_decline_pattern_observed: 0.80
+  amplitude_increase_pattern_observed: 0.50
+  partial_change_pattern_observed: 0.45
+  no_predefined_change_pattern_observed: 0.75
+  evidence_mixed_or_opposite: 0.20
+  insufficient_evidence: 0.00
+
+category_thresholds:
+  engineering_high_min: 0.80
+  engineering_moderate_min: 0.60
+  engineering_low_min: 0.40
+
+conclusion_caps:
+  supported_pattern: null
+  no_supported_pattern: null
+  inconclusive: 0.59
+  abstained: 0.00
+
+output_contract:
+  result_schema_version: explainable-inference-result.v0.1
+  score_range: [0.0, 1.0]
+  score_is_probability: false
+  include_components: true
+  include_safe_summary_vi: true
+  include_decision_basis: true
+  include_counterevidence: true
+  include_limitations: true
+  result_hash_algorithm: sha256_canonical_json
+
+prohibited_phrases:
+  - chẩn đoán mỏi cơ
+  - bệnh nhân bị mỏi
+  - bắt buộc dừng bài tập
+  - đủ điều kiện thi đấu
+  - xác suất mỏi
+  - fatigue_detected
+  - no_fatigue
+  - return_to_play_ready
+  - stop_exercise
+
+safety:
+  engineering_confidence_is_not_probability: true
+  do_not_claim_calibration: true
+  do_not_generate_frs: true
+  do_not_generate_treatment_recommendation: true
+  do_not_generate_return_to_play_decision: true
+  require_human_review: true
+  clinical_use_allowed: false
+  synthetic_data_is_not_clinical_evidence: true
+
+limitations:
+  - Engineering confidence chỉ phản ánh chất lượng nội bộ của pipeline và mức đồng thuận evidence; không phải xác suất mỏi.
+  - Trọng số 0.35/0.25/0.20/0.20 là engineering defaults chưa được local hoặc clinical validation.
+  - Confidence cao không khắc phục protocol sai, electrode placement sai hoặc label yếu.
+  - Output chỉ dùng cho technical demo/review cho đến khi hoàn tất external validation.

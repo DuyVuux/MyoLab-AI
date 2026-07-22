@@ -1,0 +1,11 @@
+schema_version: confidence-engine-registry.v0.1
+confidence_engines:
+- config_id: technical_confidence_v0.1
+  lifecycle_status: verified_for_mvp0_synthetic_only
+  clinical_calibration_status: not_calibrated
+  clinical_validation_status: not_validated
+  config_sha256: e5b92ff93c43da3c1f12fdc8a18f25a4e26edf188cfe0d98da7b7c2683610d80
+  implementation_sha256: 194f1f3da3674122a85be087d02c02a9c1bb35cc3e50b8936bfe8c2d57313325
+  verification_artifact: qa-validation/evidence/day14-confidence-verification.json
+  score_is_probability: false
+  clinical_use_allowed: false
