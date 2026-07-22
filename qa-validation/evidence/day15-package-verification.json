@@ -1,0 +1,130 @@
+{
+  "schema_version": "offline-analysis-verification.v0.1",
+  "passed": true,
+  "analysis_fingerprint_sha256": "42668659cfc6c1b07b12ea1d3dd2888376c7d786285147cc0d4d9b48cb423043",
+  "checks": [
+    {
+      "check_id": "stage_file_ingestion",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_ingestion",
+      "passed": true,
+      "expected": "c8543eacd3f28794040b4c9861128447e183149c23135d3b0a89fa2f5f19d88d",
+      "actual": "c8543eacd3f28794040b4c9861128447e183149c23135d3b0a89fa2f5f19d88d"
+    },
+    {
+      "check_id": "stage_file_qc",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_qc",
+      "passed": true,
+      "expected": "9ed40bb6e97916b3c8dd135adaee9f2e342667fb48fdffdbad8874b9f0d1da37",
+      "actual": "9ed40bb6e97916b3c8dd135adaee9f2e342667fb48fdffdbad8874b9f0d1da37"
+    },
+    {
+      "check_id": "stage_file_preprocessing",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_preprocessing",
+      "passed": true,
+      "expected": "7882e3b37810baa8d847f34c82a0fa5cf4f3bc4e8383aea6e504958f51e280aa",
+      "actual": "7882e3b37810baa8d847f34c82a0fa5cf4f3bc4e8383aea6e504958f51e280aa"
+    },
+    {
+      "check_id": "stage_file_windowing",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_windowing",
+      "passed": true,
+      "expected": "9c82e4dec07bd3e3dd435040331c332b3f4277cce4e01e2a9074b2696f12e7e3",
+      "actual": "9c82e4dec07bd3e3dd435040331c332b3f4277cce4e01e2a9074b2696f12e7e3"
+    },
+    {
+      "check_id": "stage_file_time_features",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_time_features",
+      "passed": true,
+      "expected": "3e0ec178ad93bebf0f17821e7c4f20e5b807cf4f7d7eaeea0cc9c04289678f3f",
+      "actual": "3e0ec178ad93bebf0f17821e7c4f20e5b807cf4f7d7eaeea0cc9c04289678f3f"
+    },
+    {
+      "check_id": "stage_file_spectral_estimation",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_spectral_estimation",
+      "passed": true,
+      "expected": "c41190f1fd3ac5dfaab5f1db658bfbccc66f51432e74f361164fef28bacbfea3",
+      "actual": "c41190f1fd3ac5dfaab5f1db658bfbccc66f51432e74f361164fef28bacbfea3"
+    },
+    {
+      "check_id": "stage_file_frequency_features",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_frequency_features",
+      "passed": true,
+      "expected": "78a432ba73d0cf5df37100be9a1dc88dff571e7e1dd691fb1b4dee2bc6096608",
+      "actual": "78a432ba73d0cf5df37100be9a1dc88dff571e7e1dd691fb1b4dee2bc6096608"
+    },
+    {
+      "check_id": "stage_file_trend_features",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_trend_features",
+      "passed": true,
+      "expected": "433d75c2463b78c4b9a425f18e02e8c757a1ffc0e72361b49ac86cfdc4c241a3",
+      "actual": "433d75c2463b78c4b9a425f18e02e8c757a1ffc0e72361b49ac86cfdc4c241a3"
+    },
+    {
+      "check_id": "stage_file_fatigue_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_fatigue_evidence",
+      "passed": true,
+      "expected": "c9e13394014054c666e02aa94e74ce133431da1c0a95c489b7fe7112e0eb580c",
+      "actual": "c9e13394014054c666e02aa94e74ce133431da1c0a95c489b7fe7112e0eb580c"
+    },
+    {
+      "check_id": "stage_file_fatigue_rule",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_fatigue_rule",
+      "passed": true,
+      "expected": "5c2cab9a53dff8a7e4c5487846c870b4ccb6ecf753a1a4b72ee71140434d78ab",
+      "actual": "5c2cab9a53dff8a7e4c5487846c870b4ccb6ecf753a1a4b72ee71140434d78ab"
+    },
+    {
+      "check_id": "stage_file_explainable_inference",
+      "passed": true
+    },
+    {
+      "check_id": "stage_hash_explainable_inference",
+      "passed": true,
+      "expected": "8112df55ed079079ea834530b3f359b2de35a86493eca9254749343e682c1e35",
+      "actual": "8112df55ed079079ea834530b3f359b2de35a86493eca9254749343e682c1e35"
+    },
+    {
+      "check_id": "no_raw_or_direct_identifier_keys",
+      "passed": true,
+      "hits": []
+    },
+    {
+      "check_id": "clinical_use_disabled",
+      "passed": true
+    },
+    {
+      "check_id": "human_review_required",
+      "passed": true
+    }
+  ]
+}

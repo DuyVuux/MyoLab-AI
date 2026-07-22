@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "offline-analysis-manifest.schema.json",
+  "title": "Offline Analysis Manifest v0.1",
+  "type": "object",
+  "required": ["schema_version", "analysis_id", "analysis_fingerprint_sha256", "session_id", "status", "execution_mode", "source", "pipeline", "final", "runtime_versions", "safety", "limitations"],
+  "properties": {
+    "schema_version": {"const": "offline-analysis-manifest.v0.1"},
+    "analysis_id": {"type": "string", "pattern": "^ANALYSIS-[0-9a-f]{16}$"},
+    "analysis_fingerprint_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "session_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["completed", "completed_with_warnings", "abstained", "blocked_by_wording_guard"]},
+    "execution_mode": {"const": "offline_file_based"},
+    "source": {
+      "type": "object",
+      "required": ["manifest_file_name", "source_hash_sha256"],
+      "properties": {
+        "manifest_file_name": {"type": "string"},
+        "source_hash_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "pipeline": {
+      "type": "object",
+      "required": ["config_id", "config_hashes", "stage_records"],
+      "properties": {
+        "config_id": {"const": "offline_analysis_mvp0"},
+        "config_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "stage_records": {
+          "type": "array",
+          "minItems": 11,
+          "items": {
+            "type": "object",
+            "required": ["stage_id", "status", "downstream_allowed", "output_file", "output_payload_sha256", "reason_codes"],
+            "properties": {
+              "stage_id": {"type": "string"},
+              "status": {"type": "string"},
+              "downstream_allowed": {"type": "boolean"},
+              "output_file": {"type": "string"},
+              "output_payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "config_id": {"type": ["string", "null"]},
+              "reason_codes": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "final": {
+      "type": "object",
+      "required": ["technical_conclusion", "engineering_confidence_category", "clinical_use_allowed", "human_review_required"],
+      "properties": {
+        "technical_conclusion": {"enum": ["supported_pattern", "no_supported_pattern", "inconclusive", "abstained"]},
+        "engineering_confidence_category": {"enum": ["engineering_high", "engineering_moderate", "engineering_low", "engineering_very_low", "not_available"]},
+        "clinical_use_allowed": {"const": false},
+        "human_review_required": {"const": true}
+      }
+    },
+    "runtime_versions": {"type": "object"},
+    "safety": {
+      "type": "object",
+      "required": ["no_raw_samples_in_json", "no_probability", "no_frs", "no_diagnosis", "human_review_required", "clinical_use_allowed"],
+      "properties": {
+        "no_raw_samples_in_json": {"const": true},
+        "no_probability": {"const": true},
+        "no_frs": {"const": true},
+        "no_diagnosis": {"const": true},
+        "human_review_required": {"const": true},
+        "clinical_use_allowed": {"const": false}
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

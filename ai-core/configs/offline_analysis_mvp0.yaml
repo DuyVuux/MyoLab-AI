@@ -1,0 +1,61 @@
+schema_version: offline-analysis-config.v0.1
+config_id: offline_analysis_mvp0
+execution_mode: offline_file_based
+clinical_validation_status: not_validated
+
+stage_configs:
+  protocol: clinical/protocols/quad-isometric-60s.v0.1.yaml
+  qc: services/quality-gate-service/configs/qc_v0.1.yaml
+  preprocessing: services/preprocessing-service/configs/preprocess_v0.1.yaml
+  windowing: services/feature-extraction-service/configs/windowing_v0.1.yaml
+  time_features: services/feature-extraction-service/configs/features_semg_v0.1.yaml
+  spectral_estimation: services/feature-extraction-service/configs/spectral_estimation_v0.1.yaml
+  frequency_features: services/feature-extraction-service/configs/frequency_features_v0.1.yaml
+  trend_features: services/feature-extraction-service/configs/trend_features_v0.1.yaml
+  fatigue_evidence: services/inference-service/evidence/fatigue_evidence_v0.1.yaml
+  fatigue_rule: services/inference-service/rules/fatigue_rule_v0.1.yaml
+  technical_confidence: services/inference-service/confidence/technical_confidence_v0.1.yaml
+
+output_policy:
+  atomic_directory_publish: true
+  refuse_nonempty_without_overwrite: true
+  json_indent: 2
+  ensure_ascii: false
+  prohibit_raw_samples: true
+  prohibit_direct_identifiers: true
+  include_stage_payload_hashes: true
+  include_config_hashes: true
+  include_runtime_versions: true
+
+stage_files:
+  ingestion: 00-ingestion-summary.json
+  qc: 01-qc-result.json
+  preprocessing: 02-preprocessing-result.json
+  windowing: 03-windowing-result.json
+  time_features: 04-time-domain-features.json
+  spectral_estimation: 05-spectral-estimation.json
+  frequency_features: 06-frequency-features.json
+  trend_features: 07-trend-features.json
+  fatigue_evidence: 08-fatigue-evidence.json
+  fatigue_rule: 09-fatigue-rule.json
+  explainable_inference: 10-explainable-inference.json
+  analysis_manifest: 11-analysis-manifest.json
+
+safety:
+  quality_gate_blocks_unsafe_analysis: true
+  abstention_is_first_class_output: true
+  no_raw_samples_in_json: true
+  no_direct_patient_identifier_in_output: true
+  no_probability: true
+  no_frs: true
+  no_diagnosis: true
+  no_treatment_recommendation: true
+  no_return_to_play_decision: true
+  human_review_required: true
+  clinical_use_allowed: false
+  synthetic_data_is_not_clinical_evidence: true
+
+limitations:
+  - Pipeline MVP-0 chỉ được kiểm chứng trên synthetic fixtures và generic CSV contract.
+  - Output là technical analysis package, chưa phải clinical report cuối cùng.
+  - Không có FRS, MFCV thực tế, ML local hoặc clinical calibration trong phiên bản này.
