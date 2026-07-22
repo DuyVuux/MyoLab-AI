@@ -14,7 +14,7 @@ SEMGC_CORE = ROOT / "packages" / "semg-core"
 if str(SEMGC_CORE) not in sys.path:
     sys.path.insert(0, str(SEMGC_CORE))
 
-from semg_core.preprocessing import (  # noqa: E402
+from semg_core.preprocessing import (  # type: ignore # noqa: E402
     design_butterworth_bandpass_sos,
     preprocess_channel,
 )
