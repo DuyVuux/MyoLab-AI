@@ -1,0 +1,12 @@
+{
+  "schema_version": "analysis-job.v0.1",
+  "analysis_id": "ANALYSIS-42668659cfc6c1b0",
+  "session_id": "SYNTH_D3_GOLDEN_001",
+  "status": "completed",
+  "submitted_at": null,
+  "completed_at": null,
+  "links": {
+    "self": "/v1/analyses/ANALYSIS-42668659cfc6c1b0",
+    "summary": "/v1/analyses/ANALYSIS-42668659cfc6c1b0/summary"
+  }
+}

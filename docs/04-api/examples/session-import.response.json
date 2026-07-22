@@ -1,0 +1,10 @@
+{
+  "schema_version": "session-import-response.v0.1",
+  "session_id": "SYNTH_D3_GOLDEN_001",
+  "status": "imported",
+  "source_file_sha256": "3be03655b3d10fbc243a6b00fa23a6849bf8d90ff33922fe899c0da46d3f6b7e",
+  "reason_codes": [],
+  "links": {
+    "self": "/v1/sessions/SYNTH_D3_GOLDEN_001"
+  }
+}

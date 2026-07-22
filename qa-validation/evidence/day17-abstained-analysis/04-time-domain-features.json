@@ -1,0 +1,42 @@
+{
+  "schema_version": "time-domain-feature-extraction-result.v0.1",
+  "session_id": "SYNTH_D4_FAIL_FLATLINE",
+  "status": "blocked",
+  "downstream_allowed": false,
+  "config": {
+    "config_id": "features_semg_v0.1",
+    "feature_names": [
+      "rms",
+      "mav"
+    ],
+    "profile_id": "time_domain",
+    "canonical_amplitude_unit": "uV",
+    "normalization": "none"
+  },
+  "inherited_windowing": {
+    "status": "blocked",
+    "config_id": "windowing_v0.1",
+    "plan_hash_sha256": null
+  },
+  "summary": {
+    "channel_count": 0,
+    "total_row_count": 0,
+    "computed_row_count": 0,
+    "not_computed_row_count": 0,
+    "usable_window_ratio": 0.0,
+    "not_computed_reason_counts": {}
+  },
+  "reason_codes": [
+    "FEATURE_EXTRACTION_BLOCKED_BY_WINDOWING"
+  ],
+  "result_hash_sha256": null,
+  "rows": [],
+  "limitations": [
+    "RMS và MAV phản ánh biên độ tín hiệu trong cửa sổ; chúng không phải nhãn mỏi cơ độc lập.",
+    "Biên độ sEMG bị ảnh hưởng bởi lực co, recruitment, vị trí điện cực, impedance da, gain thiết bị và crosstalk.",
+    "Không có chuẩn hóa MVC hoặc baseline trong Day 8; không so sánh trực tiếp giữa người, thiết bị, session hoặc protocol khác nhau.",
+    "Cấu hình dùng cửa sổ time_domain 500 ms từ windowing_v0.1; chưa được xác nhận lâm sàng cho mọi cơ và task.",
+    "Feature trên synthetic data chỉ là bằng chứng kiểm thử phần mềm/DSP, không phải bằng chứng hiệu quả lâm sàng.",
+    "Windowing không tạo được plan hợp lệ."
+  ]
+}

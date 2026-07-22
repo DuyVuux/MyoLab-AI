@@ -1,0 +1,16 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"analysis-job.schema.json",
+  "type":"object",
+  "required":["schema_version","analysis_id","session_id","status","links"],
+  "properties":{
+    "schema_version":{"const":"analysis-job.v0.1"},
+    "analysis_id":{"type":"string"},
+    "session_id":{"type":"string"},
+    "status":{"enum":["queued","running","completed","completed_with_warnings","abstained","failed"]},
+    "submitted_at":{"type":["string","null"]},
+    "completed_at":{"type":["string","null"]},
+    "links":{"type":"object","additionalProperties":{"type":"string"}}
+  },
+  "additionalProperties":false
+}

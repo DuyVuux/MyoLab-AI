@@ -1,0 +1,143 @@
+{
+  "schema_version": "session-analysis-summary.v0.1",
+  "analysis_id": "ANALYSIS-42668659cfc6c1b0",
+  "session_id": "SYNTH_D3_GOLDEN_001",
+  "status": "completed",
+  "technical_conclusion": "supported_pattern",
+  "signal_quality": {
+    "status": "pass",
+    "analysis_allowed": true,
+    "reason_codes": [],
+    "mfcv_eligible": false,
+    "mfcv_reason_codes": [
+      "MFCV_LINEAR_ARRAY_NOT_CONFIRMED",
+      "MFCV_INTERELECTRODE_DISTANCE_UNKNOWN",
+      "MFCV_ORIENTATION_NOT_CONFIRMED",
+      "MFCV_INSUFFICIENT_ADJACENT_CHANNELS"
+    ]
+  },
+  "channels": [
+    {
+      "channel_id": "VL_R_01",
+      "muscle": "vastus_lateralis",
+      "side": "right",
+      "role": "bipolar_semg",
+      "phase_id": "active_contraction",
+      "trends": [
+        {
+          "feature_name": "rms",
+          "source_profile_id": "time_domain",
+          "slope_per_min": 37.51723882987326,
+          "slope_unit": "uV/min",
+          "percent_change": 48.73206799519612,
+          "r_squared": 0.6938774472453799
+        },
+        {
+          "feature_name": "mav",
+          "source_profile_id": "time_domain",
+          "slope_per_min": 29.767860779550897,
+          "slope_unit": "uV/min",
+          "percent_change": 49.11836296069771,
+          "r_squared": 0.6756194181440344
+        },
+        {
+          "feature_name": "mdf",
+          "source_profile_id": "frequency_domain",
+          "slope_per_min": -34.22679692358679,
+          "slope_unit": "Hz/min",
+          "percent_change": -23.966755010301405,
+          "r_squared": 0.7307616391237224
+        },
+        {
+          "feature_name": "mnf",
+          "source_profile_id": "frequency_domain",
+          "slope_per_min": -43.8557977475309,
+          "slope_unit": "Hz/min",
+          "percent_change": -29.338491086731164,
+          "r_squared": 0.9646629221913212
+        }
+      ],
+      "evidence_pattern": "multi_domain_change_pattern_observed",
+      "technical_conclusion": "supported_pattern"
+    }
+  ],
+  "confidence": {
+    "final_score_0_to_1": 0.9532460713352229,
+    "category": "engineering_high",
+    "score_is_probability": false,
+    "clinical_calibration_status": "not_calibrated"
+  },
+  "explainability": {
+    "summary_vi": "Quan sát thấy mẫu biến đổi tín hiệu đáp ứng quy tắc kỹ thuật v0.1 trong protocol hiện tại; cần người có chuyên môn xem xét cùng bối cảnh đo.",
+    "decision_basis": [
+      {
+        "code": "BASIS_FREQUENCY_DOMAIN_SUPPORT",
+        "text_vi": "Miền tần số có xu hướng hỗ trợ mẫu biến đổi được định nghĩa trước.",
+        "source_domains": [
+          "frequency"
+        ],
+        "source_features": [
+          "mdf",
+          "mnf"
+        ],
+        "channel_id": "VL_R_01"
+      },
+      {
+        "code": "BASIS_AMPLITUDE_DOMAIN_SUPPORT",
+        "text_vi": "Miền biên độ có xu hướng hỗ trợ mẫu biến đổi được định nghĩa trước.",
+        "source_domains": [
+          "amplitude"
+        ],
+        "source_features": [
+          "rms",
+          "mav"
+        ],
+        "channel_id": "VL_R_01"
+      }
+    ],
+    "counterevidence": [],
+    "wording_guard_status": "passed"
+  },
+  "provenance": {
+    "analysis_fingerprint_sha256": "42668659cfc6c1b07b12ea1d3dd2888376c7d786285147cc0d4d9b48cb423043",
+    "source_hash_sha256": "3be03655b3d10fbc243a6b00fa23a6849bf8d90ff33922fe899c0da46d3f6b7e",
+    "pipeline_config_id": "offline_analysis_mvp0",
+    "config_hashes": {
+      "fatigue_evidence": "c2d7033a6272d12ed6b0c7f8affc4e2b1486ee8bcd24cd2b876adaaf8f32fa46",
+      "fatigue_rule": "803726ca4fdd8caef294e906bb375faa07347ec61f84f07849dc69d77c0216bc",
+      "frequency_features": "5564cee72bab9a8430d65cdb7e21130be2f6e9aed14b4d8850c39ea585b04657",
+      "offline_analysis_profile": "a85e4eb503e3bd335e9c60d96e2f3e374b2399ef7ccc61538471a8f44358f6bc",
+      "preprocessing": "844e19bb7da7161deadd51c3aeece0ddebf314e0c57b112f96bbf269454e56fa",
+      "protocol": "130a6a0c95d6bff0eb57880c261b343c87d0e5a54c4537815c006ec069c847f2",
+      "qc": "c93b857fca0fa392546795e74422da4ec002c3dcc21ccf7eee3c1ee73b167017",
+      "spectral_estimation": "5d61d0e5bad62e0caabda49df6593eb160fdc45fef91086554177cc3d95b134e",
+      "technical_confidence": "e5b92ff93c43da3c1f12fdc8a18f25a4e26edf188cfe0d98da7b7c2683610d80",
+      "time_features": "a450d807b398fcb8d99d365d8f13eb4ed5f2b102428af3d24126c17b58c768a2",
+      "trend_features": "c254f2ab77bed227ee211a818f93362c377fe453e822bc09fbfcd3b94232acd1",
+      "windowing": "31b8a43efb9a360369d2b2af5b15bea0eadc4f6935abe5475e299a0d3d5c33c8"
+    }
+  },
+  "safety": {
+    "clinical_use_allowed": false,
+    "human_review_required": true,
+    "is_diagnosis": false,
+    "is_treatment_recommendation": false,
+    "is_return_to_play_decision": false,
+    "synthetic_data_is_clinical_evidence": false
+  },
+  "limitations": [
+    "Pipeline MVP-0 chỉ được kiểm chứng trên synthetic fixtures và generic CSV contract.",
+    "Output là technical analysis package, chưa phải clinical report cuối cùng.",
+    "Không có FRS, MFCV thực tế, ML local hoặc clinical calibration trong phiên bản này.",
+    "Engineering confidence chỉ phản ánh chất lượng nội bộ của pipeline và mức đồng thuận evidence; không phải xác suất mỏi.",
+    "Trọng số 0.35/0.25/0.20/0.20 là engineering defaults chưa được local hoặc clinical validation.",
+    "Confidence cao không khắc phục protocol sai, electrode placement sai hoặc label yếu.",
+    "Output chỉ dùng cho technical demo/review cho đến khi hoàn tất external validation."
+  ],
+  "links": {
+    "self": "/v1/analyses/ANALYSIS-42668659cfc6c1b0/summary",
+    "analysis": "/v1/analyses/ANALYSIS-42668659cfc6c1b0",
+    "manifest": "/v1/analyses/ANALYSIS-42668659cfc6c1b0/manifest"
+  },
+  "summary_hash_sha256": "5f0085be309cccc7f6f8b9729670a9fe6c5807beefd7ee5389b363918b8b27aa"
+}

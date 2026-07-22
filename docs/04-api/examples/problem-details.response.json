@@ -1,0 +1,15 @@
+{
+  "type": "https://example.local/problems/semantic-validation",
+  "title": "Semantic validation không đạt",
+  "status": 422,
+  "detail": "Manifest thiếu metadata bắt buộc.",
+  "instance": "/v1/sessions/import",
+  "error_code": "MANIFEST_REQUIRED_FIELD_MISSING",
+  "trace_id": "TRACE-DEMO-0001",
+  "invalid_params": [
+    {
+      "name": "sampling_rate_hz",
+      "reason": "required"
+    }
+  ]
+}

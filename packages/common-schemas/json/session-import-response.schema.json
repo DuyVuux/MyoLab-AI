@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"session-import-response.schema.json",
+  "type":"object",
+  "required":["schema_version","session_id","status","source_file_sha256","links"],
+  "properties":{
+    "schema_version":{"const":"session-import-response.v0.1"},
+    "session_id":{"type":"string"},
+    "status":{"enum":["imported","import_rejected"]},
+    "source_file_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "reason_codes":{"type":"array","items":{"type":"string"}},
+    "links":{"type":"object","additionalProperties":{"type":"string"}}
+  },
+  "additionalProperties":false
+}
