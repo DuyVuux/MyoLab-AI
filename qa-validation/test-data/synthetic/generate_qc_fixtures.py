@@ -39,7 +39,7 @@ def load_source(manifest_path: Path) -> tuple[dict[str, Any], np.ndarray, np.nda
     if raw.dtype.names is None or len(raw.dtype.names) != 2:
         raise ValueError("Day 4 generator expects one time column and one signal channel")
     time_column, signal_column = raw.dtype.names
-    return manifest, np.asarray(raw[time_column]), np.asarray(raw[signal_column])
+    return manifest, np.asarray(raw[time_column]), np.asarray(raw[signal_column])  # type: ignore
 
 
 def write_fixture(

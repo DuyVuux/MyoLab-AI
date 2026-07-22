@@ -18,9 +18,9 @@ for path in (SEMGC_PATH, INGESTION_PATH, QC_PATH):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
-from importers.csv_importer import CSVImporter  # noqa: E402
-from config_loader import load_protocol, load_qc_config  # noqa: E402
-from quality_gate import QualityGate, build_import_rejected_result  # noqa: E402
+from importers.csv_importer import CSVImporter  # type: ignore # noqa: E402
+from config_loader import load_protocol, load_qc_config  # type: ignore # noqa: E402
+from quality_gate import QualityGate, build_import_rejected_result  # type: ignore # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:

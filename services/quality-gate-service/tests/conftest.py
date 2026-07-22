@@ -17,16 +17,16 @@ for path in (
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
-from importers.csv_importer import CSVImporter  # noqa: E402
-from config_loader import load_protocol, load_qc_config  # noqa: E402
-from quality_gate import QualityGate  # noqa: E402
-from semg_core.io import (  # noqa: E402
+from importers.csv_importer import CSVImporter  # type: ignore # noqa: E402
+from config_loader import load_protocol, load_qc_config  # type: ignore # noqa: E402
+from quality_gate import QualityGate  # type: ignore # noqa: E402
+from semg_core.io import (  # type: ignore # noqa: E402
     NormalizedChannel,
     NormalizedSignal,
     PhaseMarker,
     ProtocolRef,
 )
-from result_models import (  # noqa: E402
+from result_models import (  # type: ignore # noqa: E402
     AbstentionResult,
     MFCVEligibilityResult,
     QCResult,

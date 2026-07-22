@@ -51,7 +51,7 @@ def finite_db(value: float, floor: float) -> float:
 
 def effective_zero_phase_gain_db(sos: np.ndarray, frequency_hz: float, fs: float, floor: float) -> float:
     _, response = sosfreqz(sos, worN=np.asarray([frequency_hz], dtype=np.float64), fs=fs)
-    one_pass = float(abs(response[0]))
+    one_pass = float(abs(response[0]))  # type: ignore
     return finite_db(one_pass * one_pass, floor)
 
 

@@ -40,7 +40,7 @@ def kwargs(cfg: dict, notch: bool = False) -> dict:
 
 def zero_phase_gain_db(sos: np.ndarray, frequency: float, fs: float) -> float:
     _, h = sosfreqz(sos, worN=np.asarray([frequency]), fs=fs)
-    return float(20.0 * np.log10(max(abs(h[0]) ** 2, 1e-15)))
+    return float(20.0 * np.log10(max(abs(h[0]) ** 2, 1e-15)))  # type: ignore
 
 
 def test_theoretical_passband_and_stopband() -> None:
