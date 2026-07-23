@@ -1,0 +1,162 @@
+.backBtn {
+  margin-bottom: var(--space-2);
+  padding-left: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.contextColumn, .inputColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cardTitle {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.table td {
+  padding: var(--space-2) 0;
+  border-bottom: 1px dashed var(--color-border-subtle);
+}
+
+.table td:first-child {
+  width: 150px;
+  color: var(--color-text-muted);
+}
+
+.deleted {
+  color: var(--color-error);
+  text-decoration: line-through;
+}
+
+.added {
+  color: var(--color-success);
+  font-weight: var(--font-weight-medium);
+}
+
+.privacyBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-background-alt);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.privacyItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+}
+
+.privacyItem span {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+}
+
+.hash {
+  font-family: var(--font-mono);
+  word-break: break-all;
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.formGroup label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.select, .textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+}
+
+.select:focus, .textarea:focus {
+  outline: 2px solid var(--color-primary);
+  border-color: transparent;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-background-alt);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-4);
+}
+
+.checkboxGroup input[type="checkbox"] {
+  margin-top: 4px;
+}
+
+.checkboxGroup label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.checkboxGroup label strong {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.helpText {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+  margin-top: var(--space-1);
+}
+
+.errorMessage {
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-4);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

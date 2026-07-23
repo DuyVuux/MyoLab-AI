@@ -1,0 +1,130 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.contextColumn, .inputColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cardTitle {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.contextList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contextItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px dashed var(--color-border-subtle);
+}
+
+.techNotes {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  background: var(--color-background-alt);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+.techNotes strong {
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.aiText {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  resize: vertical;
+}
+
+.textarea:focus, .textareaSmall:focus, .select:focus {
+  outline: 2px solid var(--color-primary);
+  border-color: transparent;
+}
+
+.overrideBox {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-warning-border, #f6e05e);
+  border-radius: var(--radius-md);
+  background: var(--color-warning-soft, #fffff0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.formGroup label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.select {
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  background: var(--color-background);
+}
+
+.textareaSmall {
+  width: 100%;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  resize: vertical;
+}
+
+.errorMessage {
+  margin-top: var(--space-3);
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

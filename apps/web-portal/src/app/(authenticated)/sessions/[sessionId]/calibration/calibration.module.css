@@ -1,0 +1,47 @@
+/* calibration.module.css */
+.sectionTitle { font-size: var(--font-size-md); font-weight: var(--font-weight-semibold); }
+.subTitle { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-top: var(--space-4); margin-bottom: var(--space-2); }
+.stepDesc { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: var(--line-height-relaxed); }
+
+.stepper { display: flex; gap: var(--space-2); margin-bottom: var(--space-6); }
+.step { display: flex; flex-direction: column; align-items: center; flex: 1; gap: var(--space-1); }
+.stepDot { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-text-muted); background: var(--color-surface); }
+.step--done .stepDot { border-color: var(--color-success); color: var(--color-success); background: var(--color-success-soft, #f0fff4); }
+.step--active .stepDot { border-color: var(--color-primary); color: #fff; background: var(--color-primary); }
+.stepLabel { font-size: var(--font-size-xs); color: var(--color-text-muted); text-align: center; }
+.step--active .stepLabel { color: var(--color-primary); font-weight: var(--font-weight-semibold); }
+
+.countdownOverlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-8); color: var(--color-primary); gap: var(--space-3); }
+.countdownValue { font-size: 64px; font-weight: var(--font-weight-bold); font-family: var(--font-mono); line-height: 1; }
+
+.resultBox { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-4); background: var(--color-background); border-radius: var(--radius-md); }
+.resultItem { display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-sm); }
+.resultDetail { font-size: var(--font-size-xs); color: var(--color-text-muted); margin-top: var(--space-2); }
+
+.repList { display: flex; flex-direction: column; gap: var(--space-3); }
+.repCard { padding: var(--space-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); }
+.repCard--pass { border-left: 3px solid var(--color-success); }
+.repCard--warning { border-left: 3px solid var(--color-warning); background: var(--color-warning-soft, #fffff0); }
+.repCard--fail { border-left: 3px solid var(--color-error); background: var(--color-error-soft, #fff5f5); }
+.repHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2); }
+.repId { font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--color-text-muted); }
+.repInfo { display: flex; flex-direction: column; gap: 2px; }
+.repGesture { font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); }
+.repMeta { font-size: var(--font-size-xs); color: var(--color-text-muted); font-family: var(--font-mono); }
+.repReason { font-size: var(--font-size-xs); color: var(--color-warning); margin-top: var(--space-1); }
+.repActions { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
+
+.summaryGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin: var(--space-4) 0; }
+.summaryItem { display: flex; flex-direction: column; gap: 2px; font-size: var(--font-size-sm); }
+.summaryItem span { color: var(--color-text-muted); }
+.passText { color: var(--color-success); }
+.warnText { color: var(--color-warning); }
+.failText { color: var(--color-error); }
+
+.mvcGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+.mvcItem { display: flex; justify-content: space-between; padding: var(--space-2) var(--space-3); background: var(--color-background); border-radius: var(--radius-sm); font-size: var(--font-size-sm); }
+
+.actions { display: flex; align-items: center; margin-top: var(--space-6); gap: var(--space-3); }
+.spacer { flex: 1; }
+
+@media (max-width: 768px) { .summaryGrid { grid-template-columns: repeat(2, 1fr); } .stepper { flex-wrap: wrap; } }

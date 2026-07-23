@@ -1,0 +1,88 @@
+/* Card.module.css */
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* ── Padding ── */
+.card--pad-none { padding: 0; }
+.card--pad-sm { padding: var(--space-3); }
+.card--pad-md { padding: var(--space-6); }
+.card--pad-lg { padding: var(--space-8); }
+
+/* ── Variants ── */
+.card--default {
+  box-shadow: var(--shadow-card);
+}
+
+.card--elevated {
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.card--outlined {
+  box-shadow: none;
+}
+
+.card--success {
+  border-color: var(--color-success);
+  background-color: var(--color-success-soft);
+}
+
+.card--warning {
+  border-color: var(--color-warning);
+  background-color: var(--color-warning-soft);
+}
+
+.card--error {
+  border-color: var(--color-error);
+  background-color: var(--color-error-soft);
+}
+
+.card--abstention {
+  border-color: var(--color-abstention);
+  background-color: var(--color-abstention-soft);
+}
+
+.card--info {
+  border-color: var(--color-info);
+  background-color: var(--color-info-soft);
+}
+
+/* ── Hover ── */
+.card--hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card--hoverable {
+  cursor: pointer;
+}
+
+/* ── Card Parts ── */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-4);
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: var(--space-4);
+}

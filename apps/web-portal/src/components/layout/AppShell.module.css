@@ -1,0 +1,318 @@
+/* AppShell.module.css */
+
+/* ── Layout ── */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--color-sidebar-bg);
+  color: var(--color-sidebar-text);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: var(--z-fixed);
+  transition: width var(--transition-normal);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar--collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+/* ── Brand ── */
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 64px;
+}
+
+.brandContent {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.brandIcon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.brandSubtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-sidebar-text);
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.mobileClose {
+  display: none;
+  color: var(--color-sidebar-text);
+  padding: var(--space-1);
+}
+
+/* ── Navigation ── */
+.nav {
+  flex: 1;
+  padding: var(--space-3) var(--space-2);
+  overflow-y: auto;
+}
+
+.navGroup {
+  margin-bottom: var(--space-4);
+}
+
+.navGroupTitle {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--color-sidebar-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  text-decoration: none;
+  min-height: 40px;
+}
+
+.navItem:hover {
+  background-color: var(--color-sidebar-hover);
+  color: #fff;
+}
+
+.navItem--active {
+  background-color: var(--color-sidebar-active);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.navLabel {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tierDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tierDot--1 {
+  background-color: var(--color-primary);
+}
+
+.tierDot--2 {
+  background-color: var(--color-warning);
+}
+
+.navBadge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ── User Section ── */
+.userSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  gap: var(--space-2);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  flex: 1;
+}
+
+.userName {
+  min-width: 0;
+}
+
+.userDisplayName {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userRole {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.logoutBtn {
+  color: var(--color-sidebar-text);
+  opacity: 0.6;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.logoutBtn:hover {
+  opacity: 1;
+}
+
+/* ── Disclaimer ── */
+.disclaimer {
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.5;
+}
+
+.disclaimer p {
+  margin-bottom: 2px;
+}
+
+/* ── Collapse ── */
+.collapseBtn {
+  position: absolute;
+  right: -12px;
+  top: 28px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: background-color var(--transition-fast);
+  z-index: calc(var(--z-fixed) + 1);
+}
+
+.collapseBtn:hover {
+  background-color: var(--color-background);
+}
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left var(--transition-normal);
+}
+
+.main--expanded {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+/* ── Mobile Header ── */
+.mobileHeader {
+  display: none;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.menuBtn {
+  color: var(--color-text-primary);
+  padding: var(--space-1);
+}
+
+.mobileTitle {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+}
+
+/* ── Overlay ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--z-fixed) - 1);
+  animation: overlay-enter 250ms ease-out;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-width);
+    z-index: calc(var(--z-overlay) + 1);
+  }
+
+  .sidebar--mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar--collapsed {
+    width: var(--sidebar-width);
+  }
+
+  .mobileClose {
+    display: flex;
+  }
+
+  .collapseBtn {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .main--expanded {
+    margin-left: 0;
+  }
+
+  .mobileHeader {
+    display: flex;
+  }
+}

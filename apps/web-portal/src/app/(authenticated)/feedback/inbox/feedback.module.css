@@ -1,0 +1,74 @@
+/* feedback.module.css */
+
+.filters {
+  display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6);
+}
+
+.filterBtn {
+  display: flex; align-items: center; gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border); border-radius: var(--radius-full);
+  font-size: var(--font-size-sm); cursor: pointer; background-color: var(--color-surface);
+  transition: all var(--transition-fast);
+}
+
+.filterBtn:hover { border-color: var(--color-primary); background-color: var(--color-primary-softer); }
+
+.filterBtn--active {
+  border-color: var(--color-primary); background-color: var(--color-primary); color: #fff;
+}
+
+.filterBadge {
+  font-size: var(--font-size-xs); font-weight: var(--font-weight-bold);
+  background-color: rgba(255,255,255,0.3); padding: 0 6px; border-radius: var(--radius-full);
+  min-width: 18px; text-align: center;
+}
+
+.filterBtn:not(.filterBtn--active) .filterBadge {
+  background-color: var(--color-error); color: #fff;
+}
+
+.feedbackList { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.feedbackLink { text-decoration: none; color: inherit; }
+
+.feedbackTop {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);
+}
+
+.feedbackMeta { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+
+.feedbackId {
+  font-family: var(--font-mono); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); color: var(--color-text-primary);
+}
+
+.feedbackArrow { color: var(--color-text-muted); }
+
+.feedbackSummary {
+  font-size: var(--font-size-sm); color: var(--color-text-primary);
+  margin-bottom: var(--space-3); line-height: var(--line-height-relaxed);
+}
+
+.feedbackComparison {
+  display: flex; flex-direction: column; gap: var(--space-1);
+  padding: var(--space-2) var(--space-3); background-color: var(--color-background);
+  border-radius: var(--radius-sm); margin-bottom: var(--space-3);
+}
+
+.comparisonSide {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: var(--font-size-xs); color: var(--color-text-secondary);
+}
+
+.comparisonLabel { font-weight: var(--font-weight-semibold); color: var(--color-text-primary); }
+
+.feedbackFooter {
+  display: flex; gap: var(--space-4); font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.empty {
+  text-align: center; padding: var(--space-12); color: var(--color-text-muted);
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-3);
+}

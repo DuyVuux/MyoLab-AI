@@ -1,0 +1,39 @@
+route_path,status,primary_persona,primary_decision,route_guard,test_coverage,evidence
+/login,implemented,all,Xác thực người dùng,none,none,src/app/login/page.tsx
+/dashboard,implemented,all,Xem tổng quan hệ thống,authenticated,none,src/app/(authenticated)/dashboard/page.tsx
+/use-cases,implemented,all,Chọn trường hợp sử dụng,authenticated,none,src/app/(authenticated)/use-cases/page.tsx
+/sessions,implemented,ktv/doctor,Danh sách và quản lý phiên,authenticated,none,src/app/(authenticated)/sessions/page.tsx
+/sessions/new,implemented,ktv,Tạo phiên làm việc mới,authenticated,none,src/app/(authenticated)/sessions/new/page.tsx
+/sessions/:sessionId/context,implemented,ktv,Thiết lập thông tin bối cảnh phiên,authenticated,none,src/app/(authenticated)/sessions/[sessionId]/context/page.tsx
+/sessions/:sessionId/data-source,implemented,ktv,Chọn nguồn dữ liệu (Synthetic/CSV),authenticated,none,src/app/(authenticated)/sessions/[sessionId]/data-source/page.tsx
+/sessions/:sessionId/import,implemented,ktv,Tải lên và xác minh tính toàn vẹn tệp,authenticated,none,src/app/(authenticated)/sessions/[sessionId]/import/page.tsx
+/sessions/:sessionId/mapping,implemented,ktv,Gán kênh tín hiệu với vị trí cơ,authenticated,none,src/app/(authenticated)/sessions/[sessionId]/mapping/page.tsx
+/sessions/:sessionId/preflight,implemented,ktv,Kiểm tra thông số kỹ thuật tín hiệu,authenticated,none,src/app/(authenticated)/sessions/[sessionId]/preflight/page.tsx
+/sessions/:sessionId/calibration,implemented,ktv,Thực hiện hiệu chuẩn MVC/baseline,authenticated,none,src/app/(authenticated)/sessions/[sessionId]/calibration/page.tsx
+/sessions/:sessionId/acquisition,missing,ktv,Thu nhận tín hiệu trực tiếp,none,none,N/A
+/sessions/:sessionId/quality,implemented,ktv,Đánh giá Quality Gate và xác nhận warning,authenticated,none,src/app/(authenticated)/sessions/[sessionId]/quality/page.tsx
+/sessions/:sessionId/analysis,implemented,ktv/doctor,Chạy và xem phân tích AI,authenticated,none,src/app/(authenticated)/sessions/[sessionId]/analysis/page.tsx
+/sessions/:sessionId/review,implemented,doctor,Duyệt lâm sàng và ghi đè kết quả,RoleGuard:doctor/admin,none,src/app/(authenticated)/sessions/[sessionId]/review/page.tsx
+/sessions/:sessionId/report,implemented,doctor,Tạo và xuất báo cáo lâm sàng,authenticated,none,src/app/(authenticated)/sessions/[sessionId]/report/page.tsx
+/imports,implemented,ktv/researcher,Quản lý danh sách tệp import,authenticated,none,src/app/(authenticated)/imports/page.tsx
+/imports/:importId,implemented,ktv/researcher,Xem chi tiết chứng thực tệp import,authenticated,none,src/app/(authenticated)/imports/[importId]/page.tsx
+/analyses,implemented,doctor/researcher,Quản lý các kết quả phân tích,authenticated,none,src/app/(authenticated)/analyses/page.tsx
+/data-quality/issues,implemented,ktv/researcher,Theo dõi sự cố chất lượng dữ liệu,authenticated,none,src/app/(authenticated)/data-quality/issues/page.tsx
+/devices,implemented,admin,Quản lý danh mục thiết bị,authenticated,none,src/app/(authenticated)/devices/page.tsx
+/devices/:deviceId,missing,admin,Xem chi tiết thiết bị,none,none,N/A
+/protocols,implemented,ktv/doctor,Quản lý giao thức đo,authenticated,none,src/app/(authenticated)/protocols/page.tsx
+/protocols/:protocolId,missing,ktv/doctor,Xem chi tiết giao thức,none,none,N/A
+/audit,implemented,admin,Xem nhật ký kiểm toán hệ thống,RoleGuard:admin,none,src/app/(authenticated)/audit/page.tsx
+/admin/users,implemented,admin,Quản lý người dùng và phân quyền,authenticated,none,src/app/(authenticated)/admin/users/page.tsx
+/uc1/intro,implemented,ktv/doctor,Xem giới thiệu UC1 Biofeedback,authenticated,none,src/app/(authenticated)/uc1/intro/page.tsx
+/uc1/calibration/:sessionId,placeholder,ktv,Hiệu chuẩn riêng cho UC1,authenticated,none,src/app/(authenticated)/uc1/calibration/[sessionId]/page.tsx
+/uc1/session/:sessionId,implemented,patient/ktv,Thực hiện phiên Biofeedback cử chỉ,authenticated,none,src/app/(authenticated)/uc1/session/[sessionId]/page.tsx
+/uc1/review/:sessionId,implemented,ktv/doctor,Đánh giá phân đoạn cử chỉ UC1,authenticated,none,src/app/(authenticated)/uc1/review/[sessionId]/page.tsx
+/uc2/intro,implemented,ktv/doctor,Xem giới thiệu UC2 Đánh giá định lượng,authenticated,none,src/app/(authenticated)/uc2/intro/page.tsx
+/uc2/assessment/:sessionId,implemented,doctor,Đánh giá đa chỉ số UC2,authenticated,none,src/app/(authenticated)/uc2/assessment/[sessionId]/page.tsx
+/uc2/longitudinal/:subjectRef,partial,doctor,Theo dõi tiến triển theo thời gian,authenticated,none,src/app/(authenticated)/uc2/longitudinal/[subjectRef]/page.tsx
+/uc3/intro,implemented,researcher,Xem nghiên cứu khả thi UC3,authenticated,none,src/app/(authenticated)/uc3/intro/page.tsx
+/uc4/intro,implemented,researcher,Xem nghiên cứu khả thi UC4,authenticated,none,src/app/(authenticated)/uc4/intro/page.tsx
+/feedback/inbox,implemented,doctor/researcher,Hộp thư phản hồi dán nhãn,authenticated,none,src/app/(authenticated)/feedback/inbox/page.tsx
+/feedback/:feedbackId,implemented,researcher,Trọng tài dán nhãn dữ liệu ML,authenticated,none,src/app/(authenticated)/feedback/[feedbackId]/page.tsx
+/feedback/analytics,implemented,researcher,Phân tích thống kê phản hồi,authenticated,none,src/app/(authenticated)/feedback/analytics/page.tsx

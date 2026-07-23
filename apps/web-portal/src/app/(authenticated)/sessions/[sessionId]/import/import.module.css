@@ -1,0 +1,45 @@
+/* import.module.css */
+.dropZone { border: 2px dashed var(--color-border); border-radius: var(--radius-lg); padding: var(--space-12) var(--space-8); text-align: center; cursor: pointer; transition: all var(--transition-fast); background: var(--color-surface); }
+.dropZone:hover { border-color: var(--color-primary); background: var(--color-primary-softer); }
+.dropZone--active { border-color: var(--color-primary); background: var(--color-primary-soft); }
+.dropIcon { color: var(--color-text-muted); margin: 0 auto var(--space-4); }
+.dropTitle { font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); }
+.dropHint { font-size: var(--font-size-sm); color: var(--color-text-muted); }
+.hiddenInput { display: none; }
+
+.importHeader { display: flex; align-items: center; gap: var(--space-3); }
+.importFilename { font-size: var(--font-size-md); font-weight: var(--font-weight-semibold); }
+.importMeta { font-size: var(--font-size-xs); color: var(--color-text-muted); }
+.importMeta code { background: var(--color-background-alt); padding: 1px 4px; border-radius: var(--radius-sm); font-family: var(--font-mono); }
+
+.hashRow { display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-xs); color: var(--color-text-muted); font-family: var(--font-mono); margin: var(--space-3) 0; }
+.hashRow code { background: var(--color-background-alt); padding: 1px 4px; border-radius: var(--radius-sm); }
+
+.progressContainer { display: flex; align-items: center; gap: var(--space-3); margin: var(--space-4) 0; }
+.progressBar { flex: 1; height: 8px; background: var(--color-background-alt); border-radius: var(--radius-full); overflow: hidden; }
+.progressFill { height: 100%; background: var(--color-primary); border-radius: var(--radius-full); transition: width 0.5s ease; }
+.progressFill--error { background: var(--color-error); }
+.progressLabel { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); min-width: 40px; text-align: right; }
+
+.timeline { display: flex; gap: var(--space-1); margin: var(--space-4) 0; overflow-x: auto; padding-bottom: var(--space-2); }
+.timelineStep { display: flex; flex-direction: column; align-items: center; min-width: 80px; gap: var(--space-1); }
+.timelineDot { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; background: var(--color-surface); }
+.timelineStep--done .timelineDot { border-color: var(--color-success); color: var(--color-success); background: var(--color-success-soft, #f0fff4); }
+.timelineStep--current .timelineDot { border-color: var(--color-primary); background: var(--color-primary-soft); }
+.dotInner { width: 6px; height: 6px; border-radius: 50%; background: var(--color-border); }
+.timelineStep--current .dotInner { background: var(--color-primary); }
+.timelineLabel { font-size: 9px; text-align: center; color: var(--color-text-muted); line-height: 1.2; }
+.timelineStep--done .timelineLabel { color: var(--color-success); }
+.timelineStep--current .timelineLabel { color: var(--color-primary); font-weight: var(--font-weight-semibold); }
+
+.importActions { display: flex; gap: var(--space-3); margin-top: var(--space-4); }
+
+.receipt { display: flex; gap: var(--space-4); padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-success-soft, #f0fff4); border: 1px solid var(--color-success); margin-top: var(--space-4); }
+.receiptIcon { color: var(--color-success); flex-shrink: 0; margin-top: 2px; }
+.receiptTitle { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); }
+.receiptGrid { display: grid; grid-template-columns: auto 1fr; gap: var(--space-1) var(--space-4); font-size: var(--font-size-xs); }
+.receiptGrid span { color: var(--color-text-secondary); }
+.receiptGrid code { font-family: var(--font-mono); background: var(--color-background-alt); padding: 1px 4px; border-radius: var(--radius-sm); }
+
+.actions { display: flex; align-items: center; margin-top: var(--space-6); gap: var(--space-3); }
+.spacer { flex: 1; }

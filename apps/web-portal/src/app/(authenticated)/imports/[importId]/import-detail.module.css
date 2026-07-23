@@ -1,0 +1,19 @@
+/* import-detail.module.css */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.metaGrid { display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-4); font-size: var(--font-size-sm); }
+.metaGrid span:nth-child(odd) { color: var(--color-text-muted); font-weight: var(--font-weight-medium); }
+.metaGrid code { font-family: var(--font-mono); font-size: var(--font-size-xs); background: var(--color-background-alt); padding: 1px 4px; border-radius: var(--radius-sm); }
+
+.hashDisplay { display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); margin-bottom: var(--space-3); }
+.hashCode { font-family: var(--font-mono); font-size: var(--font-size-xs); background: var(--color-background-alt); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); word-break: break-all; }
+
+.stateTimeline { display: flex; flex-direction: column; gap: var(--space-3); }
+.stateEntry { display: flex; gap: var(--space-3); align-items: flex-start; }
+.stateIcon { flex-shrink: 0; margin-top: 2px; }
+.stateTransition { font-size: var(--font-size-sm); display: block; }
+.stateTime { font-size: var(--font-size-xs); color: var(--color-text-muted); font-family: var(--font-mono); display: block; }
+.stateDetail { font-size: var(--font-size-xs); color: var(--color-text-secondary); display: block; }
+
+.actions { display: flex; align-items: center; margin-top: var(--space-6); gap: var(--space-3); }
+
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }

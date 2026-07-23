@@ -1,0 +1,6 @@
+{
+  "name": "myolab-ai",
+  "version": "0.1.0",
+  "description": "sEMG/MFCV Fatigue Clinical Intelligence Platform",
+  "private": true
+}

@@ -1,0 +1,16 @@
+/* analytics.module.css */
+.kpiGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0; }
+.kpiIcon { width: 40px; height: 40px; border-radius: var(--radius-md); background-color: var(--color-primary-softer); color: var(--color-primary); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-3); }
+.kpiValue { font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); line-height: 1; margin-bottom: var(--space-1); }
+.kpiLabel { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-1); }
+.kpiSubtext { font-size: var(--font-size-xs); color: var(--color-text-muted); }
+.kpiTrend { display: flex; align-items: center; gap: var(--space-1); font-size: var(--font-size-xs); }
+.kpiTrend--good { color: var(--color-success); }
+.kpiTrend--bad { color: var(--color-error); }
+
+.table { width: 100%; min-width: 500px; }
+.table th { text-align: left; padding: var(--space-3) var(--space-4); font-size: var(--font-size-xs); font-weight: 600; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--color-border); }
+.table td { padding: var(--space-3) var(--space-4); font-size: var(--font-size-sm); border-bottom: 1px solid var(--color-border-subtle); }
+.table tr:hover td { background-color: var(--color-background); }
+
+@media (max-width: 768px) { .kpiGrid { grid-template-columns: repeat(2, 1fr); } }

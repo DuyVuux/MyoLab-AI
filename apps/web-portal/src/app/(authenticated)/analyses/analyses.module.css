@@ -1,0 +1,14 @@
+/* analyses.module.css */
+.tableWrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background-color: var(--color-surface); }
+.table { min-width: 900px; }
+.table th { text-align: left; padding: var(--space-3) var(--space-4); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--color-border); background-color: var(--color-background); }
+.table td { padding: var(--space-3) var(--space-4); font-size: var(--font-size-sm); border-bottom: 1px solid var(--color-border-subtle); vertical-align: middle; }
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background-color: var(--color-background); }
+.mono { font-family: var(--font-mono); font-weight: var(--font-weight-medium); }
+.link { color: var(--color-primary); font-family: var(--font-mono); }
+.link:hover { text-decoration: underline; }
+.progressWrap { display: flex; align-items: center; gap: var(--space-2); min-width: 120px; }
+.progressTrack { flex: 1; height: 6px; background-color: var(--color-background-alt); border-radius: var(--radius-full); overflow: hidden; }
+.progressFill { height: 100%; background-color: var(--color-primary); border-radius: var(--radius-full); transition: width var(--transition-normal); }
+.progressText { font-size: var(--font-size-xs); font-family: var(--font-mono); color: var(--color-text-muted); min-width: 32px; }

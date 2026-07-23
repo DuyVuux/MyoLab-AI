@@ -1,0 +1,149 @@
+.paper {
+  position: relative;
+  background: white;
+  color: black;
+  padding: 40px;
+  margin: var(--space-6) auto;
+  max-width: 800px;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+  min-height: 1000px;
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 100px;
+  color: rgba(0, 0, 0, 0.05);
+  font-weight: 900;
+  pointer-events: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-6);
+}
+
+.hospitalInfo h2 {
+  font-size: 24px;
+  margin: 0 0 var(--space-1) 0;
+}
+
+.hospitalInfo p {
+  color: #555;
+  margin: 0;
+  font-size: 14px;
+}
+
+.reportMeta p {
+  margin: 0 0 var(--space-1) 0;
+  font-size: 14px;
+}
+
+.divider {
+  border: 0;
+  border-top: 2px solid #000;
+  margin: var(--space-6) 0;
+}
+
+.section {
+  margin-bottom: var(--space-6);
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td {
+  padding: var(--space-2);
+  border: 1px solid #ddd;
+  font-size: 14px;
+  width: 50%;
+}
+
+.clinicalConclusion {
+  font-size: 16px;
+  line-height: 1.6;
+  padding: var(--space-4);
+  background: #f9f9f9;
+  border-left: 4px solid var(--color-primary);
+}
+
+.overrideDetail {
+  margin-top: var(--space-2);
+  font-size: 13px;
+  color: #666;
+  font-style: italic;
+}
+
+.aiSummary {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.footerRow {
+  margin-top: 60px;
+}
+
+.signatures {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sigBlock {
+  text-align: center;
+  width: 250px;
+}
+
+.sigName {
+  margin-top: 80px;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: var(--space-1);
+}
+
+.hashLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  font-family: monospace;
+  font-size: 11px;
+  color: #888;
+  margin-top: var(--space-1);
+}
+
+.provenanceFooter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: 60px;
+  padding-top: var(--space-2);
+  border-top: 1px solid #eee;
+  font-family: monospace;
+  font-size: 11px;
+  color: #888;
+  justify-content: center;
+}
+
+@media print {
+  .page-header { display: none; }
+  .paper { box-shadow: none; margin: 0; padding: 0; max-width: 100%; }
+}

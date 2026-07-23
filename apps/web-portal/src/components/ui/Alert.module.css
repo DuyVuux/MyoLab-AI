@@ -1,0 +1,114 @@
+/* Alert.module.css */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-1);
+}
+
+.message {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.reasonCode {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.action {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.dismiss {
+  flex-shrink: 0;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.dismiss:hover {
+  opacity: 1;
+}
+
+/* ── Variants ── */
+.alert--info {
+  background-color: var(--color-info-soft);
+  border-color: var(--color-info);
+  color: var(--color-info);
+}
+
+.alert--info .message,
+.alert--info .title {
+  color: #1A4971;
+}
+
+.alert--success {
+  background-color: var(--color-success-soft);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.alert--success .message,
+.alert--success .title {
+  color: #1C5E35;
+}
+
+.alert--warning {
+  background-color: var(--color-warning-soft);
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.alert--warning .message,
+.alert--warning .title {
+  color: #7B5B10;
+}
+
+.alert--error {
+  background-color: var(--color-error-soft);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.alert--error .message,
+.alert--error .title {
+  color: #8B1A1A;
+}
+
+.alert--abstention {
+  background-color: var(--color-abstention-soft);
+  border-color: var(--color-abstention);
+  color: var(--color-abstention);
+}
+
+.alert--abstention .message,
+.alert--abstention .title {
+  color: #4C2F8B;
+}

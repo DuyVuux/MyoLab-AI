@@ -1,0 +1,21 @@
+req_id,domain,description,implementation_status,verdict,evidence,notes
+REQ-INT-001,Session,Mã hóa ẩn danh bối cảnh phiên (pseudonymous subjectRef),Implemented,PASS,src/schemas/session.ts:15,Tuân thủ HIPAA/GDPR
+REQ-INT-002,Import,Tính toán SHA-256 thực sự bằng Web Crypto API,Implemented,PASS,src/services/mock/MockImportService.ts:20,Web Crypto sha256 calculation
+REQ-INT-003,Import,Ngăn chặn tải lên tệp trùng lặp SHA-256,Implemented,PASS,src/app/(authenticated)/sessions/[sessionId]/import/page.tsx:65,Duplicate check against existing imports
+REQ-MAP-001,Mapping,Gán kênh tín hiệu bắt buộc có vị trí cơ và đơn vị,Implemented,PASS,src/schemas/mapping.ts:10,Strict Zod schema validation
+REQ-PRE-001,Preflight,Kiểm tra tần số lấy mẫu và monotonic timestamp,Implemented,PASS,src/schemas/preflight.ts:18,Preflight outcome enum
+REQ-CAL-001,Calibration,Hiệu chuẩn MVC và Baseline đa chu kỳ,Implemented,PASS,src/services/mock/MockCalibrationService.ts:35,Wizard state machine
+REQ-QC-001,Quality,QC Fail bắt buộc chặn quá trình Analysis,Implemented,PASS,src/app/(authenticated)/sessions/[sessionId]/quality/page.tsx:80,isBlocked condition stops navigation
+REQ-QC-002,Quality,QC Warning yêu cầu lựa chọn lý do xác nhận có mã định danh,Implemented,PASS,src/app/(authenticated)/sessions/[sessionId]/quality/page.tsx:122,QC_ACKNOWLEDGEMENT_LABELS required
+REQ-ANA-001,Analysis,Phân tích AI sinh kết luận kèm độ tin cậy và lý do hạn chế,Implemented,PASS,src/schemas/analysis.ts:25,Output schema has counterevidence & limitations
+REQ-UC1-001,UC1,Biofeedback cử chỉ hiển thị latency và safety status,Implemented,PASS,src/app/(authenticated)/uc1/session/[sessionId]/page.tsx:40,Workspace layout rendering
+REQ-UC1-002,UC1,Chỉnh sửa phân đoạn bảo toàn kết quả AI gốc (Append-only),Implemented,PASS,src/schemas/segment.ts:30,Original result preserved
+REQ-UC2-001,UC2,Đánh giá định lượng hiển thị 7 nhóm chỉ số lâm sàng,Implemented,PASS,src/app/(authenticated)/uc2/assessment/[sessionId]/page.tsx:50,7 tabs implementation
+REQ-UC2-002,UC2,Compatibility Gate chặn so sánh phiên bất tương thích,Implemented,PASS,src/app/(authenticated)/uc2/longitudinal/[subjectRef]/page.tsx:86,Check protocol & muscle match
+REQ-REV-001,Review,Bác sĩ ký duyệt Clinical Sign-off độc lập với AI,Implemented,PASS,src/app/(authenticated)/sessions/[sessionId]/review/page.tsx:82,ClinicalReview state machine
+REQ-REV-002,Review,Yêu cầu Structured Override Policy khi QC Fail hoặc Low Confidence,Implemented,PASS,src/app/(authenticated)/sessions/[sessionId]/review/page.tsx:66,Override code & detail validation >= 10 chars
+REQ-REP-001,Report,Báo cáo Draft hiển thị Watermark và chặn xuất tệp,Implemented,PASS,src/app/(authenticated)/sessions/[sessionId]/report/page.tsx:45,Watermark & export disabled before signoff
+REQ-FDB-001,Feedback,Trọng tài dán nhãn 2 tầng độc lập (Clinical vs ML QA),Implemented,PASS,src/app/(authenticated)/feedback/[feedbackId]/page.tsx:75,MLAdjudication workflow
+REQ-ISS-001,DataQuality,Bảng theo dõi sự cố dữ liệu độc lập với model feedback,Implemented,PASS,src/app/(authenticated)/data-quality/issues/page.tsx:10,Issues dashboard implementation
+REQ-SEC-001,Security,Không lưu raw signal / PHI vào sessionStorage,Implemented,PASS,src/services/mock/MockWorkflowRepository.ts:89,Metadata only in storage
+REQ-SAF-001,Safety,Không sử dụng từ ngữ chẩn đoán khẳng định tuyệt đối (như "Bệnh nhân bị mỏi"),Implemented,PASS,src/components/clinical/DisclaimerPanel.tsx:15,Explicit medical disclaimer

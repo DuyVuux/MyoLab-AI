@@ -1,0 +1,101 @@
+/* Badge.module.css */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.badge--sm {
+  padding: 2px var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.badge--md {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Tier ── */
+.badge--tier1 {
+  background-color: var(--color-tier1-bg);
+  color: var(--color-tier1);
+}
+
+.badge--tier2 {
+  background-color: var(--color-tier2-bg);
+  color: var(--color-tier2);
+}
+
+/* ── Semantic ── */
+.badge--success {
+  background-color: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.badge--warning {
+  background-color: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+
+.badge--error {
+  background-color: var(--color-error-soft);
+  color: var(--color-error);
+}
+
+.badge--info {
+  background-color: var(--color-info-soft);
+  color: var(--color-info);
+}
+
+.badge--abstention {
+  background-color: var(--color-abstention-soft);
+  color: var(--color-abstention);
+}
+
+.badge--neutral {
+  background-color: var(--color-background-alt);
+  color: var(--color-text-secondary);
+}
+
+/* ── Source ── */
+.badge--source-synthetic {
+  background-color: var(--color-info-soft);
+  color: var(--color-info);
+}
+
+.badge--source-deidentified {
+  background-color: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+
+.badge--source-local {
+  background-color: var(--color-background-alt);
+  color: var(--color-text-secondary);
+}
+
+/* ── Review ── */
+.badge--review-pending {
+  background-color: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+
+.badge--review-approved {
+  background-color: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.badge--review-rejected {
+  background-color: var(--color-error-soft);
+  color: var(--color-error);
+}

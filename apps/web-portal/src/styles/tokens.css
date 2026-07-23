@@ -1,0 +1,133 @@
+/* ============================================================
+ * MyoLab-AI Design Tokens
+ * sEMG Clinical Intelligence Platform
+ * 
+ * Palette: teal–mint primary, coral fatigue accent, semantic AI states
+ * Standards: WCAG 2.2 AA contrast, IEC 62366-1 Medical Device Usability
+ * ============================================================ */
+
+:root {
+  /* ── Primary ── */
+  --color-primary: #29B6A6;
+  --color-primary-hover: #1E9E90;
+  --color-primary-active: #178A7E;
+  --color-primary-soft: #D0F0EA;
+  --color-primary-softer: #E8F6F3;
+
+  /* ── Fatigue / Comparison Accent ── */
+  --color-fatigue: #E76F51;
+  --color-fatigue-soft: #FDEBE6;
+
+  /* ── Surfaces ── */
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-background: #F5FAF9;
+  --color-background-alt: #E8F6F3;
+
+  /* ── Text (WCAG 2.2 AA ≥ 4.5:1 on white) ── */
+  --color-text-primary: #2D3748;
+  --color-text-secondary: #667085;
+  --color-text-muted: #7A8699;
+  --color-text-inverse: #FFFFFF;
+
+  /* ── Borders ── */
+  --color-border: #E2E8F0;
+  --color-border-focus: #29B6A6;
+  --color-border-subtle: #EDF2F7;
+
+  /* ── Semantic AI States ── */
+  --color-success: #2F855A;
+  --color-success-soft: #F0FFF4;
+  --color-warning: #B7791F;
+  --color-warning-soft: #FFFFF0;
+  --color-error: #C53030;
+  --color-error-soft: #FFF5F5;
+  --color-info: #2B6CB0;
+  --color-info-soft: #EBF8FF;
+  --color-abstention: #6B46C1;
+  --color-abstention-soft: #FAF5FF;
+
+  /* ── Tier Badges ── */
+  --color-tier1: #178A7E;
+  --color-tier1-bg: #D0F0EA;
+  --color-tier2: #975A16;
+  --color-tier2-bg: #FFFFF0;
+
+  /* ── Sidebar / Navigation ── */
+  --color-sidebar-bg: #1A3A3C;
+  --color-sidebar-text: #E2E8F0;
+  --color-sidebar-active: rgba(41, 182, 166, 0.15);
+  --color-sidebar-hover: rgba(255, 255, 255, 0.08);
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(45, 55, 72, 0.05);
+  --shadow-md: 0 4px 12px rgba(45, 55, 72, 0.08);
+  --shadow-lg: 0 8px 28px rgba(45, 55, 72, 0.10);
+  --shadow-xl: 0 20px 60px rgba(45, 55, 72, 0.12);
+  --shadow-card: 0 2px 8px rgba(45, 55, 72, 0.06),
+                 0 0 1px rgba(45, 55, 72, 0.10);
+
+  /* ── Typography ── */
+  --font-primary: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), 'Fira Code', 'Cascadia Code', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+
+  /* ── 8px Spacing Grid ── */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* ── Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Z-index Scale ── */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-toast: 800;
+
+  /* ── Layout ── */
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 64px;
+  --header-height: 64px;
+  --content-max-width: 1440px;
+}

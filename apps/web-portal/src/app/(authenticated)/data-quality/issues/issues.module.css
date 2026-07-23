@@ -1,0 +1,95 @@
+.controls {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.search {
+  flex: 1;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.issueCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.issueHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-2);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.titleRow strong {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-md);
+}
+
+.iconHigh {
+  color: var(--color-error);
+}
+
+.iconMed {
+  color: var(--color-warning);
+}
+
+.date {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.issueBody {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.issueBody strong {
+  color: var(--color-text-secondary);
+}
+
+.resolution {
+  margin-top: var(--space-2);
+  padding: var(--space-3);
+  background: var(--color-success-soft, #f0fff4);
+  border: 1px solid var(--color-success-border, #c6f6d5);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.iconSuccess {
+  color: var(--color-success);
+  margin-top: 2px;
+}
+
+.resolvedDate {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  margin-left: var(--space-1);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-2);
+}

@@ -1,0 +1,27 @@
+/* mapping.module.css */
+.tableWrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+.table { width: 100%; min-width: 900px; border-collapse: collapse; }
+.table th { text-align: left; padding: var(--space-3) var(--space-3); font-size: var(--font-size-xs); font-weight: 600; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--color-border); background: var(--color-background); white-space: nowrap; }
+.table td { padding: var(--space-2) var(--space-3); font-size: var(--font-size-sm); border-bottom: 1px solid var(--color-border-subtle); vertical-align: middle; }
+.row--error { background: var(--color-error-soft, #fff5f5); }
+.row--confirmed { background: var(--color-success-soft, #f0fff4); }
+
+.channelLabel { font-family: var(--font-mono); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-right: var(--space-2); }
+
+.select { width: 100%; padding: var(--space-1) var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: var(--font-size-xs); background: var(--color-surface); color: var(--color-text-primary); appearance: auto; min-width: 100px; }
+.select:focus { outline: 2px solid var(--color-primary); outline-offset: -1px; }
+.select--error { border-color: var(--color-error); background: var(--color-error-soft, #fff5f5); }
+
+.confirmBtn { width: 32px; height: 32px; border-radius: var(--radius-md); border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; cursor: pointer; background: var(--color-surface); transition: all var(--transition-fast); color: var(--color-text-muted); }
+.confirmBtn:hover:not(:disabled) { border-color: var(--color-primary); }
+.confirmBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.confirmBtn--active { border-color: var(--color-success); background: var(--color-success-soft, #f0fff4); color: var(--color-success); }
+.confirmEmpty { width: 10px; height: 10px; border-radius: 50%; background: var(--color-border); }
+
+.summary { display: flex; gap: var(--space-6); margin: var(--space-4) 0; padding: var(--space-3) var(--space-4); background: var(--color-background); border-radius: var(--radius-md); }
+.summaryItem { font-size: var(--font-size-sm); display: flex; gap: var(--space-2); }
+.summaryItem span { color: var(--color-text-muted); }
+.errorText { color: var(--color-error); }
+
+.actions { display: flex; align-items: center; margin-top: var(--space-6); gap: var(--space-3); }
+.spacer { flex: 1; }

@@ -1,0 +1,40 @@
+item_id,item_type,path_or_route,owner_domain,priority,status,evidence,finding_ids,dependencies,last_reviewed_at
+ROUTE-001,route,/login,global,P0,PASS,apps/web-portal/src/app/login/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-002,route,/dashboard,global,P0,PASS,apps/web-portal/src/app/(authenticated)/dashboard/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-003,route,/use-cases,global,P1,PASS,apps/web-portal/src/app/(authenticated)/use-cases/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-004,route,/sessions,session_intake,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-005,route,/sessions/new,session_intake,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/new/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-006,route,/sessions/:sessionId/context,session_intake,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/context/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-007,route,/sessions/:sessionId/data-source,session_intake,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/data-source/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-008,route,/sessions/:sessionId/import,session_intake,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/import/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-009,route,/sessions/:sessionId/mapping,session_intake,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/mapping/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-010,route,/sessions/:sessionId/preflight,session_intake,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/preflight/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-011,route,/sessions/:sessionId/calibration,calibration,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/calibration/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-012,route,/sessions/:sessionId/acquisition,session_intake,P1,FAIL,Route missing from src/app,UIAUDIT-005,NONE,2026-07-23T15:25:00Z
+ROUTE-013,route,/sessions/:sessionId/quality,qc_gate,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/quality/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-014,route,/sessions/:sessionId/analysis,analysis,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/analysis/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-015,route,/sessions/:sessionId/review,human_review,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/review/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-016,route,/sessions/:sessionId/report,report,P0,PASS,apps/web-portal/src/app/(authenticated)/sessions/[sessionId]/report/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-017,route,/imports,data_intake,P1,PASS,apps/web-portal/src/app/(authenticated)/imports/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-018,route,/imports/:importId,data_intake,P1,PASS,apps/web-portal/src/app/(authenticated)/imports/[importId]/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-019,route,/analyses,analysis,P1,PASS,apps/web-portal/src/app/(authenticated)/analyses/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-020,route,/data-quality/issues,data_quality,P1,PASS,apps/web-portal/src/app/(authenticated)/data-quality/issues/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-021,route,/devices,devices,P2,PASS,apps/web-portal/src/app/(authenticated)/devices/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-022,route,/devices/:deviceId,devices,P2,FAIL,Subroute missing,UIAUDIT-005,NONE,2026-07-23T15:25:00Z
+ROUTE-023,route,/protocols,protocols,P2,PASS,apps/web-portal/src/app/(authenticated)/protocols/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-024,route,/protocols/:protocolId,protocols,P2,FAIL,Subroute missing,UIAUDIT-005,NONE,2026-07-23T15:25:00Z
+ROUTE-025,route,/audit,audit_rbac,P1,PASS,apps/web-portal/src/app/(authenticated)/audit/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-026,route,/admin/users,admin,P1,PASS,apps/web-portal/src/app/(authenticated)/admin/users/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-027,route,/uc1/intro,uc1,P0,PASS,apps/web-portal/src/app/(authenticated)/uc1/intro/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-028,route,/uc1/calibration/:sessionId,uc1,P1,FAIL,Empty 145B stub page,UIAUDIT-004,NONE,2026-07-23T15:25:00Z
+ROUTE-029,route,/uc1/session/:sessionId,uc1,P0,PASS,apps/web-portal/src/app/(authenticated)/uc1/session/[sessionId]/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-030,route,/uc1/review/:sessionId,uc1,P0,PASS,apps/web-portal/src/app/(authenticated)/uc1/review/[sessionId]/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-031,route,/uc2/intro,uc2,P0,PASS,apps/web-portal/src/app/(authenticated)/uc2/intro/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-032,route,/uc2/assessment/:sessionId,uc2,P0,PASS,apps/web-portal/src/app/(authenticated)/uc2/assessment/[sessionId]/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-033,route,/uc2/longitudinal/:subjectRef,uc2,P0,FAIL,Build warning & type hack getStore,UIAUDIT-001,NONE,2026-07-23T15:25:00Z
+ROUTE-034,route,/uc3/intro,uc3,P2,PASS,apps/web-portal/src/app/(authenticated)/uc3/intro/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-035,route,/uc4/intro,uc4,P2,PASS,apps/web-portal/src/app/(authenticated)/uc4/intro/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-036,route,/feedback/inbox,feedback,P1,PASS,apps/web-portal/src/app/(authenticated)/feedback/inbox/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+ROUTE-037,route,/feedback/:feedbackId,feedback,P1,PASS,apps/web-portal/src/app/(authenticated)/feedback/[feedbackId]/page.tsx:1,UIAUDIT-007,NONE,2026-07-23T15:25:00Z
+ROUTE-038,route,/feedback/analytics,feedback,P1,PASS,apps/web-portal/src/app/(authenticated)/feedback/analytics/page.tsx:1,,NONE,2026-07-23T15:25:00Z
+TEST-001,test,apps/web-portal/src/**/*.test.ts*,testing,P0,FAIL,No test files exist,UIAUDIT-002,NONE,2026-07-23T15:25:00Z

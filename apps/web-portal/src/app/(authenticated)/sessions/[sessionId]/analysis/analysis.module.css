@@ -1,0 +1,53 @@
+/* analysis.module.css */
+.sectionTitle { font-size: var(--font-size-md); font-weight: var(--font-weight-semibold); }
+.subTitle { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-top: var(--space-4); margin-bottom: var(--space-2); }
+
+.prereqList { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-4); }
+.prereqItem { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle); }
+.prereqItem--met { background: var(--color-success-soft, #f0fff4); }
+.prereqItem--unmet { background: var(--color-error-soft, #fff5f5); }
+.prereqIcon { color: var(--color-success); flex-shrink: 0; margin-top: 2px; }
+.prereqIconFail { color: var(--color-error); flex-shrink: 0; margin-top: 2px; }
+.prereqLabel { font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); }
+.prereqDetail { font-size: var(--font-size-xs); color: var(--color-text-muted); }
+
+.startSection { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-4); padding: var(--space-8); }
+.startIcon { color: var(--color-primary); }
+.startTitle { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); }
+.startDesc { font-size: var(--font-size-sm); color: var(--color-text-secondary); max-width: 400px; }
+
+.progressSection { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); padding: var(--space-8); }
+.spinner { width: 48px; height: 48px; border: 4px solid var(--color-border); border-top-color: var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.progressContainer { display: flex; align-items: center; gap: var(--space-3); width: 100%; max-width: 400px; }
+.progressBar { flex: 1; height: 8px; background: var(--color-background-alt); border-radius: var(--radius-full); overflow: hidden; }
+.progressFill { height: 100%; background: var(--color-primary); border-radius: var(--radius-full); transition: width 0.5s ease; }
+.progressHint { font-size: var(--font-size-xs); color: var(--color-text-muted); font-family: var(--font-mono); }
+
+.outputGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-bottom: var(--space-4); }
+.outputItem { display: flex; flex-direction: column; gap: var(--space-2); }
+.outputLabel { font-size: var(--font-size-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.confidenceBar { display: flex; align-items: center; gap: var(--space-2); }
+.confidenceBar .confidenceFill { height: 10px; background: linear-gradient(90deg, var(--color-warning), var(--color-success)); border-radius: var(--radius-full); flex: 1; }
+.confidenceBar span { font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); }
+
+.conclusion { font-size: var(--font-size-sm); color: var(--color-text-primary); line-height: var(--line-height-relaxed); padding: var(--space-3); background: var(--color-background); border-radius: var(--radius-md); }
+
+.codeList { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+.limitList { font-size: var(--font-size-sm); color: var(--color-text-secondary); padding-left: var(--space-4); }
+.limitList li { margin-bottom: var(--space-1); }
+
+.mfcvBox { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); background: var(--color-background); border-radius: var(--radius-md); font-size: var(--font-size-sm); flex-wrap: wrap; }
+.mfcvNote { font-size: var(--font-size-xs); color: var(--color-text-muted); }
+
+.provenanceGrid { display: grid; grid-template-columns: auto 1fr; gap: var(--space-1) var(--space-4); font-size: var(--font-size-sm); margin-top: var(--space-2); }
+.provenanceGrid span { color: var(--color-text-muted); }
+.provenanceGrid code { font-family: var(--font-mono); font-size: var(--font-size-xs); background: var(--color-background-alt); padding: 1px 4px; border-radius: var(--radius-sm); }
+
+.actions { display: flex; align-items: center; margin-top: var(--space-6); gap: var(--space-3); }
+.spacer { flex: 1; }
+
+@media (max-width: 768px) { .outputGrid { grid-template-columns: 1fr; } }
