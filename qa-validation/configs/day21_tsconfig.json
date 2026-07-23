@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true, "noEmit": true, "target": "ES2022", "module": "ESNext",
+    "moduleResolution": "Bundler", "jsx": "preserve", "lib": ["ES2022", "DOM"], "skipLibCheck": true
+  },
+  "include": [
+    "../../apps/web-portal/src/schemas/analysis-job.schema.ts",
+    "../../apps/web-portal/src/lib/analysis-client.ts",
+    "../../apps/web-portal/src/lib/pollingSchedule.ts",
+    "../../apps/web-portal/src/hooks/useAnalysisJob.ts",
+    "../../apps/web-portal/src/components/analysis/AnalysisJobTimeline.tsx",
+    "../../apps/web-portal/src/app/analyses/Day21AnalysisProcessingPage.tsx",
+    "../../apps/web-portal/src/app/analyses/Day21AnalysisRoutes.tsx",
+    "../../apps/web-portal/src/schemas/analysis-envelope.schema.ts",
+    "day21_vendor_stubs.d.ts"
+  ]
+}

@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict');
+const { pollingDelayMs } = require('../../.day21-build/lib/pollingSchedule.js');
+const { isTerminalAnalysisStatus } = require('../../.day21-build/schemas/analysis-job.schema.js');
+assert.equal(pollingDelayMs(0), 1000);
+assert.equal(pollingDelayMs(9), 1000);
+assert.equal(pollingDelayMs(10), 2000);
+assert.equal(pollingDelayMs(25), 5000);
+assert.equal(isTerminalAnalysisStatus('completed'), true);
+assert.equal(isTerminalAnalysisStatus('running'), false);
+console.log('Day 21 polling runtime tests passed.');
