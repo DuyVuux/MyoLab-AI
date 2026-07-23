@@ -1,0 +1,4 @@
+{
+  "compilerOptions": {"strict": true, "target": "ES2022", "module": "CommonJS", "outDir": "../../.day21-build"},
+  "include": ["../../apps/web-portal/src/lib/pollingSchedule.ts", "../../apps/web-portal/src/schemas/analysis-job.schema.ts", "../../apps/web-portal/src/schemas/analysis-envelope.schema.ts"]
+}
