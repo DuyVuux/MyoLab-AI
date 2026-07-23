@@ -26,14 +26,8 @@ export default function UC2LongitudinalPage() {
   const [compatibilityError, setCompatibilityError] = useState<string | null>(null);
 
   useEffect(() => {
-    // 1. Auto-query sessions for subject
-    const store = (MockWorkflowRepository as any).getStore?.(); 
-    // Hack: since we didn't expose getSessionsBySubject, we will simulate it by querying all and filtering
-    // In a real app we'd add getSessionsBySubject(subjectRef)
-    const allSessions: SessionContext[] = store ? Object.values(store.sessions) : [];
-    
-    // Fallback if store empty (for demonstration)
-    const subjectSessions = allSessions.filter(s => s.subjectRef === subjectRef);
+    // Query sessions for subject cleanly from repository
+    const subjectSessions = MockWorkflowRepository.getSessionsBySubject(subjectRef);
     
     if (subjectSessions.length < 2) {
       // Mock some historical sessions if we only have 0 or 1

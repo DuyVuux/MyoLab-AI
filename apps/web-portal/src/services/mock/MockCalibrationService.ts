@@ -71,7 +71,7 @@ export function repeatRepetition(sessionId: string, repIndex: number): Calibrati
     ...old,
     repetitionId: `REP-${Date.now().toString(36).toUpperCase()}`,
     quality: 'pass',
-    peakAmplitude: 700 + Math.floor(Math.random() * 200),
+    peakAmplitude: 700 + ((repIndex + 1) * 45) % 200,
     accepted: true,
     needsRepeat: false,
     reason: undefined,

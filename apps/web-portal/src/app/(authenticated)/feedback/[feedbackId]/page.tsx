@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Alert } from '@/components/ui/Alert';
 import * as MockWorkflowRepository from '@/services/mock/MockWorkflowRepository';
-import type { FeedbackEvent, MLAdjudication } from '@/schemas/feedback';
+import type { FeedbackEvent, MLAdjudication, AdjudicationStatus } from '@/schemas/feedback';
 import { RoleGuard } from '@/components/auth/RoleGuard';
 import styles from './adjudication.module.css';
 
@@ -26,7 +26,7 @@ export default function FeedbackAdjudicationPage() {
   const [adjudication, setAdjudication] = useState<MLAdjudication | null>(null);
 
   // Form State
-  const [resolution, setResolution] = useState<'accepted' | 'rejected' | 'needs_info'>('accepted');
+  const [resolution, setResolution] = useState<AdjudicationStatus>('accepted');
   const [notes, setNotes] = useState('');
   const [includeInTraining, setIncludeInTraining] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -38,7 +38,7 @@ export default function FeedbackAdjudicationPage() {
     const adj = MockWorkflowRepository.getAdjudication(feedbackId);
     if (adj) {
       setAdjudication(adj);
-      setResolution(adj.status as any);
+      setResolution(adj.status);
       setNotes(adj.reasoning);
       setIncludeInTraining(adj.isTrainingCandidate);
     }
@@ -56,7 +56,7 @@ export default function FeedbackAdjudicationPage() {
     const decision: MLAdjudication = {
       feedbackId,
       mlQaId: 'MLQA-001',
-      status: resolution as any,
+      status: resolution,
       reasoning: notes,
       isTrainingCandidate: includeInTraining,
       adjudicatedAt: new Date().toISOString()
@@ -65,7 +65,7 @@ export default function FeedbackAdjudicationPage() {
     MockWorkflowRepository.saveAdjudication(decision);
     
     // Update event status
-    event.reviewStatus = resolution as any;
+    event.reviewStatus = resolution;
     MockWorkflowRepository.saveFeedbackEvent(event);
     
     router.push('/feedback/inbox');
@@ -151,7 +151,7 @@ export default function FeedbackAdjudicationPage() {
                 <select 
                   className={styles.select}
                   value={resolution}
-                  onChange={(e) => setResolution(e.target.value as any)}
+                  onChange={(e) => setResolution(e.target.value as AdjudicationStatus)}
                 >
                   <option value="accepted">Chấp nhận (Label đúng, Model sai)</option>
                   <option value="rejected">Từ chối (Label sai, Model đúng)</option>

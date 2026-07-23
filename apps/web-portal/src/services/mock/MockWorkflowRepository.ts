@@ -126,6 +126,14 @@ export function getSession(id: string): SessionContext | null {
   return getStore().sessions[id] ?? null;
 }
 
+export function getAllSessions(): SessionContext[] {
+  return Object.values(getStore().sessions);
+}
+
+export function getSessionsBySubject(subjectRef: string): SessionContext[] {
+  return Object.values(getStore().sessions).filter((s) => s.subjectRef === subjectRef);
+}
+
 export function updateSessionState(id: string, state: SessionState): void {
   const store = getStore();
   const session = store.sessions[id];

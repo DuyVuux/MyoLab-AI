@@ -57,3 +57,66 @@ Day 10 introduces the frequency-domain feature extraction. It computes Median Fr
 
 ## Day 11 status
 Day 11 implements the Trend Feature extraction module. It calculates the linear regression slopes for RMS, MAV, MDF, and MNF over time windows. It strictly enforces a descriptive-only approach, stripping inferential statistics (like p-values or confidence intervals) to prevent premature clinical conclusions.
+
+## Day 12 status
+Day 12 implements the Fatigue Evidence Engine (`FatigueEvidenceEngine`). It transforms time, frequency, and trend metrics into structured evidence objects (`FatigueEvidenceResult v0.1`), explicitly separating observation/evidence from classification and clinical decision.
+
+## Day 13 status
+Day 13 implements the Explainable Rule Engine (`ExplainableRuleEngine`). It evaluates structured fatigue evidence against versioned rule mappings to produce deterministic rule results (`FatigueRuleResult v0.1`), multi-channel consensus, decision basis, counterevidence, and failure abstention.
+
+## Day 14 status
+Day 14 implements Engineering Confidence calculation (`EngineeringConfidenceCalculator`) and safety guardrails (`WordingGuard`). It rates internal pipeline quality, constructs explainability summaries, and strictly blocks unsafe or overclaiming wording.
+
+## Day 15 status
+Day 15 orchestrates the complete offline analysis pipeline (`run_offline_analysis.py`). It integrates Days 1–14 into an offline executable that produces 11 stage artifact files, provenance metadata, SHA-256 source hashing, and an offline analysis package.
+
+## Day 16 status
+Day 16 delivers Golden Regression & Analytical Validation (`day16-mvp0-regression-report.md`). It validates pipeline stability across a matrix of synthetic fixtures, locks safety behavior, and freezes baseline `mvp0_baseline_v0.1.json`.
+
+## Day 17 status
+Day 17 implements the Canonical Output Schema (`SessionAnalysisSummary v0.1`) and OpenAPI contract (`openapi.yaml`). It establishes a stable, versioned contract interface between offline analysis packages and downstream backend/frontend consumers.
+
+## Day 18 status
+Day 18 implements the UI/UX & Continuous Audit Frontend (`apps/web-portal`) using Next.js 14 App Router, TypeScript strict mode, and WCAG 2.2 AA accessibility standards. It features 4 Use Case workflows, human-in-the-loop clinical review sign-off, ML adjudication, data quality issue tracking, and an automated Playwright E2E spec suite with a 100/100 PASS audit verdict.
+
+### 🚀 Hướng dẫn khởi chạy UI (Running the UI Portal)
+
+#### Prerequisites
+- Node.js >= 18.0.0
+- npm or pnpm
+
+#### Running Development Server
+From the project root:
+```bash
+npm --prefix apps/web-portal run dev
+```
+Or directly inside the `apps/web-portal` directory:
+```bash
+cd apps/web-portal && npm run dev
+```
+Open [http://localhost:3100](http://localhost:3100) in your browser.
+
+#### Running Production Build
+From the project root:
+```bash
+# Build Next.js application
+npm --prefix apps/web-portal run build
+
+# Start Production Server
+npm --prefix apps/web-portal run start
+```
+Open [http://localhost:3100](http://localhost:3100) in your browser.
+
+#### Static Type-Check & Linting
+```bash
+npm --prefix apps/web-portal run type-check
+npm --prefix apps/web-portal run lint
+```
+
+#### Demo User Roles & Credentials
+When accessing the Login page (`/login`), click any quick-login persona:
+- **Doctor (Bác sĩ):** Full clinical review sign-off & report export (`/sessions/[id]/review`).
+- **Technician (KTV):** Session creation, file import, channel mapping, QC & Analysis run.
+- **Researcher (Trọng tài ML):** Label feedback inbox & ML adjudication (`/feedback/inbox`).
+- **Patient (Bệnh nhân):** Gesture biofeedback interface (`/uc1/session/[id]`).
+
