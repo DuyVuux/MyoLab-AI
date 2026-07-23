@@ -92,3 +92,6 @@ logs/
 .agents/
 qa-validation/evidence/day5-preprocess-golden.npz
 docs/plans/
+
+# TypeScript cache
+*.tsbuildinfo
