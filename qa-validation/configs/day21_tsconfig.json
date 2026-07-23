@@ -12,6 +12,6 @@
     "../../apps/web-portal/src/app/analyses/Day21AnalysisProcessingPage.tsx",
     "../../apps/web-portal/src/app/analyses/Day21AnalysisRoutes.tsx",
     "../../apps/web-portal/src/schemas/analysis-envelope.schema.ts",
-    "day21_vendor_stubs.d.ts"
+    "../../apps/web-portal/next-env.d.ts"
   ]
 }

@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab-ai.local/schemas/analysis-job.v0.1.schema.json",
+  "title": "AnalysisJob v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "analysisId",
+    "sessionId",
+    "useCaseId",
+    "sourceHashSha256",
+    "status",
+    "progressMode",
+    "currentStage",
+    "completedStages",
+    "stageHistory",
+    "warningCodes",
+    "reasonCodes",
+    "resultLinks",
+    "safety",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "analysis-job.v0.1"
+    },
+    "analysisId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sessionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "useCaseId": {
+      "enum": [
+        "uc1",
+        "uc2",
+        "uc3",
+        "uc4"
+      ]
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "running",
+        "completed",
+        "completed_with_warnings",
+        "abstained",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "progressMode": {
+      "const": "stage_only"
+    },
+    "currentStage": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "validating_input",
+        "running_quality_gate",
+        "preprocessing",
+        "windowing",
+        "extracting_time_features",
+        "estimating_spectrum",
+        "extracting_frequency_features",
+        "computing_trends",
+        "building_evidence",
+        "running_rule_engine",
+        "building_explanation"
+      ]
+    },
+    "completedStages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "stageHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stage",
+          "state",
+          "occurredAt"
+        ],
+        "properties": {
+          "stage": {
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "started",
+              "completed",
+              "skipped",
+              "failed"
+            ]
+          },
+          "occurredAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "durationMs": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "warningCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "reasonCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "resultLinks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "self",
+        "summary",
+        "manifest"
+      ],
+      "properties": {
+        "self": {
+          "type": "string"
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "manifest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "error": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "messageVi",
+        "retryable",
+        "traceId"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "messageVi": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "traceId": {
+          "type": "string"
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scoreIsProbability",
+        "clinicalUseAllowed",
+        "humanReviewRequired",
+        "rawSamplesIncluded"
+      ],
+      "properties": {
+        "scoreIsProbability": {
+          "const": false
+        },
+        "clinicalUseAllowed": {
+          "const": false
+        },
+        "humanReviewRequired": {
+          "const": true
+        },
+        "rawSamplesIncluded": {
+          "const": false
+        }
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourceHashSha256": {
+      "type": "string",
+      "minLength": 16
+    }
+  }
+}

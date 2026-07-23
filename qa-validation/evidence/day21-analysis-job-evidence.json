@@ -1,0 +1,229 @@
+{
+  "job": {
+    "schemaVersion": "analysis-job.v0.1",
+    "analysisId": "AN21-951f714efb29",
+    "sessionId": "SESSION-D20-001",
+    "useCaseId": "uc1",
+    "sourceHashSha256": "sha256:d20-source-001",
+    "status": "completed",
+    "progressMode": "stage_only",
+    "currentStage": null,
+    "completedStages": [
+      "validating_input",
+      "running_quality_gate",
+      "preprocessing",
+      "windowing",
+      "extracting_time_features",
+      "estimating_spectrum",
+      "extracting_frequency_features",
+      "computing_trends",
+      "building_evidence",
+      "running_rule_engine",
+      "building_explanation"
+    ],
+    "stageHistory": [
+      {
+        "stage": "validating_input",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.520443Z",
+        "durationMs": null
+      },
+      {
+        "stage": "validating_input",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.522002Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "running_quality_gate",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.522002Z",
+        "durationMs": null
+      },
+      {
+        "stage": "running_quality_gate",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.523387Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "preprocessing",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.523387Z",
+        "durationMs": null
+      },
+      {
+        "stage": "preprocessing",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.524751Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "windowing",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.524751Z",
+        "durationMs": null
+      },
+      {
+        "stage": "windowing",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.526087Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "extracting_time_features",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.526087Z",
+        "durationMs": null
+      },
+      {
+        "stage": "extracting_time_features",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.527728Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "estimating_spectrum",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.527728Z",
+        "durationMs": null
+      },
+      {
+        "stage": "estimating_spectrum",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.529166Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "extracting_frequency_features",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.529166Z",
+        "durationMs": null
+      },
+      {
+        "stage": "extracting_frequency_features",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.530611Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "computing_trends",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.530611Z",
+        "durationMs": null
+      },
+      {
+        "stage": "computing_trends",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.532009Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "building_evidence",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.532009Z",
+        "durationMs": null
+      },
+      {
+        "stage": "building_evidence",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.533514Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "running_rule_engine",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.533514Z",
+        "durationMs": null
+      },
+      {
+        "stage": "running_rule_engine",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.535264Z",
+        "durationMs": 100
+      },
+      {
+        "stage": "building_explanation",
+        "state": "started",
+        "occurredAt": "2026-07-23T10:39:54.535264Z",
+        "durationMs": null
+      },
+      {
+        "stage": "building_explanation",
+        "state": "completed",
+        "occurredAt": "2026-07-23T10:39:54.536821Z",
+        "durationMs": 100
+      }
+    ],
+    "warningCodes": [],
+    "reasonCodes": [],
+    "resultLinks": {
+      "self": "/v1/analyses/AN21-951f714efb29",
+      "summary": "/v1/analyses/AN21-951f714efb29/summary",
+      "manifest": "/v1/analyses/AN21-951f714efb29/manifest"
+    },
+    "error": null,
+    "safety": {
+      "scoreIsProbability": false,
+      "clinicalUseAllowed": false,
+      "humanReviewRequired": true,
+      "rawSamplesIncluded": false
+    },
+    "createdAt": "2026-07-23T10:39:54.518656Z",
+    "updatedAt": "2026-07-23T10:39:54.536821Z"
+  },
+  "summary": {
+    "schema_version": "session-analysis-summary.v0.1",
+    "analysis_id": "AN21-951f714efb29",
+    "session_id": "SESSION-D20-001",
+    "status": "completed",
+    "technical_conclusion": "supported_pattern",
+    "signal_quality": {
+      "status": "pass",
+      "analysis_allowed": true,
+      "reason_codes": [],
+      "mfcv_eligible": false,
+      "mfcv_reason_codes": [
+        "MFCV_SETUP_NOT_CONFIRMED"
+      ]
+    },
+    "channels": [],
+    "confidence": {
+      "final_score_0_to_1": 0.93,
+      "category": "engineering_high",
+      "score_is_probability": false,
+      "clinical_calibration_status": "not_calibrated"
+    },
+    "explainability": {
+      "summary_vi": "Đã quan sát thấy mẫu thay đổi kỹ thuật trong protocol hiện tại.",
+      "decision_basis": [
+        {
+          "code": "SYNTHETIC_PATTERN_SUPPORT"
+        }
+      ],
+      "counterevidence": [],
+      "wording_guard_status": "passed"
+    },
+    "provenance": {
+      "analysis_fingerprint_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "source_hash_sha256": "23ae0412aae3913ae36e406e5d78ffee53c9ea1bf27121192aa946e895452c8a",
+      "pipeline_config_id": "offline_analysis_mvp0",
+      "config_hashes": {
+        "runtime": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      }
+    },
+    "safety": {
+      "clinical_use_allowed": false,
+      "human_review_required": true,
+      "is_diagnosis": false,
+      "is_treatment_recommendation": false,
+      "is_return_to_play_decision": false,
+      "synthetic_data_is_clinical_evidence": false
+    },
+    "limitations": [
+      "Kết quả deterministic dùng cho prototype, không phải xác thực lâm sàng."
+    ],
+    "links": {},
+    "summary_hash_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  }
+}

@@ -9,20 +9,23 @@ for f in \
   [[ -f "$f" ]] || { echo "Thiếu prerequisite/artifact: $f" >&2; exit 1; }
 done
 export PYTHONPATH="$ROOT/services/api-server/src:$ROOT/services/api-server/src/mock_api:${PYTHONPATH:-}"
+TSC="$ROOT/apps/web-portal/node_modules/.bin/tsc"
+PYTEST="$ROOT/.venv/bin/pytest"
+PYTHON="$ROOT/.venv/bin/python"
 rm -rf .day21-build
 
 echo '[1/5] TypeScript strict check'
-tsc -p qa-validation/configs/day21_tsconfig.json
+"$TSC" -p qa-validation/configs/day21_tsconfig.json
 
 echo '[2/5] TypeScript runtime utilities'
-tsc -p qa-validation/configs/day21_runtime_tsconfig.json
+"$TSC" -p qa-validation/configs/day21_runtime_tsconfig.json
 node qa-validation/automated-tests/day21_polling_runtime.test.cjs
 
 echo '[3/5] Python API/state-machine tests'
-pytest -q qa-validation/automated-tests/test_day21_analysis_jobs.py qa-validation/automated-tests/test_day21_schema.py
+"$PYTEST" -q qa-validation/automated-tests/test_day21_analysis_jobs.py qa-validation/automated-tests/test_day21_schema.py
 
 echo '[4/5] Capture deterministic evidence'
-python - <<'PY_EVIDENCE'
+"$PYTHON" - <<'PY_EVIDENCE'
 import json,sys
 from pathlib import Path
 from fastapi.testclient import TestClient
@@ -46,6 +49,6 @@ print(job['status'],job['analysisId'])
 PY_EVIDENCE
 
 echo '[5/5] Artifact and safety check'
-python scripts/dev/check_day21_artifacts.py
+"$PYTHON" scripts/dev/check_day21_artifacts.py
 rm -rf .day21-build
 echo 'All Day 21 checks passed.'
