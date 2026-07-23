@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "rootDir": "../../apps/web-portal/src",
+    "outDir": "../../.day22-build",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "incremental": false,
+    "noEmitOnError": true
+  },
+  "include": [
+    "../../apps/web-portal/src/lib/latencyMetrics.ts",
+    "../../apps/web-portal/src/schemas/gesture-inference.schema.ts",
+    "../../apps/web-portal/src/schemas/gesture-feedback-context.schema.ts",
+    "../../apps/web-portal/src/utils/replayView.ts"
+  ]
+}
