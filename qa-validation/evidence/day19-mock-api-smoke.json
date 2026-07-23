@@ -1,0 +1,52 @@
+{
+  "health": {
+    "status": "ok",
+    "mode": "deterministic_mock",
+    "clinical_use": "disabled"
+  },
+  "dashboard": {
+    "session_count": 2,
+    "analysis_counts": {
+      "completed": 1,
+      "completed_with_warnings": 1,
+      "abstained": 1,
+      "failed": 1
+    },
+    "pending_feedback_count": 1,
+    "source_type": "synthetic_and_deidentified"
+  },
+  "use_cases": [
+    {
+      "id": "uc1",
+      "title": "Biofeedback cử chỉ",
+      "tier": 1,
+      "commitment": "mvp",
+      "primary_route": "/uc1/intro",
+      "clinical_use_allowed": false
+    },
+    {
+      "id": "uc2",
+      "title": "Đánh giá định lượng",
+      "tier": 1,
+      "commitment": "mvp",
+      "primary_route": "/uc2/intro",
+      "clinical_use_allowed": false
+    },
+    {
+      "id": "uc3",
+      "title": "Chi giả cơ điện",
+      "tier": 2,
+      "commitment": "feasibility",
+      "primary_route": "/uc3/feasibility",
+      "clinical_use_allowed": false
+    },
+    {
+      "id": "uc4",
+      "title": "Medical HMI",
+      "tier": 2,
+      "commitment": "feasibility",
+      "primary_route": "/uc4/feasibility",
+      "clinical_use_allowed": false
+    }
+  ]
+}

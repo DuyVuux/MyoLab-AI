@@ -87,65 +87,96 @@ export const COMPATIBILITY_REDIRECTS: Record<string, string> = {
 
 /** Use case metadata */
 export interface UseCaseConfig {
-  id: string;
+  id: 'uc1' | 'uc2' | 'uc3' | 'uc4';
   tier: 1 | 2;
+  commitment: "mvp" | "feasibility";
   name: string;
   description: string;
   targetAudience: string;
   hardware: string;
+  hardwareBoundary: string;
   status: string;
   disclaimer: string;
   cta: string;
   introRoute: string;
+  primaryRoute: string;
+  allowedRoles: readonly Day19UserRole[];
 }
+
+export type Day19UserRole = 'patient' | 'ktv' | 'physician' | 'researcher' | 'ml_qa' | 'admin';
 
 export const USE_CASE_CONFIGS: UseCaseConfig[] = [
   {
     id: 'uc1',
     tier: 1,
+    commitment: "mvp",
     name: 'Biofeedback cử chỉ trong PHCN đột quỵ',
     description: 'Nhận diện cử chỉ tay theo thời gian thực hỗ trợ tập luyện phục hồi chức năng sau đột quỵ.',
     targetAudience: 'KTV PHCN, Bệnh nhân đột quỵ',
     hardware: 'Noraxon Ultium sEMG (4–8 kênh)',
+    hardwareBoundary: 'Import/replay theo protocol; chưa claim live SDK.',
     status: 'Thiết kế và triển khai chi tiết',
     disclaimer: 'Kết quả hỗ trợ kỹ thuật — cần KTV/bác sĩ xem xét.',
     cta: 'Mở use case',
     introRoute: ROUTES.UC1_INTRO,
+    primaryRoute: ROUTES.UC1_INTRO,
+    allowedRoles: ['patient', 'ktv', 'physician', 'researcher', 'ml_qa', 'admin'],
   },
   {
     id: 'uc2',
     tier: 1,
+    commitment: "mvp",
     name: 'Đánh giá định lượng chức năng vận động tay',
     description: 'Phân tích định lượng chất lượng vận động, repeatability, symmetry và fatigue qua nhiều phiên.',
     targetAudience: 'KTV PHCN, Bác sĩ PHCN',
     hardware: 'Noraxon Ultium sEMG (4–8 kênh)',
+    hardwareBoundary: 'Import/replay theo protocol; chưa claim live SDK.',
     status: 'Thiết kế và triển khai chi tiết',
     disclaimer: 'Chỉ số kỹ thuật — không thay thế đánh giá lâm sàng tổng thể.',
     cta: 'Mở use case',
     introRoute: ROUTES.UC2_INTRO,
+    primaryRoute: ROUTES.UC2_INTRO,
+    allowedRoles: ['ktv', 'physician', 'researcher', 'ml_qa', 'admin'],
   },
   {
     id: 'uc3',
     tier: 2,
+    commitment: "feasibility",
     name: 'Điều khiển chi giả cơ điện',
     description: 'Nghiên cứu khả thi nhận diện ý định cử chỉ để điều khiển chi giả — offline replay only.',
     targetAudience: 'Nghiên cứu viên, Kỹ sư y sinh',
     hardware: 'Hệ thống sEMG + chi giả cơ điện (chưa xác nhận)',
+    hardwareBoundary: 'Không điều khiển actuator thật; chỉ mô phỏng offline command mapping.',
     status: 'Nghiên cứu khả thi — không điều khiển thiết bị thật',
     disclaimer: 'Nghiên cứu khả thi — không điều khiển thiết bị thật.',
     cta: 'Xem nghiên cứu khả thi',
-    introRoute: ROUTES.UC3_INTRO,
+    introRoute: ROUTES.UC3_FEASIBILITY,
+    primaryRoute: ROUTES.UC3_FEASIBILITY,
+    allowedRoles: ['ktv', 'physician', 'researcher', 'ml_qa', 'admin'],
   },
   {
     id: 'uc4',
     tier: 2,
+    commitment: "feasibility",
     name: 'Giao diện người–máy trong môi trường y tế',
     description: 'Nghiên cứu khả thi ra lệnh bằng cử chỉ trong môi trường vô trùng và nhận dạng chuỗi ký hiệu.',
     targetAudience: 'Nghiên cứu viên, Phẫu thuật viên (khảo sát)',
     hardware: 'Wearable sEMG chuyên dụng (cần phát triển)',
+    hardwareBoundary: 'Cần wearable khác; chưa dùng trong phòng mổ hoặc dịch ngôn ngữ ký hiệu.',
     status: 'Nghiên cứu khả thi — cần wearable mới',
     disclaimer: 'Nghiên cứu khả thi — cần wearable mới để đánh giá triển khai.',
     cta: 'Xem nghiên cứu khả thi',
-    introRoute: ROUTES.UC4_INTRO,
+    introRoute: ROUTES.UC4_FEASIBILITY,
+    primaryRoute: ROUTES.UC4_FEASIBILITY,
+    allowedRoles: ['physician', 'researcher', 'ml_qa', 'admin'],
   },
 ];
+
+export const useCaseRoutes = USE_CASE_CONFIGS;
+export type UseCaseRouteConfig = UseCaseConfig;
+
+export function getUseCaseRoute(id: UseCaseConfig['id']): UseCaseConfig {
+  const route = useCaseRoutes.find((item) => item.id === id);
+  if (!route) throw new Error(`Unknown use case: ${id}`);
+  return route;
+}

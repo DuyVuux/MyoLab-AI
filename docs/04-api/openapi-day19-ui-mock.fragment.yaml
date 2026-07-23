@@ -1,0 +1,41 @@
+openapi: 3.1.0
+info:
+  title: MyoLab-AI Day 19 UI Mock API Fragment
+  version: 0.1.0
+paths:
+  /health:
+    get:
+      operationId: getMockHealth
+      responses:
+        '200':
+          description: Mock API health
+  /v1/use-cases:
+    get:
+      operationId: listUseCases
+      responses:
+        '200':
+          description: Danh mục use case
+  /v1/dashboard:
+    get:
+      operationId: getDashboardSummary
+      responses:
+        '200':
+          description: Dashboard summary
+  /v1/sessions:
+    get:
+      operationId: listSessions
+      responses:
+        '200':
+          description: Danh sách session mock
+  /v1/analyses:
+    get:
+      operationId: listAnalyses
+      responses:
+        '200':
+          description: Analysis work queue
+  /v1/feedback:
+    get:
+      operationId: listFeedbackInbox
+      responses:
+        '200':
+          description: Feedback inbox mock
