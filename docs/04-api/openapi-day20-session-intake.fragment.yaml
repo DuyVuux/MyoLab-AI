@@ -1,0 +1,40 @@
+openapi: 3.1.0
+info:
+  title: MyoLab-AI Day 20 Session Intake Mock API
+  version: 0.1.0
+paths:
+  /v1/sessions:
+    post:
+      operationId: createSessionDay20
+      responses:
+        '201': { description: Session created }
+  /v1/sessions/{session_id}/imports:
+    post:
+      operationId: createImportDay20
+      responses:
+        '201': { description: Import created }
+  /v1/imports/{import_id}/mapping:
+    put:
+      operationId: saveChannelMappingDay20
+      responses:
+        '200': { description: Mapping saved }
+  /v1/sessions/{session_id}/preflight:
+    get:
+      operationId: getPreflightDay20
+      responses:
+        '200': { description: Preflight summary }
+  /v1/sessions/{session_id}/calibrations:
+    post:
+      operationId: runCalibrationDay20
+      responses:
+        '201': { description: Calibration created }
+  /v1/sessions/{session_id}/quality:
+    get:
+      operationId: getQualityDay20
+      responses:
+        '200': { description: Quality result }
+  /v1/sessions/{session_id}/analyses:
+    post:
+      operationId: createAnalysisHandoffDay20
+      responses:
+        '202': { description: Analysis handoff created or abstained }

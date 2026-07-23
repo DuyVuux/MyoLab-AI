@@ -10,8 +10,22 @@
     "skipLibCheck": true
   },
   "include": [
-    "../../apps/web-portal/src/**/*.ts",
-    "../../apps/web-portal/src/**/*.tsx",
-    "day20_vendor_stubs.d.ts"
+    "../../apps/web-portal/src/app/sessions/**/*.ts",
+    "../../apps/web-portal/src/app/sessions/**/*.tsx",
+    "../../apps/web-portal/src/components/data-intake/**/*.tsx",
+    "../../apps/web-portal/src/components/calibration/**/*.tsx",
+    "../../apps/web-portal/src/components/clinical/AnalysisHandoffPanel.tsx",
+    "../../apps/web-portal/src/components/clinical/SignalQualityGatePanel.tsx",
+    "../../apps/web-portal/src/lib/session-intake-client.ts",
+    "../../apps/web-portal/src/mocks/day20ScenarioRegistry.ts",
+    "../../apps/web-portal/src/schemas/*-intake.schema.ts",
+    "../../apps/web-portal/src/schemas/import-workflow.schema.ts",
+    "../../apps/web-portal/src/schemas/channel-mapping.schema.ts",
+    "../../apps/web-portal/src/schemas/preflight.schema.ts",
+    "../../apps/web-portal/src/schemas/calibration.schema.ts",
+    "../../apps/web-portal/src/schemas/quality-gate.schema.ts",
+    "../../apps/web-portal/src/schemas/analysis-handoff.schema.ts",
+    "../../apps/web-portal/src/workflows/*.ts",
+    "../../apps/web-portal/next-env.d.ts"
   ]
 }

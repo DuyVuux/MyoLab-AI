@@ -1,0 +1,159 @@
+{
+  "session": {
+    "subjectRef": "SUBJ-D20-EVIDENCE",
+    "useCaseId": "uc1",
+    "protocol": {
+      "protocolId": "upper-limb-gesture",
+      "protocolVersion": "v0.1"
+    },
+    "affectedSide": "right",
+    "referenceSide": "left",
+    "targetMuscles": [
+      "Flexor carpi radialis",
+      "Extensor carpi radialis"
+    ],
+    "sessionType": "baseline",
+    "operatorRef": "KTV-HASH-EVIDENCE",
+    "consent": {
+      "qualityImprovement": true,
+      "modelTraining": false,
+      "researchExport": false
+    },
+    "dataSourceIntent": "generic_csv_manifest",
+    "previousSessionId": null,
+    "schemaVersion": "session-record.v0.1",
+    "sessionId": "SESSION-D20-001",
+    "workflowStatus": "intake_in_progress",
+    "createdAt": "2026-07-23T00:00:00Z",
+    "containsDirectIdentifier": false
+  },
+  "import": {
+    "schemaVersion": "signal-import-record.v0.1",
+    "importId": "IMPORT-D20-001",
+    "sessionId": "SESSION-D20-001",
+    "sourceType": "generic_csv_manifest",
+    "state": "mapping_required",
+    "sanitizedFilename": "session_session-d20-001.csv",
+    "sizeBytes": 7680000,
+    "sourceHashSha256": "sha256:d20-source-001",
+    "detectedMetadata": {
+      "samplingRateHz": 1000.0,
+      "durationS": 70.0,
+      "channelCount": 4,
+      "signalUnit": "uV",
+      "timeColumn": "time_s",
+      "signalColumns": [
+        "Sensor 1",
+        "Sensor 2",
+        "Sensor 3",
+        "Sensor 4"
+      ],
+      "deviceVendor": "synthetic",
+      "timestampMonotonic": true
+    },
+    "errorCode": null,
+    "retryFromState": null,
+    "rawSamplesIncluded": false,
+    "containsDirectIdentifier": false
+  },
+  "preflight": {
+    "schemaVersion": "preflight-summary.v0.1",
+    "preflightId": "PREFLIGHT-SESSION-D20-001",
+    "sessionId": "SESSION-D20-001",
+    "importId": "IMPORT-D20-001",
+    "state": "ready",
+    "samplingRateHz": 1000.0,
+    "durationS": 70.0,
+    "channelCount": 4,
+    "mappingCompleteness": 1.0,
+    "timestampMonotonic": true,
+    "nonFiniteRatio": 0.0,
+    "flatlineSuspected": false,
+    "clippingSuspected": false,
+    "powerlineWarning": false,
+    "motionArtifactWarning": false,
+    "sourceHashSha256": "sha256:d20-source-001",
+    "preview": [
+      {
+        "timeS": 0.0,
+        "valueUv": 0.0
+      },
+      {
+        "timeS": 0.1,
+        "valueUv": 15.0
+      }
+    ],
+    "reasonCodes": [],
+    "rawSamplesIncluded": false
+  },
+  "calibration": {
+    "schemaVersion": "calibration-record.v0.1",
+    "calibrationId": "CAL-SESSION-D20-001",
+    "sessionId": "SESSION-D20-001",
+    "state": "pass",
+    "restRmsUv": 4.2,
+    "restSigmaUv": 0.8,
+    "activityThresholdCandidateUv": 6.6,
+    "engineeringK": 3.0,
+    "plannedRepetitions": 15,
+    "acceptedRepetitions": 14,
+    "rejectedRepetitions": 1,
+    "usableRepetitionRatio": 0.9333333333333333,
+    "durationS": 142.0,
+    "warningAcknowledged": false,
+    "reasonCodes": [],
+    "repetitions": [
+      {
+        "repetitionId": "REP-D20-001",
+        "gestureId": "wrist_extension",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-D20-001",
+          "sourceHashSha256": "sha256:d20-source",
+          "startSample": 5000,
+          "endSample": 6000,
+          "startTimeS": 5.0,
+          "endTimeS": 6.0,
+          "channelIds": [
+            "CH01",
+            "CH02"
+          ]
+        },
+        "reasonCodes": []
+      }
+    ],
+    "rawSamplesIncluded": false
+  },
+  "quality": {
+    "schemaVersion": "detailed-quality-result.v0.1",
+    "qualityResultId": "QC-SESSION-D20-001",
+    "sessionId": "SESSION-D20-001",
+    "status": "pass",
+    "usableWindowRatio": 0.94,
+    "badChannels": [],
+    "artifactFlags": [],
+    "reasonCodes": [],
+    "mfcvEligibility": "not_eligible",
+    "recommendedActionsVi": [],
+    "warningAcknowledgedBy": null,
+    "warningAcknowledgementReason": null,
+    "qcVersion": "qc_v0.1"
+  },
+  "analysis_handoff": {
+    "schemaVersion": "analysis-handoff.v0.1",
+    "analysisId": "AN-SESSION-D20-001",
+    "sessionId": "SESSION-D20-001",
+    "useCaseId": "uc1",
+    "status": "queued",
+    "nextRoute": "/uc1/session/SESSION-D20-001",
+    "protocolVersion": "upper-limb-gesture.v0.1",
+    "calibrationId": "CAL-SESSION-D20-001",
+    "qualityResultId": "QC-SESSION-D20-001",
+    "sourceHashSha256": "sha256:d20-source-001",
+    "scoreIsProbability": false,
+    "clinicalUseAllowed": false,
+    "humanReviewRequired": true,
+    "rawSamplesIncluded": false,
+    "reasonCodes": []
+  }
+}

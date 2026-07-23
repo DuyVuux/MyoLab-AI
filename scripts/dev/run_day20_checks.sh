@@ -16,23 +16,26 @@ for prerequisite in \
 done
 
 export PYTHONPATH="$ROOT/services/api-server/src/mock_api:${PYTHONPATH:-}"
+TSC="$ROOT/apps/web-portal/node_modules/.bin/tsc"
+PYTEST="$ROOT/.venv/bin/pytest"
+PYTHON="$ROOT/.venv/bin/python"
 mkdir -p qa-validation/evidence
 rm -rf .day20-build
 
 echo "[1/5] TypeScript/TSX strict check"
-tsc -p qa-validation/configs/day20_tsconfig.json
+"$TSC" -p qa-validation/configs/day20_tsconfig.json
 
 echo "[2/5] Compile and run workflow runtime tests"
-tsc -p qa-validation/configs/day20_workflow_tsconfig.json
+"$TSC" -p qa-validation/configs/day20_workflow_tsconfig.json
 node qa-validation/automated-tests/day20_workflow_runtime.test.cjs
 
 echo "[3/5] FastAPI integration and frontend contract tests"
-pytest -q \
+"$PYTEST" -q \
   qa-validation/automated-tests/test_day20_mock_api.py \
   qa-validation/automated-tests/test_day20_frontend_contracts.py
 
 echo "[4/5] Capture deterministic evidence"
-python - <<'PY_EVIDENCE'
+"$PYTHON" - <<'PY_EVIDENCE'
 import json, sys
 from pathlib import Path
 from fastapi.testclient import TestClient
@@ -74,7 +77,7 @@ print('Evidence written')
 PY_EVIDENCE
 
 echo "[5/5] Artifact and safety check"
-python scripts/dev/check_day20_artifacts.py
+"$PYTHON" scripts/dev/check_day20_artifacts.py
 rm -rf .day20-build
 
 echo "All Day 20 checks passed."
