@@ -23,6 +23,7 @@ SCHEMA_PATHS = {
     "replay": COMMON_SCHEMA_DIR / "uc1-replay-session.v0.1.schema.json",
 }
 PROTOCOL_PATH = PROTOCOL_DIR / "upper-limb-gesture-biofeedback.v0.1.yaml"
+OPENAPI_PATH = ROOT / "docs/04-api/openapi-day22-uc1-replay.fragment.yaml"
 
 GESTURE_VOCABULARY = {
     "rest",
@@ -525,3 +526,117 @@ def test_confidence_vocabulary_is_canonical_and_ordered() -> None:
         "wrist_flexion",
         "wrist_extension",
     }
+
+
+def _iter_openapi_refs(node: Any) -> list[str]:
+    if isinstance(node, dict):
+        refs = [node["$ref"]] if isinstance(node.get("$ref"), str) else []
+        for value in node.values():
+            refs.extend(_iter_openapi_refs(value))
+        return refs
+    if isinstance(node, list):
+        refs: list[str] = []
+        for value in node:
+            refs.extend(_iter_openapi_refs(value))
+        return refs
+    return []
+
+
+def _resolve_local_openapi_ref(document: dict[str, Any], ref: str) -> Any:
+    assert ref.startswith("#/"), f"Day 22 OpenAPI chỉ dùng local refs: {ref}"
+    node: Any = document
+    for encoded_part in ref[2:].split("/"):
+        part = encoded_part.replace("~1", "/").replace("~0", "~")
+        assert isinstance(node, dict) and part in node, f"Unresolved OpenAPI ref: {ref}"
+        node = node[part]
+    return node
+
+
+def test_day22_openapi_31_fragment_has_resolved_refs_and_valid_examples() -> None:
+    assert OPENAPI_PATH.is_file(), (
+        "Thiếu Day 22 OpenAPI fragment: "
+        f"{OPENAPI_PATH.relative_to(ROOT)}"
+    )
+    document = yaml.safe_load(OPENAPI_PATH.read_text(encoding="utf-8"))
+    assert isinstance(document, dict)
+    assert str(document.get("openapi", "")).startswith("3.1.")
+
+    expected_operations = {
+        ("/v1/uc1/sessions/{session_id}/replays", "post"),
+        ("/v1/uc1/replays/{replay_id}", "get"),
+        ("/v1/uc1/replays/{replay_id}/advance", "post"),
+        ("/v1/uc1/replays/{replay_id}/feedback", "post"),
+    }
+    paths = document.get("paths")
+    assert isinstance(paths, dict)
+    operations = {
+        (path, method): operation
+        for path, path_item in paths.items()
+        if isinstance(path_item, dict)
+        for method, operation in path_item.items()
+        if method in {"get", "post", "put", "patch", "delete"}
+    }
+    assert expected_operations <= set(operations)
+    operation_ids = [operation.get("operationId") for operation in operations.values()]
+    assert all(isinstance(value, str) and value for value in operation_ids)
+    assert len(operation_ids) == len(set(operation_ids))
+
+    for ref in _iter_openapi_refs(document):
+        _resolve_local_openapi_ref(document, ref)
+
+    for key in (
+        ("/v1/uc1/sessions/{session_id}/replays", "post"),
+        ("/v1/uc1/replays/{replay_id}/feedback", "post"),
+    ):
+        parameters = operations[key].get("parameters", [])
+        assert any(
+            parameter.get("name") == "Idempotency-Key"
+            and parameter.get("in") == "header"
+            and parameter.get("required") is True
+            for parameter in parameters
+            if isinstance(parameter, dict)
+        )
+
+    feedback_parameters = operations[
+        ("/v1/uc1/replays/{replay_id}/feedback", "post")
+    ].get("parameters", [])
+    assert any(
+        parameter.get("name") == "X-Actor-Role"
+        and parameter.get("in") == "header"
+        and parameter.get("required") is True
+        for parameter in feedback_parameters
+        if isinstance(parameter, dict)
+    )
+
+    advance_description = str(
+        operations[("/v1/uc1/replays/{replay_id}/advance", "post")].get(
+            "description", ""
+        )
+    ).casefold()
+    assert "deterministic" in advance_description
+    assert "production streaming" in advance_description
+
+    for operation in operations.values():
+        responses = operation.get("responses")
+        assert isinstance(responses, dict) and responses
+        problem_responses = [
+            response
+            for status_code, response in responses.items()
+            if str(status_code).startswith(("4", "5"))
+            and isinstance(response, dict)
+        ]
+        assert problem_responses
+        assert all(
+            "application/problem+json" in response.get("content", {})
+            for response in problem_responses
+        )
+
+    examples = document.get("components", {}).get("examples", {})
+    replay_example = examples.get("ReplaySession", {}).get("value")
+    feedback_example = examples.get("FeedbackResponse", {}).get("value")
+    assert isinstance(replay_example, dict)
+    assert isinstance(feedback_example, dict)
+    _assert_valid("replay", replay_example)
+    assert isinstance(feedback_example.get("context"), dict)
+    _assert_valid("feedback", feedback_example["context"])
+    assert feedback_example.get("automaticTrainingCandidate") is False
