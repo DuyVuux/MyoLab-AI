@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { Poppins, JetBrains_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import { AuthProvider } from '@/lib/auth';
 import '@/styles/global.css';
 
-const poppins = Poppins({
-  subsets: ['latin', 'latin-ext'],
+const inter = Inter({
+  subsets: ['latin', 'vietnamese'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-poppins',
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi" className={`${poppins.variable} ${jetbrainsMono.variable}`}>
+    <html lang="vi" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
           <AuthProvider>{children}</AuthProvider>
         </body>

@@ -124,7 +124,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-1);
-  font-family: monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   color: #888;
   margin-top: var(--space-1);
@@ -137,7 +137,7 @@
   margin-top: 60px;
   padding-top: var(--space-2);
   border-top: 1px solid #eee;
-  font-family: monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   color: #888;
   justify-content: center;

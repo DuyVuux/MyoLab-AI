@@ -68,7 +68,7 @@
                  0 0 1px rgba(45, 55, 72, 0.10);
 
   /* ── Typography ── */
-  --font-primary: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  --font-primary: var(--font-inter), Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: var(--font-jetbrains-mono), 'Fira Code', 'Cascadia Code', monospace;
 
   --font-size-xs: 0.75rem;
