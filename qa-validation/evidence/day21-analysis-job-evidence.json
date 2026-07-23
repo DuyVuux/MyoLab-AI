@@ -25,133 +25,133 @@
       {
         "stage": "validating_input",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.520443Z",
+        "occurredAt": "2026-07-23T10:52:54.727234Z",
         "durationMs": null
       },
       {
         "stage": "validating_input",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.522002Z",
+        "occurredAt": "2026-07-23T10:52:54.728595Z",
         "durationMs": 100
       },
       {
         "stage": "running_quality_gate",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.522002Z",
+        "occurredAt": "2026-07-23T10:52:54.728595Z",
         "durationMs": null
       },
       {
         "stage": "running_quality_gate",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.523387Z",
+        "occurredAt": "2026-07-23T10:52:54.729930Z",
         "durationMs": 100
       },
       {
         "stage": "preprocessing",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.523387Z",
+        "occurredAt": "2026-07-23T10:52:54.729930Z",
         "durationMs": null
       },
       {
         "stage": "preprocessing",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.524751Z",
+        "occurredAt": "2026-07-23T10:52:54.731344Z",
         "durationMs": 100
       },
       {
         "stage": "windowing",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.524751Z",
+        "occurredAt": "2026-07-23T10:52:54.731344Z",
         "durationMs": null
       },
       {
         "stage": "windowing",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.526087Z",
+        "occurredAt": "2026-07-23T10:52:54.733733Z",
         "durationMs": 100
       },
       {
         "stage": "extracting_time_features",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.526087Z",
+        "occurredAt": "2026-07-23T10:52:54.733733Z",
         "durationMs": null
       },
       {
         "stage": "extracting_time_features",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.527728Z",
+        "occurredAt": "2026-07-23T10:52:54.735577Z",
         "durationMs": 100
       },
       {
         "stage": "estimating_spectrum",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.527728Z",
+        "occurredAt": "2026-07-23T10:52:54.735577Z",
         "durationMs": null
       },
       {
         "stage": "estimating_spectrum",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.529166Z",
+        "occurredAt": "2026-07-23T10:52:54.737310Z",
         "durationMs": 100
       },
       {
         "stage": "extracting_frequency_features",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.529166Z",
+        "occurredAt": "2026-07-23T10:52:54.737310Z",
         "durationMs": null
       },
       {
         "stage": "extracting_frequency_features",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.530611Z",
+        "occurredAt": "2026-07-23T10:52:54.738991Z",
         "durationMs": 100
       },
       {
         "stage": "computing_trends",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.530611Z",
+        "occurredAt": "2026-07-23T10:52:54.738991Z",
         "durationMs": null
       },
       {
         "stage": "computing_trends",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.532009Z",
+        "occurredAt": "2026-07-23T10:52:54.740700Z",
         "durationMs": 100
       },
       {
         "stage": "building_evidence",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.532009Z",
+        "occurredAt": "2026-07-23T10:52:54.740700Z",
         "durationMs": null
       },
       {
         "stage": "building_evidence",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.533514Z",
+        "occurredAt": "2026-07-23T10:52:54.742481Z",
         "durationMs": 100
       },
       {
         "stage": "running_rule_engine",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.533514Z",
+        "occurredAt": "2026-07-23T10:52:54.742481Z",
         "durationMs": null
       },
       {
         "stage": "running_rule_engine",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.535264Z",
+        "occurredAt": "2026-07-23T10:52:54.744410Z",
         "durationMs": 100
       },
       {
         "stage": "building_explanation",
         "state": "started",
-        "occurredAt": "2026-07-23T10:39:54.535264Z",
+        "occurredAt": "2026-07-23T10:52:54.744410Z",
         "durationMs": null
       },
       {
         "stage": "building_explanation",
         "state": "completed",
-        "occurredAt": "2026-07-23T10:39:54.536821Z",
+        "occurredAt": "2026-07-23T10:52:54.745959Z",
         "durationMs": 100
       }
     ],
@@ -169,8 +169,8 @@
       "humanReviewRequired": true,
       "rawSamplesIncluded": false
     },
-    "createdAt": "2026-07-23T10:39:54.518656Z",
-    "updatedAt": "2026-07-23T10:39:54.536821Z"
+    "createdAt": "2026-07-23T10:52:54.725525Z",
+    "updatedAt": "2026-07-23T10:52:54.745959Z"
   },
   "summary": {
     "schema_version": "session-analysis-summary.v0.1",
