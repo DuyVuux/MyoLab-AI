@@ -57,3 +57,66 @@ Day 10 giới thiệu phân hệ trích xuất đặc trưng miền tần số (
 
 ## Tiến độ Day 11
 Day 11 triển khai mô-đun trích xuất đặc trưng Khuynh hướng (Trend Features). Tính toán độ dốc hồi quy tuyến tính (slopes) cho RMS, MAV, MDF và MNF theo thời gian. Áp dụng chính sách kiểm soát nghiêm ngặt chỉ cung cấp số liệu thống kê mô tả (descriptive), loại bỏ hoàn toàn các chỉ số thống kê suy diễn (như p-value hay khoảng tin cậy) nhằm ngăn chặn việc kết luận lâm sàng vội vã.
+
+## Tiến độ Day 12
+Day 12 xây dựng Mô-đun Bằng chứng Mỏi cơ (`FatigueEvidenceEngine`). Chuyển đổi các chỉ số miền thời gian, miền tần số và khuynh hướng thành đối tượng bằng chứng có cấu trúc (`FatigueEvidenceResult v0.1`), tách biệt hoàn toàn giữa quan sát/bằng chứng với phân loại và quyết định lâm sàng.
+
+## Tiến độ Day 13
+Day 13 triển khai Động cơ Quy tắc Giải thích được (`ExplainableRuleEngine`). Đánh giá bằng chứng mỏi cơ dựa trên các bảng quy tắc có phiên bản để sinh ra kết luận quy tắc xác định (`FatigueRuleResult v0.1`), sự đồng thuận đa kênh, cơ sở quyết định, bằng chứng đối lập, và chính sách từ chối xử lý (abstention-first).
+
+## Tiến độ Day 14
+Day 14 triển khai tính toán Độ tin cậy Kỹ thuật (`EngineeringConfidenceCalculator`) và Rào chắn An toàn Từ ngữ (`WordingGuard`). Đánh giá chất lượng đường ống xử lý nội bộ, tạo tóm tắt khả năng giải thích, và chặn đứng các từ ngữ tuyên bố quá đà hoặc không an toàn.
+
+## Tiến độ Day 15
+Day 15 điều phối hoàn chỉnh quy trình phân tích ngoại tuyến (`run_offline_analysis.py`). Tích hợp Day 1–14 thành một lệnh ngoại tuyến độc lập, sinh ra 11 tệp tin thành phần giai đoạn, siêu dữ liệu chứng thực, mã băm nguồn SHA-256, và gói phân tích ngoại tuyến.
+
+## Tiến độ Day 16
+Day 16 hoàn thiện Báo cáo Kiểm chứng Thống kê & Hồi quy Chuẩn (`day16-mvp0-regression-report.md`). Xác nhận độ ổn định của quy trình xử lý trên ma trận dữ liệu mẫu tổng hợp, khóa hành vi an toàn và đóng băng baseline `mvp0_baseline_v0.1.json`.
+
+## Tiến độ Day 17
+Day 17 triển khai Schema Đầu ra Chuẩn hóa (`SessionAnalysisSummary v0.1`) và Hợp đồng OpenAPI (`openapi.yaml`). Thiết lập hợp đồng giao tiếp phiên bản giữa gói phân tích ngoại tuyến với hệ thống backend/frontend.
+
+## Tiến độ Day 18
+Day 18 hoàn thành Hệ thống Giao diện UI/UX & Kiểm toán Liên tục Frontend (`apps/web-portal`) sử dụng Next.js 14 App Router, TypeScript strict mode, và tiêu chuẩn truy cập WCAG 2.2 AA. Hệ thống hỗ trợ 4 hướng ứng dụng Use Case, quy trình Bác sĩ ký duyệt lâm sàng, trọng tài dán nhãn ML, quản lý sự cố chất lượng dữ liệu, và kịch bản E2E Playwright test với điểm kiểm toán **100/100 PASS**.
+
+### 🚀 Hướng dẫn khởi chạy giao diện UI Portal (Running the UI Portal)
+
+#### Yêu cầu môi trường
+- Node.js >= 18.0.0
+- npm hoặc pnpm
+
+#### 1. Khởi chạy ở Chế độ Phát triển (Development Mode)
+Từ thư mục gốc dự án:
+```bash
+npm --prefix apps/web-portal run dev
+```
+Hoặc truy cập trực tiếp vào thư mục `apps/web-portal`:
+```bash
+cd apps/web-portal && npm run dev
+```
+Mở trình duyệt truy cập: [http://localhost:3100](http://localhost:3100).
+
+#### 2. Khởi chạy ở Chế độ Sản xuất (Production Build & Start)
+Từ thư mục gốc dự án:
+```bash
+# Biên dịch ứng dụng Next.js
+npm --prefix apps/web-portal run build
+
+# Khởi chạy server Production
+npm --prefix apps/web-portal run start
+```
+Mở trình duyệt truy cập: [http://localhost:3100](http://localhost:3100).
+
+#### 3. Lệnh kiểm tra kiểu & Linter
+```bash
+npm --prefix apps/web-portal run type-check
+npm --prefix apps/web-portal run lint
+```
+
+#### 4. Tài khoản thử nghiệm nhanh (Demo User Roles)
+Tại màn hình Đăng nhập (`/login`), nhấp chọn các vai trò thử nghiệm có sẵn:
+- **Bác sĩ (Doctor):** Xem kết luận AI, chọn Override policy, ký duyệt Clinical Sign-off và xuất báo cáo (`/sessions/[id]/review`).
+- **Kỹ thuật viên (KTV):** Tạo phiên, tải tệp, gán kênh (mapping), chạy QC Gate & Analysis.
+- **Trọng tài ML (Researcher):** Hộp thư phản hồi dán nhãn & ML Adjudication (`/feedback/inbox`).
+- **Bệnh nhân (Patient):** Giao diện biofeedback cử chỉ (`/uc1/session/[id]`).
+
