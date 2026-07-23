@@ -21,6 +21,7 @@
   font-weight: 900;
   pointer-events: none;
   white-space: nowrap;
+  -webkit-user-select: none;
   user-select: none;
 }
 

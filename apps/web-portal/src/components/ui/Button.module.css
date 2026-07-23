@@ -15,6 +15,7 @@
               transform var(--transition-fast),
               box-shadow var(--transition-fast);
   white-space: nowrap;
+  -webkit-user-select: none;
   user-select: none;
   line-height: 1;
 }
