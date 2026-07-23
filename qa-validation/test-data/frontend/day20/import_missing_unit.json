@@ -1,0 +1,9 @@
+{
+  "scenario_id": "import_missing_unit",
+  "expected": {
+    "import": "mapping_required"
+  },
+  "contains_direct_identifier": false,
+  "raw_samples_included": false,
+  "automatic_retraining": false
+}

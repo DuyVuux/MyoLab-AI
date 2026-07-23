@@ -1,0 +1,11 @@
+{
+  "scenario_id": "qc_warning_powerline",
+  "expected": {
+    "quality": "warning",
+    "before_ack": "blocked",
+    "after_ack": "queued_with_warnings"
+  },
+  "contains_direct_identifier": false,
+  "raw_samples_included": false,
+  "automatic_retraining": false
+}

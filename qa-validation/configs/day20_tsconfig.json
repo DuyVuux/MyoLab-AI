@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "lib": ["ES2022", "DOM"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "../../apps/web-portal/src/**/*.ts",
+    "../../apps/web-portal/src/**/*.tsx",
+    "day20_vendor_stubs.d.ts"
+  ]
+}

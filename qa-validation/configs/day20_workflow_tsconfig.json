@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "../../.day20-build",
+    "skipLibCheck": true
+  },
+  "include": [
+    "../../apps/web-portal/src/schemas/analysis-envelope.schema.ts",
+    "../../apps/web-portal/src/schemas/role.schema.ts",
+    "../../apps/web-portal/src/schemas/session-intake.schema.ts",
+    "../../apps/web-portal/src/schemas/import-workflow.schema.ts",
+    "../../apps/web-portal/src/schemas/channel-mapping.schema.ts",
+    "../../apps/web-portal/src/schemas/preflight.schema.ts",
+    "../../apps/web-portal/src/schemas/calibration.schema.ts",
+    "../../apps/web-portal/src/schemas/quality-gate.schema.ts",
+    "../../apps/web-portal/src/schemas/analysis-handoff.schema.ts",
+    "../../apps/web-portal/src/workflows/importWorkflowReducer.ts",
+    "../../apps/web-portal/src/workflows/calibrationWorkflowReducer.ts"
+  ]
+}

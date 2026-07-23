@@ -1,0 +1,13 @@
+{
+  "scenario_id": "golden_intake_pass",
+  "expected": {
+    "import": "qc_ready",
+    "preflight": "ready",
+    "calibration": "pass",
+    "quality": "pass",
+    "analysis_handoff": "queued"
+  },
+  "contains_direct_identifier": false,
+  "raw_samples_included": false,
+  "automatic_retraining": false
+}

@@ -1,0 +1,11 @@
+{
+  "scenario_id": "qc_fail_flatline",
+  "expected": {
+    "quality": "fail",
+    "analysis_handoff": "abstained",
+    "next_route": null
+  },
+  "contains_direct_identifier": false,
+  "raw_samples_included": false,
+  "automatic_retraining": false
+}
