@@ -891,3 +891,51 @@ def test_feedback_is_idempotent_and_rejects_key_reuse(
         status_code=409,
         error_code="IDEMPOTENCY_KEY_REUSED",
     )
+
+
+def test_day20_day21_day22_source_and_segment_provenance_is_exact(
+    harness: Day22Harness,
+) -> None:
+    session_id, job = _prepare_analysis(harness, token="PROVENANCE")
+    import_record = next(
+        item
+        for item in harness.day20_store.IMPORTS.values()
+        if item.sessionId == session_id
+    )
+    calibration = harness.day20_store.CALIBRATIONS[session_id]
+    expected_channels = tuple(
+        item.canonicalChannelId
+        for item in harness.day20_store.MAPPINGS[import_record.importId]
+    )
+
+    created = _create_replay(
+        harness.client,
+        session_id=session_id,
+        analysis_id=job["analysisId"],
+        scenario_id="uc1_golden_correct",
+        idempotency_key="d22-provenance",
+    )
+    assert created.status_code == 201, created.text
+    advanced = _advance_replay(harness.client, created.json())
+    assert advanced.status_code == 200, advanced.text
+    window = advanced.json()["currentWindow"]
+    assert window is not None
+    segment = window["segmentRef"]
+
+    source_hash = import_record.sourceHashSha256
+    assert len(source_hash) == 64
+    assert set(source_hash) <= set("0123456789abcdef")
+    assert job["sourceHashSha256"] == source_hash
+    assert calibration.repetitions[0].segmentRef.sourceHashSha256 == source_hash
+    assert segment["sourceHashSha256"] == source_hash
+    assert segment["rawSignalRef"] == calibration.repetitions[0].segmentRef.rawSignalRef
+    assert segment["calibrationId"] == calibration.calibrationId
+    assert tuple(segment["channelIds"]) == expected_channels
+    sampling_rate_hz = import_record.detectedMetadata.samplingRateHz
+    assert sampling_rate_hz is not None
+    assert segment["startTimeS"] == pytest.approx(
+        segment["startSample"] / sampling_rate_hz
+    )
+    assert segment["endTimeExclusiveS"] == pytest.approx(
+        segment["endSampleExclusive"] / sampling_rate_hz
+    )
