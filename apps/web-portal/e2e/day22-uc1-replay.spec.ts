@@ -203,13 +203,14 @@ async function installReplayApi(
 async function openAuthenticatedReplay(
   page: Page,
   scenarioId = "uc1_golden_correct",
+  actorRole: "ktv" | "patient" = "ktv",
 ) {
   await page.goto("/login");
-  await page
-    .getByRole("button", {
-      name: /Đăng nhập với vai trò KTV Phục hồi chức năng/i,
-    })
-    .click();
+  const loginName =
+    actorRole === "patient"
+      ? /Đăng nhập với vai trò Bệnh nhân/i
+      : /Đăng nhập với vai trò KTV Phục hồi chức năng/i;
+  await page.getByRole("button", { name: loginName }).click();
   await expect(page).toHaveURL(/\/dashboard$/);
 
   const target =
@@ -337,6 +338,37 @@ test.describe("Day 22 UC1 deterministic replay", () => {
       ).toHaveCount(0);
     });
   }
+
+
+  test("keeps technical feedback controls hidden for patient role", async ({
+    page,
+  }) => {
+    const current = windowFixture();
+    await installReplayApi(page, {
+      initial: replayFixture("idle", -1, [current]),
+      advances: [replayFixture("running", 0, [current])],
+    });
+
+    await openAuthenticatedReplay(
+      page,
+      "uc1_golden_correct",
+      "patient",
+    );
+    await page.getByRole("button", { name: /Bắt đầu replay/i }).click();
+    await expect(
+      page.getByText(/Hệ thống replay đã ghi nhận nỗ lực/i),
+    ).toBeVisible();
+    for (const actionName of [
+      /Chấp nhận kết quả/i,
+      /Chưa chắc/i,
+      /Cần sửa/i,
+      /Đề nghị đo lại/i,
+    ]) {
+      await expect(
+        page.getByRole("button", { name: actionName }),
+      ).toHaveCount(0);
+    }
+  });
 
   test("submits feedback without client-fabricated provenance", async ({
     page,
