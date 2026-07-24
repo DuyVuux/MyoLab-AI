@@ -154,7 +154,7 @@ def valid_inference_window() -> dict[str, Any]:
         "baseEngineeringConfidence": "engineering_high",
         "engineeringConfidence": "engineering_high",
         "qualityContext": {
-            "source": "day17_signal_quality",
+            "source": "day20_quality_gate",
             "qualityResultId": "QC-SESSION-D20-001",
             "status": "pass",
             "reasonCodes": [],
