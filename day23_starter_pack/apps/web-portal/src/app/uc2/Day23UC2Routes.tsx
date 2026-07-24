@@ -1,1 +1,0 @@
-import{Route}from'react-router-dom';export function Day23UC2Routes():JSX.Element{return <><Route path="/uc2/assessment/:sessionId" element={<p>Mount Day23UC2AssessmentPage qua route adapter.</p>}/><Route path="/uc2/longitudinal/:subjectRef" element={<p>Mount Day23UC2LongitudinalPage qua route adapter.</p>}/></>;}

@@ -100,5 +100,8 @@ logs/
 qa-validation/evidence/day5-preprocess-golden.npz
 docs/plans/
 
+# Starter packs
+day*_starter_pack/
+
 # TypeScript cache
 *.tsbuildinfo

@@ -1,1 +1,0 @@
-const assert=require('node:assert/strict');const{metricDisplay}=require('../../.day23-build/uc2-assessment.schema.js');assert.equal(metricDisplay({metricId:'m',labelVi:'M',status:'not_available',value:null,unit:'%',formulaVersion:'v',validationStatus:'not_validated',sourceSessionIds:[],limitations:[]}), 'Chưa có dữ liệu');console.log('Day 23 TypeScript metric display passed.');
