@@ -97,6 +97,9 @@
       source hash, `startSample`, `endSampleExclusive`, `startTimeS`,
       `endTimeExclusiveS`, channels, repetition, calibration,
       `modelVersion` và exact `resultHashSha256`.
+- [ ] Feedback request chỉ gửi quyết định cùng `expectedWindowId` và
+      `expectedRevision`; server tự suy ra context và từ chối race bằng
+      `STALE_FEEDBACK_CONTEXT`.
 - [ ] Action `correct` bắt buộc có corrected gesture hợp lệ và khác prediction gốc.
 - [ ] `accept|uncertain|remeasure` không được giả thành correction.
 - [ ] Không tạo training candidate tự động; consent/adjudication vẫn là gate riêng.
@@ -115,6 +118,7 @@
 - [ ] State/cursor/revision chỉ tiến theo transition hợp lệ; terminal state không
       quay lại running.
 - [ ] Concurrent/stale advance không bỏ qua window hoặc advance hai lần.
+- [ ] Feedback stale không thể bị gắn sang current window mới.
 
 ## AC-D22-07 — API, idempotency và lỗi
 
