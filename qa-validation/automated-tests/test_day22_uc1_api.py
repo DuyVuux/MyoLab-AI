@@ -378,6 +378,58 @@ def test_new_replay_does_not_expose_future_windows(
     _assert_no_future_windows(advanced_payload)
 
 
+def test_replay_contract_rejects_current_window_inside_history(
+    harness: Day22Harness,
+) -> None:
+    session_id, job = _prepare_analysis(harness)
+    replay = _create_replay(
+        harness.client,
+        session_id=session_id,
+        analysis_id=job["analysisId"],
+        scenario_id="uc1_golden_correct",
+        idempotency_key="d22-history-current-contract",
+    ).json()
+    for _ in range(2):
+        advanced = _advance_replay(harness.client, replay)
+        assert advanced.status_code == 200, advanced.text
+        replay = advanced.json()
+
+    invalid = dict(replay)
+    invalid["history"] = [*replay["history"], replay["currentWindow"]]
+    gesture_schema = importlib.import_module("schemas.gesture_schema")
+    with pytest.raises(
+        ValueError,
+        match="REPLAY_HISTORY_CONTAINS_CURRENT",
+    ):
+        gesture_schema.UC1ReplaySession.model_validate(invalid)
+
+
+def test_replay_contract_rejects_out_of_order_history(
+    harness: Day22Harness,
+) -> None:
+    session_id, job = _prepare_analysis(harness)
+    replay = _create_replay(
+        harness.client,
+        session_id=session_id,
+        analysis_id=job["analysisId"],
+        scenario_id="uc1_golden_correct",
+        idempotency_key="d22-history-order-contract",
+    ).json()
+    for _ in range(3):
+        advanced = _advance_replay(harness.client, replay)
+        assert advanced.status_code == 200, advanced.text
+        replay = advanced.json()
+
+    invalid = dict(replay)
+    invalid["history"] = list(reversed(replay["history"]))
+    gesture_schema = importlib.import_module("schemas.gesture_schema")
+    with pytest.raises(
+        ValueError,
+        match="REPLAY_HISTORY_ORDER_INVALID",
+    ):
+        gesture_schema.UC1ReplaySession.model_validate(invalid)
+
+
 def test_reason_codes_do_not_leak_hidden_future_windows(
     harness: Day22Harness,
 ) -> None:
