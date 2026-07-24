@@ -339,6 +339,7 @@ def test_fatigue_warning_downgrades_engineering_confidence(
     )
 
     assert baseline.engineering_confidence == "engineering_high"
+    assert warning.base_engineering_confidence == "engineering_high"
     assert warning.engineering_confidence == "engineering_moderate"
     assert warning.predicted_gesture is not None
     assert warning.fatigue_overlay.status == "warning"
