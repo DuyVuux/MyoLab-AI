@@ -1,0 +1,71 @@
+export type QuantitativeMetricStatus =
+  | 'computed'
+  | 'not_available'
+  | 'blocked'
+  | 'experimental';
+
+export interface QuantitativeMetric {
+  readonly metricId: string;
+  readonly labelVi: string;
+  readonly status: QuantitativeMetricStatus;
+  readonly value: number | null;
+  readonly unit: string | null;
+  readonly formulaVersion: string;
+  readonly validationStatus: 'not_validated';
+  readonly sourceSessionIds: readonly string[];
+  readonly limitations: readonly string[];
+}
+
+export interface CompatibilityCheck {
+  readonly field: string;
+  readonly status: 'match' | 'mismatch' | 'not_available';
+  readonly baselineValue: unknown;
+  readonly comparisonValue: unknown;
+  readonly reasonCode: string | null;
+}
+
+export interface LongitudinalCompatibility {
+  readonly schemaVersion: 'longitudinal-compatibility.v0.1';
+  readonly subjectRef: string;
+  readonly baselineSessionId: string;
+  readonly comparisonSessionIds: readonly string[];
+  readonly status: 'compatible' | 'blocked';
+  readonly conclusionAllowed: boolean;
+  readonly checks: readonly CompatibilityCheck[];
+  readonly reasonCodes: readonly string[];
+  readonly safety: {
+    readonly rawSamplesIncluded: false;
+    readonly clinicalUseAllowed: false;
+    readonly humanReviewRequired: true;
+  };
+}
+
+export interface UC2QuantitativeAssessment {
+  readonly schemaVersion: 'uc2-quantitative-assessment.v0.1';
+  readonly assessmentId: string;
+  readonly subjectRef: string;
+  readonly sessionIds: readonly string[];
+  readonly status: 'completed' | 'completed_with_warnings' | 'blocked';
+  readonly metrics: readonly QuantitativeMetric[];
+  readonly compatibility: LongitudinalCompatibility;
+  readonly limitations: readonly string[];
+  readonly reviewStatus: 'pending_human_review';
+  readonly safety: {
+    readonly scoreIsProbability: false;
+    readonly rawSamplesIncluded: false;
+    readonly clinicalUseAllowed: false;
+    readonly humanReviewRequired: true;
+    readonly isClinicalConclusion: false;
+  };
+}
+
+export function metricDisplay(metric: QuantitativeMetric): string {
+  if (metric.status === 'not_available' || metric.status === 'blocked') {
+    return 'Chưa có dữ liệu';
+  }
+  if (metric.value === null) {
+    return 'Chưa có dữ liệu';
+  }
+  const suffix = metric.unit ? ` ${metric.unit}` : '';
+  return `${metric.value.toFixed(2)}${suffix}`;
+}

@@ -1,0 +1,3 @@
+import type{LongitudinalCompatibility}from'../../schemas/uc2-assessment.schema';
+export interface SessionCompatibilityTableProps{readonly result:LongitudinalCompatibility;}
+export function SessionCompatibilityTable({result}:SessionCompatibilityTableProps):JSX.Element{return <section><h2>Khả năng so sánh dọc</h2><p>Kết luận longitudinal: {result.conclusionAllowed?'được phép ở mức kỹ thuật':'bị chặn'}</p><table><caption>Kiểm tra compatibility</caption><thead><tr><th>Trường</th><th>Trạng thái</th><th>Lý do</th></tr></thead><tbody>{result.checks.map((c,i)=><tr key={`${c.field}-${i}`}><td>{c.field}</td><td>{c.status}</td><td>{c.reasonCode??'—'}</td></tr>)}</tbody></table></section>;}

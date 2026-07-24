@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab-ai.local/schemas/uc2-quantitative-assessment.v0.1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "assessmentId",
+    "subjectRef",
+    "sessionIds",
+    "status",
+    "metrics",
+    "compatibility",
+    "limitations",
+    "reviewStatus",
+    "safety"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "uc2-quantitative-assessment.v0.1"
+    },
+    "assessmentId": {
+      "type": "string"
+    },
+    "subjectRef": {
+      "type": "string"
+    },
+    "sessionIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "completed_with_warnings",
+        "blocked"
+      ]
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "metricId",
+          "labelVi",
+          "status",
+          "value",
+          "unit",
+          "formulaVersion",
+          "validationStatus",
+          "sourceSessionIds",
+          "limitations"
+        ],
+        "properties": {
+          "metricId": {
+            "type": "string"
+          },
+          "labelVi": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "computed",
+              "not_available",
+              "blocked",
+              "experimental"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "integer",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "formulaVersion": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "const": "not_validated"
+          },
+          "sourceSessionIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "compatibility": {
+      "$ref": "longitudinal-compatibility.v0.1.schema.json"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewStatus": {
+      "const": "pending_human_review"
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scoreIsProbability",
+        "rawSamplesIncluded",
+        "clinicalUseAllowed",
+        "humanReviewRequired",
+        "isClinicalConclusion"
+      ],
+      "properties": {
+        "scoreIsProbability": {
+          "const": false
+        },
+        "rawSamplesIncluded": {
+          "const": false
+        },
+        "clinicalUseAllowed": {
+          "const": false
+        },
+        "humanReviewRequired": {
+          "const": true
+        },
+        "isClinicalConclusion": {
+          "const": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "CommonJS",
+    "outDir": "../../.day23-build"
+  },
+  "include": [
+    "../../apps/web-portal/src/schemas/uc2-assessment.schema.ts"
+  ]
+}

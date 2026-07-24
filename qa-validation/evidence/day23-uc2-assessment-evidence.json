@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "uc2-quantitative-assessment.v0.1",
+  "assessmentId": "UC2-26bc0080e614",
+  "subjectRef": "SUBJ-UC2-001",
+  "sessionIds": [
+    "S-BASE-UC2-001",
+    "S-WEEK4-UC2-001"
+  ],
+  "status": "completed_with_warnings",
+  "metrics": [
+    {
+      "metricId": "gesture_repertoire",
+      "labelVi": "Số cử chỉ phân biệt được",
+      "status": "experimental",
+      "value": 4.0,
+      "unit": "gestures",
+      "formulaVersion": "gesture-count-v0.1",
+      "validationStatus": "not_validated",
+      "sourceSessionIds": [
+        "S-BASE-UC2-001",
+        "S-WEEK4-UC2-001"
+      ],
+      "limitations": [
+        "Đầu ra dựa trên fixture định lượng có thể mở rộng bằng dữ liệu raw."
+      ]
+    },
+    {
+      "metricId": "repeatability_cov",
+      "labelVi": "Độ biến thiên giữa lần lặp",
+      "status": "experimental",
+      "value": 7.0711,
+      "unit": "% CoV",
+      "formulaVersion": "cov-population-v0.1",
+      "validationStatus": "not_validated",
+      "sourceSessionIds": [
+        "S-BASE-UC2-001",
+        "S-WEEK4-UC2-001"
+      ],
+      "limitations": [
+        "CoV thấp hơn thường ổn định hơn; đây là chỉ số kỹ thuật."
+      ]
+    },
+    {
+      "metricId": "symmetry_ratio",
+      "labelVi": "Tỷ lệ đối xứng affected/reference",
+      "status": "experimental",
+      "value": 80.0,
+      "unit": "%",
+      "formulaVersion": "symmetry-ratio-v0.1",
+      "validationStatus": "not_validated",
+      "sourceSessionIds": [
+        "S-BASE-UC2-001",
+        "S-WEEK4-UC2-001"
+      ],
+      "limitations": [
+        "Chỉ diễn giải khi hai bên cùng protocol, unit và normalization."
+      ]
+    },
+    {
+      "metricId": "co_contraction_index",
+      "labelVi": "Chỉ số đồng co cơ (CCI)",
+      "status": "experimental",
+      "value": 80.0,
+      "unit": "%",
+      "formulaVersion": "cci-min-ratio-v0.1",
+      "validationStatus": "not_validated",
+      "sourceSessionIds": [
+        "S-BASE-UC2-001",
+        "S-WEEK4-UC2-001"
+      ],
+      "limitations": [
+        "Có nhiều định nghĩa CCI; formula version bắt buộc theo dõi."
+      ]
+    },
+    {
+      "metricId": "healthy_reference_similarity",
+      "labelVi": "Tương đồng với mẫu tham chiếu",
+      "status": "experimental",
+      "value": 1.0,
+      "unit": "cosine",
+      "formulaVersion": "cosine-similarity-v0.1",
+      "validationStatus": "not_validated",
+      "sourceSessionIds": [
+        "S-BASE-UC2-001",
+        "S-WEEK4-UC2-001"
+      ],
+      "limitations": [
+        "Cosine phản ánh hướng vector, không đồng nhất với quyết định lâm sàng."
+      ]
+    },
+    {
+      "metricId": "time_to_fatigue_change",
+      "labelVi": "Thay đổi thời gian tới mệt",
+      "status": "experimental",
+      "value": 20.0,
+      "unit": "%",
+      "formulaVersion": "percent-change-v0.1",
+      "validationStatus": "not_validated",
+      "sourceSessionIds": [
+        "S-BASE-UC2-001",
+        "S-WEEK4-UC2-001"
+      ],
+      "limitations": [
+        "Không dùng làm kết luận phục hồi lâm sàng."
+      ]
+    }
+  ],
+  "compatibility": {
+    "schemaVersion": "longitudinal-compatibility.v0.1",
+    "subjectRef": "SUBJ-UC2-001",
+    "baselineSessionId": "S-BASE-UC2-001",
+    "comparisonSessionIds": [
+      "S-WEEK4-UC2-001"
+    ],
+    "status": "compatible",
+    "conclusionAllowed": true,
+    "checks": [
+      {
+        "field": "S-WEEK4-UC2-001:subjectRef",
+        "status": "match",
+        "baselineValue": "SUBJ-UC2-001",
+        "comparisonValue": "SUBJ-UC2-001",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:affectedSide",
+        "status": "match",
+        "baselineValue": "right",
+        "comparisonValue": "right",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:referenceSide",
+        "status": "match",
+        "baselineValue": "left",
+        "comparisonValue": "left",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:targetMuscles",
+        "status": "match",
+        "baselineValue": [
+          "Biceps brachii",
+          "ECR",
+          "FCR"
+        ],
+        "comparisonValue": [
+          "Biceps brachii",
+          "ECR",
+          "FCR"
+        ],
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:protocolId",
+        "status": "match",
+        "baselineValue": "upper-limb-assessment",
+        "comparisonValue": "upper-limb-assessment",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:protocolVersion",
+        "status": "match",
+        "baselineValue": "v0.1",
+        "comparisonValue": "v0.1",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:gestureVocabularyVersion",
+        "status": "match",
+        "baselineValue": "gesture-v0.1",
+        "comparisonValue": "gesture-v0.1",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:unit",
+        "status": "match",
+        "baselineValue": "uV",
+        "comparisonValue": "uV",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:samplingRateHz",
+        "status": "match",
+        "baselineValue": 1000.0,
+        "comparisonValue": 1000.0,
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:channelMapVersion",
+        "status": "match",
+        "baselineValue": "channel-map-v0.1",
+        "comparisonValue": "channel-map-v0.1",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:preprocessingVersion",
+        "status": "match",
+        "baselineValue": "preprocess_v0.1",
+        "comparisonValue": "preprocess_v0.1",
+        "reasonCode": null
+      },
+      {
+        "field": "S-WEEK4-UC2-001:featureVersion",
+        "status": "match",
+        "baselineValue": "features_semg_v0.1",
+        "comparisonValue": "features_semg_v0.1",
+        "reasonCode": null
+      }
+    ],
+    "reasonCodes": [],
+    "safety": {
+      "rawSamplesIncluded": false,
+      "clinicalUseAllowed": false,
+      "humanReviewRequired": true
+    }
+  },
+  "limitations": [
+    "Đầu ra Day 23 là prototype kỹ thuật; không thay thế đánh giá lâm sàng.",
+    "Có warning QC ở session so sánh."
+  ],
+  "reviewStatus": "pending_human_review",
+  "safety": {
+    "scoreIsProbability": false,
+    "rawSamplesIncluded": false,
+    "clinicalUseAllowed": false,
+    "humanReviewRequired": true,
+    "isClinicalConclusion": false
+  }
+}

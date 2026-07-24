@@ -64,24 +64,12 @@
 .pipelineLabel { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); }
 .pipelineDesc { font-size: var(--font-size-xs); color: var(--color-text-muted); margin-top: 2px; }
 
-/* ── Diff ── */
-.diffSection { margin-bottom: var(--space-8); }
-
-.diffGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--space-4);
-}
-
-.diffTitle { font-size: var(--font-size-md); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); }
-.diffText { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: var(--line-height-relaxed); }
-
 /* ── CTA ── */
 .ctaSection {
   display: flex; gap: var(--space-4); justify-content: center; padding: var(--space-8) 0;
 }
 
 @media (max-width: 768px) {
-  .kpiGrid, .diffGrid { grid-template-columns: 1fr; }
+  .kpiGrid { grid-template-columns: 1fr; }
   .ctaSection { flex-direction: column; align-items: stretch; }
 }

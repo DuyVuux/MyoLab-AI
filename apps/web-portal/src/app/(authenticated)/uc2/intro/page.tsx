@@ -106,31 +106,6 @@ export default function UC2IntroPage() {
         </div>
       </section>
 
-      {/* Differences from UC1 */}
-      <section className={styles.diffSection}>
-        <h2 className={styles.sectionTitle}>Khác biệt so với UC1</h2>
-        <div className={styles.diffGrid}>
-          <Card padding="md" variant="outlined">
-            <CardContent>
-              <h3 className={styles.diffTitle}>📊 Đa chiều</h3>
-              <p className={styles.diffText}>UC2 đánh giá 5 KPI (quality, repeatability, symmetry, fatigue, pattern) thay vì chỉ gesture recognition.</p>
-            </CardContent>
-          </Card>
-          <Card padding="md" variant="outlined">
-            <CardContent>
-              <h3 className={styles.diffTitle}>📈 Longitudinal</h3>
-              <p className={styles.diffText}>So sánh qua nhiều phiên để đánh giá tiến trình phục hồi. UC1 chỉ phân tích từng phiên.</p>
-            </CardContent>
-          </Card>
-          <Card padding="md" variant="outlined">
-            <CardContent>
-              <h3 className={styles.diffTitle}>🔬 Clinical Focus</h3>
-              <p className={styles.diffText}>KTV/BS sử dụng kết quả cho đánh giá lâm sàng tổng thể, không chỉ biofeedback thời gian thực.</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       <div className={styles.ctaSection}>
         <Link href={ROUTES.SESSION_NEW}>
           <Button size="lg" icon={<ArrowRight size={18} />} iconPosition="right">

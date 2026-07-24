@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab-ai.local/schemas/longitudinal-compatibility.v0.1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "subjectRef",
+    "baselineSessionId",
+    "comparisonSessionIds",
+    "status",
+    "conclusionAllowed",
+    "checks",
+    "reasonCodes",
+    "safety"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "longitudinal-compatibility.v0.1"
+    },
+    "subjectRef": {
+      "type": "string"
+    },
+    "baselineSessionId": {
+      "type": "string"
+    },
+    "comparisonSessionIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "compatible",
+        "blocked"
+      ]
+    },
+    "conclusionAllowed": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "status",
+          "baselineValue",
+          "comparisonValue",
+          "reasonCode"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "match",
+              "mismatch",
+              "not_available"
+            ]
+          },
+          "baselineValue": {},
+          "comparisonValue": {},
+          "reasonCode": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "reasonCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rawSamplesIncluded",
+        "clinicalUseAllowed",
+        "humanReviewRequired"
+      ],
+      "properties": {
+        "rawSamplesIncluded": {
+          "const": false
+        },
+        "clinicalUseAllowed": {
+          "const": false
+        },
+        "humanReviewRequired": {
+          "const": true
+        }
+      }
+    }
+  }
+}
