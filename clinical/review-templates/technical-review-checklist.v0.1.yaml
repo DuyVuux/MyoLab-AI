@@ -1,0 +1,25 @@
+checklist_id: technical-review-checklist.v0.1
+review_type: technical
+required_role_any_of: [ktv, motion_lab_technician, physician]
+items:
+  - id: source_hash_verified
+    label_vi: Đã xác nhận source hash và analysis ID.
+    required: true
+  - id: protocol_version_confirmed
+    label_vi: Đã xác nhận protocol và version phù hợp.
+    required: true
+  - id: channel_mapping_confirmed
+    label_vi: Đã kiểm tra channel mapping, cơ và bên cơ thể.
+    required: true
+  - id: quality_gate_reviewed
+    label_vi: Đã xem Quality Gate, warning và reason code.
+    required: true
+  - id: warning_acknowledged
+    label_vi: Warning đã được hiểu và ghi nhận lý do nếu tiếp tục.
+    required: true
+  - id: abstention_semantics_correct
+    label_vi: Abstention không bị diễn giải thành không có dấu hiệu.
+    required: true
+  - id: segment_traceability_present
+    label_vi: Kết quả có thể truy vết về source/segment/window.
+    required: true

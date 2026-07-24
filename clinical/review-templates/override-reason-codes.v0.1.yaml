@@ -1,0 +1,14 @@
+version: override-reason-codes.v0.1
+codes:
+  - code: QC_WARNING_REVIEWED_ACCEPTABLE_FOR_TECHNICAL_USE
+    allowed_roles: [ktv, motion_lab_technician, physician]
+    requires_comment: true
+  - code: PROTOCOL_DEVIATION_ACCEPTED_WITH_LIMITATION
+    allowed_roles: [physician]
+    requires_comment: true
+  - code: TECHNICAL_LABEL_CORRECTED
+    allowed_roles: [ktv, motion_lab_technician, physician]
+    requires_comment: true
+  - code: CLINICAL_WORDING_CORRECTED
+    allowed_roles: [physician]
+    requires_comment: true

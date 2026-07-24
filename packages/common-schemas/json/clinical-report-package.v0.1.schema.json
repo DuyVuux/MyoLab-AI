@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semg.local/schemas/clinical-report-package.v0.1.json",
+  "title": "Clinical Report Package v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "reportId",
+    "analysisId",
+    "status",
+    "watermark",
+    "templateVersion",
+    "source",
+    "sections",
+    "review",
+    "limitations",
+    "safety",
+    "reportHashSha256"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "clinical-report-package.v0.1"
+    },
+    "reportId": {
+      "type": "string",
+      "pattern": "^RPT-[A-Za-z0-9_-]{8,64}$"
+    },
+    "analysisId": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "final"
+      ]
+    },
+    "watermark": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "templateVersion": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object"
+    },
+    "sections": {
+      "type": "object"
+    },
+    "review": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rawSamplesIncluded",
+        "clinicalUseAllowed",
+        "humanReviewRequired",
+        "automaticTreatmentRecommendation"
+      ],
+      "properties": {
+        "rawSamplesIncluded": {
+          "const": false
+        },
+        "clinicalUseAllowed": {
+          "const": false
+        },
+        "humanReviewRequired": {
+          "const": true
+        },
+        "automaticTreatmentRecommendation": {
+          "const": false
+        }
+      }
+    },
+    "reportHashSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

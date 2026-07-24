@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "review-workflow.v0.1",
+  "caseId": "REV-DAY24EVIDENCE",
+  "analysisId": "AN-DAY24-GOLDEN",
+  "originalResultHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "analysisStatus": "completed_with_warnings",
+  "state": "approved",
+  "events": [
+    {
+      "eventId": "REVT-DAY24TECH01",
+      "reviewType": "technical",
+      "action": "approve",
+      "reviewerRole": "ktv",
+      "reviewerIdHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sourceResultHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "checklistVersion": "technical-review-checklist.v0.1",
+      "checklistResponses": {
+        "source_and_protocol_verified": true,
+        "quality_gate_reviewed": true,
+        "warnings_acknowledged": true
+      },
+      "reasonCodes": [
+        "POWERLINE_WARNING_ACKNOWLEDGED"
+      ],
+      "comment": "Đã đối chiếu nguồn và cảnh báo kỹ thuật.",
+      "createdAt": "2026-07-24T09:00:00Z",
+      "immutable": true
+    },
+    {
+      "eventId": "REVT-DAY24CLIN01",
+      "reviewType": "clinical",
+      "action": "approve",
+      "reviewerRole": "physician",
+      "reviewerIdHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "sourceResultHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "checklistVersion": "clinical-review-checklist.v0.1",
+      "checklistResponses": {
+        "interpretation_readable": true,
+        "limitations_visible": true,
+        "no_automatic_treatment": true
+      },
+      "reasonCodes": [],
+      "comment": "Phê duyệt để sinh báo cáo kỹ thuật cuối.",
+      "createdAt": "2026-07-24T09:00:00Z",
+      "immutable": true
+    }
+  ],
+  "safety": {
+    "originalResultImmutable": true,
+    "humanReviewRequired": true,
+    "rawSamplesIncluded": false,
+    "clinicalUseAllowed": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "skipLibCheck": true,
+    "baseUrl": "../../apps/web-portal",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "../../apps/web-portal/src/schemas/review-report.schema.ts",
+    "../../apps/web-portal/src/lib/review-report-client.ts",
+    "../../apps/web-portal/src/components/review/**/*.tsx",
+    "../../apps/web-portal/src/app/reviews/**/*.tsx",
+    "../../apps/web-portal/src/app/reports/**/*.tsx",
+    "day24_vendor_stubs.d.ts",
+    "../../apps/web-portal/src/app/(authenticated)/reviews/**/*.tsx",
+    "../../apps/web-portal/src/app/(authenticated)/reports/**/*.tsx"
+  ]
+}

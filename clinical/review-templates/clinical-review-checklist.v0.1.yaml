@@ -1,0 +1,22 @@
+checklist_id: clinical-review-checklist.v0.1
+review_type: clinical
+required_role_any_of: [physician]
+items:
+  - id: intended_use_respected
+    label_vi: Diễn giải nằm trong intended use đã duyệt.
+    required: true
+  - id: wording_non_diagnostic
+    label_vi: Không dùng ngôn ngữ chẩn đoán hoặc điều trị tự động.
+    required: true
+  - id: limitations_visible
+    label_vi: Các giới hạn chính được hiển thị rõ.
+    required: true
+  - id: context_reviewed
+    label_vi: Bối cảnh protocol, cơ, bên và buổi đo đã được xem.
+    required: true
+  - id: remeasure_considered
+    label_vi: Đã cân nhắc đo lại khi dữ liệu hoặc context không đủ.
+    required: true
+  - id: human_decision_recorded
+    label_vi: Quyết định cuối và lý do được ghi nhận.
+    required: true

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "clinical-report-package.v0.1",
+  "reportId": "RPT-f3abc4604f663abc",
+  "analysisId": "AN-DAY24-GOLDEN",
+  "status": "final",
+  "watermark": null,
+  "templateVersion": "clinical-report-v0.2-review-workflow",
+  "source": {
+    "originalResultHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "analysisStatus": "completed_with_warnings",
+    "protocolVersion": "quad-isometric-60s.v0.1",
+    "modelOrRuleVersion": "fatigue_rule_v0.1",
+    "qualityGateVersion": "qc_v0.1"
+  },
+  "sections": {
+    "summaryVi": "Mẫu thay đổi đa miền được quan sát trong protocol hiện tại.",
+    "evidence": [
+      {
+        "code": "MDF_DECLINING",
+        "value": -0.31,
+        "unit": "Hz/s"
+      },
+      {
+        "code": "RMS_INCREASING",
+        "value": 0.42,
+        "unit": "uV/s"
+      }
+    ],
+    "recommendedReviewVi": "Đối chiếu với chức năng vận động, tải tập và đánh giá của bác sĩ/KTV."
+  },
+  "review": {
+    "caseId": "REV-DAY24EVIDENCE",
+    "state": "approved",
+    "eventCount": 2,
+    "clinicalReviewerPresent": true
+  },
+  "limitations": [
+    "Kết quả là hỗ trợ đánh giá, không thay thế quyết định của bác sĩ/KTV.",
+    "Ngưỡng và model/rule hiện chưa được xác thực lâm sàng trên dữ liệu bệnh nhân địa phương."
+  ],
+  "safety": {
+    "rawSamplesIncluded": false,
+    "clinicalUseAllowed": false,
+    "humanReviewRequired": true,
+    "automaticTreatmentRecommendation": false
+  },
+  "reportHashSha256": "b09e7c7e0299dbd13a18390bb6a755c8792aeae1a7ac7788dcefcc1cb1d45b86"
+}

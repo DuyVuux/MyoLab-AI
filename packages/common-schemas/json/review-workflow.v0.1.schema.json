@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semg.local/schemas/review-workflow.v0.1.json",
+  "title": "Review Workflow v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "caseId",
+    "analysisId",
+    "originalResultHash",
+    "analysisStatus",
+    "state",
+    "events",
+    "safety"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "review-workflow.v0.1"
+    },
+    "caseId": {
+      "type": "string",
+      "pattern": "^REV-[A-Za-z0-9_-]{8,64}$"
+    },
+    "analysisId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "originalResultHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "analysisStatus": {
+      "enum": [
+        "completed",
+        "completed_with_warnings",
+        "abstained"
+      ]
+    },
+    "state": {
+      "enum": [
+        "pending_technical_review",
+        "pending_clinical_review",
+        "approved",
+        "rejected",
+        "remeasure_requested",
+        "superseded"
+      ]
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "safety": {
+      "$ref": "#/$defs/safety"
+    }
+  },
+  "$defs": {
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventId",
+        "reviewType",
+        "action",
+        "reviewerRole",
+        "reviewerIdHash",
+        "sourceResultHash",
+        "checklistVersion",
+        "checklistResponses",
+        "reasonCodes",
+        "createdAt",
+        "immutable"
+      ],
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "pattern": "^REVT-[A-Za-z0-9_-]{8,64}$"
+        },
+        "reviewType": {
+          "enum": [
+            "technical",
+            "clinical"
+          ]
+        },
+        "action": {
+          "enum": [
+            "approve",
+            "reject",
+            "request_remeasurement",
+            "request_more_information",
+            "supersede"
+          ]
+        },
+        "reviewerRole": {
+          "enum": [
+            "ktv",
+            "motion_lab_technician",
+            "physician",
+            "ml_qa",
+            "admin"
+          ]
+        },
+        "reviewerIdHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sourceResultHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "checklistVersion": {
+          "type": "string"
+        },
+        "checklistResponses": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "reasonCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "comment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "immutable": {
+          "const": true
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "originalResultImmutable",
+        "humanReviewRequired",
+        "rawSamplesIncluded",
+        "clinicalUseAllowed"
+      ],
+      "properties": {
+        "originalResultImmutable": {
+          "const": true
+        },
+        "humanReviewRequired": {
+          "const": true
+        },
+        "rawSamplesIncluded": {
+          "const": false
+        },
+        "clinicalUseAllowed": {
+          "const": false
+        }
+      }
+    }
+  }
+}

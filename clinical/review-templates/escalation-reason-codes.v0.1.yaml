@@ -1,0 +1,14 @@
+version: escalation-reason-codes.v0.1
+codes:
+  - code: REMEASUREMENT_REQUIRED_SIGNAL_QUALITY
+    destination: quality_operations
+  - code: REMEASUREMENT_REQUIRED_PROTOCOL_DEVIATION
+    destination: clinical_operations
+  - code: SECOND_CLINICAL_REVIEW_REQUIRED
+    destination: physician_review
+  - code: PRIVACY_REVIEW_REQUIRED
+    destination: privacy_security
+  - code: MODEL_OUTPUT_UNSAFE_WORDING
+    destination: ml_qa
+  - code: SOURCE_PROVENANCE_MISMATCH
+    destination: technical_incident

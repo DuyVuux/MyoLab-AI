@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.ai/schemas/feedback-adjudication.v0.1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "feedbackId",
+    "status",
+    "adjudicatorRole",
+    "adjudicatorIdHash",
+    "independentReviewConfirmed",
+    "reasonCodes",
+    "createdAt",
+    "immutable"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "feedback-adjudication.v0.1"
+    },
+    "feedbackId": {
+      "type": "string",
+      "minLength": 8
+    },
+    "status": {
+      "enum": [
+        "approved_for_training",
+        "approved_for_quality_improvement_only",
+        "needs_second_review",
+        "rejected"
+      ]
+    },
+    "adjudicatorRole": {
+      "enum": [
+        "physician",
+        "ml_qa"
+      ]
+    },
+    "adjudicatorIdHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "independentReviewConfirmed": {
+      "type": "boolean"
+    },
+    "reasonCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "comment": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1000
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "immutable": {
+      "const": true
+    }
+  }
+}
