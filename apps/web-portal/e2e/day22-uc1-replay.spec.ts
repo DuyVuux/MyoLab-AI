@@ -391,11 +391,15 @@ test.describe("Day 22 UC1 deterministic replay", () => {
     const request = await feedbackRequest;
 
     const body = api.feedbackBody() as {
+      expectedWindowId?: string;
+      expectedRevision?: number;
       action?: string;
       reviewerCertainty?: string;
       context?: Record<string, unknown>;
     };
     expect(body).toEqual({
+      expectedWindowId: current.windowId,
+      expectedRevision: 1,
       action: "uncertain",
       reviewerCertainty: "moderate",
     });

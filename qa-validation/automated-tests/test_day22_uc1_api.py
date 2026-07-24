@@ -736,6 +736,8 @@ def test_feedback_copies_exact_server_window_context(
             "action": "correct",
             "correctedGesture": "hand_open",
             "reviewerCertainty": "high",
+            "expectedWindowId": window["windowId"],
+            "expectedRevision": replay["revision"],
         },
         headers={
             "Idempotency-Key": "d22-feedback-exact",
@@ -800,10 +802,14 @@ def test_feedback_rejects_invalid_correction_conditions(
     harness: Day22Harness,
     payload: dict[str, Any],
 ) -> None:
-    replay, _ = _current_active_window(harness)
+    replay, window = _current_active_window(harness)
     response = harness.client.post(
         f"/v1/uc1/replays/{replay['replayId']}/feedback",
-        json=payload,
+        json={
+            **payload,
+            "expectedWindowId": window["windowId"],
+            "expectedRevision": replay["revision"],
+        },
         headers={
             "Idempotency-Key": f"d22-feedback-invalid-{payload['action']}",
             "X-Actor-Role": "ktv",
@@ -830,6 +836,8 @@ def test_feedback_cannot_correct_a_window_without_prediction(
             "action": "correct",
             "correctedGesture": "hand_open",
             "reviewerCertainty": "moderate",
+            "expectedWindowId": window["windowId"],
+            "expectedRevision": replay["revision"],
         },
         headers={
             "Idempotency-Key": "d22-feedback-no-prediction",
@@ -848,13 +856,18 @@ def test_feedback_requires_an_authorized_actor_role(
     harness: Day22Harness,
     actor_role: str | None,
 ) -> None:
-    replay, _ = _current_active_window(harness)
+    replay, window = _current_active_window(harness)
     headers = {"Idempotency-Key": f"d22-feedback-role-{actor_role}"}
     if actor_role is not None:
         headers["X-Actor-Role"] = actor_role
     response = harness.client.post(
         f"/v1/uc1/replays/{replay['replayId']}/feedback",
-        json={"action": "uncertain", "reviewerCertainty": "moderate"},
+        json={
+            "action": "uncertain",
+            "reviewerCertainty": "moderate",
+            "expectedWindowId": window["windowId"],
+            "expectedRevision": replay["revision"],
+        },
         headers=headers,
     )
     _assert_problem(
@@ -867,13 +880,18 @@ def test_feedback_requires_an_authorized_actor_role(
 def test_feedback_is_idempotent_and_rejects_key_reuse(
     harness: Day22Harness,
 ) -> None:
-    replay, _ = _current_active_window(harness)
+    replay, window = _current_active_window(harness)
     url = f"/v1/uc1/replays/{replay['replayId']}/feedback"
     headers = {
         "Idempotency-Key": "d22-feedback-idempotent",
         "X-Actor-Role": "ktv",
     }
-    payload = {"action": "uncertain", "reviewerCertainty": "moderate"}
+    payload = {
+        "action": "uncertain",
+        "reviewerCertainty": "moderate",
+        "expectedWindowId": window["windowId"],
+        "expectedRevision": replay["revision"],
+    }
 
     first = harness.client.post(url, json=payload, headers=headers)
     assert first.status_code == 201, first.text
@@ -883,13 +901,46 @@ def test_feedback_is_idempotent_and_rejects_key_reuse(
 
     conflict = harness.client.post(
         url,
-        json={"action": "remeasure", "reviewerCertainty": "moderate"},
+        json={
+            "action": "remeasure",
+            "reviewerCertainty": "moderate",
+            "expectedWindowId": window["windowId"],
+            "expectedRevision": replay["revision"],
+        },
         headers=headers,
     )
     _assert_problem(
         conflict,
         status_code=409,
         error_code="IDEMPOTENCY_KEY_REUSED",
+    )
+
+
+def test_feedback_rejects_stale_window_and_revision_context(
+    harness: Day22Harness,
+) -> None:
+    replay, old_window = _current_active_window(harness)
+    advanced = _advance_replay(harness.client, replay)
+    assert advanced.status_code == 200, advanced.text
+    assert advanced.json()["currentWindow"]["windowId"] != old_window["windowId"]
+
+    response = harness.client.post(
+        f"/v1/uc1/replays/{replay['replayId']}/feedback",
+        json={
+            "action": "uncertain",
+            "reviewerCertainty": "moderate",
+            "expectedWindowId": old_window["windowId"],
+            "expectedRevision": replay["revision"],
+        },
+        headers={
+            "Idempotency-Key": "d22-feedback-stale-context",
+            "X-Actor-Role": "ktv",
+        },
+    )
+    _assert_problem(
+        response,
+        status_code=409,
+        error_code="STALE_FEEDBACK_CONTEXT",
     )
 
 
