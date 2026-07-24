@@ -352,6 +352,33 @@ def test_create_is_idempotent_and_rejects_key_reuse(
     )
 
 
+def test_create_retry_survives_upstream_state_removal(
+    harness: Day22Harness,
+) -> None:
+    session_id, job = _prepare_analysis(harness)
+    key = "d22-create-retry-upstream-removed"
+    first = _create_replay(
+        harness.client,
+        session_id=session_id,
+        analysis_id=job["analysisId"],
+        scenario_id="uc1_golden_correct",
+        idempotency_key=key,
+    )
+    assert first.status_code == 201, first.text
+
+    harness.repository.reset()
+    harness.day20_store.reset_store()
+    repeated = _create_replay(
+        harness.client,
+        session_id=session_id,
+        analysis_id=job["analysisId"],
+        scenario_id="uc1_golden_correct",
+        idempotency_key=key,
+    )
+    assert repeated.status_code in {200, 201}, repeated.text
+    assert repeated.json() == first.json()
+
+
 def test_new_replay_does_not_expose_future_windows(
     harness: Day22Harness,
 ) -> None:
@@ -535,6 +562,8 @@ def test_all_seven_scenarios_have_expected_terminal_safety_behavior(
         assert isinstance(window["fatigueOverlay"]["evidenceSummaryVi"], list)
         assert isinstance(window["fatigueOverlay"]["counterevidenceVi"], list)
         assert isinstance(window["fatigueOverlay"]["limitationsVi"], list)
+        if window["fatigueOverlay"]["source"] == "not_available":
+            assert window["fatigueOverlay"]["status"] == "not_available"
         assert window["safety"]["scoreIsProbability"] is False
         assert window["safety"]["clinicalUseAllowed"] is False
         assert window["safety"]["physicalActuationAllowed"] is False
@@ -582,7 +611,7 @@ def test_all_seven_scenarios_have_expected_terminal_safety_behavior(
             "ELECTRODE_SHIFT_SUSPECTED"
             not in warning["fatigueOverlay"]["reasonCodes"]
         )
-        assert warning["fatigueOverlay"]["status"] == "stable"
+        assert warning["fatigueOverlay"]["status"] == "not_available"
         assert warning["fatigueOverlay"]["source"] == "not_available"
         assert warning["fatigueOverlay"]["evidenceSummaryVi"] == []
     elif scenario_id == "uc1_qc_fail_abstention":
@@ -758,6 +787,42 @@ def test_session_and_use_case_mismatch_are_rejected(
         use_case_mismatch,
         status_code=409,
         error_code="ANALYSIS_USE_CASE_MISMATCH",
+    )
+
+
+@pytest.mark.parametrize(
+    ("field", "wrong_value"),
+    [
+        ("analysis_id", "AN21-WRONG"),
+        ("session_id", "SESSION-D20-WRONG"),
+    ],
+)
+def test_summary_must_belong_to_requested_analysis_and_session(
+    harness: Day22Harness,
+    monkeypatch: pytest.MonkeyPatch,
+    field: str,
+    wrong_value: str,
+) -> None:
+    session_id, job = _prepare_analysis(harness)
+    summary = harness.repository.get_summary(job["analysisId"])
+    summary[field] = wrong_value
+    monkeypatch.setattr(
+        harness.repository,
+        "get_summary",
+        lambda _: summary,
+    )
+
+    response = _create_replay(
+        harness.client,
+        session_id=session_id,
+        analysis_id=job["analysisId"],
+        scenario_id="uc1_golden_correct",
+        idempotency_key=f"d22-summary-owner-{field}",
+    )
+    _assert_problem(
+        response,
+        status_code=409,
+        error_code="REPLAY_CONTEXT_SUMMARY_OWNERSHIP_MISMATCH",
     )
 
 
@@ -1168,3 +1233,48 @@ def test_day20_day21_day22_source_and_segment_provenance_is_exact(
     assert segment["endTimeExclusiveS"] == pytest.approx(
         segment["endSampleExclusive"] / sampling_rate_hz
     )
+
+@pytest.mark.parametrize("scenario_id", SCENARIO_IDS)
+def test_every_day22_window_cross_references_exact_day20_repetition(
+    harness: Day22Harness,
+    scenario_id: str,
+) -> None:
+    session_id, job = _prepare_analysis(
+        harness,
+        token=f"XREF-{scenario_id[-8:]}",
+    )
+    calibration = harness.day20_store.CALIBRATIONS[session_id]
+    repetitions_by_id = {
+        repetition.repetitionId: repetition
+        for repetition in calibration.repetitions
+    }
+
+    created = _create_replay(
+        harness.client,
+        session_id=session_id,
+        analysis_id=job["analysisId"],
+        scenario_id=scenario_id,
+        idempotency_key=f"d22-xref-{scenario_id}",
+    )
+    assert created.status_code == 201, created.text
+    terminal = _advance_replay_to_terminal(
+        harness.client,
+        created.json(),
+    )
+    windows = _emitted_windows(terminal)
+    assert windows
+
+    for window in windows:
+        segment = window["segmentRef"]
+        repetition = repetitions_by_id[segment["repetitionId"]]
+        source = repetition.segmentRef
+
+        assert repetition.gestureId == window["targetGesture"]
+        assert segment["rawSignalRef"] == source.rawSignalRef
+        assert segment["sourceHashSha256"] == source.sourceHashSha256
+        assert segment["startSample"] == source.startSample
+        assert segment["endSampleExclusive"] == source.endSample
+        assert segment["startTimeS"] == pytest.approx(source.startTimeS)
+        assert segment["endTimeExclusiveS"] == pytest.approx(source.endTimeS)
+        assert segment["channelIds"] == source.channelIds
+        assert segment["calibrationId"] == calibration.calibrationId

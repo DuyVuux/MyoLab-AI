@@ -165,3 +165,91 @@ def test_feedback_controls_use_existing_action_rbac() -> None:
     assert "canPerformAction" in combined
     assert "submit_feedback" in combined
     assert "useAuth" in combined
+
+
+def test_day22_idempotency_headers_are_opaque_and_stable_in_hook_lifetime() -> None:
+    hook = read_required("apps/web-portal/src/hooks/useUC1Replay.ts")
+    validation = read_required(
+        "apps/web-portal/src/utils/uc1ReplayValidation.ts"
+    )
+
+    assert "useRef(new Map<string, string>())" in hook
+    assert "getOrCreateOpaqueIdempotencyKey" in hook
+    assert "crypto.randomUUID" not in hook
+    assert "webCrypto.randomUUID()" in validation
+    assert "SECURE_IDEMPOTENCY_UNAVAILABLE" in validation
+    assert '.join(":")' not in hook
+    assert '"uc1-feedback"' not in hook
+
+
+def test_day22_client_strictly_binds_replay_and_feedback_responses() -> None:
+    client = read_required("apps/web-portal/src/lib/uc1-replay-client.ts")
+    validation = read_required(
+        "apps/web-portal/src/utils/uc1ReplayValidation.ts"
+    )
+    runtime_config = read_required(
+        "qa-validation/configs/day22_runtime_tsconfig.json"
+    )
+
+    assert "isSafeReplayPayload" in client
+    assert "isReplayCreatedFor" in client
+    assert "isReplayAdvanceFor" in client
+    assert "isFeedbackRequestForReplay" in client
+    assert "isFeedbackReceiptFor" in client
+    assert "expectedReplay" in client
+    assert "INVALID_REPLAY_RESPONSE" in client
+    assert "INVALID_FEEDBACK_RESPONSE" in client
+    assert "clinicalUseAllowed !== false" in validation
+    assert "blocked || window.predictedGesture === null" in validation
+    assert "feedbackContextMatchesWindow" in validation
+    assert "CONFIDENCE_RANK" in validation
+    assert "previousStartTimeS" in validation
+    assert "isFeedbackActorRole" in validation
+    assert "uc1-replay-client.ts" in runtime_config
+    assert "uc1ReplayValidation.ts" in runtime_config
+
+
+def test_day22_ui_uses_neutral_copy_and_renders_terminal_reason_codes() -> None:
+    workspace = read_required(
+        "apps/web-portal/src/components/uc1/UC1SessionWorkspace.tsx"
+    )
+
+    assert "ghi nhận nỗ lực" not in workspace.casefold()
+    assert "...replay.reasonCodes" in workspace
+    assert "currentWindow?.fatigueOverlay.reasonCodes" in workspace
+    assert "Reason code trạng thái" in workspace
+    assert workspace.index('replay.state === "failed"') < workspace.index(
+        "if (window === null)"
+    )
+
+
+def test_day22_hook_aborts_stale_mutations_on_context_change() -> None:
+    hook = read_required("apps/web-portal/src/hooks/useUC1Replay.ts")
+
+    assert "requestGenerationRef" in hook
+    assert "mutationAbortRef.current?.abort()" in hook
+    assert "canApplyReplayMutation" in hook
+    assert "mutationAbortRef.current === controller" in hook
+
+
+def test_web_build_uses_offline_system_font_stack() -> None:
+    layout = read_required("apps/web-portal/src/app/layout.tsx")
+    tokens = read_required("apps/web-portal/src/styles/tokens.css")
+
+    assert "next/font/google" not in layout
+    assert "fonts.googleapis.com" not in layout
+    assert "fonts.gstatic.com" not in layout
+    assert "--font-primary: system-ui" in tokens
+    assert "--font-mono: ui-monospace" in tokens
+
+
+def test_day22_e2e_uses_an_isolated_non_reused_server() -> None:
+    config = read_required("apps/web-portal/playwright.config.ts")
+    runner = read_required("scripts/dev/run_day22_checks.sh")
+
+    assert "PLAYWRIGHT_WEB_SERVER_COMMAND" in config
+    assert "PLAYWRIGHT_REUSE_EXISTING_SERVER" in config
+    assert 'PLAYWRIGHT_BASE_URL="http://127.0.0.1:32222"' in runner
+    assert 'PLAYWRIGHT_REUSE_EXISTING_SERVER="false"' in runner
+    assert "playwright test \\" in runner
+    assert "day22-uc1-replay.spec.ts" in runner

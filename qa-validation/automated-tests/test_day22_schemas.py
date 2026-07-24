@@ -161,7 +161,7 @@ def valid_inference_window() -> dict[str, Any]:
         },
         "fatigueOverlay": {
             "source": "not_available",
-            "status": "stable",
+            "status": "not_available",
             "confidenceAdjustmentApplied": False,
             "reasonCodes": [],
             "evidenceSummaryVi": [],
@@ -402,6 +402,19 @@ def test_schema_requires_not_available_when_prediction_is_null() -> None:
     _assert_invalid("inference", payload)
 
 
+def test_absent_fatigue_source_cannot_claim_stable_status() -> None:
+    models = _import_gesture_models()
+    valid = valid_inference_window()
+    _assert_valid("inference", valid)
+    models.GestureInferenceWindow.model_validate(valid)
+
+    invalid = valid_inference_window()
+    invalid["fatigueOverlay"]["status"] = "stable"
+    _assert_invalid("inference", invalid)
+    with pytest.raises(ValueError, match="FATIGUE_SOURCE_STATUS_MISMATCH"):
+        models.GestureInferenceWindow.model_validate(invalid)
+
+
 def test_schema_requires_fatigue_warning_adjustment_and_reason() -> None:
     payload = valid_inference_window()
     payload["fatigueOverlay"]["status"] = "warning"
@@ -516,6 +529,25 @@ def test_pydantic_rejects_cross_field_inference_violations() -> None:
         inference_model.model_validate(warning_without_downgrade)
 
 
+@pytest.mark.parametrize("numeric_string", ["0", "1"])
+def test_pydantic_rejects_numeric_strings_like_json_schema(
+    numeric_string: str,
+) -> None:
+    models = _import_gesture_models()
+
+    inference = valid_inference_window()
+    inference["segmentRef"]["startSample"] = numeric_string
+    _assert_invalid("inference", inference)
+    with pytest.raises(ValueError):
+        models.GestureInferenceWindow.model_validate(inference)
+
+    replay = valid_replay_session()
+    replay["revision"] = numeric_string
+    _assert_invalid("replay", replay)
+    with pytest.raises(ValueError):
+        models.UC1ReplaySession.model_validate(replay)
+
+
 def test_pydantic_rejects_replay_aggregate_inconsistency() -> None:
     models = _import_gesture_models()
     replay_model = models.UC1ReplaySession
@@ -525,6 +557,19 @@ def test_pydantic_rejects_replay_aggregate_inconsistency() -> None:
     inconsistent["totalWindows"] = 0
     with pytest.raises(ValueError, match="REPLAY_TOTAL_WINDOWS_MISMATCH"):
         replay_model.model_validate(inconsistent)
+
+
+def test_final_engineering_confidence_never_exceeds_base() -> None:
+    models = _import_gesture_models()
+    payload = valid_inference_window()
+    payload["baseEngineeringConfidence"] = "engineering_low"
+    payload["engineeringConfidence"] = "engineering_high"
+    _assert_invalid("inference", payload)
+    with pytest.raises(
+        ValueError,
+        match="ENGINEERING_CONFIDENCE_INCREASE_INVALID",
+    ):
+        models.GestureInferenceWindow.model_validate(payload)
 
 
 def test_confidence_vocabulary_is_canonical_and_ordered() -> None:
@@ -658,3 +703,64 @@ def test_day22_openapi_31_fragment_has_resolved_refs_and_valid_examples() -> Non
     assert isinstance(feedback_example.get("context"), dict)
     _assert_valid("feedback", feedback_example["context"])
     assert feedback_example.get("automaticTrainingCandidate") is False
+
+def test_openapi_response_components_are_closed_and_canonical() -> None:
+    document = yaml.safe_load(OPENAPI_PATH.read_text(encoding="utf-8"))
+    schemas = document["components"]["schemas"]
+    create_responses = document["paths"][
+        "/v1/uc1/sessions/{session_id}/replays"
+    ]["post"]["responses"]
+    assert "404" in create_responses
+
+    replay = schemas["ReplaySession"]
+    assert replay["properties"]["currentWindow"]["oneOf"] == [
+        {"$ref": "#/components/schemas/GestureInferenceWindow"},
+        {"type": "null"},
+    ]
+    assert replay["properties"]["history"]["items"] == {
+        "$ref": "#/components/schemas/GestureInferenceWindow"
+    }
+    assert replay["properties"]["latencySummary"] == {
+        "$ref": "#/components/schemas/ReplayLatencySummary"
+    }
+
+    inference = schemas["GestureInferenceWindow"]
+    assert inference["additionalProperties"] is False
+    assert set(inference["required"]) == set(valid_inference_window())
+    assert inference["properties"]["targetGesture"] == {
+        "$ref": "#/components/schemas/ActiveGestureId"
+    }
+    assert inference["properties"]["predictedGesture"]["oneOf"] == [
+        {"$ref": "#/components/schemas/ActiveGestureId"},
+        {"type": "null"},
+    ]
+
+    feedback = schemas["FeedbackResponse"]
+    assert feedback["properties"]["action"]["enum"] == [
+        "accept",
+        "correct",
+        "uncertain",
+        "remeasure",
+    ]
+    assert feedback["properties"]["reviewerCertainty"]["enum"] == [
+        "low",
+        "moderate",
+        "high",
+    ]
+    assert feedback["properties"]["actorRole"]["enum"] == [
+        "ktv",
+        "physician",
+        "researcher",
+        "ml_qa",
+    ]
+
+    invalid_parameter = schemas["InvalidParameter"]
+    assert invalid_parameter["additionalProperties"] is False
+    assert set(invalid_parameter["required"]) == {
+        "field",
+        "message",
+        "code",
+    }
+    assert schemas["ProblemDetails"]["properties"]["invalid_params"][
+        "items"
+    ] == {"$ref": "#/components/schemas/InvalidParameter"}

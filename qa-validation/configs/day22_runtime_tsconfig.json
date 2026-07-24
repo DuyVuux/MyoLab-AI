@@ -13,8 +13,10 @@
   },
   "include": [
     "../../apps/web-portal/src/lib/latencyMetrics.ts",
+    "../../apps/web-portal/src/lib/uc1-replay-client.ts",
     "../../apps/web-portal/src/schemas/gesture-inference.schema.ts",
     "../../apps/web-portal/src/schemas/gesture-feedback-context.schema.ts",
-    "../../apps/web-portal/src/utils/replayView.ts"
+    "../../apps/web-portal/src/utils/replayView.ts",
+    "../../apps/web-portal/src/utils/uc1ReplayValidation.ts"
   ]
 }

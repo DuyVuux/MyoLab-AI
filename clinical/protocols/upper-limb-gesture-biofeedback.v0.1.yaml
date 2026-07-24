@@ -1,0 +1,44 @@
+schema_version: gesture-protocol.v0.1
+protocol_id: upper-limb-gesture-biofeedback
+protocol_version: v0.1
+status: engineering_draft
+clinical_validation_status: not_validated
+use_case: uc1
+sampling:
+  minimum_sampling_rate_hz: 1000
+  signal_unit: uV
+  timestamp_monotonic_required: true
+windowing:
+  window_duration_ms: 1000
+  hop_duration_ms: 250
+  boundary_convention: half_open_end_exclusive
+activity_gate:
+  calibration_required: true
+  threshold_formula: rest_rms_plus_k_sigma
+  engineering_k: 3.0
+  release_ratio: 0.8
+  uncertain_band_ratio: 0.1
+gesture_vocabulary:
+  - rest
+  - hand_open
+  - hand_close
+  - wrist_flexion
+  - wrist_extension
+calibration:
+  repetitions_per_gesture: 3
+  rest_baseline_duration_s: 8
+  minimum_usable_repetition_ratio: 0.8
+fatigue_monitoring:
+  enabled: true
+  mfcv_optional: true
+  allowed_sources:
+    - scenario_fixture
+    - analysis_summary
+    - not_available
+  quality_evidence_is_not_fatigue_evidence: true
+safety:
+  clinical_use_allowed: false
+  human_review_required: true
+  automated_treatment_allowed: false
+  automated_stop_decision_allowed: false
+  no_physical_actuation: true

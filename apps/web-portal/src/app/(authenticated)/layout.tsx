@@ -12,17 +12,17 @@ import { AppShell } from '@/components/layout/AppShell';
 import { Alert } from '@/components/ui/Alert';
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, isReady } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (isReady && !isAuthenticated) {
       router.replace('/login');
     }
-  }, [isAuthenticated, router]);
+  }, [isAuthenticated, isReady, router]);
 
-  if (!isAuthenticated || !user) {
+  if (!isReady || !isAuthenticated || !user) {
     return null;
   }
 

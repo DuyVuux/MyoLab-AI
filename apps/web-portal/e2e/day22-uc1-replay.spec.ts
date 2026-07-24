@@ -6,11 +6,13 @@ const ANALYSIS_ID = "ANALYSIS-D22-E2E";
 const REPLAY_ID = "REPLAY-D22-E2E";
 const MODEL_VERSION = "gesture-replay-v0.1-not-validated";
 const RESULT_HASH = "b".repeat(64);
+const UUID_V4_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 type ReplayState =
   | "idle"
   | "running"
-  | "paused"
+  | "failed"
   | "completed"
   | "abstained"
   | "disconnected";
@@ -19,6 +21,8 @@ interface ReplayOptions {
   initial?: ReturnType<typeof replayFixture>;
   advances?: Array<ReturnType<typeof replayFixture>>;
   launchErrorStatus?: number;
+  feedbackResponseOverrides?: Record<string, unknown>;
+  feedbackContextOverrides?: Record<string, unknown>;
 }
 
 function windowFixture(overrides: Record<string, unknown> = {}) {
@@ -60,7 +64,7 @@ function windowFixture(overrides: Record<string, unknown> = {}) {
     },
     fatigueOverlay: {
       source: "not_available",
-      status: "stable",
+      status: "not_available",
       confidenceAdjustmentApplied: false,
       reasonCodes: [],
       evidenceSummaryVi: [],
@@ -95,7 +99,7 @@ function replayFixture(
   fixtureWindows = [windowFixture()],
 ) {
   const history =
-    currentIndex >= 0 ? fixtureWindows.slice(0, currentIndex + 1) : [];
+    currentIndex > 0 ? fixtureWindows.slice(0, currentIndex) : [];
   const currentWindow =
     currentIndex >= 0 && currentIndex < fixtureWindows.length
       ? fixtureWindows[currentIndex]
@@ -113,13 +117,13 @@ function replayFixture(
     currentWindow,
     history,
     latencySummary: {
-      observedWindowCount: history.length,
-      p50Ms: history.length > 0 ? 270 : null,
-      p95Ms: history.length > 0 ? 270 : null,
+      observedWindowCount: history.length + (currentWindow === null ? 0 : 1),
+      p50Ms: currentWindow === null ? null : 270,
+      p95Ms: currentWindow === null ? null : 270,
       droppedWindows: 0,
       disconnectTimeoutMs: 2000,
     },
-    reasonCodes: [],
+    reasonCodes: [] as string[],
     sourceType: "synthetic_replay",
     modelValidationStatus: "not_validated",
     clinicalUseAllowed: false,
@@ -133,10 +137,14 @@ async function installReplayApi(
 ) {
   const initial = options.initial ?? replayFixture();
   const advances = [...(options.advances ?? [])];
+  let requestAnalysisId = initial.analysisId;
+  let requestScenarioId = initial.scenarioId;
   let activeWindow = initial.currentWindow;
   let feedbackBody: unknown = null;
+  let launchIdempotencyKey: string | undefined;
 
   await page.route("**/v1/uc1/sessions/*/replays", async (route) => {
+    launchIdempotencyKey = route.request().headers()["idempotency-key"];
     if (options.launchErrorStatus) {
       await route.fulfill({
         status: options.launchErrorStatus,
@@ -145,15 +153,29 @@ async function installReplayApi(
       });
       return;
     }
+    const requestBody = route.request().postDataJSON() as {
+      analysisId: string;
+      scenarioId: string;
+    };
+    requestAnalysisId = requestBody.analysisId;
+    requestScenarioId = requestBody.scenarioId;
     await route.fulfill({
       status: 201,
       contentType: "application/json",
-      body: JSON.stringify(initial),
+      body: JSON.stringify({
+        ...initial,
+        analysisId: requestAnalysisId,
+        scenarioId: requestScenarioId,
+      }),
     });
   });
 
   await page.route("**/v1/uc1/replays/*/advance", async (route) => {
-    const next = advances.shift() ?? initial;
+    const next = {
+      ...(advances.shift() ?? initial),
+      analysisId: requestAnalysisId,
+      scenarioId: requestScenarioId,
+    };
     activeWindow = next.currentWindow;
     await route.fulfill({
       status: 200,
@@ -164,39 +186,48 @@ async function installReplayApi(
 
   await page.route("**/v1/uc1/replays/*/feedback", async (route) => {
     feedbackBody = await route.request().postDataJSON();
+    const decision = feedbackBody as Record<string, unknown>;
     const currentWindow = activeWindow ?? windowFixture();
     const segment = currentWindow.segmentRef;
+    const context = {
+      schemaVersion: "gesture-feedback-context.v0.1",
+      analysisId: currentWindow.analysisId,
+      sessionId: currentWindow.sessionId,
+      windowId: currentWindow.windowId,
+      rawSignalRef: segment.rawSignalRef,
+      sourceHashSha256: segment.sourceHashSha256,
+      startSample: segment.startSample,
+      endSampleExclusive: segment.endSampleExclusive,
+      startTimeS: segment.startTimeS,
+      endTimeExclusiveS: segment.endTimeExclusiveS,
+      channelIds: segment.channelIds,
+      repetitionId: segment.repetitionId,
+      calibrationId: segment.calibrationId,
+      modelVersion: currentWindow.modelVersion,
+      originalResultHashSha256: currentWindow.resultHashSha256,
+      ...(options.feedbackContextOverrides ?? {}),
+    };
     await route.fulfill({
       status: 201,
       contentType: "application/json",
       body: JSON.stringify({
+        schemaVersion: "gesture-feedback.v0.1",
         feedbackId: "FB-D22-E2E-001",
-        action: "uncertain",
-        reviewerCertainty: "moderate",
+        replayId: REPLAY_ID,
+        action: decision.action,
+        correctedGesture: decision.correctedGesture ?? null,
+        reviewerCertainty: decision.reviewerCertainty,
+        actorRole: route.request().headers()["x-actor-role"],
         automaticTrainingCandidate: false,
-        context: {
-          schemaVersion: "gesture-feedback-context.v0.1",
-          analysisId: currentWindow.analysisId,
-          sessionId: currentWindow.sessionId,
-          windowId: currentWindow.windowId,
-          rawSignalRef: segment.rawSignalRef,
-          sourceHashSha256: segment.sourceHashSha256,
-          startSample: segment.startSample,
-          endSampleExclusive: segment.endSampleExclusive,
-          startTimeS: segment.startTimeS,
-          endTimeExclusiveS: segment.endTimeExclusiveS,
-          channelIds: segment.channelIds,
-          repetitionId: segment.repetitionId,
-          calibrationId: segment.calibrationId,
-          modelVersion: currentWindow.modelVersion,
-          originalResultHashSha256: currentWindow.resultHashSha256,
-        },
+        context,
+        ...(options.feedbackResponseOverrides ?? {}),
       }),
     });
   });
 
   return {
     feedbackBody: () => feedbackBody,
+    launchIdempotencyKey: () => launchIdempotencyKey,
   };
 }
 
@@ -216,10 +247,7 @@ async function openAuthenticatedReplay(
   const target =
     `/uc1/session/${SESSION_ID}` +
     `?analysisId=${ANALYSIS_ID}&scenarioId=${scenarioId}`;
-  await page.evaluate((url) => {
-    window.history.pushState(null, "", url);
-    window.dispatchEvent(new PopStateEvent("popstate"));
-  }, target);
+  await page.goto(target);
   await expect(page).toHaveURL(new RegExp(`/uc1/session/${SESSION_ID}`));
   await expect(
     page.getByRole("heading", { name: /UC1.*Biofeedback/i }),
@@ -243,13 +271,13 @@ test.describe("Day 22 UC1 deterministic replay", () => {
     await openAuthenticatedReplay(page);
     await expect(page.getByText(/Replay chưa bắt đầu/i)).toBeVisible();
     await expect(
-      page.getByText(/Hệ thống replay đã ghi nhận nỗ lực/i),
+      page.getByText(/Cửa sổ tạo kết quả kỹ thuật/i),
     ).toHaveCount(0);
     await expect(page.getByText("WIN-D22-E2E-FUTURE")).toHaveCount(0);
 
     await page.getByRole("button", { name: /Bắt đầu replay/i }).click();
     await expect(
-      page.getByText(/Hệ thống replay đã ghi nhận nỗ lực/i),
+      page.getByText(/Cửa sổ tạo kết quả kỹ thuật/i),
     ).toBeVisible();
     await expect(page.getByText("WIN-D22-E2E-FUTURE")).toHaveCount(0);
   });
@@ -268,7 +296,7 @@ test.describe("Day 22 UC1 deterministic replay", () => {
     });
     await installReplayApi(page, {
       initial: replayFixture("idle", -1, [noActivity]),
-      advances: [replayFixture("running", 0, [noActivity])],
+      advances: [replayFixture("completed", 0, [noActivity])],
     });
 
     await openAuthenticatedReplay(page, "uc1_no_activity");
@@ -295,6 +323,132 @@ test.describe("Day 22 UC1 deterministic replay", () => {
     ).toHaveCount(0);
   });
 
+  for (const invalidCreate of [
+    {
+      name: "foreign session response",
+      replay: {
+        ...replayFixture(),
+        sessionId: "SESSION-D22-FOREIGN",
+      },
+    },
+    {
+      name: "terminal history on create",
+      replay: replayFixture("completed", 0, [windowFixture()]),
+    },
+  ]) {
+    test(`fails closed on ${invalidCreate.name}`, async ({ page }) => {
+      await installReplayApi(page, { initial: invalidCreate.replay });
+
+      await openAuthenticatedReplay(page);
+      await expect(
+        page.getByText(/Không tải được kết quả kỹ thuật/i),
+      ).toBeVisible();
+      await expect(
+        page.getByText(/Cửa sổ tạo kết quả kỹ thuật/i),
+      ).toHaveCount(0);
+    });
+  }
+
+  for (const invalidReplay of [
+    {
+      name: "unsafe safety literal",
+      window: windowFixture({
+        safety: {
+          scoreIsProbability: false,
+          clinicalUseAllowed: true,
+          rawSamplesIncluded: false,
+          physicalActuationAllowed: false,
+        },
+      }),
+    },
+    {
+      name: "blocked window with prediction",
+      window: windowFixture({
+        activityGate: {
+          status: "inactive",
+          windowRmsUv: 4.5,
+          activationThresholdUv: 6.6,
+          releaseThresholdUv: 5.28,
+          reasonCode: "ACTIVITY_BELOW_THRESHOLD",
+        },
+      }),
+    },
+  ]) {
+    test(`fails closed on ${invalidReplay.name}`, async ({ page }) => {
+      await installReplayApi(page, {
+        initial: replayFixture("idle", -1, [invalidReplay.window]),
+        advances: [replayFixture("completed", 0, [invalidReplay.window])],
+      });
+
+      await openAuthenticatedReplay(page);
+      await page.getByRole("button", { name: /Bắt đầu replay/i }).click();
+      await expect(
+        page.getByText(/Không tải được kết quả kỹ thuật/i),
+      ).toBeVisible();
+      await expect(
+        page.getByText(/Cửa sổ tạo kết quả kỹ thuật/i),
+      ).toHaveCount(0);
+    });
+  }
+
+
+  test("rejects an advance response from another replay", async ({ page }) => {
+    const current = windowFixture();
+    await installReplayApi(page, {
+      initial: replayFixture("idle", -1, [current]),
+      advances: [
+        {
+          ...replayFixture("completed", 0, [current]),
+          replayId: "REPLAY-D22-FOREIGN",
+        },
+      ],
+    });
+
+    await openAuthenticatedReplay(page);
+    await page.getByRole("button", { name: /Bắt đầu replay/i }).click();
+    await expect(
+      page.getByText(/Không tải được kết quả kỹ thuật/i),
+    ).toBeVisible();
+    await expect(
+      page.getByText(/Cửa sổ tạo kết quả kỹ thuật/i),
+    ).toHaveCount(0);
+  });
+
+  test("failed replay with a revealed window stays a technical failure", async ({
+    page,
+  }) => {
+    const current = windowFixture();
+    await installReplayApi(page, {
+      initial: replayFixture("idle", -1, [current]),
+      advances: [
+        {
+          ...replayFixture("failed", 0, [current]),
+          reasonCodes: ["REPLAY_TECHNICAL_FAILURE"],
+        },
+      ],
+    });
+
+    await openAuthenticatedReplay(page);
+    await page.getByRole("button", { name: /Bắt đầu replay/i }).click();
+    await expect(page.getByText(/Replay lỗi kỹ thuật/i)).toBeVisible();
+    await expect(page.getByText("REPLAY_TECHNICAL_FAILURE")).toBeVisible();
+    await expect(
+      page.getByText(/Cửa sổ tạo kết quả kỹ thuật/i),
+    ).toHaveCount(0);
+  });
+
+  test("shows upstream zero-window abstention reason code", async ({ page }) => {
+    const upstreamAbstention = {
+      ...replayFixture("abstained", -1, []),
+      reasonCodes: ["UPSTREAM_ANALYSIS_ABSTAINED"],
+    };
+    await installReplayApi(page, { initial: upstreamAbstention });
+
+    await openAuthenticatedReplay(page);
+    await expect(page.getByText(/Replay không phát kết quả/i)).toBeVisible();
+    await expect(page.getByText("UPSTREAM_ANALYSIS_ABSTAINED")).toBeVisible();
+  });
+
   for (const blocked of [
     {
       name: "QC fail",
@@ -311,6 +465,7 @@ test.describe("Day 22 UC1 deterministic replay", () => {
         engineeringConfidence: "not_available",
       }),
       copy: /không đạt điều kiện chất lượng/i,
+      reasonCode: "REPLAY_ABSTAINED_QC",
     },
     {
       name: "device disconnect",
@@ -322,19 +477,26 @@ test.describe("Day 22 UC1 deterministic replay", () => {
         engineeringConfidence: "not_available",
       }),
       copy: /kết nối replay bị gián đoạn/i,
+      reasonCode: "DEVICE_DISCONNECTED",
     },
   ]) {
     test(`${blocked.name} never renders a prediction`, async ({ page }) => {
       await installReplayApi(page, {
         initial: replayFixture("idle", -1, [blocked.window]),
-        advances: [replayFixture(blocked.state, 0, [blocked.window])],
+        advances: [
+          {
+            ...replayFixture(blocked.state, 0, [blocked.window]),
+            reasonCodes: [blocked.reasonCode],
+          },
+        ],
       });
 
       await openAuthenticatedReplay(page, blocked.scenario);
       await page.getByRole("button", { name: /Bắt đầu replay/i }).click();
       await expect(page.getByText(blocked.copy)).toBeVisible();
+      await expect(page.getByText(blocked.reasonCode)).toBeVisible();
       await expect(
-        page.getByText(/Hệ thống replay đã ghi nhận nỗ lực/i),
+        page.getByText(/Cửa sổ tạo kết quả kỹ thuật/i),
       ).toHaveCount(0);
     });
   }
@@ -346,7 +508,7 @@ test.describe("Day 22 UC1 deterministic replay", () => {
     const current = windowFixture();
     await installReplayApi(page, {
       initial: replayFixture("idle", -1, [current]),
-      advances: [replayFixture("running", 0, [current])],
+      advances: [replayFixture("completed", 0, [current])],
     });
 
     await openAuthenticatedReplay(
@@ -356,7 +518,7 @@ test.describe("Day 22 UC1 deterministic replay", () => {
     );
     await page.getByRole("button", { name: /Bắt đầu replay/i }).click();
     await expect(
-      page.getByText(/Hệ thống replay đã ghi nhận nỗ lực/i),
+      page.getByText(/Cửa sổ tạo kết quả kỹ thuật/i),
     ).toBeVisible();
     for (const actionName of [
       /Chấp nhận kết quả/i,
@@ -376,7 +538,7 @@ test.describe("Day 22 UC1 deterministic replay", () => {
     const current = windowFixture();
     const api = await installReplayApi(page, {
       initial: replayFixture("idle", -1, [current]),
-      advances: [replayFixture("running", 0, [current])],
+      advances: [replayFixture("completed", 0, [current])],
     });
 
     await openAuthenticatedReplay(page);
@@ -404,8 +566,59 @@ test.describe("Day 22 UC1 deterministic replay", () => {
       reviewerCertainty: "moderate",
     });
     expect(body.context).toBeUndefined();
-    expect(request.headers()["idempotency-key"]).toBeTruthy();
+    const launchKey = api.launchIdempotencyKey();
+    if (launchKey === undefined) {
+      throw new Error("Missing replay idempotency key");
+    }
+    expect(launchKey).toMatch(UUID_V4_PATTERN);
+    for (const sensitiveToken of [SESSION_ID, ANALYSIS_ID, "uc1_golden_correct"]) {
+      expect(launchKey).not.toContain(sensitiveToken);
+    }
+    const idempotencyKey = request.headers()["idempotency-key"];
+    if (idempotencyKey === undefined) {
+      throw new Error("Missing feedback idempotency key");
+    }
+    expect(idempotencyKey).toMatch(UUID_V4_PATTERN);
+    for (const sensitiveToken of [
+      REPLAY_ID,
+      current.windowId,
+      "uncertain",
+      "moderate",
+    ]) {
+      expect(idempotencyKey).not.toContain(sensitiveToken);
+    }
     expect(request.headers()["x-actor-role"]).toBe("ktv");
     await expect(page.getByText(/feedback đã được ghi nhận/i)).toBeVisible();
+
+    const repeatedRequest = page.waitForRequest(
+      (candidate) =>
+        candidate.url().endsWith("/feedback") &&
+        candidate.method() === "POST",
+    );
+    await page.getByRole("button", { name: /Chưa chắc/i }).click();
+    expect((await repeatedRequest).headers()["idempotency-key"]).toBe(
+      idempotencyKey,
+    );
+  });
+
+  test("rejects a feedback receipt with mismatched window hash", async ({
+    page,
+  }) => {
+    const current = windowFixture();
+    await installReplayApi(page, {
+      initial: replayFixture("idle", -1, [current]),
+      advances: [replayFixture("completed", 0, [current])],
+      feedbackContextOverrides: {
+        originalResultHashSha256: "d".repeat(64),
+      },
+    });
+
+    await openAuthenticatedReplay(page);
+    await page.getByRole("button", { name: /Bắt đầu replay/i }).click();
+    await page.getByRole("button", { name: /Chưa chắc/i }).click();
+    await expect(
+      page.getByText(/INVALID_FEEDBACK_RESPONSE/i),
+    ).toBeVisible();
+    await expect(page.getByText(/Feedback đã được ghi nhận/i)).toHaveCount(0);
   });
 });

@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab-ai.local/schemas/gesture-protocol.v0.1.schema.json",
+  "title": "Upper-limb Gesture Biofeedback Protocol v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_id",
+    "protocol_version",
+    "status",
+    "clinical_validation_status",
+    "use_case",
+    "sampling",
+    "windowing",
+    "activity_gate",
+    "gesture_vocabulary",
+    "calibration",
+    "fatigue_monitoring",
+    "safety"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "gesture-protocol.v0.1"
+    },
+    "protocol_id": {
+      "const": "upper-limb-gesture-biofeedback"
+    },
+    "protocol_version": {
+      "const": "v0.1"
+    },
+    "status": {
+      "const": "engineering_draft"
+    },
+    "clinical_validation_status": {
+      "const": "not_validated"
+    },
+    "use_case": {
+      "const": "uc1"
+    },
+    "sampling": {
+      "$ref": "#/$defs/sampling"
+    },
+    "windowing": {
+      "$ref": "#/$defs/windowing"
+    },
+    "activity_gate": {
+      "$ref": "#/$defs/activityGate"
+    },
+    "gesture_vocabulary": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "rest",
+          "hand_open",
+          "hand_close",
+          "wrist_flexion",
+          "wrist_extension"
+        ]
+      },
+      "allOf": [
+        {"contains": {"const": "rest"}},
+        {"contains": {"const": "hand_open"}},
+        {"contains": {"const": "hand_close"}},
+        {"contains": {"const": "wrist_flexion"}},
+        {"contains": {"const": "wrist_extension"}}
+      ]
+    },
+    "calibration": {
+      "$ref": "#/$defs/calibration"
+    },
+    "fatigue_monitoring": {
+      "$ref": "#/$defs/fatigueMonitoring"
+    },
+    "safety": {
+      "$ref": "#/$defs/safety"
+    }
+  },
+  "$defs": {
+    "sampling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum_sampling_rate_hz",
+        "signal_unit",
+        "timestamp_monotonic_required"
+      ],
+      "properties": {
+        "minimum_sampling_rate_hz": {
+          "const": 1000
+        },
+        "signal_unit": {
+          "const": "uV"
+        },
+        "timestamp_monotonic_required": {
+          "const": true
+        }
+      }
+    },
+    "windowing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "window_duration_ms",
+        "hop_duration_ms",
+        "boundary_convention"
+      ],
+      "properties": {
+        "window_duration_ms": {
+          "const": 1000
+        },
+        "hop_duration_ms": {
+          "const": 250
+        },
+        "boundary_convention": {
+          "const": "half_open_end_exclusive"
+        }
+      }
+    },
+    "activityGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calibration_required",
+        "threshold_formula",
+        "engineering_k",
+        "release_ratio",
+        "uncertain_band_ratio"
+      ],
+      "properties": {
+        "calibration_required": {
+          "const": true
+        },
+        "threshold_formula": {
+          "const": "rest_rms_plus_k_sigma"
+        },
+        "engineering_k": {
+          "const": 3.0
+        },
+        "release_ratio": {
+          "const": 0.8
+        },
+        "uncertain_band_ratio": {
+          "const": 0.1
+        }
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repetitions_per_gesture",
+        "rest_baseline_duration_s",
+        "minimum_usable_repetition_ratio"
+      ],
+      "properties": {
+        "repetitions_per_gesture": {
+          "const": 3
+        },
+        "rest_baseline_duration_s": {
+          "const": 8
+        },
+        "minimum_usable_repetition_ratio": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 1
+        }
+      }
+    },
+    "fatigueMonitoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "mfcv_optional",
+        "allowed_sources",
+        "quality_evidence_is_not_fatigue_evidence"
+      ],
+      "properties": {
+        "enabled": {
+          "const": true
+        },
+        "mfcv_optional": {
+          "const": true
+        },
+        "allowed_sources": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "scenario_fixture",
+              "analysis_summary",
+              "not_available"
+            ]
+          }
+        },
+        "quality_evidence_is_not_fatigue_evidence": {
+          "const": true
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "clinical_use_allowed",
+        "human_review_required",
+        "automated_treatment_allowed",
+        "automated_stop_decision_allowed",
+        "no_physical_actuation"
+      ],
+      "properties": {
+        "clinical_use_allowed": {
+          "const": false
+        },
+        "human_review_required": {
+          "const": true
+        },
+        "automated_treatment_allowed": {
+          "const": false
+        },
+        "automated_stop_decision_allowed": {
+          "const": false
+        },
+        "no_physical_actuation": {
+          "const": true
+        }
+      }
+    }
+  }
+}

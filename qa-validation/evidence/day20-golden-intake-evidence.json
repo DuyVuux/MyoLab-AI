@@ -35,7 +35,7 @@
     "state": "mapping_required",
     "sanitizedFilename": "session_session-d20-001.csv",
     "sizeBytes": 7680000,
-    "sourceHashSha256": "sha256:d20-source-001",
+    "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
     "detectedMetadata": {
       "samplingRateHz": 1000.0,
       "durationS": 70.0,
@@ -72,7 +72,7 @@
     "clippingSuspected": false,
     "powerlineWarning": false,
     "motionArtifactWarning": false,
-    "sourceHashSha256": "sha256:d20-source-001",
+    "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
     "preview": [
       {
         "timeS": 0.0,
@@ -95,28 +95,250 @@
     "restSigmaUv": 0.8,
     "activityThresholdCandidateUv": 6.6,
     "engineeringK": 3.0,
-    "plannedRepetitions": 15,
-    "acceptedRepetitions": 14,
-    "rejectedRepetitions": 1,
-    "usableRepetitionRatio": 0.9333333333333333,
+    "plannedRepetitions": 12,
+    "acceptedRepetitions": 12,
+    "rejectedRepetitions": 0,
+    "usableRepetitionRatio": 1.0,
     "durationS": 142.0,
     "warningAcknowledged": false,
     "reasonCodes": [],
     "repetitions": [
       {
-        "repetitionId": "REP-D20-001",
-        "gestureId": "wrist_extension",
+        "repetitionId": "REP-SESSION-D20-001-HAND_OPEN-01",
+        "gestureId": "hand_open",
         "quality": "accepted",
         "segmentRef": {
-          "rawSignalRef": "RAW-REF-D20-001",
-          "sourceHashSha256": "sha256:d20-source",
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
           "startSample": 5000,
           "endSample": 6000,
           "startTimeS": 5.0,
           "endTimeS": 6.0,
           "channelIds": [
             "CH01",
-            "CH02"
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-HAND_CLOSE-01",
+        "gestureId": "hand_close",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 6250,
+          "endSample": 7250,
+          "startTimeS": 6.25,
+          "endTimeS": 7.25,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-WRIST_FLEXION-01",
+        "gestureId": "wrist_flexion",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 7500,
+          "endSample": 8500,
+          "startTimeS": 7.5,
+          "endTimeS": 8.5,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+        "gestureId": "wrist_extension",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 8750,
+          "endSample": 9750,
+          "startTimeS": 8.75,
+          "endTimeS": 9.75,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-HAND_OPEN-02",
+        "gestureId": "hand_open",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 10000,
+          "endSample": 11000,
+          "startTimeS": 10.0,
+          "endTimeS": 11.0,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-HAND_CLOSE-02",
+        "gestureId": "hand_close",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 11250,
+          "endSample": 12250,
+          "startTimeS": 11.25,
+          "endTimeS": 12.25,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-WRIST_FLEXION-02",
+        "gestureId": "wrist_flexion",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 12500,
+          "endSample": 13500,
+          "startTimeS": 12.5,
+          "endTimeS": 13.5,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-02",
+        "gestureId": "wrist_extension",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 13750,
+          "endSample": 14750,
+          "startTimeS": 13.75,
+          "endTimeS": 14.75,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-HAND_OPEN-03",
+        "gestureId": "hand_open",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 15000,
+          "endSample": 16000,
+          "startTimeS": 15.0,
+          "endTimeS": 16.0,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-HAND_CLOSE-03",
+        "gestureId": "hand_close",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 16250,
+          "endSample": 17250,
+          "startTimeS": 16.25,
+          "endTimeS": 17.25,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-WRIST_FLEXION-03",
+        "gestureId": "wrist_flexion",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 17500,
+          "endSample": 18500,
+          "startTimeS": 17.5,
+          "endTimeS": 18.5,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
+          ]
+        },
+        "reasonCodes": []
+      },
+      {
+        "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-03",
+        "gestureId": "wrist_extension",
+        "quality": "accepted",
+        "segmentRef": {
+          "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+          "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+          "startSample": 18750,
+          "endSample": 19750,
+          "startTimeS": 18.75,
+          "endTimeS": 19.75,
+          "channelIds": [
+            "CH01",
+            "CH02",
+            "CH03",
+            "CH04"
           ]
         },
         "reasonCodes": []
@@ -149,7 +371,7 @@
     "protocolVersion": "upper-limb-gesture.v0.1",
     "calibrationId": "CAL-SESSION-D20-001",
     "qualityResultId": "QC-SESSION-D20-001",
-    "sourceHashSha256": "sha256:d20-source-001",
+    "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
     "scoreIsProbability": false,
     "clinicalUseAllowed": false,
     "humanReviewRequired": true,

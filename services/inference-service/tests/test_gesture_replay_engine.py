@@ -12,6 +12,7 @@ import pytest
 from gesture_replay_engine import (
     SCENARIO_IDS,
     ReplayContext,
+    ReplayRepetition,
     ReplayScenarioError,
     build_replay_windows,
     canonical_result_hash,
@@ -31,6 +32,48 @@ EXPECTED_SCENARIO_IDS = frozenset(
 )
 SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 REPO_ROOT = Path(__file__).resolve().parents[3]
+ACTIVE_GESTURES = (
+    "hand_open",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension",
+)
+
+
+def repetition_records(
+    *,
+    id_prefix: str = "REP-D20",
+    source_hash: str = "a" * 64,
+    raw_signal_ref: str = "RAW-REF-D20-001",
+    channel_ids: tuple[str, ...] = ("CH01", "CH02", "CH03", "CH04"),
+    sampling_rate_hz: float = 1000.0,
+    first_start_sample: int = 5000,
+    window_size_samples: int = 1000,
+    stride_samples: int = 1250,
+) -> tuple[ReplayRepetition, ...]:
+    records: list[ReplayRepetition] = []
+    for occurrence in range(1, 4):
+        for gesture_id in ACTIVE_GESTURES:
+            index = len(records)
+            start_sample = first_start_sample + index * stride_samples
+            end_sample = start_sample + window_size_samples
+            records.append(
+                ReplayRepetition(
+                    repetition_id=(
+                        f"{id_prefix}-{gesture_id.upper()}-{occurrence:02d}"
+                    ),
+                    gesture_id=gesture_id,
+                    quality="accepted",
+                    raw_signal_ref=raw_signal_ref,
+                    source_hash_sha256=source_hash,
+                    start_sample=start_sample,
+                    end_sample_exclusive=end_sample,
+                    start_time_s=start_sample / sampling_rate_hz,
+                    end_time_exclusive_s=end_sample / sampling_rate_hz,
+                    channel_ids=channel_ids,
+                )
+            )
+    return tuple(records)
 
 
 @pytest.fixture
@@ -39,24 +82,15 @@ def replay_context() -> ReplayContext:
         session_id="SESSION-D20-001",
         analysis_id="AN21-0123456789ab",
         source_hash_sha256="a" * 64,
-        raw_signal_ref="RAW-REF-D20-001",
         calibration_id="CAL-SESSION-D20-001",
         sampling_rate_hz=1000.0,
         channel_ids=("CH01", "CH02", "CH03", "CH04"),
-        repetition_ids=(
-            "REP-D20-001",
-            "REP-D20-002",
-            "REP-D20-003",
-            "REP-D20-004",
-        ),
+        repetitions=repetition_records(),
         rest_rms_uv=4.2,
         rest_sigma_uv=0.8,
         engineering_k=3.0,
         release_ratio=0.8,
         uncertain_band_ratio=0.1,
-        first_window_start_sample=5000,
-        window_size_samples=1000,
-        hop_size_samples=250,
         latency_components_ms=(10.0, 200.0, 18.0, 14.0, 28.0),
         engine_id="gesture-replay",
         engine_version="0.1.0",
@@ -135,22 +169,28 @@ def test_replay_windows_and_hashes_are_deterministic(
 def test_context_values_are_propagated_instead_of_hardcoded(
     replay_context: ReplayContext,
 ) -> None:
+    alternate_repetitions = repetition_records(
+        id_prefix="ALT-REP",
+        source_hash="b" * 64,
+        raw_signal_ref="RAW-ALT-999",
+        channel_ids=("ALT01", "ALT02"),
+        sampling_rate_hz=2000.0,
+        first_start_sample=1234,
+        window_size_samples=800,
+        stride_samples=1000,
+    )
     alternate = replace(
         replay_context,
         session_id="SESSION-ALT-777",
         analysis_id="AN-ALT-888",
         source_hash_sha256="b" * 64,
-        raw_signal_ref="RAW-ALT-999",
         calibration_id="CAL-ALT-222",
         sampling_rate_hz=2000.0,
         channel_ids=("ALT01", "ALT02"),
-        repetition_ids=("ALT-REP-1", "ALT-REP-2", "ALT-REP-3", "ALT-REP-4"),
+        repetitions=alternate_repetitions,
         rest_rms_uv=1.25,
         rest_sigma_uv=0.25,
         engineering_k=2.0,
-        first_window_start_sample=1234,
-        window_size_samples=800,
-        hop_size_samples=200,
         latency_components_ms=(1.0, 2.0, 3.0, 4.0, 5.0),
         engine_id="alternate-replay-engine",
         engine_version="9.8.7",
@@ -159,6 +199,7 @@ def test_context_values_are_propagated_instead_of_hardcoded(
 
     window = replay_windows(alternate, "uc1_golden_correct")[0]
     segment = window.segment_ref
+    source_repetition = alternate.repetitions[0]
 
     assert (
         window.session_id,
@@ -171,11 +212,11 @@ def test_context_values_are_propagated_instead_of_hardcoded(
     ) == (
         alternate.session_id,
         alternate.analysis_id,
-        alternate.raw_signal_ref,
-        alternate.source_hash_sha256,
+        source_repetition.raw_signal_ref,
+        source_repetition.source_hash_sha256,
         alternate.calibration_id,
-        alternate.repetition_ids[0],
-        alternate.channel_ids,
+        source_repetition.repetition_id,
+        source_repetition.channel_ids,
     )
     assert (
         segment.start_sample,
@@ -211,27 +252,31 @@ def test_every_scenario_uses_exact_half_open_window_provenance(
     windows = replay_windows(replay_context, scenario_id)
 
     assert windows
-    for index, window in enumerate(windows):
+    occurrence_by_gesture: dict[str, int] = {}
+    for window in windows:
+        gesture_id = window.target_gesture
+        occurrence = occurrence_by_gesture.get(gesture_id, 0)
+        source_repetitions = [
+            repetition
+            for repetition in replay_context.repetitions
+            if repetition.gesture_id == gesture_id
+            and repetition.quality == "accepted"
+        ]
+        source = source_repetitions[occurrence]
+        occurrence_by_gesture[gesture_id] = occurrence + 1
         segment = window.segment_ref
-        expected_start = (
-            replay_context.first_window_start_sample
-            + index * replay_context.hop_size_samples
-        )
-        expected_end = expected_start + replay_context.window_size_samples
 
-        assert segment.start_sample == expected_start
-        assert segment.end_sample_exclusive == expected_end
-        assert segment.start_time_s == pytest.approx(
-            expected_start / replay_context.sampling_rate_hz
-        )
+        assert segment.repetition_id == source.repetition_id
+        assert segment.raw_signal_ref == source.raw_signal_ref
+        assert segment.source_hash_sha256 == source.source_hash_sha256
+        assert segment.start_sample == source.start_sample
+        assert segment.end_sample_exclusive == source.end_sample_exclusive
+        assert segment.start_time_s == pytest.approx(source.start_time_s)
         assert segment.end_time_exclusive_s == pytest.approx(
-            expected_end / replay_context.sampling_rate_hz
+            source.end_time_exclusive_s
         )
-        assert tuple(segment.channel_ids) == replay_context.channel_ids
-        assert segment.raw_signal_ref == replay_context.raw_signal_ref
-        assert segment.source_hash_sha256 == replay_context.source_hash_sha256
+        assert tuple(segment.channel_ids) == source.channel_ids
         assert segment.calibration_id == replay_context.calibration_id
-        assert segment.repetition_id == replay_context.repetition_ids[index]
         assert not hasattr(window, "raw_samples")
 
 

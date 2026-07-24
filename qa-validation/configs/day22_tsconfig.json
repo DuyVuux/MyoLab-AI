@@ -6,6 +6,7 @@
   },
   "include": [
     "../../apps/web-portal/next-env.d.ts",
+    "../../apps/web-portal/src/schemas/gesture-inference.type-test.ts",
     "../../apps/web-portal/src/schemas/gesture-inference.schema.ts",
     "../../apps/web-portal/src/schemas/gesture-feedback-context.schema.ts",
     "../../apps/web-portal/src/lib/latencyMetrics.ts",

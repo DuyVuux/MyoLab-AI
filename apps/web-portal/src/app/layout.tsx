@@ -1,21 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
 import { AuthProvider } from '@/lib/auth';
 import '@/styles/global.css';
-
-const inter = Inter({
-  subsets: ['latin', 'vietnamese'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'MyoLab-AI — sEMG Clinical Intelligence Platform',
@@ -30,10 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="vi">
       <body>
-          <AuthProvider>{children}</AuthProvider>
-        </body>
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }

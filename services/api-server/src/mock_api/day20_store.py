@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from hashlib import sha256
 
 from day20_models import (
     AnalysisHandoff,
@@ -65,6 +66,12 @@ def create_import(session_id: str, scenario_id: str) -> ImportRecord:
         error_code = "CSV_PARSE_FAILED"
         retry = "file_selected"
     import_id = f"IMPORT-D20-{index:03d}"
+    source_hash = sha256(
+        (
+            "myolab-day20-import:v0.1:"
+            f"{session_id}:{import_id}:{scenario_id}"
+        ).encode("utf-8")
+    ).hexdigest()
     record = ImportRecord(
         importId=import_id,
         sessionId=session_id,
@@ -72,7 +79,7 @@ def create_import(session_id: str, scenario_id: str) -> ImportRecord:
         state=state,
         sanitizedFilename=f"session_{session_id.lower()}.csv",
         sizeBytes=7680000,
-        sourceHashSha256=f"sha256:d20-source-{index:03d}",
+        sourceHashSha256=source_hash,
         detectedMetadata=metadata,
         errorCode=error_code,
         retryFromState=retry,
@@ -125,20 +132,84 @@ def preflight(session_id: str) -> PreflightSummary:
 
 
 def calibration(session_id: str, scenario_id: str) -> CalibrationRecord:
-    state = "pass"; accepted = 14; rejected = 1; reasons: list[str] = []
-    if scenario_id == "calibration_warning": state = "warning"; accepted = 12; rejected = 3; reasons = ["GESTURE_SEPARABILITY_LOW"]
-    if scenario_id == "calibration_fail": state = "fail"; accepted = 5; rejected = 10; reasons = ["CALIBRATION_QUALITY_INSUFFICIENT"]
+    state = "pass"
+    reasons: list[str] = []
+    rejected_indices: set[int] = set()
+    if scenario_id == "calibration_warning":
+        state = "warning"
+        reasons = ["GESTURE_SEPARABILITY_LOW"]
+        rejected_indices = {10, 11}
+    if scenario_id == "calibration_fail":
+        state = "fail"
+        reasons = ["CALIBRATION_QUALITY_INSUFFICIENT"]
+        rejected_indices = set(range(7))
+    import_items = [
+        item for item in IMPORTS.values() if item.sessionId == session_id
+    ]
+    if not import_items:
+        raise KeyError("IMPORT_NOT_FOUND")
+    import_item = import_items[-1]
+    sampling_rate_hz = import_item.detectedMetadata.samplingRateHz
+    if sampling_rate_hz is None or sampling_rate_hz <= 0:
+        raise ValueError("SAMPLING_RATE_REQUIRED")
+    mappings = MAPPINGS.get(import_item.importId)
+    if not mappings:
+        raise ValueError("MAPPING_REQUIRED")
+    channel_ids = [item.canonicalChannelId for item in mappings]
+    raw_signal_ref = f"RAW-REF-{import_item.importId}"
+    gestures = (
+        "hand_open",
+        "hand_close",
+        "wrist_flexion",
+        "wrist_extension",
+    )
+    repetition_plan = tuple(
+        (gesture_id, occurrence)
+        for occurrence in range(1, 4)
+        for gesture_id in gestures
+    )
+    repetitions = []
+    for index, (gesture_id, occurrence) in enumerate(repetition_plan):
+        start_sample = 5_000 + index * 1_250
+        end_sample = start_sample + 1_000
+        quality = "rejected" if index in rejected_indices else "accepted"
+        repetitions.append(
+            CalibrationRepetition(
+                repetitionId=(
+                    f"REP-{session_id}-{gesture_id.upper()}-{occurrence:02d}"
+                ),
+                gestureId=gesture_id,
+                quality=quality,
+                segmentRef=SegmentReference(
+                    rawSignalRef=raw_signal_ref,
+                    sourceHashSha256=import_item.sourceHashSha256,
+                    startSample=start_sample,
+                    endSample=end_sample,
+                    startTimeS=start_sample / sampling_rate_hz,
+                    endTimeS=end_sample / sampling_rate_hz,
+                    channelIds=channel_ids,
+                ),
+                reasonCodes=(
+                    ["CALIBRATION_REPETITION_REJECTED"]
+                    if quality == "rejected"
+                    else []
+                ),
+            )
+        )
+    planned_repetitions = len(repetitions)
+    accepted_repetitions = sum(
+        repetition.quality == "accepted" for repetition in repetitions
+    )
+    rejected_repetitions = planned_repetitions - accepted_repetitions
     record = CalibrationRecord(
         calibrationId=f"CAL-{session_id}", sessionId=session_id, state=state,
         restRmsUv=4.2, restSigmaUv=0.8, activityThresholdCandidateUv=6.6, engineeringK=3,
-        plannedRepetitions=15, acceptedRepetitions=accepted, rejectedRepetitions=rejected,
-        usableRepetitionRatio=accepted/15, durationS=142, warningAcknowledged=False,
+        plannedRepetitions=planned_repetitions,
+        acceptedRepetitions=accepted_repetitions,
+        rejectedRepetitions=rejected_repetitions,
+        usableRepetitionRatio=accepted_repetitions / planned_repetitions, durationS=142, warningAcknowledged=False,
         reasonCodes=reasons,
-        repetitions=[CalibrationRepetition(
-            repetitionId="REP-D20-001", gestureId="wrist_extension", quality="accepted",
-            segmentRef=SegmentReference(rawSignalRef="RAW-REF-D20-001", sourceHashSha256="sha256:d20-source", startSample=5000, endSample=6000, startTimeS=5, endTimeS=6, channelIds=["CH01", "CH02"]),
-            reasonCodes=[],
-        )],
+        repetitions=repetitions,
     )
     CALIBRATIONS[session_id] = record
     return record

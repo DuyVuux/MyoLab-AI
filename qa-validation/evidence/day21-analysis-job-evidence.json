@@ -4,7 +4,7 @@
     "analysisId": "AN21-951f714efb29",
     "sessionId": "SESSION-D20-001",
     "useCaseId": "uc1",
-    "sourceHashSha256": "sha256:d20-source-001",
+    "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
     "status": "completed",
     "progressMode": "stage_only",
     "currentStage": null,

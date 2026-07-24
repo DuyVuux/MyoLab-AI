@@ -1,0 +1,1174 @@
+{
+  "feedbackTrace": {
+    "feedback": {
+      "action": "accept",
+      "actorRole": "ml_qa",
+      "automaticTrainingCandidate": false,
+      "context": {
+        "analysisId": "AN21-644712918bea",
+        "calibrationId": "CAL-SESSION-D20-001",
+        "channelIds": [
+          "CH01",
+          "CH02",
+          "CH03",
+          "CH04"
+        ],
+        "endSampleExclusive": 9750,
+        "endTimeExclusiveS": 9.75,
+        "modelVersion": "gesture-replay-v0.1",
+        "originalResultHashSha256": "d9c35f1cb3c0b10c002b0f806ed67db3db34687dbcd963caae6c8e0c7a8a4749",
+        "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+        "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+        "schemaVersion": "gesture-feedback-context.v0.1",
+        "sessionId": "SESSION-D20-001",
+        "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+        "startSample": 8750,
+        "startTimeS": 8.75,
+        "windowId": "AN21-644712918bea-W0004"
+      },
+      "correctedGesture": null,
+      "feedbackId": "FEEDBACK-4b6467da1abce9fc",
+      "replayId": "REPLAY-4773768fedfe7610",
+      "reviewerCertainty": "high",
+      "schemaVersion": "gesture-feedback.v0.1"
+    },
+    "scenarioId": "uc1_golden_correct",
+    "sourceWindow": {
+      "activityGate": {
+        "activationThresholdUv": 6.6000000000000005,
+        "reasonCode": "ACTIVITY_HELD_BY_HYSTERESIS",
+        "releaseThresholdUv": 5.280000000000001,
+        "status": "active",
+        "windowRmsUv": 14.0
+      },
+      "analysisId": "AN21-644712918bea",
+      "baseEngineeringConfidence": "engineering_high",
+      "deviceState": "connected",
+      "engineeringConfidence": "engineering_high",
+      "fatigueOverlay": {
+        "confidenceAdjustmentApplied": false,
+        "counterevidenceVi": [],
+        "evidenceSummaryVi": [],
+        "limitationsVi": [
+          "Day 21 không cung cấp fatigue status đủ điều kiện."
+        ],
+        "reasonCodes": [],
+        "source": "not_available",
+        "status": "not_available"
+      },
+      "latency": {
+        "acquisitionMs": 10.0,
+        "inferenceMs": 14.0,
+        "preprocessMs": 18.0,
+        "totalMs": 270.0,
+        "transportRenderMs": 28.0,
+        "windowMs": 200.0
+      },
+      "modelValidationStatus": "not_validated",
+      "modelVersion": "gesture-replay-v0.1",
+      "predictedGesture": "wrist_extension",
+      "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+      "qualityContext": {
+        "qualityResultId": "QC-SESSION-D20-001",
+        "reasonCodes": [],
+        "source": "day20_quality_gate",
+        "status": "pass"
+      },
+      "requiresHumanReview": true,
+      "resultHashSha256": "d9c35f1cb3c0b10c002b0f806ed67db3db34687dbcd963caae6c8e0c7a8a4749",
+      "safety": {
+        "clinicalUseAllowed": false,
+        "physicalActuationAllowed": false,
+        "rawSamplesIncluded": false,
+        "scoreIsProbability": false
+      },
+      "schemaVersion": "gesture-inference.v0.1",
+      "segmentRef": {
+        "calibrationId": "CAL-SESSION-D20-001",
+        "channelIds": [
+          "CH01",
+          "CH02",
+          "CH03",
+          "CH04"
+        ],
+        "endSampleExclusive": 9750,
+        "endTimeExclusiveS": 9.75,
+        "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+        "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+        "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+        "startSample": 8750,
+        "startTimeS": 8.75
+      },
+      "sessionId": "SESSION-D20-001",
+      "sourceType": "synthetic_replay",
+      "targetGesture": "wrist_extension",
+      "windowId": "AN21-644712918bea-W0004"
+    }
+  },
+  "generatedBy": "scripts/dev/generate_day22_evidence.py",
+  "scenarioEvidence": [
+    {
+      "scenarioId": "uc1_golden_correct",
+      "terminalReplay": {
+        "analysisId": "AN21-644712918bea",
+        "clinicalUseAllowed": false,
+        "currentIndex": 3,
+        "currentWindow": {
+          "activityGate": {
+            "activationThresholdUv": 6.6000000000000005,
+            "reasonCode": "ACTIVITY_HELD_BY_HYSTERESIS",
+            "releaseThresholdUv": 5.280000000000001,
+            "status": "active",
+            "windowRmsUv": 14.0
+          },
+          "analysisId": "AN21-644712918bea",
+          "baseEngineeringConfidence": "engineering_high",
+          "deviceState": "connected",
+          "engineeringConfidence": "engineering_high",
+          "fatigueOverlay": {
+            "confidenceAdjustmentApplied": false,
+            "counterevidenceVi": [],
+            "evidenceSummaryVi": [],
+            "limitationsVi": [
+              "Day 21 không cung cấp fatigue status đủ điều kiện."
+            ],
+            "reasonCodes": [],
+            "source": "not_available",
+            "status": "not_available"
+          },
+          "latency": {
+            "acquisitionMs": 10.0,
+            "inferenceMs": 14.0,
+            "preprocessMs": 18.0,
+            "totalMs": 270.0,
+            "transportRenderMs": 28.0,
+            "windowMs": 200.0
+          },
+          "modelValidationStatus": "not_validated",
+          "modelVersion": "gesture-replay-v0.1",
+          "predictedGesture": "wrist_extension",
+          "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+          "qualityContext": {
+            "qualityResultId": "QC-SESSION-D20-001",
+            "reasonCodes": [],
+            "source": "day20_quality_gate",
+            "status": "pass"
+          },
+          "requiresHumanReview": true,
+          "resultHashSha256": "d9c35f1cb3c0b10c002b0f806ed67db3db34687dbcd963caae6c8e0c7a8a4749",
+          "safety": {
+            "clinicalUseAllowed": false,
+            "physicalActuationAllowed": false,
+            "rawSamplesIncluded": false,
+            "scoreIsProbability": false
+          },
+          "schemaVersion": "gesture-inference.v0.1",
+          "segmentRef": {
+            "calibrationId": "CAL-SESSION-D20-001",
+            "channelIds": [
+              "CH01",
+              "CH02",
+              "CH03",
+              "CH04"
+            ],
+            "endSampleExclusive": 9750,
+            "endTimeExclusiveS": 9.75,
+            "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+            "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+            "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+            "startSample": 8750,
+            "startTimeS": 8.75
+          },
+          "sessionId": "SESSION-D20-001",
+          "sourceType": "synthetic_replay",
+          "targetGesture": "wrist_extension",
+          "windowId": "AN21-644712918bea-W0004"
+        },
+        "history": [
+          {
+            "activityGate": {
+              "activationThresholdUv": 6.6000000000000005,
+              "reasonCode": "ACTIVITY_ABOVE_THRESHOLD",
+              "releaseThresholdUv": 5.280000000000001,
+              "status": "active",
+              "windowRmsUv": 11.0
+            },
+            "analysisId": "AN21-644712918bea",
+            "baseEngineeringConfidence": "engineering_high",
+            "deviceState": "connected",
+            "engineeringConfidence": "engineering_high",
+            "fatigueOverlay": {
+              "confidenceAdjustmentApplied": false,
+              "counterevidenceVi": [],
+              "evidenceSummaryVi": [],
+              "limitationsVi": [
+                "Day 21 không cung cấp fatigue status đủ điều kiện."
+              ],
+              "reasonCodes": [],
+              "source": "not_available",
+              "status": "not_available"
+            },
+            "latency": {
+              "acquisitionMs": 10.0,
+              "inferenceMs": 14.0,
+              "preprocessMs": 18.0,
+              "totalMs": 270.0,
+              "transportRenderMs": 28.0,
+              "windowMs": 200.0
+            },
+            "modelValidationStatus": "not_validated",
+            "modelVersion": "gesture-replay-v0.1",
+            "predictedGesture": "hand_open",
+            "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+            "qualityContext": {
+              "qualityResultId": "QC-SESSION-D20-001",
+              "reasonCodes": [],
+              "source": "day20_quality_gate",
+              "status": "pass"
+            },
+            "requiresHumanReview": true,
+            "resultHashSha256": "e35e4e066060704546e85752df2283605f53e00fb232dba6000827fe86c48d51",
+            "safety": {
+              "clinicalUseAllowed": false,
+              "physicalActuationAllowed": false,
+              "rawSamplesIncluded": false,
+              "scoreIsProbability": false
+            },
+            "schemaVersion": "gesture-inference.v0.1",
+            "segmentRef": {
+              "calibrationId": "CAL-SESSION-D20-001",
+              "channelIds": [
+                "CH01",
+                "CH02",
+                "CH03",
+                "CH04"
+              ],
+              "endSampleExclusive": 6000,
+              "endTimeExclusiveS": 6.0,
+              "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+              "repetitionId": "REP-SESSION-D20-001-HAND_OPEN-01",
+              "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+              "startSample": 5000,
+              "startTimeS": 5.0
+            },
+            "sessionId": "SESSION-D20-001",
+            "sourceType": "synthetic_replay",
+            "targetGesture": "hand_open",
+            "windowId": "AN21-644712918bea-W0001"
+          },
+          {
+            "activityGate": {
+              "activationThresholdUv": 6.6000000000000005,
+              "reasonCode": "ACTIVITY_HELD_BY_HYSTERESIS",
+              "releaseThresholdUv": 5.280000000000001,
+              "status": "active",
+              "windowRmsUv": 12.0
+            },
+            "analysisId": "AN21-644712918bea",
+            "baseEngineeringConfidence": "engineering_high",
+            "deviceState": "connected",
+            "engineeringConfidence": "engineering_high",
+            "fatigueOverlay": {
+              "confidenceAdjustmentApplied": false,
+              "counterevidenceVi": [],
+              "evidenceSummaryVi": [],
+              "limitationsVi": [
+                "Day 21 không cung cấp fatigue status đủ điều kiện."
+              ],
+              "reasonCodes": [],
+              "source": "not_available",
+              "status": "not_available"
+            },
+            "latency": {
+              "acquisitionMs": 10.0,
+              "inferenceMs": 14.0,
+              "preprocessMs": 18.0,
+              "totalMs": 270.0,
+              "transportRenderMs": 28.0,
+              "windowMs": 200.0
+            },
+            "modelValidationStatus": "not_validated",
+            "modelVersion": "gesture-replay-v0.1",
+            "predictedGesture": "hand_close",
+            "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+            "qualityContext": {
+              "qualityResultId": "QC-SESSION-D20-001",
+              "reasonCodes": [],
+              "source": "day20_quality_gate",
+              "status": "pass"
+            },
+            "requiresHumanReview": true,
+            "resultHashSha256": "77cb7c6050adb93283c81c81931df981670f9d94bf777345a713d405f9a30045",
+            "safety": {
+              "clinicalUseAllowed": false,
+              "physicalActuationAllowed": false,
+              "rawSamplesIncluded": false,
+              "scoreIsProbability": false
+            },
+            "schemaVersion": "gesture-inference.v0.1",
+            "segmentRef": {
+              "calibrationId": "CAL-SESSION-D20-001",
+              "channelIds": [
+                "CH01",
+                "CH02",
+                "CH03",
+                "CH04"
+              ],
+              "endSampleExclusive": 7250,
+              "endTimeExclusiveS": 7.25,
+              "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+              "repetitionId": "REP-SESSION-D20-001-HAND_CLOSE-01",
+              "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+              "startSample": 6250,
+              "startTimeS": 6.25
+            },
+            "sessionId": "SESSION-D20-001",
+            "sourceType": "synthetic_replay",
+            "targetGesture": "hand_close",
+            "windowId": "AN21-644712918bea-W0002"
+          },
+          {
+            "activityGate": {
+              "activationThresholdUv": 6.6000000000000005,
+              "reasonCode": "ACTIVITY_HELD_BY_HYSTERESIS",
+              "releaseThresholdUv": 5.280000000000001,
+              "status": "active",
+              "windowRmsUv": 13.0
+            },
+            "analysisId": "AN21-644712918bea",
+            "baseEngineeringConfidence": "engineering_high",
+            "deviceState": "connected",
+            "engineeringConfidence": "engineering_high",
+            "fatigueOverlay": {
+              "confidenceAdjustmentApplied": false,
+              "counterevidenceVi": [],
+              "evidenceSummaryVi": [],
+              "limitationsVi": [
+                "Day 21 không cung cấp fatigue status đủ điều kiện."
+              ],
+              "reasonCodes": [],
+              "source": "not_available",
+              "status": "not_available"
+            },
+            "latency": {
+              "acquisitionMs": 10.0,
+              "inferenceMs": 14.0,
+              "preprocessMs": 18.0,
+              "totalMs": 270.0,
+              "transportRenderMs": 28.0,
+              "windowMs": 200.0
+            },
+            "modelValidationStatus": "not_validated",
+            "modelVersion": "gesture-replay-v0.1",
+            "predictedGesture": "wrist_flexion",
+            "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+            "qualityContext": {
+              "qualityResultId": "QC-SESSION-D20-001",
+              "reasonCodes": [],
+              "source": "day20_quality_gate",
+              "status": "pass"
+            },
+            "requiresHumanReview": true,
+            "resultHashSha256": "87fdf098ec74696a13fa192fd989b8b68899395b2ea0f10381e076c57728c853",
+            "safety": {
+              "clinicalUseAllowed": false,
+              "physicalActuationAllowed": false,
+              "rawSamplesIncluded": false,
+              "scoreIsProbability": false
+            },
+            "schemaVersion": "gesture-inference.v0.1",
+            "segmentRef": {
+              "calibrationId": "CAL-SESSION-D20-001",
+              "channelIds": [
+                "CH01",
+                "CH02",
+                "CH03",
+                "CH04"
+              ],
+              "endSampleExclusive": 8500,
+              "endTimeExclusiveS": 8.5,
+              "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+              "repetitionId": "REP-SESSION-D20-001-WRIST_FLEXION-01",
+              "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+              "startSample": 7500,
+              "startTimeS": 7.5
+            },
+            "sessionId": "SESSION-D20-001",
+            "sourceType": "synthetic_replay",
+            "targetGesture": "wrist_flexion",
+            "windowId": "AN21-644712918bea-W0003"
+          }
+        ],
+        "humanReviewRequired": true,
+        "latencySummary": {
+          "disconnectTimeoutMs": 2000,
+          "droppedWindows": 0,
+          "observedWindowCount": 4,
+          "p50Ms": 270.0,
+          "p95Ms": 270.0
+        },
+        "modelValidationStatus": "not_validated",
+        "reasonCodes": [],
+        "replayId": "REPLAY-4773768fedfe7610",
+        "revision": 4,
+        "scenarioId": "uc1_golden_correct",
+        "schemaVersion": "uc1-replay-session.v0.1",
+        "sessionId": "SESSION-D20-001",
+        "sourceType": "synthetic_replay",
+        "state": "completed",
+        "totalWindows": 4
+      }
+    },
+    {
+      "scenarioId": "uc1_ambiguous_prediction",
+      "terminalReplay": {
+        "analysisId": "AN21-f3286833ed02",
+        "clinicalUseAllowed": false,
+        "currentIndex": 0,
+        "currentWindow": {
+          "activityGate": {
+            "activationThresholdUv": 6.6000000000000005,
+            "reasonCode": "ACTIVITY_ABOVE_THRESHOLD",
+            "releaseThresholdUv": 5.280000000000001,
+            "status": "active",
+            "windowRmsUv": 9.0
+          },
+          "analysisId": "AN21-f3286833ed02",
+          "baseEngineeringConfidence": "engineering_low",
+          "deviceState": "connected",
+          "engineeringConfidence": "engineering_low",
+          "fatigueOverlay": {
+            "confidenceAdjustmentApplied": false,
+            "counterevidenceVi": [],
+            "evidenceSummaryVi": [],
+            "limitationsVi": [
+              "Day 21 không cung cấp fatigue status đủ điều kiện."
+            ],
+            "reasonCodes": [],
+            "source": "not_available",
+            "status": "not_available"
+          },
+          "latency": {
+            "acquisitionMs": 10.0,
+            "inferenceMs": 14.0,
+            "preprocessMs": 18.0,
+            "totalMs": 270.0,
+            "transportRenderMs": 28.0,
+            "windowMs": 200.0
+          },
+          "modelValidationStatus": "not_validated",
+          "modelVersion": "gesture-replay-v0.1",
+          "predictedGesture": "hand_open",
+          "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+          "qualityContext": {
+            "qualityResultId": "QC-SESSION-D20-001",
+            "reasonCodes": [],
+            "source": "day20_quality_gate",
+            "status": "pass"
+          },
+          "requiresHumanReview": true,
+          "resultHashSha256": "705d2875088eb790f25f05cee029836d3062dea211e9e8eeb57383da85cc5223",
+          "safety": {
+            "clinicalUseAllowed": false,
+            "physicalActuationAllowed": false,
+            "rawSamplesIncluded": false,
+            "scoreIsProbability": false
+          },
+          "schemaVersion": "gesture-inference.v0.1",
+          "segmentRef": {
+            "calibrationId": "CAL-SESSION-D20-001",
+            "channelIds": [
+              "CH01",
+              "CH02",
+              "CH03",
+              "CH04"
+            ],
+            "endSampleExclusive": 9750,
+            "endTimeExclusiveS": 9.75,
+            "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+            "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+            "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+            "startSample": 8750,
+            "startTimeS": 8.75
+          },
+          "sessionId": "SESSION-D20-001",
+          "sourceType": "synthetic_replay",
+          "targetGesture": "wrist_extension",
+          "windowId": "AN21-f3286833ed02-W0001"
+        },
+        "history": [],
+        "humanReviewRequired": true,
+        "latencySummary": {
+          "disconnectTimeoutMs": 2000,
+          "droppedWindows": 0,
+          "observedWindowCount": 1,
+          "p50Ms": 270.0,
+          "p95Ms": 270.0
+        },
+        "modelValidationStatus": "not_validated",
+        "reasonCodes": [],
+        "replayId": "REPLAY-99d5ef90b7c1fac1",
+        "revision": 1,
+        "scenarioId": "uc1_ambiguous_prediction",
+        "schemaVersion": "uc1-replay-session.v0.1",
+        "sessionId": "SESSION-D20-001",
+        "sourceType": "synthetic_replay",
+        "state": "completed",
+        "totalWindows": 1
+      }
+    },
+    {
+      "scenarioId": "uc1_no_activity",
+      "terminalReplay": {
+        "analysisId": "AN21-fbe60e3ed027",
+        "clinicalUseAllowed": false,
+        "currentIndex": 0,
+        "currentWindow": {
+          "activityGate": {
+            "activationThresholdUv": 6.6000000000000005,
+            "reasonCode": "NO_ACTIVITY_DETECTED",
+            "releaseThresholdUv": 5.280000000000001,
+            "status": "inactive",
+            "windowRmsUv": 4.5
+          },
+          "analysisId": "AN21-fbe60e3ed027",
+          "baseEngineeringConfidence": "not_available",
+          "deviceState": "connected",
+          "engineeringConfidence": "not_available",
+          "fatigueOverlay": {
+            "confidenceAdjustmentApplied": false,
+            "counterevidenceVi": [],
+            "evidenceSummaryVi": [],
+            "limitationsVi": [
+              "Day 21 không cung cấp fatigue status đủ điều kiện."
+            ],
+            "reasonCodes": [],
+            "source": "not_available",
+            "status": "not_available"
+          },
+          "latency": {
+            "acquisitionMs": 10.0,
+            "inferenceMs": 14.0,
+            "preprocessMs": 18.0,
+            "totalMs": 270.0,
+            "transportRenderMs": 28.0,
+            "windowMs": 200.0
+          },
+          "modelValidationStatus": "not_validated",
+          "modelVersion": "gesture-replay-v0.1",
+          "predictedGesture": null,
+          "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+          "qualityContext": {
+            "qualityResultId": "QC-SESSION-D20-001",
+            "reasonCodes": [],
+            "source": "day20_quality_gate",
+            "status": "pass"
+          },
+          "requiresHumanReview": true,
+          "resultHashSha256": "7aaae8208eb10b8ac8f3a217baaad0b362fc5aabee379ea9f966fbabcb90c82d",
+          "safety": {
+            "clinicalUseAllowed": false,
+            "physicalActuationAllowed": false,
+            "rawSamplesIncluded": false,
+            "scoreIsProbability": false
+          },
+          "schemaVersion": "gesture-inference.v0.1",
+          "segmentRef": {
+            "calibrationId": "CAL-SESSION-D20-001",
+            "channelIds": [
+              "CH01",
+              "CH02",
+              "CH03",
+              "CH04"
+            ],
+            "endSampleExclusive": 9750,
+            "endTimeExclusiveS": 9.75,
+            "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+            "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+            "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+            "startSample": 8750,
+            "startTimeS": 8.75
+          },
+          "sessionId": "SESSION-D20-001",
+          "sourceType": "synthetic_replay",
+          "targetGesture": "wrist_extension",
+          "windowId": "AN21-fbe60e3ed027-W0001"
+        },
+        "history": [],
+        "humanReviewRequired": true,
+        "latencySummary": {
+          "disconnectTimeoutMs": 2000,
+          "droppedWindows": 0,
+          "observedWindowCount": 1,
+          "p50Ms": 270.0,
+          "p95Ms": 270.0
+        },
+        "modelValidationStatus": "not_validated",
+        "reasonCodes": [],
+        "replayId": "REPLAY-9bde0e87157cfad9",
+        "revision": 1,
+        "scenarioId": "uc1_no_activity",
+        "schemaVersion": "uc1-replay-session.v0.1",
+        "sessionId": "SESSION-D20-001",
+        "sourceType": "synthetic_replay",
+        "state": "completed",
+        "totalWindows": 1
+      }
+    },
+    {
+      "scenarioId": "uc1_fatigue_confidence_drop",
+      "terminalReplay": {
+        "analysisId": "AN21-7297b6faef26",
+        "clinicalUseAllowed": false,
+        "currentIndex": 1,
+        "currentWindow": {
+          "activityGate": {
+            "activationThresholdUv": 6.6000000000000005,
+            "reasonCode": "ACTIVITY_HELD_BY_HYSTERESIS",
+            "releaseThresholdUv": 5.280000000000001,
+            "status": "active",
+            "windowRmsUv": 13.0
+          },
+          "analysisId": "AN21-7297b6faef26",
+          "baseEngineeringConfidence": "engineering_high",
+          "deviceState": "connected",
+          "engineeringConfidence": "engineering_moderate",
+          "fatigueOverlay": {
+            "confidenceAdjustmentApplied": true,
+            "counterevidenceVi": [],
+            "evidenceSummaryVi": [
+              "Kịch bản replay mô phỏng thay đổi chỉ báo fatigue kỹ thuật."
+            ],
+            "limitationsVi": [
+              "Đây là deterministic fixture, không phải bằng chứng lâm sàng."
+            ],
+            "reasonCodes": [
+              "MDF_DECLINE_OBSERVED",
+              "CONFIDENCE_DOWNGRADED"
+            ],
+            "source": "scenario_fixture",
+            "status": "warning"
+          },
+          "latency": {
+            "acquisitionMs": 10.0,
+            "inferenceMs": 14.0,
+            "preprocessMs": 18.0,
+            "totalMs": 270.0,
+            "transportRenderMs": 28.0,
+            "windowMs": 200.0
+          },
+          "modelValidationStatus": "not_validated",
+          "modelVersion": "gesture-replay-v0.1",
+          "predictedGesture": "wrist_extension",
+          "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+          "qualityContext": {
+            "qualityResultId": "QC-SESSION-D20-001",
+            "reasonCodes": [],
+            "source": "day20_quality_gate",
+            "status": "pass"
+          },
+          "requiresHumanReview": true,
+          "resultHashSha256": "9bfaf72c2e491466d27d957e8310570c18907e833e53b477ce6d8957c437cb6c",
+          "safety": {
+            "clinicalUseAllowed": false,
+            "physicalActuationAllowed": false,
+            "rawSamplesIncluded": false,
+            "scoreIsProbability": false
+          },
+          "schemaVersion": "gesture-inference.v0.1",
+          "segmentRef": {
+            "calibrationId": "CAL-SESSION-D20-001",
+            "channelIds": [
+              "CH01",
+              "CH02",
+              "CH03",
+              "CH04"
+            ],
+            "endSampleExclusive": 14750,
+            "endTimeExclusiveS": 14.75,
+            "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+            "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-02",
+            "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+            "startSample": 13750,
+            "startTimeS": 13.75
+          },
+          "sessionId": "SESSION-D20-001",
+          "sourceType": "synthetic_replay",
+          "targetGesture": "wrist_extension",
+          "windowId": "AN21-7297b6faef26-W0002"
+        },
+        "history": [
+          {
+            "activityGate": {
+              "activationThresholdUv": 6.6000000000000005,
+              "reasonCode": "ACTIVITY_ABOVE_THRESHOLD",
+              "releaseThresholdUv": 5.280000000000001,
+              "status": "active",
+              "windowRmsUv": 12.0
+            },
+            "analysisId": "AN21-7297b6faef26",
+            "baseEngineeringConfidence": "engineering_high",
+            "deviceState": "connected",
+            "engineeringConfidence": "engineering_high",
+            "fatigueOverlay": {
+              "confidenceAdjustmentApplied": false,
+              "counterevidenceVi": [],
+              "evidenceSummaryVi": [],
+              "limitationsVi": [
+                "Day 21 không cung cấp fatigue status đủ điều kiện."
+              ],
+              "reasonCodes": [],
+              "source": "not_available",
+              "status": "not_available"
+            },
+            "latency": {
+              "acquisitionMs": 10.0,
+              "inferenceMs": 14.0,
+              "preprocessMs": 18.0,
+              "totalMs": 270.0,
+              "transportRenderMs": 28.0,
+              "windowMs": 200.0
+            },
+            "modelValidationStatus": "not_validated",
+            "modelVersion": "gesture-replay-v0.1",
+            "predictedGesture": "wrist_extension",
+            "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+            "qualityContext": {
+              "qualityResultId": "QC-SESSION-D20-001",
+              "reasonCodes": [],
+              "source": "day20_quality_gate",
+              "status": "pass"
+            },
+            "requiresHumanReview": true,
+            "resultHashSha256": "6ad635ce04c0ffcdc3f12f9b37c7254b5323cdf75784f30c1853618cc8928f85",
+            "safety": {
+              "clinicalUseAllowed": false,
+              "physicalActuationAllowed": false,
+              "rawSamplesIncluded": false,
+              "scoreIsProbability": false
+            },
+            "schemaVersion": "gesture-inference.v0.1",
+            "segmentRef": {
+              "calibrationId": "CAL-SESSION-D20-001",
+              "channelIds": [
+                "CH01",
+                "CH02",
+                "CH03",
+                "CH04"
+              ],
+              "endSampleExclusive": 9750,
+              "endTimeExclusiveS": 9.75,
+              "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+              "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+              "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+              "startSample": 8750,
+              "startTimeS": 8.75
+            },
+            "sessionId": "SESSION-D20-001",
+            "sourceType": "synthetic_replay",
+            "targetGesture": "wrist_extension",
+            "windowId": "AN21-7297b6faef26-W0001"
+          }
+        ],
+        "humanReviewRequired": true,
+        "latencySummary": {
+          "disconnectTimeoutMs": 2000,
+          "droppedWindows": 0,
+          "observedWindowCount": 2,
+          "p50Ms": 270.0,
+          "p95Ms": 270.0
+        },
+        "modelValidationStatus": "not_validated",
+        "reasonCodes": [
+          "MDF_DECLINE_OBSERVED",
+          "CONFIDENCE_DOWNGRADED"
+        ],
+        "replayId": "REPLAY-82704e8ec2c768c0",
+        "revision": 2,
+        "scenarioId": "uc1_fatigue_confidence_drop",
+        "schemaVersion": "uc1-replay-session.v0.1",
+        "sessionId": "SESSION-D20-001",
+        "sourceType": "synthetic_replay",
+        "state": "completed",
+        "totalWindows": 2
+      }
+    },
+    {
+      "scenarioId": "uc1_electrode_shift_warning",
+      "terminalReplay": {
+        "analysisId": "AN21-8f89eff42207",
+        "clinicalUseAllowed": false,
+        "currentIndex": 0,
+        "currentWindow": {
+          "activityGate": {
+            "activationThresholdUv": 6.6000000000000005,
+            "reasonCode": "ACTIVITY_ABOVE_THRESHOLD",
+            "releaseThresholdUv": 5.280000000000001,
+            "status": "active",
+            "windowRmsUv": 11.0
+          },
+          "analysisId": "AN21-8f89eff42207",
+          "baseEngineeringConfidence": "engineering_moderate",
+          "deviceState": "connected",
+          "engineeringConfidence": "engineering_moderate",
+          "fatigueOverlay": {
+            "confidenceAdjustmentApplied": false,
+            "counterevidenceVi": [],
+            "evidenceSummaryVi": [],
+            "limitationsVi": [
+              "Day 21 không cung cấp fatigue status đủ điều kiện."
+            ],
+            "reasonCodes": [],
+            "source": "not_available",
+            "status": "not_available"
+          },
+          "latency": {
+            "acquisitionMs": 10.0,
+            "inferenceMs": 14.0,
+            "preprocessMs": 18.0,
+            "totalMs": 270.0,
+            "transportRenderMs": 28.0,
+            "windowMs": 200.0
+          },
+          "modelValidationStatus": "not_validated",
+          "modelVersion": "gesture-replay-v0.1",
+          "predictedGesture": "wrist_extension",
+          "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+          "qualityContext": {
+            "qualityResultId": "QC-SESSION-D20-001",
+            "reasonCodes": [
+              "ELECTRODE_SHIFT_SUSPECTED"
+            ],
+            "source": "scenario_fixture",
+            "status": "warning"
+          },
+          "requiresHumanReview": true,
+          "resultHashSha256": "0636809090e0c45765402e3aa58d9c4865c643513bb373e86e9b8346e53e76cb",
+          "safety": {
+            "clinicalUseAllowed": false,
+            "physicalActuationAllowed": false,
+            "rawSamplesIncluded": false,
+            "scoreIsProbability": false
+          },
+          "schemaVersion": "gesture-inference.v0.1",
+          "segmentRef": {
+            "calibrationId": "CAL-SESSION-D20-001",
+            "channelIds": [
+              "CH01",
+              "CH02",
+              "CH03",
+              "CH04"
+            ],
+            "endSampleExclusive": 9750,
+            "endTimeExclusiveS": 9.75,
+            "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+            "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+            "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+            "startSample": 8750,
+            "startTimeS": 8.75
+          },
+          "sessionId": "SESSION-D20-001",
+          "sourceType": "synthetic_replay",
+          "targetGesture": "wrist_extension",
+          "windowId": "AN21-8f89eff42207-W0001"
+        },
+        "history": [],
+        "humanReviewRequired": true,
+        "latencySummary": {
+          "disconnectTimeoutMs": 2000,
+          "droppedWindows": 0,
+          "observedWindowCount": 1,
+          "p50Ms": 270.0,
+          "p95Ms": 270.0
+        },
+        "modelValidationStatus": "not_validated",
+        "reasonCodes": [
+          "ELECTRODE_SHIFT_SUSPECTED"
+        ],
+        "replayId": "REPLAY-565df7a53bd7175b",
+        "revision": 1,
+        "scenarioId": "uc1_electrode_shift_warning",
+        "schemaVersion": "uc1-replay-session.v0.1",
+        "sessionId": "SESSION-D20-001",
+        "sourceType": "synthetic_replay",
+        "state": "completed",
+        "totalWindows": 1
+      }
+    },
+    {
+      "scenarioId": "uc1_qc_fail_abstention",
+      "terminalReplay": {
+        "analysisId": "AN21-aeb443e4a561",
+        "clinicalUseAllowed": false,
+        "currentIndex": 0,
+        "currentWindow": {
+          "activityGate": {
+            "activationThresholdUv": 6.6000000000000005,
+            "reasonCode": "ACTIVITY_ABOVE_THRESHOLD",
+            "releaseThresholdUv": 5.280000000000001,
+            "status": "active",
+            "windowRmsUv": 12.0
+          },
+          "analysisId": "AN21-aeb443e4a561",
+          "baseEngineeringConfidence": "not_available",
+          "deviceState": "connected",
+          "engineeringConfidence": "not_available",
+          "fatigueOverlay": {
+            "confidenceAdjustmentApplied": false,
+            "counterevidenceVi": [],
+            "evidenceSummaryVi": [],
+            "limitationsVi": [
+              "Day 21 không cung cấp fatigue status đủ điều kiện."
+            ],
+            "reasonCodes": [],
+            "source": "not_available",
+            "status": "not_available"
+          },
+          "latency": {
+            "acquisitionMs": 10.0,
+            "inferenceMs": 14.0,
+            "preprocessMs": 18.0,
+            "totalMs": 270.0,
+            "transportRenderMs": 28.0,
+            "windowMs": 200.0
+          },
+          "modelValidationStatus": "not_validated",
+          "modelVersion": "gesture-replay-v0.1",
+          "predictedGesture": null,
+          "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+          "qualityContext": {
+            "qualityResultId": "QC-SESSION-D20-001",
+            "reasonCodes": [
+              "SIGNAL_QUALITY_NOT_SUFFICIENT"
+            ],
+            "source": "scenario_fixture",
+            "status": "fail"
+          },
+          "requiresHumanReview": true,
+          "resultHashSha256": "41b22daf6edd798faa61252a194efa3eb20d29c2e5815ebba21ec467cfe66851",
+          "safety": {
+            "clinicalUseAllowed": false,
+            "physicalActuationAllowed": false,
+            "rawSamplesIncluded": false,
+            "scoreIsProbability": false
+          },
+          "schemaVersion": "gesture-inference.v0.1",
+          "segmentRef": {
+            "calibrationId": "CAL-SESSION-D20-001",
+            "channelIds": [
+              "CH01",
+              "CH02",
+              "CH03",
+              "CH04"
+            ],
+            "endSampleExclusive": 9750,
+            "endTimeExclusiveS": 9.75,
+            "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+            "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+            "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+            "startSample": 8750,
+            "startTimeS": 8.75
+          },
+          "sessionId": "SESSION-D20-001",
+          "sourceType": "synthetic_replay",
+          "targetGesture": "wrist_extension",
+          "windowId": "AN21-aeb443e4a561-W0001"
+        },
+        "history": [],
+        "humanReviewRequired": true,
+        "latencySummary": {
+          "disconnectTimeoutMs": 2000,
+          "droppedWindows": 0,
+          "observedWindowCount": 1,
+          "p50Ms": 270.0,
+          "p95Ms": 270.0
+        },
+        "modelValidationStatus": "not_validated",
+        "reasonCodes": [
+          "SIGNAL_QUALITY_NOT_SUFFICIENT"
+        ],
+        "replayId": "REPLAY-4ee4c145012bbf60",
+        "revision": 1,
+        "scenarioId": "uc1_qc_fail_abstention",
+        "schemaVersion": "uc1-replay-session.v0.1",
+        "sessionId": "SESSION-D20-001",
+        "sourceType": "synthetic_replay",
+        "state": "abstained",
+        "totalWindows": 1
+      }
+    },
+    {
+      "scenarioId": "uc1_device_disconnect",
+      "terminalReplay": {
+        "analysisId": "AN21-f70d1c24b08f",
+        "clinicalUseAllowed": false,
+        "currentIndex": 1,
+        "currentWindow": {
+          "activityGate": {
+            "activationThresholdUv": 6.6000000000000005,
+            "reasonCode": "NO_ACTIVITY_DETECTED",
+            "releaseThresholdUv": 5.280000000000001,
+            "status": "inactive",
+            "windowRmsUv": 0.0
+          },
+          "analysisId": "AN21-f70d1c24b08f",
+          "baseEngineeringConfidence": "not_available",
+          "deviceState": "disconnected",
+          "engineeringConfidence": "not_available",
+          "fatigueOverlay": {
+            "confidenceAdjustmentApplied": false,
+            "counterevidenceVi": [],
+            "evidenceSummaryVi": [],
+            "limitationsVi": [
+              "Day 21 không cung cấp fatigue status đủ điều kiện."
+            ],
+            "reasonCodes": [],
+            "source": "not_available",
+            "status": "not_available"
+          },
+          "latency": {
+            "acquisitionMs": 10.0,
+            "inferenceMs": 14.0,
+            "preprocessMs": 18.0,
+            "totalMs": 270.0,
+            "transportRenderMs": 28.0,
+            "windowMs": 200.0
+          },
+          "modelValidationStatus": "not_validated",
+          "modelVersion": "gesture-replay-v0.1",
+          "predictedGesture": null,
+          "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+          "qualityContext": {
+            "qualityResultId": "QC-SESSION-D20-001",
+            "reasonCodes": [],
+            "source": "day20_quality_gate",
+            "status": "pass"
+          },
+          "requiresHumanReview": true,
+          "resultHashSha256": "967c5f12e470630d0b39692527e49c2cd800b9f6b8e4ae2e82c75daa3447e1cc",
+          "safety": {
+            "clinicalUseAllowed": false,
+            "physicalActuationAllowed": false,
+            "rawSamplesIncluded": false,
+            "scoreIsProbability": false
+          },
+          "schemaVersion": "gesture-inference.v0.1",
+          "segmentRef": {
+            "calibrationId": "CAL-SESSION-D20-001",
+            "channelIds": [
+              "CH01",
+              "CH02",
+              "CH03",
+              "CH04"
+            ],
+            "endSampleExclusive": 14750,
+            "endTimeExclusiveS": 14.75,
+            "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+            "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-02",
+            "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+            "startSample": 13750,
+            "startTimeS": 13.75
+          },
+          "sessionId": "SESSION-D20-001",
+          "sourceType": "synthetic_replay",
+          "targetGesture": "wrist_extension",
+          "windowId": "AN21-f70d1c24b08f-W0002"
+        },
+        "history": [
+          {
+            "activityGate": {
+              "activationThresholdUv": 6.6000000000000005,
+              "reasonCode": "ACTIVITY_ABOVE_THRESHOLD",
+              "releaseThresholdUv": 5.280000000000001,
+              "status": "active",
+              "windowRmsUv": 12.0
+            },
+            "analysisId": "AN21-f70d1c24b08f",
+            "baseEngineeringConfidence": "engineering_high",
+            "deviceState": "connected",
+            "engineeringConfidence": "engineering_high",
+            "fatigueOverlay": {
+              "confidenceAdjustmentApplied": false,
+              "counterevidenceVi": [],
+              "evidenceSummaryVi": [],
+              "limitationsVi": [
+                "Day 21 không cung cấp fatigue status đủ điều kiện."
+              ],
+              "reasonCodes": [],
+              "source": "not_available",
+              "status": "not_available"
+            },
+            "latency": {
+              "acquisitionMs": 10.0,
+              "inferenceMs": 14.0,
+              "preprocessMs": 18.0,
+              "totalMs": 270.0,
+              "transportRenderMs": 28.0,
+              "windowMs": 200.0
+            },
+            "modelValidationStatus": "not_validated",
+            "modelVersion": "gesture-replay-v0.1",
+            "predictedGesture": "wrist_extension",
+            "protocolVersion": "upper-limb-gesture-biofeedback@0.1.0",
+            "qualityContext": {
+              "qualityResultId": "QC-SESSION-D20-001",
+              "reasonCodes": [],
+              "source": "day20_quality_gate",
+              "status": "pass"
+            },
+            "requiresHumanReview": true,
+            "resultHashSha256": "3d9e859d72cf6149b449e275f8179a4d68676ec13df965dd54a1d87b68af5312",
+            "safety": {
+              "clinicalUseAllowed": false,
+              "physicalActuationAllowed": false,
+              "rawSamplesIncluded": false,
+              "scoreIsProbability": false
+            },
+            "schemaVersion": "gesture-inference.v0.1",
+            "segmentRef": {
+              "calibrationId": "CAL-SESSION-D20-001",
+              "channelIds": [
+                "CH01",
+                "CH02",
+                "CH03",
+                "CH04"
+              ],
+              "endSampleExclusive": 9750,
+              "endTimeExclusiveS": 9.75,
+              "rawSignalRef": "RAW-REF-IMPORT-D20-001",
+              "repetitionId": "REP-SESSION-D20-001-WRIST_EXTENSION-01",
+              "sourceHashSha256": "ae7ef4c4a04b3b412c5ac6362c2899a3a9a3d90b635d512653f16c40148b3962",
+              "startSample": 8750,
+              "startTimeS": 8.75
+            },
+            "sessionId": "SESSION-D20-001",
+            "sourceType": "synthetic_replay",
+            "targetGesture": "wrist_extension",
+            "windowId": "AN21-f70d1c24b08f-W0001"
+          }
+        ],
+        "humanReviewRequired": true,
+        "latencySummary": {
+          "disconnectTimeoutMs": 2000,
+          "droppedWindows": 1,
+          "observedWindowCount": 2,
+          "p50Ms": 270.0,
+          "p95Ms": 270.0
+        },
+        "modelValidationStatus": "not_validated",
+        "reasonCodes": [
+          "DEVICE_DISCONNECTED"
+        ],
+        "replayId": "REPLAY-5ce14bb9b382ad24",
+        "revision": 2,
+        "scenarioId": "uc1_device_disconnect",
+        "schemaVersion": "uc1-replay-session.v0.1",
+        "sessionId": "SESSION-D20-001",
+        "sourceType": "synthetic_replay",
+        "state": "disconnected",
+        "totalWindows": 2
+      }
+    }
+  ],
+  "schemaVersion": "day22-uc1-replay-evidence.v0.1"
+}

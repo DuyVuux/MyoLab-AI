@@ -1,0 +1,394 @@
+.workspace {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  font-size: 1rem;
+  line-height: var(--line-height-normal);
+}
+
+.workspace button,
+.workspace select,
+.workspace table {
+  font-size: 1rem;
+}
+
+.workspace [role="alert"],
+.workspace [role="alert"] * {
+  font-size: 1rem;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-active);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+}
+
+.headerBadges {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  max-width: 34rem;
+}
+
+.headerBadges [role="status"] {
+  font-size: 1rem;
+}
+
+.topNotice {
+  margin-top: 0;
+}
+
+.loadingState {
+  min-height: 8rem;
+  display: grid;
+  place-items: center;
+  padding: var(--space-6);
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.resultCard {
+  border-width: 2px;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.sectionHeading p {
+  margin-top: var(--space-1);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.liveResult {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.liveResult strong {
+  font-size: var(--font-size-lg);
+}
+
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.definitionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.definitionGrid > div,
+.provenanceGrid > div {
+  min-width: 0;
+}
+
+.definitionGrid dt,
+.provenanceGrid dt {
+  margin-bottom: var(--space-1);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.definitionGrid dd,
+.provenanceGrid dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.definitionGrid [role="status"] {
+  font-size: 1rem;
+  white-space: normal;
+}
+
+.fullWidthDefinition {
+  grid-column: 1 / -1;
+}
+
+.reasonCode {
+  display: inline-block;
+  margin-top: var(--space-4);
+  padding: var(--space-2);
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow-wrap: anywhere;
+}
+
+.reasonList,
+.evidenceBlock ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding-left: var(--space-5);
+  list-style: disc;
+}
+
+.supportingText {
+  color: var(--color-text-secondary);
+}
+
+.evidenceBlock {
+  margin-top: var(--space-4);
+}
+
+.evidenceBlock p {
+  margin-top: var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.telemetryCard,
+.provenanceCard,
+.feedbackCard {
+  width: 100%;
+}
+
+.telemetryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.telemetryGrid > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--color-background);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.telemetryGrid span {
+  color: var(--color-text-secondary);
+}
+
+.telemetryGrid strong {
+  font-size: var(--font-size-xl);
+}
+
+.provenanceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.provenanceGrid code {
+  word-break: break-all;
+}
+
+.replayControls {
+  position: sticky;
+  bottom: var(--space-3);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-surface) 96%, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+}
+
+.replayControls p {
+  margin-top: var(--space-1);
+  color: var(--color-text-secondary);
+}
+
+.primaryAction {
+  background-color: var(--color-sidebar-bg);
+  color: var(--color-text-inverse);
+}
+
+.primaryAction:hover:not(:disabled) {
+  background-color: var(--color-primary-active);
+}
+
+.feedbackActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+
+.correctionRow {
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr) minmax(14rem, 2fr) auto;
+  align-items: end;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.correctionRow label {
+  grid-column: 1 / -1;
+  font-weight: var(--font-weight-semibold);
+}
+
+.correctionRow select {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-md);
+}
+
+.feedbackSuccess,
+.inlineError {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.feedbackSuccess {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+  border: 1px solid var(--color-success);
+}
+
+.inlineError {
+  margin-top: var(--space-3);
+  color: var(--color-error);
+  background: var(--color-error-soft);
+  border: 1px solid var(--color-error);
+}
+
+.historySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tableScroller {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.historyTable {
+  min-width: 64rem;
+}
+
+.historyTable caption {
+  padding: var(--space-4);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.historyTable th,
+.historyTable td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.historyTable th {
+  color: var(--color-text-secondary);
+  background: var(--color-background);
+  font-weight: var(--font-weight-bold);
+}
+
+.historyTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.historyTable code {
+  overflow-wrap: anywhere;
+}
+
+.emptyCell {
+  padding: var(--space-8) !important;
+  color: var(--color-text-secondary);
+  text-align: center !important;
+}
+
+@media (max-width: 900px) {
+  .twoColumnGrid,
+  .provenanceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .telemetryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .correctionRow {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .workspace {
+    padding: var(--space-4);
+  }
+
+  .headerBadges {
+    justify-content: flex-start;
+  }
+
+  .definitionGrid,
+  .telemetryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .replayControls {
+    position: static;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .replayControls button,
+  .feedbackActions button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace * {
+    scroll-behavior: auto;
+  }
+}

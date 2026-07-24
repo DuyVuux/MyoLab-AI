@@ -328,3 +328,12 @@ def test_evidence_has_no_raw_signal_direct_identifier_probability_or_actuation(
 ) -> None:
     evidence = generated_pair[0]
     _assert_privacy_and_safety(evidence)
+
+def test_absent_fatigue_evidence_is_never_reported_as_stable(
+    generated_pair: tuple[dict[str, Any], dict[str, Any], bytes, bytes],
+) -> None:
+    for entry in generated_pair[0]["scenarioEvidence"]:
+        for window in _windows(entry["terminalReplay"]):
+            overlay = window["fatigueOverlay"]
+            if overlay["source"] == "not_available":
+                assert overlay["status"] == "not_available"

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 import sys
 from pathlib import Path
 
@@ -108,6 +109,59 @@ def test_positive_flow_creates_queued_analysis(client: TestClient) -> None:
     assert handoff.json()["status"] == "queued"
     assert handoff.json()["scoreIsProbability"] is False
     assert handoff.json()["rawSamplesIncluded"] is False
+
+
+@pytest.mark.parametrize(
+    "scenario_id",
+    [
+        "golden_intake_pass",
+        "calibration_warning",
+        "calibration_fail",
+    ],
+)
+def test_calibration_counts_match_three_records_per_active_gesture(
+    client: TestClient,
+    scenario_id: str,
+) -> None:
+    session_id = prepare_ready_session(client)
+    response = client.post(
+        f"/v1/sessions/{session_id}/calibrations",
+        json={"scenario_id": scenario_id},
+    )
+    assert response.status_code == 201, response.text
+    calibration = response.json()
+    repetitions = calibration["repetitions"]
+
+    assert calibration["plannedRepetitions"] == len(repetitions) == 12
+    assert calibration["acceptedRepetitions"] == sum(
+        repetition["quality"] == "accepted" for repetition in repetitions
+    )
+    assert calibration["rejectedRepetitions"] == sum(
+        repetition["quality"] == "rejected" for repetition in repetitions
+    )
+    assert (
+        calibration["acceptedRepetitions"]
+        + calibration["rejectedRepetitions"]
+        == calibration["plannedRepetitions"]
+    )
+    assert calibration["usableRepetitionRatio"] == pytest.approx(
+        calibration["acceptedRepetitions"]
+        / calibration["plannedRepetitions"]
+    )
+    assert Counter(
+        repetition["gestureId"] for repetition in repetitions
+    ) == {
+        "hand_open": 3,
+        "hand_close": 3,
+        "wrist_flexion": 3,
+        "wrist_extension": 3,
+    }
+    assert all(
+        repetition["gestureId"] != "rest" for repetition in repetitions
+    )
+    if scenario_id == "golden_intake_pass":
+        assert calibration["acceptedRepetitions"] == 12
+        assert calibration["rejectedRepetitions"] == 0
 
 
 def test_warning_requires_acknowledgement(client: TestClient) -> None:

@@ -40,6 +40,13 @@ eggs/
 .eggs/
 lib/
 lib64/
+# Application source, not a Python virtual-environment library directory.
+!apps/web-portal/src/lib/
+apps/web-portal/src/lib/*
+!apps/web-portal/src/lib/auth.tsx
+!apps/web-portal/src/lib/permissions.ts
+!apps/web-portal/src/lib/latencyMetrics.ts
+!apps/web-portal/src/lib/uc1-replay-client.ts
 parts/
 sdist/
 var/
