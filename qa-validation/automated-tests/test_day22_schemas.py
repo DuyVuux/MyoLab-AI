@@ -326,6 +326,24 @@ def test_protocol_rejects_empty_operational_sections(section_name: str) -> None:
     _assert_invalid("protocol", protocol)
 
 
+def test_protocol_v0_1_locks_executable_numeric_parameters() -> None:
+    mutations = (
+        ("sampling", "minimum_sampling_rate_hz", 999),
+        ("windowing", "window_duration_ms", 999),
+        ("windowing", "hop_duration_ms", 251),
+        ("activity_gate", "engineering_k", 3.1),
+        ("activity_gate", "release_ratio", 0.81),
+        ("activity_gate", "uncertain_band_ratio", 0.11),
+        ("calibration", "repetitions_per_gesture", 4),
+        ("calibration", "rest_baseline_duration_s", 9),
+    )
+    for section, field, changed_value in mutations:
+        protocol = _load_protocol()
+        gesture = _gesture_protocol_section(protocol)
+        gesture[section][field] = changed_value
+        _assert_invalid("protocol", protocol)
+
+
 def test_valid_inference_feedback_and_replay_examples_match_schemas() -> None:
     _assert_valid("inference", valid_inference_window())
     _assert_valid("feedback", valid_feedback_context())
