@@ -378,6 +378,29 @@ def test_new_replay_does_not_expose_future_windows(
     _assert_no_future_windows(advanced_payload)
 
 
+def test_reason_codes_do_not_leak_hidden_future_windows(
+    harness: Day22Harness,
+) -> None:
+    session_id, job = _prepare_analysis(harness)
+    created = _create_replay(
+        harness.client,
+        session_id=session_id,
+        analysis_id=job["analysisId"],
+        scenario_id="uc1_device_disconnect",
+        idempotency_key="d22-no-future-reasons",
+    )
+    assert created.status_code == 201, created.text
+    idle = created.json()
+    assert idle["state"] == "idle"
+    assert idle["reasonCodes"] == []
+
+    advanced = _advance_replay(harness.client, idle)
+    assert advanced.status_code == 200, advanced.text
+    running = advanced.json()
+    assert running["state"] == "running"
+    assert "DEVICE_DISCONNECTED" not in running["reasonCodes"]
+
+
 @pytest.mark.parametrize(
     ("scenario_id", "expected_state"),
     [
@@ -730,11 +753,16 @@ def test_feedback_copies_exact_server_window_context(
     harness: Day22Harness,
 ) -> None:
     replay, window = _current_active_window(harness)
+    corrected_gesture = (
+        "hand_open"
+        if window["predictedGesture"] != "hand_open"
+        else "wrist_extension"
+    )
     response = harness.client.post(
         f"/v1/uc1/replays/{replay['replayId']}/feedback",
         json={
             "action": "correct",
-            "correctedGesture": "hand_open",
+            "correctedGesture": corrected_gesture,
             "reviewerCertainty": "high",
             "expectedWindowId": window["windowId"],
             "expectedRevision": replay["revision"],
@@ -788,7 +816,7 @@ def test_feedback_copies_exact_server_window_context(
         {"action": "correct", "reviewerCertainty": "high"},
         {
             "action": "correct",
-            "correctedGesture": "wrist_extension",
+            "correctedGesture": "__same_as_prediction__",
             "reviewerCertainty": "high",
         },
         {
@@ -803,10 +831,13 @@ def test_feedback_rejects_invalid_correction_conditions(
     payload: dict[str, Any],
 ) -> None:
     replay, window = _current_active_window(harness)
+    request_payload = dict(payload)
+    if request_payload.get("correctedGesture") == "__same_as_prediction__":
+        request_payload["correctedGesture"] = window["predictedGesture"]
     response = harness.client.post(
         f"/v1/uc1/replays/{replay['replayId']}/feedback",
         json={
-            **payload,
+            **request_payload,
             "expectedWindowId": window["windowId"],
             "expectedRevision": replay["revision"],
         },
