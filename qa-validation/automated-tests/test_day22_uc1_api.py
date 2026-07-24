@@ -999,6 +999,64 @@ def test_feedback_is_idempotent_and_rejects_key_reuse(
     )
 
 
+def test_feedback_retry_returns_original_receipt_after_replay_advance(
+    harness: Day22Harness,
+) -> None:
+    replay, window = _current_active_window(harness)
+    url = f"/v1/uc1/replays/{replay['replayId']}/feedback"
+    headers = {
+        "Idempotency-Key": "d22-feedback-retry-after-advance",
+        "X-Actor-Role": "ktv",
+    }
+    payload = {
+        "action": "uncertain",
+        "reviewerCertainty": "moderate",
+        "expectedWindowId": window["windowId"],
+        "expectedRevision": replay["revision"],
+    }
+
+    first = harness.client.post(url, json=payload, headers=headers)
+    assert first.status_code == 201, first.text
+    advanced = _advance_replay(harness.client, replay)
+    assert advanced.status_code == 200, advanced.text
+    assert advanced.json()["revision"] > replay["revision"]
+
+    repeated = harness.client.post(url, json=payload, headers=headers)
+    assert repeated.status_code in {200, 201}, repeated.text
+    assert repeated.json() == first.json()
+
+
+def test_feedback_idempotency_key_is_bound_to_actor_role(
+    harness: Day22Harness,
+) -> None:
+    replay, window = _current_active_window(harness)
+    url = f"/v1/uc1/replays/{replay['replayId']}/feedback"
+    payload = {
+        "action": "uncertain",
+        "reviewerCertainty": "moderate",
+        "expectedWindowId": window["windowId"],
+        "expectedRevision": replay["revision"],
+    }
+    key = "d22-feedback-actor-bound"
+
+    first = harness.client.post(
+        url,
+        json=payload,
+        headers={"Idempotency-Key": key, "X-Actor-Role": "ktv"},
+    )
+    assert first.status_code == 201, first.text
+    conflict = harness.client.post(
+        url,
+        json=payload,
+        headers={"Idempotency-Key": key, "X-Actor-Role": "physician"},
+    )
+    _assert_problem(
+        conflict,
+        status_code=409,
+        error_code="IDEMPOTENCY_KEY_REUSED",
+    )
+
+
 def test_feedback_rejects_stale_window_and_revision_context(
     harness: Day22Harness,
 ) -> None:
