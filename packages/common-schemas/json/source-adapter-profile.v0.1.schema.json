@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source-adapter-profile.v0.1.schema.json",
+  "title": "Source Adapter Mapping Profile",
+  "description": "Schema cho YAML/JSON mapping profile giữa source export fields và canonical contract fields.",
+  "type": "object",
+  "required": ["profile_id", "verification_status", "time", "signal", "channels", "provenance"],
+  "properties": {
+    "profile_id": {
+      "type": "string",
+      "description": "Unique identifier cho mapping profile, e.g. noraxon-motionlab.v1"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": ["NOT_VERIFIED", "OFFICIAL_PUBLIC_VERIFIED", "SITE_VERIFIED", "INFERRED", "CONFLICTING"]
+    },
+    "created_date": { "type": ["string", "null"], "format": "date" },
+    "verified_by": { "type": ["string", "null"] },
+    "time": {
+      "type": "object",
+      "required": ["source_field", "unit"],
+      "properties": {
+        "source_field": { "type": "string" },
+        "unit": { "type": "string" },
+        "zero_based": { "type": ["boolean", "string"] }
+      }
+    },
+    "signal": {
+      "type": "object",
+      "required": ["source_unit", "canonical_unit"],
+      "properties": {
+        "source_unit": { "type": "string" },
+        "canonical_unit": { "type": "string", "const": "uV" },
+        "conversion_factor": { "type": ["number", "null"] }
+      }
+    },
+    "sampling": {
+      "type": "object",
+      "properties": {
+        "rate_hz": { "type": ["number", "string"] },
+        "hardware_reported": { "type": ["string", "null"] },
+        "software_configured": { "type": ["string", "null"] }
+      }
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_field", "canonical_id"],
+        "properties": {
+          "source_field": { "type": "string" },
+          "canonical_id": { "type": "string", "pattern": "^CH\\d{2}$" },
+          "muscle": { "type": "string" },
+          "body_side": { "type": "string", "enum": ["left", "right", "bilateral", "<operator_confirmed>"] },
+          "electrode_type": { "type": "string" }
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "properties": {
+        "source_field": { "type": "string" },
+        "marker_format": { "type": "string" }
+      }
+    },
+    "mfcv_geometry": {
+      "type": "object",
+      "properties": {
+        "linear_array_confirmed": { "type": "boolean", "default": false },
+        "inter_electrode_distance_mm": { "type": ["number", "null"] },
+        "electrode_order_known": { "type": "boolean", "default": false },
+        "fibre_alignment_confirmed": { "type": "boolean", "default": false },
+        "propagation_evidence_available": { "type": "boolean", "default": false }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["adapter_id", "site_verified", "clinical_use_allowed"],
+      "properties": {
+        "adapter_id": { "type": "string" },
+        "adapter_version": { "type": "string" },
+        "site_verified": { "type": "boolean", "default": false },
+        "clinical_use_allowed": { "type": "boolean", "default": false },
+        "derived_from_real_motionlab_export": { "type": "boolean", "default": false },
+        "production_support_claimed": { "type": "boolean", "default": false }
+      }
+    }
+  }
+}

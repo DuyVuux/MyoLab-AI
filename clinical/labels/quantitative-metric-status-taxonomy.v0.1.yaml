@@ -1,0 +1,17 @@
+schema_version: quantitative-metric-status-taxonomy.v0.1
+statuses:
+  - id: computed
+    meaning_vi: Đủ input và contract để tính.
+  - id: experimental
+    meaning_vi: Có công thức kỹ thuật nhưng chưa validation lâm sàng.
+  - id: not_available
+    meaning_vi: Thiếu dữ liệu bắt buộc; không thay bằng số 0.
+  - id: blocked
+    meaning_vi: QC/protocol/compatibility không cho phép tính.
+metric_families:
+  - gesture_repertoire
+  - repeatability
+  - symmetry
+  - co_contraction
+  - reference_similarity
+  - fatigue_endurance

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "noraxon-site-audit.v0.1",
+  "status": "NOT_VERIFIED",
+  "checks": {
+    "hardwareVersionVerified": false,
+    "softwareVersionVerified": false,
+    "actualDeidentifiedExportInspected": false,
+    "exactFieldSchemaVerified": false,
+    "nativeJsonExportVerified": false,
+    "mfcvEligibilityVerified": false,
+    "privacyScreeningPassed": false
+  },
+  "blockers": [
+    "HARDWARE_VERSION_NOT_VERIFIED",
+    "SOFTWARE_VERSION_NOT_VERIFIED",
+    "SITE_EXPORT_NOT_INSPECTED",
+    "EXACT_SCHEMA_NOT_VERIFIED",
+    "JSON_NOT_VERIFIED",
+    "MFCV_NOT_VERIFIED",
+    "PHI_SCREENING_NOT_PASSED"
+  ],
+  "safeConclusions": [
+    "Project JSON remains a downstream representation unless native JSON is proven.",
+    "MFCV must remain disabled unless every eligibility item is evidenced.",
+    "Public vendor capabilities do not prove installed-site capability."
+  ],
+  "reportHashSha256": "bf14f8c97b681d6e8767770d2fbdb83faa6d8f30eb7c26e3d152852a9b408a40"
+}

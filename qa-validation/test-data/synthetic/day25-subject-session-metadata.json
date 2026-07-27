@@ -1,0 +1,962 @@
+[
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S01",
+    "session_id": "SYN-S01-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S02",
+    "session_id": "SYN-S02-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S03",
+    "session_id": "SYN-S03-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S04",
+    "session_id": "SYN-S04-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S05",
+    "session_id": "SYN-S05-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S06",
+    "session_id": "SYN-S06-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S07",
+    "session_id": "SYN-S07-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S08",
+    "session_id": "SYN-S08-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S09",
+    "session_id": "SYN-S09-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S10",
+    "session_id": "SYN-S10-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S11",
+    "session_id": "SYN-S11-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D1",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D1",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D1",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D1",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D1",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D2",
+    "trial_id": "T01",
+    "repetition_id": "R01",
+    "label": "rest"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D2",
+    "trial_id": "T02",
+    "repetition_id": "R02",
+    "label": "hand_open"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D2",
+    "trial_id": "T03",
+    "repetition_id": "R03",
+    "label": "hand_close"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D2",
+    "trial_id": "T04",
+    "repetition_id": "R04",
+    "label": "wrist_flexion"
+  },
+  {
+    "dataset_id": "SYNTHETIC_DAY25",
+    "subject_id": "SYN-S12",
+    "session_id": "SYN-S12-D2",
+    "trial_id": "T05",
+    "repetition_id": "R05",
+    "label": "wrist_extension"
+  }
+]

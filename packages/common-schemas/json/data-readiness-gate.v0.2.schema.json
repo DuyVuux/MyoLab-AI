@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab-ai.local/schemas/data-readiness-gate.v0.2.schema.json",
+  "title": "Data Readiness Gate v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "status", "implementationAllowed", "trainingAllowed", "checks", "blockers", "allowedActions", "prohibitedActions", "reportHashSha256"],
+  "properties": {
+    "schemaVersion": {"const": "data-readiness-gate.v0.2"},
+    "status": {"enum": ["READY", "CONDITIONAL_READY", "BLOCKED"]},
+    "implementationAllowed": {"type": "boolean"},
+    "trainingAllowed": {"type": "boolean"},
+    "checks": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "allowedActions": {"type": "array", "items": {"type": "string"}},
+    "prohibitedActions": {"type": "array", "items": {"type": "string"}},
+    "reportHashSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

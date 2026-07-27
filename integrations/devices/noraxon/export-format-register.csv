@@ -1,0 +1,9 @@
+format_id,format,publicly_documented,site_verified,raw_or_processed,layout,metadata_preserved,version_module_dependency,official_evidence_status,day25_action,freeze_allowed
+F01,Noraxon MR data/native database package,yes,no,native package/unknown internal,multi-file_or_package_unknown,unknown until inspected,version-specific,OFFICIAL_VERIFIED_IN_SOURCE_REPORT,request package tree and README,no
+F02,ASCII/CSV,reported in deep audit,no,raw reported; exact behavior unknown,wide_or_long_NOT_VERIFIED,NOT_VERIFIED,NOT_VERIFIED,REPORTED_OFFICIAL_IN_DEEP_AUDIT,obtain rest/five-gesture exports,no
+F03,MATLAB,reported in deep audit,no,NOT_VERIFIED,struct_NOT_VERIFIED,NOT_VERIFIED,NOT_VERIFIED,REPORTED_OFFICIAL_IN_DEEP_AUDIT,obtain sample MAT and variable list,no
+F04,C3D,yes,no,analog/synchronized container candidate,C3D,events/analogs NOT_VERIFIED at site,plugin/module possible,OFFICIAL_VERIFIED_IN_SOURCE_REPORT,obtain synchronized C3D,no
+F05,Excel,reported in deep audit,no,NOT_VERIFIED,NOT_VERIFIED,NOT_VERIFIED,NOT_VERIFIED,REPORTED_OFFICIAL_IN_DEEP_AUDIT,not priority; capture export menu,no
+F06,PDF report,yes,no,report only,document,user-entered/report-dependent,report module,OFFICIAL_VERIFIED_IN_SOURCE_REPORT,request one de-identified report,no
+F07,HTTP streaming payload,reported,no,stream data unknown,payload_NOT_VERIFIED,NOT_VERIFIED,version/module dependent,REPORTED_OFFICIAL_IN_DEEP_AUDIT,defer; request official payload docs,no
+F08,JSON native export,no trustworthy proof,no,not applicable,not applicable,not applicable,unknown,NOT_VERIFIED,do not claim; project JSON remains downstream representation,no

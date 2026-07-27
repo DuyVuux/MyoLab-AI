@@ -1,0 +1,21 @@
+schema_version: fatigue-context-taxonomy.v0.1
+training_allowed: false
+context_states:
+  - id: no_label
+    description_vi: Không có nhãn fatigue; chỉ có signal/context.
+  - id: self_perceived
+    description_vi: Nhãn từ RPE hoặc self-perceived fatigue.
+  - id: protocol_proxy
+    description_vi: Proxy từ elapsed time hoặc protocol phase.
+  - id: force_or_performance_criterion
+    description_vi: Nhãn dựa trên force drop hoặc tiêu chí thực hiện đã định nghĩa.
+  - id: reviewer_adjudicated
+    description_vi: Nhãn được reviewer đủ thẩm quyền duyệt.
+output_roles:
+  - fatigue_context
+  - confidence_adjustment
+  - abstention_decision
+mfcv_policy:
+  optional: true
+  enabled_by_default: false
+  eligibility_required: true

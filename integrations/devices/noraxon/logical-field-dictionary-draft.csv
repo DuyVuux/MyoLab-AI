@@ -1,0 +1,32 @@
+field_name,domain,logical_type,requiredness,expected_source,site_status,notes
+record_id,provenance,string,required,project logical field,NOT_VERIFIED,unique de-identified recording ID
+subject_pseudonym,privacy/grouping,string,required,project logical field,NOT_VERIFIED,no direct identifiers
+session_id,grouping,string,required,project logical field,NOT_VERIFIED,needed for cross-session split
+day_id,grouping,string,conditional,project logical field,NOT_VERIFIED,needed for multi-day datasets
+trial_id,protocol,string,required,project logical field,NOT_VERIFIED,trial/block identity
+task_type,ontology,enum TaskA|TaskB|TaskC,required,project logical field,NOT_VERIFIED,do not mix task ontology
+device_family,device,string,required,project logical field,NOT_VERIFIED,e.g. Noraxon Ultium
+hardware_model,device,string,required_site,site evidence,NOT_VERIFIED,exact SKU/revision
+firmware,device,string,required_site,site evidence,NOT_VERIFIED,receiver/sensor firmware
+software_version,device,string,required_site,site evidence,NOT_VERIFIED,exact MR3/myoRESEARCH version
+licensed_modules,device,array[string],required_site,site evidence,NOT_VERIFIED,export/report/plugin dependencies
+sensor_id,channel,string,conditional,site export/header,NOT_VERIFIED,serial or channel source ID
+channel_index,channel,integer,required,site export or mapper,NOT_VERIFIED,canonical order
+electrode_map,channel,object/ref,required,operator/site map,NOT_VERIFIED,physical placement/version
+muscle_target,clinical,string,required,operator/protocol,NOT_VERIFIED,muscle name
+body_side,clinical,enum,required,operator/protocol,NOT_VERIFIED,left/right/affected/reference
+unit,signal,string,required,export/header,NOT_VERIFIED,never infer from amplitude
+sampling_rate_hz,signal,number,required,acquisition/header,NOT_VERIFIED,actual session rate
+sample_index,time,integer,conditional,export,NOT_VERIFIED,canonical if no timestamps
+time_s,time,number,conditional,export/derived,NOT_VERIFIED,monotonic time axis
+event_marker,event,string,conditional,sync/export,NOT_VERIFIED,cue/TTL/task event
+trial_phase,event,string,conditional,protocol mapper,NOT_VERIFIED,rest/active/recovery/etc.
+synchronization_manifest,multimodal,object/ref,conditional,site export,NOT_VERIFIED,VICON/force/pressure/video/IMU alignment
+export_format,provenance,string,required,export process,NOT_VERIFIED,native package/CSV/C3D/etc.
+native_or_converted,provenance,enum,required,project ingestion,NOT_VERIFIED,distinguish vendor artifact from downstream conversion
+export_timestamp,provenance,datetime,required,export process,NOT_VERIFIED,when export occurred
+operator_sop_version,provenance,string,required_site,site SOP,NOT_VERIFIED,capture procedure version
+quality_flags,quality,array[string],conditional,QC/project,NOT_VERIFIED,not vendor-native unless proven
+signal_dropouts,quality,object,conditional,QC/export,NOT_VERIFIED,missing segments
+calibration_context,calibration,object/ref,conditional,session workflow,NOT_VERIFIED,rest/gesture calibration provenance
+phi_screening,privacy,enum pass|fail,required,project privacy gate,NOT_VERIFIED,must pass before downstream use

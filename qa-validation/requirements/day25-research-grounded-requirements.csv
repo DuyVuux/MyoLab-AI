@@ -1,0 +1,11 @@
+requirement_id,requirement,verification,expected
+D25-R001,Bốn source reports được đăng ký,source register validation,PASS
+D25-R002,Access và license là hai field riêng,inventory schema/test,PASS
+D25-R003,Conflict không bị silently resolved,conflict register validation,PASS
+D25-R004,Subject/session split không leakage,group split tests,PASS
+D25-R005,Actual site export chưa có được biểu diễn đúng,site evidence audit,NOT_VERIFIED_EXPECTED
+D25-R006,Native JSON không được claim,readiness/site audit,false
+D25-R007,MFCV không bật khi thiếu geometry,readiness/site audit,false
+D25-R008,Training bị chặn,readiness gate,trainingAllowed=false
+D25-R009,Implementation evidence-backed được phép,readiness gate,implementationAllowed=true
+D25-R010,Không raw samples/direct identifiers trong manifests,schema/tests,PASS

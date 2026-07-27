@@ -1,0 +1,35 @@
+config_id: dataset_research_v0.2
+status: research_grounded
+training_allowed: false
+implementation_allowed: true
+source_reports:
+  - S1_SCOPING_REVIEW
+  - S2_DEEP_AUDIT
+  - S3_PRE_DAY25_SYNTHESIS
+  - S4_DATASET_DEEP_RESEARCH
+fixed_tasks:
+  TaskA:
+    name: gesture_recognition
+    labels: [rest, hand_open, hand_close, wrist_flexion, wrist_extension]
+    group_unit: subject
+  TaskB:
+    name: fatigue_context_compensation
+    output_roles: [fatigue_context, confidence_adjustment, abstention_decision]
+    mfcv_optional: true
+  TaskC:
+    name: quantitative_assessment
+    metric_families: [gesture_repertoire, repeatability, symmetry, co_contraction, reference_similarity, fatigue_endurance]
+priority_free_core:
+  - GRABMYO_V1_1
+  - HYSER
+  - CERQUEIRA_FATIGUE
+  - MENDELEY_4CH_GESTURE
+  - LUCCHETTI_POST_STROKE_KIN_EMG
+site_gate:
+  actual_export_required_before_site_schema_freeze: true
+  native_json_verified: false
+  mfcv_eligibility_verified: false
+split_policy:
+  random_window_split: false
+  allowed_group_units: [subject, session]
+  test_set_sealed: true

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab-ai.local/schemas/site-export-evidence-bundle.v0.1.schema.json",
+  "title": "Site Export Evidence Bundle v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "siteId", "evidenceCapturedAt", "hardware", "software", "exports", "mfcv", "privacy", "evidenceFiles", "notes"],
+  "properties": {
+    "schemaVersion": {"const": "site-export-evidence-bundle.v0.1"},
+    "siteId": {"type": "string", "minLength": 1},
+    "evidenceCapturedAt": {"type": ["string", "null"], "format": "date-time"},
+    "hardware": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receiverModel", "receiverSerialHash", "sensorModels", "firmwareVersions", "verified"],
+      "properties": {
+        "receiverModel": {"type": ["string", "null"]},
+        "receiverSerialHash": {"type": ["string", "null"]},
+        "sensorModels": {"type": "array", "items": {"type": "string"}},
+        "firmwareVersions": {"type": "array", "items": {"type": "string"}},
+        "verified": {"type": "boolean"}
+      }
+    },
+    "software": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product", "version", "licensedModules", "verified"],
+      "properties": {
+        "product": {"type": "string"},
+        "version": {"type": ["string", "null"]},
+        "licensedModules": {"type": "array", "items": {"type": "string"}},
+        "verified": {"type": "boolean"}
+      }
+    },
+    "exports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actualDeidentifiedExportInspected", "restExport", "fiveGestureExport", "processedMetricsExport", "synchronizedMultimodalExport", "exactFieldSchemaVerified", "nativeJsonExportVerified"],
+      "properties": {
+        "actualDeidentifiedExportInspected": {"type": "boolean"},
+        "restExport": {"type": ["string", "null"]},
+        "fiveGestureExport": {"type": ["string", "null"]},
+        "processedMetricsExport": {"type": ["string", "null"]},
+        "synchronizedMultimodalExport": {"type": ["string", "null"]},
+        "exactFieldSchemaVerified": {"type": "boolean"},
+        "nativeJsonExportVerified": {"type": "boolean"}
+      }
+    },
+    "mfcv": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["linearArrayConfirmed", "interElectrodeDistanceKnown", "electrodeOrderKnown", "fibreAlignmentConfirmed", "compatibleRawSignalAvailable", "propagationEvidenceAvailable", "eligible"],
+      "properties": {
+        "linearArrayConfirmed": {"type": "boolean"},
+        "interElectrodeDistanceKnown": {"type": "boolean"},
+        "electrodeOrderKnown": {"type": "boolean"},
+        "fibreAlignmentConfirmed": {"type": "boolean"},
+        "compatibleRawSignalAvailable": {"type": "boolean"},
+        "propagationEvidenceAvailable": {"type": "boolean"},
+        "eligible": {"type": "boolean"}
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deidentified", "phiScreening"],
+      "properties": {
+        "deidentified": {"type": "boolean"},
+        "phiScreening": {"enum": ["not_run", "pass", "fail"]}
+      }
+    },
+    "evidenceFiles": {"type": "array", "items": {"type": "string"}},
+    "adapterProvenance": {
+      "type": "object",
+      "required": ["adapterClass", "siteVerified", "clinicalUseAllowed"],
+      "properties": {
+        "adapterClass": {"type": "string", "enum": ["generic", "vendor_candidate", "site_verified"]},
+        "adapterId": {"type": ["string", "null"]},
+        "adapterVersion": {"type": ["string", "null"]},
+        "mappingProfileId": {"type": ["string", "null"]},
+        "mappingProfileHash": {"type": ["string", "null"]},
+        "siteVerified": {"type": "boolean"},
+        "clinicalUseAllowed": {"type": "boolean"},
+        "derivedFromRealMotionlabExport": {"type": "boolean"},
+        "productionSupportClaimed": {"type": "boolean"}
+      }
+    },
+    "dataLayer": {
+      "type": "object",
+      "required": ["currentLayer", "nativeVendorFormatVerified"],
+      "properties": {
+        "currentLayer": {"type": "string", "enum": ["L1_NATIVE", "L2_VENDOR_EXPORT", "L3_PROJECT_NORMALIZED", "L4_FEATURE_STORE", "L5_MODEL_READY"]},
+        "nativeVendorFormatVerified": {"type": "boolean"},
+        "conversionPerformedByProject": {"type": "boolean"}
+      }
+    },
+    "trainingPermissions": {
+      "type": "object",
+      "required": ["publicEngineeringBaseline", "motionlabLocalModel", "clinicalModel"],
+      "properties": {
+        "publicEngineeringBaseline": {"type": "boolean"},
+        "motionlabLocalModel": {"type": "boolean"},
+        "clinicalModel": {"type": "boolean"}
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}

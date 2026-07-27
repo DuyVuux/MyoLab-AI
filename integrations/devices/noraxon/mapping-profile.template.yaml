@@ -1,0 +1,64 @@
+# Noraxon Motion Lab Site Mapping Profile Template
+# Không điền giá trị thật nếu chưa có actual site export.
+# Xem: site-export-onboarding-runbook.md Step 5
+
+profile_id: noraxon-motionlab.v1
+verification_status: NOT_VERIFIED  # -> SITE_VERIFIED sau Step 8
+created_date: null
+verified_by: null
+
+# --- Time axis ---
+time:
+  source_field: "<to_be_verified>"
+  unit: "<to_be_verified>"  # seconds | milliseconds | sample_index
+  zero_based: "<to_be_verified>"
+
+# --- Signal metadata ---
+signal:
+  source_unit: "<to_be_verified>"  # mV | uV | raw_ADC
+  canonical_unit: uV
+  conversion_factor: null  # e.g. 1000.0 if source is mV
+
+# --- Sampling ---
+sampling:
+  rate_hz: "<to_be_verified>"
+  hardware_reported: "<to_be_verified>"
+  software_configured: "<to_be_verified>"
+
+# --- Channel mapping ---
+channels:
+  - source_field: "<to_be_verified>"
+    canonical_id: CH01
+    muscle: "<operator_confirmed>"
+    body_side: "<operator_confirmed>"
+    electrode_type: "<to_be_verified>"
+
+  - source_field: "<to_be_verified>"
+    canonical_id: CH02
+    muscle: "<operator_confirmed>"
+    body_side: "<operator_confirmed>"
+    electrode_type: "<to_be_verified>"
+
+  # Thêm channels theo actual export...
+
+# --- Event markers ---
+events:
+  source_field: "<to_be_verified>"
+  marker_format: "<to_be_verified>"  # ttl | string_label | timestamp_range
+
+# --- MFCV geometry (nếu applicable) ---
+mfcv_geometry:
+  linear_array_confirmed: false
+  inter_electrode_distance_mm: null
+  electrode_order_known: false
+  fibre_alignment_confirmed: false
+  propagation_evidence_available: false
+
+# --- Provenance ---
+provenance:
+  adapter_id: noraxon_motionlab_v1
+  adapter_version: 0.0.0  # -> 1.0.0 khi SITE_VERIFIED
+  site_verified: false
+  clinical_use_allowed: false
+  derived_from_real_motionlab_export: false
+  production_support_claimed: false

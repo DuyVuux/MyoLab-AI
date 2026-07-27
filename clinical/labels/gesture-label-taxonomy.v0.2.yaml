@@ -1,0 +1,38 @@
+schema_version: gesture-label-taxonomy.v0.2
+language: vi
+training_allowed: false
+canonical_labels:
+  - id: rest
+    display_vi: Nghỉ có chủ đích
+    description_vi: Cửa sổ được gán nhãn nghỉ bằng cue/protocol hoặc reviewer đủ thẩm quyền.
+  - id: hand_open
+    display_vi: Mở bàn tay
+  - id: hand_close
+    display_vi: Nắm/đóng bàn tay
+  - id: wrist_flexion
+    display_vi: Gập cổ tay
+  - id: wrist_extension
+    display_vi: Duỗi cổ tay
+non_training_states:
+  - id: unknown
+    display_vi: Không xác định
+    map_to_rest: false
+  - id: ambiguous
+    display_vi: Mơ hồ hoặc nhiều cử chỉ
+    map_to_rest: false
+  - id: artifact
+    display_vi: Nhiễu/artefact
+    map_to_rest: false
+  - id: not_attempted
+    display_vi: Không thực hiện
+    map_to_rest: false
+provenance_levels:
+  - cue_only
+  - cue_plus_sensor_event
+  - video_or_kinematic_verified
+  - ktv_reviewed
+  - clinically_adjudicated
+mapping_policy:
+  exact_match_required_for_training: true
+  inferred_mapping_requires_review: true
+  cross_dataset_mapping_version_required: true

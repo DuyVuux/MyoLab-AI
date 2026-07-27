@@ -1,0 +1,14 @@
+# Noraxon Support Questions — Data Export and Integration Evidence
+
+Please answer with an exact software version/module, official documentation reference, screenshot, or de-identified sample artifact.
+
+1. For the installed MR3/myoRESEARCH versions, which formats can export raw per-channel Ultium EMG samples?
+2. Are ASCII/CSV, MATLAB, C3D, Excel, native MR database packages, or other formats version/module dependent?
+3. Is JSON a native export format, an SDK/API payload, a streaming payload, or unsupported/not documented?
+4. For each export format, which fields are retained: sampling rate, units, sample index/time, channel names, sensor IDs, serials, firmware, events, markers, filters, gain, calibration, electrode placement and protocol metadata?
+5. How are missing samples, offline recovery and dropouts represented?
+6. Can synchronized Vicon, force, pressure, IMU and video references be exported with a shared time base?
+7. Is batch export or scripted access available in MR3? Which license/module is required?
+8. What third-party HTTP/API/SDK/UDP interfaces exist for MR3 versus MR4.2+?
+9. Can you provide a version-specific field dictionary or sample de-identified export?
+10. Does a standard setup of independent Ultium EMG sensors support muscle-fibre conduction velocity estimation? What electrode geometry, lead configuration and inter-electrode-distance documentation are required?

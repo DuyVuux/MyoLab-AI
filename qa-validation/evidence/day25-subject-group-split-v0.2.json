@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "subject-group-split.v0.2",
+  "datasetId": "SYNTHETIC_DAY25",
+  "groupUnit": "subject",
+  "seed": 2501,
+  "ratios": {
+    "train": 0.67,
+    "validation": 0.17,
+    "test": 0.16
+  },
+  "groups": {
+    "train": [
+      "SYN-S04",
+      "SYN-S05",
+      "SYN-S07",
+      "SYN-S08",
+      "SYN-S09",
+      "SYN-S10",
+      "SYN-S11",
+      "SYN-S12"
+    ],
+    "validation": [
+      "SYN-S01",
+      "SYN-S02"
+    ],
+    "test": [
+      "SYN-S03",
+      "SYN-S06"
+    ]
+  },
+  "counts": {
+    "totalGroups": 12,
+    "trainGroups": 8,
+    "validationGroups": 2,
+    "testGroups": 2,
+    "recordCount": 120
+  },
+  "sourceMetadataHashSha256": "665377e67d0ef1961a3327f69b208ab5ed7a5ac0860a666e506ad5b554c75403",
+  "testSetSealed": true,
+  "splitHashSha256": "3a6951b2c56988c57f309c8a56ea405c7334beff6df64bfb71ccfb58d5a417e6"
+}

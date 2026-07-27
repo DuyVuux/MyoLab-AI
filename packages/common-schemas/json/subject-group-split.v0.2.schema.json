@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab-ai.local/schemas/subject-group-split.v0.2.schema.json",
+  "title": "Subject Group Split v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "datasetId", "groupUnit", "seed", "ratios", "groups", "counts", "sourceMetadataHashSha256", "splitHashSha256", "testSetSealed"],
+  "properties": {
+    "schemaVersion": {"const": "subject-group-split.v0.2"},
+    "datasetId": {"type": "string"},
+    "groupUnit": {"enum": ["subject", "session"]},
+    "seed": {"type": "integer"},
+    "ratios": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["train", "validation", "test"],
+      "properties": {
+        "train": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+        "validation": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+        "test": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1}
+      }
+    },
+    "groups": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["train", "validation", "test"],
+      "properties": {
+        "train": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "validation": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "test": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "counts": {"type": "object"},
+    "sourceMetadataHashSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "splitHashSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "testSetSealed": {"const": true}
+  }
+}

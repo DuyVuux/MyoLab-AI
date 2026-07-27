@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "site-export-evidence-bundle.v0.1",
+  "siteId": "MOTION_LAB_SITE_TO_VERIFY",
+  "evidenceCapturedAt": null,
+  "hardware": {
+    "receiverModel": null,
+    "receiverSerialHash": null,
+    "sensorModels": [],
+    "firmwareVersions": [],
+    "verified": false
+  },
+  "software": {
+    "product": "myoRESEARCH/MR3",
+    "version": null,
+    "licensedModules": [],
+    "verified": false
+  },
+  "exports": {
+    "actualDeidentifiedExportInspected": false,
+    "restExport": null,
+    "fiveGestureExport": null,
+    "processedMetricsExport": null,
+    "synchronizedMultimodalExport": null,
+    "exactFieldSchemaVerified": false,
+    "nativeJsonExportVerified": false
+  },
+  "mfcv": {
+    "linearArrayConfirmed": false,
+    "interElectrodeDistanceKnown": false,
+    "electrodeOrderKnown": false,
+    "fibreAlignmentConfirmed": false,
+    "compatibleRawSignalAvailable": false,
+    "propagationEvidenceAvailable": false,
+    "eligible": false
+  },
+  "privacy": {
+    "deidentified": false,
+    "phiScreening": "not_run"
+  },
+  "evidenceFiles": [],
+  "adapterProvenance": {
+    "adapterClass": "vendor_candidate",
+    "adapterId": null,
+    "adapterVersion": null,
+    "mappingProfileId": null,
+    "mappingProfileHash": null,
+    "siteVerified": false,
+    "clinicalUseAllowed": false,
+    "derivedFromRealMotionlabExport": false,
+    "productionSupportClaimed": false
+  },
+  "dataLayer": {
+    "currentLayer": "L2_VENDOR_EXPORT",
+    "nativeVendorFormatVerified": false,
+    "conversionPerformedByProject": false
+  },
+  "trainingPermissions": {
+    "publicEngineeringBaseline": true,
+    "motionlabLocalModel": false,
+    "clinicalModel": false
+  },
+  "notes": "Template only. Không điền true nếu chưa có artifact kiểm chứng."
+}

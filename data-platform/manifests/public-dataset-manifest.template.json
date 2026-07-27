@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "research-dataset-manifest.v0.2",
+  "datasetId": "DATASET-ID-TO-VERIFY",
+  "canonicalName": "TO_VERIFY",
+  "version": "TO_VERIFY",
+  "taskAlignment": [
+    "TaskA"
+  ],
+  "source": {
+    "canonicalUrl": null,
+    "doi": null,
+    "sourceStatus": "NOT_VERIFIED",
+    "retrievedAt": null,
+    "sourceHashSha256": null
+  },
+  "access": {
+    "accessClass": "ACCESS_UNKNOWN",
+    "licenseClass": "LICENSE_NOT_FOUND",
+    "licenseText": null,
+    "commercialUseAllowed": false,
+    "redistributionAllowed": false,
+    "duaRequired": false
+  },
+  "population": {
+    "cohort": "TO_VERIFY",
+    "subjectCount": null,
+    "pathology": null
+  },
+  "hierarchy": {
+    "subjectIdAvailable": false,
+    "sessionIdAvailable": false,
+    "trialIdAvailable": false,
+    "repetitionIdAvailable": false,
+    "splitUnit": "subject"
+  },
+  "signal": {
+    "rawAvailable": false,
+    "samplingRateHz": null,
+    "unit": null,
+    "channelCount": null,
+    "electrodeGeometry": null
+  },
+  "labels": {
+    "taxonomyVersion": "gesture-label-taxonomy.v0.2",
+    "classes": [],
+    "labelTimingProvenance": "NOT_VERIFIED"
+  },
+  "privacy": {
+    "containsDirectIdentifiers": false,
+    "rawSamplesEmbeddedInManifest": false
+  },
+  "readiness": {
+    "status": "conditional",
+    "trainingAllowed": false,
+    "blockingItems": [
+      "Exact dataset/version/license/data dictionary chưa được khóa."
+    ]
+  }
+}
