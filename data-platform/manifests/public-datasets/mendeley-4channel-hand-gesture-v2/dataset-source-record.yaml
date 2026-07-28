@@ -84,10 +84,15 @@ scope_guardrails:
     - "fatigue compensation claims"
     - "cross-day robustness claims"
     - "clinical performance claims on patients"
-    - "automatic equivalence of grip to the project ontology hand_close"
+  verified_mappings:
+    - source_label: "grip"
+      canonical_label: "hand_close"
+      evidence: "User confirmation 2026-07-28: grip = bàn tay nắm thành nắm đấm = hand_close"
+      status: CONFIRMED
 
 open_items_for_later_steps:
   - "Verify exact archive/file names and sizes after download."
   - "Verify sampling rate, units and field names from paper/files."
   - "Verify whether each participant is represented by one file or multiple files."
   - "Audit exact label timing, rest intervals and transition regions."
+
