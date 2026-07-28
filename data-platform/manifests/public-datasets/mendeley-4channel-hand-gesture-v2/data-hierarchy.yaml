@@ -1,0 +1,32 @@
+# data-hierarchy.yaml — Mendeley 4-Channel Hand Gesture v2
+# Mô tả cấu trúc thư mục và tổ chức dữ liệu sau khi giải nén archive
+
+dataset_id: mendeley-4channel-hand-gesture-v2
+status: PENDING_EXTRACTION
+
+expected_hierarchy:
+  # Cần xác minh sau khi tải và giải nén archive thật
+  # Dưới đây là dự kiến dựa trên mô tả trong paper
+  root:
+    description: "Top-level directory after extraction"
+    children: []
+    # Ví dụ kỳ vọng:
+    # - name: "Subject_01/"
+    #   type: directory
+    #   contains: "CSV files per gesture repetition"
+
+subject_identification:
+  method: PENDING  # folder-based or filename-based
+  regex: null       # populated after inventory
+
+session_identification:
+  method: PENDING
+  multi_session: null   # true/false — xác minh từ dữ liệu
+
+repetition_identification:
+  method: PENDING
+  per_subject_per_label: null  # số lần lặp mỗi cử chỉ
+
+notes:
+  - "Hierarchy chỉ được điền sau khi archive đã được tải và giải nén an toàn."
+  - "Mọi giả định phải được xác minh trực tiếp từ file thật, không suy luận."

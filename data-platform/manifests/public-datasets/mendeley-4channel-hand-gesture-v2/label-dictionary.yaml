@@ -1,0 +1,34 @@
+# label-dictionary.yaml — Mendeley 4-Channel Hand Gesture v2
+# Chuyển đổi từ ai-core/configs/mendeley_4ch_label_map.template.json
+
+schema_version: label-mapping.v1
+mapping_id: MENDELEY_4CH_GESTURE.taskA.v0.1
+verification_status: NOT_VERIFIED
+
+target_ontology_version: taskA-gesture.v0.2
+allowed_targets:
+  - rest
+  - hand_open
+  - hand_close
+  - wrist_flexion
+  - wrist_extension
+
+protected_non_targets:
+  - unknown
+  - ambiguous
+  - artifact
+  - not_attempted
+  - transition
+
+mappings:
+  - source_label: "<REQUIRED>"
+    canonical_label: null
+    mapping_status: TO_VERIFY
+    evidence: "<REQUIRED>"
+
+default_behavior: ERROR_UNMAPPED
+map_unknown_to_rest: false
+
+notes:
+  - "Mappings phải được điền sau khi xác minh nhãn thật từ archive."
+  - "Mọi nhãn không ánh xạ được sẽ gây lỗi (ERROR_UNMAPPED), không tự gán vào rest."

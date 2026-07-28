@@ -1,0 +1,8 @@
+field_name,type,unit,description,required,source,verified
+# Populated after inspecting actual CSV file headers (Day 27 Step 5)
+# Status: PENDING_INSPECTION
+# Expected fields based on paper description:
+# CH1,float,uV,sEMG channel 1,true,csv_column,false
+# CH2,float,uV,sEMG channel 2,true,csv_column,false
+# CH3,float,uV,sEMG channel 3,true,csv_column,false
+# CH4,float,uV,sEMG channel 4,true,csv_column,false

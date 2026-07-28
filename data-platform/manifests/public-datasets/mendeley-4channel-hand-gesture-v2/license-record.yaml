@@ -1,0 +1,79 @@
+schema_version: "license-record.v1"
+record_status: "VERIFIED_WITH_STANDARD_CC_CAVEATS"
+last_checked:
+  date: "2026-07-28"
+  timezone: "Asia/Bangkok"
+
+dataset:
+  dataset_id: "mendeley-4channel-hand-gesture-v2"
+  title: "Dataset for multi-channel surface electromyography (sEMG) signals of hand gestures"
+  version: 2
+  canonical_url: "https://data.mendeley.com/datasets/ckwc76xr2z/2"
+  dataset_doi: "10.17632/ckwc76xr2z.2"
+
+license:
+  name: "Creative Commons Attribution 4.0 International"
+  identifier: "CC-BY-4.0"
+  canonical_url: "https://creativecommons.org/licenses/by/4.0/"
+  declared_by_repository: true
+  declared_on: "Mendeley Data version 2 page"
+
+permissions:
+  research_use:
+    status: "ALLOWED"
+    reason: "CC BY 4.0 permits sharing and adaptation for any purpose."
+  commercial_use:
+    status: "ALLOWED"
+    reason: "CC BY 4.0 explicitly permits use for commercial purposes."
+  copy_and_redistribute:
+    status: "ALLOWED_WITH_CONDITIONS"
+  modify_and_create_derivatives:
+    status: "ALLOWED_WITH_CONDITIONS"
+  model_training:
+    status: "ALLOWED_WITH_CONDITIONS"
+    reason: "Training is a permitted use of the licensed material, subject to attribution and other applicable rights."
+  distribute_trained_or_derived_model:
+    status: "GENERALLY_ALLOWED_WITH_CONDITIONS"
+    confidence: "MEDIUM_HIGH"
+    note: "CC BY 4.0 permits adaptations and commercial use. Whether a specific trained model legally constitutes adapted material can depend on jurisdiction and implementation; preserve attribution and perform legal review before external commercial release."
+
+obligations:
+  attribution_required: true
+  provide_license_link: true
+  indicate_changes: true
+  retain_notices_when_supplied: true
+  must_not_imply_author_endorsement: true
+  no_additional_legal_or_technical_restrictions: true
+
+recommended_attribution:
+  text: "Ozdemir, M. A., Kisa, D. H., Guren, O., & Akan, A. Dataset for multi-channel surface electromyography (sEMG) signals of hand gestures, Version 2, Mendeley Data, DOI: 10.17632/ckwc76xr2z.2, licensed under CC BY 4.0."
+  where_to_place:
+    - "dataset card"
+    - "README or data provenance document"
+    - "model card for any model trained with this dataset"
+    - "publication or report using the dataset"
+
+non_license_rights_and_risks:
+  privacy_publicity_moral_rights:
+    status: "NOT_GRANTED_BY_CC_LICENSE"
+    action: "Do not assume the license waives privacy, publicity, ethical or moral rights."
+  warranties:
+    status: "NO_WARRANTY"
+  participant_reidentification:
+    status: "PROHIBIT_BY_PROJECT_POLICY"
+    action: "Do not attempt to re-identify participants or combine demographic fields for re-identification."
+  dataset_accuracy:
+    status: "NOT_GUARANTEED"
+    action: "Audit files, labels and documentation before EDA or training."
+
+legal_decision:
+  classification: "COMMERCIAL_USE_PERMITTED_WITH_ATTRIBUTION"
+  requires_license_review_before_internal_research: false
+  requires_legal_review_before_external_product_release: true
+  blocking_issue_for_step_2_inventory: false
+
+evidence:
+  repository_license_page: "https://data.mendeley.com/datasets/ckwc76xr2z/2"
+  creative_commons_deed: "https://creativecommons.org/licenses/by/4.0/"
+
+disclaimer: "This record is an engineering license audit, not formal legal advice."
