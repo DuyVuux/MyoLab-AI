@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TrainingAuthorization",
+  "type": "object",
+  "required": [
+    "trainingAllowed",
+    "authorization_record_present",
+    "resolved_dependency_lock_present",
+    "test_seal_present_and_unopened"
+  ],
+  "properties": {
+    "trainingAllowed": {
+      "type": "boolean"
+    },
+    "authorization_record_present": {
+      "type": "boolean"
+    },
+    "resolved_dependency_lock_present": {
+      "type": "boolean"
+    },
+    "test_seal_present_and_unopened": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

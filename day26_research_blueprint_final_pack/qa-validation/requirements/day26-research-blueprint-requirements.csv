@@ -1,0 +1,11 @@
+requirement_id,area,requirement,verification
+D26-R001,scope,trainingAllowed must remain false,automated
+D26-R002,results,all result_status values must be NOT_RUN,automated
+D26-R003,validation,random-window split prohibited,automated
+D26-R004,metrics,primary metric subject_macro_repetition_macro_f1,automated
+D26-R005,task,Task B not hard fatigue diagnosis,automated
+D26-R006,mfcv,site eligibility NOT_VERIFIED,automated
+D26-R007,registry,no clinical-validated state,automated
+D26-R008,governance,single operator cannot self-approve pilot,automated
+D26-R009,test,test seal unopened,automated
+D26-R010,reproducibility,real uv.lock required before Day29,manual+automated

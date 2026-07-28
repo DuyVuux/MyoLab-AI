@@ -1,0 +1,19 @@
+schema_version: '1.0'
+status: PROVISIONAL_BLUEPRINT
+rationale: Locks sparse classical candidate families; no feature selection runs.
+evidence_ids:
+- D26-INT-FEATURES
+open_questions:
+- Finalize task-specific feature sets
+training_allowed: false
+config_id: FEATURE-SPARSE-BASELINE-0.1.0
+candidate_features:
+- RMS
+- WL
+- AR4
+comparators:
+- MAV
+- SD
+- MDF
+- MNF
+selector_fit_scope: grouped-inner-training-only

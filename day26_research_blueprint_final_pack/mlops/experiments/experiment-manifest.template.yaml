@@ -1,0 +1,20 @@
+schema_version: "1.0"
+status: planned
+trainingAllowed: false
+experiment_id: "EXP-YYYYMMDD-TASKA-PURPOSE-001"
+task_id: TaskA
+hypothesis: ""
+code: {commit: "", dirty: null}
+data: {dataset_id: "", dataset_manifest_sha256: "", license_gate: NOT_VERIFIED}
+split: {split_manifest_sha256: "", test_seal_sha256: "", test_opened: false}
+configs:
+  preprocessing: {path: "", sha256: ""}
+  features: {path: "", sha256: ""}
+  model: {path: "", sha256: ""}
+  calibration: {path: "", sha256: ""}
+  threshold: {path: "", sha256: ""}
+  abstention: {path: "", sha256: ""}
+seeds: {root_seed: 260826, named: {}}
+environment: {lock_path: "environment/uv.lock", lock_sha256: ""}
+metrics: {status: NOT_RUN, contract_id: subject_macro_repetition_macro_f1}
+review: {required: true, status: not_reviewed}

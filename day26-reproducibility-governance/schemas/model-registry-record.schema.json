@@ -1,0 +1,875 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semg-clinical-intelligence.local/schemas/model-registry-record.schema.json",
+  "title": "sEMG Clinical Intelligence Model Registry Record",
+  "x-governance": {
+    "schema_version": "1.0",
+    "status": "PROVISIONAL_LOCKED_FOR_DAY26_BLUEPRINT",
+    "rationale": "Defines state, promotion, compatibility, model-card, license, security and rollback records.",
+    "evidence_ids": [
+      "D26-INT-PROTOCOL",
+      "EXT-MLFLOW-REGISTRY",
+      "EXT-MODEL-CARDS"
+    ],
+    "open_questions": [
+      "Final site approver identities",
+      "Artifact signing mechanism"
+    ],
+    "training_allowed": false
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "rationale",
+    "evidence_ids",
+    "open_questions",
+    "training_allowed",
+    "record_type",
+    "registry_id",
+    "version",
+    "task_id",
+    "artifact_type",
+    "registry_state",
+    "created_at",
+    "owner",
+    "parent_experiment",
+    "lineage",
+    "components",
+    "model_card",
+    "evaluation",
+    "compatibility",
+    "license_gate",
+    "security",
+    "promotion_history",
+    "human_review_required",
+    "rollback",
+    "deprecation",
+    "audit_log_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "training_allowed": {
+      "type": "boolean"
+    },
+    "record_type": {
+      "const": "model_registry_record"
+    },
+    "registry_id": {
+      "type": "string",
+      "pattern": "^(MOD|CTX|MET|CAL|THR|ABS|PIPE)-[A-Z0-9-]+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "task_id": {
+      "enum": [
+        "TaskA",
+        "TaskB",
+        "TaskC",
+        "CrossCutting"
+      ]
+    },
+    "artifact_type": {
+      "enum": [
+        "classifier",
+        "context_engine",
+        "metric_engine",
+        "rule_engine",
+        "calibrator",
+        "threshold_policy",
+        "abstention_policy",
+        "feature_extractor",
+        "composite_pipeline"
+      ]
+    },
+    "registry_state": {
+      "enum": [
+        "draft",
+        "research",
+        "candidate",
+        "validated-for-engineering",
+        "pilot-candidate",
+        "rejected",
+        "archived"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "experiment_id",
+        "manifest_sha256"
+      ],
+      "properties": {
+        "experiment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code_commit",
+        "dataset_manifest_sha256",
+        "split_manifest_sha256",
+        "environment_lock_sha256"
+      ],
+      "properties": {
+        "code_commit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dataset_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "split_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "environment_lock_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "supersedes_registry_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact_ref"
+      }
+    },
+    "model_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "ref"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_CREATED_BLUEPRINT",
+            "DRAFT",
+            "COMPLETE"
+          ]
+        },
+        "ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "regime_ids",
+        "metric_contract_id",
+        "report_refs"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_RUN",
+            "COMPLETE",
+            "FAILED",
+            "INVALIDATED"
+          ]
+        },
+        "regime_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "metric_contract_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "report_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "input_schema_versions",
+        "device_families",
+        "export_schema_versions",
+        "protocol_versions",
+        "channel_mapping_versions",
+        "class_ontology_versions",
+        "runtime_profiles",
+        "mfcv_requirement"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "compatible",
+            "compatible-with-warning",
+            "incompatible",
+            "not-verified"
+          ]
+        },
+        "input_schema_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "device_families": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "export_schema_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "protocol_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "channel_mapping_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "class_ontology_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "runtime_profiles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mfcv_requirement": {
+          "enum": [
+            "not-required",
+            "required-site-verified",
+            "optional-if-eligible"
+          ]
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "license_gate": {
+      "$ref": "#/$defs/license_gate"
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "serialization_class",
+        "arbitrary_deserialization_risk",
+        "review_status",
+        "hash_verified"
+      ],
+      "properties": {
+        "serialization_class": {
+          "enum": [
+            "canonical-typed",
+            "converted-runtime",
+            "trusted-python-snapshot",
+            "not-created"
+          ]
+        },
+        "arbitrary_deserialization_risk": {
+          "type": "boolean"
+        },
+        "review_status": {
+          "enum": [
+            "NOT_RUN",
+            "PASS",
+            "PASS_WITH_CONDITIONS",
+            "FAIL"
+          ]
+        },
+        "hash_verified": {
+          "type": "boolean"
+        },
+        "signature_verified": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "promotion_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "from_state",
+          "to_state",
+          "requested_at",
+          "decision"
+        ],
+        "properties": {
+          "from_state": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "to_state": {
+            "enum": [
+              "draft",
+              "research",
+              "candidate",
+              "validated-for-engineering",
+              "pilot-candidate",
+              "rejected",
+              "archived"
+            ]
+          },
+          "requested_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "decision": {
+            "$ref": "#/$defs/review_decision"
+          }
+        }
+      }
+    },
+    "human_review_required": {
+      "type": "boolean"
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_registry_version",
+        "target_release_id",
+        "status"
+      ],
+      "properties": {
+        "target_registry_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_release_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "NOT_REQUIRED_DRAFT",
+            "DEFINED",
+            "VERIFIED",
+            "NOT_VERIFIED"
+          ]
+        }
+      }
+    },
+    "deprecation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deprecated",
+        "reason",
+        "replacement"
+      ],
+      "properties": {
+        "deprecated": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "replacement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "effective_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "audit_log_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "registry_state": {
+            "enum": [
+              "candidate",
+              "validated-for-engineering",
+              "pilot-candidate"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "components": {
+            "minItems": 1
+          },
+          "model_card": {
+            "properties": {
+              "status": {
+                "const": "COMPLETE"
+              }
+            }
+          },
+          "evaluation": {
+            "properties": {
+              "status": {
+                "const": "COMPLETE"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "registry_state": {
+            "const": "pilot-candidate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "human_review_required": {
+            "const": true
+          },
+          "compatibility": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "compatible",
+                  "compatible-with-warning"
+                ]
+              }
+            }
+          },
+          "license_gate": {
+            "properties": {
+              "aggregate_decision": {
+                "const": "pass-pilot-approved"
+              }
+            }
+          },
+          "rollback": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "DEFINED",
+                  "VERIFIED"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "config_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "config_id",
+        "version",
+        "uri",
+        "sha256"
+      ],
+      "properties": {
+        "config_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "artifact_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "role",
+        "uri",
+        "media_type",
+        "sha256",
+        "size_bytes",
+        "trust_class"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "dataset_manifest",
+            "raw_registry",
+            "split_manifest",
+            "test_seal",
+            "preprocessing_config",
+            "feature_config",
+            "model_config",
+            "calibration_config",
+            "threshold_policy",
+            "abstention_policy",
+            "environment_lock",
+            "model_bundle",
+            "model_card",
+            "evaluation_report",
+            "prediction_ledger",
+            "failure_cases",
+            "release_manifest",
+            "rollback_record",
+            "code_archive",
+            "hash_ledger",
+            "sbom",
+            "other"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trust_class": {
+          "enum": [
+            "canonical-typed",
+            "converted-runtime",
+            "trusted-python-snapshot",
+            "reference-only"
+          ]
+        }
+      }
+    },
+    "review_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_role",
+        "reviewer_id",
+        "decision",
+        "decided_at",
+        "reasons"
+      ],
+      "properties": {
+        "reviewer_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "enum": [
+            "pending",
+            "approved",
+            "approved-with-conditions",
+            "rejected"
+          ]
+        },
+        "decided_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "license_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "license_id",
+        "access_class",
+        "training_use",
+        "research_use",
+        "commercial_use",
+        "redistribution",
+        "trained_artifact_distribution",
+        "attribution_required",
+        "dua_or_irb_required",
+        "review_status"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_uri_or_dua_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "access_class": {
+          "enum": [
+            "open",
+            "registration",
+            "dua",
+            "restricted",
+            "internal",
+            "not-verified"
+          ]
+        },
+        "training_use": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "research_use": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "commercial_use": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "redistribution": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "trained_artifact_distribution": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "attribution_required": {
+          "type": "boolean"
+        },
+        "share_alike_required": {
+          "type": "boolean",
+          "default": false
+        },
+        "dua_or_irb_required": {
+          "type": "boolean"
+        },
+        "review_status": {
+          "enum": [
+            "reviewed",
+            "pending",
+            "not-verified"
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "review_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "license_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aggregate_decision",
+        "sources",
+        "blocking_reasons"
+      ],
+      "properties": {
+        "aggregate_decision": {
+          "enum": [
+            "pass-research",
+            "pass-internal-engineering",
+            "pass-pilot-noncommercial",
+            "pass-pilot-approved",
+            "block",
+            "not-verified"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/license_source"
+          }
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

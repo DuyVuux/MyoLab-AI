@@ -1,0 +1,16 @@
+schema_version: '1.0'
+status: PROVISIONAL_BLUEPRINT
+rationale: Calibration method must be selected only in grouped inner validation.
+evidence_ids:
+- D26-INT-METRICS
+open_questions:
+- Confirm toolchain support for multiclass temperature scaling
+training_allowed: false
+config_id: CALIBRATION-CANDIDATES-0.1.0
+candidates:
+- none
+- sigmoid-platt
+- isotonic
+- multiclass-temperature-provisional
+selected: null
+fit_scope: grouped-inner-validation-only

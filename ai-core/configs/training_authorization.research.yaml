@@ -1,0 +1,21 @@
+schema_version: "1.0"
+status: "DAY26_BLUEPRINT_ONLY"
+trainingAllowed: false
+authorization_record_present: false
+experiment_manifest_valid: false
+dataset_manifest_hash_verified: false
+split_manifest_hash_verified: false
+test_seal_present_and_unopened: true
+environment_contract_lock_verified: true
+resolved_dependency_lock_present: false
+resolved_dependency_lock_hash_verified: false
+license_gate_passed: false
+leakage_preflight_passed: false
+task_target_and_metric_contract_locked: true
+code_commit_clean_or_diff_archived: false
+human_reviewer_required_for_result_promotion: true
+blocked_reasons:
+  - day26_does_not_authorize_training
+  - exact_dataset_engineering_gate_not_yet_passed
+  - resolved_uv_lock_missing
+  - authorization_not_reviewed

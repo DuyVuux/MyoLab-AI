@@ -1,0 +1,76 @@
+schema_version: '1.0'
+status: PROVISIONAL_ENGINEERING_LOCK
+rationale: Exact core versions and deterministic reference runtime are locked before
+  baseline training.
+evidence_ids:
+- D26-INT-PROTOCOL
+- D26-INT-VALIDATION
+- D26-INT-METRICS
+- EXT-UV-LOCK
+- EXT-SKLEARN-PARALLELISM
+- EXT-NUMPY-SEEDSEQUENCE
+open_questions:
+- Generate and hash a real resolved uv.lock before Day 29
+- Confirm site OS/CPU/BLAS profile
+training_allowed: false
+lock_id: ENV-SEMGCIV-D26-1.0
+as_of_date: '2026-07-27'
+core_versions:
+  python: 3.13.14
+  numpy: 2.5.1
+  scipy: 1.18.0
+  scikit-learn: 1.9.0
+  mlflow: 3.14.0
+  uv: 0.11.32
+governance_tool_versions:
+  joblib: 1.5.3
+  threadpoolctl: 3.6.0
+  pydantic: 2.13.4
+  jsonschema: 4.26.0
+  PyYAML: 6.0.3
+  psutil: 7.2.2
+  packaging: '25.0'
+  pytest: 9.0.2
+resolved_lock:
+  required_before_training: true
+  expected_path: environment/uv.lock
+  status: NOT_GENERATED_DAY26
+  reason: A resolver-generated lock must be produced in the approved connected environment;
+    it must not be fabricated.
+reference_runtime_profile:
+  id: cpu-single-thread-reference-v1
+  compute_device: cpu
+  n_jobs: 1
+  thread_environment:
+    OMP_NUM_THREADS: '1'
+    MKL_NUM_THREADS: '1'
+    OPENBLAS_NUM_THREADS: '1'
+    BLIS_NUM_THREADS: '1'
+    VECLIB_MAXIMUM_THREADS: '1'
+    NUMEXPR_NUM_THREADS: '1'
+seed_policy:
+  root_seed_required: true
+  method: numpy.random.SeedSequence.spawn
+  named_streams:
+  - split
+  - inner_cv
+  - estimator
+  - feature_selection
+  - calibration
+  - threshold
+  - bootstrap
+  - synthetic_fixture
+  random_state_none_allowed: false
+rerun_tolerance:
+  float_array_rtol: 1.0e-07
+  float_array_atol: 1.0e-09
+  scalar_metric_abs_delta_max: 1.0e-08
+  exact_fields:
+  - splits
+  - class_order
+  - channel_order
+  - selected_features
+  - integer_predictions
+  - abstention_reasons
+  - hashes
+  status: PROVISIONAL_ENGINEERING_HYPOTHESIS

@@ -1,0 +1,504 @@
+{
+  "pack_id": "day26-research-blueprint-final",
+  "version": "2.0.0",
+  "trainingAllowed": false,
+  "execution_state": "NOT_RUN",
+  "source_count": 13,
+  "files": [
+    {
+      "path": "DAY26_KE_HOACH_RESEARCH_BLUEPRINT_FINAL.md",
+      "size_bytes": 23083,
+      "sha256": "0389cd3bf26fc22264505d936e4717f17e134bb48d4e5a8d158482bd4f832964"
+    },
+    {
+      "path": "DAY26_RESEARCH_BLUEPRINT_PACK_README.md",
+      "size_bytes": 768,
+      "sha256": "836db09b3cba0d66790c718c591838f32d7dbb540848f70c513a053c795de3d7"
+    },
+    {
+      "path": "ai-core/configs/abstention_reason_registry.v0.1.yaml",
+      "size_bytes": 859,
+      "sha256": "8b54cddd6f2f9004d496343f7136ed6239fdce454e859891a827efc22aaf52a7"
+    },
+    {
+      "path": "ai-core/configs/evaluation_regimes.research.yaml",
+      "size_bytes": 26933,
+      "sha256": "a34d832d885d19a6bfe7bd6887e6e8169a56f7d47fbc459563e1c2b093a85759"
+    },
+    {
+      "path": "ai-core/configs/experiment_matrix.draft.yaml",
+      "size_bytes": 6019,
+      "sha256": "c4e98b6ec7f2f0f7f697aa836ecfbddf9e55f19b4925f1038d61991792106732"
+    },
+    {
+      "path": "ai-core/configs/fatigue_experiments.research.yaml",
+      "size_bytes": 1090,
+      "sha256": "304de4fa1589451ba1216cd05240ea7adeeb3ed0b225382976b9d287d4b46c0f"
+    },
+    {
+      "path": "ai-core/configs/feature_groups.research.yaml",
+      "size_bytes": 1565,
+      "sha256": "b764be4bbe7800a5b70597f438f3f47b76a2b615efddeb8f03396250c2661590"
+    },
+    {
+      "path": "ai-core/configs/model_ladder.research.yaml",
+      "size_bytes": 1302,
+      "sha256": "2c81fe05b9b133b318cd631765783daafd759e3e6abdabfcee93c8d019befda0"
+    },
+    {
+      "path": "ai-core/configs/model_registry_states.research.yaml",
+      "size_bytes": 471,
+      "sha256": "62687b92187d6fd4f94557b264e804be0a1d002d78fb68444b783eb07376bf0b"
+    },
+    {
+      "path": "ai-core/configs/personalization_strategies.research.yaml",
+      "size_bytes": 1007,
+      "sha256": "f3b81ffff918505651b8ab75580212d62b02da048d3c479ef2186c96a69aab97"
+    },
+    {
+      "path": "ai-core/configs/task_contracts.research.yaml",
+      "size_bytes": 1013,
+      "sha256": "1d87b356cc6591f26df0632fab318af662d23c557ca2aa05d8e4a89f9e7095cb"
+    },
+    {
+      "path": "ai-core/configs/training_authorization.research.yaml",
+      "size_bytes": 745,
+      "sha256": "eb8bd1e37cebfa8bf901b5b4e956ca570d8659778e6ebf9b3248c31eb1cf6b03"
+    },
+    {
+      "path": "ai-core/experiments/__init__.py",
+      "size_bytes": 62,
+      "sha256": "0d651d7f3b210a4c7c5e761740b5d1bd0fbc6f7894cea09e1fe9943127d3b9af"
+    },
+    {
+      "path": "ai-core/experiments/blueprint_contract.py",
+      "size_bytes": 1268,
+      "sha256": "9106c2450ea43b3499cf2e4f25bca696e8114f1fdbec0027bea12fe14a470187"
+    },
+    {
+      "path": "ai-core/experiments/experiment_matrix.py",
+      "size_bytes": 1122,
+      "sha256": "d98ca02f5fd8e3b0dfe95c4d9b565c673187a97e2031eecafd2cc72ba60a73c3"
+    },
+    {
+      "path": "ai-core/experiments/metric_contracts.py",
+      "size_bytes": 1822,
+      "sha256": "622e5b09e9d29472aad283df47fd861ed7805eedafb446feb19939a8a164bade"
+    },
+    {
+      "path": "ai-core/model-cards/dummy.template.md",
+      "size_bytes": 510,
+      "sha256": "31422bc4bd31a8b490683e372c1b5cefe04ba749cb572c06983282de7a681d46"
+    },
+    {
+      "path": "ai-core/model-cards/fatigue_context.template.md",
+      "size_bytes": 518,
+      "sha256": "228d841d7ca1a8500283cd64ecef55b64abf962b3f735e06aa9d8fa3cd8abe02"
+    },
+    {
+      "path": "ai-core/model-cards/lda.template.md",
+      "size_bytes": 508,
+      "sha256": "6550131032d3a0f30401bd4ab879d3893ed9d7ce07c592453ab4cce04fbe64d2"
+    },
+    {
+      "path": "ai-core/model-cards/linear_svm.template.md",
+      "size_bytes": 515,
+      "sha256": "1b138cd04542f6d55baead6d791c42fb93c63859a60730442d8d03d005a6c9bf"
+    },
+    {
+      "path": "ai-core/model-cards/logistic.template.md",
+      "size_bytes": 524,
+      "sha256": "e202a26635fc77b8d104e3c963a955d95f1610473d63aa806b637252c31eed4b"
+    },
+    {
+      "path": "ai-core/model-cards/random_forest.template.md",
+      "size_bytes": 518,
+      "sha256": "d3e8cece90f8bdad9e4f3ab098b5865be92b065fc043444acfdd40bd49fdafd1"
+    },
+    {
+      "path": "configs/environment-lock.research.yaml",
+      "size_bytes": 502,
+      "sha256": "a5249207db26349cbfa20a1c6d8d582c55cb9041ff897f594b91bdf43f059a9d"
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day26-feature-and-model-blueprint.md",
+      "size_bytes": 422,
+      "sha256": "ab79b3ce83443a34edae8a91ed71b02e255c8e06b38b2675114bd1a8e48701ba"
+    },
+    {
+      "path": "docs/06-ai-signal-processing/fatigue-context-architecture.md",
+      "size_bytes": 442,
+      "sha256": "8152da3accbd13da57373c93f09ff783862b1c5a8108fcdad176d73e87fe3e50"
+    },
+    {
+      "path": "docs/06-ai-signal-processing/personalization-strategy.md",
+      "size_bytes": 351,
+      "sha256": "81582029f77dc6b79f5173866e80f196d6f5c57c053834e986fffe4d0d866961"
+    },
+    {
+      "path": "docs/08-validation-qa/gesture-model-evaluation-plan.md",
+      "size_bytes": 22725,
+      "sha256": "a6b10f585127ceb21504344dc3e3cf7cf743e1c9e4a20df46b46cdb05ff1cbf3"
+    },
+    {
+      "path": "docs/08-validation-qa/leakage-prevention-plan.md",
+      "size_bytes": 506,
+      "sha256": "2b916725a0d39fa36658f90e18bdc9c7ef04da7df4f6384967f97b2608fe112d"
+    },
+    {
+      "path": "docs/08-validation-qa/test-set-governance.md",
+      "size_bytes": 411,
+      "sha256": "4a8305013a3f8a028465ed0272b6196eed5b0d7a90acd1a03ce46f179a44e3a3"
+    },
+    {
+      "path": "docs/09-mlops-devops/experiment-tracking-spec.md",
+      "size_bytes": 12253,
+      "sha256": "3d582a515930e181cea584616322e9b7d981fc32f87923e065728fd2275c3e9d"
+    },
+    {
+      "path": "docs/09-mlops-devops/model-registry-spec.md",
+      "size_bytes": 17528,
+      "sha256": "118aa4246687667a2301d25548e17d54559e5e354bcec705c119fbd886c3638c"
+    },
+    {
+      "path": "docs/09-mlops-devops/reproducible-training-policy.md",
+      "size_bytes": 17348,
+      "sha256": "32a0a76cff32eca70e39bafd4612136e04d03118dafca3c2c1e586dcedca49ad"
+    },
+    {
+      "path": "docs/11-operations/day26-existing-code-integration-guide.md",
+      "size_bytes": 643,
+      "sha256": "bb9db1b1dbb0df3724ac918beb3ecb5147f498ce75c938a2513da5b2443fae1c"
+    },
+    {
+      "path": "docs/11-operations/day26-rollback-and-handoff.md",
+      "size_bytes": 430,
+      "sha256": "e076f8ea5471f51d26d6fd9902afb74161e5ad54c2369d1f7e7a8840c62c01eb"
+    },
+    {
+      "path": "docs/note/day26/01-learning-objectives.md",
+      "size_bytes": 311,
+      "sha256": "3862dbe6e5bdfa89b49402d43b4dfe769add98bce192372a9f75da9a81e8ea0b"
+    },
+    {
+      "path": "docs/note/day26/02-reading-notes.md",
+      "size_bytes": 257,
+      "sha256": "99197ec82dad9d0fac8dc296f63ed65fd315588c4616d532c02840c36f90a856"
+    },
+    {
+      "path": "docs/note/day26/03-math-notes.md",
+      "size_bytes": 278,
+      "sha256": "cfb3144dbad61b7d2ad0c31ee47455fd5fab33d103bc52042535741cf2ef87c2"
+    },
+    {
+      "path": "docs/note/day26/04-model-notes.md",
+      "size_bytes": 174,
+      "sha256": "0033d595bf13a44f35f6b624d60582229c811bace3ef4a3b4db356cbe8d02dde"
+    },
+    {
+      "path": "docs/note/day26/05-validation-notes.md",
+      "size_bytes": 147,
+      "sha256": "b502545407a9067e1de440b6135759721310ed5ce6a84ec25eb7a4c938f5eac9"
+    },
+    {
+      "path": "docs/note/day26/06-governance-notes.md",
+      "size_bytes": 141,
+      "sha256": "7c81991ec2a65798ef2ecc0f34b58c8de3ab281480593798a44a3120822bb5db"
+    },
+    {
+      "path": "docs/note/day26/07-questions.md",
+      "size_bytes": 193,
+      "sha256": "ca7073eaf268564de7745447830c5f4f81ecb7fc6c49e222ce3450d0edeff202"
+    },
+    {
+      "path": "docs/note/day26/08-decisions.md",
+      "size_bytes": 120,
+      "sha256": "6fbfa3cb17061d453e5478747a95547c84975437e7fac79ddb55bc1ec677c5b7"
+    },
+    {
+      "path": "docs/note/day26/09-daily-summary.md",
+      "size_bytes": 151,
+      "sha256": "8797ef920f06a0a11c32288fcee1769a54193ab9d9b8c54ca96f1bfd9c3260cc"
+    },
+    {
+      "path": "docs/note/day26/10-todo-day27.md",
+      "size_bytes": 205,
+      "sha256": "c94b0cf5778d393f4430f9d19d77e9cc7dd5a2b4300d5da7c7fe49bf755e92a6"
+    },
+    {
+      "path": "docs/plans/DAY26_EXECUTION_PLAN.md",
+      "size_bytes": 23083,
+      "sha256": "0389cd3bf26fc22264505d936e4717f17e134bb48d4e5a8d158482bd4f832964"
+    },
+    {
+      "path": "docs/research/day26/00-decision-ledger.md",
+      "size_bytes": 2008,
+      "sha256": "11ee85bbdb45af6be9f076f6daabd538c6308906e6225659a85de7814be70dd9"
+    },
+    {
+      "path": "docs/research/day26/00-evidence-schema.csv",
+      "size_bytes": 186,
+      "sha256": "7fe264b09fbbd2b570c935b8e53739070e7daa4970013e59c06dfe7d60b21c30"
+    },
+    {
+      "path": "docs/research/day26/00-paper-appraisal-template.csv",
+      "size_bytes": 279,
+      "sha256": "02750b183047cf5d0821c9537b6dd259aa6ce5e27201770cb5a3ed2508209047"
+    },
+    {
+      "path": "docs/research/day26/00-research-protocol.md",
+      "size_bytes": 48010,
+      "sha256": "c3dbff8c1fcfd4fa01208dfb872162e5d6ed8e2f7939b8ff3d67be70cd8c9bfe"
+    },
+    {
+      "path": "docs/research/day26/00-search-strategy.md",
+      "size_bytes": 1311,
+      "sha256": "0202fce25e1bf6ce408e06c5cba65d42e9aa26f846970872aa354ad51f8b978b"
+    },
+    {
+      "path": "docs/research/day26/01-preprocessing-and-windowing-policy.md",
+      "size_bytes": 1421,
+      "sha256": "51008e85638b152c0e66bc676f5979dde50310df08eeabf1c7089d434eac288c"
+    },
+    {
+      "path": "docs/research/day26/02-feature-engineering-review.md",
+      "size_bytes": 66250,
+      "sha256": "a486afe21924ae1217d282515636cdafb65bf7f531036211f86799484a4a8e20"
+    },
+    {
+      "path": "docs/research/day26/03-classical-model-candidate-review.md",
+      "size_bytes": 59009,
+      "sha256": "22fa2a3543fbb2c4b8624e73041132c1b7b9ca3ccda455697223e44a983571e5"
+    },
+    {
+      "path": "docs/research/day26/04-validation-and-leakage-review.md",
+      "size_bytes": 67774,
+      "sha256": "96a3a225e6d1fdacb5d00d42f000db032e3581284ea59ffd28df56474a1fce36"
+    },
+    {
+      "path": "docs/research/day26/05-personalization-and-adaptation-strategy.md",
+      "size_bytes": 57492,
+      "sha256": "ef09451684b59a57005c32a4c7a257dfcf33081cd384eb7c7359cf51391b5b59"
+    },
+    {
+      "path": "docs/research/day26/06-fatigue-distribution-shift-blueprint.md",
+      "size_bytes": 57197,
+      "sha256": "85ba859a23709cae6711eeedd78888a3b7cc0a8e359e827f15943d17ccc91795"
+    },
+    {
+      "path": "docs/research/day26/07-task-c-target-and-metric-framework.md",
+      "size_bytes": 1073,
+      "sha256": "7480007032bc3de74a7b291122cbda546b1f689478f73fabbc9f4ead71551868"
+    },
+    {
+      "path": "docs/research/day26/08-metrics-calibration-abstention.md",
+      "size_bytes": 66949,
+      "sha256": "51682a039bc53a793140d85f230720ef58bc26b78178624eca879e75b3d30c15"
+    },
+    {
+      "path": "docs/research/day26/09-reproducibility-and-governance.md",
+      "size_bytes": 41267,
+      "sha256": "ea02e8106900df5ff927b63f902ca9885e62b6aa873fb3e7c2894e64edc3b34f"
+    },
+    {
+      "path": "docs/research/day26/10-master-experiment-blueprint.md",
+      "size_bytes": 1395,
+      "sha256": "93d5623c8a56ef3b8671a0a2ab3497e064ee7f137d5d0eb8cf083c5b5083aa1a"
+    },
+    {
+      "path": "docs/research/day26/11-open-questions-and-dependencies.md",
+      "size_bytes": 1403,
+      "sha256": "c3cf01b7fa8241357dbfbcde2f60ce1a8d06a6053d07d0850d4cc17365e67e47"
+    },
+    {
+      "path": "docs/research/day26/12-red-team-audit-findings.md",
+      "size_bytes": 1089,
+      "sha256": "4f473511d3154569f80fd15381d8844f2e59dd8caeb4ed8affc129e7b41969d1"
+    },
+    {
+      "path": "docs/research/day26/13-day26-readiness-gate.md",
+      "size_bytes": 812,
+      "sha256": "7616faca99c202099c0db2d7543f9328ac99f0461652daf01ba0f3a06583c88e"
+    },
+    {
+      "path": "docs/research/day26/day26-source-traceability.csv",
+      "size_bytes": 2569,
+      "sha256": "ed4affff178e6e326f24396d13dd445b39076b7e4b9f89ff7c9e1cb3b92b9035"
+    },
+    {
+      "path": "environment/README.md",
+      "size_bytes": 283,
+      "sha256": "e4d80cb62d566961472cc73805fab884d3ee7477e573e17e547186b248462a75"
+    },
+    {
+      "path": "environment/pyproject.toml",
+      "size_bytes": 243,
+      "sha256": "e9ba2591672cbc483a3596216f7863127011b394d6f0373158c2923de4168f17"
+    },
+    {
+      "path": "environment/requirements-core.lock.txt",
+      "size_bytes": 95,
+      "sha256": "baa7f0c6e1bc3cfea079df850c05de3666e392f0e7a04e2e7f508632b2061204"
+    },
+    {
+      "path": "mlops/experiments/README.md",
+      "size_bytes": 102,
+      "sha256": "bfa99066e9a13ed8fd33906612898f3b476059bc2be478c88c3f9a1a1ba313d2"
+    },
+    {
+      "path": "mlops/experiments/experiment-manifest.template.yaml",
+      "size_bytes": 780,
+      "sha256": "761a25a98655934b26683159a66eb124729bd46b5d843d094bd5019b419cedd5"
+    },
+    {
+      "path": "mlops/experiments/test-seal-manifest.template.yaml",
+      "size_bytes": 252,
+      "sha256": "e7e843b37d4a374c96325c8663a951fc20b99c2c1392d1605927b09d44fee1b8"
+    },
+    {
+      "path": "packages/common-schemas/json/day26-blueprint.schema.json",
+      "size_bytes": 750,
+      "sha256": "ef8460876a717c06607bb1ed46d43221d7016df3bca4ca9c3a66091e33f1ffb6"
+    },
+    {
+      "path": "packages/common-schemas/json/evaluation-summary.schema.json",
+      "size_bytes": 627,
+      "sha256": "c9fd59ae1aab0c02bb2d99e3c70ec65900207fff96f48fe83be98a76290498c0"
+    },
+    {
+      "path": "packages/common-schemas/json/experiment-manifest.schema.json",
+      "size_bytes": 705,
+      "sha256": "c590d6dfe627d5d28a415187d44ee1194c16e918e6b92e09e96ec4a7add20232"
+    },
+    {
+      "path": "packages/common-schemas/json/model-registry-record.schema.json",
+      "size_bytes": 915,
+      "sha256": "70179286d8f407fd73d0713b71c099f742452341ec36c802b3b9d2c78fb7ba6e"
+    },
+    {
+      "path": "packages/common-schemas/json/test-seal-manifest.schema.json",
+      "size_bytes": 322,
+      "sha256": "178624cde1cff315402067ca42a7024b56db90ead4a13e61d208e3d8d98d82db"
+    },
+    {
+      "path": "packages/common-schemas/json/training-authorization.schema.json",
+      "size_bytes": 599,
+      "sha256": "70364631b143509a3badf5d9834595844ea0a71fc305c2baf747fb1475f2f019"
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day26_blueprint_contract.py",
+      "size_bytes": 1070,
+      "sha256": "6c9aa74fdc6a95499b67b9fdd305d809616c7a2586940848f0ed36dfe73c4254"
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day26_configs.py",
+      "size_bytes": 1035,
+      "sha256": "139ed2f1cd817caf48ad9f971e0ba28e3b74cd4d4b701097420ae04a927a0b12"
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day26_metrics.py",
+      "size_bytes": 997,
+      "sha256": "512253433ce5da19136d6484abb303422282dead2b586913c9ca5b0f87e553ea"
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day26_safety_and_governance.py",
+      "size_bytes": 963,
+      "sha256": "ba62c857fda4793c1b3b7669d0a4baff1a3d293cecf892d315698156c58cbbb6"
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day26_schemas.py",
+      "size_bytes": 321,
+      "sha256": "73715b8eb7c45bf056c75c2464d31f28b95b5ee802458fe28088a8f2dcf6b2bb"
+    },
+    {
+      "path": "qa-validation/evidence/day26-blueprint-validation.json",
+      "size_bytes": 244,
+      "sha256": "205e501f5950ea6a50c591844ef4ff3329443b88c976504a2ecdb5ac7708894c"
+    },
+    {
+      "path": "qa-validation/evidence/day26-check-run.log",
+      "size_bytes": 689,
+      "sha256": "d3fef9f4da1a426581e8874f6932f9ebd7bfc23fe95f547a40998919d5a95c48"
+    },
+    {
+      "path": "qa-validation/evidence/day26-experiment-matrix.csv",
+      "size_bytes": 2981,
+      "sha256": "c847a21ec72920b99a0751ca5b000370414bd7556b80871c9f5802517b63718c"
+    },
+    {
+      "path": "qa-validation/evidence/day26-experiment-matrix.json",
+      "size_bytes": 8298,
+      "sha256": "83499dec17e18851ddbd7ea6decd42e170e6c628531fccee8ce19526dc57ae2c"
+    },
+    {
+      "path": "qa-validation/evidence/day26-source-hash-ledger.json",
+      "size_bytes": 3500,
+      "sha256": "3e5dfec6b4f25e17a7b674ee59f17b64283b7b8c5b5c8cc5e0073f9817515ed9"
+    },
+    {
+      "path": "qa-validation/evidence/day26-test-set-seal.template.json",
+      "size_bytes": 406,
+      "sha256": "92a68b9d106ca1d816c222f05da7b513fcbdf10c0a4fdf86b38b5b5715c775c1"
+    },
+    {
+      "path": "qa-validation/evidence/day26-validation-run.md",
+      "size_bytes": 223,
+      "sha256": "2abee2b4edf75c9c7c806726b2e746d3158b5cffe353902159f387fe4c4058a3"
+    },
+    {
+      "path": "qa-validation/requirements/day26-acceptance-criteria.md",
+      "size_bytes": 761,
+      "sha256": "4702f5d8dabf2e0b56a382301f97c8f8178a992fbbd55de04135aad93ea40456"
+    },
+    {
+      "path": "qa-validation/requirements/day26-research-blueprint-requirements.csv",
+      "size_bytes": 669,
+      "sha256": "d211de7e909ce6142a0cd892edf566d89e91d4810435daf55d03356fa681b096"
+    },
+    {
+      "path": "scripts/dev/check_day26_research_artifacts.py",
+      "size_bytes": 2085,
+      "sha256": "0ddc4e86bd5f32fa4d0ac6020e9e9cd14f2ed98384785e424bc3b0efab6aa2fd"
+    },
+    {
+      "path": "scripts/dev/run_day26_checks.sh",
+      "size_bytes": 120,
+      "sha256": "a0b12761c42fdc4bcb0d6604fef14aeaf5665965b333b806b65869d9a6217ba5"
+    },
+    {
+      "path": "scripts/dev/run_day26_research_checks.sh",
+      "size_bytes": 1246,
+      "sha256": "58cfd060eefb30b976b46db123b184cbb24977eae390d11f236727b357892a32"
+    },
+    {
+      "path": "scripts/ml/capture_environment.py",
+      "size_bytes": 936,
+      "sha256": "e0f1d3218697089067ad41283303b9d4592c42322c634f1f62d90a5aeb4c32f1"
+    },
+    {
+      "path": "scripts/ml/generate_hash_ledger.py",
+      "size_bytes": 837,
+      "sha256": "5fd2aae639672551639f419741c7f40771f0955d1b338bb991cf961ebbf17f66"
+    },
+    {
+      "path": "scripts/ml/render_day26_experiment_matrix.py",
+      "size_bytes": 990,
+      "sha256": "a244b3b5dd6307f52f4d5006b64dd9b09e36c65d48c4f1315945441bf3cba6b6"
+    },
+    {
+      "path": "scripts/ml/seal_test_manifest.py",
+      "size_bytes": 799,
+      "sha256": "3d22518be48db7b7b5cfee2884f2462c0c2a2dfe7b852701055c9570582fcf1b"
+    },
+    {
+      "path": "scripts/ml/validate_day26_blueprint.py",
+      "size_bytes": 1880,
+      "sha256": "41baea849195ebab351c69b82bea0d5c3f114536d7110d72e5ac38e56db944e6"
+    },
+    {
+      "path": "scripts/start_mlflow_local.sh",
+      "size_bytes": 403,
+      "sha256": "87601e353d74b9ffd2c758afcbbf38854fd1890d674d4e03f4d284f3ac7a9115"
+    }
+  ]
+}

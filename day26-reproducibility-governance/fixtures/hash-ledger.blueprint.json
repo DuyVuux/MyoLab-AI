@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "status": "BLUEPRINT_HASH_LEDGER",
+  "rationale": "Integrity ledger for machine-readable schemas, configs, environment contracts, examples and fixtures used by the Day 26 blueprint.",
+  "evidence_ids": [
+    "EXT-NIST-SHA256",
+    "D26-INT-PROTOCOL"
+  ],
+  "open_questions": [],
+  "training_allowed": false,
+  "files": [
+    {
+      "path": "configs/environment-lock.research.yaml",
+      "size_bytes": 1861,
+      "sha256": "25f234bb7f7943f66f623be2b20a16b9a97051b59e3231761a975210a579c48e"
+    },
+    {
+      "path": "configs/license-gate.research.yaml",
+      "size_bytes": 882,
+      "sha256": "f63fc8e020af60e3af87d980ebd0b065889fb4683df6cf79e073c6ef381565d4"
+    },
+    {
+      "path": "configs/mlflow-local.research.yaml",
+      "size_bytes": 1368,
+      "sha256": "e1981c6bf43c7c7f55f10e79e377a4c872f387139735c176b5c3a2b4a21a996c"
+    },
+    {
+      "path": "configs/registry-state-machine.research.yaml",
+      "size_bytes": 1041,
+      "sha256": "6983a19dd43044efd49e3d0e7a174612a4244bf06a2805e819eca88fc1169173"
+    },
+    {
+      "path": "configs/serialization-policy.research.yaml",
+      "size_bytes": 1552,
+      "sha256": "3f4f8ac38cb4121625f90581c00ef76532d58aca40768005058e7fd429158ece"
+    },
+    {
+      "path": "environment/README.md",
+      "size_bytes": 520,
+      "sha256": "aa502dae95d4b24ea97c451290aadfa9904f36ce3cad709474d253b66198c3a2"
+    },
+    {
+      "path": "environment/pyproject.toml",
+      "size_bytes": 443,
+      "sha256": "91db269d03b2d86cedccb8c9075666a0eafe3610b1ff0ca090fba277eb1ad2a3"
+    },
+    {
+      "path": "environment/reference-runtime.env",
+      "size_bytes": 125,
+      "sha256": "10a31d0f54af78b572f2c71658ed81630979f0e9da13743d7a101a116315d1d6"
+    },
+    {
+      "path": "environment/requirements-core.lock.txt",
+      "size_bytes": 345,
+      "sha256": "23d6f7ff4d35604ed269c002e5960ce756dd0f5b27d080db73769a8b19cbb6be"
+    },
+    {
+      "path": "examples/experiment-manifest.example.yaml",
+      "size_bytes": 5874,
+      "sha256": "90238d44c3e5ae54ba9a50373794d9882df2f9e58e41cddb2fd527a4d177342a"
+    },
+    {
+      "path": "examples/model-registry-record.example.yaml",
+      "size_bytes": 2737,
+      "sha256": "23163f97ea62436ec32eb906b14ef04507d58b71462d7e753d826ecac4ab985b"
+    },
+    {
+      "path": "examples/release-manifest.example.yaml",
+      "size_bytes": 2071,
+      "sha256": "57b410041caa61aaae608f07dbd82db4fcae26a19c9049976c5931dd73d196b9"
+    },
+    {
+      "path": "examples/rollback-record.example.yaml",
+      "size_bytes": 1830,
+      "sha256": "4c116601aea64dd56eb5a1243eccaacf5a0232fc2a5b1331f1c2df7d1555b0e3"
+    },
+    {
+      "path": "fixtures/abstention-policy.blueprint.yaml",
+      "size_bytes": 549,
+      "sha256": "5c11979db7ea892848250d2c357a8fefadbca131ece654f89013e51379f8a0c1"
+    },
+    {
+      "path": "fixtures/calibration-config.blueprint.yaml",
+      "size_bytes": 447,
+      "sha256": "2d190a5c7cd83abd42f0d98e585038ed1b1474db7058e62819adc7cb0a86c534"
+    },
+    {
+      "path": "fixtures/channel-mapping.blueprint.yaml",
+      "size_bytes": 407,
+      "sha256": "d1511f4adf71e1355ab6c4dbea317793c74698307792bbc60122fc3d64f2790b"
+    },
+    {
+      "path": "fixtures/class-ontology.blueprint.yaml",
+      "size_bytes": 429,
+      "sha256": "40254c158c4a8059b3ebceacba9ed96246cbaacbd2b7bf23945692f9bd84384d"
+    },
+    {
+      "path": "fixtures/dataset-manifest.blueprint.json",
+      "size_bytes": 615,
+      "sha256": "54c21f1043c6714561857ced90c7697ec46c7e5c5c7a7c3af4a417109cd5fae6"
+    },
+    {
+      "path": "fixtures/feature-config.blueprint.yaml",
+      "size_bytes": 406,
+      "sha256": "fe7441bf1383c721bbed8b8070db99c624d88267c5e57a87fa03c142dea122bd"
+    },
+    {
+      "path": "fixtures/model-config.blueprint.yaml",
+      "size_bytes": 423,
+      "sha256": "ae147b25c0919e208557f53e13b2d30cd936ad9b132a9c4a2a9960585c234e5a"
+    },
+    {
+      "path": "fixtures/preprocessing-config.blueprint.yaml",
+      "size_bytes": 436,
+      "sha256": "1690b70a6f97a8f365a1520aa123f31f8026ac84a7c37e61262936e3b83a0921"
+    },
+    {
+      "path": "fixtures/raw-registry.blueprint.csv",
+      "size_bytes": 90,
+      "sha256": "252c35843635116d24e713a5475f6a1a2b0f3772a9d250b2fb899df82c75ee69"
+    },
+    {
+      "path": "fixtures/split-manifest.blueprint.json",
+      "size_bytes": 571,
+      "sha256": "d294c942309a6edc249a7e73ec4eac8d4c5a1ee6ec11d087c70423743c415d1f"
+    },
+    {
+      "path": "fixtures/test-seal.blueprint.json",
+      "size_bytes": 749,
+      "sha256": "32d24f279c2dccc73f21df2e0e1034ebbf0c0888066311d571cf44ac43d4ab9e"
+    },
+    {
+      "path": "fixtures/threshold-policy.blueprint.yaml",
+      "size_bytes": 373,
+      "sha256": "15d9f065d1d5056c37b3e04c304ee70697955b9ddfea309fdaf06164ad12b8e0"
+    },
+    {
+      "path": "schemas/experiment-manifest.schema.json",
+      "size_bytes": 16608,
+      "sha256": "f2d3b702bfa3a7c914cca502d10680cb40372efaf02745029300f8ecd01e1b99"
+    },
+    {
+      "path": "schemas/model-registry-record.schema.json",
+      "size_bytes": 19005,
+      "sha256": "eb2f02ae2dde9e91eca32f78c622551ef1be4ff07fb8b2b0de52d14f60c58fe7"
+    },
+    {
+      "path": "schemas/release-manifest.schema.json",
+      "size_bytes": 15047,
+      "sha256": "af8fa0cf833244b6992bf17fce8e9f377bf909169757ea8f2f3223dc7609828b"
+    },
+    {
+      "path": "schemas/rollback-record.schema.json",
+      "size_bytes": 12483,
+      "sha256": "ad38a8ac010472fd83c77b8f659f94926b96e3f97310e175a1605eb036d5dbe7"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+schema_version: '1.0'
+status: PROVISIONAL_BLUEPRINT
+rationale: No fitting; defines candidate preprocessing identity only.
+evidence_ids:
+- D26-INT-FEATURES
+open_questions:
+- Finalize per-task filter/window grid
+training_allowed: false
+config_id: PREPROC-BASELINE-0.1.0
+input_units: NOT_VERIFIED
+fit_scope: inner-training-only-for-learned-steps
+windowing:
+  candidate_lengths_ms:
+  - 150
+  - 200
+  - 250
+  - 500
+  - 1000
+  selected: null

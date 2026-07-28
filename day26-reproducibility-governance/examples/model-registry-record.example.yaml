@@ -1,0 +1,93 @@
+schema_version: '1.0'
+status: PROVISIONAL_DAY26_BLUEPRINT
+rationale: Draft registry record proves schema and governance state machine without
+  creating a model artifact.
+evidence_ids:
+- D26-INT-MODEL-REVIEW
+- D26-INT-PROTOCOL
+open_questions:
+- Select an actual parent experiment only after execution is authorized
+training_allowed: false
+record_type: model_registry_record
+registry_id: MOD-TASKA-CLASSICAL-BASELINE
+version: 0.0.0
+task_id: TaskA
+artifact_type: classifier
+registry_state: draft
+created_at: '2026-07-27T12:40:00+07:00'
+owner: single-operator
+parent_experiment:
+  experiment_id: EXP-20260727-TASKA-CLASSICAL-BASELINE-001
+  manifest_sha256: 90238d44c3e5ae54ba9a50373794d9882df2f9e58e41cddb2fd527a4d177342a
+lineage:
+  code_commit: NOT_COMMITTED_BLUEPRINT
+  dataset_manifest_sha256: 54c21f1043c6714561857ced90c7697ec46c7e5c5c7a7c3af4a417109cd5fae6
+  split_manifest_sha256: d294c942309a6edc249a7e73ec4eac8d4c5a1ee6ec11d087c70423743c415d1f
+  environment_lock_sha256: 25f234bb7f7943f66f623be2b20a16b9a97051b59e3231761a975210a579c48e
+  supersedes_registry_version: null
+components: []
+model_card:
+  status: NOT_CREATED_BLUEPRINT
+  ref: null
+evaluation:
+  status: NOT_RUN
+  regime_ids:
+  - cross-subject-grouped-outer-cv
+  metric_contract_id: EVAL-D26-1.0
+  report_refs: []
+compatibility:
+  status: not-verified
+  input_schema_versions:
+  - NOT_VERIFIED
+  device_families:
+  - Noraxon Ultium EMG — site configuration NOT_VERIFIED
+  export_schema_versions:
+  - NOT_VERIFIED
+  protocol_versions:
+  - NOT_VERIFIED
+  channel_mapping_versions:
+  - CHANNEL-MAP-NOT-VERIFIED-0.0.0
+  class_ontology_versions:
+  - CLASS-TASKA-EXAMPLE-0.1.0
+  runtime_profiles:
+  - cpu-single-thread-reference-v1
+  mfcv_requirement: not-required
+  blocking_reasons:
+  - No model artifact exists.
+  - Site export and protocol remain NOT_VERIFIED.
+license_gate:
+  aggregate_decision: not-verified
+  sources: []
+  blocking_reasons:
+  - No training corpus admitted.
+security:
+  serialization_class: not-created
+  arbitrary_deserialization_risk: false
+  review_status: NOT_RUN
+  hash_verified: false
+  signature_verified: null
+  notes:
+  - No model binary created on Day 26.
+promotion_history:
+- from_state: null
+  to_state: draft
+  requested_at: '2026-07-27T12:40:00+07:00'
+  decision:
+    reviewer_role: single-operator-self-review
+    reviewer_id: operator-001
+    decision: approved-with-conditions
+    decided_at: '2026-07-27T12:45:00+07:00'
+    reasons:
+    - Draft governance record only.
+human_review_required: true
+rollback:
+  target_registry_version: null
+  target_release_id: null
+  status: NOT_REQUIRED_DRAFT
+deprecation:
+  deprecated: false
+  reason: null
+  replacement: null
+  effective_at: null
+audit_log_refs:
+- evidence/09-decision-ledger.yaml

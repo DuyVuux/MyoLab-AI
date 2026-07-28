@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TestSealManifest",
+  "type": "object",
+  "required": [
+    "status",
+    "opened",
+    "open_count"
+  ],
+  "properties": {
+    "opened": {
+      "const": false
+    },
+    "open_count": {
+      "const": 0
+    }
+  },
+  "additionalProperties": true
+}

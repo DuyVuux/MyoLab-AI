@@ -1,0 +1,776 @@
+schema_version: "1.0"
+status: "PROVISIONAL_LOCKED_FOR_DAY26_BLUEPRINT"
+artifact: "ai-core/configs/evaluation_regimes.research.yaml"
+trainingAllowed: false
+execution_state: "NOT_RUN"
+rationale: >
+  Freeze classification metrics, clustered statistical reporting, operational
+  metrics, probability-calibration semantics and selective-prediction policy
+  before any model results are observed. All learned preprocessing, feature
+  selection, calibration and threshold decisions must remain inside grouped
+  training/inner-validation folds. Outer/sealed test data may be evaluated once
+  only after the full policy is locked.
+evidence_ids:
+  - "INT-D26-PROTOCOL"
+  - "INT-D26-VALIDATION"
+  - "INT-D26-FEATURES"
+  - "INT-D26-MODELS"
+  - "INT-D26-PERSONALIZATION"
+  - "INT-D26-PLAN"
+  - "MET-SKLEARN-F1"
+  - "MET-SKLEARN-BALACC"
+  - "MET-SKLEARN-CONFUSION"
+  - "CAL-BRIER-SKLEARN"
+  - "CAL-SKLEARN"
+  - "CAL-PLATT-1999"
+  - "CAL-GUO-2017"
+  - "SEL-ELYANIV-2010"
+  - "EMG-FURUI-2023"
+  - "STAT-CLUSTERBOOT-2020"
+open_questions:
+  - "What absolute selective-risk and unsafe-prediction constraints will the clinical safety owner approve?"
+  - "What minimum system and class-conditional coverage is operationally acceptable?"
+  - "What runtime hardware and end-to-end latency budget will be used at the target site?"
+  - "Which QC warnings require mandatory abstention versus analysis-with-warning?"
+  - "What adjudicated reference defines fatigue drift outside the supported envelope?"
+  - "Is the repository toolchain version compatible with multiclass temperature scaling?"
+  - "What minimum per-class calibration support is available in each grouped inner fold?"
+
+scope:
+  tasks:
+    TaskA:
+      name: "gesture_recognition"
+      classification_metrics_apply: true
+      calibration_metrics_apply: true
+      selective_prediction_apply: true
+    TaskB:
+      name: "fatigue_context_confidence_adjustment_abstention"
+      hard_fatigue_classifier_default: false
+      classification_metrics_apply: "only_if_a_versioned_categorical_target_is_explicitly_defined"
+      calibration_metrics_apply: true
+      selective_prediction_apply: true
+    TaskC:
+      name: "quantitative_assessment"
+      classification_metrics_apply: "only_if_target_type_is_explicitly_categorical_and_locked"
+      calibration_metrics_apply: "target_dependent"
+      selective_prediction_apply: "target_and_workflow_dependent"
+  mfcv:
+    optional_capability: true
+    eligibility_required: true
+    site_status: "NOT_VERIFIED"
+  public_healthy_data:
+    use: "engineering_baseline_only"
+    clinical_transfer_claim_allowed: false
+
+non_negotiable_rules:
+  random_window_split_allowed: false
+  split_before_segmentation_and_windowing: true
+  outer_test_selection_allowed: false
+  test_set_sealed: true
+  human_review_required: true
+  automated_treatment_recommendation_allowed: false
+  learned_steps_inner_fold_only:
+    - "scaler"
+    - "learned_normalization"
+    - "feature_selector"
+    - "model_hyperparameters"
+    - "calibrator"
+    - "decision_threshold"
+    - "abstention_threshold"
+    - "class_specific_thresholds"
+  prohibited_predictors:
+    - "subject_id"
+    - "session_id"
+    - "day_id"
+    - "trial_id"
+    - "repetition_id"
+    - "file_path"
+    - "filename_encoded_label"
+    - "post_outcome_clinical_score"
+
+hierarchy:
+  ordered_levels:
+    - "subject"
+    - "day"
+    - "session"
+    - "trial"
+    - "repetition"
+    - "segment"
+    - "window"
+    - "sample"
+  atomic_seal_unit: "trial_or_repetition"
+  primary_prediction_unit: "repetition"
+  primary_aggregation_unit: "subject"
+  diagnostic_only_units:
+    - "window"
+    - "sample"
+
+class_ontology:
+  source: "versioned_task_registry"
+  fixed_order_required: true
+  example_task_a_order:
+    - "rest"
+    - "hand_open"
+    - "hand_close"
+    - "wrist_flexion"
+    - "wrist_extension"
+  absent_class_policy:
+    ground_truth_support_zero: "NOT_ESTIMABLE_AND_REPORT"
+    support_present_but_no_correct_predictions: "SET_METRIC_ZERO_AND_CLASS_COLLAPSE_FLAG"
+  zero_division_value: 0
+
+aggregation:
+  window_to_repetition:
+    preferred_when_probability_semantics_granted: "arithmetic_mean_probability_vector_then_argmax"
+    uncalibrated_score_fallback: "model_specific_predeclared_score_aggregation"
+    majority_vote_role: "comparator_only"
+    include_only_eligible_windows: true
+    minimum_usable_window_ratio: null
+    minimum_usable_window_ratio_status: "NOT_VERIFIED"
+    abstain_if_insufficient_usable_windows: true
+  repetition_to_subject:
+    method: "compute_metric_per_subject_then_unweighted_mean"
+    subject_weighting: "equal"
+  pooled_repetition_view:
+    required: true
+    role: "secondary_operational_summary"
+
+classification_metrics:
+  primary:
+    metric_id: "subject_macro_repetition_macro_f1"
+    base_metric: "macro_f1"
+    prediction_unit: "repetition"
+    aggregation_unit: "subject"
+    averaging: "unweighted_across_classes_then_unweighted_across_subjects"
+    direction: "higher_is_better"
+    confidence_interval: "participant_cluster_bootstrap_95"
+    rationale: >
+      Macro F1 gives each supported class equal weight and penalizes both false
+      positives and false negatives. Subject-macro aggregation prevents subjects
+      with more sessions or windows from dominating the headline estimate.
+  secondary_required:
+    - metric_id: "balanced_accuracy"
+      role: "macro_recall_audit"
+      adjusted: false
+    - metric_id: "per_class_recall"
+      include_support: true
+    - metric_id: "per_class_precision"
+      include_support: true
+    - metric_id: "per_class_f1"
+      include_support: true
+    - metric_id: "confusion_matrix_count"
+      unit: "repetition"
+    - metric_id: "confusion_matrix_row_normalized"
+      normalization: "true"
+    - metric_id: "confusion_matrix_abstention_aware"
+      extra_column: "ABSTAIN"
+    - metric_id: "pooled_repetition_macro_f1"
+      role: "secondary_operational_summary"
+  optional:
+    - metric_id: "multiclass_mcc"
+      role: "global_confusion_consistency"
+      selection_role: "secondary_only"
+    - metric_id: "macro_auroc_hand_till"
+      role: "ranking_diagnostic_before_abstention"
+      selection_role: "exploratory_only"
+      requirements:
+        - "continuous_score_for_every_class"
+        - "all_classes_have_positive_and_negative_support"
+        - "multiclass_convention_predeclared"
+  accuracy:
+    report_allowed: true
+    primary_allowed: false
+    rationale: "Accuracy alone is prevalence- and volume-sensitive."
+
+engineering_failure_gates:
+  status: "ENGINEERING_HYPOTHESIS_NOT_CLINICAL"
+  gates:
+    - gate_id: "G-METRIC-BASELINE"
+      fail_if: "primary_metric_point_estimate_not_above_best_dummy_baseline_same_regime"
+    - gate_id: "G-METRIC-MARGIN"
+      development_target_absolute_macro_f1_gain_over_best_dummy: 0.10
+      failure_label: "BELOW_ENGINEERING_TARGET"
+      clinical_interpretation_allowed: false
+    - gate_id: "G-CLASS-COLLAPSE"
+      fail_if: "any_supported_class_recall_equals_zero_in_two_or_more_outer_folds"
+    - gate_id: "G-SUBJECT-TAIL"
+      fail_if: "subject_p10_or_min_not_reported_or_at_least_20_percent_subjects_not_above_best_dummy"
+    - gate_id: "G-COVERAGE-REPORTING"
+      fail_if: "selective_performance_reported_without_coverage_and_reason_breakdown"
+    - gate_id: "G-ESTIMABILITY"
+      fail_if: "grouped_split_prevents_required_class_estimation_and_no_predeclared_remediation_exists"
+    - gate_id: "G-TEST-PEEK"
+      fail_if: "metric_calibrator_or_threshold_changed_after_outer_test_access"
+      severity: "CRITICAL_FLAW"
+  absolute_clinical_thresholds:
+    macro_f1: null
+    balanced_accuracy: null
+    per_class_recall: null
+    status: "NOT_VERIFIED"
+
+statistical_reporting:
+  primary_inference_unit: "subject"
+  independent_windows_assumption_allowed: false
+  confidence_interval:
+    default_method: "participant_cluster_bootstrap_percentile"
+    level: 0.95
+    n_resamples: 2000
+    sensitivity_n_resamples: 5000
+    random_seed: 260826
+    resample_unit: "subject"
+    preserve_nested_observations: true
+    window_level_bootstrap_allowed: false
+    bca_sensitivity_allowed: true
+    bca_conditions:
+      - "sufficient_cluster_count"
+      - "implementation_verified"
+  hierarchical_option:
+    enabled_for_regimes:
+      - "cross_session"
+      - "cross_day"
+    first_stage: "subject"
+    second_stage: "session_or_day_within_subject"
+    status: "CONDITIONAL"
+  outer_fold_summary:
+    required_statistics:
+      - "mean"
+      - "standard_deviation"
+      - "median"
+      - "interquartile_range"
+      - "minimum"
+      - "maximum"
+    folds_as_independent_inference_samples_allowed: false
+  subject_distribution:
+    required_statistics:
+      - "mean"
+      - "standard_deviation"
+      - "median"
+      - "interquartile_range"
+      - "p10"
+      - "minimum"
+      - "maximum"
+  session_variance:
+    report:
+      - "within_subject_session_standard_deviation"
+      - "within_subject_session_range"
+      - "cross_day_delta"
+      - "electrode_reapply_delta"
+  subgroup_reporting:
+    predeclared_only: true
+    minimum_subjects_for_descriptive_metric: 5
+    below_minimum_action: "REPORT_COUNTS_AND_NOT_ESTIMABLE"
+    candidate_strata:
+      - "dataset_source"
+      - "clinical_vs_healthy"
+      - "sex"
+      - "age_band"
+      - "severity_stratum"
+      - "session_or_day"
+      - "electrode_reapply_state"
+      - "fatigue_context"
+      - "device_montage_protocol_version"
+    report_worst_subgroup: true
+  failure_case_reporting:
+    required: true
+    fields:
+      - "subject_id_pseudonym"
+      - "day_id"
+      - "session_id"
+      - "trial_id"
+      - "repetition_id"
+      - "true_class"
+      - "predicted_class_or_abstain"
+      - "primary_abstention_reason"
+      - "secondary_reason_codes"
+      - "qc_status"
+      - "protocol_support_status"
+      - "calibration_status"
+      - "fatigue_context"
+      - "transition_flag"
+      - "score_semantics"
+      - "max_score"
+      - "error_category"
+      - "review_status"
+
+operational_metrics:
+  timestamp_contract:
+    - "t_window_start"
+    - "t_window_close"
+    - "t_feature_start"
+    - "t_feature_end"
+    - "t_model_start"
+    - "t_model_end"
+    - "t_calibrator_end"
+    - "t_abstention_end"
+    - "t_decision_ready"
+    - "t_user_visible"
+  clock_requirement: "monotonic_high_resolution"
+  latency:
+    p50_pipeline_compute_latency_ms:
+      formula: "percentile_50(t_decision_ready - t_window_close)"
+    p95_pipeline_compute_latency_ms:
+      formula: "percentile_95(t_decision_ready - t_window_close)"
+    p50_end_to_end_latency_ms:
+      formula: "percentile_50(t_user_visible - t_window_close)"
+    p95_end_to_end_latency_ms:
+      formula: "percentile_95(t_user_visible - t_window_close)"
+    signal_to_feedback_latency_ms:
+      formula: "t_user_visible - t_window_start"
+      includes_window_duration: true
+    cold_start_report_separately: true
+    warmup_policy_required: true
+  stage_timing:
+    feature_extraction_time_ms: "t_feature_end - t_feature_start"
+    model_inference_time_ms: "t_model_end - t_model_start"
+    calibration_mapping_time_ms: "t_calibrator_end - t_model_end"
+    abstention_decision_time_ms: "t_abstention_end - t_calibrator_end"
+  memory:
+    - "memory_peak_rss_mb"
+    - "memory_steady_state_rss_mb"
+    - "model_artifact_size_mb"
+  throughput:
+    windows_per_second: "processed_windows / measurement_wall_clock_seconds"
+    real_time_factor: "processing_time_seconds / signal_duration_seconds"
+  dropped_window_ratio:
+    formula: "unprocessed_expected_scheduled_windows / expected_scheduled_windows"
+    abstained_windows_count_as_dropped: false
+  calibration_workflow:
+    calibration_duration_s:
+      boundary: "instruction_start_to_calibration_outcome"
+      breakdown_required:
+        - "instruction_and_setup"
+        - "active_acquisition"
+        - "label_confirmation"
+        - "processing"
+        - "retry_time"
+    calibration_failure_rate:
+      formula: "failed_calibration_attempts / calibration_attempts_started"
+      reason_codes_required: true
+    remeasurement_rate:
+      formula: "sessions_requiring_repeat_acquisition / sessions_started"
+      reason_breakdown:
+        - "qc_failure"
+        - "protocol_failure"
+        - "calibration_failure"
+  runtime_manifest_required:
+    - "cpu"
+    - "gpu_if_any"
+    - "ram"
+    - "operating_system"
+    - "python_version"
+    - "library_versions"
+    - "concurrency"
+    - "sample_count"
+    - "session_count"
+  absolute_latency_threshold_ms: null
+  threshold_status: "NOT_VERIFIED"
+
+probability_calibration:
+  probability_semantics_gate:
+    required: true
+    allowed_final_name: "calibrated_class_probability"
+    otherwise_allowed_names:
+      - "raw_score"
+      - "decision_score"
+      - "uncalibrated_confidence_score"
+      - "model_probability_output"
+    conditions:
+      - "all_values_non_negative"
+      - "row_sum_equals_one_within_tolerance"
+      - "classifier_fit_and_calibrator_fit_observations_are_disjoint_or_cross_fitted"
+      - "calibration_method_selected_in_grouped_inner_validation"
+      - "method_frozen_before_outer_test"
+      - "evaluated_on_untouched_outer_predictions"
+      - "brier_and_classwise_reliability_reported"
+      - "scope_population_protocol_device_and_regime_declared"
+      - "no_public_healthy_to_clinical_transfer_claim"
+    row_sum_tolerance: 0.000001
+  candidate_methods:
+    - method_id: "none"
+      role: "mandatory_raw_comparator"
+    - method_id: "sigmoid_platt"
+      role: "core_candidate"
+      multiclass_strategy: "one_vs_rest_plus_renormalization_if_required"
+    - method_id: "isotonic"
+      role: "conditional_candidate"
+      minimum_calibration_samples: null
+      sample_requirement_status: "NOT_VERIFIED_DATASET_SPECIFIC"
+      low_sample_warning: true
+    - method_id: "temperature"
+      role: "provisional_multiclass_candidate"
+      requires_coherent_multiclass_score_vector: true
+      repository_toolchain_status: "NOT_VERIFIED"
+    - method_id: "vector_scaling"
+      role: "later_research_candidate"
+    - method_id: "dirichlet_calibration"
+      role: "later_research_candidate"
+  fitting_policy:
+    selection_source: "grouped_inner_cross_fitted_predictions_only"
+    outer_test_used_for_selection: false
+    default_non_grouped_cv_allowed: false
+    explicit_group_aware_split_iterable_required: true
+    all_classes_required_in_model_fit_and_calibration_partitions: true
+  metrics:
+    primary:
+      metric_id: "multiclass_brier_unscaled"
+      formula: "mean_over_i(sum_over_k((p_ik - y_ik)^2))"
+      range: [0.0, 2.0]
+      direction: "lower_is_better"
+      prediction_unit: "repetition"
+      subject_summary_required: true
+    secondary:
+      - "classwise_brier_one_vs_rest"
+      - "log_loss"
+    diagnostics:
+      confidence_ece:
+        bins: 15
+        binning: "equal_frequency"
+        sensitivity_bins: [10, 20]
+        primary_calibration_metric_allowed: false
+      classwise_ece:
+        required: true
+        averaging: "unweighted_across_classes"
+        report_support: true
+      reliability_diagrams:
+        top_label: true
+        one_vs_rest_per_class: true
+        bin_histogram: true
+        before_after_calibration: true
+  score_use_for_thresholding:
+    calibrated_score_preferred: true
+    uncalibrated_score_allowed_for_comparator: true
+    uncalibrated_score_name_must_not_include_probability: true
+
+selective_prediction:
+  accounting:
+    attempted_units: "all_repetitions_presented_to_the_system"
+    model_ineligible_units: "units_blocked_by_qc_protocol_or_calibration_prerequisites"
+    model_eligible_units: "attempted_units_minus_model_ineligible_units"
+    covered_units: "eligible_units_for_which_a_supported_prediction_is_emitted"
+  metrics:
+    system_coverage:
+      formula: "covered_units / attempted_units"
+    model_coverage:
+      formula: "covered_units / model_eligible_units"
+    selective_accuracy:
+      formula: "correct_and_covered_units / covered_units"
+    selective_risk:
+      formula: "1 - selective_accuracy"
+      loss: "zero_one"
+    selective_macro_f1:
+      required: true
+      class_conditional_coverage_must_accompany: true
+    selective_balanced_accuracy:
+      required: true
+      class_conditional_coverage_must_accompany: true
+    abstention_rate:
+      formula: "abstained_units / attempted_units"
+    class_conditional_coverage:
+      formula: "covered_true_class_k / eligible_true_class_k"
+    subject_level_coverage:
+      formula: "covered_subject_s / eligible_subject_s"
+      report:
+        - "mean"
+        - "median"
+        - "interquartile_range"
+        - "p10"
+        - "minimum"
+    risk_coverage_curve:
+      required: true
+      threshold_selection_from_outer_curve_allowed: false
+  report_together:
+    - "attempted_units"
+    - "model_eligible_units"
+    - "covered_units"
+    - "system_coverage"
+    - "model_coverage"
+    - "selective_accuracy"
+    - "selective_risk"
+    - "selective_macro_f1"
+    - "selective_balanced_accuracy"
+    - "class_conditional_coverage"
+    - "subject_level_coverage_distribution"
+    - "unsafe_prediction_rate"
+    - "abstention_reason_distribution"
+  threshold_selection:
+    source: "grouped_inner_validation_cross_fitted_predictions_only"
+    default_policy: "single_global_threshold"
+    class_specific_thresholds:
+      allowed: "CONDITIONAL"
+      requirements:
+        - "sufficient_class_support"
+        - "predeclared"
+        - "inner_validation_only"
+        - "complexity_justified"
+    objective: "maximize_model_coverage_subject_to_predeclared_constraints"
+    constraints:
+      maximum_selective_risk: null
+      maximum_unsafe_prediction_rate: null
+      minimum_class_conditional_coverage: null
+      minimum_subject_coverage_p10: null
+      status: "NOT_VERIFIED_REQUIRES_CLINICAL_AND_SITE_REVIEW"
+  abstention_reason_precedence:
+    - code: "QC_FAIL"
+      category: "system_prerequisite"
+      mandatory: true
+    - code: "UNSUPPORTED_PROTOCOL_OR_ANATOMY"
+      category: "system_prerequisite"
+      mandatory: true
+    - code: "CALIBRATION_FAILURE_OR_EXPIRED"
+      category: "system_prerequisite"
+      mandatory: true
+    - code: "UNKNOWN_GESTURE"
+      category: "supportability"
+      mandatory: true
+    - code: "TRANSITION"
+      category: "supportability"
+      mandatory: true
+    - code: "FATIGUE_DRIFT_OUTSIDE_SUPPORT"
+      category: "task_b_supportability"
+      mandatory: true
+      reference_status: "NOT_VERIFIED"
+    - code: "LOW_MODEL_CONFIDENCE"
+      category: "model_selective"
+      mandatory: false
+    - code: "QC_WARNING_POLICY"
+      category: "system_prerequisite"
+      mandatory: "regime_dependent"
+  reason_logging:
+    primary_reason_required: true
+    secondary_reason_codes_required: true
+    deterministic_precedence_required: true
+
+unsafe_prediction:
+  mandatory_abstain_reference:
+    must_be_independent_or_adjudicated: true
+    eligible_conditions:
+      - "qc_critical_fail"
+      - "unsupported_protocol_anatomy_device_or_montage"
+      - "calibration_failed_expired_or_invalid"
+      - "unknown_gesture"
+      - "non_decodable_transition"
+      - "fatigue_drift_outside_predeclared_support_envelope"
+      - "other_hazard_log_condition_requiring_abstention"
+  unsafe_prediction_event: "supported_class_prediction_emitted_and_mandatory_abstain_true"
+  primary_metric:
+    metric_id: "unsafe_prediction_rate"
+    formula: "unsafe_prediction_events / mandatory_abstain_units"
+    direction: "lower_is_better"
+  additional_metrics:
+    unsafe_prediction_rate_overall:
+      formula: "unsafe_prediction_events / attempted_units"
+    mandatory_abstain_prevalence:
+      formula: "mandatory_abstain_units / attempted_units"
+  ordinary_supported_class_misclassification_counts_as_unsafe: false
+  exception: "task_specific_hazard_mapping_may_predeclare_specific_confusions_as_safety_critical"
+  absolute_maximum_threshold: null
+  threshold_status: "NOT_VERIFIED"
+
+abstention_aware_confusion_matrix:
+  rows: "true_supported_classes_plus_unknown_transition_if_labeled"
+  columns: "predicted_supported_classes_plus_ABSTAIN"
+  required: true
+
+prediction_ledger:
+  required_fields:
+    - "source_id"
+    - "subject_id"
+    - "day_id"
+    - "session_id"
+    - "trial_id"
+    - "repetition_id"
+    - "window_id_or_null_for_repetition_row"
+    - "outer_fold_id"
+    - "inner_fold_or_oof_id"
+    - "true_label"
+    - "predicted_label_or_abstain"
+    - "raw_score_vector"
+    - "calibrated_probability_vector_or_null"
+    - "score_semantics"
+    - "covered"
+    - "model_eligible"
+    - "mandatory_abstain_reference"
+    - "primary_abstention_reason"
+    - "secondary_reason_codes"
+    - "qc_status"
+    - "protocol_support_status"
+    - "calibration_status"
+    - "fatigue_context"
+    - "transition_flag"
+    - "preprocess_version"
+    - "feature_version"
+    - "model_version"
+    - "calibrator_version"
+    - "threshold_policy_version"
+
+regimes:
+  within_session_sanity:
+    status: "DIAGNOSTIC_ONLY"
+    outer_group_unit: "subject_session_repetition"
+    inner_group_unit: "subject_session_repetition"
+    headline_benchmark_allowed: false
+    calibration_allowed: false
+    required_metrics:
+      - "subject_macro_repetition_macro_f1"
+      - "balanced_accuracy"
+      - "per_class_recall"
+      - "per_class_precision"
+      - "confusion_matrix_count"
+    interpretation: "pipeline_and_label_sanity_only"
+
+  cross_subject_zero_shot:
+    status: "PRIMARY_POPULATION_BENCHMARK"
+    outer_group_unit: "subject"
+    inner_group_unit: "subject"
+    target_subject_data_allowed_before_evaluation: false
+    calibration_allowed: "development_subjects_only"
+    required_metrics:
+      - "subject_macro_repetition_macro_f1"
+      - "balanced_accuracy"
+      - "per_class_recall"
+      - "per_class_precision"
+      - "participant_cluster_bootstrap_95"
+      - "multiclass_brier_if_probability_gate_passes"
+      - "system_coverage"
+      - "model_coverage"
+      - "selective_risk"
+      - "unsafe_prediction_rate"
+
+  cross_session:
+    status: "DEPLOYMENT_REALISM"
+    outer_group_unit: "subject_session"
+    inner_group_unit: "subject_session_or_repetition"
+    calibration_buffer_allowed: "only_if_predeclared"
+    required_metrics:
+      - "subject_macro_repetition_macro_f1"
+      - "balanced_accuracy"
+      - "session_performance_delta"
+      - "multiclass_brier_if_probability_gate_passes"
+      - "coverage_and_abstention_bundle"
+      - "calibration_duration_if_applicable"
+
+  cross_day:
+    status: "DEPLOYMENT_REALISM"
+    outer_group_unit: "subject_day"
+    inner_group_unit: "subject_day_or_session"
+    calibration_buffer_allowed: "only_if_predeclared"
+    required_metrics:
+      - "subject_macro_repetition_macro_f1"
+      - "balanced_accuracy"
+      - "cross_day_delta"
+      - "participant_or_hierarchical_bootstrap_95"
+      - "coverage_and_abstention_bundle"
+
+  personalized_new_subject:
+    status: "PERSONALIZATION_REGIME"
+    outer_group_unit: "subject"
+    base_model_fit_subjects: "non_target_subjects_only"
+    target_calibration_subset_sealed_before_adaptation: true
+    target_locked_test_subset: true
+    target_split_unit: "session_day_repetition"
+    required_comparisons:
+      - "zero_shot"
+      - "personalized"
+    required_metrics:
+      - "delta_subject_macro_repetition_macro_f1"
+      - "delta_balanced_accuracy"
+      - "post_calibration_brier"
+      - "post_calibration_coverage"
+      - "calibration_duration_s"
+      - "calibration_failure_rate"
+      - "retention_across_next_session_or_day_if_available"
+
+  electrode_remove_and_replace:
+    status: "MANDATORY_REALISM_STRESS_TEST"
+    outer_group_unit: "subject_reapply_event"
+    inner_group_unit: "subject_reapply_event_or_session"
+    arms:
+      - "no_recalibration"
+      - "predeclared_minimal_recalibration"
+    required_metrics:
+      - "pre_post_macro_f1_delta"
+      - "pre_post_balanced_accuracy_delta"
+      - "rest_false_activation_rate"
+      - "calibration_shift"
+      - "calibration_duration_s"
+      - "coverage_and_abstention_bundle"
+
+  fatigue_stratified:
+    status: "TASK_B_ROBUSTNESS_AUDIT"
+    preserve_primary_outer_grouping: true
+    fatigue_used_as_random_window_split_key: false
+    required_metrics_by_stratum:
+      - "subject_macro_repetition_macro_f1"
+      - "balanced_accuracy"
+      - "multiclass_brier_if_probability_gate_passes"
+      - "system_coverage"
+      - "model_coverage"
+      - "selective_risk"
+      - "unsafe_prediction_rate"
+    interpretation: "context_and_supportability_not_hard_fatigue_classification_by_default"
+
+  unsupported_unknown_abstention:
+    status: "MANDATORY_SAFETY_REGIME"
+    preserve_primary_outer_grouping: true
+    supported_and_unsupported_corpora_group_separated: true
+    threshold_selection: "grouped_inner_validation_only"
+    required_metrics:
+      - "system_coverage"
+      - "model_coverage"
+      - "selective_accuracy"
+      - "selective_risk"
+      - "class_conditional_coverage"
+      - "subject_level_coverage"
+      - "unsupported_false_accept_rate"
+      - "supported_false_reject_rate"
+      - "unsafe_prediction_rate"
+      - "risk_coverage_curve"
+      - "abstention_aware_confusion_matrix"
+
+reporting_contract:
+  result_status_on_day26: "NOT_RUN"
+  always_include:
+    - "provenance"
+    - "counts"
+    - "class_support"
+    - "primary_metric_and_participant_ci"
+    - "secondary_metrics"
+    - "per_class_metrics"
+    - "subject_distribution"
+    - "fold_summary"
+    - "calibration_bundle_if_applicable"
+    - "coverage_and_abstention_bundle"
+    - "operational_bundle"
+    - "failure_cases"
+    - "worst_predeclared_subgroup"
+    - "limitations"
+    - "not_verified_items"
+    - "human_review_status"
+  prohibited_wording_without_gate:
+    - "validated"
+    - "clinical-grade"
+    - "safe"
+    - "probability"
+  probability_word_allowed_only_when: "probability_semantics_gate_passed"
+
+validation_checks:
+  - check_id: "CFG-PRIMARY-METRIC"
+    assert: "classification_metrics.primary.metric_id == subject_macro_repetition_macro_f1"
+  - check_id: "CFG-NO-RANDOM-WINDOW"
+    assert: "non_negotiable_rules.random_window_split_allowed == false"
+  - check_id: "CFG-NO-TEST-SELECTION"
+    assert: "non_negotiable_rules.outer_test_selection_allowed == false"
+  - check_id: "CFG-BOOTSTRAP-UNIT"
+    assert: "statistical_reporting.confidence_interval.resample_unit == subject"
+  - check_id: "CFG-PROBABILITY-GATE"
+    assert: "probability_calibration.probability_semantics_gate.required == true"
+  - check_id: "CFG-COVERAGE-BUNDLE"
+    assert: "selective_prediction.report_together contains system_coverage and selective_accuracy"
+  - check_id: "CFG-THRESHOLD-FOLD"
+    assert: "selective_prediction.threshold_selection.source == grouped_inner_validation_cross_fitted_predictions_only"
+  - check_id: "CFG-UPR-DENOMINATOR"
+    assert: "unsafe_prediction.primary_metric.formula == unsafe_prediction_events / mandatory_abstain_units"
+  - check_id: "CFG-HUMAN-REVIEW"
+    assert: "non_negotiable_rules.human_review_required == true"
+  - check_id: "CFG-NO-TRAINING"
+    assert: "trainingAllowed == false"

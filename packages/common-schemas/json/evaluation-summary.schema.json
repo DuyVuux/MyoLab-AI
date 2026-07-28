@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvaluationSummary",
+  "type": "object",
+  "required": [
+    "status",
+    "trainingAllowed",
+    "classification",
+    "selective_prediction",
+    "human_review"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "NOT_RUN",
+        "completed",
+        "invalidated"
+      ]
+    },
+    "trainingAllowed": {
+      "type": "boolean"
+    },
+    "classification": {
+      "type": "object"
+    },
+    "selective_prediction": {
+      "type": "object"
+    },
+    "human_review": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,17 @@
+schema_version: '1.0'
+status: PROVISIONAL_BLUEPRINT
+rationale: Example class order for schema validation only; final ontology remains
+  versioned separately.
+evidence_ids:
+- D26-INT-METRICS
+open_questions:
+- Confirm final supported gesture ontology
+training_allowed: false
+ontology_id: CLASS-TASKA-EXAMPLE-0.1.0
+class_order:
+- rest
+- hand_open
+- hand_close
+- wrist_flexion
+- wrist_extension
+unknown_and_transition_separate: true

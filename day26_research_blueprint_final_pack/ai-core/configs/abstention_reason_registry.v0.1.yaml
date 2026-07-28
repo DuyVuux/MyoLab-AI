@@ -1,0 +1,21 @@
+schema_version: "1.0"
+status: "PROVISIONAL_LOCKED"
+primary_reason_precedence:
+  - QC_FAIL
+  - UNSUPPORTED_PROTOCOL_OR_ANATOMY
+  - CALIBRATION_FAILURE_OR_EXPIRED
+  - UNKNOWN_GESTURE
+  - TRANSITION
+  - FATIGUE_DRIFT_OUTSIDE_SUPPORT
+  - LOW_MODEL_CONFIDENCE
+  - QC_WARNING_POLICY
+rules:
+  QC_FAIL: {mandatory: true, human_review_required: true}
+  UNSUPPORTED_PROTOCOL_OR_ANATOMY: {mandatory: true, human_review_required: true}
+  CALIBRATION_FAILURE_OR_EXPIRED: {mandatory: true, human_review_required: true}
+  UNKNOWN_GESTURE: {mandatory: true, human_review_required: true}
+  TRANSITION: {mandatory: true, human_review_required: false}
+  FATIGUE_DRIFT_OUTSIDE_SUPPORT: {mandatory: true, evidence_status: NOT_VERIFIED}
+  LOW_MODEL_CONFIDENCE: {mandatory: false}
+  QC_WARNING_POLICY: {mandatory: regime_dependent}
+automated_treatment_recommendation_allowed: false

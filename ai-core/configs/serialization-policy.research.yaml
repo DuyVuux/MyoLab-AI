@@ -1,0 +1,61 @@
+schema_version: '1.0'
+status: PROVISIONAL_LOCKED_FOR_DAY26_BLUEPRINT
+rationale: Serialization must preserve full pipeline semantics while preventing untrusted
+  arbitrary deserialization.
+evidence_ids:
+- EXT-SKLEARN-PERSISTENCE
+- EXT-ONNX-RUNTIME
+- D26-INT-MODEL-REVIEW
+open_questions:
+- Verify ONNX support for each future composite pipeline
+- Define release artifact signing mechanism
+training_allowed: false
+canonical_bundle:
+  metadata_formats:
+  - json
+  - yaml
+  numeric_formats:
+  - npy
+  - npz
+  numpy_allow_pickle: false
+  schema_validation_required: true
+  hash_verification_required: true
+formats:
+  pickle:
+    classification: trusted-research-only
+    arbitrary_code_execution_risk: true
+    pilot_default_allowed: false
+  joblib:
+    classification: trusted-research-only
+    arbitrary_code_execution_risk: true
+    pilot_default_allowed: false
+  onnx:
+    classification: conditional-runtime-derivative
+    equivalence_test_required: true
+    sandbox_required: true
+  custom_typed_bundle:
+    classification: preferred-canonical
+    strict_schema_required: true
+required_components:
+- input_schema
+- channel_mapping
+- class_mapping
+- preprocessing
+- scaler
+- feature_selector
+- model_or_metric_engine
+- calibrator
+- threshold_policy
+- abstention_policy
+- version_metadata
+- environment_lock
+- model_card
+- license_record
+- hash_ledger
+hard_fail_conditions:
+- untrusted_pickle_or_joblib
+- hash_mismatch
+- cross_version_sklearn_load_without_revalidation
+- onnx_equivalence_failure
+- missing_class_or_feature_order
+- hidden_executable_code

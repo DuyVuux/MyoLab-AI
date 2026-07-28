@@ -1,0 +1,28 @@
+schema_version: "1.0"
+status: "PROVISIONAL_LOCKED_FOR_DAY26_BLUEPRINT"
+trainingAllowed: false
+execution_state: "NOT_RUN"
+tasks:
+  TaskA:
+    name: gesture_recognition
+    target_type: multiclass_classification
+    supported_class_ontology: versioned_external_reference
+    prediction_unit: repetition
+    primary_inference_unit: subject
+    clinical_use_allowed: false
+  TaskB:
+    name: fatigue_context_confidence_adjustment_abstention
+    target_type: context_supportability
+    hard_fatigue_classifier_default: false
+    output_types: [context, confidence_adjustment, abstention, recalibration_recommendation]
+    diagnosis_allowed: false
+  TaskC:
+    name: quantitative_assessment
+    target_type: deterministic_metric_engine
+    classifier_required: false
+    outputs: [gesture_repertoire, repeatability, symmetry, co_contraction, reference_similarity, fatigue_endurance]
+    clinical_thresholds_status: NOT_VERIFIED
+mfcv:
+  optional: true
+  site_eligibility: NOT_VERIFIED
+  absence_blocks_basic_semg: false

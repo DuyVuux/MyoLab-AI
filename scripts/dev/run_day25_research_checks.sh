@@ -15,28 +15,28 @@ for file in "${required[@]}"; do
 done
 
 echo "[1/8] Python syntax"
-python -m compileall -q ai-core/data integrations/devices/noraxon scripts/data scripts/dev
+python3 -m compileall -q ai-core/data integrations/devices/noraxon scripts/data scripts/dev
 
 echo "[2/8] Dataset inventory and license/access invariants"
-python scripts/data/validate_day25_research_inventory.py
+python3 scripts/data/validate_day25_research_inventory.py
 
 echo "[3/8] Subject-safe split"
-python scripts/data/build_subject_group_split_v2.py \
+python3 scripts/data/build_subject_group_split_v2.py \
   --metadata qa-validation/test-data/synthetic/day25-subject-session-metadata.json \
   --output qa-validation/evidence/day25-subject-group-split-v0.2.json \
   --seed 2501
 
 echo "[4/8] Noraxon site evidence audit (expected NOT_VERIFIED)"
-python scripts/data/audit_noraxon_site_evidence.py \
+python3 scripts/data/audit_noraxon_site_evidence.py \
   --evidence integrations/devices/noraxon/site-export-evidence-bundle.template.json \
   --output qa-validation/evidence/day25-noraxon-site-audit.json
 
 echo "[5/8] Data readiness gate"
-python scripts/data/build_day25_readiness_gate.py \
+python3 scripts/data/build_day25_readiness_gate.py \
   --output qa-validation/evidence/day25-data-readiness-gate-v0.2.json
 
 echo "[6/8] Automated tests"
-pytest -q \
+python3 -m pytest -q \
   qa-validation/automated-tests/test_day25_research_catalog_v2.py \
   qa-validation/automated-tests/test_day25_group_split_v2.py \
   qa-validation/automated-tests/test_day25_site_audit_v2.py \
@@ -45,7 +45,7 @@ pytest -q \
   qa-validation/automated-tests/test_day25_conflict_register_v2.py
 
 echo "[7/8] JSON evidence summary"
-python - <<'PY'
+python3 - <<'PY'
 import json
 from pathlib import Path
 root = Path('.')
@@ -66,6 +66,6 @@ print(json.dumps({
 PY
 
 echo "[8/8] Artifact/safety checker"
-python scripts/dev/check_day25_research_artifacts.py
+python3 scripts/dev/check_day25_research_artifacts.py
 
 echo "All Day 25 research-grounded checks passed."

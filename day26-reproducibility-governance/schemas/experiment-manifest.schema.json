@@ -1,0 +1,774 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semg-clinical-intelligence.local/schemas/experiment-manifest.schema.json",
+  "title": "sEMG Clinical Intelligence Experiment Manifest",
+  "description": "Content-addressed experiment contract for blueprint and future training execution.",
+  "x-governance": {
+    "schema_version": "1.0",
+    "status": "PROVISIONAL_LOCKED_FOR_DAY26_BLUEPRINT",
+    "rationale": "The schema locks experiment provenance before Day 29 baseline training.",
+    "evidence_ids": [
+      "D26-INT-PROTOCOL",
+      "EXT-MLFLOW-TRACKING",
+      "EXT-NIST-SHA256"
+    ],
+    "open_questions": [
+      "Final site runtime profile",
+      "Resolved uv.lock hash before training"
+    ],
+    "training_allowed": false
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "rationale",
+    "evidence_ids",
+    "open_questions",
+    "training_allowed",
+    "manifest_type",
+    "governance_mode",
+    "lifecycle_status",
+    "experiment_id",
+    "task_id",
+    "title",
+    "hypothesis",
+    "created_at",
+    "created_by",
+    "code",
+    "data",
+    "split",
+    "configs",
+    "seeds",
+    "environment",
+    "metrics",
+    "artifacts",
+    "license_gate",
+    "review"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "training_allowed": {
+      "type": "boolean"
+    },
+    "manifest_type": {
+      "const": "experiment"
+    },
+    "governance_mode": {
+      "enum": [
+        "BLUEPRINT_ONLY",
+        "TRAINING_EXECUTION"
+      ]
+    },
+    "lifecycle_status": {
+      "enum": [
+        "planned",
+        "running",
+        "completed",
+        "reviewed",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^EXP-[0-9]{8}-TASK[ABC]-[A-Z0-9-]+-[0-9]{3}$"
+    },
+    "task_id": {
+      "enum": [
+        "TaskA",
+        "TaskB",
+        "TaskC"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hypothesis_id",
+        "statement",
+        "decision_if_supported",
+        "decision_if_not_supported"
+      ],
+      "properties": {
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_if_supported": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_if_not_supported": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supersedes_experiment_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mlflow_run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "code": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "commit",
+        "branch",
+        "dirty"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{7,64}$|^NOT_COMMITTED_BLUEPRINT$"
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dirty": {
+          "type": "boolean"
+        },
+        "diff_or_archive_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset_manifest",
+        "raw_registry",
+        "class_ontology_id",
+        "channel_mapping_id"
+      ],
+      "properties": {
+        "dataset_manifest": {
+          "$ref": "#/$defs/artifact_ref"
+        },
+        "raw_registry": {
+          "$ref": "#/$defs/artifact_ref"
+        },
+        "class_ontology_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel_mapping_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "split": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "regime_id",
+        "group_keys",
+        "split_manifest",
+        "test_seal",
+        "test_opened"
+      ],
+      "properties": {
+        "regime_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "group_keys": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "split_manifest": {
+          "$ref": "#/$defs/artifact_ref"
+        },
+        "test_seal": {
+          "$ref": "#/$defs/artifact_ref"
+        },
+        "test_opened": {
+          "type": "boolean"
+        }
+      }
+    },
+    "configs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preprocessing",
+        "features",
+        "model",
+        "calibration",
+        "threshold",
+        "abstention"
+      ],
+      "properties": {
+        "preprocessing": {
+          "$ref": "#/$defs/config_ref"
+        },
+        "features": {
+          "$ref": "#/$defs/config_ref"
+        },
+        "model": {
+          "$ref": "#/$defs/config_ref"
+        },
+        "calibration": {
+          "$ref": "#/$defs/config_ref"
+        },
+        "threshold": {
+          "$ref": "#/$defs/config_ref"
+        },
+        "abstention": {
+          "$ref": "#/$defs/config_ref"
+        }
+      }
+    },
+    "seeds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "root_seed",
+        "named_seeds",
+        "generation_method"
+      ],
+      "properties": {
+        "root_seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "named_seeds": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          }
+        },
+        "generation_method": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lock",
+        "python",
+        "numpy",
+        "scipy",
+        "scikit_learn",
+        "mlflow",
+        "runtime_profile",
+        "fingerprint_status"
+      ],
+      "properties": {
+        "lock": {
+          "$ref": "#/$defs/config_ref"
+        },
+        "python": {
+          "type": "string",
+          "minLength": 1
+        },
+        "numpy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scipy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scikit_learn": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mlflow": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime_profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fingerprint_status": {
+          "enum": [
+            "NOT_CAPTURED_BLUEPRINT",
+            "CAPTURED"
+          ]
+        },
+        "fingerprint_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "execution_status",
+        "metric_contract_id",
+        "result_refs"
+      ],
+      "properties": {
+        "execution_status": {
+          "enum": [
+            "NOT_RUN",
+            "COMPLETE",
+            "FAILED",
+            "INVALIDATED"
+          ]
+        },
+        "metric_contract_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact_ref"
+      }
+    },
+    "license_gate": {
+      "$ref": "#/$defs/license_gate"
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "decisions"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "decisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/review_decision"
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "governance_mode": {
+            "const": "BLUEPRINT_ONLY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "training_allowed": {
+            "const": false
+          },
+          "metrics": {
+            "properties": {
+              "execution_status": {
+                "const": "NOT_RUN"
+              }
+            }
+          },
+          "lifecycle_status": {
+            "enum": [
+              "planned",
+              "reviewed",
+              "rejected",
+              "superseded"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "governance_mode": {
+            "const": "TRAINING_EXECUTION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "training_allowed": {
+            "const": true
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "config_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "config_id",
+        "version",
+        "uri",
+        "sha256"
+      ],
+      "properties": {
+        "config_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "artifact_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "role",
+        "uri",
+        "media_type",
+        "sha256",
+        "size_bytes",
+        "trust_class"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "dataset_manifest",
+            "raw_registry",
+            "split_manifest",
+            "test_seal",
+            "preprocessing_config",
+            "feature_config",
+            "model_config",
+            "calibration_config",
+            "threshold_policy",
+            "abstention_policy",
+            "environment_lock",
+            "model_bundle",
+            "model_card",
+            "evaluation_report",
+            "prediction_ledger",
+            "failure_cases",
+            "release_manifest",
+            "rollback_record",
+            "code_archive",
+            "hash_ledger",
+            "sbom",
+            "other"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "trust_class": {
+          "enum": [
+            "canonical-typed",
+            "converted-runtime",
+            "trusted-python-snapshot",
+            "reference-only"
+          ]
+        }
+      }
+    },
+    "review_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_role",
+        "reviewer_id",
+        "decision",
+        "decided_at",
+        "reasons"
+      ],
+      "properties": {
+        "reviewer_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "enum": [
+            "pending",
+            "approved",
+            "approved-with-conditions",
+            "rejected"
+          ]
+        },
+        "decided_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "license_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "license_id",
+        "access_class",
+        "training_use",
+        "research_use",
+        "commercial_use",
+        "redistribution",
+        "trained_artifact_distribution",
+        "attribution_required",
+        "dua_or_irb_required",
+        "review_status"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_uri_or_dua_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "access_class": {
+          "enum": [
+            "open",
+            "registration",
+            "dua",
+            "restricted",
+            "internal",
+            "not-verified"
+          ]
+        },
+        "training_use": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "research_use": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "commercial_use": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "redistribution": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "trained_artifact_distribution": {
+          "enum": [
+            "allowed",
+            "not-allowed",
+            "not-verified",
+            "not-applicable"
+          ]
+        },
+        "attribution_required": {
+          "type": "boolean"
+        },
+        "share_alike_required": {
+          "type": "boolean",
+          "default": false
+        },
+        "dua_or_irb_required": {
+          "type": "boolean"
+        },
+        "review_status": {
+          "enum": [
+            "reviewed",
+            "pending",
+            "not-verified"
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "review_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "license_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aggregate_decision",
+        "sources",
+        "blocking_reasons"
+      ],
+      "properties": {
+        "aggregate_decision": {
+          "enum": [
+            "pass-research",
+            "pass-internal-engineering",
+            "pass-pilot-noncommercial",
+            "pass-pilot-approved",
+            "block",
+            "not-verified"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/license_source"
+          }
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

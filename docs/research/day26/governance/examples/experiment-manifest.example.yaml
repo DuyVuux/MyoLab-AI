@@ -1,0 +1,172 @@
+schema_version: '1.0'
+status: PROVISIONAL_DAY26_BLUEPRINT
+rationale: Valid blueprint example; it contains no model fitting or performance result.
+evidence_ids:
+- D26-INT-PROTOCOL
+- D26-INT-VALIDATION
+- D26-INT-METRICS
+open_questions:
+- Replace empty dataset/split fixtures with approved manifests before execution
+training_allowed: false
+manifest_type: experiment
+governance_mode: BLUEPRINT_ONLY
+lifecycle_status: planned
+experiment_id: EXP-20260727-TASKA-CLASSICAL-BASELINE-001
+task_id: TaskA
+title: Task A classical baseline blueprint
+hypothesis:
+  hypothesis_id: H-TASKA-CLASSICAL-001
+  statement: A leakage-controlled classical ladder can establish an engineering baseline
+    before deep learning.
+  decision_if_supported: Retain the smallest adequate classical candidate under the
+    full evaluation contract.
+  decision_if_not_supported: Investigate data/feature/protocol limitations before
+    expanding model complexity.
+created_at: '2026-07-27T12:00:00+07:00'
+created_by: single-operator
+supersedes_experiment_id: null
+mlflow_run_id: null
+code:
+  repository: /data/projects/semg-fatigue
+  commit: NOT_COMMITTED_BLUEPRINT
+  branch: day26/experiment-blueprint
+  dirty: false
+  diff_or_archive_ref: null
+data:
+  dataset_manifest:
+    artifact_id: ART-DATASET-BLUEPRINT
+    role: dataset_manifest
+    uri: fixtures/dataset-manifest.blueprint.json
+    media_type: application/json
+    sha256: 54c21f1043c6714561857ced90c7697ec46c7e5c5c7a7c3af4a417109cd5fae6
+    size_bytes: 615
+    trust_class: reference-only
+  raw_registry:
+    artifact_id: ART-RAWREG-BLUEPRINT
+    role: raw_registry
+    uri: fixtures/raw-registry.blueprint.csv
+    media_type: text/csv
+    sha256: 252c35843635116d24e713a5475f6a1a2b0f3772a9d250b2fb899df82c75ee69
+    size_bytes: 90
+    trust_class: reference-only
+  class_ontology_id: CLASS-TASKA-EXAMPLE-0.1.0
+  channel_mapping_id: CHANNEL-MAP-NOT-VERIFIED-0.0.0
+split:
+  regime_id: cross-subject-grouped-outer-cv
+  group_keys:
+  - subject_id
+  split_manifest:
+    artifact_id: ART-SPLIT-BLUEPRINT
+    role: split_manifest
+    uri: fixtures/split-manifest.blueprint.json
+    media_type: application/json
+    sha256: d294c942309a6edc249a7e73ec4eac8d4c5a1ee6ec11d087c70423743c415d1f
+    size_bytes: 571
+    trust_class: reference-only
+  test_seal:
+    artifact_id: ART-TESTSEAL-BLUEPRINT
+    role: test_seal
+    uri: fixtures/test-seal.blueprint.json
+    media_type: application/json
+    sha256: 32d24f279c2dccc73f21df2e0e1034ebbf0c0888066311d571cf44ac43d4ab9e
+    size_bytes: 749
+    trust_class: reference-only
+  test_opened: false
+configs:
+  preprocessing:
+    config_id: PREPROC-BASELINE-0.1.0
+    version: 0.1.0
+    uri: fixtures/preprocessing-config.blueprint.yaml
+    sha256: 1690b70a6f97a8f365a1520aa123f31f8026ac84a7c37e61262936e3b83a0921
+  features:
+    config_id: FEATURE-SPARSE-BASELINE-0.1.0
+    version: 0.1.0
+    uri: fixtures/feature-config.blueprint.yaml
+    sha256: fe7441bf1383c721bbed8b8070db99c624d88267c5e57a87fa03c142dea122bd
+  model:
+    config_id: MODEL-CLASSICAL-LADDER-0.1.0
+    version: 0.1.0
+    uri: fixtures/model-config.blueprint.yaml
+    sha256: ae147b25c0919e208557f53e13b2d30cd936ad9b132a9c4a2a9960585c234e5a
+  calibration:
+    config_id: CALIBRATION-CANDIDATES-0.1.0
+    version: 0.1.0
+    uri: fixtures/calibration-config.blueprint.yaml
+    sha256: 2d190a5c7cd83abd42f0d98e585038ed1b1474db7058e62819adc7cb0a86c534
+  threshold:
+    config_id: THRESHOLD-POLICY-0.1.0
+    version: 0.1.0
+    uri: fixtures/threshold-policy.blueprint.yaml
+    sha256: 15d9f065d1d5056c37b3e04c304ee70697955b9ddfea309fdaf06164ad12b8e0
+  abstention:
+    config_id: ABSTENTION-POLICY-0.1.0
+    version: 0.1.0
+    uri: fixtures/abstention-policy.blueprint.yaml
+    sha256: 5c11979db7ea892848250d2c357a8fefadbca131ece654f89013e51379f8a0c1
+seeds:
+  root_seed: 260826
+  named_seeds:
+    split: 2861234645
+    inner_cv: 1708836087
+    estimator: 2194916489
+    feature_selection: 3491388211
+    calibration: 1990356006
+    threshold: 1171393212
+    bootstrap: 3933320476
+    synthetic_fixture: 1676860066
+  generation_method: numpy.random.SeedSequence(root_seed).spawn(8)
+environment:
+  lock:
+    config_id: ENV-SEMGCIV-D26-1.0
+    version: '1.0'
+    uri: configs/environment-lock.research.yaml
+    sha256: 25f234bb7f7943f66f623be2b20a16b9a97051b59e3231761a975210a579c48e
+  python: 3.13.14
+  numpy: 2.5.1
+  scipy: 1.18.0
+  scikit_learn: 1.9.0
+  mlflow: 3.14.0
+  runtime_profile: cpu-single-thread-reference-v1
+  fingerprint_status: NOT_CAPTURED_BLUEPRINT
+  fingerprint_ref: null
+metrics:
+  execution_status: NOT_RUN
+  metric_contract_id: EVAL-D26-1.0
+  result_refs: []
+artifacts:
+- artifact_id: ART-CLASS-ONTOLOGY-BLUEPRINT
+  role: other
+  uri: fixtures/class-ontology.blueprint.yaml
+  media_type: application/yaml
+  sha256: 40254c158c4a8059b3ebceacba9ed96246cbaacbd2b7bf23945692f9bd84384d
+  size_bytes: 429
+  trust_class: reference-only
+- artifact_id: ART-CHANNEL-MAP-BLUEPRINT
+  role: other
+  uri: fixtures/channel-mapping.blueprint.yaml
+  media_type: application/yaml
+  sha256: d1511f4adf71e1355ab6c4dbea317793c74698307792bbc60122fc3d64f2790b
+  size_bytes: 407
+  trust_class: reference-only
+- artifact_id: ART-ENV-LOCK-D26
+  role: environment_lock
+  uri: configs/environment-lock.research.yaml
+  media_type: application/yaml
+  sha256: 25f234bb7f7943f66f623be2b20a16b9a97051b59e3231761a975210a579c48e
+  size_bytes: 1861
+  trust_class: reference-only
+license_gate:
+  aggregate_decision: not-verified
+  sources: []
+  blocking_reasons:
+  - No future training dataset has been admitted in the Day 26 blueprint.
+review:
+  required: true
+  decisions:
+  - reviewer_role: single-operator-self-review
+    reviewer_id: operator-001
+    decision: approved-with-conditions
+    decided_at: '2026-07-27T12:30:00+07:00'
+    reasons:
+    - Blueprint only; training remains disabled.
+    - Resolved uv.lock and data/license approval are pre-Day29 blockers.

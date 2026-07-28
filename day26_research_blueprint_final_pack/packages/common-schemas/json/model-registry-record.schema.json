@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelRegistryRecord",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "state",
+    "version",
+    "human_review_required"
+  ],
+  "properties": {
+    "artifact_type": {
+      "enum": [
+        "classifier",
+        "context_engine",
+        "metric_engine",
+        "rule_engine",
+        "calibrator",
+        "threshold_policy",
+        "abstention_policy",
+        "feature_extractor",
+        "composite_pipeline"
+      ]
+    },
+    "state": {
+      "enum": [
+        "draft",
+        "research",
+        "candidate",
+        "validated-for-engineering",
+        "pilot-candidate",
+        "rejected",
+        "archived"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "human_review_required": {
+      "const": true
+    }
+  },
+  "additionalProperties": true
+}

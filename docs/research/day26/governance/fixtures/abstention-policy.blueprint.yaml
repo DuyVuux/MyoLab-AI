@@ -1,0 +1,20 @@
+schema_version: '1.0'
+status: PROVISIONAL_BLUEPRINT
+rationale: Reason precedence is locked while numerical triggers remain unselected.
+evidence_ids:
+- D26-INT-METRICS
+- D26-INT-FATIGUE
+open_questions:
+- Finalize mandatory-abstain reference with human reviewer
+training_allowed: false
+config_id: ABSTENTION-POLICY-0.1.0
+human_review_required: true
+reason_precedence:
+- QC_FAIL
+- UNSUPPORTED_PROTOCOL_OR_ANATOMY
+- CALIBRATION_FAILURE_OR_EXPIRED
+- UNKNOWN_GESTURE
+- TRANSITION
+- FATIGUE_DRIFT_OUTSIDE_SUPPORT
+- LOW_MODEL_CONFIDENCE
+- QC_WARNING_POLICY
