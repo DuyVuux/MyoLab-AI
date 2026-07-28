@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "public-source-record.v1",
+  "datasetId": "SYNTHETIC_CONTRACT_FIXTURE",
+  "canonicalTitle": "Synthetic contract fixture",
+  "canonicalRecordUrl": "https://example.org/dataset",
+  "doiOrRepositoryId": "fixture:1",
+  "recordVersion": "1",
+  "publisherOrRepository": "Fixture",
+  "retrievedAt": "2026-07-28T00:00:00Z",
+  "citation": "Fixture only",
+  "license": {
+    "id": "CC0-1.0",
+    "url": "https://example.org/license",
+    "snapshotPath": "/controlled/license.txt",
+    "snapshotSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "researchUseAllowed": true,
+    "internalEngineeringAllowed": true,
+    "commercialUseAllowed": false,
+    "redistributionAllowed": false,
+    "attributionRequired": false,
+    "reviewStatus": "VERIFIED"
+  },
+  "access": {
+    "class": "FIXTURE",
+    "registrationRequired": false,
+    "duaRequired": false,
+    "termsAccepted": true
+  },
+  "download": {
+    "url": "https://example.org/archive.zip",
+    "expectedFileName": "archive.zip",
+    "maxBytes": 1024,
+    "expectedSha256": null
+  },
+  "verification": {
+    "canonicalRecordOpened": true,
+    "titleMatched": true,
+    "versionCaptured": true,
+    "licenseCaptured": true,
+    "downloadLinkMatchedCanonicalRecord": true
+  },
+  "evidenceStatus": "FIXTURE_ONLY"
+}

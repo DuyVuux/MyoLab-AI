@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "status",
+    "checks",
+    "publicDatasetEngineeringReady",
+    "publicBaselineTrainingEligible",
+    "trainingExecutionAllowed",
+    "testSetSealed"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "engineering-data-gate.v1"
+    },
+    "status": {
+      "enum": [
+        "GO_FOR_DAY28_EDA",
+        "BLOCKED_SOURCE_OR_SCHEMA"
+      ]
+    },
+    "trainingExecutionAllowed": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

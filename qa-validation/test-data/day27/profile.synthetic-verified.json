@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "dataset-adapter-profile.v1",
+  "profileId": "fixture.profile.v1",
+  "verificationStatus": "VERIFIED",
+  "datasetId": "SYNTHETIC_CONTRACT_FIXTURE",
+  "sourceFormat": "wide_csv",
+  "fileGlob": "**/*.csv",
+  "text": {
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "headerRows": 1
+  },
+  "signal": {
+    "rawOrProcessed": "raw",
+    "samplingRateHz": 1000,
+    "sourceUnit": "mV",
+    "canonicalUnit": "uV",
+    "time": {
+      "mode": "sample_index_or_column",
+      "sourceColumn": null,
+      "unit": null
+    },
+    "channels": [
+      {
+        "sourceColumn": "c1",
+        "canonicalId": "CH01"
+      },
+      {
+        "sourceColumn": "c2",
+        "canonicalId": "CH02"
+      },
+      {
+        "sourceColumn": "c3",
+        "canonicalId": "CH03"
+      },
+      {
+        "sourceColumn": "c4",
+        "canonicalId": "CH04"
+      }
+    ]
+  },
+  "pathMetadata": {
+    "regex": ".*",
+    "requiredGroups": [
+      "subject_id",
+      "repetition_id",
+      "source_label"
+    ],
+    "optionalGroups": []
+  },
+  "clinicalUseAllowed": false,
+  "motionLabTransferVerified": false,
+  "mfcvEligible": false
+}

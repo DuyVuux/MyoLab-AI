@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "label-mapping.v1",
+  "mappingId": "MENDELEY_4CH_GESTURE.taskA.v0.1",
+  "verificationStatus": "NOT_VERIFIED",
+  "targetOntologyVersion": "taskA-gesture.v0.2",
+  "allowedTargets": [
+    "rest",
+    "hand_open",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "protectedNonTargets": [
+    "unknown",
+    "ambiguous",
+    "artifact",
+    "not_attempted",
+    "transition"
+  ],
+  "mappings": [
+    {
+      "sourceLabel": "<REQUIRED>",
+      "canonicalLabel": null,
+      "mappingStatus": "TO_VERIFY",
+      "evidence": "<REQUIRED>"
+    }
+  ],
+  "defaultBehavior": "ERROR_UNMAPPED",
+  "mapUnknownToRest": false
+}

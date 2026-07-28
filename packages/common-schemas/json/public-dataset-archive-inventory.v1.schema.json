@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "archiveType",
+    "entryCount",
+    "unsafePaths",
+    "safeToExtract",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "public-dataset-archive-inventory.v1"
+    },
+    "archiveType": {
+      "enum": [
+        "zip",
+        "tar"
+      ]
+    },
+    "entryCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unsafePaths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safeToExtract": {
+      "type": "boolean"
+    },
+    "entries": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

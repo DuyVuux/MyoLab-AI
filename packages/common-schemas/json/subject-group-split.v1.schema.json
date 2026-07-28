@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "datasetId",
+    "groupUnit",
+    "groups",
+    "testSetSealed",
+    "testOpened",
+    "splitSha256"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "subject-group-split.v1"
+    },
+    "groupUnit": {
+      "const": "subject"
+    },
+    "testSetSealed": {
+      "const": true
+    },
+    "testOpened": {
+      "const": false
+    },
+    "groups": {
+      "type": "object",
+      "required": [
+        "train",
+        "validation",
+        "test"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

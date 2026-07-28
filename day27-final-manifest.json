@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "day27-final-manifest.v1",
+  "day": 27,
+  "title": "Controlled Public Dataset Engineering Gate",
+  "status": "TOOLING_READY_REAL_DATA_PENDING",
+  "primaryCandidate": "MENDELEY_4CH_GESTURE",
+  "fallbackCandidate": "GRABMYO_V1_1",
+  "trainingAllowed": false,
+  "realDatasetPresent": false,
+  "realEngineeringDataGateStatus": "PENDING_EXTERNAL_DATA",
+  "testSetOpened": false,
+  "motionLabTransferVerified": false,
+  "clinicalUseAllowed": false,
+  "toolingValidation": {
+    "schemaVersion": "day27-tooling-validation.v1",
+    "packValid": true,
+    "errors": [],
+    "realDatasetPresent": false,
+    "realEngineeringDataGateStatus": "PENDING_EXTERNAL_DATA",
+    "trainingExecutionAllowed": false,
+    "testSetOpened": false
+  },
+  "automatedTests": {
+    "passed": 13,
+    "failed": 0
+  },
+  "sourceHashLedgerPath": "qa-validation/evidence/day27-source-hash-ledger.json",
+  "sourceHashLedgerSha256": "e6e98c3f3f85c3d98d36c14af220f39bd2d4387673341484b83e3660163d9c7a",
+  "handoff": {
+    "day28AllowedWhen": "engineering_data_gate == GO_FOR_DAY28_EDA",
+    "day29TrainingExecutionAllowed": false
+  },
+  "notes": [
+    "Starter pack does not contain public/raw signal data.",
+    "Synthetic fixtures validate contracts only and are not Mendeley or Noraxon data."
+  ]
+}

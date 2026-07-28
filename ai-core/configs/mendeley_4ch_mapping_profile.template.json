@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "dataset-adapter-profile.v1",
+  "profileId": "MENDELEY_4CH_GESTURE.profile.v0.1",
+  "verificationStatus": "NOT_VERIFIED",
+  "datasetId": "MENDELEY_4CH_GESTURE",
+  "sourceFormat": "<REQUIRED_AFTER_INVENTORY>",
+  "fileGlob": "<REQUIRED_AFTER_INVENTORY>",
+  "text": {
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "headerRows": 1
+  },
+  "signal": {
+    "rawOrProcessed": "<REQUIRED>",
+    "samplingRateHz": null,
+    "sourceUnit": "<REQUIRED>",
+    "canonicalUnit": "uV",
+    "time": {
+      "mode": "sample_index_or_column",
+      "sourceColumn": null,
+      "unit": null
+    },
+    "channels": [
+      {
+        "sourceColumn": "<REQUIRED>",
+        "canonicalId": "CH01"
+      },
+      {
+        "sourceColumn": "<REQUIRED>",
+        "canonicalId": "CH02"
+      },
+      {
+        "sourceColumn": "<REQUIRED>",
+        "canonicalId": "CH03"
+      },
+      {
+        "sourceColumn": "<REQUIRED>",
+        "canonicalId": "CH04"
+      }
+    ]
+  },
+  "pathMetadata": {
+    "regex": "<REQUIRED_NAMED_GROUPS_SUBJECT_REPETITION_LABEL>",
+    "requiredGroups": [
+      "subject_id",
+      "repetition_id",
+      "source_label"
+    ],
+    "optionalGroups": [
+      "day_id",
+      "session_id",
+      "trial_id"
+    ]
+  },
+  "clinicalUseAllowed": false,
+  "motionLabTransferVerified": false,
+  "mfcvEligible": false
+}

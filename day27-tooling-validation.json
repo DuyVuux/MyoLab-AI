@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "day27-tooling-validation.v1",
+  "packValid": true,
+  "errors": [],
+  "realDatasetPresent": false,
+  "realEngineeringDataGateStatus": "PENDING_EXTERNAL_DATA",
+  "trainingExecutionAllowed": false,
+  "testSetOpened": false
+}

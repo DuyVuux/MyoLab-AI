@@ -1,0 +1,23 @@
+experiment_id,day26_task,selected_dataset_pre_gate_status,eligibility_condition,reason
+E-A00,TaskA,ELIGIBLE_AFTER_GATE,source/license/schema/labels/class_support/split PASS,Core within/cross-subject classical baseline candidate
+E-A01,TaskA,ELIGIBLE_AFTER_GATE,source/license/schema/labels/class_support/split PASS,Core within/cross-subject classical baseline candidate
+E-A02,TaskA,ELIGIBLE_AFTER_GATE,source/license/schema/labels/class_support/split PASS,Core within/cross-subject classical baseline candidate
+E-A03,TaskA,ELIGIBLE_AFTER_GATE,source/license/schema/labels/class_support/split PASS,Core within/cross-subject classical baseline candidate
+E-A04,TaskA,ELIGIBLE_AFTER_GATE,source/license/schema/labels/class_support/split PASS,Core within/cross-subject classical baseline candidate
+E-A05,TaskA,ELIGIBLE_AFTER_GATE,source/license/schema/labels/class_support/split PASS,Core within/cross-subject classical baseline candidate
+E-A06,TaskA,CONDITIONAL,multiple verified sessions required,Cross-session cannot be inferred
+E-A07,TaskA,NOT_ELIGIBLE_UNLESS_MULTI_DAY,verified day_id required,Cross-day cannot be inferred
+E-A08,TaskA,NOT_ELIGIBLE,reapply_event_id required,No electrode reapply evidence
+E-P00,TaskA,CONDITIONAL,enough disjoint repetitions per subject,Personalization split must preserve target test
+E-P01,TaskA,CONDITIONAL,>=2 calibration repetitions per supported class plus locked test,Few-shot arm
+E-P02,TaskA,CONDITIONAL,>=3 calibration repetitions per supported class plus locked test,Default Day26 personalization arm
+E-P03,TaskA,CONDITIONAL,>=5 calibration repetitions per supported class plus locked test,Saturation arm
+E-F00,TaskB,NOT_PRIMARY_CORPUS,independent fatigue/context labels required,Mendeley 4ch selected for Task A; no fatigue context assumed
+E-F01,TaskB,NOT_PRIMARY_CORPUS,independent fatigue/context labels required,Mendeley 4ch selected for Task A; no fatigue context assumed
+E-F02,TaskB,NOT_PRIMARY_CORPUS,independent fatigue/context labels required,Mendeley 4ch selected for Task A; no fatigue context assumed
+E-F03,TaskB,NOT_PRIMARY_CORPUS,independent fatigue/context labels required,Mendeley 4ch selected for Task A; no fatigue context assumed
+E-F04,TaskB,NOT_PRIMARY_CORPUS,independent fatigue/context labels required,Mendeley 4ch selected for Task A; no fatigue context assumed
+E-C00,TaskC,NOT_PRIMARY_CORPUS,quantitative reference/protocol required,Not selected for Task C metric provenance
+E-C01,TaskC,NOT_PRIMARY_CORPUS,quantitative reference/protocol required,Not selected for Task C metric provenance
+E-C02,TaskC,NOT_PRIMARY_CORPUS,quantitative reference/protocol required,Not selected for Task C metric provenance
+E-C03,TaskC,NOT_PRIMARY_CORPUS,quantitative reference/protocol required,Not selected for Task C metric provenance

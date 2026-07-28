@@ -1,0 +1,13 @@
+schema_version: "1.0"
+status: "LOCKED_FALSE_DAY27"
+training_allowed: false
+reason: "Day 27 performs source verification, acquisition, adapter, labels, split and data gate only."
+required_before_future_authorization:
+  - engineering_data_gate_passed
+  - exact_dataset_manifest_hash_verified
+  - split_manifest_hash_verified
+  - test_seal_unopened
+  - real_uv_lock_present_and_verified
+  - approved_experiment_manifest
+  - leakage_preflight_passed
+  - authorization_record_reviewed

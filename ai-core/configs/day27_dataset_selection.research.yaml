@@ -1,0 +1,23 @@
+schema_version: "1.0"
+status: "PRESELECTED_PENDING_CANONICAL_VERIFICATION"
+trainingAllowed: false
+primary_candidate:
+  dataset_id: "MENDELEY_4CH_GESTURE"
+  role: "first_sparse_task_a_adapter"
+  expected_license_from_day25: "CC BY 4.0 - must reverify canonical record"
+  exact_source_record_verified: false
+fallback_candidate:
+  dataset_id: "GRABMYO_V1_1"
+  role: "cross_day_robustness_and_fallback"
+  switch_triggers:
+    - canonical_record_not_identified
+    - license_snapshot_not_verified
+    - subject_repetition_hierarchy_unusable
+    - source_format_not_supported_within_day27
+    - label_semantics_not_mappable_without_inference
+permissions:
+  public_dataset_engineering: true
+  public_baseline_training_eligible: false
+  training_execution_allowed: false
+  motionlab_training_allowed: false
+  clinical_training_allowed: false

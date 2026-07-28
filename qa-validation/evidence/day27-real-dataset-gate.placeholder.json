@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "engineering-data-gate.v1",
+  "status": "BLOCKED_SOURCE_OR_SCHEMA",
+  "checks": {},
+  "blockers": [
+    "REAL_DATASET_NOT_ACQUIRED_IN_STARTER_PACK"
+  ],
+  "publicDatasetEngineeringReady": false,
+  "publicBaselineTrainingEligible": false,
+  "trainingExecutionAllowed": false,
+  "testSetSealed": true,
+  "motionLabTransferVerified": false,
+  "clinicalUseAllowed": false
+}

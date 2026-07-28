@@ -1,0 +1,8 @@
+decision_id,decision,internal_source,status
+D27-001,Mendeley 4-channel preselected for first sparse Task A adapter,Day25 free-first-research-stack + task-a-data-spec,PROJECT_LOCKED_PENDING_SOURCE_VERIFICATION
+D27-002,GRABMyo is fallback and later cross-day robustness corpus,Day25 dataset inventory/conflict register,PROJECT_LOCKED
+D27-003,No training on Day27,Day26 Research Protocol + Reproducible Training Policy,PROJECT_LOCKED
+D27-004,split-first segment-second window-third,Day26 Validation and Leakage Review,PROJECT_LOCKED
+D27-005,subject-macro repetition-level evaluation remains future metric contract,Day26 Metrics/Evaluation Plan,PROJECT_LOCKED
+D27-006,test remains sealed and public healthy data are engineering-only,Day26 Governance/Readiness Gate,PROJECT_LOCKED
+D27-007,Motion Lab/Noraxon transfer remains unverified,Day25 Noraxon addendum + Day26 open dependencies,BLOCKED_EXTERNAL

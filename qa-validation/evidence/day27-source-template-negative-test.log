@@ -1,0 +1,19 @@
+{
+  "status": "INVALID",
+  "errors": [
+    "PLACEHOLDERS_OR_NULLS:$.canonicalTitle,$.canonicalRecordUrl,$.doiOrRepositoryId,$.recordVersion,$.publisherOrRepository,$.retrievedAt,$.citation,$.license.id,$.license.url,$.license.snapshotPath,$.license.snapshotSha256,$.license.reviewStatus,$.access.class,$.download.url,$.download.expectedFileName,$.evidenceStatus",
+    "HTTPS_REQUIRED:canonicalRecordUrl",
+    "HTTPS_REQUIRED:download.url",
+    "HTTPS_REQUIRED:license.url",
+    "INVALID_LICENSE_SNAPSHOT_SHA256",
+    "LICENSE_NOT_VERIFIED",
+    "RESEARCH_USE_NOT_ALLOWED",
+    "INTERNAL_ENGINEERING_NOT_ALLOWED",
+    "ACCESS_TERMS_NOT_ACCEPTED",
+    "VERIFICATION_FALSE:canonicalRecordOpened",
+    "VERIFICATION_FALSE:titleMatched",
+    "VERIFICATION_FALSE:versionCaptured",
+    "VERIFICATION_FALSE:licenseCaptured",
+    "VERIFICATION_FALSE:downloadLinkMatchedCanonicalRecord"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "public-source-record.v1",
+  "datasetId": "MENDELEY_4CH_GESTURE",
+  "canonicalTitle": "<REQUIRED>",
+  "canonicalRecordUrl": "<REQUIRED_HTTPS_URL>",
+  "doiOrRepositoryId": "<REQUIRED>",
+  "recordVersion": "<REQUIRED>",
+  "publisherOrRepository": "<REQUIRED>",
+  "retrievedAt": "<REQUIRED_ISO8601>",
+  "citation": "<REQUIRED>",
+  "license": {
+    "id": "<REQUIRED>",
+    "url": "<REQUIRED_HTTPS_URL>",
+    "snapshotPath": "<REQUIRED_CONTROLLED_PATH>",
+    "snapshotSha256": "<REQUIRED_64_HEX>",
+    "researchUseAllowed": false,
+    "internalEngineeringAllowed": false,
+    "commercialUseAllowed": false,
+    "redistributionAllowed": false,
+    "attributionRequired": null,
+    "reviewStatus": "NOT_VERIFIED"
+  },
+  "access": {
+    "class": "<REQUIRED>",
+    "registrationRequired": null,
+    "duaRequired": null,
+    "termsAccepted": false
+  },
+  "download": {
+    "url": "<REQUIRED_HTTPS_URL>",
+    "expectedFileName": "<REQUIRED>",
+    "maxBytes": null,
+    "expectedSha256": null
+  },
+  "verification": {
+    "canonicalRecordOpened": false,
+    "titleMatched": false,
+    "versionCaptured": false,
+    "licenseCaptured": false,
+    "downloadLinkMatchedCanonicalRecord": false
+  },
+  "evidenceStatus": "NOT_VERIFIED"
+}

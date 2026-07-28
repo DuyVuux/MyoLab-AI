@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "profileId",
+    "verificationStatus",
+    "datasetId",
+    "sourceFormat",
+    "signal",
+    "pathMetadata"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "dataset-adapter-profile.v1"
+    },
+    "verificationStatus": {
+      "enum": [
+        "NOT_VERIFIED",
+        "VERIFIED",
+        "REJECTED"
+      ]
+    },
+    "signal": {
+      "type": "object",
+      "required": [
+        "samplingRateHz",
+        "sourceUnit",
+        "channels"
+      ]
+    },
+    "pathMetadata": {
+      "type": "object",
+      "required": [
+        "regex",
+        "requiredGroups"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

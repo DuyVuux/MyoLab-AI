@@ -1,0 +1,9 @@
+requirement_id,requirement,verification
+D27-R01,Day25/26 previous checker integration,run_day27_checks.sh
+D27-R02,No network required for pack tests,pytest fixtures
+D27-R03,No raw data/model in ZIP,artifact checker
+D27-R04,Strict source/license gate,source_record tests
+D27-R05,Archive path traversal blocked,safe_archive tests
+D27-R06,Strict label mapping,label_mapping tests
+D27-R07,Subject-safe split,group_split tests
+D27-R08,Training remains locked,gate/safety tests

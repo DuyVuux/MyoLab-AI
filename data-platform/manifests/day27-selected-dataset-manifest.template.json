@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "selected-public-dataset-manifest.v1",
+  "datasetId": "MENDELEY_4CH_GESTURE",
+  "status": "PENDING",
+  "sourceRecordHashSha256": "",
+  "retrievalReceiptHashSha256": "",
+  "archiveHashSha256": "",
+  "archiveInventoryHashSha256": "",
+  "adapterProfileHashSha256": "",
+  "labelMappingHashSha256": "",
+  "metadataIndexHashSha256": "",
+  "groupSplitHashSha256": "",
+  "testSetSealed": true,
+  "publicBaselineTrainingEligible": false,
+  "trainingExecutionAllowed": false,
+  "motionLabTransferVerified": false,
+  "clinicalUseAllowed": false
+}

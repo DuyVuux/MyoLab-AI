@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "day27-source-hash-ledger.v1",
+  "entryCount": 83,
+  "entries": [
+    {
+      "relativePath": "DAY27_KE_HOACH_PUBLIC_DATASET_ENGINEERING_FINAL.md",
+      "sizeBytes": 24948,
+      "sha256": "c34fbe8494bc2efd778c27a3c0728bbbff0f8bf55f380451e52afd5c46d84e53"
+    },
+    {
+      "relativePath": "DAY27_PUBLIC_DATASET_ENGINEERING_PACK_README.md",
+      "sizeBytes": 952,
+      "sha256": "05f457d7893e35105c9a0f9062c66067deceeb8f27d57b65793fb35bb30ea7d5"
+    },
+    {
+      "relativePath": "ai-core/configs/day27_dataset_selection.research.yaml",
+      "sizeBytes": 834,
+      "sha256": "1c0bec81d5195909e2618fd27ed43cf047f03fc66f0808561a16c03a351582ae"
+    },
+    {
+      "relativePath": "ai-core/configs/day27_training_authorization.research.yaml",
+      "sizeBytes": 480,
+      "sha256": "c50bb4e995af984d9e8a095b3d41679b12fb9219eb77bbb484982a0031e7454e"
+    },
+    {
+      "relativePath": "ai-core/configs/mendeley_4ch_label_map.template.json",
+      "sizeBytes": 649,
+      "sha256": "0710120e88b437cfe42f4504b993a525cafb9a10e0cf2c0a9c50d5fef6c558fb"
+    },
+    {
+      "relativePath": "ai-core/configs/mendeley_4ch_mapping_profile.template.json",
+      "sizeBytes": 1334,
+      "sha256": "1827f67496b7910e5617a42d4f5d140a6c0062b2947a1c834070989a41327c51"
+    },
+    {
+      "relativePath": "ai-core/data/day27/__init__.py",
+      "sizeBytes": 56,
+      "sha256": "1cf350856208821190a1fe71725543e77af92b6c70e0840d159b7858cf15cfe9"
+    },
+    {
+      "relativePath": "ai-core/data/day27/contracts.py",
+      "sizeBytes": 1395,
+      "sha256": "b64b9cf1306a8d506902a9be87f5c6b46fa73187eaa50b339e64261f437f584b"
+    },
+    {
+      "relativePath": "ai-core/data/day27/engineering_gate.py",
+      "sizeBytes": 3222,
+      "sha256": "dcb8489a93a594f67116ca93f2516da8d9ddc7165b6153d44fd43a157ebbbf14"
+    },
+    {
+      "relativePath": "ai-core/data/day27/group_split.py",
+      "sizeBytes": 2417,
+      "sha256": "9b865f6d79a81b27145926168a1d7b670514a8acdb4407cceb53aabc0d3dd498"
+    },
+    {
+      "relativePath": "ai-core/data/day27/hashing.py",
+      "sizeBytes": 1002,
+      "sha256": "9230a2a795a17b0850485420b00beb85e39c9bfc64d345fd07635e5fb86a4c24"
+    },
+    {
+      "relativePath": "ai-core/data/day27/label_mapping.py",
+      "sizeBytes": 2229,
+      "sha256": "bde4419663f3db38ddd7142fe0eef96ce964856dfee22b92b66fa086d64a8ec7"
+    },
+    {
+      "relativePath": "ai-core/data/day27/profile_driven_csv_adapter.py",
+      "sizeBytes": 4479,
+      "sha256": "a51d1cab61d848d329e5368b382c4f7b14919df3710b6efc8365d79dd39e8f34"
+    },
+    {
+      "relativePath": "ai-core/data/day27/safe_archive.py",
+      "sizeBytes": 2745,
+      "sha256": "f56fd9f7b3a3084a42d4de32bef6e550d5d3de57f1bbce94c56fd65ddab64cee"
+    },
+    {
+      "relativePath": "ai-core/data/day27/source_record.py",
+      "sizeBytes": 2440,
+      "sha256": "cba70b37772afba846444f244ef9a6402822d0dd2d021ee17d3294a5bccbdd5d"
+    },
+    {
+      "relativePath": "data-platform/manifests/day27-license-snapshot.template.json",
+      "sizeBytes": 268,
+      "sha256": "cc826c5c342ffdb421b20c3c7678c0cdaabbef9a147a8623757aa71416416a25"
+    },
+    {
+      "relativePath": "data-platform/manifests/day27-retrieval-receipt.template.json",
+      "sizeBytes": 258,
+      "sha256": "4c160feb104de76a4b6662bb143d99c58a1c9933d83fddfd90625c67a857a71f"
+    },
+    {
+      "relativePath": "data-platform/manifests/day27-selected-dataset-manifest.template.json",
+      "sizeBytes": 557,
+      "sha256": "5d95d7c07d381ddc322acfb9a992d81bd21706f933fdae702e18e17491a1d241"
+    },
+    {
+      "relativePath": "data-platform/manifests/day27-selected-public-source-record.template.json",
+      "sizeBytes": 1240,
+      "sha256": "ad4dbe6288ad5d5f097b3e6d05f1eaadacba0dccdd6facc13beec2ad4b91a819"
+    },
+    {
+      "relativePath": "docs/05-data/day27/00-day27-scope-and-gates.md",
+      "sizeBytes": 709,
+      "sha256": "5abe121434d831577f80edc445a8425ba1c1c9afa2a979ce944deb6c730ca742"
+    },
+    {
+      "relativePath": "docs/05-data/day27/01-dataset-selection-decision.md",
+      "sizeBytes": 812,
+      "sha256": "7d540d95309f5d9259617b7f9ab62be57e2793f156a34a007b2d8f2dd26d356a"
+    },
+    {
+      "relativePath": "docs/05-data/day27/02-canonical-source-verification-sop.md",
+      "sizeBytes": 411,
+      "sha256": "ef9480a6e4d845effdbd15a60c087259f8a57e36358f67c12ff8f93e46382146"
+    },
+    {
+      "relativePath": "docs/05-data/day27/03-controlled-acquisition-and-hashing.md",
+      "sizeBytes": 356,
+      "sha256": "1a0cb1b42eb4e61d744109f39b9ab16d74b85e1593ca77e8dd28b5bae111a1ea"
+    },
+    {
+      "relativePath": "docs/05-data/day27/04-archive-inventory-and-safe-extraction.md",
+      "sizeBytes": 348,
+      "sha256": "ddc0633d4d47737bc1f8cb1ce815ca92a1ddc4c93b9eda428e0f79f4ed93800e"
+    },
+    {
+      "relativePath": "docs/05-data/day27/05-adapter-and-mapping-profile.md",
+      "sizeBytes": 446,
+      "sha256": "0c7ff58398e6532bf85bb8c0dc7721bb7874e93934e962756ecada736332094e"
+    },
+    {
+      "relativePath": "docs/05-data/day27/06-label-ontology-mapping.md",
+      "sizeBytes": 379,
+      "sha256": "80cd83f043dc7635568c4806ce4634b4232fd551e1d1199246599707ee739f7c"
+    },
+    {
+      "relativePath": "docs/05-data/day27/07-group-split-and-test-seal.md",
+      "sizeBytes": 349,
+      "sha256": "773c6c2efaf4833493fe0df2e882da7cb0d3ce24a8a561d39b23e294c9dadd05"
+    },
+    {
+      "relativePath": "docs/05-data/day27/08-engineering-data-gate.md",
+      "sizeBytes": 430,
+      "sha256": "cbd03dd62b6e9b7de4f94b2c4e92ec856851fc379958f9f80fe559f4de24fdfb"
+    },
+    {
+      "relativePath": "docs/05-data/day27/09-domain-gap-and-transfer-boundary.md",
+      "sizeBytes": 357,
+      "sha256": "08e8336a3adc1674acd5046e724d8e1a2475f17acb789171f8ae4534e4004292"
+    },
+    {
+      "relativePath": "docs/05-data/day27/10-day28-handoff.md",
+      "sizeBytes": 330,
+      "sha256": "b01b32aeff687d5bb1d0e82812f064d0e41afca2d9a22af329c72bd78fa29e31"
+    },
+    {
+      "relativePath": "docs/05-data/day27/11-external-dependencies.md",
+      "sizeBytes": 614,
+      "sha256": "d23a371b0bc48fae0c30ee3450d995903abb0a32d5141cc2d310d44df5a239d9"
+    },
+    {
+      "relativePath": "docs/05-data/day27/dataset-experiment-eligibility-matrix.csv",
+      "sizeBytes": 2803,
+      "sha256": "b6882e2ea26956ab211f387da72bff5c7691e54fff35e974dccf4224b5e9c560"
+    },
+    {
+      "relativePath": "docs/05-data/day27/dataset-selection-scorecard.csv",
+      "sizeBytes": 553,
+      "sha256": "61dc5ee0208da3c9da9cd3c021eccbffac40326a0ceb079848a0eafdf55e5245"
+    },
+    {
+      "relativePath": "docs/05-data/day27/day27-source-traceability.csv",
+      "sizeBytes": 905,
+      "sha256": "c940c1c482b9238e1103b3b939bdfb75a44fef1588fa5a9f55bd02b47932ed0d"
+    },
+    {
+      "relativePath": "docs/note/day27/01-learning-objectives.md",
+      "sizeBytes": 347,
+      "sha256": "d59d45f638d7928143001ba61213e1d823169d9fa0d6689ec02b384efd6263ab"
+    },
+    {
+      "relativePath": "docs/note/day27/02-reading-notes.md",
+      "sizeBytes": 249,
+      "sha256": "dbd7c777c9b5765be3342b6c7883cf8a2998c8f72b8d3b519bd89a43626413e2"
+    },
+    {
+      "relativePath": "docs/note/day27/03-math-and-dsp-notes.md",
+      "sizeBytes": 303,
+      "sha256": "284c4d806c69b4489a79b3b252c54f8908e5dc6da6b50e0ddfb26f4afdd62315"
+    },
+    {
+      "relativePath": "docs/note/day27/04-data-provenance-notes.md",
+      "sizeBytes": 214,
+      "sha256": "4fc04165c8497ab881e200393adea25813fd89a7cba64da1046491bb302fdc3e"
+    },
+    {
+      "relativePath": "docs/note/day27/05-label-mapping-notes.md",
+      "sizeBytes": 188,
+      "sha256": "f6ccc748994b53ec6c84daa28290e6bfc9f5fd6765c76da3207fedcde57b75e1"
+    },
+    {
+      "relativePath": "docs/note/day27/06-leakage-notes.md",
+      "sizeBytes": 235,
+      "sha256": "a9fad26c837a649724ee5f468f3f9b9fa43a24d0038b6f01c599bab8639baffc"
+    },
+    {
+      "relativePath": "docs/note/day27/07-code-reading-guide.md",
+      "sizeBytes": 270,
+      "sha256": "be7b6fb8907021c754b88557b3585441a7aab0ff230e745f6ba3de47497ce414"
+    },
+    {
+      "relativePath": "docs/note/day27/08-decisions.md",
+      "sizeBytes": 231,
+      "sha256": "0f79ff8af297d6d73350bfca4d920176453453354ee612c4bfefe16aba844af2"
+    },
+    {
+      "relativePath": "docs/note/day27/09-questions.md",
+      "sizeBytes": 356,
+      "sha256": "755f33c94abd0314b0617fe83fe7ab7794b0edab2fe045d9c913a144075821ce"
+    },
+    {
+      "relativePath": "docs/note/day27/10-daily-summary.md",
+      "sizeBytes": 169,
+      "sha256": "ecbe2980f00f177ac1258bb9603952854db9324d9634e1197d463d5871af0fc3"
+    },
+    {
+      "relativePath": "docs/note/day27/11-todo-day28.md",
+      "sizeBytes": 211,
+      "sha256": "b833a96d9e66b7ed22563d5db120e54e0aa54a6cf7f98727ca07d46dde601f08"
+    },
+    {
+      "relativePath": "docs/plans/DAY27_EXECUTION_PLAN.md",
+      "sizeBytes": 24948,
+      "sha256": "c34fbe8494bc2efd778c27a3c0728bbbff0f8bf55f380451e52afd5c46d84e53"
+    },
+    {
+      "relativePath": "packages/common-schemas/json/dataset-adapter-profile.v1.schema.json",
+      "sizeBytes": 754,
+      "sha256": "4bc637352aa5be775eca86a362108af46ed76871a91b84a01155fb3cb0f50417"
+    },
+    {
+      "relativePath": "packages/common-schemas/json/engineering-data-gate.v1.schema.json",
+      "sizeBytes": 579,
+      "sha256": "ad1f8b57800de1e0f1067025007d10561427d595710bc8846f116ad60aca1b82"
+    },
+    {
+      "relativePath": "packages/common-schemas/json/label-mapping.v1.schema.json",
+      "sizeBytes": 493,
+      "sha256": "ef23975696d4a904b87e232de740413fe68da45515e048a014a172887894e2bd"
+    },
+    {
+      "relativePath": "packages/common-schemas/json/public-dataset-archive-inventory.v1.schema.json",
+      "sizeBytes": 707,
+      "sha256": "615e19069056f7219a32e4a5dd729b061d58b8d84054d88876c3aa29521ba12b"
+    },
+    {
+      "relativePath": "packages/common-schemas/json/public-source-record.v1.schema.json",
+      "sizeBytes": 1039,
+      "sha256": "2b4c665d52c664f7c8ed57a77ad2d0108aacfd528be77e3d0c82daf7785d9107"
+    },
+    {
+      "relativePath": "packages/common-schemas/json/subject-group-split.v1.schema.json",
+      "sizeBytes": 633,
+      "sha256": "bb30a544bb62f0e7d9d5cf84d95681de155df82d661eb656aa3c72e87b084022"
+    },
+    {
+      "relativePath": "qa-validation/automated-tests/test_day27_adapter.py",
+      "sizeBytes": 750,
+      "sha256": "e7345d1b26cb4b948fc8357722449cd89208ad0698bd7a1cfda10d5a3c9b2815"
+    },
+    {
+      "relativePath": "qa-validation/automated-tests/test_day27_archive_safety.py",
+      "sizeBytes": 772,
+      "sha256": "51a0ebeb51b8ef2685d5fa145ea06d6ad78397e9d0ef25c2868ad293c706806d"
+    },
+    {
+      "relativePath": "qa-validation/automated-tests/test_day27_engineering_gate.py",
+      "sizeBytes": 1482,
+      "sha256": "98e9c220564d17da1b7cf7809c107c0f972dbbaf477e6b5eba5b97779f8f4929"
+    },
+    {
+      "relativePath": "qa-validation/automated-tests/test_day27_group_split.py",
+      "sizeBytes": 776,
+      "sha256": "ed6a63f766468b88460a2d13d3b1cb248f89e370a54915d1a4f2d478c4cc9d7c"
+    },
+    {
+      "relativePath": "qa-validation/automated-tests/test_day27_label_mapping.py",
+      "sizeBytes": 771,
+      "sha256": "f11781061513936cc9e56cd57b092371f424fd083aaaf0a2de01d24c95d40a6f"
+    },
+    {
+      "relativePath": "qa-validation/automated-tests/test_day27_safety_policy.py",
+      "sizeBytes": 844,
+      "sha256": "a30bca128d8114ee8160c3981e5f264f6f855399f74394ac0354d83d9c76c4b0"
+    },
+    {
+      "relativePath": "qa-validation/automated-tests/test_day27_schemas.py",
+      "sizeBytes": 438,
+      "sha256": "ba502a264828defaa9bb67a7cc69ce94272f5ffe649fd989099fd2bde1b4baed"
+    },
+    {
+      "relativePath": "qa-validation/automated-tests/test_day27_source_record.py",
+      "sizeBytes": 716,
+      "sha256": "e6a0cf300e025ba1a4c8af94a1947d3ea6a6a32e29cef803a28aad0528693bd9"
+    },
+    {
+      "relativePath": "qa-validation/evidence/day27-check-run.log",
+      "sizeBytes": 1087,
+      "sha256": "5623ec283af136ecfd4901a9113eb34deb62c968e0f384a7ad6fe5aa96480db7"
+    },
+    {
+      "relativePath": "qa-validation/evidence/day27-real-dataset-gate.placeholder.json",
+      "sizeBytes": 391,
+      "sha256": "82b780f40f552fcb1b0a58622c0671989f6c34684c3b09f6929f3b187e1462b3"
+    },
+    {
+      "relativePath": "qa-validation/evidence/day27-source-fixture-verification.json",
+      "sizeBytes": 43,
+      "sha256": "8684c2a14ae14cb57d1ac5e65816f80fa37ce04bc166015873644b81b089376b"
+    },
+    {
+      "relativePath": "qa-validation/evidence/day27-source-template-negative-test.log",
+      "sizeBytes": 883,
+      "sha256": "4fda8e80ed1c50afc1e5508eef0b53796eb507f606021cbc229f22b3bbb92a53"
+    },
+    {
+      "relativePath": "qa-validation/evidence/day27-tooling-validation.json",
+      "sizeBytes": 244,
+      "sha256": "48be105d252546381b57e5b91adfcd9d031ee3c9ff4c1f1540e71fb391e9447c"
+    },
+    {
+      "relativePath": "qa-validation/evidence/day27-validation-run.md",
+      "sizeBytes": 187,
+      "sha256": "85fe92f6c3af63b3894009976600bf93ebb7fdcd115fe93fe90d92411b400720"
+    },
+    {
+      "relativePath": "qa-validation/requirements/day27-acceptance-criteria.md",
+      "sizeBytes": 407,
+      "sha256": "6c83ed7829ee09f44a067a8ec14cc28bee6a614204b091ee06d742f858b25f46"
+    },
+    {
+      "relativePath": "qa-validation/requirements/day27-requirements.csv",
+      "sizeBytes": 481,
+      "sha256": "b541edea599f724d179b4d9a5531f9a8bb1eda1b25ed95afb7c920519b62df98"
+    },
+    {
+      "relativePath": "qa-validation/test-data/day27/README.md",
+      "sizeBytes": 177,
+      "sha256": "a9b5a4bb19edfcf22018649017bb4bcaf2d4badee3d5cea217dcc2d7dc8b5b81"
+    },
+    {
+      "relativePath": "qa-validation/test-data/day27/label-map.synthetic-verified.json",
+      "sizeBytes": 775,
+      "sha256": "9757b8bf68f6140056f3f7e30ecb8036f469cf6312ce0653f4e3fb0a8a9db365"
+    },
+    {
+      "relativePath": "qa-validation/test-data/day27/profile.synthetic-verified.json",
+      "sizeBytes": 1134,
+      "sha256": "5e62a7225cc47be08a3859e6f3a55a2056336ff3f3a5a9bbb5842ea1ab63b8db"
+    },
+    {
+      "relativePath": "qa-validation/test-data/day27/signal.synthetic.csv",
+      "sizeBytes": 84,
+      "sha256": "94afc6f0b601a05a256d340e7be448eaa369d4200c67407eff64e4c24d247a89"
+    },
+    {
+      "relativePath": "qa-validation/test-data/day27/source-record.synthetic-verified.json",
+      "sizeBytes": 1308,
+      "sha256": "b081816f421d2d5181dcb1bf7b1b7f8d392671b3c052c06e31c5feb1f3a455d3"
+    },
+    {
+      "relativePath": "scripts/data/day27_acquire_public_dataset.py",
+      "sizeBytes": 2794,
+      "sha256": "5ccc247c9c3fad54e6a2f82706ba961c7f04beb0be1596de3d25237a20985899"
+    },
+    {
+      "relativePath": "scripts/data/day27_build_group_split.py",
+      "sizeBytes": 907,
+      "sha256": "1cca579d5f3f7e345cbcecc58e0670406559e6f2166b84e301a69ea14851bd52"
+    },
+    {
+      "relativePath": "scripts/data/day27_build_metadata_index.py",
+      "sizeBytes": 2248,
+      "sha256": "f736e8888c6c4ddb68b025b71ff5394b3d26365c1785c54d53c5fff8047e0dbb"
+    },
+    {
+      "relativePath": "scripts/data/day27_convert_csv_smoke.py",
+      "sizeBytes": 831,
+      "sha256": "1cad2d0b5a3269cc0a8d901dd0949e3996e2d0fef0419caf39eb96ba2d463902"
+    },
+    {
+      "relativePath": "scripts/data/day27_inventory_archive.py",
+      "sizeBytes": 820,
+      "sha256": "e89d95ba5668ab09864216ebb072794b8767e216bc8fb40a60691d41072f50ed"
+    },
+    {
+      "relativePath": "scripts/data/day27_run_engineering_gate.py",
+      "sizeBytes": 774,
+      "sha256": "993b29b3a728d7a894f54016ef474d9d32e040ef5bd175a5d6496d62bd855908"
+    },
+    {
+      "relativePath": "scripts/data/day27_verify_source_record.py",
+      "sizeBytes": 779,
+      "sha256": "78e44c6f857c6e89ec5330a2a2121353d1061b1f681c96ac3af2ab618ab67998"
+    },
+    {
+      "relativePath": "scripts/dev/check_day27_artifacts.py",
+      "sizeBytes": 1686,
+      "sha256": "0f19b325f0acdbec93a11f7f8e311e54ecec98cafdbde830bb4e17375f11a3f7"
+    },
+    {
+      "relativePath": "scripts/dev/run_day27_checks.sh",
+      "sizeBytes": 1893,
+      "sha256": "7812b3b85c0a020cae5c0f7cb75a8bfd1479c58a80cb64bb26ce26072c05198c"
+    },
+    {
+      "relativePath": "scripts/dev/run_day27_public_dataset_checks.sh",
+      "sizeBytes": 81,
+      "sha256": "bb8d81622e5e46678431ab4c3a00f90b23e7891c4c4447df720d9f23b45fca33"
+    }
+  ],
+  "ledgerSha256": "c0227bf525a3ced2d6825032c8378fd4bef3a5d1acd0cb2e26aef626d7b0f6fb"
+}

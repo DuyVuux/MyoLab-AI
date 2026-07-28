@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Source Record v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "datasetId",
+    "canonicalTitle",
+    "canonicalRecordUrl",
+    "doiOrRepositoryId",
+    "recordVersion",
+    "license",
+    "access",
+    "download",
+    "verification"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "public-source-record.v1"
+    },
+    "datasetId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonicalTitle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonicalRecordUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "doiOrRepositoryId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recordVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license": {
+      "type": "object"
+    },
+    "access": {
+      "type": "object"
+    },
+    "download": {
+      "type": "object"
+    },
+    "verification": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
