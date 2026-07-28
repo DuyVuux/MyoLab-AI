@@ -1,7 +1,7 @@
 dimension,dataset_value,project_requirement,gap_severity,mitigation,status
 channel_count,4,4-16 (sparse MVP),NONE,"Within sparse-channel scope",VERIFIED
 sampling_rate,PENDING,1000-2000 Hz,PENDING,"Verify from paper/data",TO_VERIFY
-gesture_vocabulary,"PENDING (paper claims 5+)","rest/hand_open/hand_close/wrist_flexion/wrist_extension",PENDING,"Map source labels to ontology",TO_VERIFY
+gesture_vocabulary,"10 gestures: Rest, Extension, Flexion, Ulnar Dev, Radial Dev, Grip, Abduction, Adduction, Supination, Pronation","rest/hand_open/hand_close/wrist_flexion/wrist_extension",NONE,"Map 4 to ontology, map 6 to unknown",VERIFIED
 subject_count,PENDING,>=10 for cross-subject,PENDING,"Check archive",TO_VERIFY
 fatigue_protocol,NONE,"Required for Task B",CRITICAL,"NOT_PRIMARY_CORPUS for Task B — use Cerqueira",ACKNOWLEDGED
 mfcv_capability,NONE,"Required for Task C",CRITICAL,"NOT_PRIMARY_CORPUS for Task C — use Lucchetti/PhysioMio",ACKNOWLEDGED

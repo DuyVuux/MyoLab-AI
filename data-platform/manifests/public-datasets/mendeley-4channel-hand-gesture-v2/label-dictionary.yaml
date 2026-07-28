@@ -21,29 +21,49 @@ protected_non_targets:
   - transition
 
 mappings:
-  # CONFIRMED — user verification 2026-07-28
-  - source_label: "grip"
+  # Các nhãn thuộc allowed_targets (4 nhãn)
+  - source_label: "Rest"
+    canonical_label: rest
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Hand relaxed horizontally"
+  - source_label: "Grip"
     canonical_label: hand_close
     mapping_status: CONFIRMED
-    evidence: "User confirmation: grip = bàn tay nắm thành nắm đấm (clenched fist)"
-
-  # PENDING — cần xác minh từ archive thật
-  - source_label: "<verify_from_archive>"
-    canonical_label: hand_open
-    mapping_status: TO_VERIFY
-    evidence: "<REQUIRED>"
-  - source_label: "<verify_from_archive>"
+    evidence: "Image from paper: Clenched fist"
+  - source_label: "Flexion"
     canonical_label: wrist_flexion
-    mapping_status: TO_VERIFY
-    evidence: "<REQUIRED>"
-  - source_label: "<verify_from_archive>"
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Wrist flexed downwards"
+  - source_label: "Extension"
     canonical_label: wrist_extension
-    mapping_status: TO_VERIFY
-    evidence: "<REQUIRED>"
-  - source_label: "<verify_from_archive>"
-    canonical_label: rest
-    mapping_status: TO_VERIFY
-    evidence: "<REQUIRED>"
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Wrist extended upwards"
+
+  # Các nhãn không nằm trong allowed_targets -> map to 'unknown' để loại bỏ an toàn (6 nhãn)
+  - source_label: "Ulnar Deviation"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope"
+  - source_label: "Radial Deviation"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope"
+  - source_label: "Abduction"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope (Fingers spread)"
+  - source_label: "Adduction"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope (Fingers together)"
+  - source_label: "Supination"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope"
+  - source_label: "Pronation"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope"
 
 default_behavior: ERROR_UNMAPPED
 map_unknown_to_rest: false
