@@ -1,9 +1,0 @@
-schema_version: "1.0"
-trainingAllowed: false
-states: [draft, research, candidate, validated-for-engineering, pilot-candidate, rejected, archived]
-prohibited_states: [clinical-validated, clinically-validated, clinical-grade]
-human_review:
-  candidate: independent_ml_dsp_or_biostat_reviewer
-  validated-for-engineering: independent_technical_qa_and_ml_dsp
-  pilot-candidate: clinical_lead_site_owner_ai_safety_technical_owner
-single_operator_may_self_approve_pilot: false

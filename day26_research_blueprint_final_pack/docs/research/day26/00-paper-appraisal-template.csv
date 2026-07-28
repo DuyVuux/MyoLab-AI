@@ -1,1 +1,0 @@
-paper_id,title,year,task,population,n_subjects,device,channels,sampling_rate_hz,electrode_geometry,protocol,label_provenance,split_unit,outer_regime,window_overlap,preprocessing,features,models,calibration,abstention,metrics,critical_flaws,applicability,evidence_status,decision
