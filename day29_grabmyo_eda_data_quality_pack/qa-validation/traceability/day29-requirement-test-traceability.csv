@@ -1,8 +1,0 @@
-requirement_id,test_or_evidence,status
-D29-REQ-001,test_day29_partition_guard.py,PLANNED
-D29-REQ-002,check_day29_artifacts.py,PLANNED
-D29-REQ-003,test_day29_hierarchy_labels.py,PLANNED
-D29-REQ-004,test_day29_hierarchy_labels.py,PLANNED
-D29-REQ-005,test_day29_drift.py,PLANNED
-D29-REQ-006,test_day29_feature_readiness.py,PLANNED
-D29-REQ-007,test_day29_feature_readiness.py,PLANNED

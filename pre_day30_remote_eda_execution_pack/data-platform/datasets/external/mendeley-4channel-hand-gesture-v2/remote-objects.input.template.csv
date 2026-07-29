@@ -1,2 +1,0 @@
-record_id,url,official_source,format,size_bytes,partition,subject_id,day_id,session_id,repetition_id,source_label,channel_columns,sampling_rate_hz,unit,notes
-MEND-EXAMPLE-001,https://REPLACE_WITH_OFFICIAL_OBJECT_URL,true,csv,,train,S001,,,R01,Rest,"CH1|CH2|CH3|CH4",,,Template only; do not execute until URL and metadata are verified
