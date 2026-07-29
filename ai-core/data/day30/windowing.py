@@ -4,7 +4,7 @@ import re
 from hashlib import sha256
 from math import isfinite
 
-from .contracts import ALLOWED_PARTITIONS, PROTECTED_LABELS
+from .contracts import ALLOWED_PARTITIONS, PROJECT_CLASS_ORDER
 from .sample_rate import samples_for_ms
 
 REQUIRED_RECORD_FIELDS = frozenset(
@@ -77,7 +77,7 @@ def _validate_record(record: dict) -> None:
     if not isfinite(sampling_rate) or sampling_rate <= 0:
         raise ValueError("sampling_rate_hz must be finite and positive")
     canonical_label = str(record["canonical_label"]).strip().lower()
-    if not canonical_label or canonical_label in PROTECTED_LABELS:
+    if canonical_label not in PROJECT_CLASS_ORDER:
         raise ValueError("canonical_label must be an eligible supervised label")
     if not SHA256_PATTERN.fullmatch(str(record["source_file_sha256"])):
         raise ValueError("source_file_sha256 must be a 64-character sha256")

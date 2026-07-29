@@ -9,14 +9,19 @@ SAMPLE_ROUNDING_POLICY = "round_half_up"
 
 
 def samples_for_ms(sampling_rate_hz: float, duration_ms: float) -> int:
+    sampling_rate = float(sampling_rate_hz)
+    duration = float(duration_ms)
     if (
-        not isfinite(float(sampling_rate_hz))
-        or not isfinite(float(duration_ms))
-        or sampling_rate_hz <= 0
-        or duration_ms <= 0
+        not isfinite(sampling_rate)
+        or not isfinite(duration)
+        or sampling_rate <= 0
+        or duration <= 0
     ):
         raise ValueError("sampling_rate_hz and duration_ms must be finite and positive")
-    return int(floor(float(sampling_rate_hz) * float(duration_ms) / 1000.0 + 0.5))
+    sample_count = int(floor(sampling_rate * duration / 1000.0 + 0.5))
+    if sample_count < 1:
+        raise ValueError("duration must resolve to at least one sample")
+    return sample_count
 
 
 def rational_resample_factors(source_hz: int, target_hz: int) -> tuple[int, int]:
