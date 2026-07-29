@@ -58,7 +58,7 @@ run "$PYTHON_BIN" scripts/data/day30_render_harmonization_report.py \
   --output "$EVIDENCE_DIR/day30-harmonization-report.md"
 run "$PYTHON_BIN" scripts/dev/day30_tooling_smoke.py
 run "$PYTHON_BIN" scripts/dev/stress_test_day30.py \
-  --records 2000 \
+  --records 5000 \
   --output "$EVIDENCE_DIR/day30-stress-test.json"
 run env PYTHONDONTWRITEBYTECODE=1 "$PYTHON_BIN" -m pytest -q \
   -p no:cacheprovider qa-validation/automated-tests/test_day30_*.py
