@@ -1,0 +1,783 @@
+{
+  "schema_version": "mendeley-real-eda-summary.v1",
+  "dataset_id": "mendeley-4channel-hand-gesture-v2",
+  "dataset_version": 2,
+  "source": "Mendeley Data (curl download + scipy.io offline analysis)",
+  "file_format": "MATLAB .mat (v5)",
+  "subjects_total_in_dataset": 25,
+  "subjects_sampled": 9,
+  "completed_subjects": 9,
+  "error_subjects": 0,
+  "total_rows_processed": 11520000,
+  "total_bytes_on_disk": 94769747,
+  "channels_detected": [
+    "EMG_RAW_CH2",
+    "EMG_RAW_CH3",
+    "EMG_RAW_CH4",
+    "EMG_Raw_CH1"
+  ],
+  "n_channels": 4,
+  "sampling_rates_hz": [
+    2000
+  ],
+  "elapsed_seconds": 18.0,
+  "global_channel_statistics": {
+    "EMG_Raw_CH1": {
+      "sample_count": 11520000,
+      "finite_count": 11520000,
+      "nonfinite_ratio": 0.0,
+      "mean": -1.155607912222493,
+      "std": 3.4780458713748543,
+      "min": -9.2254638671875,
+      "max": 9.99969482421875,
+      "rms": 3.6650009113384163,
+      "mav": 2.8085857520633275,
+      "dc_offset": -1.1556079122225444,
+      "zero_ratio": 9.487847222222222e-05,
+      "exact_flatline_ratio": 0.01399748385394825
+    },
+    "EMG_RAW_CH2": {
+      "sample_count": 11520000,
+      "finite_count": 11520000,
+      "nonfinite_ratio": 0.0,
+      "mean": 0.3273906311194479,
+      "std": 3.098440858397944,
+      "min": -9.322509765625,
+      "max": 8.31573486328125,
+      "rms": 3.115689256805243,
+      "mav": 2.4588448255062105,
+      "dc_offset": 0.3273906311194102,
+      "zero_ratio": 3.923611111111111e-05,
+      "exact_flatline_ratio": 0.012493577473400823
+    },
+    "EMG_RAW_CH3": {
+      "sample_count": 11520000,
+      "finite_count": 11520000,
+      "nonfinite_ratio": 0.0,
+      "mean": -0.998109486579892,
+      "std": 3.6262494749945984,
+      "min": -10.0,
+      "max": 7.56011962890625,
+      "rms": 3.7611044469187154,
+      "mav": 2.624377713309394,
+      "dc_offset": -0.9981094865798951,
+      "zero_ratio": 4.123263888888889e-05,
+      "exact_flatline_ratio": 0.024240713909784193
+    },
+    "EMG_RAW_CH4": {
+      "sample_count": 11520000,
+      "finite_count": 11520000,
+      "nonfinite_ratio": 0.0,
+      "mean": -0.0005763066609699497,
+      "std": 0.038932904693246714,
+      "min": -4.21112060546875,
+      "max": 3.023681640625,
+      "rms": 0.038937168176997945,
+      "mav": 0.014457982858022054,
+      "dc_offset": -0.0005763066609700521,
+      "zero_ratio": 0.02326015625,
+      "exact_flatline_ratio": 0.0592632863943825
+    }
+  },
+  "per_subject_summary": [
+    {
+      "subject_id": "10",
+      "mat_id": 10,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 0.1153812854289988,
+          "std": 0.1384092686879147,
+          "min": -0.62591552734375,
+          "max": 0.85052490234375,
+          "rms": 0.18019420556573856,
+          "mav": 0.1493210232257843,
+          "dc_offset": 0.11538128542900085,
+          "zero_ratio": 0.000559375,
+          "exact_flatline_ratio": 0.02046798474061308
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 0.7611295139789425,
+          "std": 0.43891428336507754,
+          "min": -1.03179931640625,
+          "max": 2.38189697265625,
+          "rms": 0.8786146679217421,
+          "mav": 0.7683409726619721,
+          "dc_offset": 0.7611295139789581,
+          "zero_ratio": 7.96875e-05,
+          "exact_flatline_ratio": 0.019048452381603423
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -4.385647001266263,
+          "std": 0.7438784437660971,
+          "min": -5.69915771484375,
+          "max": -2.373046875,
+          "rms": 4.448286673148309,
+          "mav": 4.38564700126648,
+          "dc_offset": -4.38564700126648,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.022784392800306877
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005758528709411774,
+          "std": 0.009277509491634972,
+          "min": -0.27587890625,
+          "max": 0.1483154296875,
+          "rms": 0.00929536022176975,
+          "mav": 0.005697214603424072,
+          "dc_offset": -0.0005758528709411621,
+          "zero_ratio": 0.024921875,
+          "exact_flatline_ratio": 0.06463989424991738
+        }
+      }
+    },
+    {
+      "subject_id": "11",
+      "mat_id": 11,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -7.610255217313608,
+          "std": 0.4311388893049526,
+          "min": -9.2254638671875,
+          "max": -6.29180908203125,
+          "rms": 7.622457941458467,
+          "mav": 7.6102552173137665,
+          "dc_offset": -7.6102552173137665,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.012218759545905896
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 5.008454753399004,
+          "std": 1.3551878484238067,
+          "min": 0.74493408203125,
+          "max": 8.31573486328125,
+          "rms": 5.188559692878888,
+          "mav": 5.008454753398896,
+          "dc_offset": 5.008454753398896,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.010462508173834512
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -1.0792594907283704,
+          "std": 0.30256775590561946,
+          "min": -1.8890380859375,
+          "max": 0.05615234375,
+          "rms": 1.120869405292053,
+          "mav": 1.0792595784664154,
+          "dc_offset": -1.0792594907283783,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.02140626672364588
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005758202075958356,
+          "std": 0.015936950515820364,
+          "min": -0.56121826171875,
+          "max": 0.3802490234375,
+          "rms": 0.015947343422285452,
+          "mav": 0.007543961763381958,
+          "dc_offset": -0.0005758202075958252,
+          "zero_ratio": 0.02605546875,
+          "exact_flatline_ratio": 0.06559301999454686
+        }
+      }
+    },
+    {
+      "subject_id": "12",
+      "mat_id": 12,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 0.22948451042175405,
+          "std": 0.5007743031761311,
+          "min": -2.33489990234375,
+          "max": 3.2391357421875,
+          "rms": 0.5508519286769812,
+          "mav": 0.4783624053001404,
+          "dc_offset": 0.22948451042175294,
+          "zero_ratio": 0.00021640625,
+          "exact_flatline_ratio": 0.014555480121468845
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 1.1059029035567924,
+          "std": 1.0405586566408818,
+          "min": -3.88885498046875,
+          "max": 4.447021484375,
+          "rms": 1.5184803930567083,
+          "mav": 1.449935356616974,
+          "dc_offset": 1.1059029035568237,
+          "zero_ratio": 6.25e-06,
+          "exact_flatline_ratio": 0.01210157195435309
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -1.1319662082195368,
+          "std": 0.6124187248735243,
+          "min": -2.60498046875,
+          "max": 0.84503173828125,
+          "rms": 1.2870135578592665,
+          "mav": 1.135101497411728,
+          "dc_offset": -1.131966208219528,
+          "zero_ratio": 0.0001609375,
+          "exact_flatline_ratio": 0.021742204486097254
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005760397911071758,
+          "std": 0.026918108571578725,
+          "min": -0.6500244140625,
+          "max": 0.80596923828125,
+          "rms": 0.02692426089664361,
+          "mav": 0.012492083549499511,
+          "dc_offset": -0.0005760397911071777,
+          "zero_ratio": 0.01937109375,
+          "exact_flatline_ratio": 0.048030506273833026
+        }
+      }
+    },
+    {
+      "subject_id": "13",
+      "mat_id": 13,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -3.2747401146887745,
+          "std": 1.2730133691561467,
+          "min": -5.379638671875,
+          "max": 0.72479248046875,
+          "rms": 3.513471871345756,
+          "mav": 3.2837373876571654,
+          "dc_offset": -3.2747401146888735,
+          "zero_ratio": 2.1875e-05,
+          "exact_flatline_ratio": 0.020846891286633817
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 2.5694741880893432,
+          "std": 0.34249094717491635,
+          "min": 0.53497314453125,
+          "max": 4.6856689453125,
+          "rms": 2.5921993674317623,
+          "mav": 2.569474188089371,
+          "dc_offset": 2.569474188089371,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.0156687622412205
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 4.512245335340629,
+          "std": 1.9544729654727568,
+          "min": 1.2554931640625,
+          "max": 7.56011962890625,
+          "rms": 4.917348833946843,
+          "mav": 4.5122453353405,
+          "dc_offset": 4.5122453353405,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.027268771303727582
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005765855312347195,
+          "std": 0.020977354409418097,
+          "min": -0.59417724609375,
+          "max": 0.39337158203125,
+          "rms": 0.020985268764173517,
+          "mav": 0.011626549482345582,
+          "dc_offset": -0.0005765855312347412,
+          "zero_ratio": 0.024546875,
+          "exact_flatline_ratio": 0.05744223237674404
+        }
+      }
+    },
+    {
+      "subject_id": "15",
+      "mat_id": 15,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -4.544298555612659,
+          "std": 0.539051370093219,
+          "min": -6.2432861328125,
+          "max": -3.01055908203125,
+          "rms": 4.576158379594064,
+          "mav": 4.544298555612564,
+          "dc_offset": -4.544298555612564,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.01796329528382444
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -1.6352971138954369,
+          "std": 1.2046006228615633,
+          "min": -3.818359375,
+          "max": 2.76336669921875,
+          "rms": 2.0310731591132987,
+          "mav": 1.9401740288734437,
+          "dc_offset": -1.6352971138954162,
+          "zero_ratio": 1.796875e-05,
+          "exact_flatline_ratio": 0.015119543062143017
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.6465670206546744,
+          "std": 0.7776567173415118,
+          "min": -3.1256103515625,
+          "max": 1.2445068359375,
+          "rms": 1.0113349641754255,
+          "mav": 0.845434553861618,
+          "dc_offset": -0.6465670206546783,
+          "zero_ratio": 9.6875e-05,
+          "exact_flatline_ratio": 0.022447673787245145
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005758240222930587,
+          "std": 0.011044373845218738,
+          "min": -0.30731201171875,
+          "max": 0.39306640625,
+          "rms": 0.011059370309477044,
+          "mav": 0.005558560609817505,
+          "dc_offset": -0.0005758240222930908,
+          "zero_ratio": 0.03210859375,
+          "exact_flatline_ratio": 0.07580630922367908
+        }
+      }
+    },
+    {
+      "subject_id": "17",
+      "mat_id": 17,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 1.2995967469215164,
+          "std": 1.1625171955414444,
+          "min": -3.00567626953125,
+          "max": 5.73760986328125,
+          "rms": 1.7436733864807428,
+          "mav": 1.3636092782020568,
+          "dc_offset": 1.2995967469215393,
+          "zero_ratio": 3.28125e-05,
+          "exact_flatline_ratio": 0.011446883942878081
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -6.072119932413085,
+          "std": 0.5795101218307802,
+          "min": -8.096923828125,
+          "max": -2.9583740234375,
+          "rms": 6.099710828600328,
+          "mav": 6.072119932413101,
+          "dc_offset": -6.072119932413101,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.013230479086311786
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -8.580638182639092,
+          "std": 0.9746452033810213,
+          "min": -10.0,
+          "max": -6.1126708984375,
+          "rms": 8.635814041057149,
+          "mav": 8.580638182640076,
+          "dc_offset": -8.580638182640076,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.0447617537201201
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005766422748565616,
+          "std": 0.0924154852586249,
+          "min": -4.21112060546875,
+          "max": 3.023681640625,
+          "rms": 0.09241724817120742,
+          "mav": 0.03883654856681824,
+          "dc_offset": -0.0005766422748565673,
+          "zero_ratio": 0.01508359375,
+          "exact_flatline_ratio": 0.04701722423220643
+        }
+      }
+    },
+    {
+      "subject_id": "20",
+      "mat_id": 20,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 1.2824575152398334,
+          "std": 0.6523565054523957,
+          "min": -8.58551025390625,
+          "max": 9.99969482421875,
+          "rms": 1.4388418801678926,
+          "mav": 1.2883872399330139,
+          "dc_offset": 1.2824575152397155,
+          "zero_ratio": 2.34375e-05,
+          "exact_flatline_ratio": 0.0065125050878946
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.2358547272682176,
+          "std": 0.7250299813216842,
+          "min": -9.322509765625,
+          "max": 2.41302490234375,
+          "rms": 0.7624273837629342,
+          "mav": 0.6695777149200439,
+          "dc_offset": -0.235854727268219,
+          "zero_ratio": 0.0001875,
+          "exact_flatline_ratio": 0.007065630520023844
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 0.6653112804889669,
+          "std": 0.3163955596729852,
+          "min": -1.80694580078125,
+          "max": 4.7845458984375,
+          "rms": 0.7367124078761826,
+          "mav": 0.6663572542667389,
+          "dc_offset": 0.6653112804889679,
+          "zero_ratio": 2.890625e-05,
+          "exact_flatline_ratio": 0.012448447225349395
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005765674114227617,
+          "std": 0.028435988362903005,
+          "min": -0.499267578125,
+          "max": 0.69366455078125,
+          "rms": 0.02844182189016857,
+          "mav": 0.01588339638710022,
+          "dc_offset": -0.0005765674114227295,
+          "zero_ratio": 0.01723515625,
+          "exact_flatline_ratio": 0.04156018871889744
+        }
+      }
+    },
+    {
+      "subject_id": "23",
+      "mat_id": 23,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 4.330601640463232,
+          "std": 0.4788293944300788,
+          "min": 1.74957275390625,
+          "max": 6.44805908203125,
+          "rms": 4.3569929972662385,
+          "mav": 4.330601640462875,
+          "dc_offset": 4.330601640462875,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.01227032208618913
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 2.5252237837313314,
+          "std": 0.87354147764665,
+          "min": -2.940673828125,
+          "max": 5.69976806640625,
+          "rms": 2.6720458968625356,
+          "mav": 2.5254874880313873,
+          "dc_offset": 2.5252237837314606,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.011231258774420917
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": 1.9110819716453422,
+          "std": 0.5243138028062757,
+          "min": 0.9002685546875,
+          "max": 3.25958251953125,
+          "rms": 1.981701049954702,
+          "mav": 1.9110819716453553,
+          "dc_offset": 1.9110819716453553,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.029853929573382478
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005775506496429375,
+          "std": 0.031061047106392674,
+          "min": -1.05316162109375,
+          "max": 0.83404541015625,
+          "rms": 0.0310664040139395,
+          "mav": 0.01734697461128235,
+          "dc_offset": -0.0005775506496429443,
+          "zero_ratio": 0.02119296875,
+          "exact_flatline_ratio": 0.06521098844608472
+        }
+      }
+    },
+    {
+      "subject_id": "30",
+      "mat_id": 30,
+      "sampling_rate_hz": 2000,
+      "total_rows": 1280000,
+      "n_channels": 4,
+      "channel_labels": [
+        "EMG_Raw_CH1",
+        "EMG_RAW_CH2",
+        "EMG_RAW_CH3",
+        "EMG_RAW_CH4"
+      ],
+      "channel_units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ],
+      "channel_statistics": {
+        "EMG_Raw_CH1": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -2.228699020862743,
+          "std": 0.32473387643332186,
+          "min": -4.4171142578125,
+          "max": -0.128173828125,
+          "rms": 2.25223252212394,
+          "mav": 2.2286990208625794,
+          "dc_offset": -2.2286990208625794,
+          "zero_ratio": 0.0,
+          "exact_flatline_ratio": 0.009695320074468808
+        },
+        "EMG_RAW_CH2": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -1.0803976891040843,
+          "std": 0.6551077979058745,
+          "min": -3.76983642578125,
+          "max": 2.3529052734375,
+          "rms": 1.2634971540183253,
+          "mav": 1.126038994550705,
+          "dc_offset": -1.0803976891040803,
+          "zero_ratio": 6.171875e-05,
+          "exact_flatline_ratio": 0.008514069151616524
+        },
+        "EMG_RAW_CH3": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.24754606318474195,
+          "std": 0.549170592847896,
+          "min": -2.314453125,
+          "max": 1.2933349609375,
+          "rms": 0.6023845597550445,
+          "mav": 0.5036340448856353,
+          "dc_offset": -0.24754606318473815,
+          "zero_ratio": 8.4375e-05,
+          "exact_flatline_ratio": 0.015453137072763337
+        },
+        "EMG_RAW_CH4": {
+          "sample_count": 1280000,
+          "finite_count": 1280000,
+          "nonfinite_ratio": 0.0,
+          "mean": -0.0005758771896361847,
+          "std": 0.04124636165266025,
+          "min": -1.4410400390625,
+          "max": 1.4129638671875,
+          "rms": 0.04125036551363425,
+          "mav": 0.015136556148529053,
+          "dc_offset": -0.0005758771896362305,
+          "zero_ratio": 0.02882578125,
+          "exact_flatline_ratio": 0.06806958442936284
+        }
+      }
+    }
+  ],
+  "status": "PASS",
+  "real_eda_executed": true,
+  "test_set_opened": false,
+  "test_signal_rows_read": 0,
+  "training_allowed": false,
+  "created_at": "2026-07-29T09:28:13.747716+00:00"
+}

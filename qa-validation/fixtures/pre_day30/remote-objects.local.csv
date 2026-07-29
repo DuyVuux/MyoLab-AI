@@ -1,0 +1,2 @@
+record_id,url,official_source,format,size_bytes,partition,subject_id,day_id,session_id,repetition_id,source_label,channel_columns,sampling_rate_hz,unit,notes
+LOCAL-001,qa-validation/fixtures/pre_day30/tiny_signal.csv,true,csv,,train,S001,D01,,R01,Rest,"CH1|CH2|CH3|CH4",1000,uV,Local tooling fixture only

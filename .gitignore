@@ -108,6 +108,15 @@ docs/plans/
 day*_starter_pack/
 day*_eda_data_quality_audit_pack/
 day*_grabmyo_eda_data_quality_pack/
+pre_day30_remote_eda_execution_pack/
+
+# ZONE 2 safety — raw data / cache / model artifacts must never enter Git
+**/acquired/
+**/extracted/
+**/normalized/
+**/raw-signals/
+**/cache/blocks/
+**/cache/downloads/
 
 # TypeScript cache
 *.tsbuildinfo

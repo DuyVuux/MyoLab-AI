@@ -1,0 +1,46 @@
+# Mendeley Day28 Readiness Decision — Generated from real EDA results
+schema_version: day28-readiness-decision.v1
+status: GO_FOR_DAY30_HARMONIZATION
+decision_date: "2026-07-29"
+
+# EDA evidence
+real_eda_executed: true
+eda_summary_file: mendeley-eda-summary.json
+subjects_sampled: 9
+subjects_total: 25
+error_subjects: 0
+file_format: "MATLAB .mat v5 (scipy.io)"
+
+# Test signal governance
+test_set_opened: false
+test_signal_rows_read: 0
+
+# Dataset metadata confirmed
+sampling_rate_hz: 2000
+channel_count: 4
+channel_labels: ["EMG_Raw_CH1", "EMG_RAW_CH2", "EMG_RAW_CH3", "EMG_RAW_CH4"]
+channel_units: mV
+rows_per_subject: 1280000
+recording_duration_per_subject_sec: 640
+gesture_count: 10
+
+# Signal quality assessment
+signal_quality:
+  CH1_EMG_Raw: "mean=-1.16 mV (DC offset present), std=3.48 mV, range [-9.23, +10.0]"
+  CH2_EMG_RAW: "mean=+0.33 mV (mild DC offset), std=3.10 mV, range [-9.32, +8.32]"
+  CH3_EMG_RAW: "mean=-1.00 mV (DC offset present), std=3.63 mV, range [-10.0, +7.56]"
+  CH4_EMG_RAW: "mean≈0 mV, std=0.039 mV — 80-90x lower amplitude than CH1-CH3"
+  nonfinite_ratio: "0.0 across all channels — no NaN/Inf"
+  zero_ratio: "CH1-CH3 < 0.01%, CH4 = 2.3%"
+
+# Observations for Day 30 harmonization
+observations:
+  - "CH4 amplitude (std=0.039) is 80-90x lower than CH1-CH3 (std=3.1-3.6). Needs investigation — may be reference/ground channel."
+  - "DC offsets on CH1 (-1.16 mV) and CH3 (-1.00 mV) will need baseline removal in preprocessing."
+  - "Signal amplitude (~3 mV std) is ~30-50x higher than GRABMyo forearm channels (~0.08 mV) — likely different ADC gain/units."
+  - "Sampling rate 2000 Hz vs GRABMyo 2048 Hz — resampling required for harmonization."
+
+# Safety flags
+training_allowed: false
+pooled_training_allowed: false
+fatigue_inference_allowed: false

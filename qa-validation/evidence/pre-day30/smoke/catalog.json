@@ -1,0 +1,43 @@
+{
+  "schema_version": "remote-catalog.v1",
+  "created_at": "2026-07-29T05:27:09.234287+00:00",
+  "concurrency": 4,
+  "records": [
+    {
+      "record_id": "LOCAL-001",
+      "url": "qa-validation/fixtures/pre_day30/tiny_signal.csv",
+      "official_source": true,
+      "format": "csv",
+      "size_bytes": 56,
+      "partition": "train",
+      "subject_id": "S001",
+      "day_id": "D01",
+      "session_id": "",
+      "repetition_id": "R01",
+      "source_label": "Rest",
+      "channel_columns": [
+        "CH1",
+        "CH2",
+        "CH3",
+        "CH4"
+      ],
+      "sampling_rate_hz": 1000.0,
+      "unit": "uV",
+      "notes": "Local tooling fixture only",
+      "head_status": "LOCAL_OK",
+      "size_bytes_observed": 56,
+      "etag": null,
+      "last_modified": null,
+      "accept_ranges": true,
+      "content_type": "application/octet-stream"
+    }
+  ],
+  "summary": {
+    "record_count": 1,
+    "known_total_bytes": 56,
+    "official_record_count": 1,
+    "range_capable_count": 1,
+    "head_error_count": 0,
+    "html_content_type_warnings": 0
+  }
+}

@@ -1,0 +1,43 @@
+# GRABMyo Day29 Readiness Decision — Generated from real EDA results
+schema_version: day29-readiness-decision.v1
+status: GO_FOR_DAY30_HARMONIZATION
+decision_date: "2026-07-29"
+
+# EDA evidence
+real_eda_executed: true
+eda_summary_file: grabmyo-eda-summary.json
+sample_size: 51
+completed_records: 51
+error_records: 0
+
+# Test signal governance
+test_set_opened: false
+test_signal_rows_read: 0
+
+# Cross-day audit
+cross_day_audit_completed: true
+sessions_covered: [1, 2, 3]
+all_sessions_verified: true
+
+# Gesture coverage
+gestures_covered: 17
+all_gestures_verified: true
+
+# Signal quality assessment
+signal_quality:
+  forearm_channels: "F1-F16: mean ≈ 0 mV (DC offset < 0.00002 mV), std 0.07–0.12 mV, no clipping detected"
+  wrist_channels: "W1-W12: mean ≈ 0 mV, std 0.04–0.09 mV, clean signals"
+  unused_channels: "U1-U4: near-zero noise floor (std ≈ 0.006 mV), confirmed not active sEMG — DO NOT use for feature extraction"
+  zero_ratio: "< 0.01% across all channels — no flatline issues"
+  nonfinite_ratio: "0.0 — no NaN/Inf detected in any channel"
+
+# Safety flags
+training_allowed: false
+pooled_training_allowed: false
+fatigue_inference_allowed: false
+
+# Dataset metadata confirmed
+sampling_rate_hz: 2048
+channel_count: 32
+signal_unit: mV
+participants_sampled: 29
