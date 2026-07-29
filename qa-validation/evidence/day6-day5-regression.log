@@ -1,0 +1,77 @@
+
+[1/9] Kiểm tra prerequisite Day 4 và tạo lại fixture deterministic
+{
+  "verified": true,
+  "csv_file": "data-platform/synthetic-data/golden_signal_01.csv",
+  "manifest_file": "data-platform/synthetic-data/golden_signal_01.manifest.json",
+  "source_hash_sha256": "3be03655b3d10fbc243a6b00fa23a6849bf8d90ff33922fe899c0da46d3f6b7e"
+}
+
+[2/9] Chạy unit/integration tests Day 1-5
+...............................................                          [100%]
+47 passed in 1.14s
+
+[3/9] Verify đáp ứng tần số lý thuyết
+{
+  "config_id": "preprocess_v0.1",
+  "sampling_rate_hz": 1000.0,
+  "frequency_response": {
+    "5": {
+      "bandpass_zero_phase_gain_db": -97.76209468413917,
+      "notch_zero_phase_gain_db": -0.00010008880358183667,
+      "combined_if_notch_applied_db": -97.76219477294275
+    },
+    "20": {
+      "bandpass_zero_phase_gain_db": -6.02059991327992,
+      "notch_zero_phase_gain_db": -0.0022186919871610175,
+      "combined_if_notch_applied_db": -6.022818605267081
+    },
+    "50": {
+      "bandpass_zero_phase_gain_db": -0.0020930194509608843,
+      "notch_zero_phase_gain_db": -300.0,
+      "combined_if_notch_applied_db": -300.00209301945097
+    },
+    "80": {
+      "bandpass_zero_phase_gain_db": -4.768112176790109e-06,
+      "notch_zero_phase_gain_db": -0.009885574336146823,
+      "combined_if_notch_applied_db": -0.009890342448323614
+    },
+    "400": {
+      "bandpass_zero_phase_gain_db": -6.020599913279608,
+      "notch_zero_phase_gain_db": -2.6557952037943062e-05,
+      "combined_if_notch_applied_db": -6.020626471231646
+    },
+    "450": {
+      "bandpass_zero_phase_gain_db": -51.05137729764509,
+      "notch_zero_phase_gain_db": -6.285088797223928e-06,
+      "combined_if_notch_applied_db": -51.051383582733884
+    }
+  },
+  "acceptance": {
+    "5_hz_attenuated_below_minus_20_db": true,
+    "80_hz_preserved_above_minus_1_db": true,
+    "450_hz_attenuated_below_minus_20_db": true,
+    "50_hz_notch_below_minus_20_db": true
+  },
+  "all_passed": true,
+  "note": "Gain zero-phase được tính bằng bình phương biên độ one-pass; đây là verification kỹ thuật, không phải clinical validation."
+}
+
+[4/9] Golden session: band-pass áp dụng, notch bỏ qua
+
+[5/9] Power-line warning: notch 50 Hz phải được áp dụng
+
+[6/9] QC fail: preprocessing phải bị block
+
+[7/9] Validate ba JSON result theo schema
+PASS schema: qa-validation/evidence/day5-preprocess-golden.json
+PASS schema: qa-validation/evidence/day5-preprocess-powerline.json
+PASS schema: qa-validation/evidence/day5-preprocess-blocked.json
+
+[8/9] Kiểm tra output hash deterministic
+PASS deterministic hash: 341c81a68d89a8b74fae6e448ab6404830afea2702e4e4a0e6c89fc56e89bf39
+
+[9/9] Artifact check
+DAY 5 ARTIFACT CHECK PASSED
+
+All Day 5 checks passed.

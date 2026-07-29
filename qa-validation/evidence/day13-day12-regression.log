@@ -1,0 +1,16 @@
+[1/8] Bỏ qua full Day 11
+[2/8] Tests
+.......                                                                  [100%]
+7 passed in 0.08s
+[3/8] Scenario verification
+Evidence verification: PASS
+[4/8] Golden E2E
+EVIDENCE COMPLETED patterns= ['multi_domain_change_pattern_observed']
+[5/8] Deterministic rerun
+[6/8] Abstention
+[7/8] Validate/register
+Day 12 outputs: PASS
+Registered fatigue_evidence_v0.1
+[8/8] Artifact
+Day 12 artifact/safety check: PASS
+All Day 12 checks passed.

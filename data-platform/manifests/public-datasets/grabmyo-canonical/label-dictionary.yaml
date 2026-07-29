@@ -1,0 +1,131 @@
+# label-dictionary.yaml — GRABMyo v1.1.0
+# Nguồn nhãn: MotionSequence.txt thật (fetch trực tiếp từ PhysioNet trong
+# grabmyo_exploration.ipynb, đã chạy thật) — KHÔNG dùng bảng gesture trong paper
+# (release notes v1.1.0 xác nhận paper in sai thứ tự Wrist Flexion/Wrist Extension).
+
+schema_version: label-mapping.v1
+mapping_id: GRABMYO_V1_1.taskA.v0.1
+verification_status: CONFIRMED
+
+target_ontology_version: taskA-gesture.v0.2
+allowed_targets:
+  - rest
+  - hand_open
+  - hand_close
+  - wrist_flexion
+  - wrist_extension
+
+protected_non_targets:
+  - unknown
+  - ambiguous
+  - artifact
+  - not_attempted
+  - transition
+
+mappings:
+  # 5/5 nhãn canonical đều có trong GRABMyo (khác Mendeley: chỉ 4/5, thiếu hand_open — xem
+  # datasets/mendeley-4channel-hand-gesture-v2/label-dictionary.yaml)
+  - source_label: "Rest"
+    gesture_id: 17
+    canonical_label: rest
+    mapping_status: CONFIRMED
+    evidence: "Dòng cuối cùng, MotionSequence.txt thật + quy ước gesture_id=17=REST dùng nhất quán trong 2 notebook GRABMyo khác của repo."
+  - source_label: "Hand Open"
+    gesture_id: 15
+    canonical_label: hand_open
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 15. Tên khớp trực tiếp với canonical_label, không cần suy diễn."
+  - source_label: "Hand Close"
+    gesture_id: 16
+    canonical_label: hand_close
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 16. Tương đương ngữ nghĩa với 'Grip' của Mendeley (đã map hand_close trong label-dictionary.yaml của Mendeley)."
+  - source_label: "Wrist Extension"
+    gesture_id: 11
+    canonical_label: wrist_extension
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 11. LƯU Ý thứ tự: Wrist Extension (11) đứng TRƯỚC Wrist Flexion (12) trong dữ liệu thật — ngược với bảng trong paper."
+  - source_label: "Wrist Flexion"
+    gesture_id: 12
+    canonical_label: wrist_flexion
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 12."
+
+  # Các gesture không nằm trong 5 nhãn canonical -> "unknown", loại khỏi tập canonical (11 gesture)
+  - source_label: "Lateral Prehension"
+    gesture_id: 1
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 1. Ngoài scope taskA-gesture.v0.2."
+  - source_label: "Thumb Adduction"
+    gesture_id: 2
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 2. Ngoài scope."
+  - source_label: "Thumb and Little Finger Opposition"
+    gesture_id: 3
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 3. Ngoài scope."
+  - source_label: "Thumb and Index Finger Opposition"
+    gesture_id: 4
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 4. Ngoài scope."
+  - source_label: "Thumb and Index Finger Extension"
+    gesture_id: 5
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 5. Ngoài scope."
+  - source_label: "Thumb and Little Finger Extension"
+    gesture_id: 6
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 6. Ngoài scope."
+  - source_label: "Index and Middle Finger Extension"
+    gesture_id: 7
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 7. Ngoài scope."
+  - source_label: "Little Finger Extension"
+    gesture_id: 8
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 8. Ngoài scope."
+  - source_label: "Index Finger Extension"
+    gesture_id: 9
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 9. Ngoài scope."
+  - source_label: "Thumb Finger Extension"
+    gesture_id: 10
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 10. Ngoài scope."
+  - source_label: "Forearm Supination"
+    gesture_id: 13
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 13. Ngoài scope (giống 'Supination' của Mendeley cũng map unknown)."
+  - source_label: "Forearm Pronation"
+    gesture_id: 14
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "MotionSequence.txt thật, dòng 14. Ngoài scope (giống 'Pronation' của Mendeley cũng map unknown)."
+
+default_behavior: ERROR_UNMAPPED
+map_unknown_to_rest: false
+
+coverage_comparison_with_mendeley:
+  mendeley_confirmed_targets: [rest, hand_close, wrist_flexion, wrist_extension]
+  mendeley_missing_target: hand_open
+  grabmyo_confirmed_targets: [rest, hand_open, hand_close, wrist_flexion, wrist_extension]
+  note: >
+    GRABMyo phủ đủ 5/5 nhãn canonical trong khi Mendeley (theo label-dictionary.yaml hiện tại
+    của Mendeley) chỉ xác nhận 4/5, thiếu hand_open. Gộp 2 bộ giúp bù lớp hand_open — nhưng cần
+    lưu ý lớp này khi đó sẽ chỉ có mẫu từ 1 nguồn (GRABMyo), có thể gây domain bias cho riêng lớp
+    hand_open nếu không kiểm soát khi split train/test.
+
+notes:
+  - "Toàn bộ 17 mapping đều CONFIRMED trực tiếp từ nội dung thật của MotionSequence.txt (không suy đoán từ paper)."
+  - "5 nhãn canonical trùng khớp 100% với target_ontology_version taskA-gesture.v0.2 dùng chung cho Mendeley."

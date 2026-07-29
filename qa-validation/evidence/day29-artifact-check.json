@@ -1,0 +1,7 @@
+{
+  "schema_version": "day29-artifact-check.v1",
+  "missing": [],
+  "prohibited_model_artifacts": [],
+  "training_enable_violations": [],
+  "pass": true
+}

@@ -1,0 +1,67 @@
+# canonical-mapping-draft.yaml — GRABMyo v1.1.0
+# Cùng schema_version với datasets/mendeley-4channel-hand-gesture-v2/canonical-mapping-draft.yaml
+# (dataset-adapter-profile.v1) để 2 profile so sánh được field-by-field.
+# Khác với bản Mendeley (còn nhiều <REQUIRED>/NOT_VERIFIED), bản này đã điền đủ vì mọi field
+# GRABMyo đã được xác thực trực tiếp (header scan thật + record thật + trang PhysioNet).
+#
+# LƯU Ý: đây là hồ sơ MÔ TẢ (để so sánh domain-gap), không phải code chạy. Bản implementation
+# thật (đọc/transform/ghi CSV) nằm ở notebooks/grabmyo_to_canonical_mendeley_schema.ipynb.
+
+schema_version: dataset-adapter-profile.v1
+profile_id: GRABMYO_V1_1.profile.v0.1
+verification_status: CONFIRMED
+dataset_id: GRABMYO_V1_1
+
+source_format: "wfdb (.dat/.hea), streamed từ PhysioNet — không tải archive"
+file_glob: "grabmyo/1.1.0/Session{session}/session{session}_participant{participant}/session{session}_participant{participant}_gesture{gesture}_trial{trial}"
+
+text:
+  encoding: utf-8
+  delimiter: ","        # áp dụng cho CSV canonical output, không phải định dạng nguồn (wfdb binary)
+  header_rows: 1
+
+signal:
+  raw_or_processed: raw
+  sampling_rate_hz: 2048          # VERIFIED (record.fs thật, đồng nhất qua toàn bộ record đã scan)
+  source_unit: mV                 # VERIFIED (record.units thật)
+  canonical_unit: uV
+  unit_conversion_factor_to_uV: 1000
+  time:
+    mode: sample_index
+    source_column: null
+    unit: s
+  channels_full_32:
+    forearm: ["F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","F13","F14","F15","F16"]
+    wrist: ["W1","W2","W3","W4","W5","W6","W7","W8","W9","W10","W11","W12"]
+    unused: ["U1","U2","U3","U4"]
+  channels_canonical_subset:
+    # 4/32 kênh được chọn để khớp với 4 kênh canonical của Mendeley — xem lý do lựa chọn trong
+    # notebooks/grabmyo_to_canonical_mendeley_schema.ipynb mục 4 (forearm, cách đều quanh ring).
+    # ĐÂY LÀ CONFIG CÓ THỂ ĐỔI, không phải điều bắt buộc duy nhất.
+    - source_column: F1
+      canonical_id: CH01
+    - source_column: F5
+      canonical_id: CH02
+    - source_column: F9
+      canonical_id: CH03
+    - source_column: F13
+      canonical_id: CH04
+
+path_metadata:
+  regex: 'session(?P<session_id>\d+)_participant(?P<subject_id>\d+)_gesture(?P<gesture_id>\d+)_trial(?P<trial_id>\d+)'
+  required_groups:
+    - subject_id
+    - trial_id
+    - source_label   # tra từ gesture_id qua label-dictionary.yaml, không phải regex group trực tiếp
+  optional_groups:
+    - session_id
+
+scope_flags:
+  clinical_use_allowed: false
+  motion_lab_transfer_verified: false
+  mfcv_eligible: false
+
+notes:
+  - "sampling_rate_hz, source_unit, channels: tất cả VERIFIED qua record thật, không suy luận."
+  - "channels_canonical_subset là lựa chọn kỹ thuật (forearm, cách đều) — CHƯA đối chiếu được với vị trí điện cực thật của Mendeley vì Mendeley chưa có dữ liệu/hình ảnh thật để so khớp giải phẫu."
+  - "So sánh field-by-field với bản Mendeley: xem domain-gap-matrix.csv trong cùng thư mục."

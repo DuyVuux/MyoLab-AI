@@ -1,0 +1,99 @@
+schema_version: "dataset-source-record.v1"
+record_status: "VERIFIED"
+last_checked:
+  date: "2026-07-29"
+  timezone: "Asia/Bangkok"
+
+identity:
+  dataset_id: "GRABMYO_V1_1"
+  canonical_title: "Gesture Recognition and Biometrics ElectroMyogram (GRABMyo)"
+  short_name: "GRABMyo"
+  repository: "PhysioNet"
+  version: "1.1.0"
+  publication_date: "2024-06-07"
+
+canonical_source:
+  url: "https://physionet.org/content/grabmyo/1.1.0/"
+  doi: "10.13026/89dm-f662"
+  doi_url: "https://doi.org/10.13026/89dm-f662"
+  source_type: "official_dataset_repository"
+  access_method: "streamed per-record via wfdb (rdheader/rdrecord), KHÔNG tải archive 9.4GB về máy"
+  mirror_used_as_source_of_truth: false
+
+creators:
+  - "Ning Jiang"
+  - "Ashirbad Pradhan"
+  - "Jiayuan He"
+
+institution:
+  - "University of Waterloo"
+
+associated_paper:
+  title: "Multi-day dataset of forearm and wrist electromyogram for hand gesture recognition and biometrics"
+  journal: "Scientific Data"
+  year: 2022
+  doi: "10.1038/s41597-022-01836-y"
+  doi_url: "https://doi.org/10.1038/s41597-022-01836-y"
+  authors: "Pradhan, A., He, J. & Jiang, N."
+
+verified_dataset_summary:
+  signal_type: "surface electromyography (sEMG)"
+  channel_count_total: 32
+  channel_layout:
+    forearm: "16 channels (F1-F16), 2 ring x 8 bipolar pairs"
+    wrist: "12 channels (W1-W12), 2 ring x 6 bipolar pairs"
+    unused: "4 channels (U1-U4) — near-zero noise floor, xác nhận qua quality_check thật (std ~0.005 mV so với 0.02-0.1 mV ở kênh active), KHÔNG dùng cho feature extraction"
+  participant_count: 43
+  participant_count_verification: "Xác nhận trực tiếp bằng header scan thật (rdheader) — cả 43 participant_id 1..43 đều có file hợp lệ ở Session1/gesture1/trial1 (chạy 2026-07-29)."
+  participant_population: "healthy participants, 23 male / 20 female, tuổi 24-35 (theo trang PhysioNet)"
+  session_count: 3
+  session_note: "3 ngày đo riêng biệt (multi-day) — khác Mendeley (single-session, theo domain-gap-matrix.csv gốc của Mendeley)."
+  gesture_count: 16
+  gesture_count_note: "16 gesture + 1 trạng thái REST riêng (gesture_id=17 theo quy ước code trong repo, REST nằm cuối MotionSequence.txt thật)."
+  repetitions_per_gesture: 7
+  sampling_rate_hz: 2048
+  sampling_rate_verification: "Đo trực tiếp từ record.fs của 1 record thật (session1_participant1_gesture1_trial1) VÀ từ header scan 119 record khác — tất cả đồng nhất 2048 Hz, sig_len=10240 (=5s)."
+  signal_unit: "mV"
+  signal_unit_verification: "Đọc trực tiếp từ record.units của record thật — {'mV'} cho toàn bộ 32 kênh."
+  acquisition_device: "Ambu AM-N00S/E monopolar surface EMG electrodes + biosignal amplifier (theo trang PhysioNet)"
+  electrodes: "monopolar surface electrodes (KHÁC Mendeley: Ag/AgCl bipolar surface electrodes — xem domain-gap-matrix.csv)"
+  file_format: "WFDB (.dat + .hea)"
+
+verified_gesture_names_source_MotionSequence_txt:
+  # Lấy nguyên văn từ MotionSequence.txt thật (đã fetch trong grabmyo_exploration.ipynb, chạy 2026-07-29 hoặc trước đó — output đã lưu trong notebook)
+  - "1: Lateral Prehension"
+  - "2: Thumb Adduction"
+  - "3: Thumb and Little Finger Opposition"
+  - "4: Thumb and Index Finger Opposition"
+  - "5: Thumb and Index Finger Extension"
+  - "6: Thumb and Little Finger Extension"
+  - "7: Index and Middle Finger Extension"
+  - "8: Little Finger Extension"
+  - "9: Index Finger Extension"
+  - "10: Thumb Finger Extension"
+  - "11: Wrist Extension"
+  - "12: Wrist Flexion"
+  - "13: Forearm Supination"
+  - "14: Forearm Pronation"
+  - "15: Hand Open"
+  - "16: Hand Close"
+  - "17: Rest"
+
+known_errata:
+  - claim: "Paper in sai thứ tự Wrist Flexion/Wrist Extension so với dữ liệu thật"
+    detail: "Paper trình bày 'Wrist Flexion' trước 'Wrist Extension'; MotionSequence.txt thật (nguồn đúng) có thứ tự ngược lại: Wrist Extension (11) trước Wrist Flexion (12)."
+    source: "PhysioNet dataset page, mục release notes v1.1.0"
+    impact: "Mapping gesture_id -> tên cử chỉ PHẢI dựa vào MotionSequence.txt, không dùng bảng trong paper."
+
+scope_guardrails:
+  valid_for:
+    - "Task A gesture-recognition dataset (multi-day, subject-independent + cross-day validation)"
+    - "So sánh domain-gap và khả năng gộp với mendeley-4channel-hand-gesture-v2"
+    - "Nguồn bổ sung lớp 'hand_open' — lớp mà Mendeley KHÔNG có (xem label-dictionary.yaml)"
+  not_valid_for:
+    - "Biometric/identification claims (dataset gốc còn dùng cho biometrics, ngoài phạm vi Task A ở đây)"
+    - "Clinical performance claims trên bệnh nhân (chỉ có 43 người khỏe mạnh)"
+
+open_items_for_later_steps:
+  - "Full inventory scan 43 participant x 3 session x 17 gesture x 7 trial (~15,351 record) chưa chạy toàn bộ vì quá tốn thời gian qua network per-record (~1 giờ ước tính ở tốc độ ~4.3 record/s) — chỉ mới verify participant existence (đủ 43) + full grid cho 3 participant mẫu (1, 22, 43). Xem file-inventory.csv để biết phạm vi đã quét thật."
+  - "Chưa verify electrode placement (vị trí giải phẫu) của GRABMyo có tương đồng với 4 kênh Mendeley hay không — Mendeley chưa có dữ liệu/paper hình ảnh để đối chiếu trực tiếp."

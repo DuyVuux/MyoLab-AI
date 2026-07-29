@@ -1,0 +1,42 @@
+schema_version: day29-quality-rules.v1
+status: PROVISIONAL_ENGINEERING_HEURISTICS
+absolute_amplitude_thresholds_enabled: false
+clinical_thresholds_defined: false
+
+rules:
+  nonfinite_ratio:
+    warning: 0.000001
+    fail: 0.001
+  flatline_ratio:
+    warning: 0.02
+    fail: 0.20
+  zero_ratio:
+    warning: 0.50
+    fail: 0.95
+  clipping_candidate_ratio:
+    warning: 0.01
+    fail: null
+  minimum_samples:
+    warning: 64
+    fail: 16
+  channel_count_consistency:
+    fail_on_mismatch: true
+  sampling_rate_consistency:
+    fail_on_unknown: true
+    fail_on_conflict_within_profile: true
+  unit_consistency:
+    fail_on_unknown: true
+    fail_on_conflict_within_profile: true
+
+reason_codes:
+  - NONFINITE_PRESENT
+  - FLATLINE_CANDIDATE
+  - CONSTANT_CHANNEL
+  - CLIPPING_CANDIDATE
+  - EXTREME_DC_OFFSET_CANDIDATE
+  - SHORT_RECORD
+  - SAMPLING_RATE_CONFLICT
+  - UNIT_CONFLICT
+  - CHANNEL_COUNT_CONFLICT
+  - MISSING_CHANNEL
+  - SIGNAL_LOAD_FAILED

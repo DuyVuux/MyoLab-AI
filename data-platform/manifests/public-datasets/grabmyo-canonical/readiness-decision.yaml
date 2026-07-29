@@ -1,0 +1,77 @@
+# readiness-decision.yaml — GRABMyo v1.1.0
+# Cùng schema_version với mendeley-4channel-hand-gesture-v2/readiness-decision.yaml để so sánh
+# trạng thái gate 2 nguồn dữ liệu song song.
+
+schema_version: selected-public-dataset-manifest.v1
+dataset_id: GRABMYO_V1_1
+status: PARTIAL_VERIFICATION
+
+hashes:
+  source_record_sha256: ""
+  retrieval_receipt_sha256: ""
+  archive_sha256: "N/A — không có archive tải về, dataset truy cập qua stream per-record (wfdb), xem dataset-source-record.yaml"
+  archive_inventory_sha256: ""
+  adapter_profile_sha256: ""
+  label_mapping_sha256: ""
+  metadata_index_sha256: ""
+  group_split_sha256: ""
+
+gates:
+  test_set_sealed: true
+  public_baseline_training_eligible: false
+  training_execution_allowed: false
+  motion_lab_transfer_verified: false
+  clinical_use_allowed: false
+
+engineering_gate:
+  status: PARTIAL_VERIFICATION
+  last_run: "2026-07-29"
+  checks_passed: 6
+  checks_total: 8
+  checks:
+    - name: "participant_existence (43/43)"
+      status: PASS
+      evidence: "header scan thật, session1/gesture1/trial1, participant 1..43, 43/43 ok=True"
+    - name: "sample_full_grid_integrity (3 participant x 3 session x 17 gesture x 7 trial)"
+      status: PASS
+      evidence: "1071/1071 record ok=True, fs/sig_len/n_sig/units đồng nhất tuyệt đối — xem file-inventory.csv"
+    - name: "signal_unit_verified"
+      status: PASS
+      evidence: "record.units thật = {'mV'}"
+    - name: "sampling_rate_verified"
+      status: PASS
+      evidence: "record.fs thật = 2048, đồng nhất qua 1190 record đã scan (119+1071, trùng 1)"
+    - name: "gesture_label_source_verified"
+      status: PASS
+      evidence: "MotionSequence.txt thật đã fetch, 17/17 gesture có tên xác nhận, label-dictionary.yaml CONFIRMED 100%"
+    - name: "quality_check_sample"
+      status: PASS
+      evidence: "1 record mẫu: không NaN/Inf/flatline, clip_suspect_frac<0.001 mọi kênh"
+    - name: "full_inventory_all_43_participants_all_session_gesture_trial"
+      status: NOT_RUN
+      evidence: "Ước tính ~15,351 record, ~1 giờ ở tốc độ scan hiện tại (~4.3 record/s) — chưa chạy toàn bộ, chỉ chạy mẫu đại diện"
+    - name: "electrode_anatomy_cross_check_with_mendeley"
+      status: BLOCKED
+      evidence: "Mendeley chưa có dữ liệu/hình ảnh thật để đối chiếu vị trí điện cực — xem domain-gap-matrix.csv"
+  decision: PARTIAL_GO_FOR_MERGE_ANALYSIS
+
+merge_with_mendeley:
+  question: "Có thể gộp GRABMyo với mendeley-4channel-hand-gesture-v2 để train chung không?"
+  verdict: CONDITIONALLY_YES_AT_CANONICAL_SCHEMA_LEVEL
+  reasoning:
+    - "License (CC BY 4.0) và cấu trúc nhãn (taskA-gesture.v0.2) hoàn toàn tương thích — không có rào cản pháp lý hay ontology."
+    - "GRABMyo bù được lớp hand_open mà Mendeley thiếu (xem label-dictionary.yaml) — lợi ích rõ ràng cho việc gộp."
+    - "Rào cản chặn hiện tại KHÔNG nằm ở phía GRABMyo (đã verified phần lớn), mà ở việc Mendeley thật CHƯA được tải/giải nén — mọi so sánh sampling_rate, đơn vị thật, vị trí điện cực với Mendeley đều đang ở trạng thái PENDING."
+    - "Adapter chuyển GRABMyo về canonical schema (4 kênh CH01-CH04 uV) đã có (notebooks/grabmyo_to_canonical_mendeley_schema.ipynb), nhưng CHƯA có adapter tương ứng cho Mendeley vì chưa có file thật để viết."
+  blocking_items_before_actual_merge:
+    - "Tải và giải nén Mendeley thật (đổi status trong mendeley-4channel-hand-gesture-v2/data-hierarchy.yaml từ PENDING_EXTRACTION)."
+    - "Verify sampling_rate và đơn vị thật của Mendeley (domain-gap-matrix.csv của Mendeley: sampling_rate = PENDING)."
+    - "Viết adapter cho Mendeley theo đúng canonical-mapping-draft.yaml, output cùng schema với datasets/grabmyo-canonical/ (CH01-CH04, uV, 5 nhãn canonical)."
+    - "(Khuyến nghị, không chặn) Verify vị trí điện cực Mendeley qua hình ảnh/paper thật, đối chiếu với lựa chọn 4 kênh forearm hiện tại của GRABMyo (F1/F5/F9/F13)."
+  non_blocking_but_recommended:
+    - "Giữ cột source_dataset khi gộp để phân tích domain-shift riêng biệt."
+    - "Cân nhắc per-source normalization thay vì gộp biên độ thô trực tiếp (do khác loại điện cực: monopolar GRABMyo vs bipolar Mendeley)."
+
+notes:
+  - "training_execution_allowed luôn là false ở giai đoạn này — quyết định GO/NO-GO train chỉ nên đưa ra sau khi cả 2 nguồn cùng qua engineering gate với dữ liệu thật đầy đủ."
+  - "File này chỉ mô tả trạng thái tại 2026-07-29 — cập nhật lại khi Mendeley có dữ liệu thật hoặc khi chạy full inventory scan GRABMyo."

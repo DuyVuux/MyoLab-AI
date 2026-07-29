@@ -107,6 +107,7 @@ docs/plans/
 # Starter packs and audit packs (input references only)
 day*_starter_pack/
 day*_eda_data_quality_audit_pack/
+day*_grabmyo_eda_data_quality_pack/
 
 # TypeScript cache
 *.tsbuildinfo

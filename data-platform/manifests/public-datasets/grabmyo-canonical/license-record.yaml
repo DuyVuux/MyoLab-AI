@@ -1,0 +1,83 @@
+schema_version: "license-record.v1"
+record_status: "VERIFIED_WITH_STANDARD_CC_CAVEATS"
+last_checked:
+  date: "2026-07-29"
+  timezone: "Asia/Bangkok"
+
+dataset:
+  dataset_id: "GRABMYO_V1_1"
+  title: "Gesture Recognition and Biometrics ElectroMyogram (GRABMyo)"
+  version: "1.1.0"
+  canonical_url: "https://physionet.org/content/grabmyo/1.1.0/"
+  dataset_doi: "10.13026/89dm-f662"
+
+license:
+  name: "Creative Commons Attribution 4.0 International Public License"
+  identifier: "CC-BY-4.0"
+  canonical_url: "https://creativecommons.org/licenses/by/4.0/"
+  declared_by_repository: true
+  declared_on: "PhysioNet GRABMyo v1.1.0 project page"
+
+license_compatibility_with_mendeley:
+  mendeley_license: "CC-BY-4.0 (xem datasets/mendeley-4channel-hand-gesture-v2/license-record.yaml)"
+  compatible: true
+  note: "Cả 2 nguồn cùng CC BY 4.0 -> KHÔNG có xung đột pháp lý khi gộp, chỉ cần giữ attribution riêng cho từng nguồn (2 dòng credit khác nhau, không gộp chung thành 1 câu)."
+
+permissions:
+  research_use:
+    status: "ALLOWED"
+    reason: "CC BY 4.0 cho phép chia sẻ và tạo tác phẩm phái sinh cho mọi mục đích."
+  commercial_use:
+    status: "ALLOWED"
+    reason: "CC BY 4.0 cho phép rõ ràng sử dụng thương mại."
+  copy_and_redistribute:
+    status: "ALLOWED_WITH_CONDITIONS"
+  modify_and_create_derivatives:
+    status: "ALLOWED_WITH_CONDITIONS"
+  model_training:
+    status: "ALLOWED_WITH_CONDITIONS"
+    reason: "Training là 1 use case được phép, cần giữ attribution."
+  distribute_trained_or_derived_model:
+    status: "GENERALLY_ALLOWED_WITH_CONDITIONS"
+    confidence: "MEDIUM_HIGH"
+    note: "Giống nhận định trong license-record.yaml của Mendeley: cần review pháp lý trước khi phát hành thương mại ra ngoài."
+
+obligations:
+  attribution_required: true
+  provide_license_link: true
+  indicate_changes: true
+  retain_notices_when_supplied: true
+  must_not_imply_author_endorsement: true
+  no_additional_legal_or_technical_restrictions: true
+
+recommended_attribution:
+  text: "Pradhan, A., He, J. & Jiang, N. Multi-day dataset of forearm and wrist electromyogram for hand gesture recognition and biometrics. Sci Data 9, 733 (2022). https://doi.org/10.1038/s41597-022-01836-y. Dataset: GRABMyo v1.1.0, PhysioNet, DOI: 10.13026/89dm-f662, licensed under CC BY 4.0."
+  where_to_place:
+    - "dataset card"
+    - "README hoặc data provenance document"
+    - "model card cho model train bằng dữ liệu gộp (Mendeley + GRABMyo)"
+
+non_license_rights_and_risks:
+  privacy_publicity_moral_rights:
+    status: "NOT_GRANTED_BY_CC_LICENSE"
+    action: "Không giả định license waive quyền riêng tư/nhân thân của người tham gia."
+  warranties:
+    status: "NO_WARRANTY"
+  participant_reidentification:
+    status: "PROHIBIT_BY_PROJECT_POLICY"
+    action: "Không cố gắng tái định danh người tham gia (43 người, có ghi tuổi/giới tính tổng hợp trên trang PhysioNet)."
+  dataset_accuracy:
+    status: "PARTIALLY_VERIFIED"
+    action: "Đã verify fs/units/channel count/participant existence qua header scan thật; CHƯA verify toàn bộ 15,351 record (xem file-inventory.csv và open_items trong dataset-source-record.yaml)."
+
+legal_decision:
+  classification: "COMMERCIAL_USE_PERMITTED_WITH_ATTRIBUTION"
+  requires_license_review_before_internal_research: false
+  requires_legal_review_before_external_product_release: true
+  blocking_issue_for_merge_with_mendeley: false
+
+evidence:
+  repository_license_page: "https://physionet.org/content/grabmyo/1.1.0/"
+  creative_commons_deed: "https://creativecommons.org/licenses/by/4.0/"
+
+disclaimer: "Đây là engineering license audit, không phải tư vấn pháp lý chính thức."

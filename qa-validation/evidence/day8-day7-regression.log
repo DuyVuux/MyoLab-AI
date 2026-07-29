@@ -1,0 +1,20 @@
+[1/8] Bỏ qua full regression Day 6; đặt DAY7_FULL_REGRESSION=1 để bật
+[2/8] Chạy unit, analytical và pipeline tests Day 7
+......................                                                   [100%]
+22 passed in 0.19s
+[3/8] Kiểm chứng geometry tính tay cho hai profile
+WINDOW GEOMETRY VERIFICATION: PASS time=239 frequency=119
+[4/8] Chạy end-to-end golden fixture lần 1
+WINDOWING COMPLETED: session=SYNTH_D3_GOLDEN_001 downstream_allowed=True
+- profile=time_domain purpose=rms_mav windows=239 L=500 H=250
+  channel=VL_R_01 valid=239 invalid=0
+- profile=frequency_domain purpose=psd_mdf_mnf windows=119 L=1000 H=500
+  channel=VL_R_01 valid=119 invalid=0
+plan_hash_sha256=e586acf98af66da40605b062a21fa42397bdb3d46c91f4426286362ca22cb8b5
+[5/8] Chạy end-to-end golden fixture lần 2
+[6/8] Validate JSON Schema và plan hash determinism
+JSON Schema PASS; deterministic plan hash=e586acf98af66da40605b062a21fa42397bdb3d46c91f4426286362ca22cb8b5
+[7/8] Kiểm tra artifact và safety invariants
+DAY 7 ARTIFACT CHECK PASSED
+[8/8] Hoàn tất
+All Day 7 checks passed.

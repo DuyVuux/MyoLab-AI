@@ -1,0 +1,45 @@
+# data-hierarchy.yaml — GRABMyo v1.1.0
+# Mô tả cấu trúc thư mục/tên file thật, xác nhận qua trang PhysioNet + header scan thật
+# (grabmyo_exploration.ipynb, chạy thật với wfdb.rdheader/rdrecord).
+
+dataset_id: GRABMYO_V1_1
+status: VERIFIED
+access_method: "streamed qua wfdb (rdheader/rdrecord), không giải nén archive local — không có 'thư mục sau giải nén' như Mendeley"
+
+verified_hierarchy:
+  root:
+    description: "Root PhysioNet project: grabmyo/1.1.0 (https://physionet.org/files/grabmyo/1.1.0)"
+    children:
+      - name: "Session1/, Session2/, Session3/"
+        type: directory
+        contains: "1 thư mục con / participant"
+      - name: "session{i}_participant{j}/"
+        type: directory
+        contains: "file .dat + .hea, 1 cặp / (gesture, trial)"
+      - name: "session{i}_participant{j}_gesture{k}_trial{t}.dat / .hea"
+        type: file
+        contains: "32-channel sEMG, 5s @ 2048Hz (10240 sample/kênh), đơn vị mV"
+      - name: "readme.txt, MotionSequence.txt, LICENSE.txt"
+        type: file
+        contains: "metadata text ở gốc dataset — đã fetch thật, nội dung MotionSequence.txt lưu trong dataset-source-record.yaml"
+
+subject_identification:
+  method: filename-based
+  regex: 'session(?P<session_id>\d+)_participant(?P<subject_id>\d+)_gesture(?P<gesture_id>\d+)_trial(?P<trial_id>\d+)'
+  verification: "Regex khớp 100% với 119+1071 record đã header-scan thật (xem file-inventory.csv)."
+
+session_identification:
+  method: folder-based + filename (Session{i}, session{i}_...)
+  multi_session: true
+  session_count: 3
+  note: "3 ngày đo riêng biệt (multi-day) — hỗ trợ cross-day evaluation, khác Mendeley (domain-gap-matrix.csv gốc của Mendeley ghi cross_day: PENDING)."
+
+repetition_identification:
+  method: filename (_trial{t})
+  per_subject_per_gesture_per_session: 7
+  verification: "Xác nhận qua full grid scan 3 participant mẫu (1, 22, 43) x 3 session x 17 gesture x 7 trial — xem file-inventory.csv."
+
+notes:
+  - "Không có khái niệm 'archive giải nén' như Mendeley — mọi truy cập là stream per-record qua HTTPS (đã test: curl tới 1 file .hea trả về HTTP 200)."
+  - "gesture_id 1-16 = cử chỉ thật (tên trong MotionSequence.txt); gesture_id 17 = REST, theo đúng quy ước code đã dùng nhất quán trong grabmyo_exploration.ipynb và grabmyo_task_a_training_pipeline.ipynb."
+  - "Chưa quét header cho toàn bộ 43 participant x 3 session x 17 gesture x 7 trial (15,351 record) — chỉ quét participant existence (đủ 43) + full grid cho 3 participant mẫu. Xem open_items trong dataset-source-record.yaml."

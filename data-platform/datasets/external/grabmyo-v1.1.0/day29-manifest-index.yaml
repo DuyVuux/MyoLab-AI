@@ -1,0 +1,22 @@
+schema_version: day29-manifest-index.v1
+dataset_id: grabmyo-v1.1.0
+status: PLACEHOLDER_PATHS_MUST_MATCH_LOCAL_REPOSITORY
+
+governance:
+  source_record: dataset-source-record.yaml
+  license_record: license-record.yaml
+  archive_hash: archive.sha256
+  file_inventory: file-inventory.csv
+  hierarchy: data-hierarchy.yaml
+  field_dictionary: field-dictionary.csv
+  label_dictionary: label-dictionary.yaml
+  mapping_profile: canonical-mapping-draft.yaml
+  domain_gap: domain-gap-matrix.csv
+  quality_inventory: data-quality-inventory.json
+  readiness: readiness-decision.yaml
+
+execution:
+  metadata_index: /data/datasets/external/grabmyo-v1.1.0/metadata/metadata-index.csv
+  evidence_dir: /data/datasets/external/grabmyo-v1.1.0/evidence/day29
+  test_signal_access_allowed: false
+  training_allowed: false

@@ -1,0 +1,42 @@
+field_name,type,unit,description,required,source,verified
+# Populated từ record.sig_name / record.units thật (session1_participant1_gesture1_trial1),
+# xác nhận qua grabmyo_exploration.ipynb (đã chạy thật, output lưu trong notebook).
+# Status: VERIFIED (cho 1 record mẫu; áp dụng cho toàn bộ dataset theo mô tả PhysioNet — layout kênh cố định)
+# CẢNH BÁO thứ tự cột vật lý thật trong record.sig_name (KHÔNG phải F1..F16,W1..W12,U1..U4 liền mạch):
+# ['F1'..'F16', 'U1', 'W1'..'W6', 'U2', 'U3', 'W7'..'W12', 'U4'] — luôn select-by-name, không index theo vị trí cột.
+F1,float,mV,sEMG forearm channel 1 (ring 1),true,wfdb_signal_column,true
+F2,float,mV,sEMG forearm channel 2 (ring 1),true,wfdb_signal_column,true
+F3,float,mV,sEMG forearm channel 3 (ring 1),true,wfdb_signal_column,true
+F4,float,mV,sEMG forearm channel 4 (ring 1),true,wfdb_signal_column,true
+F5,float,mV,sEMG forearm channel 5 (ring 1),true,wfdb_signal_column,true
+F6,float,mV,sEMG forearm channel 6 (ring 1),true,wfdb_signal_column,true
+F7,float,mV,sEMG forearm channel 7 (ring 1),true,wfdb_signal_column,true
+F8,float,mV,sEMG forearm channel 8 (ring 1),true,wfdb_signal_column,true
+F9,float,mV,sEMG forearm channel 9 (ring 2),true,wfdb_signal_column,true
+F10,float,mV,sEMG forearm channel 10 (ring 2),true,wfdb_signal_column,true
+F11,float,mV,sEMG forearm channel 11 (ring 2),true,wfdb_signal_column,true
+F12,float,mV,sEMG forearm channel 12 (ring 2),true,wfdb_signal_column,true
+F13,float,mV,sEMG forearm channel 13 (ring 2),true,wfdb_signal_column,true
+F14,float,mV,sEMG forearm channel 14 (ring 2),true,wfdb_signal_column,true
+F15,float,mV,sEMG forearm channel 15 (ring 2),true,wfdb_signal_column,true
+F16,float,mV,sEMG forearm channel 16 (ring 2),true,wfdb_signal_column,true
+W1,float,mV,sEMG wrist channel 1 (ring 1),true,wfdb_signal_column,true
+W2,float,mV,sEMG wrist channel 2 (ring 1),true,wfdb_signal_column,true
+W3,float,mV,sEMG wrist channel 3 (ring 1),true,wfdb_signal_column,true
+W4,float,mV,sEMG wrist channel 4 (ring 1),true,wfdb_signal_column,true
+W5,float,mV,sEMG wrist channel 5 (ring 1),true,wfdb_signal_column,true
+W6,float,mV,sEMG wrist channel 6 (ring 1),true,wfdb_signal_column,true
+W7,float,mV,sEMG wrist channel 7 (ring 2),true,wfdb_signal_column,true
+W8,float,mV,sEMG wrist channel 8 (ring 2),true,wfdb_signal_column,true
+W9,float,mV,sEMG wrist channel 9 (ring 2),true,wfdb_signal_column,true
+W10,float,mV,sEMG wrist channel 10 (ring 2),true,wfdb_signal_column,true
+W11,float,mV,sEMG wrist channel 11 (ring 2),true,wfdb_signal_column,true
+W12,float,mV,sEMG wrist channel 12 (ring 2),true,wfdb_signal_column,true
+U1,float,mV,"kênh không dùng — std ~0.005mV (near-zero), xác nhận qua quality_check thật, chỉ để phân tách ring trong thứ tự cột",false,wfdb_signal_column,true
+U2,float,mV,"kênh không dùng — std ~0.005mV (near-zero), xác nhận qua quality_check thật",false,wfdb_signal_column,true
+U3,float,mV,"kênh không dùng — std ~0.005mV (near-zero), xác nhận qua quality_check thật",false,wfdb_signal_column,true
+U4,float,mV,"kênh không dùng — std ~0.005mV (near-zero), xác nhận qua quality_check thật",false,wfdb_signal_column,true
+session,int,-,"session index (1-3, 3 ngày đo riêng biệt)",true,path_metadata,true
+participant,int,-,subject id (1-43),true,path_metadata,true
+gesture,int,-,gesture id (1-16 = cử chỉ thật theo MotionSequence.txt; 17 = REST theo quy ước code repo),true,path_metadata,true
+trial,int,-,repetition id (1-7),true,path_metadata,true
