@@ -99,10 +99,13 @@ logs/
 
 .agents/
 qa-validation/evidence/day5-preprocess-golden.npz
-docs/plans/
 
-# Starter packs
+# Allow evidence logs (audit trail)
+!qa-validation/evidence/*.log
+
+# Starter packs and audit packs (input references only)
 day*_starter_pack/
+day*_eda_data_quality_audit_pack/
 
 # TypeScript cache
 *.tsbuildinfo

@@ -1,0 +1,22 @@
+schema_version: day28-manifest-index.v1
+dataset_id: mendeley-4channel-hand-gesture-v2
+status: BASELINE_FROM_USER_DAY27_ARTIFACTS
+required_files:
+  - archive.sha256
+  - canonical-mapping-draft.yaml
+  - data-hierarchy.yaml
+  - data-quality-inventory.json
+  - dataset-source-record.yaml
+  - domain-gap-matrix.csv
+  - field-dictionary.csv
+  - file-inventory.csv
+  - label-dictionary.yaml
+  - license-record.yaml
+  - readiness-decision.yaml
+day28_additive_files:
+  - day28-manifest-index.yaml
+raw_data_location: /data/datasets/external/mendeley-4channel-hand-gesture-v2
+raw_data_committed_to_git: false
+notes:
+  - Pack does not overwrite the eleven Day 27 permanent manifests.
+  - Preflight reads the actual files present in the repository.

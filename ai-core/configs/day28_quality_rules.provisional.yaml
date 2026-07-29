@@ -1,0 +1,38 @@
+schema_version: day28-quality-rules.v1
+status: PROVISIONAL_ENGINEERING_REVIEW_TRIGGERS
+clinical_thresholds: false
+rules:
+  nonfinite_any:
+    metric: nonfinite_ratio
+    comparison: greater_than
+    threshold: 0.0
+    severity: fail
+  zero_variance:
+    metric: std_uV
+    comparison: equal_to
+    threshold: 0.0
+    severity: fail
+  flatline_candidate:
+    metric: flatline_ratio
+    comparison: greater_than
+    threshold: 0.02
+    severity: warning
+  clipping_candidate:
+    metric: clipping_candidate_ratio
+    comparison: greater_than
+    threshold: 0.01
+    severity: warning
+  dc_offset_candidate:
+    metric: dc_to_std_ratio
+    comparison: greater_than
+    threshold: 0.5
+    severity: warning
+  powerline_candidate:
+    metric: powerline_50hz_ratio
+    comparison: greater_than
+    threshold: 0.2
+    severity: warning
+notes:
+  - These are review triggers, not clinical acceptance thresholds.
+  - Do not auto-delete or auto-correct raw samples from these rules.
+  - Threshold development must not access the sealed test partition.
