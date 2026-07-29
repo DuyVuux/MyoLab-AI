@@ -1,0 +1,72 @@
+{
+  "schema_version": "day30-line-coverage.v1",
+  "tool": "python_stdlib_trace",
+  "scope": "ai-core/data/day30",
+  "performance_stress_instrumented": false,
+  "performance_stress_exclusion_reason": "line tracing would invalidate elapsed-time budgets",
+  "tests_passed": 50,
+  "tests_failed": 0,
+  "executable_lines": 637,
+  "executed_lines": 554,
+  "missing_lines": 83,
+  "line_coverage_percent": 86.9702,
+  "minimum_percent": 80.0,
+  "pass": true,
+  "modules": [
+    {
+      "module": "day30.channel_policy",
+      "executable_lines": 60,
+      "missing_lines": 18
+    },
+    {
+      "module": "day30.contracts",
+      "executable_lines": 33,
+      "missing_lines": 0
+    },
+    {
+      "module": "day30.normalization",
+      "executable_lines": 20,
+      "missing_lines": 3
+    },
+    {
+      "module": "day30.ontology",
+      "executable_lines": 82,
+      "missing_lines": 13
+    },
+    {
+      "module": "day30.policy_validation",
+      "executable_lines": 104,
+      "missing_lines": 18
+    },
+    {
+      "module": "day30.preflight",
+      "executable_lines": 48,
+      "missing_lines": 8
+    },
+    {
+      "module": "day30.readiness",
+      "executable_lines": 30,
+      "missing_lines": 1
+    },
+    {
+      "module": "day30.sample_rate",
+      "executable_lines": 48,
+      "missing_lines": 5
+    },
+    {
+      "module": "day30.storage_contract",
+      "executable_lines": 94,
+      "missing_lines": 8
+    },
+    {
+      "module": "day30.windowing",
+      "executable_lines": 118,
+      "missing_lines": 9
+    }
+  ],
+  "limitations": [
+    "Python trace reports executable line coverage, not branch coverage.",
+    "Subprocess bodies are verified by integration tests but are not attributed to the parent trace process.",
+    "The performance stress test is verified separately without tracing."
+  ]
+}

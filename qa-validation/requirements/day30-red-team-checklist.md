@@ -4,6 +4,11 @@
 - Can `training_allowed`, `pooled_training_allowed` or `test_set_opened` become true?
 - Can a test, sealed-test or outer-test record be silently skipped instead of rejected?
 - Can a test-like path be disguised under a validation partition?
+- Can a valid window row be mutated after generation to inject a test path, unknown
+  label, malformed hash, non-finite sampling rate or invalid policy identifier?
+- Can a positive duration silently round to zero samples?
+- Can identical subject identifiers in independent datasets cause a false leakage alarm?
+- Can repeated seeded runs produce different window identifiers?
 - Can one subject or atomic group appear in multiple partitions?
 - Can a window exceed its source record or omit source/split/mapping provenance?
 - Can an unknown, ambiguous or protected label enter a supervised view?

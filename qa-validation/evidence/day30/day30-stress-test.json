@@ -1,22 +1,26 @@
 {
   "schema_version": "day30-stress-test.v1",
   "seed": 30,
-  "input_records": 2000,
-  "generated_windows": 37093,
+  "input_records": 5000,
+  "generated_windows": 92255,
+  "window_id_digest_sha256": "bedc850968521b706109dca95f7680f8901bfcb9c69d4a11151999aa90231aa3",
   "window_validation": {
     "pass": true,
     "errors": [],
-    "row_count": 37093
+    "row_count": 92255
   },
   "forbidden_partition_attacks": 6,
   "forbidden_partition_attacks_blocked": 6,
+  "storage_mutation_attacks": 9,
+  "storage_mutation_attacks_blocked": 9,
+  "cross_dataset_subject_collision_false_positive": false,
   "resampled_shape": [
     2000,
     4
   ],
   "finite_signal_output": true,
-  "elapsed_seconds": 3.900928,
-  "peak_memory_mib": 68.433,
+  "elapsed_seconds": 9.462605,
+  "peak_memory_mib": 109.821,
   "thresholds": {
     "max_elapsed_seconds": 30.0,
     "max_peak_memory_mib": 256.0

@@ -3,7 +3,7 @@
 Parsed 10 Python files
 [day28] Automated tests
 .....                                                                    [100%]
-5 passed in 0.34s
+5 passed in 0.28s
 [day28] Safety string scan
 [day28] No raw/model artifacts
 [day28] PASS
@@ -13,7 +13,7 @@ Parsed 10 Python files
 Parsed 10 Python files
 [day28] Automated tests
 .....                                                                    [100%]
-5 passed in 0.30s
+5 passed in 0.28s
 [day28] Safety string scan
 [day28] No raw/model artifacts
 [day28] PASS
@@ -548,26 +548,30 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
   "real_data_signal_rows_read": 0,
   "pass": true
 }
-+ /usr/bin/python3 scripts/dev/stress_test_day30.py --records 2000 --output qa-validation/evidence/day30/day30-stress-test.json
++ /usr/bin/python3 scripts/dev/stress_test_day30.py --records 5000 --output qa-validation/evidence/day30/day30-stress-test.json
 {
   "schema_version": "day30-stress-test.v1",
   "seed": 30,
-  "input_records": 2000,
-  "generated_windows": 37093,
+  "input_records": 5000,
+  "generated_windows": 92255,
+  "window_id_digest_sha256": "bedc850968521b706109dca95f7680f8901bfcb9c69d4a11151999aa90231aa3",
   "window_validation": {
     "pass": true,
     "errors": [],
-    "row_count": 37093
+    "row_count": 92255
   },
   "forbidden_partition_attacks": 6,
   "forbidden_partition_attacks_blocked": 6,
+  "storage_mutation_attacks": 9,
+  "storage_mutation_attacks_blocked": 9,
+  "cross_dataset_subject_collision_false_positive": false,
   "resampled_shape": [
     2000,
     4
   ],
   "finite_signal_output": true,
-  "elapsed_seconds": 3.900928,
-  "peak_memory_mib": 68.433,
+  "elapsed_seconds": 9.462605,
+  "peak_memory_mib": 109.821,
   "thresholds": {
     "max_elapsed_seconds": 30.0,
     "max_peak_memory_mib": 256.0
@@ -577,12 +581,12 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
   "pass": true
 }
 + env PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest -q -p no:cacheprovider qa-validation/automated-tests/test_day30_cli.py qa-validation/automated-tests/test_day30_delivery.py qa-validation/automated-tests/test_day30_governance.py qa-validation/automated-tests/test_day30_schemas.py qa-validation/automated-tests/test_day30_signal_contracts.py qa-validation/automated-tests/test_day30_stress.py qa-validation/automated-tests/test_day30_windowing_storage.py
-.....................................                                    [100%]
-37 passed in 6.12s
+....................................................                     [100%]
+52 passed in 7.19s
 + /usr/bin/python3 scripts/dev/check_day30_artifacts.py
 {
   "schema_version": "day30-artifact-check.v1",
-  "asset_count": 184,
+  "asset_count": 188,
   "missing": [],
   "prohibited_raw_or_model_artifacts": [],
   "unsafe_flags": [],
@@ -676,13 +680,13 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "ai-core/data/day30/sample_rate.py",
-      "sha256": "3a7024ebe96eb3e4bfb818fe39e5bf15d717bab3a2542ba80b75ee5b2cca3e65",
-      "bytes": 1927
+      "sha256": "29dc41b575f4799854b56d00d1ed7b09ed209f747147055fc0aa3a06314f029c",
+      "bytes": 2089
     },
     {
       "path": "ai-core/data/day30/storage_contract.py",
-      "sha256": "617f569f301dfa711867e1fbf9d67e9d44020bffed874da412f0453641f0b412",
-      "bytes": 2730
+      "sha256": "67d5a22882c67a642f36abf0aca9a0de1eb7cc8b2fe08ca35231adac90e29ecf",
+      "bytes": 5678
     },
     {
       "path": "ai-core/data/day30/view_registry.py",
@@ -691,8 +695,8 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "ai-core/data/day30/windowing.py",
-      "sha256": "fd13fbf4f39b3e616fe36271ab05fce2e70c66013a0894cd51a037e31a9cb5f1",
-      "bytes": 5721
+      "sha256": "e5d7667335721c7b90d189a018f294a58070126ac576bb47861f3c78a812db05",
+      "bytes": 5708
     },
     {
       "path": "data-platform/configs/day30/common-ontology.yaml",
@@ -796,8 +800,8 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "docs/05-data/day30/08-experiment-eligibility-and-day31-handoff.md",
-      "sha256": "1d7190e11028d90d5f52680ade388f0a260faec7ef3f1130f9c2e7013bcdd98e",
-      "bytes": 546
+      "sha256": "ceeeb19098a6e5247a541fcaf5987989596da915c95c72aa7b0d81471546c7a1",
+      "bytes": 13930
     },
     {
       "path": "docs/05-data/day30/09-full-coverage-gap-and-risk-register.md",
@@ -941,6 +945,11 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "qa-validation/automated-tests/test_day30_delivery.py",
+      "sha256": "df92426671ade389c6a5cb3f582d216a493deaa2a20d092ad0b4aee0cdfe9f7b",
+      "bytes": 3454
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_delivery.py.orig",
       "sha256": "888fb0805dc5ad9600ea526866f512e195aa72bfed0c2da49935497aad0073a7",
       "bytes": 1954
     },
@@ -956,22 +965,27 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "qa-validation/automated-tests/test_day30_signal_contracts.py",
-      "sha256": "06d99d0ac0228977855682a6b18a5d03ef6d045451dd6bb7ddd29901b052a04b",
-      "bytes": 2967
+      "sha256": "4bc894932dcab7b969b1f62f63c9c465bcc6713983cb3bbefcd1265978ac2410",
+      "bytes": 3144
     },
     {
       "path": "qa-validation/automated-tests/test_day30_stress.py",
-      "sha256": "95e439bdc051982ee89b93b300b9cecf363322af913ebefd8abe657da6db3525",
-      "bytes": 1813
+      "sha256": "cc26bf516bc896d072b17c68bee7b405803dcf78b1b14b906ad23ce05540546d",
+      "bytes": 2514
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_stress.py.orig",
+      "sha256": "41c68e50f069da471a57d9a8de2e08eb9104893a11ee49dca5147070f5126b87",
+      "bytes": 2347
     },
     {
       "path": "qa-validation/automated-tests/test_day30_windowing_storage.py",
-      "sha256": "3c754c73bf2862cca5c8b17d86fdd69ecc57748f0de133c9527e0ad38df4909c",
-      "bytes": 3750
+      "sha256": "8ed767d064f87d7653632a46acfd6d680980a7b8ba5046e9320f066a67d6246f",
+      "bytes": 5662
     },
     {
       "path": "qa-validation/evidence/day30/day30-artifact-check.json",
-      "sha256": "db164768fc311d352bf5620a6b798226201f77db62b3cff08a84dd99a062ef4f",
+      "sha256": "96da1e882d4e677fa0700f7bb5a1c23162112a7c3a76d6fe88403d8c48da5d80",
       "bytes": 205
     },
     {
@@ -981,8 +995,8 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "qa-validation/evidence/day30/day30-check-run.log",
-      "sha256": "94d235be07cb3cc96e0118960900ce21bda2d32d2f2a4aa3132966b3c4de2efc",
-      "bytes": 17148
+      "sha256": "9b357602fada9be267496def139cec91977a430b40b873d459181d5d41f640a9",
+      "bytes": 17379
     },
     {
       "path": "qa-validation/evidence/day30/day30-common-ontology.json",
@@ -1026,8 +1040,8 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "qa-validation/evidence/day30/day30-stress-test.json",
-      "sha256": "09857b1ae2eadad23dd06924995cab5f2dd68366071da2a78fcc39a4db59167c",
-      "bytes": 586
+      "sha256": "2d0cbd197823938fa8a597dd8491e6601754a995f8fb30da572628ef8d755e44",
+      "bytes": 817
     },
     {
       "path": "qa-validation/evidence/day30/day30-tooling-validation.json",
@@ -1038,16 +1052,6 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
       "path": "qa-validation/evidence/day30/day30-window-index.fixture.json",
       "sha256": "7c676bdd697fa1adf5763120c1b5bd39c6f67c16127bebaf522863f9dbd4f681",
       "bytes": 6312
-    },
-    {
-      "path": "qa-validation/evidence/day30/input-git-commit.txt",
-      "sha256": "86e681404ed29606852f27448b15443849f7cfa3eb657a890a1410a125cdd686",
-      "bytes": 41
-    },
-    {
-      "path": "qa-validation/evidence/day30/input-working-tree.patch",
-      "sha256": "463707cd773e6df6168525236b676656213c3f66065061cc4a7641c0b795a498",
-      "bytes": 438832
     },
     {
       "path": "qa-validation/evidence/pre-day30/README.md",
@@ -1101,8 +1105,8 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "qa-validation/fixtures/day30/metadata-index.fixture.csv",
-      "sha256": "c52098ca5e226639b5b9cc6d0568d3754a8a9a104a9d9df540eacf7eb6360e8b",
-      "bytes": 676
+      "sha256": "4a0b16c6b5890754da339c1f97a2d06eae7dac1f88d54434d622d7901e43014e",
+      "bytes": 675
     },
     {
       "path": "qa-validation/fixtures/pre_day30/remote-objects.local.csv",
@@ -1116,13 +1120,13 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "qa-validation/requirements/day30-acceptance-criteria.md",
-      "sha256": "fd59e7f61e9d2e934052cadf0abe54d198755b24d5625287eef05e8fee06296f",
-      "bytes": 1794
+      "sha256": "175e803b8901d4044487a8938fbeb3bac5e5baa0e3d32ac54336bdc7f5d92866",
+      "bytes": 1793
     },
     {
       "path": "qa-validation/requirements/day30-red-team-checklist.md",
-      "sha256": "84a5f5dcf696e1cb0f40b904641af789e86e5919098da3e0ab7a258f3723e20d",
-      "bytes": 1040
+      "sha256": "2d0cc4d661552d2717249c2971fb3764cc64dc7d670e1581238bcca54679f9a7",
+      "bytes": 1415
     },
     {
       "path": "qa-validation/requirements/day30-requirements.csv",
@@ -1131,8 +1135,8 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "qa-validation/test-plans/day30-harmonization-test-plan.md",
-      "sha256": "6c74890906762ea121404ab2e93a44d19384fd2756d3932cd4e88e0a330b586c",
-      "bytes": 256
+      "sha256": "f3d6192cf981ed185c3cc351662400ad9b37eb8c44f74a9e73489e9e8d900713",
+      "bytes": 4312
     },
     {
       "path": "qa-validation/tests/pre_day30/conftest.py",
@@ -1176,53 +1180,53 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "qa-validation/traceability/day30-requirement-test-traceability.csv",
-      "sha256": "1d3878c53fe10504bfce5416409923fb93eeb010590059d0d137c588e7947855",
-      "bytes": 464
+      "sha256": "a686abc37008f2191176a7b1c9e010bc7baabea86545a4bb9ea770593f7d3121",
+      "bytes": 2437
     },
     {
       "path": "scripts/data/day30_build_common_ontology.py",
-      "sha256": "33b944e4526c0f81a781ab31929c900adb29d2955c4a9b98f3fc5d802549e388",
-      "bytes": 1632
+      "sha256": "7126e203359989325def4ddece58e9e82bd5b09b2a68b27bf021e8d02ae29d93",
+      "bytes": 1631
     },
     {
       "path": "scripts/data/day30_build_input_report.py",
-      "sha256": "0acba86802f19d62ce2693162f9aeac3cccc1c1a4b2075bf5d65139ada4704f6",
-      "bytes": 3577
+      "sha256": "98dbdc41a86febba131b48f284e8c8b0494f3835699dac5af27b9461baad2ffe",
+      "bytes": 3576
     },
     {
       "path": "scripts/data/day30_build_view_registry.py",
-      "sha256": "76feb1715db2a7f5c59d42213e414761f0e87eefe9fa698d4b0069560943efc8",
-      "bytes": 1543
+      "sha256": "3bf31f015799b87e12ff777f72ef6aa14de73bc76676f280110a06d518cf7e6d",
+      "bytes": 1542
     },
     {
       "path": "scripts/data/day30_build_window_index.py",
-      "sha256": "209f017c8b4f171a1d4ac29d8e56037357135ec1194fff3e09d1b2105d0c2160",
-      "bytes": 2657
+      "sha256": "740de3743cfc6dece70afc021eba6def9d16c111d1e1202fa42e442fc34e3093",
+      "bytes": 2656
     },
     {
       "path": "scripts/data/day30_preflight.py",
-      "sha256": "b9e411ee8a1b16cf08e6690d85d9b7a6b6ff7079fda900495560a85547758fd0",
-      "bytes": 1469
+      "sha256": "b13f2dc3048cddac94f5023233908a42a4d46a7d9dc7cd0e98bfe7e85901b6eb",
+      "bytes": 1468
     },
     {
       "path": "scripts/data/day30_render_harmonization_report.py",
-      "sha256": "03c5b9e1e52071f6ade06e5f6359e7a71c06c70bb54b24fd267b8667125a180a",
-      "bytes": 1635
+      "sha256": "84d48494ac10036173e3cbf1d2099423b1c942b500732b4f67566abe3260968d",
+      "bytes": 1634
     },
     {
       "path": "scripts/data/day30_run_harmonization.py",
-      "sha256": "c573625062a7aad01bf7be72c9bb89894fb84dcc30a53722cf78120cfcebc2ab",
-      "bytes": 7145
+      "sha256": "419c817d808c4e01cca11dc598830150afaf643f855f430f8064063fa76e0d08",
+      "bytes": 7144
     },
     {
       "path": "scripts/data/day30_validate_channel_policy.py",
-      "sha256": "8a8032a5cbc52d80c651e15f674591e6128c7a7e4a1a12f1b5220bf59d10056e",
-      "bytes": 1808
+      "sha256": "08cd93e309791bcf94f6d32cc0e73cf67860ec111e55c0c944c2be4425377c0d",
+      "bytes": 1807
     },
     {
       "path": "scripts/data/day30_validate_sampling_policy.py",
-      "sha256": "6735a68136aa980342bebad50a051cf22d97dd48b86871b254760aa8ca21c631",
-      "bytes": 1703
+      "sha256": "83e6904b3be1db253d6a61b48ba80d75ab7ea4e28c6a59d7c83e18dea62aadc3",
+      "bytes": 1702
     },
     {
       "path": "scripts/data/pre_day30_dual_gate.py",
@@ -1236,23 +1240,23 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "scripts/dev/build_day30_manifest.py",
-      "sha256": "c4c4ced49ffaed08ebca84d8e7a9cca8abf13cef648b38388a7b01426974b88e",
-      "bytes": 2803
+      "sha256": "04f529ca2653612ac5b9c637aa14b8a3342410b87e1c2471b2c27ca326d4e489",
+      "bytes": 2884
     },
     {
       "path": "scripts/dev/check_day30_artifacts.py",
-      "sha256": "67749d25b85de1a4f4d913aac783771bc62a2bb89d71b8150aa71546134f007d",
-      "bytes": 3246
+      "sha256": "bba5c5d2e1b9a5627eef0aa452bcb4214f24a6f1cb8ef72fe63bae0d4ff630d8",
+      "bytes": 3245
     },
     {
       "path": "scripts/dev/day30_tooling_smoke.py",
-      "sha256": "187797bb9edcfeabf4ce45b56a890cc40bae677f6ee172049db7785658a1c32c",
-      "bytes": 3985
+      "sha256": "1a2b9a0b615d794ef56b0ecbf4085b13d8f2ae8e53d49893bb963962d5aa0244",
+      "bytes": 3984
     },
     {
       "path": "scripts/dev/run_day30_checks.sh",
-      "sha256": "d7f1b394ee1fe2dd003fe394ca59ed5101a67690501f27f564a55f6d1648187b",
-      "bytes": 2949
+      "sha256": "b7985907289fb795b81b8955f6034794214f3a01b107c13b2c39f97c9f9cf8bb",
+      "bytes": 2948
     },
     {
       "path": "scripts/dev/run_pre_day30_checks.sh",
@@ -1266,8 +1270,8 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
     },
     {
       "path": "scripts/dev/stress_test_day30.py",
-      "sha256": "10a6f66b92ebb8245251170f9378c6ab1c518f68de12a91047d4a6ba4c5f4ee8",
-      "bytes": 4863
+      "sha256": "18488e4b423b16fdf2622e93ccda402bb5735b311f056471f2355c21302d6478",
+      "bytes": 6980
     },
     {
       "path": "scripts/dev/sync_pre_day30_evidence_to_repo.sh",
@@ -1280,6 +1284,6 @@ Full baseline tiếp tục bị chặn cho đến khi có full subject index ho�
   "training_executed": false,
   "pooled_training_executed": false,
   "test_signal_rows_read": 0,
-  "manifest_sha256": "84e0c032217d0bdfc374cb292e04301f9c59c4e6e275983dcbfb3f01e725eaec"
+  "manifest_sha256": "a7b6e1d91f6a9324010e8e2001a768280aa748cab40eaed912877cc3b438e578"
 }
 DAY30_CHECKS_PASS

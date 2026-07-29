@@ -6,27 +6,31 @@ Day30 đã hoàn thành lớp **harmonization, governance và leakage control** 
 
 Trạng thái bàn giao:
 
-- Commit: `1387879`
+- Baseline commit: `1387879`
+- Verification hardening: `66d1b12`, `4e81e4a`, `7b77d74`, `b099382`
+- Window-ID digest: `bedc850968521b706109dca95f7680f8901bfcb9c69d4a11151999aa90231aa3`
 - Tag: `day30-dual-dataset-harmonization-v1.0`
 - Quyết định: `GO_FOR_DAY31_SEPARATE_BASELINE_SMOKE`
 - Chỉ được chạy baseline riêng từng dataset.
 - Chưa được pooled training Mendeley + GRABMyo.
 - Full baseline vẫn bị chặn do chưa xác minh full subject index, dependency lock, split hashes và training authorization đầy đủ.
 - Stress test Day30:
-  - 2.000 synthetic records
-  - 37.093 windows
+  - 5.000 synthetic records
+  - 92.255 windows
   - 6/6 partition/path attacks bị chặn
-  - Khoảng 3,9 giây
-  - Peak memory khoảng 68,4 MiB
+  - 9/9 stored-row mutation/duplicate attacks bị chặn
+  - Không có false positive khi hai dataset dùng cùng `subject_id`
+  - 9,463 giây trên runner bàn giao
+  - Peak traced memory 109,821 MiB
   - Không có test signal bị truy cập
   - Không có training ngoài ý muốn
 - Regression:
-  - Day30: 37/37 test đạt
-  - Coverage: 82,05%
+  - Day30: 52/52 test đạt
+  - Core line coverage: 86,97% (Python stdlib trace; performance stress đo riêng)
   - Day28: 5/5
   - Day29: 14/14
 
-Nguồn chính: [Day30 handoff](</data/projects/semg-fatigue/MyoLab-AI/docs/05-data/day30/08-experiment-eligibility-and-day31-handoff.md:1>), [readiness evidence](</data/projects/semg-fatigue/MyoLab-AI/qa-validation/evidence/day30/day30-readiness-decision.json:1>), [stress-test evidence](</data/projects/semg-fatigue/MyoLab-AI/qa-validation/evidence/day30/day30-stress-test.json:1>).
+Nguồn chính: [Day30 handoff](</data/projects/semg-fatigue/MyoLab-AI/docs/05-data/day30/08-experiment-eligibility-and-day31-handoff.md:1>), [readiness evidence](</data/projects/semg-fatigue/MyoLab-AI/qa-validation/evidence/day30/day30-readiness-decision.json:1>), [stress-test evidence](</data/projects/semg-fatigue/MyoLab-AI/qa-validation/evidence/day30/day30-stress-test.json:1>), [coverage evidence](</data/projects/semg-fatigue/MyoLab-AI/qa-validation/evidence/day30/day30-line-coverage.json:1>).
 
 ---
 
