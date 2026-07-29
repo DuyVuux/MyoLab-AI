@@ -11,7 +11,7 @@ NOT_VERIFIED HARDWARE_VERSION_NOT_VERIFIED, SOFTWARE_VERSION_NOT_VERIFIED, SITE_
 Readiness gate: CONDITIONAL_READY implementationAllowed= True trainingAllowed= False
 [6/8] Automated tests
 ...................                                                      [100%]
-19 passed in 0.16s
+19 passed in 0.15s
 [7/8] JSON evidence summary
 {
   "readiness": "CONDITIONAL_READY",
@@ -26,86 +26,8 @@ Day 25 research-grounded artifact and safety check passed.
 All Day 25 research-grounded checks passed.
 Running scripts/dev/run_day26_research_checks.sh
 [1/7] Python syntax
-[2/7] Artifact/safety checker
-Day 26 artifact and safety checks: PASS
-[3/7] Blueprint validation
-{"blueprint_valid": true, "training_execution_allowed": false, "test_set_sealed": true, "result_status": "NOT_RUN", "day27_allowed": true, "day29_training_blocked_until_gates_pass": true, "experiment_count": 22, "errors": []}
-[4/7] Experiment matrix render
-Rendered 22 experiments
-[5/7] Test seal template
-qa-validation/evidence/day26-test-set-seal.template.json
-[6/7] Source hash ledger
-Wrote 57 hashes to qa-validation/evidence/day26-source-hash-ledger.json
-[7/7] Pytest
-
-==================================== ERRORS ====================================
-_______ ERROR collecting qa-validation/automated-tests/test_day24_api.py _______
-ImportError while importing test module '/data/projects/semg-fatigue/MyoLab-AI/qa-validation/automated-tests/test_day24_api.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-qa-validation/automated-tests/test_day24_api.py:3: in <module>
-    from mock_api.day24_app import app
-services/api-server/src/mock_api/day24_app.py:22: in <module>
-    from day24_report_builder import build_report
-E   ModuleNotFoundError: No module named 'day24_report_builder'
-_ ERROR collecting qa-validation/automated-tests/test_day25_group_split_v2.py __
-ImportError while importing test module '/data/projects/semg-fatigue/MyoLab-AI/qa-validation/automated-tests/test_day25_group_split_v2.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-qa-validation/automated-tests/test_day25_group_split_v2.py:8: in <module>
-    from data.group_split_v2 import GroupSplitError, assert_no_group_leakage, build_group_split
-E   ModuleNotFoundError: No module named 'data'
-_ ERROR collecting qa-validation/automated-tests/test_day25_readiness_gate_v2.py _
-ImportError while importing test module '/data/projects/semg-fatigue/MyoLab-AI/qa-validation/automated-tests/test_day25_readiness_gate_v2.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-qa-validation/automated-tests/test_day25_readiness_gate_v2.py:7: in <module>
-    from data.readiness_gate_v2 import build_day25_gate
-E   ModuleNotFoundError: No module named 'data'
-_ ERROR collecting qa-validation/automated-tests/test_day25_research_catalog_v2.py _
-ImportError while importing test module '/data/projects/semg-fatigue/MyoLab-AI/qa-validation/automated-tests/test_day25_research_catalog_v2.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-qa-validation/automated-tests/test_day25_research_catalog_v2.py:8: in <module>
-    from data.evidence_catalog import EvidenceCatalogError, load_catalog, validate_catalog
-E   ModuleNotFoundError: No module named 'data'
-__ ERROR collecting qa-validation/automated-tests/test_day25_site_audit_v2.py __
-ImportError while importing test module '/data/projects/semg-fatigue/MyoLab-AI/qa-validation/automated-tests/test_day25_site_audit_v2.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/usr/lib/python3.12/importlib/__init__.py:90: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-qa-validation/automated-tests/test_day25_site_audit_v2.py:9: in <module>
-    from integrations.devices.noraxon.site_export_audit import SiteEvidenceError, audit_site_evidence
-E   ModuleNotFoundError: No module named 'integrations'
-=============================== warnings summary ===============================
-.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
-  /data/projects/semg-fatigue/MyoLab-AI/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
-    from starlette.testclient import TestClient as TestClient  # noqa
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-=========================== short test summary info ============================
-ERROR qa-validation/automated-tests/test_day24_api.py
-ERROR qa-validation/automated-tests/test_day25_group_split_v2.py
-ERROR qa-validation/automated-tests/test_day25_readiness_gate_v2.py
-ERROR qa-validation/automated-tests/test_day25_research_catalog_v2.py
-ERROR qa-validation/automated-tests/test_day25_site_audit_v2.py
-!!!!!!!!!!!!!!!!!!! Interrupted: 5 errors during collection !!!!!!!!!!!!!!!!!!!!
-1 warning, 5 errors in 3.78s
-WARN: scripts/dev/run_day26_research_checks.sh exited 2 (pre-existing issue in prior-day global pytest scope)
+scripts/dev/run_day26_research_checks.sh: line 8: python: command not found
+WARN: scripts/dev/run_day26_research_checks.sh exited 127 (pre-existing issue in prior-day global pytest scope)
   Day 26 core checks (blueprint/matrix/seal/ledger) verified separately.
 [1/7] Artifact/safety pre-check
 {
@@ -120,7 +42,7 @@ WARN: scripts/dev/run_day26_research_checks.sh exited 2 (pre-existing issue in p
 [2/7] Python compile
 [3/7] Pytest
 .............                                                            [100%]
-13 passed in 4.10s
+13 passed in 3.43s
 [4/7] Verify source template fails closed
 [5/7] Verify synthetic contract fixture
 {

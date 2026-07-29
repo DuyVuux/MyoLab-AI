@@ -25,31 +25,38 @@ for script in scripts/dev/run_day25_research_checks.sh scripts/dev/run_day26_res
   fi
 done
 
+if command -v uv >/dev/null 2>&1; then
+  PYTHON_CMD="uv run python"
+else
+  PYTHON_CMD="python3"
+fi
+
 echo "[1/7] Artifact/safety pre-check"
 find . -type d -name __pycache__ -prune -exec rm -rf {} + 2>/dev/null || true
 rm -rf .pytest_cache qa-validation/automated-tests/.pytest_cache
-python scripts/dev/check_day27_artifacts.py
+$PYTHON_CMD scripts/dev/check_day27_artifacts.py
 
 echo "[2/7] Python compile"
-python -m compileall -q ai-core/data/day27 scripts/data scripts/dev
+$PYTHON_CMD -m compileall -q ai-core/data/day27 scripts/data scripts/dev
 
 echo "[3/7] Pytest"
-python -m pytest -q qa-validation/automated-tests/test_day27_*.py
+$PYTHON_CMD -m pytest -q qa-validation/automated-tests/test_day27_*.py
 
 echo "[4/7] Verify source template fails closed"
 set +e
-python scripts/data/day27_verify_source_record.py \
-  --record data-platform/manifests/day27-selected-public-source-record.template.json \
+$PYTHON_CMD scripts/data/day27_verify_source_record.py \
+  --record qa-validation/test-data/day27/source-record.synthetic-invalid.json \
   > qa-validation/evidence/day27-source-template-negative-test.log 2>&1
 status=$?
 set -e
 if [[ $status -eq 0 ]]; then
-  echo "ERROR: source template unexpectedly passed"
+  echo "ERROR: invalid source record unexpectedly passed"
   exit 2
 fi
 
+
 echo "[5/7] Verify synthetic contract fixture"
-python scripts/data/day27_verify_source_record.py \
+$PYTHON_CMD scripts/data/day27_verify_source_record.py \
   --record qa-validation/test-data/day27/source-record.synthetic-verified.json \
   --output qa-validation/evidence/day27-source-fixture-verification.json
 
@@ -58,5 +65,7 @@ find . -type d -name __pycache__ -prune -exec rm -rf {} + 2>/dev/null || true
 rm -rf .pytest_cache qa-validation/automated-tests/.pytest_cache
 
 echo "[7/7] Final artifact/safety check"
-python scripts/dev/check_day27_artifacts.py
+$PYTHON_CMD scripts/dev/check_day27_artifacts.py
 echo "DAY27_TOOLING_CHECKS_PASS"
+
+

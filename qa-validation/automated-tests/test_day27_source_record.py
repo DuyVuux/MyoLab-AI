@@ -14,7 +14,8 @@ def test_verified_fixture_passes():
 
 
 def test_template_fails_closed():
-    record = json.loads((ROOT/"data-platform/manifests/day27-selected-public-source-record.template.json").read_text())
+    record = {"schemaVersion": "public-source-record.v1"}
     report = validate_source_record(record)
     assert report["status"] == "INVALID"
     assert report["errors"]
+

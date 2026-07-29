@@ -93,13 +93,198 @@
     },
     {
       "path": "day26-final-manifest.json",
-      "size_bytes": 17260,
-      "sha256": "468288c4d072289d9744784cfb5cca6b14c94ce1f043fd61e491cabd7900e3e0"
+      "size_bytes": 18588,
+      "sha256": "6cf06ab2f24837b9b5ae83a3163b3f83a52e5029ff353a996478e0b8db77f80a"
     },
     {
       "path": "day26-source-traceability.csv",
-      "size_bytes": 2569,
-      "sha256": "ed4affff178e6e326f24396d13dd445b39076b7e4b9f89ff7c9e1cb3b92b9035"
+      "size_bytes": 2555,
+      "sha256": "6bd10819006474ba47ab2b31514118e561e9ac2dee4e9e32e59cc5b54e83f684"
+    },
+    {
+      "path": "day26_deep_research/08-metrics-calibration-abstention.md",
+      "size_bytes": 66949,
+      "sha256": "51682a039bc53a793140d85f230720ef58bc26b78178624eca879e75b3d30c15"
+    },
+    {
+      "path": "day26_deep_research/09-reproducibility-and-governance.md",
+      "size_bytes": 41267,
+      "sha256": "ea02e8106900df5ff927b63f902ca9885e62b6aa873fb3e7c2894e64edc3b34f"
+    },
+    {
+      "path": "day26_deep_research/Classical Model Candidate Review cho Day 26 sEMG Clinical Intelligence.md",
+      "size_bytes": 59009,
+      "sha256": "22fa2a3543fbb2c4b8624e73041132c1b7b9ca3ccda455697223e44a983571e5"
+    },
+    {
+      "path": "day26_deep_research/Day 26 Personalization và Adaptation Strategy cho sEMG Clinical Intelligence.md",
+      "size_bytes": 57492,
+      "sha256": "ef09451684b59a57005c32a4c7a257dfcf33081cd384eb7c7359cf51391b5b59"
+    },
+    {
+      "path": "day26_deep_research/Day 26 Research Protocol và Governance Framework cho sEMG Clinical Intelligence.md",
+      "size_bytes": 48010,
+      "sha256": "c3dbff8c1fcfd4fa01208dfb872162e5d6ed8e2f7939b8ff3d67be70cd8c9bfe"
+    },
+    {
+      "path": "day26_deep_research/Day 26 Validation and Leakage Review for sEMG Clinical Intelligence.md",
+      "size_bytes": 67774,
+      "sha256": "96a3a225e6d1fdacb5d00d42f000db032e3581284ea59ffd28df56474a1fce36"
+    },
+    {
+      "path": "day26_deep_research/Day 26 sEMG Clinical Intelligence Feature Engineering Review.md",
+      "size_bytes": 66250,
+      "sha256": "a486afe21924ae1217d282515636cdafb65bf7f531036211f86799484a4a8e20"
+    },
+    {
+      "path": "day26_deep_research/Day 26 sEMG Clinical Intelligence về fatigue-induced distribution shift và experiment blueprint.md",
+      "size_bytes": 57197,
+      "sha256": "85ba859a23709cae6711eeedd78888a3b7cc0a8e359e827f15943d17ccc91795"
+    },
+    {
+      "path": "day26_deep_research/evaluation_regimes.research.yaml",
+      "size_bytes": 26933,
+      "sha256": "a34d832d885d19a6bfe7bd6887e6e8169a56f7d47fbc459563e1c2b093a85759"
+    },
+    {
+      "path": "day26_deep_research/experiment-tracking-spec.md",
+      "size_bytes": 12253,
+      "sha256": "3d582a515930e181cea584616322e9b7d981fc32f87923e065728fd2275c3e9d"
+    },
+    {
+      "path": "day26_deep_research/gesture-model-evaluation-plan.md",
+      "size_bytes": 22725,
+      "sha256": "a6b10f585127ceb21504344dc3e3cf7cf743e1c9e4a20df46b46cdb05ff1cbf3"
+    },
+    {
+      "path": "day26_deep_research/model-registry-spec.md",
+      "size_bytes": 17528,
+      "sha256": "118aa4246687667a2301d25548e17d54559e5e354bcec705c119fbd886c3638c"
+    },
+    {
+      "path": "day26_deep_research/reproducible-training-policy.md",
+      "size_bytes": 17348,
+      "sha256": "32a0a76cff32eca70e39bafd4612136e04d03118dafca3c2c1e586dcedca49ad"
+    },
+    {
+      "path": "governance/evidence/09-decision-ledger.yaml",
+      "size_bytes": 6541,
+      "sha256": "39c7e3a41cf040373041f4e859bbc76d5e2af7aa6289f070e38038ffb448449e"
+    },
+    {
+      "path": "governance/evidence/09-evidence-matrix.csv",
+      "size_bytes": 19048,
+      "sha256": "1dfccc0d09919f49c3ed1449110ecd37a59f35079360f3ee29b8179795e9922f"
+    },
+    {
+      "path": "governance/evidence/09-search-screening-log.csv",
+      "size_bytes": 3132,
+      "sha256": "59ae0d20bb446c5039496d08fa2d3c7769b0527098ba8b89801b252b519fba0d"
+    },
+    {
+      "path": "governance/examples/experiment-manifest.example.yaml",
+      "size_bytes": 5874,
+      "sha256": "90238d44c3e5ae54ba9a50373794d9882df2f9e58e41cddb2fd527a4d177342a"
+    },
+    {
+      "path": "governance/examples/model-registry-record.example.yaml",
+      "size_bytes": 2737,
+      "sha256": "23163f97ea62436ec32eb906b14ef04507d58b71462d7e753d826ecac4ab985b"
+    },
+    {
+      "path": "governance/examples/release-manifest.example.yaml",
+      "size_bytes": 2071,
+      "sha256": "57b410041caa61aaae608f07dbd82db4fcae26a19c9049976c5931dd73d196b9"
+    },
+    {
+      "path": "governance/examples/rollback-record.example.yaml",
+      "size_bytes": 1830,
+      "sha256": "4c116601aea64dd56eb5a1243eccaacf5a0232fc2a5b1331f1c2df7d1555b0e3"
+    },
+    {
+      "path": "governance/fixtures/abstention-policy.blueprint.yaml",
+      "size_bytes": 549,
+      "sha256": "5c11979db7ea892848250d2c357a8fefadbca131ece654f89013e51379f8a0c1"
+    },
+    {
+      "path": "governance/fixtures/calibration-config.blueprint.yaml",
+      "size_bytes": 447,
+      "sha256": "2d190a5c7cd83abd42f0d98e585038ed1b1474db7058e62819adc7cb0a86c534"
+    },
+    {
+      "path": "governance/fixtures/channel-mapping.blueprint.yaml",
+      "size_bytes": 407,
+      "sha256": "d1511f4adf71e1355ab6c4dbea317793c74698307792bbc60122fc3d64f2790b"
+    },
+    {
+      "path": "governance/fixtures/class-ontology.blueprint.yaml",
+      "size_bytes": 429,
+      "sha256": "40254c158c4a8059b3ebceacba9ed96246cbaacbd2b7bf23945692f9bd84384d"
+    },
+    {
+      "path": "governance/fixtures/dataset-manifest.blueprint.json",
+      "size_bytes": 615,
+      "sha256": "54c21f1043c6714561857ced90c7697ec46c7e5c5c7a7c3af4a417109cd5fae6"
+    },
+    {
+      "path": "governance/fixtures/feature-config.blueprint.yaml",
+      "size_bytes": 406,
+      "sha256": "fe7441bf1383c721bbed8b8070db99c624d88267c5e57a87fa03c142dea122bd"
+    },
+    {
+      "path": "governance/fixtures/hash-ledger.blueprint.json",
+      "size_bytes": 5487,
+      "sha256": "ced2438e4799c6be120967943f810a14cea000f71da695f6f0d2b1f2cc4480a5"
+    },
+    {
+      "path": "governance/fixtures/model-config.blueprint.yaml",
+      "size_bytes": 423,
+      "sha256": "ae147b25c0919e208557f53e13b2d30cd936ad9b132a9c4a2a9960585c234e5a"
+    },
+    {
+      "path": "governance/fixtures/preprocessing-config.blueprint.yaml",
+      "size_bytes": 436,
+      "sha256": "1690b70a6f97a8f365a1520aa123f31f8026ac84a7c37e61262936e3b83a0921"
+    },
+    {
+      "path": "governance/fixtures/raw-registry.blueprint.csv",
+      "size_bytes": 90,
+      "sha256": "252c35843635116d24e713a5475f6a1a2b0f3772a9d250b2fb899df82c75ee69"
+    },
+    {
+      "path": "governance/fixtures/split-manifest.blueprint.json",
+      "size_bytes": 571,
+      "sha256": "d294c942309a6edc249a7e73ec4eac8d4c5a1ee6ec11d087c70423743c415d1f"
+    },
+    {
+      "path": "governance/fixtures/test-seal.blueprint.json",
+      "size_bytes": 749,
+      "sha256": "32d24f279c2dccc73f21df2e0e1034ebbf0c0888066311d571cf44ac43d4ab9e"
+    },
+    {
+      "path": "governance/fixtures/threshold-policy.blueprint.yaml",
+      "size_bytes": 373,
+      "sha256": "15d9f065d1d5056c37b3e04c304ee70697955b9ddfea309fdaf06164ad12b8e0"
+    },
+    {
+      "path": "governance/templates/experiment-review-checklist.md",
+      "size_bytes": 1239,
+      "sha256": "11ecbe4dc8265551b14a7317f273f5093ebf0e605909733f9a81f5d31c18743a"
+    },
+    {
+      "path": "governance/templates/model-card-template.md",
+      "size_bytes": 2845,
+      "sha256": "1adbec7a3d4f282e89ce705a11886bbd3787c7c43aeadc80ac751922ea9667f2"
+    },
+    {
+      "path": "governance/templates/model-release-checklist.md",
+      "size_bytes": 1186,
+      "sha256": "8a18419c979be14c3a74755ebda9aff54267f6364c54f1a24a3df1a067ff2cd4"
+    },
+    {
+      "path": "governance/templates/rollback-checklist.md",
+      "size_bytes": 780,
+      "sha256": "ddc937113378d79bca79107507b92896a24b6263fcad3da508916ae9b611829c"
     }
   ]
 }
