@@ -1,0 +1,13 @@
+schema_version: day30-dataset-profiles.v1
+profiles:
+  - dataset_id: mendeley-4channel-hand-gesture-v2
+    sampling_rate_hz: 2000
+    signal_unit: mV
+    channel_policy_id: mendeley-ch123-primary-v1
+    session_structure: single_session
+  - dataset_id: grabmyo-v1.1.0
+    sampling_rate_hz: 2048
+    signal_unit: mV
+    channel_policy_id: grabmyo-fw28-primary-v1
+    session_structure: three_session_cross_day
+

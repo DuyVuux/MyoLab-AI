@@ -1,0 +1,23 @@
+schema_version: day30-experiment-eligibility.v1
+status: LOCKED_FOR_HANDOFF
+training_allowed: false
+pooled_training_allowed: false
+
+mendeley:
+  conditional_eligible: [E-A00, E-A01, E-A02, E-A03, E-A04]
+  conditional_spectral: [E-A05]
+  not_eligible: [E-A06, E-A07, E-A08]
+  constraints: [hand_open_absent, ch4_primary_excluded, single_session]
+
+grabmyo:
+  conditional_eligible: [E-A00, E-A01, E-A02, E-A03, E-A04, E-A05, E-A07]
+  conditional_personalization: [E-P01, E-P02]
+  conditional_unknown_abstention: [E-F03]
+  not_eligible: [hard_fatigue_classifier, mfcv_features]
+
+cross_source:
+  zero_shot_contract_definition_allowed: true
+  zero_shot_execution_allowed_on_day30: false
+  pooled_training_allowed: false
+  pooled_selection_allowed: false
+

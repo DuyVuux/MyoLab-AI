@@ -1,0 +1,23 @@
+column,type,required,description
+window_id,string,true,Deterministic SHA-256-derived identifier
+dataset_id,string,true,Versioned source dataset identifier
+record_id,string,true,Atomic source record identifier
+subject_id,string,true,Grouping key used before windowing
+day_id,string,false,Source day identifier when available
+session_id,string,false,Source session identifier when available
+repetition_id,string,false,Atomic repetition identifier
+canonical_label,string,true,Verified supervised label
+partition,string,true,Train or validation only
+signal_path,string,true,Zone 2 reference; raw signal is not copied
+source_file_sha256,string,true,Full source-file SHA-256
+split_version,string,true,Versioned grouped split
+label_mapping_version,string,true,Versioned label dictionary
+start_sample,integer,true,Inclusive start sample
+end_sample_exclusive,integer,true,Exclusive end sample
+record_n_samples,integer,true,Source record length for bounds validation
+sampling_rate_hz,number,true,Native record sampling rate
+window_ms,integer,true,Window duration
+hop_ms,integer,true,Hop duration
+channel_policy_id,string,true,Versioned channel policy
+preprocessing_policy_id,string,true,Versioned preprocessing policy
+

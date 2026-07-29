@@ -1,0 +1,13 @@
+schema_version: day30-training-authorization.v1
+status: DAY30_HARMONIZATION_ONLY
+training_allowed: false
+model_fitting_allowed: false
+pooled_training_allowed: false
+test_set_opened: false
+authorization_record_present: false
+resolved_dependency_lock_verified: false
+full_dataset_index_verified: false
+split_hashes_verified: false
+day31_separate_smoke_may_be_requested_after_handoff: true
+day31_full_baseline_blocked_until_full_coverage_or_locked_sampling_protocol: true
+

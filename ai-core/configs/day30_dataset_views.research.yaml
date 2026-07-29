@@ -1,0 +1,6 @@
+schema_version: day30-dataset-views.v1
+status: GENERATED_FROM_VERSIONED_LABEL_DICTIONARIES
+training_allowed: false
+pooled_training_allowed: false
+source: data-platform/configs/day30/dataset-view-registry.yaml
+

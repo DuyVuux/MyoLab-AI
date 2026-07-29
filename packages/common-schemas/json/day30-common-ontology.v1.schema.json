@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.ai/schemas/day30-common-ontology.v1.schema.json",
+  "title": "Day 30 common ontology",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "class_order",
+    "mendeley_supported",
+    "grabmyo_supported",
+    "intersection",
+    "support",
+    "unknown_supervised_core_allowed",
+    "synthetic_fill_allowed"
+  ],
+  "properties": {
+    "schema_version": {"const": "day30-common-ontology.v1"},
+    "class_order": {"$ref": "#/$defs/labels"},
+    "mendeley_supported": {"$ref": "#/$defs/labels"},
+    "grabmyo_supported": {"$ref": "#/$defs/labels"},
+    "intersection": {"$ref": "#/$defs/labels"},
+    "support": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["mendeley", "grabmyo"],
+        "properties": {
+          "mendeley": {"type": "boolean"},
+          "grabmyo": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "unknown_supervised_core_allowed": {"const": false},
+    "synthetic_fill_allowed": {"const": false}
+  },
+  "$defs": {
+    "labels": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

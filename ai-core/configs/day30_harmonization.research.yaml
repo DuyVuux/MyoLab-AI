@@ -1,0 +1,60 @@
+schema_version: day30-harmonization.v1
+status: LOCKED_FOR_CONTRACT_VALIDATION
+day: 30
+training_allowed: false
+model_fitting_allowed: false
+pooled_training_allowed: false
+test_signal_access_allowed: false
+test_set_opened: false
+fatigue_inference_allowed: false
+mfcv_eligible: false
+motionlab_transfer_verified: false
+clinical_use_allowed: false
+
+input_report:
+  source: qa-validation/evidence/day30/day30-pre-day30-input-baseline.json
+  overall_status: GO_FOR_DAY30_HARMONIZATION
+  report_date: "2026-07-29"
+
+coverage:
+  grabmyo_observed_unique_subjects: 29
+  grabmyo_reported_total_subjects: 43
+  mendeley_observed_subjects: 9
+  mendeley_reported_total_subjects: 25
+  representative_eda_passed: true
+  full_population_coverage_verified: false
+
+dataset_profiles:
+  mendeley:
+    dataset_id: mendeley-4channel-hand-gesture-v2
+    sampling_rate_hz: 2000
+    signal_unit: mV
+    readiness_decision: qa-validation/evidence/pre-day30/mendeley/day28-readiness-decision.yaml
+    eda_summary: qa-validation/evidence/pre-day30/mendeley/mendeley-eda-summary.json
+    label_dictionary: data-platform/manifests/public-datasets/mendeley-4channel-hand-gesture-v2/label-dictionary.yaml
+  grabmyo:
+    dataset_id: grabmyo-v1.1.0
+    sampling_rate_hz: 2048
+    signal_unit: mV
+    readiness_decision: qa-validation/evidence/pre-day30/grabmyo/day29-readiness-decision.yaml
+    eda_summary: qa-validation/evidence/pre-day30/grabmyo/grabmyo-eda-summary.json
+    label_dictionary: data-platform/manifests/public-datasets/grabmyo-canonical/label-dictionary.yaml
+
+policies:
+  normalization: ai-core/configs/day30_normalization_policy.research.yaml
+  sampling: ai-core/configs/day30_sampling_policy.research.yaml
+  channels: ai-core/configs/day30_channel_policy.research.yaml
+  windowing: ai-core/configs/day30_windowing_policy.research.yaml
+  storage: data-platform/contracts/day30/storage-contract.yaml
+
+allowed_partitions: [train, validation]
+forbidden_partitions: [test, sealed_test, outer_test]
+
+outputs:
+  config_dir: data-platform/configs/day30
+  contract_dir: data-platform/contracts/day30
+  evidence_dir: qa-validation/evidence/day30
+  target_smoke_state: GO_FOR_DAY31_SEPARATE_BASELINE_SMOKE
+  target_full_state: GO_FOR_DAY31_SEPARATE_BASELINE_FULL
+  blocked_state: BLOCKED_WITH_EVIDENCE
+

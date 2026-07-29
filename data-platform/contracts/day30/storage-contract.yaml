@@ -1,0 +1,25 @@
+schema_version: day30-storage-contract.v1
+raw_signal:
+  copy_or_materialize_windows_by_default: false
+  storage_zone: ZONE_2_ONLY
+tables:
+  metadata_index:
+    preferred: parquet
+    fallback: csv
+  window_index:
+    preferred: parquet
+    fallback: csv
+  feature_table:
+    preferred: partitioned_parquet_long
+    fallback: csv_gzip_long
+  transient_training_matrix:
+    preferred: npz_with_column_manifest
+provenance_required:
+  - dataset_id
+  - source_file_sha256
+  - split_version
+  - label_mapping_version
+  - preprocessing_policy_id
+  - channel_policy_id
+  - feature_version
+

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.ai/schemas/day30-preflight.v1.schema.json",
+  "title": "Day 30 preflight result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "pass",
+    "errors",
+    "training_allowed",
+    "pooled_training_allowed",
+    "test_set_opened"
+  ],
+  "properties": {
+    "schema_version": {"const": "day30-preflight.v1"},
+    "pass": {"type": "boolean"},
+    "errors": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "training_allowed": {"const": false},
+    "pooled_training_allowed": {"const": false},
+    "test_set_opened": {"const": false}
+  },
+  "additionalProperties": false
+}

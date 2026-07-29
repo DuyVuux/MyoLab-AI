@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.ai/schemas/day30-channel-decision.v1.schema.json",
+  "title": "Day 30 channel decision",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mendeley_ch4",
+    "grabmyo_primary_channels",
+    "grabmyo_excluded_channels",
+    "direct_anatomical_mapping_allowed",
+    "pass"
+  ],
+  "properties": {
+    "schema_version": {"const": "day30-channel-decision.v1"},
+    "mendeley_ch4": {"type": "object"},
+    "grabmyo_primary_channels": {
+      "type": "array",
+      "minItems": 28,
+      "maxItems": 28,
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "grabmyo_excluded_channels": {
+      "type": "array",
+      "items": {"enum": ["U1", "U2", "U3", "U4"]},
+      "minItems": 4,
+      "maxItems": 4,
+      "uniqueItems": true
+    },
+    "direct_anatomical_mapping_allowed": {"const": false},
+    "pass": {"const": true}
+  },
+  "additionalProperties": false
+}

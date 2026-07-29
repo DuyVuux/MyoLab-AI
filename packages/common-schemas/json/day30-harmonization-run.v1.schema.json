@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.ai/schemas/day30-harmonization-run.v1.schema.json",
+  "title": "Day 30 harmonization run",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "preflight",
+    "ontology",
+    "view_registry",
+    "policy_validation",
+    "readiness",
+    "input_provenance",
+    "real_data_signal_rows_read",
+    "training_allowed",
+    "pooled_training_allowed"
+  ],
+  "properties": {
+    "schema_version": {"const": "day30-harmonization-run.v1"},
+    "preflight": {"type": "object"},
+    "ontology": {"type": "object"},
+    "view_registry": {"type": "object"},
+    "policy_validation": {"type": "object"},
+    "readiness": {"type": "object"},
+    "input_provenance": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "real_data_signal_rows_read": {"const": 0},
+    "training_allowed": {"const": false},
+    "pooled_training_allowed": {"const": false}
+  },
+  "additionalProperties": false
+}

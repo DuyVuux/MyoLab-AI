@@ -1,0 +1,11 @@
+column,type,required,description
+dataset_id,string,true,Versioned source dataset identifier
+window_id,string,true,Foreign key to the window index
+channel_id,string,true,Dataset-native channel identifier
+feature_id,string,true,Versioned feature identifier
+feature_value,number,true,Finite feature value
+feature_version,string,true,Versioned feature implementation
+source_file_sha256,string,true,Source-file provenance
+split_version,string,true,Versioned grouped split
+label_mapping_version,string,true,Versioned label mapping
+

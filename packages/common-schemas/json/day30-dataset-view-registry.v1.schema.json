@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.ai/schemas/day30-dataset-view-registry.v1.schema.json",
+  "title": "Day 30 dataset view registry",
+  "type": "object",
+  "required": ["schema_version", "pooled_training_allowed", "views"],
+  "properties": {
+    "schema_version": {"const": "day30-dataset-view-registry.v1"},
+    "pooled_training_allowed": {"const": false},
+    "views": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "view_id",
+          "dataset_ids",
+          "classes",
+          "channel_policy_id",
+          "role",
+          "pooled_training_allowed"
+        ],
+        "properties": {
+          "view_id": {"type": "string", "minLength": 1},
+          "dataset_ids": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "classes": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "channel_policy_id": {"type": "string", "minLength": 1},
+          "role": {"type": "string", "minLength": 1},
+          "pooled_training_allowed": {"const": false}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

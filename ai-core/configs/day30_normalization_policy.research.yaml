@@ -1,0 +1,25 @@
+schema_version: day30-normalization-policy.v1
+status: LOCKED_RESEARCH_POLICY
+training_allowed: false
+
+dc_removal:
+  primary_offline_research:
+    method: per_record_channel_mean_subtraction
+    learned_across_records: false
+  deployment_comparator:
+    method: reuse_versioned_causal_high_pass_preprocessing_spec
+  day30_defines_new_bandpass: false
+
+raw_signal_scaling:
+  per_trial_zscore_primary_allowed: false
+  global_dataset_zscore_allowed: false
+  global_dataset_robust_scaler_allowed: false
+
+feature_scaling:
+  mandatory_comparator: none
+  optional:
+    - training_fold_per_feature_zscore
+    - training_fold_robust_scaler
+  fit_scope: grouped_inner_train_only
+  outer_test_fit_allowed: false
+

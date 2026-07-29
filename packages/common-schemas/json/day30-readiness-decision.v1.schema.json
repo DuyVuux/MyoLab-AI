@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.ai/schemas/day30-readiness-decision.v1.schema.json",
+  "title": "Day 30 readiness decision",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "training_allowed",
+    "pooled_training_allowed",
+    "test_set_opened",
+    "fatigue_inference_allowed",
+    "mfcv_eligible",
+    "motionlab_transfer_verified",
+    "clinical_use_allowed",
+    "missing_contract_checks",
+    "missing_full_baseline_checks"
+  ],
+  "properties": {
+    "schema_version": {"const": "day30-readiness-decision.v1"},
+    "status": {
+      "enum": [
+        "BLOCKED_WITH_EVIDENCE",
+        "GO_FOR_DAY31_SEPARATE_BASELINE_SMOKE",
+        "GO_FOR_DAY31_SEPARATE_BASELINE_FULL"
+      ]
+    },
+    "training_allowed": {"const": false},
+    "pooled_training_allowed": {"const": false},
+    "test_set_opened": {"const": false},
+    "fatigue_inference_allowed": {"const": false},
+    "mfcv_eligible": {"const": false},
+    "motionlab_transfer_verified": {"const": false},
+    "clinical_use_allowed": {"const": false},
+    "missing_contract_checks": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "missing_full_baseline_checks": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

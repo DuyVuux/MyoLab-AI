@@ -1,0 +1,27 @@
+schema_version: day30-sampling-policy.v1
+status: LOCKED_RESEARCH_POLICY
+training_allowed: false
+
+primary:
+  mode: native_rate
+  mendeley_hz: 2000
+  grabmyo_hz: 2048
+  window_duration_unit: ms
+  sample_rounding: round_half_up
+  spectral_features_use_record_sampling_rate: true
+
+comparator:
+  enabled_for_contract: true
+  source_dataset: grabmyo-v1.1.0
+  source_hz: 2048
+  target_hz: 2000
+  method: polyphase
+  up: 125
+  down: 128
+
+prohibited:
+  - resample_before_grouped_split
+  - hardcode_single_fs_for_psd
+  - mandatory_downsample_both_to_1024
+  - resample_without_provenance
+

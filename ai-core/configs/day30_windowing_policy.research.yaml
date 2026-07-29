@@ -1,0 +1,24 @@
+schema_version: day30-windowing-policy.v1
+status: LOCKED_RESEARCH_POLICY
+training_allowed: false
+
+primary:
+  window_ms: 200
+  hop_ms: 100
+
+sensitivity:
+  - {window_ms: 150, hop_ms: 75}
+  - {window_ms: 250, hop_ms: 125}
+
+context_only:
+  - {window_ms: 500, hop_ms: 250}
+  - {window_ms: 1000, hop_ms: 500}
+
+rules:
+  sample_rounding: round_half_up
+  split_before_windowing: true
+  windows_must_stay_within_atomic_unit: true
+  atomic_unit_priority: [repetition, trial, segment]
+  test_partition_allowed: false
+  cross_label_window_allowed: false
+

@@ -1,0 +1,33 @@
+schema_version: day30-channel-policy.v1
+status: LOCKED_RESEARCH_POLICY
+training_allowed: false
+
+mendeley:
+  primary_policy_id: mendeley-ch123-primary-v1
+  primary_channels: [EMG_Raw_CH1, EMG_RAW_CH2, EMG_RAW_CH3]
+  quarantined:
+    - channel: EMG_RAW_CH4
+      status: QUARANTINED_EXCLUDED_PRIMARY
+      evidence: std_about_80x_lower_than_ch1_ch3_in_pre_day30_report
+      role_verified: false
+      sensitivity_view_allowed: true
+  prohibited_claims:
+    - ch4_is_broken
+    - ch4_is_reference
+    - ch4_is_valid_semg
+
+grabmyo:
+  primary_policy_id: grabmyo-fw28-primary-v1
+  primary_channel_patterns: [F1-F16, W1-W12]
+  excluded:
+    - pattern: U1-U4
+      reason_code: CONFIRMED_NOISE_FLOOR
+      raw_provenance_retained: true
+
+cross_source:
+  direct_anatomical_mapping_allowed: false
+  fixed_four_channel_grabmyo_subset_allowed: false
+  channel_summary_comparator:
+    allowed: true
+    statistics: [median, iqr, q90, max, active_channel_fraction]
+
