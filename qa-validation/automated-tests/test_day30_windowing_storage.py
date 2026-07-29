@@ -72,6 +72,14 @@ def test_invalid_metadata_is_rejected_before_windowing() -> None:
         build_window_rows(record(n_samples=-1), 200, 100, "c", "p")
     with pytest.raises(ValueError, match="canonical_label"):
         build_window_rows(record(canonical_label="unknown"), 200, 100, "c", "p")
+    with pytest.raises(ValueError, match="canonical_label"):
+        build_window_rows(
+            record(canonical_label="unregistered_gesture"),
+            200,
+            100,
+            "c",
+            "p",
+        )
     with pytest.raises(ValueError, match="sha256"):
         build_window_rows(record(source_file_sha256="not-a-hash"), 200, 100, "c", "p")
 
@@ -105,3 +113,47 @@ def test_storage_validation_detects_bounds_duplicates_and_subject_leakage() -> N
 def test_window_slices_handle_short_and_exact_records() -> None:
     assert window_slices(399, 2000, 200, 100) == []
     assert window_slices(400, 2000, 200, 100) == [(0, 400)]
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_error"),
+    [
+        ({"sampling_rate_hz": float("nan")}, "invalid_sampling_rate_hz"),
+        ({"source_file_sha256": "not-a-hash"}, "invalid_source_file_sha256"),
+        ({"signal_path": "/zone2/sealed-test/record.mat"}, "forbidden_signal_path"),
+        ({"canonical_label": "unregistered_gesture"}, "invalid_canonical_label"),
+        ({"window_id": "not-a-window-id"}, "invalid_window_id"),
+        ({"window_ms": 0}, "invalid_window_ms"),
+        ({"hop_ms": 0}, "invalid_hop_ms"),
+        ({"channel_policy_id": ""}, "empty_channel_policy_id"),
+        ({"preprocessing_policy_id": ""}, "empty_preprocessing_policy_id"),
+        ({"end_sample_exclusive": 399}, "window_length_mismatch"),
+        ({"start_sample": 0.5}, "invalid_start_sample"),
+    ],
+)
+def test_storage_validation_rejects_adversarial_row_mutations(
+    mutation: dict, expected_error: str
+) -> None:
+    row = build_window_rows(record(), 200, 100, "c", "p")[0] | mutation
+    result = validate_window_rows([row])
+    assert result["pass"] is False
+    assert f"row_0_{expected_error}" in result["errors"]
+
+
+def test_subject_partition_overlap_is_scoped_by_dataset() -> None:
+    mendeley = build_window_rows(record(), 200, 100, "c", "p")
+    grabmyo = build_window_rows(
+        record(
+            dataset_id="grabmyo-v1.1.0",
+            record_id="record-2",
+            partition="validation",
+            signal_path="/zone2/validation/record-2.mat",
+            source_file_sha256="b" * 64,
+        ),
+        200,
+        100,
+        "c",
+        "p",
+    )
+    result = validate_window_rows(mendeley + grabmyo)
+    assert result["pass"] is True

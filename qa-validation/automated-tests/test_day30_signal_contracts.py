@@ -41,6 +41,11 @@ def test_sample_conversion_rejects_invalid_inputs(
         samples_for_ms(sampling_rate_hz, duration_ms)
 
 
+def test_sample_conversion_rejects_positive_duration_rounding_to_zero() -> None:
+    with pytest.raises(ValueError, match="at least one sample"):
+        samples_for_ms(1, 1)
+
+
 def test_polyphase_resampling_is_finite_and_shape_safe() -> None:
     source = np.arange(2048 * 2, dtype=float).reshape(2048, 2)
     result = resample_polyphase(source, 2048, 2000, axis=0)
