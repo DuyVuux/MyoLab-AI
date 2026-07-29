@@ -1,0 +1,8 @@
+requirement_id,statement,priority,verification
+D29-REQ-001,Không đọc signal sealed test,MUST,partition guard test
+D29-REQ-002,Không training trong Day29,MUST,artifact/config scan
+D29-REQ-003,Audit hierarchy subject-day-session-repetition,MUST,unit test + report
+D29-REQ-004,Unknown không map thành rest,MUST,label audit test
+D29-REQ-005,Cross-day drift không suy fatigue,MUST,schema/test
+D29-REQ-006,Feature eligibility có provenance,MUST,review
+D29-REQ-007,Readiness gate fail closed,MUST,unit test

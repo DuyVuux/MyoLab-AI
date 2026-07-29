@@ -1,0 +1,15 @@
+{
+  "schema_version": "pre-day30-final-manifest.v1",
+  "status": "TOOLING_READY_REAL_EDA_NOT_RUN",
+  "repo_root": "/home/duyvd9/massive/projects/semg-fatigue/MyoLab-AI",
+  "data_root": "/home/duyvd9/massive/projects/myolab-ai-data",
+  "mendeley_real_eda": "NOT_RUN",
+  "grabmyo_real_eda": "NOT_RUN",
+  "test_signal_rows_read": 0,
+  "training_allowed": false,
+  "day30_full_execution_allowed": false,
+  "notes": [
+    "Synthetic/local fixtures test tooling only.",
+    "Real remote catalog and signal access must be supplied by the operator."
+  ]
+}

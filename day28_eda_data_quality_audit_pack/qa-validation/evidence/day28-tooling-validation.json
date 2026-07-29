@@ -1,0 +1,28 @@
+{
+  "schema_version": "day28-tooling-validation.v1",
+  "pack_valid": true,
+  "expected_current_mode": "TOOLING_ONLY_BLOCKED_EXTERNAL_DATA",
+  "real_dataset_present": false,
+  "real_eda_executed": false,
+  "training_execution_allowed": false,
+  "test_set_opened": false,
+  "supported_core_classes": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "hand_open_supported": false,
+  "notes": [
+    "This is a tooling validation record, not a real dataset EDA result.",
+    "No raw signal or model artifact is included."
+  ],
+  "automated_tests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "python_compile": "PASS",
+  "safety_scan": "PASS",
+  "current_input_preflight_path": "qa-validation/evidence/day28-current-input-preflight.json",
+  "current_input_preflight_mode": "TOOLING_ONLY_BLOCKED_EXTERNAL_DATA"
+}

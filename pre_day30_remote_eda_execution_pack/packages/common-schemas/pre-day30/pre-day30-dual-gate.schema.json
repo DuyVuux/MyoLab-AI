@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pre-day30-dual-gate.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "decision",
+    "day30_full_execution_allowed",
+    "training_allowed",
+    "datasets",
+    "blockers"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "pre-day30-dual-gate.v1"
+    },
+    "decision": {
+      "enum": [
+        "GO_FOR_DAY30_HARMONIZATION",
+        "BLOCKED_WITH_EVIDENCE"
+      ]
+    },
+    "day30_full_execution_allowed": {
+      "type": "boolean"
+    },
+    "training_allowed": {
+      "const": false
+    },
+    "datasets": {
+      "type": "object"
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

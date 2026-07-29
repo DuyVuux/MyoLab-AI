@@ -1,0 +1,38 @@
+# readiness-decision.yaml — Mendeley 4-Channel Hand Gesture v2
+# Chuyển đổi từ data-platform/manifests/day27-selected-dataset-manifest.template.json
+
+schema_version: selected-public-dataset-manifest.v1
+dataset_id: MENDELEY_4CH_GESTURE
+status: PENDING
+
+# Hash verification chain (populated as each step completes)
+hashes:
+  source_record_sha256: ""
+  retrieval_receipt_sha256: ""
+  archive_sha256: ""
+  archive_inventory_sha256: ""
+  adapter_profile_sha256: ""
+  label_mapping_sha256: ""
+  metadata_index_sha256: ""
+  group_split_sha256: ""
+
+# Safety flags
+gates:
+  test_set_sealed: true
+  public_baseline_training_eligible: false
+  training_execution_allowed: false
+  motion_lab_transfer_verified: false
+  clinical_use_allowed: false
+
+# Engineering Data Gate result
+engineering_gate:
+  status: PENDING_EXTERNAL_DATA
+  last_run: null
+  checks_passed: 0
+  checks_total: 16
+  decision: null  # GO_FOR_DAY28_EDA or BLOCKED
+
+notes:
+  - "Tất cả hash sẽ được điền tự động khi chạy pipeline với data thật."
+  - "training_execution_allowed luôn là false trong Day 27."
+  - "Chỉ Engineering Gate với data thật mới có thể chuyển status sang GO."

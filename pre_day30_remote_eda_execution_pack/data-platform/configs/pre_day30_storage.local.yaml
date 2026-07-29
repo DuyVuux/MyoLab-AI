@@ -1,0 +1,38 @@
+schema_version: pre-day30-storage.v1
+repo_root: /home/duyvd9/massive/projects/semg-fatigue/MyoLab-AI
+data_root: /home/duyvd9/massive/projects/myolab-ai-data
+
+zone_policy:
+  raw_in_repo_allowed: false
+  cache_in_repo_allowed: false
+  model_artifacts_in_repo_allowed: false
+  symlink_data_root_into_repo_allowed: false
+
+shared:
+  temporary_dir: /home/duyvd9/massive/projects/myolab-ai-data/shared/temporary
+  logs_dir: /home/duyvd9/massive/projects/myolab-ai-data/shared/logs
+  cache_dir: /home/duyvd9/massive/projects/myolab-ai-data/shared/cache
+
+repo_evidence_dir: /home/duyvd9/massive/projects/semg-fatigue/MyoLab-AI/qa-validation/evidence/pre-day30
+
+datasets:
+  mendeley:
+    dataset_id: mendeley-4channel-hand-gesture-v2
+    data_dir: /home/duyvd9/massive/projects/myolab-ai-data/external/mendeley-4channel-hand-gesture-v2
+    evidence_dir: /home/duyvd9/massive/projects/myolab-ai-data/external/mendeley-4channel-hand-gesture-v2/evidence/day28
+    readiness_file: /home/duyvd9/massive/projects/myolab-ai-data/external/mendeley-4channel-hand-gesture-v2/evidence/day28/day28-readiness-decision.yaml
+    expected_go_state: GO_FOR_DAY30_HARMONIZATION
+  grabmyo:
+    dataset_id: grabmyo-v1.1.0
+    data_dir: /home/duyvd9/massive/projects/myolab-ai-data/external/grabmyo-v1.1.0
+    evidence_dir: /home/duyvd9/massive/projects/myolab-ai-data/external/grabmyo-v1.1.0/evidence/day29
+    readiness_file: /home/duyvd9/massive/projects/myolab-ai-data/external/grabmyo-v1.1.0/evidence/day29/day29-readiness-decision.yaml
+    expected_go_state: GO_FOR_DAY30_HARMONIZATION
+
+safety:
+  training_allowed: false
+  pooled_training_allowed: false
+  test_signal_access_allowed: false
+  motion_lab_transfer_verified: false
+  clinical_use_allowed: false
+  mfcv_eligible: false

@@ -1,0 +1,2 @@
+record_id,url,official_source,format,size_bytes,partition,subject_id,day_id,session_id,repetition_id,source_label,channel_columns,sampling_rate_hz,unit,notes
+GRAB-EXAMPLE-001,https://REPLACE_WITH_OFFICIAL_OBJECT_URL,true,csv,,train,S001,D01,,R01,REPLACE_LABEL,"",2048,,Template only; verify file format and channel metadata from official files

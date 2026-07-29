@@ -1,0 +1,40 @@
+{
+  "schema_version": "day28-preflight.v1",
+  "mode": "TOOLING_ONLY_BLOCKED_EXTERNAL_DATA",
+  "ready_for_real_eda": false,
+  "training_execution_allowed": false,
+  "test_set_sealed": true,
+  "supported_core_classes": [
+    "hand_close",
+    "rest",
+    "wrist_extension",
+    "wrist_flexion"
+  ],
+  "unsupported_core_classes": [
+    "hand_open"
+  ],
+  "blockers": [
+    "ARCHIVE_HASH_PENDING",
+    "DATA_HIERARCHY_PENDING",
+    "ENGINEERING_GATE_PENDING_EXTERNAL_DATA",
+    "FIELD_DICTIONARY_PENDING",
+    "FILE_INVENTORY_PENDING",
+    "MAPPING_PROFILE_NOT_VERIFIED",
+    "MAPPING_PROFILE_PENDING:$.verification_status,$.source_format,$.file_glob,$.signal.raw_or_processed,$.signal.source_unit,$.signal.channels[0].source_column,$.signal.channels[1].source_column,$.signal.channels[2].source_column,$.signal.channels[3].source_column,$.path_metadata.regex,$.notes[0]",
+    "REAL_DATASET_NOT_PRESENT"
+  ],
+  "warnings": [],
+  "manifest_hashes": {
+    "archive.sha256": "d713f5f241f2f10ba3dfcffb9b9186835b373b7a300678be3a2c3d0a2128f4b5",
+    "canonical-mapping-draft.yaml": "9497c1f2435154546cb81dd5bcfafcedf5797fdb4e6b08eaf63a9d271ea90845",
+    "data-hierarchy.yaml": "2464df2ae9f9339ece41a373845f32cbb8db34047a8ae7d4aa4c2967d58ef0c9",
+    "data-quality-inventory.json": "30df4d376202156b8c4136f1cbf3dc7f02d9b880928c1458975c4858a04a45bc",
+    "dataset-source-record.yaml": "9ca9aa962f3e31c5e4e44ed9fb655e47dfd5047d5cb56977d9dfcadcf18e24d1",
+    "domain-gap-matrix.csv": "94e89c315c7760abb45e2677a2bb69c2efd17adb21d9b0711c592bef02ddc798",
+    "field-dictionary.csv": "2d583bf01eb6bcdadec6123923098e31203eb6e5e1bda79c171ec0ce2f7e2aa7",
+    "file-inventory.csv": "2832c3c81447fe5cd4580d3da9a65c643414c3397ebf3f79de1a40d09c8e4be9",
+    "label-dictionary.yaml": "deba9d1e8c3dc43ce346abaa37c653d3e408a64ea89724a011c59126e2b0e294",
+    "license-record.yaml": "700ca47c4c3e3ed741406955b66048c2e12040e5fd7f3a9f9180094268e58acd",
+    "readiness-decision.yaml": "cb9bd78073dc763893bc3a913a98d7a20d34f0c833987374ef1fcd6b49eec2f4"
+  }
+}

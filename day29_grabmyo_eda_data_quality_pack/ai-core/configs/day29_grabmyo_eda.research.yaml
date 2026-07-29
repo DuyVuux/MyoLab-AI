@@ -1,0 +1,79 @@
+schema_version: day29-grabmyo-eda.v1
+status: PROVISIONAL_RESEARCH_CONFIG
+day: 29
+dataset_id: grabmyo-v1.1.0
+training_allowed: false
+model_fitting_allowed: false
+test_signal_access_allowed: false
+clinical_claims_allowed: false
+motionlab_transfer_verified: false
+mfcv_eligible: false
+
+dataset_root: /data/datasets/external/grabmyo-v1.1.0
+metadata_index: /data/datasets/external/grabmyo-v1.1.0/metadata/metadata-index.csv
+evidence_dir: /data/datasets/external/grabmyo-v1.1.0/evidence/day29
+
+required_governance_files:
+  - dataset-source-record.yaml
+  - license-record.yaml
+  - archive.sha256
+  - file-inventory.csv
+  - data-hierarchy.yaml
+  - field-dictionary.csv
+  - label-dictionary.yaml
+  - canonical-mapping-draft.yaml
+  - domain-gap-matrix.csv
+  - data-quality-inventory.json
+  - readiness-decision.yaml
+
+allowed_partitions:
+  - train
+  - validation
+forbidden_partitions:
+  - test
+  - sealed_test
+  - outer_test
+
+metadata_columns:
+  required:
+    - record_id
+    - subject_id
+    - day_id
+    - session_id
+    - repetition_id
+    - source_label
+    - canonical_label
+    - partition
+    - signal_path
+    - sampling_rate_hz
+    - signal_unit
+    - channel_count
+  optional:
+    - trial_id
+    - gesture_id
+    - channel_columns
+    - source_file_sha256
+    - adapter_id
+    - adapter_version
+    - mapping_profile_version
+
+signal_loader:
+  supported_canonical_formats:
+    - csv
+    - npy
+    - npz
+  csv_delimiter: ','
+  channel_columns_from: metadata_or_header
+  time_column: null
+  maximum_records_for_smoke: 8
+
+expected_documented_metadata:
+  subjects: 43
+  days: 3
+  gestures: 16
+  sampling_rate_hz: 2048
+  note: DOCUMENTED_EXPECTATION_ONLY_COMPARE_WITH_OBSERVED
+
+outputs:
+  readiness_target: GO_FOR_DAY30_HARMONIZATION
+  blocked_state: BLOCKED_WITH_EVIDENCE

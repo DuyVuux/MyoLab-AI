@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "day29-preflight.v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "mode",
+    "training_allowed",
+    "test_signal_access_allowed",
+    "blockers"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "day29-preflight.v1"
+    },
+    "dataset_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "READY_FOR_REAL_EDA",
+        "TOOLING_ONLY_BLOCKED"
+      ]
+    },
+    "training_allowed": {
+      "const": false
+    },
+    "test_signal_access_allowed": {
+      "const": false
+    },
+    "metadata_record_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "observed_partitions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

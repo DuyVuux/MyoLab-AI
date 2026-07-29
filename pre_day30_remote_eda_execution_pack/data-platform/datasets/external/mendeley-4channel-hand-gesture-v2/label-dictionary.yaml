@@ -1,0 +1,74 @@
+# label-dictionary.yaml — Mendeley 4-Channel Hand Gesture v2
+# Chuyển đổi từ ai-core/configs/mendeley_4ch_label_map.template.json
+
+schema_version: label-mapping.v1
+mapping_id: MENDELEY_4CH_GESTURE.taskA.v0.1
+verification_status: NOT_VERIFIED
+
+target_ontology_version: taskA-gesture.v0.2
+allowed_targets:
+  - rest
+  - hand_open
+  - hand_close
+  - wrist_flexion
+  - wrist_extension
+
+protected_non_targets:
+  - unknown
+  - ambiguous
+  - artifact
+  - not_attempted
+  - transition
+
+mappings:
+  # Các nhãn thuộc allowed_targets (4 nhãn)
+  - source_label: "Rest"
+    canonical_label: rest
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Hand relaxed horizontally"
+  - source_label: "Grip"
+    canonical_label: hand_close
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Clenched fist"
+  - source_label: "Flexion"
+    canonical_label: wrist_flexion
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Wrist flexed downwards"
+  - source_label: "Extension"
+    canonical_label: wrist_extension
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Wrist extended upwards"
+
+  # Các nhãn không nằm trong allowed_targets -> map to 'unknown' để loại bỏ an toàn (6 nhãn)
+  - source_label: "Ulnar Deviation"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope"
+  - source_label: "Radial Deviation"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope"
+  - source_label: "Abduction"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope (Fingers spread)"
+  - source_label: "Adduction"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope (Fingers together)"
+  - source_label: "Supination"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope"
+  - source_label: "Pronation"
+    canonical_label: unknown
+    mapping_status: CONFIRMED
+    evidence: "Image from paper: Out of core scope"
+
+default_behavior: ERROR_UNMAPPED
+map_unknown_to_rest: false
+
+notes:
+  - "grip → hand_close đã được xác nhận bởi user (2026-07-28)."
+  - "Các nhãn còn lại cần được xác minh từ file thật trong archive."
+  - "Mọi nhãn không ánh xạ được sẽ gây lỗi (ERROR_UNMAPPED), không tự gán vào rest."

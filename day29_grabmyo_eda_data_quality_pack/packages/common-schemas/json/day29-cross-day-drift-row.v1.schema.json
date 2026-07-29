@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "day29-cross-day-drift-row.v1",
+  "type": "object",
+  "required": [
+    "subject_id",
+    "canonical_label",
+    "channel_id",
+    "feature",
+    "day_a",
+    "day_b",
+    "fatigue_inference_allowed"
+  ],
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "channel_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feature": {
+      "type": "string"
+    },
+    "day_a": {
+      "type": "string"
+    },
+    "day_b": {
+      "type": "string"
+    },
+    "fatigue_inference_allowed": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}
