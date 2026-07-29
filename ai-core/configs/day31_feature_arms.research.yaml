@@ -1,0 +1,26 @@
+schema_version: day31-feature-arms.v1
+status: PREDECLARED_FOR_DAY32
+training_allowed: false
+arms:
+  F-TD8:
+    feature_ids: [rms, mav, skewness_unbiased, kurtosis_fisher_unbiased, max_signed, min_signed, std_sample_ddof1, mean]
+    window_ms: 200
+  F-SP6:
+    feature_ids: [spectral_min_power, spectral_max_power, spectral_std_power_ddof1, mdf_hz, mnf_hz, spectral_entropy_bits]
+    window_ms: 200
+  F-ALL14:
+    feature_ids: [rms, mav, skewness_unbiased, kurtosis_fisher_unbiased, max_signed, min_signed, std_sample_ddof1, mean, spectral_min_power, spectral_max_power, spectral_std_power_ddof1, mdf_hz, mnf_hz, spectral_entropy_bits]
+    window_ms: 200
+  F-NO-MOMENTS12:
+    excludes: [skewness_unbiased, kurtosis_fisher_unbiased]
+    window_ms: 200
+  F-TD8-W250:
+    inherits: F-TD8
+    window_ms: 250
+  F-SP6-W250:
+    inherits: F-SP6
+    window_ms: 250
+  F-SP6-W500-CONTEXT:
+    inherits: F-SP6
+    window_ms: 500
+    role: context_only

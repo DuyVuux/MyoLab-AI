@@ -1,0 +1,36 @@
+schema_version: day31-feature-engineering.v1
+status: LOCKED_FOR_FEATURE_ENGINEERING
+training_allowed: false
+model_fitting_allowed: false
+scaler_fitting_allowed: false
+pooled_training_allowed: false
+test_signal_access_allowed: false
+test_set_opened: false
+fatigue_inference_allowed: false
+mfcv_eligible: false
+motionlab_transfer_verified: false
+clinical_use_allowed: false
+input_day30:
+  accepted_statuses:
+    - GO_FOR_DAY31_SEPARATE_BASELINE_SMOKE
+    - GO_FOR_DAY31_SEPARATE_BASELINE_FULL
+  readiness_decision: qa-validation/evidence/day30/day30-readiness-decision.json
+  dataset_view_registry: data-platform/configs/day30/dataset-view-registry.yaml
+  channel_policy: ai-core/configs/day30_channel_policy.research.yaml
+  windowing_policy: ai-core/configs/day30_windowing_policy.research.yaml
+  normalization_policy: ai-core/configs/day30_normalization_policy.research.yaml
+primary:
+  feature_contract: ai-core/configs/day31_feature_contract.v1.yaml
+  spectral_contract: ai-core/configs/day31_spectral_contract.v1.yaml
+  quality_thresholds: ai-core/configs/day31_quality_thresholds.provisional.yaml
+  window_ms: 200
+  hop_ms: 100
+  sampling_mode: native_rate
+visible_partitions: [train, validation]
+forbidden_partitions: [test, sealed_test, outer_test]
+outputs:
+  evidence_dir: qa-validation/evidence/day31
+  feature_store_zone: "${SEMG_DATA_ROOT}/derived/features/day31"
+  preferred_table_format: parquet
+  fallback_table_format: csv_gzip
+  raw_windows_materialized: false

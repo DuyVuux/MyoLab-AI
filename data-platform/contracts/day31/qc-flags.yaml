@@ -1,0 +1,13 @@
+schema_version: day31-feature-qc-flags.v1
+flags:
+  nonfinite_input: {severity: fail}
+  insufficient_samples_moments: {severity: warning}
+  constant_window: {severity: warning}
+  zero_power_window: {severity: warning}
+  insufficient_spectral_bins: {severity: warning}
+  numeric_overflow: {severity: warning}
+  feature_nonfinite: {severity: warning}
+  channel_quarantined: {severity: warning}
+  source_partition_forbidden: {severity: fail}
+  source_path_forbidden: {severity: fail}
+  source_integrity_mismatch: {severity: fail}

@@ -1,0 +1,24 @@
+column,type,required,description
+dataset_id,string,true,Source dataset
+dataset_view_id,string,true,Versioned view
+split_name,string,true,Exact train or validation allowlist
+subject_id,string,true,Grouped subject
+day_id,string,false,Day provenance
+session_id,string,false,Session provenance
+repetition_id,string,false,Atomic repetition
+record_id,string,true,Source record
+window_id,string,true,Window identifier
+channel_id,string,true,Versioned source channel identifier
+canonical_label,string,true,Target label
+feature_id,string,true,One of 14 internal IDs
+feature_value,float_or_null,true,Null only with QC reason
+feature_version,string,true,Contract version
+sampling_rate_hz,float,true,Native or versioned comparator rate
+window_ms,integer,true,Window duration
+hop_ms,integer,true,Hop duration
+preprocessing_policy_id,string,true,Upstream preprocessing
+channel_policy_id,string,true,Channel view
+source_file_sha256,string,true,Verified source provenance
+split_version,string,true,Split provenance
+label_mapping_version,string,true,Label provenance
+qc_flags,json_array,true,Sorted unique registered flags

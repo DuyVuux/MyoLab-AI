@@ -1,0 +1,11 @@
+schema_version: day31-authorization.v1
+status: FEATURE_ENGINEERING_ONLY
+feature_extraction_allowed: true
+feature_quality_audit_allowed: true
+feature_matrix_pivot_allowed: false
+scaler_fitting_allowed: false
+model_fitting_allowed: false
+training_allowed: false
+pooled_training_allowed: false
+test_signal_access_allowed: false
+day32_authorization_present: false

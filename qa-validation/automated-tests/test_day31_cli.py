@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 import csv
-from hashlib import sha256
 import json
-from pathlib import Path
 import subprocess
 import sys
+from hashlib import sha256
+from pathlib import Path
 
 import pytest
 

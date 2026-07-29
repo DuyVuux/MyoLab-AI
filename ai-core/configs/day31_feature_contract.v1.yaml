@@ -1,0 +1,49 @@
+schema_version: day31-feature-contract.v1
+contract_version: feature-set-14.v1.0.0
+status: LOCKED
+input:
+  shape: one_dimensional_window
+  dc_removal: upstream_versioned_policy
+  finite_required: true
+statistics:
+  std_ddof: 1
+  skew_bias: false
+  kurtosis_fisher: true
+  kurtosis_bias: false
+feature_order:
+  - rms
+  - mav
+  - skewness_unbiased
+  - kurtosis_fisher_unbiased
+  - max_signed
+  - min_signed
+  - std_sample_ddof1
+  - mean
+  - spectral_min_power
+  - spectral_max_power
+  - spectral_std_power_ddof1
+  - mdf_hz
+  - mnf_hz
+  - spectral_entropy_bits
+features:
+  - {index: 1, feature_id: rms, display_name: RMS, domain: time, definition: "sqrt(mean(x^2))", scale_behavior: linear_amplitude}
+  - {index: 2, feature_id: mav, display_name: MAV, domain: time, definition: "mean(abs(x))", scale_behavior: linear_amplitude}
+  - {index: 3, feature_id: skewness_unbiased, display_name: Skewness, domain: time, definition: "scipy.stats.skew(bias=False)", scale_behavior: scale_invariant_positive}
+  - {index: 4, feature_id: kurtosis_fisher_unbiased, display_name: Kurtosis, domain: time, definition: "scipy.stats.kurtosis(fisher=True,bias=False)", scale_behavior: scale_invariant_nonzero}
+  - {index: 5, feature_id: max_signed, display_name: Max, domain: time, definition: "max(x)", scale_behavior: linear_signed}
+  - {index: 6, feature_id: min_signed, display_name: Min, domain: time, definition: "min(x)", scale_behavior: linear_signed}
+  - {index: 7, feature_id: std_sample_ddof1, display_name: STD, domain: time, definition: "std(x,ddof=1)", scale_behavior: linear_amplitude}
+  - {index: 8, feature_id: mean, display_name: Mean, domain: time, definition: "mean(x)", scale_behavior: linear_signed}
+  - {index: 9, feature_id: spectral_min_power, display_name: Spectral_Min, domain: spectral, definition: "min(abs(rfft(x))^2/N)", scale_behavior: quadratic_amplitude}
+  - {index: 10, feature_id: spectral_max_power, display_name: Spectral_Max, domain: spectral, definition: "max(abs(rfft(x))^2/N)", scale_behavior: quadratic_amplitude}
+  - {index: 11, feature_id: spectral_std_power_ddof1, display_name: Spectral_STD, domain: spectral, definition: "std(abs(rfft(x))^2/N,ddof=1)", scale_behavior: quadratic_amplitude}
+  - {index: 12, feature_id: mdf_hz, display_name: MDF, domain: spectral, definition: "first cumulative power >= 50% total", scale_behavior: frequency_hz}
+  - {index: 13, feature_id: mnf_hz, display_name: MNF, domain: spectral, definition: "sum(f*P)/sum(P)", scale_behavior: frequency_hz}
+  - {index: 14, feature_id: spectral_entropy_bits, display_name: Spectral Entropy, domain: spectral, definition: "-sum(p*log2(p))", scale_behavior: entropy_bits}
+edge_cases:
+  nonfinite_input: fail_closed
+  insufficient_samples_moments: nan_and_qc_flag
+  constant_window: nan_moments_and_qc_flag
+  zero_power_window: nan_mdf_mnf_entropy_and_qc_flag
+  numeric_overflow: retain_representable_features_nan_affected_features_and_qc_flag
+  nonfinite_feature: retain_nan_and_qc_flag

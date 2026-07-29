@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/day31-feature-contract-validation.v1.schema.json",
+  "title": "Day 31 feature contract validation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pass",
+    "errors",
+    "feature_count",
+    "implementation_contract_version",
+    "contract_sha256",
+    "spectral_contract_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "day31-feature-contract-validation.v1"},
+    "pass": {"type": "boolean"},
+    "errors": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "feature_count": {"type": "integer", "minimum": 0},
+    "implementation_contract_version": {"type": "string", "minLength": 1},
+    "contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "spectral_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

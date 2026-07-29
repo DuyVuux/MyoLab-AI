@@ -1,0 +1,19 @@
+schema_version: day31-output-contract.v1
+status: LOCKED
+canonical_shape: long
+preferred_format: partitioned_parquet
+fallback_format: csv_gzip
+json_missing_feature_representation: null
+raw_windows_materialized: false
+partition_keys: [dataset_id, dataset_view_id, split_name, feature_version]
+required_provenance:
+  - source_file_sha256
+  - split_version
+  - label_mapping_version
+  - preprocessing_policy_id
+  - channel_policy_id
+  - feature_contract_sha256
+  - input_window_index_sha256
+model_matrix:
+  created_on_day31: false
+  pivot_contract_only: true

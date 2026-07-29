@@ -1,0 +1,21 @@
+requirement_id,requirement,priority
+D31-REQ-001,Exactly 14 versioned features in locked order,MUST
+D31-REQ-002,Fisher unbiased moment and ddof=1 conventions,MUST
+D31-REQ-003,Locked rFFT periodogram power proxy contract,MUST
+D31-REQ-004,Nonfinite input fails closed,MUST
+D31-REQ-005,Edge cases retain missing values with QC reasons,MUST
+D31-REQ-006,No infinite feature output under extreme finite input,MUST
+D31-REQ-007,Exact train and validation partition allowlist before I/O,MUST
+D31-REQ-008,Source containment and SHA-256 verification,MUST
+D31-REQ-009,Explicit binary channel identifiers,MUST
+D31-REQ-010,Mendeley primary dimension 42 and CH4 excluded,MUST
+D31-REQ-011,GRABMyo primary dimension 392 and U1-U4 excluded,MUST
+D31-REQ-012,Cross-source summary dimension 70,MUST
+D31-REQ-013,Canonical long rows preserve provenance,MUST
+D31-REQ-014,Quality summary and Pearson/Spearman audit,MUST
+D31-REQ-015,No automatic feature drop,MUST
+D31-REQ-016,Strict RFC-compliant JSON evidence,MUST
+D31-REQ-017,Deterministic bounded stress test,MUST
+D31-REQ-018,At least 80 percent scoped coverage,MUST
+D31-REQ-019,Day30 regression remains green,MUST
+D31-REQ-020,Training fitting pooling test access and clinical use remain disabled,MUST

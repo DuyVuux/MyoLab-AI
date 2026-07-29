@@ -1,0 +1,14 @@
+schema_version: day31-quality-thresholds.v1
+status: PROVISIONAL_LOCKED_FOR_GATE
+scope: per_dataset_view_feature_channel
+minimum_group_row_count: 20
+minimum_finite_ratio: 0.99
+maximum_missing_ratio: 0.01
+near_constant_absolute_tolerance: 1.0e-12
+maximum_near_constant_group_fraction: 0.05
+robust_outlier_z_threshold: 5.0
+redundancy_absolute_correlation_threshold: 0.95
+correlation_methods: [pearson, spearman]
+correlation_partition: train_only
+automatic_feature_drop_allowed: false
+exceptions_require_reason_code: true

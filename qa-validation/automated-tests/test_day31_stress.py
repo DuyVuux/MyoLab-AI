@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "dev"))
 
-from stress_test_day31 import run_stress  # noqa: E402
+from stress_test_day31 import run_stress
 
 
 def test_day31_stress_is_deterministic_bounded_and_fail_closed() -> None:

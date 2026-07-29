@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/day31-readiness-decision.v1.schema.json",
+  "title": "Day 31 readiness decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "pass",
+    "failed_gates",
+    "training_allowed",
+    "model_fitting_allowed",
+    "scaler_fitting_allowed",
+    "pooled_training_allowed",
+    "test_signal_access_allowed",
+    "test_set_opened",
+    "fatigue_inference_allowed",
+    "clinical_use_allowed"
+  ],
+  "properties": {
+    "schema_version": {"const": "day31-readiness-decision.v1"},
+    "status": {
+      "enum": [
+        "GO_FOR_DAY32_SEPARATE_BASELINE_SMOKE",
+        "GO_FOR_DAY32_SEPARATE_BASELINE_FULL",
+        "BLOCKED_WITH_EVIDENCE"
+      ]
+    },
+    "pass": {"type": "boolean"},
+    "failed_gates": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "training_allowed": {"const": false},
+    "model_fitting_allowed": {"const": false},
+    "scaler_fitting_allowed": {"const": false},
+    "pooled_training_allowed": {"const": false},
+    "test_signal_access_allowed": {"const": false},
+    "test_set_opened": {"const": false},
+    "fatigue_inference_allowed": {"const": false},
+    "clinical_use_allowed": {"const": false}
+  }
+}

@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import csv
 import gzip
-from hashlib import sha256
 import json
 import sys
+from hashlib import sha256
 from pathlib import Path
 
 import numpy as np
@@ -14,14 +14,14 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "packages" / "semg-core"))
 sys.path.insert(0, str(ROOT / "ai-core" / "data"))
 
-from day31.io import (  # noqa: E402
+from day31.io import (
     CanonicalWindowReader,
     SourceIntegrityError,
     dump_json_strict,
     write_feature_rows_csv_gzip,
 )
-from semg_core.day31_features import extract_feature_set_14  # noqa: E402
-from semg_core.day31_features.long_format import to_long_rows  # noqa: E402
+from semg_core.day31_features import extract_feature_set_14
+from semg_core.day31_features.long_format import to_long_rows
 
 
 def _sha(path: Path) -> str:

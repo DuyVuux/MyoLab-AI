@@ -11,17 +11,16 @@ from scipy.stats import kurtosis, skew
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "packages" / "semg-core"))
 
-from semg_core.day31_features import (  # noqa: E402
+from semg_core.day31_features import (
     FEATURE_ORDER,
     FEATURE_VERSION,
     FeatureExtractionError,
     extract_feature_set_14,
 )
-from semg_core.day31_features.spectral_v1 import (  # noqa: E402
+from semg_core.day31_features.spectral_v1 import (
     periodogram_power_proxy,
     spectral_features,
 )
-
 
 EXPECTED_FEATURE_ORDER = (
     "rms",

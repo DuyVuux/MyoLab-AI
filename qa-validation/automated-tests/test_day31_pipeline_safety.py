@@ -10,15 +10,15 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "packages" / "semg-core"))
 sys.path.insert(0, str(ROOT / "ai-core" / "data"))
 
-from day31.pipeline import (  # noqa: E402
+from day31.pipeline import (
     PartitionAccessError,
     extract_window_index,
 )
-from semg_core.day31_features.long_format import (  # noqa: E402
+from semg_core.day31_features import extract_feature_set_14
+from semg_core.day31_features.long_format import (
     REQUIRED_METADATA,
     to_long_rows,
 )
-from semg_core.day31_features import extract_feature_set_14  # noqa: E402
 
 
 def _row(

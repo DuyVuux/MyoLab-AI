@@ -1,0 +1,31 @@
+schema_version: day31-spectral-contract.v1
+contract_version: periodogram-power-rfft-rectangular.v1
+status: LOCKED
+estimator_name: periodogram_power_proxy
+physical_psd_claim_allowed: false
+fft: rfft
+nfft: window_sample_count
+window_function: rectangular
+one_sided_interior_bin_doubling: false
+normalization: abs_fft_squared_div_nfft
+frequency_bins: numpy_rfftfreq
+valid_bins: all_finite_bins_dc_to_nyquist_inclusive
+primary_band:
+  lower_hz: 0
+  upper_hz: nyquist_inclusive
+spectral_std_ddof: 1
+mdf_rule: first_bin_cumulative_power_gte_half_total
+mnf_rule: weighted_mean_frequency
+entropy:
+  log_base: 2
+  zero_probability_bins: omit
+  output_unit: bits
+  normalized_entropy_is_separate_noncore_feature: true
+zero_total_power:
+  spectral_min: 0.0
+  spectral_max: 0.0
+  spectral_std: 0.0
+  mdf: null
+  mnf: null
+  entropy: null
+  qc_flag: zero_power_window

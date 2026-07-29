@@ -11,12 +11,12 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "packages" / "semg-core"))
 sys.path.insert(0, str(ROOT / "ai-core" / "data"))
 
-from day31.contracts import (  # noqa: E402
+from day31.contracts import (
     expected_arm_dimensions,
     resolve_feature_arms,
 )
-from semg_core.day31_features import FEATURE_ORDER  # noqa: E402
-from semg_core.day31_features.quality import (  # noqa: E402
+from semg_core.day31_features import FEATURE_ORDER
+from semg_core.day31_features.quality import (
     correlation_pairs,
     cross_channel_summary,
     summarize_feature,

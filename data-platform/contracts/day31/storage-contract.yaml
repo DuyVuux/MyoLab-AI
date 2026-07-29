@@ -1,0 +1,11 @@
+schema_version: day31-feature-storage.v1
+canonical_table: long_feature_table
+preferred_format: partitioned_parquet
+fallback_format: csv_gzip
+raw_windows_materialized: false
+allowed_partitions: [train, validation]
+forbidden_partitions: [test, sealed_test, outer_test]
+source_root_required: SEMG_DATA_ROOT
+source_sha256_verification_required: true
+binary_channel_map_required: true
+model_matrix_materialization_allowed: false

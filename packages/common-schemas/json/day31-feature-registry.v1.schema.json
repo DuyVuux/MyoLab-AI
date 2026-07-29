@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/day31-feature-registry.v1.schema.json",
+  "title": "Day 31 feature registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_version",
+    "feature_count",
+    "feature_order",
+    "features",
+    "contract_sha256",
+    "pass"
+  ],
+  "properties": {
+    "schema_version": {"const": "day31-feature-registry.v1"},
+    "contract_version": {"const": "feature-set-14.v1.0.0"},
+    "feature_count": {"const": 14},
+    "feature_order": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "rms"},
+        {"const": "mav"},
+        {"const": "skewness_unbiased"},
+        {"const": "kurtosis_fisher_unbiased"},
+        {"const": "max_signed"},
+        {"const": "min_signed"},
+        {"const": "std_sample_ddof1"},
+        {"const": "mean"},
+        {"const": "spectral_min_power"},
+        {"const": "spectral_max_power"},
+        {"const": "spectral_std_power_ddof1"},
+        {"const": "mdf_hz"},
+        {"const": "mnf_hz"},
+        {"const": "spectral_entropy_bits"}
+      ],
+      "items": false,
+      "minItems": 14,
+      "maxItems": 14,
+      "uniqueItems": true
+    },
+    "features": {
+      "type": "array",
+      "minItems": 14,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "index",
+          "feature_id",
+          "display_name",
+          "domain",
+          "definition",
+          "scale_behavior"
+        ],
+        "properties": {
+          "index": {"type": "integer", "minimum": 1, "maximum": 14},
+          "feature_id": {
+            "enum": [
+              "rms",
+              "mav",
+              "skewness_unbiased",
+              "kurtosis_fisher_unbiased",
+              "max_signed",
+              "min_signed",
+              "std_sample_ddof1",
+              "mean",
+              "spectral_min_power",
+              "spectral_max_power",
+              "spectral_std_power_ddof1",
+              "mdf_hz",
+              "mnf_hz",
+              "spectral_entropy_bits"
+            ]
+          },
+          "display_name": {"type": "string", "minLength": 1},
+          "domain": {"enum": ["time", "spectral"]},
+          "definition": {"type": "string", "minLength": 1},
+          "scale_behavior": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pass": {"const": true}
+  }
+}

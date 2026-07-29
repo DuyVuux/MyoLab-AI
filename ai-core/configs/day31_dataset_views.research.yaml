@@ -1,0 +1,28 @@
+schema_version: day31-feature-dataset-views.v1
+status: LOCKED_FROM_DAY30
+pooled_training_allowed: false
+views:
+  mendeley_core4_primary_v1:
+    dataset_ids: [mendeley-4channel-hand-gesture-v2]
+    channel_policy_id: mendeley-ch123-primary-v1
+    channels: [EMG_Raw_CH1, EMG_RAW_CH2, EMG_RAW_CH3]
+    channel_count: 3
+    all14_dimensions: 42
+  mendeley_core4_ch4_sensitivity_v1:
+    dataset_ids: [mendeley-4channel-hand-gesture-v2]
+    channel_policy_id: mendeley-ch1234-sensitivity-v1
+    channels: [EMG_Raw_CH1, EMG_RAW_CH2, EMG_RAW_CH3, EMG_RAW_CH4]
+    channel_count: 4
+    all14_dimensions: 56
+    role: sensitivity_only
+  grabmyo_project_subset_native28_v1:
+    dataset_ids: [grabmyo-v1.1.0]
+    channel_policy_id: grabmyo-fw28-primary-v1
+    channel_patterns: [F1-F16, W1-W12]
+    excluded_patterns: [U1-U4]
+    channel_count: 28
+    all14_dimensions: 392
+  cross_source_intersection_summary_v1:
+    summary_statistics: [median, iqr, q90, maximum, active_channel_fraction]
+    all14_dimensions: 70
+    pooled_training_allowed: false

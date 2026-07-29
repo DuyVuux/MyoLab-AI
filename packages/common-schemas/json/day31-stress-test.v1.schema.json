@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/day31-stress-test.v1.schema.json",
+  "title": "Day 31 stress-test evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "seed",
+    "windows",
+    "channels",
+    "feature_rows_generated",
+    "feature_digest_sha256",
+    "forbidden_partition_attacks",
+    "forbidden_partition_attacks_blocked",
+    "malformed_signal_attacks",
+    "malformed_signal_attacks_blocked",
+    "nonfinite_attacks",
+    "nonfinite_attacks_blocked",
+    "infinite_features_emitted",
+    "elapsed_seconds",
+    "peak_memory_mib",
+    "thresholds",
+    "test_signal_rows_read",
+    "training_executed",
+    "model_fitting_executed",
+    "pooled_training_executed",
+    "pass"
+  ],
+  "properties": {
+    "schema_version": {"const": "day31-stress-test.v1"},
+    "seed": {"const": 31},
+    "windows": {"type": "integer", "minimum": 1},
+    "channels": {"type": "integer", "minimum": 1, "maximum": 28},
+    "feature_rows_generated": {"type": "integer", "minimum": 1},
+    "feature_digest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "forbidden_partition_attacks": {"type": "integer", "minimum": 1},
+    "forbidden_partition_attacks_blocked": {"type": "integer", "minimum": 1},
+    "malformed_signal_attacks": {"type": "integer", "minimum": 1},
+    "malformed_signal_attacks_blocked": {"type": "integer", "minimum": 1},
+    "nonfinite_attacks": {"type": "integer", "minimum": 1},
+    "nonfinite_attacks_blocked": {"type": "integer", "minimum": 1},
+    "infinite_features_emitted": {"const": 0},
+    "elapsed_seconds": {"type": "number", "minimum": 0},
+    "peak_memory_mib": {"type": "number", "minimum": 0},
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_elapsed_seconds", "max_peak_memory_mib"],
+      "properties": {
+        "max_elapsed_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "max_peak_memory_mib": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "test_signal_rows_read": {"const": 0},
+    "training_executed": {"const": false},
+    "model_fitting_executed": {"const": false},
+    "pooled_training_executed": {"const": false},
+    "pass": {"type": "boolean"}
+  }
+}

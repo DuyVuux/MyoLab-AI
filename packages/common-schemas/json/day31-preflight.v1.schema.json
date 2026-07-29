@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/day31-preflight.v1.schema.json",
+  "title": "Day 31 preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pass",
+    "errors",
+    "day30_status",
+    "feature_engineering_allowed",
+    "training_allowed",
+    "model_fitting_allowed",
+    "scaler_fitting_allowed",
+    "pooled_training_allowed",
+    "test_signal_access_allowed",
+    "test_set_opened"
+  ],
+  "properties": {
+    "schema_version": {"const": "day31-preflight.v1"},
+    "pass": {"type": "boolean"},
+    "errors": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "day30_status": {"type": ["string", "null"]},
+    "feature_engineering_allowed": {"type": "boolean"},
+    "training_allowed": {"const": false},
+    "model_fitting_allowed": {"const": false},
+    "scaler_fitting_allowed": {"const": false},
+    "pooled_training_allowed": {"const": false},
+    "test_signal_access_allowed": {"const": false},
+    "test_set_opened": {"const": false}
+  }
+}

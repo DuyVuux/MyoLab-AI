@@ -9,8 +9,8 @@ import pytest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "ai-core" / "data"))
 
-from day31.preflight import validate_preflight  # noqa: E402
-from day31.readiness import decide_feature_gate  # noqa: E402
+from day31.preflight import validate_preflight
+from day31.readiness import decide_feature_gate
 
 
 def _config() -> dict[str, object]:

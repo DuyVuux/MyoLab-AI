@@ -1,0 +1,21 @@
+requirement_id,test_or_evidence
+D31-REQ-001,test_day31_feature_math.py::test_feature_contract_and_reference_vector
+D31-REQ-002,test_day31_feature_math.py::test_feature_contract_and_reference_vector
+D31-REQ-003,test_day31_feature_math.py::test_exact_bin_sine_and_positive_scale_invariants
+D31-REQ-004,test_day31_feature_math.py::test_nonfinite_input_is_fail_closed_or_explicitly_flagged
+D31-REQ-005,test_day31_feature_math.py::test_edge_cases_emit_nan_with_reason_codes
+D31-REQ-006,test_day31_feature_math.py::test_finite_extreme_input_never_leaks_infinity
+D31-REQ-007,test_day31_pipeline_safety.py::test_batch_preflight_prevents_partial_reads
+D31-REQ-008,test_day31_io.py::test_reader_rejects_path_escape_and_hash_mismatch
+D31-REQ-009,test_day31_io.py::test_npy_reader_requires_explicit_channel_map
+D31-REQ-010,test_day31_pipeline_safety.py::test_mendeley_primary_extracts_exact_channel_layout
+D31-REQ-011,test_day31_cli.py::test_preflight_contract_registry_smoke_and_quality_clis
+D31-REQ-012,test_day31_quality_and_arms.py::test_cross_channel_summary_is_exactly_70_dimensions
+D31-REQ-013,test_day31_pipeline_safety.py::test_long_rows_have_exact_contract_and_json_safe_nulls
+D31-REQ-014,test_day31_quality_and_arms.py::test_correlations_report_pearson_and_spearman_pairwise_complete
+D31-REQ-015,qa-validation/evidence/day31/day31-feature-quality-smoke.json
+D31-REQ-016,test_day31_schemas.py
+D31-REQ-017,test_day31_stress.py and qa-validation/evidence/day31/day31-stress-test.json
+D31-REQ-018,qa-validation/evidence/day31/day31-coverage.json
+D31-REQ-019,scripts/dev/run_day31_checks.sh Day30 regression lane
+D31-REQ-020,test_day31_governance.py and scripts/dev/check_day31_artifacts.py
