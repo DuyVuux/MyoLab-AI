@@ -8,9 +8,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "ai-core" / "data"))
+sys.path.insert(0, str(ROOT / "scripts" / "dev"))
 
 from day30.storage_contract import validate_window_rows
 from day30.windowing import build_window_rows
+from stress_test_day30 import run_stress
 
 
 def test_large_window_index_is_deterministic_and_bounded() -> None:
@@ -49,3 +51,19 @@ def test_large_window_index_is_deterministic_and_bounded() -> None:
     assert validation["row_count"] >= 15_000
     assert elapsed_seconds < 10.0
     assert peak_bytes < 256 * 1024 * 1024
+
+
+def test_stress_runner_is_reproducible_and_blocks_storage_mutations() -> None:
+    first = run_stress(64)
+    second = run_stress(64)
+
+    assert first["pass"] is True
+    assert first["window_id_digest_sha256"] == second["window_id_digest_sha256"]
+    assert first["generated_windows"] == second["generated_windows"]
+    assert first["forbidden_partition_attacks_blocked"] == first[
+        "forbidden_partition_attacks"
+    ]
+    assert first["storage_mutation_attacks_blocked"] == first[
+        "storage_mutation_attacks"
+    ]
+    assert first["cross_dataset_subject_collision_false_positive"] is False
