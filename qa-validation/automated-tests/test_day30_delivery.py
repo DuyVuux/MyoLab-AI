@@ -1,0 +1,68 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+import subprocess
+import sys
+
+ROOT = Path(__file__).resolve().parents[2]
+
+
+def run_script(path: str, *arguments: str) -> subprocess.CompletedProcess[str]:
+    result = subprocess.run(
+        [sys.executable, path, *arguments],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+    return result
+
+
+def test_tooling_smoke_and_artifact_inventory_pass() -> None:
+    smoke = run_script("scripts/dev/day30_tooling_smoke.py")
+    assert json.loads(smoke.stdout)["pass"] is True
+    artifact = run_script("scripts/dev/check_day30_artifacts.py")
+    assert json.loads(artifact.stdout)["pass"] is True
+
+
+def test_manifest_builder_is_deterministic_and_excludes_reference_pack(
+    tmp_path: Path,
+) -> None:
+    manifest = tmp_path / "manifest.json"
+    ledger = tmp_path / "ledger.json"
+    run_script(
+        "scripts/dev/build_day30_manifest.py",
+        "--manifest",
+        str(manifest),
+        "--ledger",
+        str(ledger),
+    )
+    first = manifest.read_text(encoding="utf-8")
+    run_script(
+        "scripts/dev/build_day30_manifest.py",
+        "--manifest",
+        str(manifest),
+        "--ledger",
+        str(ledger),
+    )
+    assert manifest.read_text(encoding="utf-8") == first
+    document = json.loads(first)
+    assert document["artifact_count"] >= 40
+    assert all(
+        not item["path"].startswith("day30_dual_dataset_harmonization_pack/")
+        for item in document["artifacts"]
+    )
+
+
+def test_shell_runner_uses_portable_interpreter_resolution() -> None:
+    runner = (ROOT / "scripts/dev/run_day30_checks.sh").read_text(
+        encoding="utf-8"
+    )
+    assert "command -v python3" in runner
+    assert 'run "$PYTHON_BIN"' in runner
+    assert "stress_test_day30.py" in runner
+    assert "DAY30_CHECKS_PASS" in runner
+
