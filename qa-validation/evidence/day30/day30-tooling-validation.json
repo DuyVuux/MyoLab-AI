@@ -1,0 +1,23 @@
+{
+  "schema_version": "day30-tooling-validation.v1",
+  "preflight_pass": true,
+  "intersection": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "view_count": 4,
+  "policy_bundle_pass": true,
+  "ch4_status": "QUARANTINED_EXCLUDED_PRIMARY",
+  "resample_ratio": [
+    125,
+    128
+  ],
+  "readiness_status": "GO_FOR_DAY31_SEPARATE_BASELINE_SMOKE",
+  "training_allowed": false,
+  "pooled_training_allowed": false,
+  "test_set_opened": false,
+  "real_data_signal_rows_read": 0,
+  "pass": true
+}

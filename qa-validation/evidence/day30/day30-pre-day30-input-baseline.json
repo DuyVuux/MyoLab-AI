@@ -1,0 +1,35 @@
+{
+  "schema_version": "day30-pre-day30-input-baseline.v1",
+  "overall_status": "GO_FOR_DAY30_HARMONIZATION",
+  "governance": {
+    "test_set_opened": false,
+    "training_allowed": false,
+    "fatigue_inference_allowed": false
+  },
+  "key_findings": [
+    "amplitude_scale_difference_about_40x",
+    "sampling_rate_2048_vs_2000",
+    "mendeley_dc_offset",
+    "mendeley_ch4_low_amplitude_anomaly",
+    "grabmyo_u1_u4_noise_floor",
+    "channel_count_mismatch",
+    "gesture_ontology_mismatch",
+    "cross_day_vs_single_session"
+  ],
+  "datasets": {
+    "mendeley": {
+      "readiness_status": "GO_FOR_DAY30_HARMONIZATION",
+      "test_set_opened": false,
+      "test_signal_rows_read": 0,
+      "source": "qa-validation/evidence/pre-day30/mendeley/day28-readiness-decision.yaml"
+    },
+    "grabmyo": {
+      "readiness_status": "GO_FOR_DAY30_HARMONIZATION",
+      "test_set_opened": false,
+      "test_signal_rows_read": 0,
+      "source": "qa-validation/evidence/pre-day30/grabmyo/day29-readiness-decision.yaml"
+    }
+  },
+  "real_data_signal_rows_read": 0,
+  "source_kind": "tracked_compact_readiness_evidence"
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "day30-preflight.v1",
+  "pass": true,
+  "errors": [],
+  "training_allowed": false,
+  "pooled_training_allowed": false,
+  "test_set_opened": false
+}

@@ -1,0 +1,45 @@
+{
+  "pass": true,
+  "errors": [],
+  "schema_version": "day30-sampling-validation.v1",
+  "native_sample_counts": {
+    "75": {
+      "mendeley_2000": 150,
+      "grabmyo_2048": 154
+    },
+    "100": {
+      "mendeley_2000": 200,
+      "grabmyo_2048": 205
+    },
+    "125": {
+      "mendeley_2000": 250,
+      "grabmyo_2048": 256
+    },
+    "150": {
+      "mendeley_2000": 300,
+      "grabmyo_2048": 307
+    },
+    "200": {
+      "mendeley_2000": 400,
+      "grabmyo_2048": 410
+    },
+    "250": {
+      "mendeley_2000": 500,
+      "grabmyo_2048": 512
+    },
+    "500": {
+      "mendeley_2000": 1000,
+      "grabmyo_2048": 1024
+    },
+    "1000": {
+      "mendeley_2000": 2000,
+      "grabmyo_2048": 2048
+    }
+  },
+  "grabmyo_2048_to_2000": {
+    "up": 125,
+    "down": 128
+  },
+  "primary_mode": "native_rate",
+  "sample_rounding": "round_half_up"
+}

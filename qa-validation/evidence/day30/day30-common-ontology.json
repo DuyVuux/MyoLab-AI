@@ -1,0 +1,53 @@
+{
+  "schema_version": "day30-common-ontology.v1",
+  "class_order": [
+    "rest",
+    "hand_open",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "mendeley_supported": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "grabmyo_supported": [
+    "rest",
+    "hand_open",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "intersection": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "support": {
+    "rest": {
+      "mendeley": true,
+      "grabmyo": true
+    },
+    "hand_open": {
+      "mendeley": false,
+      "grabmyo": true
+    },
+    "hand_close": {
+      "mendeley": true,
+      "grabmyo": true
+    },
+    "wrist_flexion": {
+      "mendeley": true,
+      "grabmyo": true
+    },
+    "wrist_extension": {
+      "mendeley": true,
+      "grabmyo": true
+    }
+  },
+  "unknown_supervised_core_allowed": false,
+  "synthetic_fill_allowed": false
+}

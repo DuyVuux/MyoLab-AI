@@ -1,0 +1,68 @@
+{
+  "schema_version": "day30-dataset-view-registry.v1",
+  "pooled_training_allowed": false,
+  "views": [
+    {
+      "view_id": "mendeley_core4_primary_v1",
+      "dataset_ids": [
+        "mendeley-4channel-hand-gesture-v2"
+      ],
+      "classes": [
+        "rest",
+        "hand_close",
+        "wrist_flexion",
+        "wrist_extension"
+      ],
+      "channel_policy_id": "mendeley-ch123-primary-v1",
+      "role": "primary_source_specific",
+      "pooled_training_allowed": false
+    },
+    {
+      "view_id": "mendeley_core4_ch4_sensitivity_v1",
+      "dataset_ids": [
+        "mendeley-4channel-hand-gesture-v2"
+      ],
+      "classes": [
+        "rest",
+        "hand_close",
+        "wrist_flexion",
+        "wrist_extension"
+      ],
+      "channel_policy_id": "mendeley-ch1234-sensitivity-v1",
+      "role": "sensitivity_only",
+      "pooled_training_allowed": false
+    },
+    {
+      "view_id": "grabmyo_project_subset_native28_v1",
+      "dataset_ids": [
+        "grabmyo-v1.1.0"
+      ],
+      "classes": [
+        "rest",
+        "hand_open",
+        "hand_close",
+        "wrist_flexion",
+        "wrist_extension"
+      ],
+      "channel_policy_id": "grabmyo-fw28-primary-v1",
+      "role": "primary_source_specific",
+      "pooled_training_allowed": false
+    },
+    {
+      "view_id": "cross_source_intersection_summary_v1",
+      "dataset_ids": [
+        "mendeley-4channel-hand-gesture-v2",
+        "grabmyo-v1.1.0"
+      ],
+      "classes": [
+        "rest",
+        "hand_close",
+        "wrist_flexion",
+        "wrist_extension"
+      ],
+      "channel_policy_id": "channel-summary-v1",
+      "role": "contract_and_later_comparator",
+      "pooled_training_allowed": false
+    }
+  ]
+}

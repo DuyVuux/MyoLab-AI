@@ -1,11 +1,10 @@
 from __future__ import annotations
 
+from collections.abc import Mapping, Sequence
 from math import isfinite
 from statistics import median
-from typing import Mapping, Sequence
 
 import numpy as np
-
 
 MENDELEY_PRIMARY_CHANNELS = (
     "EMG_Raw_CH1",

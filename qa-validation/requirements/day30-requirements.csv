@@ -1,0 +1,13 @@
+requirement_id,requirement,priority,verification
+D30-R001,Không huấn luyện trong Day 30,Critical,artifact scan
+D30-R002,Không pooled training,Critical,config and tests
+D30-R003,Không mở sealed test,Critical,partition guard
+D30-R004,Common ontology sinh từ label dictionaries,Critical,ontology tests
+D30-R005,CH4 quarantine trong primary,High,channel test
+D30-R006,U1-U4 loại khỏi GRABMyo analysis,High,channel test
+D30-R007,Native sampling là primary,High,sampling validation
+D30-R008,Resample comparator 125/128,Medium,sampling test
+D30-R009,Split trước windowing,Critical,windowing policy
+D30-R010,Global scaling bị cấm,Critical,normalization test
+D30-R011,Output giữ provenance,High,storage contract
+D30-R012,Smoke/full readiness tách biệt,High,readiness test

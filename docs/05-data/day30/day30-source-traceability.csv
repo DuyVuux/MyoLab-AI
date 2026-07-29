@@ -1,0 +1,9 @@
+decision_id,input_source,output_artifact
+D30-AMPLITUDE,Pre-Day30 report section 2,day30_normalization_policy.research.yaml
+D30-SAMPLING,Pre-Day30 report issues 2,day30_sampling_policy.research.yaml
+D30-CH4,Pre-Day30 report issue 4,day30_channel_policy.research.yaml
+D30-UCHANNEL,Pre-Day30 report issue 5,day30_channel_policy.research.yaml
+D30-LABELS,Pre-Day30 report issue 7,common-ontology.yaml
+D30-WINDOW,Day26 window contract,day30_windowing_policy.research.yaml
+D30-LEAKAGE,Day26 validation policy,automated tests
+D30-HANDOFF,Pre-Day30 coverage + Day26 authorization,day30-readiness-decision

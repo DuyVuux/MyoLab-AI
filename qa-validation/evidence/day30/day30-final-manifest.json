@@ -1,0 +1,682 @@
+{
+  "schema_version": "day30-final-manifest.v1",
+  "artifact_count": 134,
+  "artifacts": [
+    {
+      "path": "ai-core/configs/day30_channel_policy.research.yaml",
+      "sha256": "8718489e8aa5a4d29e7902a105f628466f4cfe709e1aa4c3742f4e75b06b8747",
+      "bytes": 952
+    },
+    {
+      "path": "ai-core/configs/day30_dataset_views.research.yaml",
+      "sha256": "5e5ddab8335539ea1c988174e31ae0dfc369e345aa79705943fdb56b96cbf15f",
+      "bytes": 210
+    },
+    {
+      "path": "ai-core/configs/day30_experiment_eligibility.research.yaml",
+      "sha256": "21b3de20667c01bddda395d1d6789f9c02b6d9054e38f6997da3a6dc0c6b1118",
+      "bytes": 747
+    },
+    {
+      "path": "ai-core/configs/day30_harmonization.research.yaml",
+      "sha256": "64dd2716c32ee26ccf2417c975e541432b60e3877c7f37e002124db242b214b2",
+      "bytes": 2274
+    },
+    {
+      "path": "ai-core/configs/day30_normalization_policy.research.yaml",
+      "sha256": "b749a7ecf067871e344c34f703c63d3319fcc18ebcd9ad1d4399069886304c8e",
+      "bytes": 700
+    },
+    {
+      "path": "ai-core/configs/day30_sampling_policy.research.yaml",
+      "sha256": "935be0174483f8a527f1990ccf19be827c380ba5bec5e0ca190bdfba45337010",
+      "bytes": 578
+    },
+    {
+      "path": "ai-core/configs/day30_training_authorization.research.yaml",
+      "sha256": "5c949abf46c973d313eef9e649fdedc7a7df191c91ee6bcc8a9d8d6f3006e61a",
+      "bytes": 470
+    },
+    {
+      "path": "ai-core/configs/day30_windowing_policy.research.yaml",
+      "sha256": "5b07e5a6eeb4435ec41720f591823d94755aaf6cf5b074ff7af847654dac7213",
+      "bytes": 542
+    },
+    {
+      "path": "ai-core/data/day30/__init__.py",
+      "sha256": "0e55b852da92bdef80e93bcdcc2baf367b44c64f3c02e5a8ddca305102ebd5dc",
+      "bytes": 68
+    },
+    {
+      "path": "ai-core/data/day30/channel_policy.py",
+      "sha256": "1ca456da01eec762a5da7b9f942f24d77ed3b090a50ef84aa9dc12e210c56bba",
+      "bytes": 2871
+    },
+    {
+      "path": "ai-core/data/day30/contracts.py",
+      "sha256": "2c25d8ac162be3070ff4b0f73e2cace9933300729ee5670676e796336da34686",
+      "bytes": 1119
+    },
+    {
+      "path": "ai-core/data/day30/normalization.py",
+      "sha256": "8620eeb88d52216c36a1a1ad1ad1a56f81fbdf4742164c896792b0862d414f90",
+      "bytes": 1125
+    },
+    {
+      "path": "ai-core/data/day30/ontology.py",
+      "sha256": "bf820464225e0ba74cd85eb5451d79f8bf56e02d4051b23655a7118e6fba87a7",
+      "bytes": 3746
+    },
+    {
+      "path": "ai-core/data/day30/policy_validation.py",
+      "sha256": "a60110769676f7a7076b7c44ec30694bef95163fd0b687e8d6f25ac929a4c60d",
+      "bytes": 4780
+    },
+    {
+      "path": "ai-core/data/day30/preflight.py",
+      "sha256": "86cab1439ee86fc2c0a227cee03a635a2a4abaa693f2a3a76c029357e2b9d2f0",
+      "bytes": 2700
+    },
+    {
+      "path": "ai-core/data/day30/readiness.py",
+      "sha256": "4486e7925a550fd18ed96a688ca1ea9d848add0396f107fd378f527c36df73e6",
+      "bytes": 1672
+    },
+    {
+      "path": "ai-core/data/day30/sample_rate.py",
+      "sha256": "3a7024ebe96eb3e4bfb818fe39e5bf15d717bab3a2542ba80b75ee5b2cca3e65",
+      "bytes": 1927
+    },
+    {
+      "path": "ai-core/data/day30/storage_contract.py",
+      "sha256": "617f569f301dfa711867e1fbf9d67e9d44020bffed874da412f0453641f0b412",
+      "bytes": 2730
+    },
+    {
+      "path": "ai-core/data/day30/view_registry.py",
+      "sha256": "243a29a0d3c87f82f4636fffe7365d8f260558643a1a51edaa5bb94b9962838d",
+      "bytes": 2321
+    },
+    {
+      "path": "ai-core/data/day30/windowing.py",
+      "sha256": "fd13fbf4f39b3e616fe36271ab05fce2e70c66013a0894cd51a037e31a9cb5f1",
+      "bytes": 5721
+    },
+    {
+      "path": "data-platform/configs/day30/common-ontology.yaml",
+      "sha256": "9c09112c7511ebe5e03996e30035a411ba114726d0bbabad3ceef36bb6983c97",
+      "bytes": 682
+    },
+    {
+      "path": "data-platform/configs/day30/dataset-profiles.yaml",
+      "sha256": "96fdfa9f431308782bd440ffc80bbf9d417c5c629f0cd450ce96be369b1c249b",
+      "bytes": 409
+    },
+    {
+      "path": "data-platform/configs/day30/dataset-view-registry.yaml",
+      "sha256": "a24877e9477203f1b464597dd470d96586e21fa305084e92c7c364d819c3cd7d",
+      "bytes": 1174
+    },
+    {
+      "path": "data-platform/configs/pre_day30_remote_eda.research.yaml",
+      "sha256": "948ae0e0eb9d05921aa1cbc5dda8836af1bb5761a17fa940840907998524ac6b",
+      "bytes": 1403
+    },
+    {
+      "path": "data-platform/configs/pre_day30_storage.local.yaml",
+      "sha256": "3c5a1f0bb06e02765e1da65f98ccbcc802eb5ff333553c69c6f10ddf71658f58",
+      "bytes": 1886
+    },
+    {
+      "path": "data-platform/contracts/day30/feature-table-columns.csv",
+      "sha256": "f8c431b5b40b6e670d9c32cbdab3c6be7cebc97564c5a1baf652dd2805ddbeaf",
+      "bytes": 526
+    },
+    {
+      "path": "data-platform/contracts/day30/storage-contract.yaml",
+      "sha256": "886b9f8dac2944799fa052018bffddf73fe0008fca6f203e99f89e47cf08f211",
+      "bytes": 582
+    },
+    {
+      "path": "data-platform/contracts/day30/window-index-columns.csv",
+      "sha256": "45a458c01f38f0593a530124140d90f5ac42ad963ef00f195a1a40396652a163",
+      "bytes": 1209
+    },
+    {
+      "path": "data-platform/object-storage/pre-day30-storage-layout.md",
+      "sha256": "155902be7bfa6819610c191ecb984142fd14437d8d0507e1dc6057e2c62a907a",
+      "bytes": 333
+    },
+    {
+      "path": "data-platform/object-storage/pre-day30.gitignore.snippet",
+      "sha256": "5ea190add592c3eda3f297a2ad9854bd0395fecc2e84c266ca0c55880a2324f2",
+      "bytes": 262
+    },
+    {
+      "path": "docs/05-data/PRE_DAY30_HUONG_DAN_EDA_DU_LIEU_LON_REMOTE_FIRST.md",
+      "sha256": "d02366d82a1a98836798427f4ef2dde74787e8942a6c3758f9527f7684e00da3",
+      "bytes": 26606
+    },
+    {
+      "path": "docs/05-data/PRE_DAY30_REASON_CODES.md",
+      "sha256": "5fcbc4e91920ad3ca2b94f695e12b07fd38f5b2c1d03f0e18ab2e1a26ecc3cee",
+      "bytes": 661
+    },
+    {
+      "path": "docs/05-data/day30/00-pre-day30-input-report.md",
+      "sha256": "eab09a59c0410c6f2f963df2357741cfdd842291433797a23a3558a3f40ac174",
+      "bytes": 1191
+    },
+    {
+      "path": "docs/05-data/day30/01-harmonization-principles.md",
+      "sha256": "57854d7315e7facbeda470e7be04a5ed36ca69c2f31799bff041db3a034d017f",
+      "bytes": 731
+    },
+    {
+      "path": "docs/05-data/day30/02-normalization-and-dc-policy.md",
+      "sha256": "2bf4585ba2683974ae654828b22ad13abcf73af9a5d1e7d480cab2ec193fde24",
+      "bytes": 760
+    },
+    {
+      "path": "docs/05-data/day30/03-sampling-rate-and-resampling-policy.md",
+      "sha256": "08e937a8dbbdcd49f42e84501bc12767c87f563865895552090bbc50186c531b",
+      "bytes": 382
+    },
+    {
+      "path": "docs/05-data/day30/04-channel-strategy-and-ch4-quarantine.md",
+      "sha256": "f41984da7a368779dd23385a0c9080fe566a5d1da061092092b71e291ab0911c",
+      "bytes": 525
+    },
+    {
+      "path": "docs/05-data/day30/05-label-ontology-and-dataset-views.md",
+      "sha256": "add6609898c0a86b2219d480dab1403ac7ed2f8716fb77f4f12cc2ed9274b405",
+      "bytes": 567
+    },
+    {
+      "path": "docs/05-data/day30/06-windowing-and-segmentation-policy.md",
+      "sha256": "7e5acd2f8313b96202f21bf93a793ea6c7a89d24db1dc34973e6aa146986d9c5",
+      "bytes": 336
+    },
+    {
+      "path": "docs/05-data/day30/07-output-storage-contract.md",
+      "sha256": "b5d3a702f4798fdb0d8c89f65eaa0e796384a1d7b842f51ffe28b29667fc81bb",
+      "bytes": 444
+    },
+    {
+      "path": "docs/05-data/day30/08-experiment-eligibility-and-day31-handoff.md",
+      "sha256": "58a923c9a9a426d1ada200c25917d2a0fe9ef79bd4b802158a6e2e7ced4d5da5",
+      "bytes": 544
+    },
+    {
+      "path": "docs/05-data/day30/09-full-coverage-gap-and-risk-register.md",
+      "sha256": "55cf4ebba8eec26667fe865f83c1064bc84a685f2459d83a64a77c134315c789",
+      "bytes": 603
+    },
+    {
+      "path": "docs/05-data/day30/10-day30-readiness-decision.md",
+      "sha256": "a5bcae48d062aebdf826cd0e97d67d9bcc3c18c05de808350b1a140a237fa165",
+      "bytes": 432
+    },
+    {
+      "path": "docs/05-data/day30/day30-source-traceability.csv",
+      "sha256": "660fd00884e3367d2f92b11bcb30a115844d822268cd8c6362e705e87dff5687",
+      "bytes": 596
+    },
+    {
+      "path": "docs/note/day29/09-todo-day30.md",
+      "sha256": "469990ca55b691618fc2106d7a7844fb870613260cbb73534074da64b5213412",
+      "bytes": 300
+    },
+    {
+      "path": "docs/note/day30/01-learning-objectives.md",
+      "sha256": "b155af6295c46c6238d92cb503eb31b0485cf204b3731432be4bee37e8e97858",
+      "bytes": 376
+    },
+    {
+      "path": "docs/note/day30/02-math-normalization.md",
+      "sha256": "1d822039faeb44c9322cfa0ebdd6a71143d69f42c57f009c48a0d5f7fe2b8b37",
+      "bytes": 326
+    },
+    {
+      "path": "docs/note/day30/03-math-resampling.md",
+      "sha256": "855c5497418e749b3609d4df8e2fcc2aec0988e44f844a0c6ce350fd056250c2",
+      "bytes": 223
+    },
+    {
+      "path": "docs/note/day30/04-channel-and-ontology.md",
+      "sha256": "f436d9092bc584fb4e67e23e089c413a1b196651b120b96f11e163121d3a67df",
+      "bytes": 330
+    },
+    {
+      "path": "docs/note/day30/05-leakage-notes.md",
+      "sha256": "73b182081a70630a686c44311f6573be0865ef0957a65997fbd3fc754ad3109f",
+      "bytes": 349
+    },
+    {
+      "path": "docs/note/day30/06-decisions.md",
+      "sha256": "e1880c38bb8c0905db47ad316a441d9c76cb82011bd712108d9d4c4e95698bc3",
+      "bytes": 503
+    },
+    {
+      "path": "docs/note/day30/07-open-questions.md",
+      "sha256": "a7bdb129c8c7d82ae73e15e273bbac39755188aa7f8aeec8c8597b8abb04c995",
+      "bytes": 419
+    },
+    {
+      "path": "docs/note/day30/08-daily-summary-template.md",
+      "sha256": "2ee6e114159d4926b4afc4f24a05b9e0813713541edb426f4798dca0e3fe325e",
+      "bytes": 432
+    },
+    {
+      "path": "docs/note/day30/09-todo-day31.md",
+      "sha256": "e046fe6aaf755b786e372e5cda42792e02e3897da2ad8caaa56c8be8c5f00f39",
+      "bytes": 309
+    },
+    {
+      "path": "docs/plans/DAY30_EXECUTION_PLAN.md",
+      "sha256": "03d8ee9e152452b52944e260859842c31a8fa1a8f83f28ed6d296fe159ce062e",
+      "bytes": 25786
+    },
+    {
+      "path": "docs/plans/PRE_DAY30_KE_HOACH_TRIEN_KHAI.md",
+      "sha256": "00a92a310a83bf96d2b037a4e94d24807c0b6bf1b9ec8e6b02779f32609175ad",
+      "bytes": 10918
+    },
+    {
+      "path": "environment/day30-environment-notes.md",
+      "sha256": "3c0a0e71185e4907027da74527d3414497447d9d926f5a9d8cda5a847ca6a16c",
+      "bytes": 266
+    },
+    {
+      "path": "environment/day30-requirements.txt",
+      "sha256": "10d3047efaf99dd655e29389a676cbdaf8396db6876d7344e8374d7f3c5449cc",
+      "bytes": 121
+    },
+    {
+      "path": "environment/requirements-pre-day30.txt",
+      "sha256": "d2d334311630b898f9011ed31f0274fe53ccd4c163216881106f327edd641893",
+      "bytes": 232
+    },
+    {
+      "path": "packages/common-schemas/json/day30-channel-decision.v1.schema.json",
+      "sha256": "4d4cfbd09b7cc4f0cf03b9ec8548f449f8e538a75ea708a7718bcd6742654d8b",
+      "bytes": 976
+    },
+    {
+      "path": "packages/common-schemas/json/day30-common-ontology.v1.schema.json",
+      "sha256": "743a3b7a5b6801bb248d784f715cb24f34af79d21b2c7b7c0fad9cf7f0ad5fd1",
+      "bytes": 1291
+    },
+    {
+      "path": "packages/common-schemas/json/day30-dataset-view-registry.v1.schema.json",
+      "sha256": "b077ff8b484fa74b34fc73bda34b328064790d44b982c5207f7140630597c8db",
+      "bytes": 1422
+    },
+    {
+      "path": "packages/common-schemas/json/day30-harmonization-run.v1.schema.json",
+      "sha256": "a42549b59e212fa16f119d718e111db173bb4921bdd0b2e5126e484b16e1d1af",
+      "bytes": 1063
+    },
+    {
+      "path": "packages/common-schemas/json/day30-preflight.v1.schema.json",
+      "sha256": "a6ac289cae667c3101185acbb9c1dd2dbafa2a13407ae161c91d5e2184a416c8",
+      "bytes": 719
+    },
+    {
+      "path": "packages/common-schemas/json/day30-readiness-decision.v1.schema.json",
+      "sha256": "9cf9bbff5d5af807cd708a58931bfb5e17c70a584c1533908ba80b11834e5458",
+      "bytes": 1387
+    },
+    {
+      "path": "packages/common-schemas/json/day30-window-index.v1.schema.json",
+      "sha256": "ceadd329a18d99dd3cb5cc5724017b8bebc90bd23c333100101592f522fc6690",
+      "bytes": 2011
+    },
+    {
+      "path": "packages/common-schemas/pre-day30/pre-day30-dual-gate.schema.json",
+      "sha256": "a28162edee0021f62dad9c395ad5277b5051958b6b624c8ad8d4e3b2af0d9ee7",
+      "bytes": 790
+    },
+    {
+      "path": "packages/common-schemas/pre-day30/remote-catalog.schema.json",
+      "sha256": "a1ef1c063f03936d04601d2e6635650d35974160d1e52d67b0c684a78b0686be",
+      "bytes": 1409
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_cli.py",
+      "sha256": "5266715be4a8285db59bac22e1c55a65187986f1f2f3070cb4ab9ebebb2a8e1d",
+      "bytes": 4216
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_delivery.py",
+      "sha256": "888fb0805dc5ad9600ea526866f512e195aa72bfed0c2da49935497aad0073a7",
+      "bytes": 1954
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_governance.py",
+      "sha256": "9ecebc29fe986817afe2ed2014b01ea2120a59ee3f2ac5f3783772e7191c0b9d",
+      "bytes": 5377
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_schemas.py",
+      "sha256": "a23d16b26a7c35a0e3a419c888011cf17ff576edcdb44a27beadda7b9550f11c",
+      "bytes": 1028
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_signal_contracts.py",
+      "sha256": "06d99d0ac0228977855682a6b18a5d03ef6d045451dd6bb7ddd29901b052a04b",
+      "bytes": 2967
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_stress.py",
+      "sha256": "95e439bdc051982ee89b93b300b9cecf363322af913ebefd8abe657da6db3525",
+      "bytes": 1813
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day30_windowing_storage.py",
+      "sha256": "3c754c73bf2862cca5c8b17d86fdd69ecc57748f0de133c9527e0ad38df4909c",
+      "bytes": 3750
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-artifact-check.json",
+      "sha256": "db164768fc311d352bf5620a6b798226201f77db62b3cff08a84dd99a062ef4f",
+      "bytes": 205
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-channel-decision.json",
+      "sha256": "62d75493c276c85fef9cd18588e4073cc6e9485cd87e93db665e82e42a37720d",
+      "bytes": 838
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-check-run.log",
+      "sha256": "ece04706c56343e99f071bd985fa2e497491f6359392546df756cb52c6e5be88",
+      "bytes": 42554
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-common-ontology.json",
+      "sha256": "8c77c5211d0f8d3bd8741677a239ee6aa07376b13975a7af91a312c1d59d463f",
+      "bytes": 952
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-dataset-view-registry.json",
+      "sha256": "6003ef249b469de2715bf14322b2bf88d8ce376e09ad29d12ffd52e5514d86c3",
+      "bytes": 1713
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-harmonization-report.md",
+      "sha256": "c66dc4c4c67873bf43f3388c7aacc67ae83c6ee8896be6cd4bdfc1a4e350bd41",
+      "bytes": 630
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-harmonization-run.json",
+      "sha256": "5d7e461fb9807dd6735495e53287c3a387820b845a4fa71ae100c41f2c8aa152",
+      "bytes": 5035
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-pre-day30-input-baseline.json",
+      "sha256": "8bed1200a4eef5f546c074dc999a427a58446800c843806094d61a1705a6da7f",
+      "bytes": 1116
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-preflight.json",
+      "sha256": "50fb5bf3c655eac18c48e1a71e3b2f489bf324b3cfde10e7f8a9ce78d28d0aba",
+      "bytes": 170
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-readiness-decision.json",
+      "sha256": "e256440b6f3d49184b337c93d680890b62521cb61cf6f98d6dfb60cbc7c60096",
+      "bytes": 558
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-sampling-policy-validation.json",
+      "sha256": "cde39f961a33d3b1bbfd295ff5e446b53884678bf60515413920d054eb5af6da",
+      "bytes": 850
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-stress-test.json",
+      "sha256": "09857b1ae2eadad23dd06924995cab5f2dd68366071da2a78fcc39a4db59167c",
+      "bytes": 586
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-tooling-validation.json",
+      "sha256": "f22a372632de660cab977b7edba64824c4a6c6abf02cdbc8fc571b23c57f0bb2",
+      "bytes": 525
+    },
+    {
+      "path": "qa-validation/evidence/day30/day30-window-index.fixture.json",
+      "sha256": "7c676bdd697fa1adf5763120c1b5bd39c6f67c16127bebaf522863f9dbd4f681",
+      "bytes": 6312
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/README.md",
+      "sha256": "3a48cfb74f637c31e0956e9a90199ccfba863f5014a13e73fb76ac752868d414",
+      "bytes": 207
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/grabmyo/day29-readiness-decision.yaml",
+      "sha256": "b03bde966fd51c49ee30134e81bb3c0506bd227282cfcea8cd901735efdddf16",
+      "bytes": 1280
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/grabmyo/grabmyo-eda-summary.json",
+      "sha256": "73eb86747ca0c25685e7edb985e049d07781273aaf96f4b41163913f58da9351",
+      "bytes": 15599
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/mendeley/day28-readiness-decision.yaml",
+      "sha256": "f21a18debf83bbb8151282080d49998299526eea89c26190c089c332e05cf7d0",
+      "bytes": 1783
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/mendeley/mendeley-eda-summary.json",
+      "sha256": "59fb17a0bc0328e4ac331cdf8ef4167d0e8f69df553dfa56618641cd97adb02b",
+      "bytes": 23946
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/pre-day30-final-manifest.template.json",
+      "sha256": "f1938ce306abf8487032a9e0bc98e2143b6c21bf86f0bd83a56985260fda49b9",
+      "bytes": 560
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/smoke/catalog.json",
+      "sha256": "8fdc904c9d7f8ed66ca8732273762990c2495ff631fdec390106439cb1b0b8a7",
+      "bytes": 1070
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/smoke/eda/record-statistics.jsonl",
+      "sha256": "2a4a3121819d01da17afe55c2b45ab1b9a44e2ca8298d252872001e1bf5f3aa4",
+      "bytes": 1783
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/smoke/eda/streaming-eda-summary.json",
+      "sha256": "12210fad2d0dcdbbc615dbabbf575e573e539400159c56e9370a4acf392f1837",
+      "bytes": 472
+    },
+    {
+      "path": "qa-validation/evidence/pre-day30/smoke/sample-plan.json",
+      "sha256": "45d251614137533d64b54e5c2638107c78efeaea64c791ea6032ec2f1d669709",
+      "bytes": 1530
+    },
+    {
+      "path": "qa-validation/fixtures/day30/metadata-index.fixture.csv",
+      "sha256": "4a0b16c6b5890754da339c1f97a2d06eae7dac1f88d54434d622d7901e43014e",
+      "bytes": 675
+    },
+    {
+      "path": "qa-validation/fixtures/pre_day30/remote-objects.local.csv",
+      "sha256": "15505878a6139f133850f50d239d78ebbc75718f5fcebd71b6471ea64dfeb9f8",
+      "bytes": 305
+    },
+    {
+      "path": "qa-validation/fixtures/pre_day30/tiny_signal.csv",
+      "sha256": "77e3d0addbf9651f95b75fb44f1bb626f2498cb6ed495b1da72d709fe7cc88a6",
+      "bytes": 56
+    },
+    {
+      "path": "qa-validation/requirements/day30-acceptance-criteria.md",
+      "sha256": "175e803b8901d4044487a8938fbeb3bac5e5baa0e3d32ac54336bdc7f5d92866",
+      "bytes": 1793
+    },
+    {
+      "path": "qa-validation/requirements/day30-red-team-checklist.md",
+      "sha256": "6ee859089cbd20f4a599127bbc4139ba6fc67b0b83289523dd97582d92b8402a",
+      "bytes": 1039
+    },
+    {
+      "path": "qa-validation/requirements/day30-requirements.csv",
+      "sha256": "530649b0f5c543f41e45d9436fd8a069be63fff8b88d5b9315ed4effadea1106",
+      "bytes": 791
+    },
+    {
+      "path": "qa-validation/test-plans/day30-harmonization-test-plan.md",
+      "sha256": "6c74890906762ea121404ab2e93a44d19384fd2756d3932cd4e88e0a330b586c",
+      "bytes": 256
+    },
+    {
+      "path": "qa-validation/tests/pre_day30/conftest.py",
+      "sha256": "dbd1d813d50011ce7607a18329d0d90e901f919d3e22b16c7dc26f817a074778",
+      "bytes": 222
+    },
+    {
+      "path": "qa-validation/tests/pre_day30/test_catalog_stress.py",
+      "sha256": "e044679d35488a6514cc9cc9de37428f4680b5759a5efe3c3183b8aa2ec21025",
+      "bytes": 9913
+    },
+    {
+      "path": "qa-validation/tests/pre_day30/test_dual_gate_stress.py",
+      "sha256": "ec387283001b2f74ed593b023aeac5e78f295f0302801578371575e3636d85cb",
+      "bytes": 7065
+    },
+    {
+      "path": "qa-validation/tests/pre_day30/test_online_stats.py",
+      "sha256": "7fed838754b2d730d7902bc8f6e317a40faf7a9b51836226ae1df1b33deb8808",
+      "bytes": 569
+    },
+    {
+      "path": "qa-validation/tests/pre_day30/test_sample_guard.py",
+      "sha256": "8bf62b495facd98359cb2dd805fd788831e05ad1d7f1177f024cb3c3e8bbe673",
+      "bytes": 445
+    },
+    {
+      "path": "qa-validation/tests/pre_day30/test_streaming_eda_stress.py",
+      "sha256": "4b19e29da744f0296bc664bff90e30b45389bf4b222e875e7aefedc9adce4f1d",
+      "bytes": 10917
+    },
+    {
+      "path": "qa-validation/tests/pre_day30/test_two_zone.py",
+      "sha256": "f67d80f8878f94a11d64dfddf140491569c1fe20241642f8ef18ce35d326fca8",
+      "bytes": 391
+    },
+    {
+      "path": "qa-validation/tests/pre_day30/test_two_zone_stress.py",
+      "sha256": "7f2d6089219506ec2b095e1123b9d83b84418c82533555adfd490e96caaea3ed",
+      "bytes": 4535
+    },
+    {
+      "path": "qa-validation/traceability/day30-requirement-test-traceability.csv",
+      "sha256": "1d3878c53fe10504bfce5416409923fb93eeb010590059d0d137c588e7947855",
+      "bytes": 464
+    },
+    {
+      "path": "scripts/data/day30_build_common_ontology.py",
+      "sha256": "7126e203359989325def4ddece58e9e82bd5b09b2a68b27bf021e8d02ae29d93",
+      "bytes": 1631
+    },
+    {
+      "path": "scripts/data/day30_build_input_report.py",
+      "sha256": "98dbdc41a86febba131b48f284e8c8b0494f3835699dac5af27b9461baad2ffe",
+      "bytes": 3576
+    },
+    {
+      "path": "scripts/data/day30_build_view_registry.py",
+      "sha256": "3bf31f015799b87e12ff777f72ef6aa14de73bc76676f280110a06d518cf7e6d",
+      "bytes": 1542
+    },
+    {
+      "path": "scripts/data/day30_build_window_index.py",
+      "sha256": "740de3743cfc6dece70afc021eba6def9d16c111d1e1202fa42e442fc34e3093",
+      "bytes": 2656
+    },
+    {
+      "path": "scripts/data/day30_preflight.py",
+      "sha256": "b13f2dc3048cddac94f5023233908a42a4d46a7d9dc7cd0e98bfe7e85901b6eb",
+      "bytes": 1468
+    },
+    {
+      "path": "scripts/data/day30_render_harmonization_report.py",
+      "sha256": "84d48494ac10036173e3cbf1d2099423b1c942b500732b4f67566abe3260968d",
+      "bytes": 1634
+    },
+    {
+      "path": "scripts/data/day30_run_harmonization.py",
+      "sha256": "419c817d808c4e01cca11dc598830150afaf643f855f430f8064063fa76e0d08",
+      "bytes": 7144
+    },
+    {
+      "path": "scripts/data/day30_validate_channel_policy.py",
+      "sha256": "08cd93e309791bcf94f6d32cc0e73cf67860ec111e55c0c944c2be4425377c0d",
+      "bytes": 1807
+    },
+    {
+      "path": "scripts/data/day30_validate_sampling_policy.py",
+      "sha256": "83e6904b3be1db253d6a61b48ba80d75ab7ea4e28c6a59d7c83e18dea62aadc3",
+      "bytes": 1702
+    },
+    {
+      "path": "scripts/data/pre_day30_dual_gate.py",
+      "sha256": "768cf8b8780cc99e58ce78b03c78508ad706624b3c6179c3e330ed8dc0fb2590",
+      "bytes": 4537
+    },
+    {
+      "path": "scripts/dev/bootstrap_pre_day30_storage.sh",
+      "sha256": "cec268386dacf0564af82b89b8511d10336b622ca019fbd6b236514b0d58a028",
+      "bytes": 1483
+    },
+    {
+      "path": "scripts/dev/build_day30_manifest.py",
+      "sha256": "04f529ca2653612ac5b9c637aa14b8a3342410b87e1c2471b2c27ca326d4e489",
+      "bytes": 2884
+    },
+    {
+      "path": "scripts/dev/check_day30_artifacts.py",
+      "sha256": "bba5c5d2e1b9a5627eef0aa452bcb4214f24a6f1cb8ef72fe63bae0d4ff630d8",
+      "bytes": 3245
+    },
+    {
+      "path": "scripts/dev/day30_tooling_smoke.py",
+      "sha256": "1a2b9a0b615d794ef56b0ecbf4085b13d8f2ae8e53d49893bb963962d5aa0244",
+      "bytes": 3984
+    },
+    {
+      "path": "scripts/dev/run_day30_checks.sh",
+      "sha256": "5808ba07394a4487eb57b859e54ac78b922b8ad8f04b8c534b553b4ce1cdab2f",
+      "bytes": 2948
+    },
+    {
+      "path": "scripts/dev/run_pre_day30_checks.sh",
+      "sha256": "48b10d9492ed6f1402394278ab49c52aa7ef9e25fce914798014b12579de5e7a",
+      "bytes": 1046
+    },
+    {
+      "path": "scripts/dev/smoke_test_pre_day30_remote_eda.sh",
+      "sha256": "4eeba999d5457a8d9e53d12d8c5b97b603d9666e15109691b3e8adf1d95ad6b1",
+      "bytes": 1080
+    },
+    {
+      "path": "scripts/dev/stress_test_day30.py",
+      "sha256": "b3fee0fd7e0bfef70c77ab13c6029598898ba2f783d1373d16616894b96bfe23",
+      "bytes": 4862
+    },
+    {
+      "path": "scripts/dev/sync_pre_day30_evidence_to_repo.sh",
+      "sha256": "1a54791529f53ae86260430bc7a1a14fd02111dc06d49ab920d687ea364b0431",
+      "bytes": 1208
+    }
+  ],
+  "raw_signal_included": false,
+  "model_artifact_included": false,
+  "training_executed": false,
+  "pooled_training_executed": false,
+  "test_signal_rows_read": 0,
+  "manifest_sha256": "45b8486017e9a107e8fd46790fee3417585ca9c5b7d65324956aa9d1db175103"
+}

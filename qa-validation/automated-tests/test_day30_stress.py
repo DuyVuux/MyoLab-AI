@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from pathlib import Path
 import random
 import sys
 import time
 import tracemalloc
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "ai-core" / "data"))

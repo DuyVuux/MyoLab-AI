@@ -1,0 +1,3 @@
+dataset_id,record_id,subject_id,day_id,session_id,repetition_id,canonical_label,partition,signal_path,source_file_sha256,split_version,label_mapping_version,sampling_rate_hz,n_samples
+mendeley-4channel-hand-gesture-v2,m-fixture-1,m-subject-1,day-1,session-1,rep-1,rest,train,/zone2/train/m-fixture-1.matx,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,day30-fixture-split-v1,MENDELEY_4CH_GESTURE.taskA.v0.1,2000,1000
+grabmyo-v1.1.0,g-fixture-1,g-subject-1,day-1,session-1,rep-1,hand_close,validation,/zone2/validation/g-fixture-1.datx,bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,day30-fixture-split-v1,GRABMYO_V1_1.taskA.v0.1,2048,1024

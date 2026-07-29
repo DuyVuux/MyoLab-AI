@@ -1,0 +1,13 @@
+requirement_id,test_or_evidence
+D30-R001,scripts/dev/check_day30_artifacts.py
+D30-R002,test_day30_views.py
+D30-R003,test_day30_windowing.py
+D30-R004,test_day30_ontology.py
+D30-R005,test_day30_channels.py
+D30-R006,test_day30_channels.py
+D30-R007,test_day30_sampling.py
+D30-R008,test_day30_sampling.py
+D30-R009,test_day30_windowing.py
+D30-R010,test_day30_normalization.py
+D30-R011,data-platform/contracts/day30/storage-contract.yaml
+D30-R012,test_day30_readiness.py

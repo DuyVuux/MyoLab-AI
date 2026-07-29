@@ -1,0 +1,9 @@
+{
+  "schema_version": "day30-artifact-check.v1",
+  "asset_count": 184,
+  "missing": [],
+  "prohibited_raw_or_model_artifacts": [],
+  "unsafe_flags": [],
+  "reference_pack_excluded": true,
+  "pass": true
+}

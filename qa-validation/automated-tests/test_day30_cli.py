@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import csv
 import json
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 from jsonschema import Draft202012Validator
 

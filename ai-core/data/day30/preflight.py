@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import Any
 
-
 REQUIRED_FINDINGS = frozenset(
     {
         "amplitude_scale_difference_about_40x",

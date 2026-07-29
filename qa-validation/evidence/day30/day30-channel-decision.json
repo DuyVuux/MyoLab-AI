@@ -1,0 +1,51 @@
+{
+  "schema_version": "day30-channel-decision.v1",
+  "mendeley_ch4": {
+    "channel": "EMG_RAW_CH4",
+    "primary_median_std": 3.478,
+    "ch4_std": 0.039,
+    "std_ratio": 0.011213341000575042,
+    "status": "QUARANTINED_EXCLUDED_PRIMARY",
+    "broken_channel_claim_allowed": false,
+    "reference_channel_claim_allowed": false,
+    "sensitivity_view_allowed": true
+  },
+  "grabmyo_primary_channels": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16",
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W5",
+    "W6",
+    "W7",
+    "W8",
+    "W9",
+    "W10",
+    "W11",
+    "W12"
+  ],
+  "grabmyo_excluded_channels": [
+    "U1",
+    "U2",
+    "U3",
+    "U4"
+  ],
+  "direct_anatomical_mapping_allowed": false,
+  "pass": true
+}

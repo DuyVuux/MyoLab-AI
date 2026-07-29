@@ -1,12 +1,11 @@
 from __future__ import annotations
 
+import re
 from hashlib import sha256
 from math import isfinite
-import re
 
 from .contracts import ALLOWED_PARTITIONS, PROTECTED_LABELS
 from .sample_rate import samples_for_ms
-
 
 REQUIRED_RECORD_FIELDS = frozenset(
     {

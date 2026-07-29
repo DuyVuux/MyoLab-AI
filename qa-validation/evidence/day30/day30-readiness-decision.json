@@ -1,0 +1,18 @@
+{
+  "schema_version": "day30-readiness-decision.v1",
+  "status": "GO_FOR_DAY31_SEPARATE_BASELINE_SMOKE",
+  "training_allowed": false,
+  "pooled_training_allowed": false,
+  "test_set_opened": false,
+  "fatigue_inference_allowed": false,
+  "mfcv_eligible": false,
+  "motionlab_transfer_verified": false,
+  "clinical_use_allowed": false,
+  "missing_contract_checks": [],
+  "missing_full_baseline_checks": [
+    "day31_training_authorization_present",
+    "full_subject_index_verified",
+    "resolved_dependency_lock_verified",
+    "split_hashes_verified"
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "schema_version": "day30-harmonization-run.v1",
+  "preflight": {
+    "schema_version": "day30-preflight.v1",
+    "pass": true,
+    "errors": [],
+    "training_allowed": false,
+    "pooled_training_allowed": false,
+    "test_set_opened": false
+  },
+  "ontology": {
+    "schema_version": "day30-common-ontology.v1",
+    "class_order": [
+      "rest",
+      "hand_open",
+      "hand_close",
+      "wrist_flexion",
+      "wrist_extension"
+    ],
+    "mendeley_supported": [
+      "rest",
+      "hand_close",
+      "wrist_flexion",
+      "wrist_extension"
+    ],
+    "grabmyo_supported": [
+      "rest",
+      "hand_open",
+      "hand_close",
+      "wrist_flexion",
+      "wrist_extension"
+    ],
+    "intersection": [
+      "rest",
+      "hand_close",
+      "wrist_flexion",
+      "wrist_extension"
+    ],
+    "support": {
+      "rest": {
+        "mendeley": true,
+        "grabmyo": true
+      },
+      "hand_open": {
+        "mendeley": false,
+        "grabmyo": true
+      },
+      "hand_close": {
+        "mendeley": true,
+        "grabmyo": true
+      },
+      "wrist_flexion": {
+        "mendeley": true,
+        "grabmyo": true
+      },
+      "wrist_extension": {
+        "mendeley": true,
+        "grabmyo": true
+      }
+    },
+    "unknown_supervised_core_allowed": false,
+    "synthetic_fill_allowed": false
+  },
+  "view_registry": {
+    "schema_version": "day30-dataset-view-registry.v1",
+    "pooled_training_allowed": false,
+    "views": [
+      {
+        "view_id": "mendeley_core4_primary_v1",
+        "dataset_ids": [
+          "mendeley-4channel-hand-gesture-v2"
+        ],
+        "classes": [
+          "rest",
+          "hand_close",
+          "wrist_flexion",
+          "wrist_extension"
+        ],
+        "channel_policy_id": "mendeley-ch123-primary-v1",
+        "role": "primary_source_specific",
+        "pooled_training_allowed": false
+      },
+      {
+        "view_id": "mendeley_core4_ch4_sensitivity_v1",
+        "dataset_ids": [
+          "mendeley-4channel-hand-gesture-v2"
+        ],
+        "classes": [
+          "rest",
+          "hand_close",
+          "wrist_flexion",
+          "wrist_extension"
+        ],
+        "channel_policy_id": "mendeley-ch1234-sensitivity-v1",
+        "role": "sensitivity_only",
+        "pooled_training_allowed": false
+      },
+      {
+        "view_id": "grabmyo_project_subset_native28_v1",
+        "dataset_ids": [
+          "grabmyo-v1.1.0"
+        ],
+        "classes": [
+          "rest",
+          "hand_open",
+          "hand_close",
+          "wrist_flexion",
+          "wrist_extension"
+        ],
+        "channel_policy_id": "grabmyo-fw28-primary-v1",
+        "role": "primary_source_specific",
+        "pooled_training_allowed": false
+      },
+      {
+        "view_id": "cross_source_intersection_summary_v1",
+        "dataset_ids": [
+          "mendeley-4channel-hand-gesture-v2",
+          "grabmyo-v1.1.0"
+        ],
+        "classes": [
+          "rest",
+          "hand_close",
+          "wrist_flexion",
+          "wrist_extension"
+        ],
+        "channel_policy_id": "channel-summary-v1",
+        "role": "contract_and_later_comparator",
+        "pooled_training_allowed": false
+      }
+    ]
+  },
+  "policy_validation": {
+    "sampling": {
+      "pass": true,
+      "errors": []
+    },
+    "channels": {
+      "pass": true,
+      "errors": []
+    },
+    "windowing": {
+      "pass": true,
+      "errors": []
+    },
+    "storage": {
+      "pass": true,
+      "errors": []
+    },
+    "pass": true
+  },
+  "readiness": {
+    "schema_version": "day30-readiness-decision.v1",
+    "status": "GO_FOR_DAY31_SEPARATE_BASELINE_SMOKE",
+    "training_allowed": false,
+    "pooled_training_allowed": false,
+    "test_set_opened": false,
+    "fatigue_inference_allowed": false,
+    "mfcv_eligible": false,
+    "motionlab_transfer_verified": false,
+    "clinical_use_allowed": false,
+    "missing_contract_checks": [],
+    "missing_full_baseline_checks": [
+      "day31_training_authorization_present",
+      "full_subject_index_verified",
+      "resolved_dependency_lock_verified",
+      "split_hashes_verified"
+    ]
+  },
+  "input_provenance": {
+    "config": "64dd2716c32ee26ccf2417c975e541432b60e3877c7f37e002124db242b214b2",
+    "report": "8bed1200a4eef5f546c074dc999a427a58446800c843806094d61a1705a6da7f",
+    "mendeley_labels": "deba9d1e8c3dc43ce346abaa37c653d3e408a64ea89724a011c59126e2b0e294",
+    "grabmyo_labels": "62826d295731a454fc22c2217de92d6e2536fb32bf06ed349e15fceaa1fbf9cb",
+    "policy_normalization": "b749a7ecf067871e344c34f703c63d3319fcc18ebcd9ad1d4399069886304c8e",
+    "policy_sampling": "935be0174483f8a527f1990ccf19be827c380ba5bec5e0ca190bdfba45337010",
+    "policy_channels": "8718489e8aa5a4d29e7902a105f628466f4cfe709e1aa4c3742f4e75b06b8747",
+    "policy_windowing": "5b07e5a6eeb4435ec41720f591823d94755aaf6cf5b074ff7af847654dac7213",
+    "policy_storage": "886b9f8dac2944799fa052018bffddf73fe0008fca6f203e99f89e47cf08f211"
+  },
+  "real_data_signal_rows_read": 0,
+  "training_allowed": false,
+  "pooled_training_allowed": false
+}

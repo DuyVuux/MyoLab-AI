@@ -4,7 +4,6 @@ from collections import defaultdict
 
 from .contracts import ALLOWED_PARTITIONS, PROTECTED_LABELS
 
-
 REQUIRED_WINDOW_COLUMNS = frozenset(
     {
         "window_id",

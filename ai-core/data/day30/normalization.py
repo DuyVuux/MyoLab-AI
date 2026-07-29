@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import numpy as np
 
-
 PROHIBITED_SCALING = frozenset(
     {
         "global_dataset_zscore",

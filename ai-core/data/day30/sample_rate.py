@@ -5,7 +5,6 @@ from math import floor, isfinite
 
 import numpy as np
 
-
 SAMPLE_ROUNDING_POLICY = "round_half_up"
 
 

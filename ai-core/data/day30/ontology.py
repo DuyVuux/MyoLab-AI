@@ -5,7 +5,6 @@ from typing import Any
 
 import yaml
 
-
 SUPPORTED_VALUES = frozenset(
     {"SUPPORTED", "TRAIN", "ELIGIBLE", "CORE", "CONFIRMED"}
 )

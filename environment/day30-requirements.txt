@@ -1,0 +1,6 @@
+numpy
+scipy
+PyYAML
+jsonschema
+pytest
+# pyarrow là tùy chọn để ghi Parquet; CSV fallback luôn phải tồn tại.

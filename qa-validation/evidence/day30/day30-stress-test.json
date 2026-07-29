@@ -1,0 +1,27 @@
+{
+  "schema_version": "day30-stress-test.v1",
+  "seed": 30,
+  "input_records": 2000,
+  "generated_windows": 37093,
+  "window_validation": {
+    "pass": true,
+    "errors": [],
+    "row_count": 37093
+  },
+  "forbidden_partition_attacks": 6,
+  "forbidden_partition_attacks_blocked": 6,
+  "resampled_shape": [
+    2000,
+    4
+  ],
+  "finite_signal_output": true,
+  "elapsed_seconds": 3.900928,
+  "peak_memory_mib": 68.433,
+  "thresholds": {
+    "max_elapsed_seconds": 30.0,
+    "max_peak_memory_mib": 256.0
+  },
+  "training_executed": false,
+  "test_signal_rows_read": 0,
+  "pass": true
+}
