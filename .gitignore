@@ -99,6 +99,7 @@ logs/
 
 .agents/
 qa-validation/evidence/day5-preprocess-golden.npz
+docs/plans/
 
 # Allow evidence logs (audit trail)
 !qa-validation/evidence/*.log
