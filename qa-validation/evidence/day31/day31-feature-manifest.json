@@ -1,0 +1,45 @@
+{
+  "schema_version": "day31-feature-manifest.v1",
+  "run_id": "day31-portable_synthetic_validation-8f7940e1f9e6-6c894568e241",
+  "run_type": "portable_synthetic_validation",
+  "created_at_utc": "2026-07-29T14:25:00.497829+00:00",
+  "git_commit": "bd67d1abc55897e7b08ceff0692e2f6e35983f05",
+  "input_window_index_sha256": "7c676bdd697fa1adf5763120c1b5bd39c6f67c16127bebaf522863f9dbd4f681",
+  "feature_contract_sha256": "8f7940e1f9e6531c3fb88e3dfecd53340b60d7d26f0f0f6bcbac379ab5ba8b11",
+  "source_manifest_sha256": "ff5611569067e2228f4524b50ea7279070b40af7f9e5f3d3f7da847dae94edc1",
+  "preprocessing_policy_id": "per-record-channel-mean-v1",
+  "channel_policy_ids": [
+    "grabmyo-fw28-primary-v1",
+    "mendeley-ch123-primary-v1"
+  ],
+  "dataset_views": [
+    "grabmyo_project_subset_native28_v1",
+    "mendeley_core4_primary_v1"
+  ],
+  "window_ms": 200,
+  "hop_ms": 100,
+  "sampling_mode": "native_rate",
+  "feature_arms": [
+    "F-TD8",
+    "F-SP6",
+    "F-ALL14",
+    "F-NO-MOMENTS12",
+    "F-TD8-W250",
+    "F-SP6-W250",
+    "F-SP6-W500-CONTEXT"
+  ],
+  "feature_rows": 434,
+  "failure_count": 0,
+  "output_hashes": {
+    "registry": "9f075588608053d305c0668b43d22754b2b7570862774c08e8e898658420e2fc",
+    "smoke": "49e052c6b74a7ae259a9b0965e916447221b8192e9f61683b615fe91caa532c0",
+    "quality": "9b6285156f4ccd1f8cf3efeabcf2fa6cd546c2751b38e7bf6e542c4a6bf1e64d",
+    "stress": "6c894568e241782ef8823ee45585bdb62b94892fc3d91fd8f8c689ba9adbf757"
+  },
+  "real_data_signal_rows_read": 0,
+  "test_signal_rows_read": 0,
+  "training_executed": false,
+  "model_fitting_executed": false,
+  "pooled_training_executed": false,
+  "pass": true
+}

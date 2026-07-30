@@ -1,0 +1,65 @@
+{
+  "schema_version": "day31-smoke-extraction.v1",
+  "pass": true,
+  "golden_tests": {
+    "pass": true,
+    "sine50_features": {
+      "rms": 0.7071067811865475,
+      "mav": 0.6353102368087352,
+      "skewness_unbiased": 1.134726233926428e-16,
+      "kurtosis_fisher_unbiased": -1.5037688442211055,
+      "max_signed": 1.0,
+      "min_signed": -1.0,
+      "std_sample_ddof1": 0.7079923254047886,
+      "mean": -2.2204460492503132e-17,
+      "spectral_min_power": 1.3431690695580451e-32,
+      "spectral_max_power": 100.0,
+      "spectral_std_power_ddof1": 7.053456158585981,
+      "mdf_hz": 50.0,
+      "mnf_hz": 50.0,
+      "spectral_entropy_bits": 5.482949584508724e-28
+    },
+    "zero_features": {
+      "rms": 0.0,
+      "mav": 0.0,
+      "skewness_unbiased": null,
+      "kurtosis_fisher_unbiased": null,
+      "max_signed": 0.0,
+      "min_signed": 0.0,
+      "std_sample_ddof1": 0.0,
+      "mean": 0.0,
+      "spectral_min_power": 0.0,
+      "spectral_max_power": 0.0,
+      "spectral_std_power_ddof1": 0.0,
+      "mdf_hz": null,
+      "mnf_hz": null,
+      "spectral_entropy_bits": null
+    },
+    "zero_qc_flags": [
+      "constant_window",
+      "feature_nonfinite",
+      "zero_power_window"
+    ],
+    "positive_scale_invariants_pass": true,
+    "nonfinite_input_blocked": true
+  },
+  "views": {
+    "mendeley_core4_primary_v1": {
+      "pass": true,
+      "feature_rows": 42,
+      "feature_dimensions": 42,
+      "channel_count": 3
+    },
+    "grabmyo_project_subset_native28_v1": {
+      "pass": true,
+      "feature_rows": 392,
+      "feature_dimensions": 392,
+      "channel_count": 28
+    }
+  },
+  "real_data_signal_rows_read": 0,
+  "test_signal_rows_read": 0,
+  "training_executed": false,
+  "model_fitting_executed": false,
+  "pooled_training_executed": false
+}

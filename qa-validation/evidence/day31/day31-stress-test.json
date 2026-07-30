@@ -1,0 +1,26 @@
+{
+  "schema_version": "day31-stress-test.v1",
+  "seed": 31,
+  "windows": 512,
+  "channels": 28,
+  "feature_rows_generated": 200704,
+  "feature_digest_sha256": "794fd15dc05e8ffc777db6122ea96cdb366c296c99cde2f40543641281800763",
+  "forbidden_partition_attacks": 7,
+  "forbidden_partition_attacks_blocked": 7,
+  "malformed_signal_attacks": 3,
+  "malformed_signal_attacks_blocked": 3,
+  "nonfinite_attacks": 3,
+  "nonfinite_attacks_blocked": 3,
+  "infinite_features_emitted": 0,
+  "elapsed_seconds": 51.897012,
+  "peak_memory_mib": 0.178,
+  "thresholds": {
+    "max_elapsed_seconds": 71.68,
+    "max_peak_memory_mib": 512.0
+  },
+  "test_signal_rows_read": 0,
+  "training_executed": false,
+  "model_fitting_executed": false,
+  "pooled_training_executed": false,
+  "pass": true
+}

@@ -1,0 +1,621 @@
+{
+  "schema_version": "day31-feature-quality-smoke.v1",
+  "pass": true,
+  "partition": "synthetic_train",
+  "window_count": 256,
+  "feature_count": 14,
+  "correlation_methods": [
+    "pearson",
+    "spearman"
+  ],
+  "correlation_threshold": 0.95,
+  "summaries": {
+    "rms": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 0.7245887456523821,
+      "q01": 0.7369465778763602,
+      "q25": 0.9079903983146413,
+      "median": 1.0741584074666504,
+      "q75": 1.2549169672209843,
+      "q90": 1.351362683756585,
+      "q99": 1.4255896959840018,
+      "maximum": 1.434032368895715,
+      "iqr": 0.346926568906343,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "mav": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 0.6412439068502749,
+      "q01": 0.6487176890946992,
+      "q25": 0.8125930577939168,
+      "median": 0.9549613715013507,
+      "q75": 1.1181976732586938,
+      "q90": 1.21103941569453,
+      "q99": 1.2776001901633418,
+      "maximum": 1.281540261938992,
+      "iqr": 0.305604615464777,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "skewness_unbiased": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": -0.053730404094995764,
+      "q01": -0.04124041236203213,
+      "q25": -0.012655491250760403,
+      "median": -0.000925157537386839,
+      "q75": 0.015578042576944732,
+      "q90": 0.02562424809279247,
+      "q99": 0.05247815515919698,
+      "maximum": 0.09007993234732145,
+      "iqr": 0.028233533827705135,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "kurtosis_fisher_unbiased": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": -1.4728424485530351,
+      "q01": -1.4602331171314058,
+      "q25": -1.428287816011232,
+      "median": -1.3964318768013821,
+      "q75": -1.3572233684609794,
+      "q90": -1.315286572142967,
+      "q99": -1.2567501306900692,
+      "maximum": -1.211596481980662,
+      "iqr": 0.07106444755025265,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "max_signed": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 1.322253891342198,
+      "q01": 1.382098586167109,
+      "q25": 1.6765442606902217,
+      "median": 1.9322146216793454,
+      "q75": 2.1676532182303165,
+      "q90": 2.3440470858169995,
+      "q99": 2.481799212419635,
+      "maximum": 2.504769332972491,
+      "iqr": 0.49110895754009487,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "min_signed": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": -2.6031196709029425,
+      "q01": -2.5440954535061544,
+      "q25": -2.1847145950592943,
+      "median": -1.8988897893916636,
+      "q75": -1.6818445302534908,
+      "q90": -1.5364816538561308,
+      "q99": -1.377068360822627,
+      "maximum": -1.323354767502776,
+      "iqr": 0.5028700648058035,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "std_sample_ddof1": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 0.7254342069463736,
+      "q01": 0.737821679111448,
+      "q25": 0.9091231481823471,
+      "median": 1.0754870547522926,
+      "q75": 1.2564345597723352,
+      "q90": 1.3530398344269599,
+      "q99": 1.427372425689003,
+      "maximum": 1.435807241573173,
+      "iqr": 0.34731141158998813,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "mean": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": -0.02633277285873693,
+      "q01": -0.023539730979766985,
+      "q25": -0.007731828671258097,
+      "median": -6.878601583212703e-05,
+      "q75": 0.005834903723104508,
+      "q90": 0.012230358616463006,
+      "q99": 0.023226810420820018,
+      "maximum": 0.024599215269267703,
+      "iqr": 0.013566732394362607,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "spectral_min_power": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 5.670468378229597e-11,
+      "q01": 1.192190180965107e-06,
+      "q25": 4.470906028757631e-05,
+      "median": 0.00011350783591058638,
+      "q75": 0.00027239162628744777,
+      "q90": 0.0004388996901978896,
+      "q99": 0.0007672639219678862,
+      "maximum": 0.0010648876119682996,
+      "iqr": 0.00022768256599987145,
+      "outlier_rate_robust_z5": 0.0078125
+    },
+    "spectral_max_power": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 96.91587544243754,
+      "q01": 99.50340661710857,
+      "q25": 157.13988103342234,
+      "median": 222.25604268769945,
+      "q75": 306.26082641168205,
+      "q90": 357.3028882687826,
+      "q99": 398.61782014598094,
+      "maximum": 403.7220825883753,
+      "iqr": 149.1209453782597,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "spectral_std_power_ddof1": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 6.8331674383976395,
+      "q01": 7.015370173302214,
+      "q25": 11.081246725306904,
+      "median": 15.67378216732998,
+      "q75": 21.598898396144104,
+      "q90": 25.199422237926157,
+      "q99": 28.1135899838828,
+      "maximum": 28.473707449760266,
+      "iqr": 10.5176516708372,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "mdf_hz": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": true,
+      "minimum": 50.0,
+      "q01": 50.0,
+      "q25": 50.0,
+      "median": 50.0,
+      "q75": 50.0,
+      "q90": 50.0,
+      "q99": 50.0,
+      "maximum": 50.0,
+      "iqr": 0.0,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "mnf_hz": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 57.98735379125161,
+      "q01": 58.398798543458526,
+      "q25": 61.64456784509344,
+      "median": 65.2045508237396,
+      "q75": 72.24261366843601,
+      "q90": 78.12449250828905,
+      "q99": 85.51424860442766,
+      "maximum": 88.30176365209273,
+      "iqr": 10.598045823342567,
+      "outlier_rate_robust_z5": 0.0
+    },
+    "spectral_entropy_bits": {
+      "count": 256,
+      "finite_count": 256,
+      "finite_ratio": 1.0,
+      "missing_ratio": 0.0,
+      "zero_ratio": 0.0,
+      "near_constant": false,
+      "minimum": 0.26200461421173804,
+      "q01": 0.2686139090019612,
+      "q25": 0.35213090258791013,
+      "median": 0.4589834619777228,
+      "q75": 0.6319970478410535,
+      "q90": 0.7665343589997069,
+      "q99": 0.9375639074251325,
+      "maximum": 1.0638985116381323,
+      "iqr": 0.27986614525314335,
+      "outlier_rate_robust_z5": 0.0
+    }
+  },
+  "redundancy_pairs": [
+    {
+      "feature_a": "rms",
+      "feature_b": "mav",
+      "method": "pearson",
+      "correlation": 0.9997858243466862,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "mav",
+      "method": "spearman",
+      "correlation": 0.9996795605401693,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "max_signed",
+      "method": "pearson",
+      "correlation": 0.9549127527087294,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "max_signed",
+      "method": "spearman",
+      "correlation": 0.9570181963836117,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "min_signed",
+      "method": "spearman",
+      "correlation": -0.9526314660105286,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "std_sample_ddof1",
+      "method": "pearson",
+      "correlation": 0.9999999432461055,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "std_sample_ddof1",
+      "method": "spearman",
+      "correlation": 0.9999992847333484,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "spectral_max_power",
+      "method": "pearson",
+      "correlation": 0.9965592038515436,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "spectral_max_power",
+      "method": "spearman",
+      "correlation": 0.9999492160677499,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "pearson",
+      "correlation": 0.9965590474359558,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "spearman",
+      "correlation": 0.9999485008010985,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "mnf_hz",
+      "method": "spearman",
+      "correlation": -0.9762982089723049,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "spectral_entropy_bits",
+      "method": "pearson",
+      "correlation": -0.9511499186465395,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "rms",
+      "feature_b": "spectral_entropy_bits",
+      "method": "spearman",
+      "correlation": -0.984443665598535,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "max_signed",
+      "method": "pearson",
+      "correlation": 0.9541862980097034,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "max_signed",
+      "method": "spearman",
+      "correlation": 0.956241416800183,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "min_signed",
+      "method": "spearman",
+      "correlation": -0.9516200789654381,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "std_sample_ddof1",
+      "method": "pearson",
+      "correlation": 0.9997861923560187,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "std_sample_ddof1",
+      "method": "spearman",
+      "correlation": 0.9996759842069122,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "spectral_max_power",
+      "method": "pearson",
+      "correlation": 0.9963687708895228,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "spectral_max_power",
+      "method": "spearman",
+      "correlation": 0.9996938658731973,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "pearson",
+      "correlation": 0.9963687122405325,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "spearman",
+      "correlation": 0.9996952964065002,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "mnf_hz",
+      "method": "spearman",
+      "correlation": -0.9765642881666284,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "spectral_entropy_bits",
+      "method": "pearson",
+      "correlation": -0.9515239839615478,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mav",
+      "feature_b": "spectral_entropy_bits",
+      "method": "spearman",
+      "correlation": -0.9848821240558479,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "max_signed",
+      "feature_b": "std_sample_ddof1",
+      "method": "pearson",
+      "correlation": 0.954915801464296,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "max_signed",
+      "feature_b": "std_sample_ddof1",
+      "method": "spearman",
+      "correlation": 0.9570139047837033,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "max_signed",
+      "feature_b": "spectral_max_power",
+      "method": "pearson",
+      "correlation": 0.9521267826299947,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "max_signed",
+      "feature_b": "spectral_max_power",
+      "method": "spearman",
+      "correlation": 0.9571827077134354,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "max_signed",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "pearson",
+      "correlation": 0.9521255665512781,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "max_signed",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "spearman",
+      "correlation": 0.9571848535133898,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "min_signed",
+      "feature_b": "std_sample_ddof1",
+      "method": "spearman",
+      "correlation": -0.9526393339436942,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "min_signed",
+      "feature_b": "spectral_max_power",
+      "method": "spearman",
+      "correlation": -0.9519927328908215,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "min_signed",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "spearman",
+      "correlation": -0.9519555390249482,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "std_sample_ddof1",
+      "feature_b": "spectral_max_power",
+      "method": "pearson",
+      "correlation": 0.9965595432171074,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "std_sample_ddof1",
+      "feature_b": "spectral_max_power",
+      "method": "spearman",
+      "correlation": 0.9999485008010985,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "std_sample_ddof1",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "pearson",
+      "correlation": 0.9965593869386127,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "std_sample_ddof1",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "spearman",
+      "correlation": 0.999947785534447,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "std_sample_ddof1",
+      "feature_b": "mnf_hz",
+      "method": "spearman",
+      "correlation": -0.9762867647058823,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "std_sample_ddof1",
+      "feature_b": "spectral_entropy_bits",
+      "method": "pearson",
+      "correlation": -0.9511486606015053,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "std_sample_ddof1",
+      "feature_b": "spectral_entropy_bits",
+      "method": "spearman",
+      "correlation": -0.9844379434653237,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "spectral_max_power",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "pearson",
+      "correlation": 0.9999999995416908,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "spectral_max_power",
+      "feature_b": "spectral_std_power_ddof1",
+      "method": "spearman",
+      "correlation": 0.9999992847333484,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "spectral_max_power",
+      "feature_b": "mnf_hz",
+      "method": "spearman",
+      "correlation": -0.9772473678187227,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "spectral_max_power",
+      "feature_b": "spectral_entropy_bits",
+      "method": "spearman",
+      "correlation": -0.9853520542458225,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "spectral_std_power_ddof1",
+      "feature_b": "mnf_hz",
+      "method": "spearman",
+      "correlation": -0.9772523746852825,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "spectral_std_power_ddof1",
+      "feature_b": "spectral_entropy_bits",
+      "method": "spearman",
+      "correlation": -0.9853556305790796,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mnf_hz",
+      "feature_b": "spectral_entropy_bits",
+      "method": "pearson",
+      "correlation": 0.9937870045065615,
+      "pairwise_count": 256
+    },
+    {
+      "feature_a": "mnf_hz",
+      "feature_b": "spectral_entropy_bits",
+      "method": "spearman",
+      "correlation": 0.993492504005493,
+      "pairwise_count": 256
+    }
+  ],
+  "automatic_feature_drop_executed": false,
+  "test_signal_rows_read": 0,
+  "training_executed": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "day31-preflight.v1",
+  "pass": true,
+  "errors": [],
+  "day30_status": "GO_FOR_DAY31_SEPARATE_BASELINE_SMOKE",
+  "feature_engineering_allowed": true,
+  "training_allowed": false,
+  "model_fitting_allowed": false,
+  "scaler_fitting_allowed": false,
+  "pooled_training_allowed": false,
+  "test_signal_access_allowed": false,
+  "test_set_opened": false
+}
