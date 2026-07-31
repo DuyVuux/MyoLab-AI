@@ -1,0 +1,451 @@
+{
+  "schema_version": "day32-source-hash-ledger.v1",
+  "file_count": 89,
+  "entries": [
+    {
+      "path": "DAY32_KE_HOACH_CLASSICAL_BASELINE_FINAL.md",
+      "sha256": "75618b1fe03c9cf5baadffb3ff042154d077119688cc1ee2a55ae68d6b3a2a97",
+      "bytes": 20831
+    },
+    {
+      "path": "README.md",
+      "sha256": "bc167bd8fcdda10e790d6adbdd3e9dea40f36fec9d36c9e0f2d5c5494c0c1801",
+      "bytes": 544
+    },
+    {
+      "path": "ai-core/configs/day32_baseline_protocol.research.yaml",
+      "sha256": "addaaa310bf190ec0c1a920e4c78575c11d28c53a1dcb393e305a3438fd008c5",
+      "bytes": 1021
+    },
+    {
+      "path": "ai-core/configs/day32_compute_budget.research.yaml",
+      "sha256": "3316f49c21042ce7ba63a0690185ae85640ee06a8df5f229f1dce54e3331ad62",
+      "bytes": 275
+    },
+    {
+      "path": "ai-core/configs/day32_core_models.research.yaml",
+      "sha256": "d2546bd81996dbb09002bd2894c302497f22ec4ab16739c4790a23e4991cc973",
+      "bytes": 1186
+    },
+    {
+      "path": "ai-core/configs/day32_execution_authorization.template.yaml",
+      "sha256": "726b11094d5f54316b154c3296649a41b2ce48e8dcf87eae2824ebbca1d33f9a",
+      "bytes": 720
+    },
+    {
+      "path": "ai-core/configs/day32_metrics_contract.research.yaml",
+      "sha256": "fec8c2aa666c09d4e78fd7f8f034f3d0a7f4b035f17193af9ddae69197534910",
+      "bytes": 567
+    },
+    {
+      "path": "ai-core/configs/day32_optional_models.research.yaml",
+      "sha256": "fddefeee4e53c70d650ace309f30b128ba004c7343f5ffce8cb6c0db945f8adf",
+      "bytes": 739
+    },
+    {
+      "path": "ai-core/configs/day32_validation_protocol.research.yaml",
+      "sha256": "381eced19af64da1607a4868e3d5be89cf3cb426c7428aa46033fa53efbb0105",
+      "bytes": 553
+    },
+    {
+      "path": "ai-core/modeling/day32/__init__.py",
+      "sha256": "59875d7a3f376ee509c571a2d6607f7a184878fbafc818fdcc028f89c4efd9ad",
+      "bytes": 68
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "b8555f94f8afdb644e30117e599ad6808d9ba1696703db8946532d95a26550f2",
+      "bytes": 224
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/aggregation.cpython-313.pyc",
+      "sha256": "17f047a39cc33e45a17c4c49cdf3404a5c8ec8eed5ae1569d3ce8d1d9d534c40",
+      "bytes": 1624
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/authorization.cpython-313.pyc",
+      "sha256": "30f111eee879bee3656c2d3d0a2e827236465b8f23f595db36a6da4f2d401115",
+      "bytes": 3411
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/core_gate.cpython-313.pyc",
+      "sha256": "ec9ec1c73246864f5cdd3021861a3ed2a5712ccc127fa62f44f7b8e3bf15ec8d",
+      "bytes": 1274
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/grouped_cv.cpython-313.pyc",
+      "sha256": "7161d38469ac2121884646e0556ef035201d5504d3c75b6efb47298f7d4a5b15",
+      "bytes": 1788
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/matrix_gate.cpython-313.pyc",
+      "sha256": "9eeae2a8c3f9db4a74829c4747b082e0c8260904961687939f7938516421448f",
+      "bytes": 3053
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/metrics.cpython-313.pyc",
+      "sha256": "3bc7115d6962d71e5bbc0a19762365b358306619549292ff9a4dd3878733891a",
+      "bytes": 2677
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/model_factory.cpython-313.pyc",
+      "sha256": "8c11c2d3b0b95d89fd36cf6b25c5ca864c608be1689ffe04ca0a43242c0cf827",
+      "bytes": 2791
+    },
+    {
+      "path": "ai-core/modeling/day32/__pycache__/smoke_runner.cpython-313.pyc",
+      "sha256": "e7c637163e3e4c5206edcf0d1cf34081b9122bda44c412631daf506f32cef329",
+      "bytes": 1733
+    },
+    {
+      "path": "ai-core/modeling/day32/aggregation.py",
+      "sha256": "ebec2aa9cc0e0a79e65ffe3ae6ef0ff94717b9e0d5c40b3f80d1608135b0d318",
+      "bytes": 1001
+    },
+    {
+      "path": "ai-core/modeling/day32/authorization.py",
+      "sha256": "feaf8fce0d5d9d2baf44b43ea91804a575ce0b919e827c7e040c4cb5497efd5c",
+      "bytes": 1908
+    },
+    {
+      "path": "ai-core/modeling/day32/core_gate.py",
+      "sha256": "a9975f61d4f0e7591fb98d02af2c5ad02264fe012dba7e3d04e42a82f126d0b7",
+      "bytes": 932
+    },
+    {
+      "path": "ai-core/modeling/day32/grouped_cv.py",
+      "sha256": "127b6ab140c90ee777409dcb827d889b4217adb2d1f8a566fbb71bf13fb26a06",
+      "bytes": 1120
+    },
+    {
+      "path": "ai-core/modeling/day32/matrix_gate.py",
+      "sha256": "6106cf7c84b4463eca59208e88b428a186750240c40054e2bba3ec1730a51341",
+      "bytes": 1862
+    },
+    {
+      "path": "ai-core/modeling/day32/metrics.py",
+      "sha256": "91d80714bbf61f9f50a183a5fcf0dc887cc62e1a0559aeb4c2aa7d1d543bc4c8",
+      "bytes": 1894
+    },
+    {
+      "path": "ai-core/modeling/day32/model_factory.py",
+      "sha256": "eea5e9f8028f286d6093011fa61f73b0033c5a518c3c92017ac62afebfe87417",
+      "bytes": 2893
+    },
+    {
+      "path": "ai-core/modeling/day32/smoke_runner.py",
+      "sha256": "8770042f8c1fc5e716f431329d923afe219743f8a30e751220b436bd88c1729c",
+      "bytes": 1173
+    },
+    {
+      "path": "ai-core/pipelines/__pycache__/day32_materialize_matrix.cpython-313.pyc",
+      "sha256": "7aa0737b8b3e826a7aedd5e0f626a66ef1e808e1c3c140fcd4b0f106a2fa4c58",
+      "bytes": 2116
+    },
+    {
+      "path": "ai-core/pipelines/__pycache__/day32_run_core_baselines.cpython-313.pyc",
+      "sha256": "91fc5551d6b3e2f3f8f4ce248921c1451ad5db196eabedc43f5f5ab4ff595e5d",
+      "bytes": 3106
+    },
+    {
+      "path": "ai-core/pipelines/__pycache__/day32_run_optional_baselines.cpython-313.pyc",
+      "sha256": "1db08c6597a5f2b567643962cd24fce01032b000cd1b9cbc4ff268e244b394c3",
+      "bytes": 2196
+    },
+    {
+      "path": "ai-core/pipelines/day32_materialize_matrix.py",
+      "sha256": "4ca72631b2cf72f1025113ff9408a9634ed96725b521d55356834ff2ec1f61ce",
+      "bytes": 1048
+    },
+    {
+      "path": "ai-core/pipelines/day32_run_core_baselines.py",
+      "sha256": "6a73de6afbc72ba497dcd5447a80ba482557a17220cd3e66dcde317fa4d2b72a",
+      "bytes": 1901
+    },
+    {
+      "path": "ai-core/pipelines/day32_run_optional_baselines.py",
+      "sha256": "10f3cb807f1a083bf1470edc87e9fb99a4f402647e188f939c308ec62b31efc0",
+      "bytes": 1127
+    },
+    {
+      "path": "data-platform/contracts/day32/matrix-manifest.schema.yaml",
+      "sha256": "bc5b5d65fa7af42381e4696b3790427bca2a74a4e5695a6b10b88834de2c117a",
+      "bytes": 402
+    },
+    {
+      "path": "data-platform/contracts/day32/model-result-columns.csv",
+      "sha256": "cced323e6a2fb215557be8764307376e241581b0878ba00484650e81825127a7",
+      "bytes": 421
+    },
+    {
+      "path": "data-platform/contracts/day32/reason-codes.yaml",
+      "sha256": "0b2645aaeb85db46554a82c41b287730995804129f024e0dff5945ef7a129a6e",
+      "bytes": 682
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/01-model-scope.md",
+      "sha256": "1e34bcd261220652bd26f02cd539f3d3242f41dca3968a0cf3b397af1a18f6c4",
+      "bytes": 296
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/02-authorization-and-input-gate.md",
+      "sha256": "a2159d7d3b7290d9d34ee13eb7a8e3a47f46ee1cb261a939e001d45c559df206",
+      "bytes": 278
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/03-matrix-materialization.md",
+      "sha256": "de600ca77aa0caf39c8c9bf4f19a0b2f6ad0f5f6cf081e890f46d11bafda72d5",
+      "bytes": 179
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/04-grouped-validation.md",
+      "sha256": "41de81a6df61b472b269eb2583e524b9b60a254a3a39e2de752e3a7bbbc14560",
+      "bytes": 158
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/05-core-model-contract.md",
+      "sha256": "9a876b6a6b0472aabc905333a459bb4fa1a28154b37b2617d83437f07786540d",
+      "bytes": 187
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/06-optional-model-gates.md",
+      "sha256": "43df063331a679ec8bc28e5313b01baba1f89e24677f4bc36ae7f26781717fd4",
+      "bytes": 185
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/07-metrics-and-aggregation.md",
+      "sha256": "1fc3f58ee0dc1f7bcfb8ccc519cc56b2ca57ce25a5ae8247b91ebe2738334ac1",
+      "bytes": 165
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/08-reporting-and-limitations.md",
+      "sha256": "21c710fb90ce130c3acb11710068132ee015859d0cbde27e8639ce04deab31f5",
+      "bytes": 196
+    },
+    {
+      "path": "docs/06-ai-signal-processing/day32/09-day33-handoff.md",
+      "sha256": "15d6f5574dafe40ce1f2305ca916df78e266faf6d0b64958a00dc4aab6cd170a",
+      "bytes": 156
+    },
+    {
+      "path": "docs/note/day32/01-learning-roadmap.md",
+      "sha256": "1bc1a4fb8d9a60f4a14fa5d72209d22208a06b2a703ce50d98cf559a6ba7c697",
+      "bytes": 313
+    },
+    {
+      "path": "docs/note/day32/02-lda-and-qda.md",
+      "sha256": "672603991a0dfb26e9a0022ce5b3e7b9c1ddc9d3e34b2b5d97a64aa5f417c06a",
+      "bytes": 228
+    },
+    {
+      "path": "docs/note/day32/03-logistic-and-svm.md",
+      "sha256": "82d3c4f28d92ea97128ba206f358d1b4c08391eb19ba995d117fde4f7ea3ba60",
+      "bytes": 175
+    },
+    {
+      "path": "docs/note/day32/04-tree-models.md",
+      "sha256": "13c0c728cd8430edfa3450d63c4db4aa75a69e3d6a5e9012503d3f01593ca09c",
+      "bytes": 212
+    },
+    {
+      "path": "docs/note/day32/05-knn-dimensionality.md",
+      "sha256": "53114e83fd0560f5d4b446b7716e647d042aa142246a3d7e125e2eaea2834765",
+      "bytes": 206
+    },
+    {
+      "path": "docs/note/day32/06-grouped-cv.md",
+      "sha256": "f645bd6732c814a6389930ae1f998220b59f830233a1aad754fcdd07033a82a0",
+      "bytes": 207
+    },
+    {
+      "path": "docs/note/day32/07-metrics.md",
+      "sha256": "582453192b9d02fd6ddb6d351d694b79345446eee645851db0856cf55bd7bb27",
+      "bytes": 191
+    },
+    {
+      "path": "docs/note/day32/08-daily-summary-template.md",
+      "sha256": "cc723145f7f62d3bb1d8ac2d60d3a5e60d47712447dd3ebf944b85c41598b212",
+      "bytes": 204
+    },
+    {
+      "path": "docs/note/day32/09-open-questions.md",
+      "sha256": "703c7b800f7013a6f0f15e90aea9e51394a79bf65f5c54b56650f0d7967aa6f5",
+      "bytes": 347
+    },
+    {
+      "path": "docs/plans/DAY32_EXECUTION_PLAN.md",
+      "sha256": "75618b1fe03c9cf5baadffb3ff042154d077119688cc1ee2a55ae68d6b3a2a97",
+      "bytes": 20831
+    },
+    {
+      "path": "environment/day32-requirements.txt",
+      "sha256": "e5d16851b7b70e2bd10e627f468e2534bb962427730c8611ddc4b07d96eccd42",
+      "bytes": 55
+    },
+    {
+      "path": "packages/common-schemas/json/day32-core-gate.v1.schema.json",
+      "sha256": "dd8b331811e81b8f79e4f4c7818d68f7eb52da0f7dc5dfa0be749953ea8e95ac",
+      "bytes": 419
+    },
+    {
+      "path": "packages/common-schemas/json/day32-execution-authorization.v1.schema.json",
+      "sha256": "74a067f55ef05ab4fddc584bba3d0f479507a862819530d985493d45ed50f443",
+      "bytes": 446
+    },
+    {
+      "path": "packages/common-schemas/json/day32-preflight.v1.schema.json",
+      "sha256": "4dfdb1ff1c3c429929ec988cf485ae4dda5934fb48cf2204ab248b9af3f1e32e",
+      "bytes": 556
+    },
+    {
+      "path": "packages/common-schemas/json/day32-synthetic-core-smoke.v1.schema.json",
+      "sha256": "23139c4d80947e3eea27ae8004f2d1f3b723b847d1a746ad3da531ebe4c39cff",
+      "bytes": 560
+    },
+    {
+      "path": "qa-validation/automated-tests/conftest.py",
+      "sha256": "33b3030000b06ce81f47c76c3eef763ecd361481930655e157a3780f5778742e",
+      "bytes": 134
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day32_aggregation.py",
+      "sha256": "2ee4dbe60d6ce92b43666df42e87e26d46eb2e368759275ac72eed19e81daf23",
+      "bytes": 600
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day32_authorization.py",
+      "sha256": "6e73395ef6c9104465096ab75c2c80d3f49cbbfa19c57bb16818e84a133cd6f4",
+      "bytes": 580
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day32_core_gate.py",
+      "sha256": "aaef86c56a2777d23104a3c878359070c4b011c2db29221a1d07ab09276047be",
+      "bytes": 330
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day32_grouped_cv.py",
+      "sha256": "580ba7d0a9bde1e3ba9972003143582c548d64e66a123b7c8feecb38fc9d69bf",
+      "bytes": 349
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day32_matrix_gate.py",
+      "sha256": "77baef0e62776207e81fde7c4534e2e0fba99ee7e9aac4426e2114e553d0c0fe",
+      "bytes": 1092
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day32_models.py",
+      "sha256": "56b85008ca1bfb58abb2cdb07c233927325e4cf8bb25f108f850ad4544a9aa80",
+      "bytes": 857
+    },
+    {
+      "path": "qa-validation/evidence/day32-artifact-check.json",
+      "sha256": "ec248f0428e9b38ecf86e4edb1d7ace29cbacd5ba01d35690af6417ba6fc7cc5",
+      "bytes": 125
+    },
+    {
+      "path": "qa-validation/evidence/day32-check-run.log",
+      "sha256": "0493feee106321ab4147605d0a7eccc71f1ce7d7fbc592cfa86b4acb497569ee",
+      "bytes": 14169
+    },
+    {
+      "path": "qa-validation/evidence/day32-final-manifest.json",
+      "sha256": "0814a0b5a33618c8de774679268d0704d609875caed19eb57838d1cc8599dee9",
+      "bytes": 3188
+    },
+    {
+      "path": "qa-validation/evidence/day32-optional-eligibility.json",
+      "sha256": "4512edc2f83bae890bd94286508710f2f96d429e9fd1754fe013c25e4cb46602",
+      "bytes": 224
+    },
+    {
+      "path": "qa-validation/evidence/day32-preflight.json",
+      "sha256": "c34fed8bb11e516288004937c1819a90866f518e76689727861428b1c915b9f4",
+      "bytes": 299
+    },
+    {
+      "path": "qa-validation/evidence/day32-synthetic-core-smoke.json",
+      "sha256": "c5d1e04e5fdd802de2f84d0f2040c92f3c513c9c6b9e9fcb5976802e01390299",
+      "bytes": 1635
+    },
+    {
+      "path": "qa-validation/evidence/day32-tooling-validation.json",
+      "sha256": "0702cf8d278f16e5981f8e52e242abc8309fc6f46a76f10d4965c6e030c606d2",
+      "bytes": 1884
+    },
+    {
+      "path": "qa-validation/fixtures/day31-readiness.fixture.json",
+      "sha256": "a0378825ff3a9dc4b3fd4442672b83f05458d3b37e0fb2b21c4b8eea998f316c",
+      "bytes": 268
+    },
+    {
+      "path": "qa-validation/fixtures/day32-synthetic-authorization.yaml",
+      "sha256": "9a0bc0704736a3f7eae65c4a4a94b1a920926e20c4235099f3055c5b3b07303a",
+      "bytes": 250
+    },
+    {
+      "path": "qa-validation/fixtures/day32-synthetic-matrix.npz",
+      "sha256": "c91d786cc2ec9667787789ecd64fa5981aa9f18b8983a873fb408e3d0e623c51",
+      "bytes": 108633
+    },
+    {
+      "path": "qa-validation/requirements/day32-acceptance-criteria.md",
+      "sha256": "b5cea0fbbbb8768fd5249e803dcd327ea3cccbd6bc697ece0afbfc3dd931498f",
+      "bytes": 340
+    },
+    {
+      "path": "qa-validation/test-plans/day32-test-plan.md",
+      "sha256": "277875b90d7524f19c903fbd68cd13b04dfaa813ff0566a874b596bb62e220d5",
+      "bytes": 246
+    },
+    {
+      "path": "qa-validation/traceability/day32-requirement-test.csv",
+      "sha256": "b2c9d8312629191db9e762e80b5fb7c9db48ba2a280a78ee58c35d40c773a852",
+      "bytes": 281
+    },
+    {
+      "path": "scripts/data/__pycache__/day32_generate_synthetic_matrix.cpython-313.pyc",
+      "sha256": "40bfd3b2e1aac102f1217e0c57a1a7a21724dc4e03686fd0911fc748e7fc806f",
+      "bytes": 2156
+    },
+    {
+      "path": "scripts/data/__pycache__/day32_preflight.cpython-313.pyc",
+      "sha256": "b90bea3a56fd669078ee53ea5da6a19c155d2f0b37a040c8b8136211ee659c0a",
+      "bytes": 2547
+    },
+    {
+      "path": "scripts/data/day32_generate_synthetic_matrix.py",
+      "sha256": "c8d6dbb99eb7065b00d8f7550acc24209fda4a4ab6ae1cc41c673095dc51a8e7",
+      "bytes": 1187
+    },
+    {
+      "path": "scripts/data/day32_preflight.py",
+      "sha256": "27ae9b7976194deb648b2aa6ceb1280c338acd9d8ce425d7203a525f77ed423a",
+      "bytes": 1562
+    },
+    {
+      "path": "scripts/dev/__pycache__/check_day32_artifacts.cpython-313.pyc",
+      "sha256": "e4bb79bbae7a7d0cda2a38f614b4dd3ec7762ff10e8a9b815c1d79b0f8a9806f",
+      "bytes": 1952
+    },
+    {
+      "path": "scripts/dev/__pycache__/day32_tooling_smoke.cpython-313.pyc",
+      "sha256": "b032d81765eaf713bb7af83da5c7d5ffd929d7634493d8b1f6459607d395f752",
+      "bytes": 2238
+    },
+    {
+      "path": "scripts/dev/check_day32_artifacts.py",
+      "sha256": "be4f72312de845e64ff35cf88e21fe1e4b70b06fcd95ccadb66209207ffdafa8",
+      "bytes": 1111
+    },
+    {
+      "path": "scripts/dev/day32_tooling_smoke.py",
+      "sha256": "75687784e211e12df76bb5eac9c25666bac426c39123024d0a2c377d26d4e194",
+      "bytes": 1427
+    },
+    {
+      "path": "scripts/dev/run_day32_checks.sh",
+      "sha256": "6eab30587e31645046f7c08aee3764a175cd0c2b433630236ee74d0d705fb094",
+      "bytes": 1581
+    }
+  ]
+}

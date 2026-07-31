@@ -1,0 +1,62 @@
+{
+  "schema_version": "day32-synthetic-core-smoke.v1",
+  "scope": "SYNTHETIC_TOOLING_SMOKE",
+  "fold": 0,
+  "results": [
+    {
+      "model_id": "dummy_majority",
+      "status": "COMPLETED",
+      "macro_f1": 0.1,
+      "balanced_accuracy": 0.25,
+      "fit_and_predict_seconds": 0.0005190020310692489
+    },
+    {
+      "model_id": "dummy_stratified",
+      "status": "COMPLETED",
+      "macro_f1": 0.2501972172811643,
+      "balanced_accuracy": 0.24999999999999997,
+      "fit_and_predict_seconds": 0.0006296449573710561
+    },
+    {
+      "model_id": "lda_shrinkage",
+      "status": "COMPLETED",
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "fit_and_predict_seconds": 0.005227689980529249
+    },
+    {
+      "model_id": "logistic_regression",
+      "status": "COMPLETED",
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "fit_and_predict_seconds": 0.005927868012804538
+    },
+    {
+      "model_id": "linear_svm",
+      "status": "COMPLETED",
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "fit_and_predict_seconds": 0.004296184983104467
+    },
+    {
+      "model_id": "random_forest",
+      "status": "COMPLETED",
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "fit_and_predict_seconds": 0.5840183359687217
+    }
+  ],
+  "core_gate": {
+    "schema_version": "day32-core-gate.v1",
+    "status": "CORE_GATE_PASS",
+    "missing_models": [],
+    "failed_models": [],
+    "safety_violations": [],
+    "dummy_majority_present": true,
+    "dummy_stratified_present": true,
+    "optional_models_may_run": true
+  },
+  "real_data_rows_read": 0,
+  "sealed_test_rows_read": 0,
+  "pooled_training_executed": false
+}

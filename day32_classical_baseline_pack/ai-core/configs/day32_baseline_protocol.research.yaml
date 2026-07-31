@@ -1,0 +1,36 @@
+schema_version: day32-baseline-protocol.v1
+status: READY_FOR_GATED_EXECUTION
+day: 32
+real_training_allowed: false
+synthetic_smoke_fitting_allowed: true
+pooled_training_allowed: false
+sealed_test_access_allowed: false
+fatigue_classifier_allowed: false
+registry_state: research
+
+datasets:
+  mendeley:
+    dataset_id: mendeley-4channel-hand-gesture-v2
+    dataset_view_id: mendeley_core4_primary_v1
+    classes: [rest, hand_close, wrist_flexion, wrist_extension]
+    primary_arms: [F-TD8, F-ALL14]
+    diagnostic_arms: [F-SP6]
+    expected_dimensions:
+      F-TD8: 24
+      F-SP6: 18
+      F-ALL14: 42
+  grabmyo:
+    dataset_id: grabmyo-v1.1.0
+    dataset_view_id: grabmyo_project_subset_native28_v1
+    classes: [rest, hand_open, hand_close, wrist_flexion, wrist_extension]
+    primary_arms: [F-TD8, F-ALL14]
+    diagnostic_arms: [F-SP6]
+    expected_dimensions:
+      F-TD8: 224
+      F-SP6: 168
+      F-ALL14: 392
+
+invalid_window_policy:
+  impute_zero_allowed: false
+  warning_ratio: 0.01
+  provisional_block_ratio: 0.05

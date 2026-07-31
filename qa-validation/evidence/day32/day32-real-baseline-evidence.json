@@ -1,0 +1,84 @@
+{
+  "schema_version": "day32-real-baseline-evidence.v1",
+  "scope": "MENDELEY_REAL_DATA_9SUBJECTS",
+  "matrix_shape": [
+    23004,
+    42
+  ],
+  "n_subjects": 9,
+  "n_classes": 4,
+  "leaderboard": [
+    {
+      "model_id": "rbf_svm",
+      "mean_macro_f1": 0.3162586128518159,
+      "std_macro_f1": 0.012039587537422639,
+      "mean_balanced_accuracy": 0.3251173708920187,
+      "tier": "optional"
+    },
+    {
+      "model_id": "gradient_boosting",
+      "mean_macro_f1": 0.313328349294889,
+      "std_macro_f1": 0.006545348890829813,
+      "mean_balanced_accuracy": 0.32108763693270737,
+      "tier": "optional"
+    },
+    {
+      "model_id": "logistic_regression",
+      "mean_macro_f1": 0.2966819978230518,
+      "std_macro_f1": 0.03161802438113428,
+      "mean_balanced_accuracy": 0.31338028169014087,
+      "tier": "core"
+    },
+    {
+      "model_id": "knn",
+      "mean_macro_f1": 0.2926393682510436,
+      "std_macro_f1": 0.014837590466847794,
+      "mean_balanced_accuracy": 0.29487480438184666,
+      "tier": "optional"
+    },
+    {
+      "model_id": "linear_svm",
+      "mean_macro_f1": 0.29177231367863665,
+      "std_macro_f1": 0.03200303898807635,
+      "mean_balanced_accuracy": 0.31122848200312986,
+      "tier": "core"
+    },
+    {
+      "model_id": "lda_shrinkage",
+      "mean_macro_f1": 0.29089335187652143,
+      "std_macro_f1": 0.02722685100339941,
+      "mean_balanced_accuracy": 0.3083333333333333,
+      "tier": "core"
+    },
+    {
+      "model_id": "random_forest",
+      "mean_macro_f1": 0.2884552747906643,
+      "std_macro_f1": 0.011497346033253173,
+      "mean_balanced_accuracy": 0.2934272300469483,
+      "tier": "core"
+    },
+    {
+      "model_id": "qda_regularized",
+      "mean_macro_f1": 0.27326870230954664,
+      "std_macro_f1": 0.017823046059839802,
+      "mean_balanced_accuracy": 0.32061815336463223,
+      "tier": "optional"
+    },
+    {
+      "model_id": "dummy_stratified",
+      "mean_macro_f1": 0.25169158591284824,
+      "std_macro_f1": 0.003235471501679238,
+      "mean_balanced_accuracy": 0.25176056338028163,
+      "tier": "core"
+    },
+    {
+      "model_id": "dummy_majority",
+      "mean_macro_f1": 0.1,
+      "std_macro_f1": 0.0,
+      "mean_balanced_accuracy": 0.25,
+      "tier": "core"
+    }
+  ],
+  "sealed_test_rows_read": 0,
+  "pooled_training_executed": false
+}

@@ -1,0 +1,25 @@
+schema_version: day32-validation-protocol.v1
+sealed_test_opened: false
+split_before_windowing: true
+primary_regime: cross_subject_development_cv
+splitter: StratifiedGroupKFold
+random_state: 3201
+
+mendeley:
+  outer_splits_smoke: 3
+  outer_splits_full: 5
+  inner_splits_smoke: 2
+  inner_splits_full: 3
+  group_column: subject_id
+
+grabmyo:
+  outer_splits_smoke: 5
+  outer_splits_full: 5
+  inner_splits_smoke: 3
+  inner_splits_full: 3
+  group_column: subject_id
+  secondary_regime: cross_day
+
+forbidden_split_units:
+  - random_window
+  - random_feature_row

@@ -1,0 +1,10 @@
+{
+  "schema_version": "day32-preflight.v1",
+  "pass": true,
+  "errors": [],
+  "day31_status": "GO_FOR_DAY32_SEPARATE_BASELINE_SMOKE",
+  "authorization_status": "AUTHORIZED_SYNTHETIC_TOOLING_ONLY",
+  "real_training_allowed": false,
+  "sealed_test_opened": false,
+  "pooled_training_allowed": false
+}

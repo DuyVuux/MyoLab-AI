@@ -1,0 +1,8 @@
+schema_version: day32-compute-budget.v1
+core_models_must_complete_first: true
+optional:
+  knn_max_training_rows: 100000
+  rbf_svm_max_training_rows: 50000
+  gradient_boosting_max_training_rows: 100000
+  qda_requires_numerical_gate: true
+no_untracked_random_subsampling: true

@@ -1,0 +1,117 @@
+{
+  "schema_version": "day32-final-manifest.v1",
+  "day": 32,
+  "title": "Separate Classical Baseline Modeling",
+  "status": "TOOLING_READY_REAL_FEATURE_AUTHORIZATION_PENDING",
+  "source_context": "USER_DAY31_REPORT",
+  "core_models": [
+    "dummy_majority",
+    "dummy_stratified",
+    "lda_shrinkage",
+    "logistic_regression",
+    "linear_svm",
+    "random_forest"
+  ],
+  "optional_models": [
+    "knn",
+    "qda_regularized",
+    "rbf_svm",
+    "gradient_boosting"
+  ],
+  "real_training_allowed": false,
+  "synthetic_smoke_fitting_allowed": true,
+  "pooled_training_allowed": false,
+  "sealed_test_opened": false,
+  "fatigue_classifier_allowed": false,
+  "registry_state": "research",
+  "real_feature_matrices_present_in_pack": false,
+  "real_model_artifacts_present_in_pack": false,
+  "target_handoff": "GO_FOR_DAY33_BASELINE_ERROR_ANALYSIS",
+  "tooling_validation": {
+    "schema_version": "day32-tooling-validation.v1",
+    "core_model_ids": [
+      "dummy_majority",
+      "dummy_stratified",
+      "lda_shrinkage",
+      "logistic_regression",
+      "linear_svm",
+      "random_forest"
+    ],
+    "optional_model_ids": [
+      "knn",
+      "qda_regularized",
+      "rbf_svm",
+      "gradient_boosting"
+    ],
+    "fold_count": 3,
+    "core_results": [
+      {
+        "model_id": "dummy_majority",
+        "status": "COMPLETED",
+        "macro_f1": 0.1,
+        "balanced_accuracy": 0.25,
+        "fit_and_predict_seconds": 0.003686202999915622
+      },
+      {
+        "model_id": "dummy_stratified",
+        "status": "COMPLETED",
+        "macro_f1": 0.2501972172811643,
+        "balanced_accuracy": 0.24999999999999997,
+        "fit_and_predict_seconds": 0.0033156230000486175
+      },
+      {
+        "model_id": "lda_shrinkage",
+        "status": "COMPLETED",
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "fit_and_predict_seconds": 0.014683808999961911
+      },
+      {
+        "model_id": "logistic_regression",
+        "status": "COMPLETED",
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "fit_and_predict_seconds": 0.008472189000030994
+      },
+      {
+        "model_id": "linear_svm",
+        "status": "COMPLETED",
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "fit_and_predict_seconds": 0.013112200000023222
+      },
+      {
+        "model_id": "random_forest",
+        "status": "COMPLETED",
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "fit_and_predict_seconds": 0.7041412809999201
+      }
+    ],
+    "core_gate": {
+      "schema_version": "day32-core-gate.v1",
+      "status": "CORE_GATE_PASS",
+      "missing_models": [],
+      "failed_models": [],
+      "dummy_majority_present": true,
+      "dummy_stratified_present": true,
+      "optional_models_may_run": true
+    },
+    "real_data_rows_read": 0,
+    "sealed_test_rows_read": 0,
+    "pooled_training_executed": false,
+    "pass": true
+  },
+  "synthetic_core_smoke": {
+    "core_gate": "CORE_GATE_PASS",
+    "models_completed": 6,
+    "models_failed": 0,
+    "real_data_rows_read": 0,
+    "sealed_test_rows_read": 0
+  },
+  "automated_tests": {
+    "passed": 12,
+    "failed": 0
+  },
+  "portable_pack_checks_passed": true
+}

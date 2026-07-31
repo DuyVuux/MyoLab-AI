@@ -1,0 +1,7 @@
+schema_version: day32-execution-authorization.v1
+status: AUTHORIZED_SYNTHETIC_TOOLING_ONLY
+scope: SYNTHETIC_TOOLING_SMOKE
+synthetic_smoke_fitting_allowed: true
+real_data_allowed: false
+sealed_test_access_allowed: false
+pooled_training_allowed: false

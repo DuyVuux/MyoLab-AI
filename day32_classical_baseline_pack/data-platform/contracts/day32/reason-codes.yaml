@@ -1,0 +1,12 @@
+schema_version: day32-reason-codes.v1
+codes:
+  AUTHORIZATION_MISSING: Real fitting requested without valid authorization
+  SEALED_TEST_ACCESS_BLOCKED: Test partition/path requested
+  POOLED_DATASET_BLOCKED: Multiple dataset IDs in one training matrix
+  GROUP_LEAKAGE: Same subject/group appears in train and validation
+  MATRIX_DIMENSION_MISMATCH: Feature count differs from view/arm contract
+  NONFINITE_MATRIX: Matrix contains NaN or Inf after QC filtering
+  CLASS_MISSING_IN_FOLD: Fold lacks required class
+  QDA_NOT_ELIGIBLE_NUMERICAL: QDA covariance/rank gate failed
+  COMPUTE_BUDGET_BLOCKED: Optional model exceeds declared budget
+  MODEL_FIT_FAILED: Model-specific exception

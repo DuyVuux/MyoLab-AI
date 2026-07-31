@@ -1,0 +1,27 @@
+schema_version: day32-execution-authorization.v1
+status: NOT_AUTHORIZED_TEMPLATE
+scope: REAL_FEATURE_BASELINE
+training_allowed: false
+model_fitting_allowed: false
+scaler_fitting_allowed: false
+feature_matrix_pivot_allowed: false
+sealed_test_access_allowed: false
+pooled_training_allowed: false
+day32_authorization_present: false
+
+required_evidence:
+  day31_commit_closed: false
+  regression_passed: false
+  real_feature_tables_present: false
+  feature_table_hashes_verified: false
+  matrix_dimensions_verified: false
+  fold_manifests_verified: false
+
+locked_inputs:
+  git_commit: null
+  feature_table_hashes: {}
+  matrix_hashes: {}
+  fold_manifest_hashes: {}
+  dataset_views: []
+  feature_arms: []
+  model_allowlist: []
