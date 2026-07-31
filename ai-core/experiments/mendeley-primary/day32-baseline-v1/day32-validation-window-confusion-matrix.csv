@@ -1,0 +1,5 @@
+,pred__rest,pred__hand_close,pred__wrist_flexion,pred__wrist_extension
+true__rest,1783,115,455,7
+true__hand_close,617,1165,561,17
+true__wrist_flexion,749,373,1115,123
+true__wrist_extension,22,25,46,2267

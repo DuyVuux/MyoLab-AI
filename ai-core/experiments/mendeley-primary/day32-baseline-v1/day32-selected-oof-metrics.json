@@ -1,0 +1,36 @@
+{
+  "schema_version": "day32-selected-oof-metrics.v1",
+  "created_at_utc": "2026-07-31T09:33:01.918911+00:00",
+  "combo_id": "F-ALL14__logistic_regression",
+  "model_id": "logistic_regression",
+  "feature_arm": "F-ALL14",
+  "feature_dimension": 42,
+  "prediction_type": "out_of_fold_training_predictions",
+  "window_metrics": {
+    "accuracy": 0.7056324189393738,
+    "balanced_accuracy": 0.7053911348163315,
+    "macro_f1": 0.7056605171770414,
+    "weighted_f1": 0.7059334321787679,
+    "macro_precision": 0.7066177649447909,
+    "macro_recall": 0.7053911348163315,
+    "cohen_kappa": 0.6075218917893372
+  },
+  "repetition_metrics": {
+    "accuracy": 0.7730829420970265,
+    "balanced_accuracy": 0.7729756289308176,
+    "macro_f1": 0.7738294483321386,
+    "weighted_f1": 0.7739585115929223,
+    "macro_precision": 0.7749090404656729,
+    "macro_recall": 0.7729756289308176,
+    "cohen_kappa": 0.69744910953939
+  },
+  "subject_metrics_summary": {
+    "subject_count": 32,
+    "macro_f1_mean": 0.7394045246629661,
+    "macro_f1_std": 0.1964739623948013,
+    "macro_f1_min": 0.2744360902255639,
+    "balanced_accuracy_mean": 0.7734375
+  },
+  "window_confidence_kind": "max_predict_proba",
+  "validation_rows_used": 0
+}

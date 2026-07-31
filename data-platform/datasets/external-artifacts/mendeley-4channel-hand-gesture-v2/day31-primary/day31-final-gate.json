@@ -1,0 +1,37 @@
+{
+  "schema_version": "day31-final-gate.v1",
+  "created_at_utc": "2026-07-31T07:46:21.743640+00:00",
+  "status": "PASS",
+  "dataset_id": "mendeley-4channel-hand-gesture-v2",
+  "dataset_view_id": "mendeley_core4_primary_v1",
+  "matrix_shape": [
+    47097,
+    42
+  ],
+  "matrix_sha256": "f62b57d1669df5d863974405778ffab8c02ac3786134cde7a4651f1464dea9e6",
+  "subjects": 40,
+  "repetition_groups": 799,
+  "classes": {
+    "hand_close": 11800,
+    "rest": 11741,
+    "wrist_extension": 11800,
+    "wrist_flexion": 11756
+  },
+  "partitions": {
+    "train": 37657,
+    "validation": 9440
+  },
+  "feature_arms": {
+    "F-TD8": 24,
+    "F-SP6": 18,
+    "F-ALL14": 42,
+    "F-NO-MOMENTS12": 36
+  },
+  "subject_leakage": false,
+  "matrix_nonfinite_count": 0,
+  "test_set_opened": false,
+  "training_allowed": false,
+  "model_fitting_allowed": false,
+  "drive_checksum_verified": true,
+  "next_step": "Issue Day32 authorization, then run separate grouped classical baselines."
+}

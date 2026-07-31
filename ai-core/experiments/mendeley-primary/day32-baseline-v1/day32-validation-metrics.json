@@ -1,0 +1,189 @@
+{
+  "schema_version": "day32-validation-metrics.v1",
+  "created_at_utc": "2026-07-31T09:34:05.578359+00:00",
+  "status": "COMPLETED",
+  "evaluation_policy": "one_time_frozen_subject_holdout_after_cv_selection",
+  "model_id": "logistic_regression",
+  "feature_arm": "F-ALL14",
+  "feature_dimension": 42,
+  "validation_rows": 9440,
+  "validation_subject_ids": [
+    "6",
+    "10",
+    "15",
+    "21",
+    "23",
+    "25",
+    "35",
+    "40"
+  ],
+  "validation_class_distribution": {
+    "hand_close": 2360,
+    "rest": 2360,
+    "wrist_extension": 2360,
+    "wrist_flexion": 2360
+  },
+  "validation_repetition_count": 160,
+  "window_metrics": {
+    "accuracy": 0.6705508474576272,
+    "balanced_accuracy": 0.670550847457627,
+    "macro_f1": 0.6657474848267715,
+    "weighted_f1": 0.6657474848267716,
+    "macro_precision": 0.676960007294108,
+    "macro_recall": 0.670550847457627,
+    "cohen_kappa": 0.5607344632768362
+  },
+  "repetition_metrics": {
+    "accuracy": 0.75,
+    "balanced_accuracy": 0.75,
+    "macro_f1": 0.7409934324698974,
+    "weighted_f1": 0.7409934324698974,
+    "macro_precision": 0.7601443464314355,
+    "macro_recall": 0.75,
+    "cohen_kappa": 0.6666666666666667
+  },
+  "subject_metrics_summary": {
+    "subject_count": 8,
+    "macro_f1_mean": 0.7017390732440074,
+    "macro_f1_std": 0.23185657968394027,
+    "macro_f1_min": 0.375,
+    "macro_f1_max": 1.0,
+    "balanced_accuracy_mean": 0.75
+  },
+  "window_confusion_matrix": [
+    [
+      1783,
+      115,
+      455,
+      7
+    ],
+    [
+      617,
+      1165,
+      561,
+      17
+    ],
+    [
+      749,
+      373,
+      1115,
+      123
+    ],
+    [
+      22,
+      25,
+      46,
+      2267
+    ]
+  ],
+  "repetition_confusion_matrix": [
+    [
+      36,
+      1,
+      3,
+      0
+    ],
+    [
+      10,
+      24,
+      6,
+      0
+    ],
+    [
+      12,
+      5,
+      20,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      40
+    ]
+  ],
+  "window_classification_report": {
+    "rest": {
+      "precision": 0.5622831914222642,
+      "recall": 0.7555084745762712,
+      "f1-score": 0.6447297052974146,
+      "support": 2360.0
+    },
+    "hand_close": {
+      "precision": 0.6942789034564958,
+      "recall": 0.4936440677966102,
+      "f1-score": 0.5770183259039128,
+      "support": 2360.0
+    },
+    "wrist_flexion": {
+      "precision": 0.512172714745062,
+      "recall": 0.4724576271186441,
+      "f1-score": 0.4915142164425832,
+      "support": 2360.0
+    },
+    "wrist_extension": {
+      "precision": 0.9391052195526097,
+      "recall": 0.9605932203389831,
+      "f1-score": 0.9497276916631755,
+      "support": 2360.0
+    },
+    "accuracy": 0.6705508474576272,
+    "macro avg": {
+      "precision": 0.676960007294108,
+      "recall": 0.6705508474576272,
+      "f1-score": 0.6657474848267715,
+      "support": 9440.0
+    },
+    "weighted avg": {
+      "precision": 0.676960007294108,
+      "recall": 0.6705508474576272,
+      "f1-score": 0.6657474848267716,
+      "support": 9440.0
+    }
+  },
+  "repetition_classification_report": {
+    "rest": {
+      "precision": 0.6206896551724138,
+      "recall": 0.9,
+      "f1-score": 0.7346938775510204,
+      "support": 40.0
+    },
+    "hand_close": {
+      "precision": 0.8,
+      "recall": 0.6,
+      "f1-score": 0.6857142857142857,
+      "support": 40.0
+    },
+    "wrist_flexion": {
+      "precision": 0.6896551724137931,
+      "recall": 0.5,
+      "f1-score": 0.5797101449275363,
+      "support": 40.0
+    },
+    "wrist_extension": {
+      "precision": 0.9302325581395349,
+      "recall": 1.0,
+      "f1-score": 0.963855421686747,
+      "support": 40.0
+    },
+    "accuracy": 0.75,
+    "macro avg": {
+      "precision": 0.7601443464314355,
+      "recall": 0.75,
+      "f1-score": 0.7409934324698974,
+      "support": 160.0
+    },
+    "weighted avg": {
+      "precision": 0.7601443464314356,
+      "recall": 0.75,
+      "f1-score": 0.7409934324698974,
+      "support": 160.0
+    }
+  },
+  "fit_seconds": 14.465822882999873,
+  "predict_seconds": 0.009263814999940223,
+  "confidence_kind": "max_predict_proba",
+  "validation_used_for_model_selection": false,
+  "trained_on_validation": false,
+  "test_set_opened": false
+}

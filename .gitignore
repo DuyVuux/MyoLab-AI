@@ -121,3 +121,13 @@ day30_dual_dataset_harmonization_pack/
 
 # TypeScript cache
 *.tsbuildinfo
+
+data-platform/datasets/external-artifacts/**/*.npz
+data-platform/datasets/external-artifacts/**/*.csv.gz
+data-platform/datasets/external-artifacts/**/*.mat
+data-platform/datasets/external-artifacts/**/*.zip
+
+# Experiment artifacts that should not enter Git
+ai-core/experiments/**/day32-selected-model.joblib
+ai-core/experiments/**/*.csv.gz
+ai-core/experiments/**/*.zip

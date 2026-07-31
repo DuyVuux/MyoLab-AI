@@ -1,0 +1,136 @@
+{
+  "schema_version": "day31-colab-etl-evidence.v2",
+  "created_at_utc": "2026-07-31T07:46:06.031593+00:00",
+  "status": "PASS",
+  "pipeline": "Day27_31_Colab_ETL_Cell5_Onward",
+  "dataset_id": "mendeley-4channel-hand-gesture-v2",
+  "dataset_source_id": "ckwc76xr2z",
+  "dataset_version": 2,
+  "dataset_view_id": "mendeley_core4_primary_v1",
+  "contracts": {
+    "contract_hash": "89cc74c5583b41e6cca1347244b47a75646b068d1b502cf3cbc29e70618860a2",
+    "split_hash": "e310fdc2f79f92b64964e752978c91371fa83191b7f40584fe004c8821394450",
+    "segment_index_hash": "010a4792ecaede12dea4b6f31fce2ba79edacf19499069d7a3e2943e3e14849c",
+    "window_index_hash": "c05f8fa4fb2ec2b8e7e68a9720f34aa166489ee389b2b9e3ba46f53790733d2d",
+    "segmentation_version": "mendeley-official-timeline-python.v1",
+    "windowing_version": "day30-windowing-200ms-100ms.v1",
+    "feature_set_version": "feature-set-14.v1.0.0",
+    "preprocessing_policy_id": "per-record-channel-mean-v1",
+    "channel_policy_id": "mendeley-ch123-primary-v1",
+    "label_mapping_version": "MENDELEY_4CH_GESTURE.taskA.v1"
+  },
+  "governance": {
+    "training_allowed": false,
+    "model_fitting_allowed": false,
+    "scaler_fitting_allowed": false,
+    "test_signal_access_allowed": false,
+    "test_set_opened": false,
+    "pooled_training_allowed": false
+  },
+  "counts": {
+    "subjects": 40,
+    "all_gesture_segments": 2000,
+    "primary_segments": 800,
+    "window_index_rows": 47200,
+    "valid_matrix_rows": 47097,
+    "excluded_windows": 103,
+    "feature_table_rows": 188800,
+    "matrix_features": 42
+  },
+  "distributions": {
+    "class": {
+      "hand_close": 11800,
+      "rest": 11741,
+      "wrist_extension": 11800,
+      "wrist_flexion": 11756
+    },
+    "subject": {
+      "1": 1180,
+      "10": 1180,
+      "11": 1180,
+      "12": 1180,
+      "13": 1180,
+      "14": 1180,
+      "15": 1180,
+      "16": 1180,
+      "17": 1180,
+      "18": 1180,
+      "19": 1180,
+      "2": 1180,
+      "20": 1180,
+      "21": 1180,
+      "22": 1180,
+      "23": 1180,
+      "24": 1180,
+      "25": 1180,
+      "26": 1180,
+      "27": 1180,
+      "28": 1180,
+      "29": 1180,
+      "3": 1077,
+      "30": 1180,
+      "31": 1180,
+      "32": 1180,
+      "33": 1180,
+      "34": 1180,
+      "35": 1180,
+      "36": 1180,
+      "37": 1180,
+      "38": 1180,
+      "39": 1180,
+      "4": 1180,
+      "40": 1180,
+      "5": 1180,
+      "6": 1180,
+      "7": 1180,
+      "8": 1180,
+      "9": 1180
+    },
+    "partition": {
+      "train": 37657,
+      "validation": 9440
+    }
+  },
+  "feature_arms": {
+    "F-TD8": 24,
+    "F-SP6": 18,
+    "F-ALL14": 42,
+    "F-NO-MOMENTS12": 36
+  },
+  "artifacts": {
+    "feature_table": {
+      "path": "/content/data/mendeley-4channel-hand-gesture-v2/features/day31-feature-table-channel-wide.csv.gz",
+      "sha256": "57e66ff3532bc2dbc6021729adfc349504b32b3239f8fb54d5649041583e1629",
+      "size_bytes": 25353067
+    },
+    "exclusion_report": {
+      "path": "/content/data/mendeley-4channel-hand-gesture-v2/features/day31-feature-exclusion-report.csv",
+      "sha256": "30e89d8ee15400f45ef23cea91ad62874c501f2c8a8fabcf855eb4a2b8e84cc7",
+      "size_bytes": 25451
+    },
+    "matrix_npz": {
+      "path": "/content/data/mendeley-4channel-hand-gesture-v2/matrices/day31-mendeley-primary-fall14.npz",
+      "sha256": "f62b57d1669df5d863974405778ffab8c02ac3786134cde7a4651f1464dea9e6",
+      "size_bytes": 13822383,
+      "shape": [
+        47097,
+        42
+      ]
+    },
+    "column_manifest": {
+      "path": "/content/data/mendeley-4channel-hand-gesture-v2/matrices/day31-feature-column-manifest.json",
+      "sha256": "d5d26b00477d1163d02dab5bc5a45f89b91144e6a83337da63f8285d74d18b36"
+    }
+  },
+  "null_policy": {
+    "imputation_performed": false,
+    "matrix_nonfinite_count": 0,
+    "excluded_window_count": 103,
+    "invalid_window_ratio": 0.0021822033898305083
+  },
+  "environment": {
+    "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+    "numpy": "2.0.2",
+    "scipy": "1.16.3"
+  }
+}
