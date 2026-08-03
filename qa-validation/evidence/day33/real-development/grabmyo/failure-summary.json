@@ -1,0 +1,12 @@
+{
+  "schema_version": "day33-failure-summary.v1",
+  "failure_case_count": 50,
+  "reason_code_counts": {
+    "LOW_MARGIN_ERROR": 8,
+    "MISCLASSIFIED_REPETITION": 50,
+    "SYSTEMATIC_CLASS_CONFUSION": 38
+  },
+  "review_status_counts": {
+    "UNREVIEWED": 50
+  }
+}

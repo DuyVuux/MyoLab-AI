@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "repetition_metrics",
+    "subject_metrics",
+    "subject_summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "day33-evaluation-result.v1"
+    }
+  }
+}

@@ -1,0 +1,1477 @@
+{
+  "schema_version": "day33-evaluation-result.v1",
+  "class_order": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "repetition_metrics": {
+    "macro_f1": 0.7738294483321386,
+    "balanced_accuracy": 0.7729756289308176,
+    "per_class": {
+      "rest": {
+        "precision": 0.6787878787878788,
+        "recall": 0.7044025157232704,
+        "f1": 0.691358024691358,
+        "support": 159
+      },
+      "hand_close": {
+        "precision": 0.7564102564102564,
+        "recall": 0.7375,
+        "f1": 0.7468354430379747,
+        "support": 160
+      },
+      "wrist_flexion": {
+        "precision": 0.6708074534161491,
+        "recall": 0.675,
+        "f1": 0.6728971962616822,
+        "support": 160
+      },
+      "wrist_extension": {
+        "precision": 0.9936305732484076,
+        "recall": 0.975,
+        "f1": 0.9842271293375394,
+        "support": 160
+      }
+    },
+    "confusion_matrix": [
+      [
+        112,
+        16,
+        31,
+        0
+      ],
+      [
+        21,
+        118,
+        20,
+        1
+      ],
+      [
+        32,
+        20,
+        108,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        156
+      ]
+    ]
+  },
+  "subject_metrics": [
+    {
+      "subject_id": "1",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "11",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.9027777777777778,
+      "balanced_accuracy": 0.9,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1": 0.8333333333333334,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 2,
+      "high_disagreement_count": 4,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "12",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.9494949494949495,
+      "balanced_accuracy": 0.95,
+      "per_class": {
+        "rest": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 1,
+      "high_disagreement_count": 3,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "13",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.46031746031746035,
+      "balanced_accuracy": 0.55,
+      "per_class": {
+        "rest": {
+          "precision": 0.38461538461538464,
+          "recall": 1.0,
+          "f1": 0.5555555555555556,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1": 0.2857142857142857,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 9,
+      "high_disagreement_count": 2,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "14",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.4649122807017544,
+      "balanced_accuracy": 0.55,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333333333333333,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.35714285714285715,
+          "recall": 1.0,
+          "f1": 0.5263157894736842,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 9,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "16",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "17",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.9494949494949495,
+      "balanced_accuracy": 0.95,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 1,
+      "high_disagreement_count": 4,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "18",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.5252747252747253,
+      "balanced_accuracy": 0.55,
+      "per_class": {
+        "rest": {
+          "precision": 0.2,
+          "recall": 0.2,
+          "f1": 0.2,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.5,
+          "recall": 0.8,
+          "f1": 0.6153846153846154,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1": 0.2857142857142857,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 9,
+      "high_disagreement_count": 7,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "19",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.9494949494949495,
+      "balanced_accuracy": 0.95,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 1,
+      "high_disagreement_count": 2,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "2",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.6996753246753247,
+      "balanced_accuracy": 0.7000000000000001,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285714,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "f1": 0.7272727272727273,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.42857142857142855,
+          "recall": 0.6,
+          "f1": 0.5,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 6,
+      "high_disagreement_count": 5,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "20",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.752913752913753,
+      "balanced_accuracy": 0.8,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333333333333333,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.625,
+          "recall": 1.0,
+          "f1": 0.7692307692307693,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 4,
+      "high_disagreement_count": 3,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "22",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "24",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.6666666666666666,
+      "balanced_accuracy": 0.75,
+      "per_class": {
+        "rest": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 5,
+      "high_disagreement_count": 3,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "26",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.8994949494949496,
+      "balanced_accuracy": 0.8999999999999999,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 2,
+      "high_disagreement_count": 5,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "27",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.9494949494949495,
+      "balanced_accuracy": 0.95,
+      "per_class": {
+        "rest": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 1,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "28",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.761904761904762,
+      "balanced_accuracy": 0.8,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.5555555555555556,
+          "recall": 1.0,
+          "f1": 0.7142857142857143,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333333333333333,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 4,
+      "high_disagreement_count": 2,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "29",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.761904761904762,
+      "balanced_accuracy": 0.8,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.5555555555555556,
+          "recall": 1.0,
+          "f1": 0.7142857142857143,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333333333333333,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 4,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "3",
+      "repetition_count": 19,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.9444444444444444,
+      "balanced_accuracy": 0.95,
+      "per_class": {
+        "rest": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.8888888888888888,
+          "support": 4
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 1,
+      "high_disagreement_count": 4,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "30",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.9494949494949495,
+      "balanced_accuracy": 0.95,
+      "per_class": {
+        "rest": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 1,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "31",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.2744360902255639,
+      "balanced_accuracy": 0.35,
+      "per_class": {
+        "rest": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.35714285714285715,
+          "recall": 1.0,
+          "f1": 0.5263157894736842,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285714,
+          "support": 5
+        }
+      },
+      "error_count": 13,
+      "high_disagreement_count": 5,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "32",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.5928571428571429,
+      "balanced_accuracy": 0.65,
+      "per_class": {
+        "rest": {
+          "precision": 0.4444444444444444,
+          "recall": 0.8,
+          "f1": 0.5714285714285714,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 7,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "33",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.375,
+      "balanced_accuracy": 0.5,
+      "per_class": {
+        "rest": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 10,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "34",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.7470238095238095,
+      "balanced_accuracy": 0.75,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285714,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 5,
+      "high_disagreement_count": 3,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "36",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.6284722222222222,
+      "balanced_accuracy": 0.7,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.45454545454545453,
+          "recall": 1.0,
+          "f1": 0.625,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 6,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "37",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.7222222222222222,
+      "balanced_accuracy": 0.75,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333333333333333,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 5,
+      "high_disagreement_count": 2,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "38",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.5845588235294118,
+      "balanced_accuracy": 0.65,
+      "per_class": {
+        "rest": {
+          "precision": 0.4166666666666667,
+          "recall": 1.0,
+          "f1": 0.5882352941176471,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 7,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "39",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.5705128205128205,
+      "balanced_accuracy": 0.65,
+      "per_class": {
+        "rest": {
+          "precision": 0.5714285714285714,
+          "recall": 0.8,
+          "f1": 0.6666666666666666,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.5,
+          "recall": 0.8,
+          "f1": 0.6153846153846154,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 7,
+      "high_disagreement_count": 4,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "4",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.5845588235294118,
+      "balanced_accuracy": 0.65,
+      "per_class": {
+        "rest": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.4166666666666667,
+          "recall": 1.0,
+          "f1": 0.5882352941176471,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 7,
+      "high_disagreement_count": 2,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "5",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.7113997113997114,
+      "balanced_accuracy": 0.75,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333333333333333,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.5555555555555556,
+          "recall": 1.0,
+          "f1": 0.7142857142857143,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        }
+      },
+      "error_count": 5,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "7",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.8958333333333334,
+      "balanced_accuracy": 0.9,
+      "per_class": {
+        "rest": {
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1": 0.8333333333333334,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 2,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "8",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.5926573426573427,
+      "balanced_accuracy": 0.65,
+      "per_class": {
+        "rest": {
+          "precision": 0.375,
+          "recall": 0.6,
+          "f1": 0.46153846153846156,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "error_count": 7,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "9",
+      "repetition_count": 20,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.7936507936507936,
+      "balanced_accuracy": 0.8,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285714,
+          "support": 5
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "wrist_flexion": {
+          "precision": 0.5555555555555556,
+          "recall": 1.0,
+          "f1": 0.7142857142857143,
+          "support": 5
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8888888888888888,
+          "support": 5
+        }
+      },
+      "error_count": 4,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    }
+  ],
+  "subject_summary": {
+    "mean": 0.739404524662966,
+    "median": 0.7499687812187812,
+    "std": 0.19961774541096336,
+    "p10": 0.4709485251590515,
+    "minimum": 0.2744360902255639,
+    "maximum": 1.0,
+    "subject_macro_repetition_macro_f1": 0.739404524662966,
+    "worst_subject_id": "31",
+    "bottom_quartile_subject_ids": [
+      "31",
+      "33",
+      "13",
+      "14",
+      "18",
+      "39",
+      "38",
+      "4"
+    ],
+    "subject_count": 32
+  },
+  "fold_metrics": [
+    {
+      "outer_fold": 0,
+      "macro_f1": 0.7778285724430557,
+      "balanced_accuracy": 0.7785714285714285,
+      "subject_count": 7,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "repetition_count": 140
+    },
+    {
+      "outer_fold": 1,
+      "macro_f1": 0.8587809036658142,
+      "balanced_accuracy": 0.8583333333333334,
+      "subject_count": 6,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "repetition_count": 120
+    },
+    {
+      "outer_fold": 2,
+      "macro_f1": 0.7726560253091745,
+      "balanced_accuracy": 0.7724137931034483,
+      "subject_count": 6,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "repetition_count": 119
+    },
+    {
+      "outer_fold": 3,
+      "macro_f1": 0.8348654034137906,
+      "balanced_accuracy": 0.8333333333333333,
+      "subject_count": 6,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "repetition_count": 120
+    },
+    {
+      "outer_fold": 4,
+      "macro_f1": 0.6485991629853523,
+      "balanced_accuracy": 0.6428571428571428,
+      "subject_count": 7,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "repetition_count": 140
+    }
+  ],
+  "fold_summary": {
+    "mean": 0.7785460135634374,
+    "median": 0.7778285724430557,
+    "std": 0.08144154640203043,
+    "p10": 0.6982219079148811,
+    "minimum": 0.6485991629853523,
+    "maximum": 0.8587809036658142
+  },
+  "repetition_count": 639,
+  "invalid_repetition_count": 0
+}

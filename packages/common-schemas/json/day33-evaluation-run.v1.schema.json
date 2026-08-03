@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mode",
+    "sealed_test_rows_read"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "day33-evaluation-run.v1"
+    },
+    "sealed_test_rows_read": {
+      "const": 0
+    },
+    "pooled_evaluation_executed": {
+      "const": false
+    },
+    "synthetic_results_are_benchmark": {
+      "const": false
+    }
+  }
+}

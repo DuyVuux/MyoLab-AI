@@ -1,0 +1,12 @@
+{
+  "schema_version": "day33-failure-summary.v1",
+  "failure_case_count": 179,
+  "reason_code_counts": {
+    "HIGH_WINDOW_DISAGREEMENT": 68,
+    "MISCLASSIFIED_REPETITION": 145,
+    "SYSTEMATIC_CLASS_CONFUSION": 84
+  },
+  "review_status_counts": {
+    "UNREVIEWED": 179
+  }
+}

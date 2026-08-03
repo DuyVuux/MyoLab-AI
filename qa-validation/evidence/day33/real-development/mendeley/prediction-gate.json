@@ -1,0 +1,24 @@
+{
+  "schema_version": "day33-prediction-gate.v1",
+  "pass": true,
+  "errors": [],
+  "row_count": 37657,
+  "dataset_ids": [
+    "mendeley-4channel-hand-gesture-v2"
+  ],
+  "split_counts": {
+    "development_outer_validation": 37657
+  },
+  "score_types": [
+    "label_only"
+  ],
+  "unique_window_count": 37657,
+  "repetition_count": 639,
+  "hash_counts": {
+    "source_matrix_sha256": 1,
+    "fold_manifest_sha256": 1,
+    "model_config_sha256": 1
+  },
+  "sealed_test_rows_read": 0,
+  "pooled_evaluation_executed": false
+}

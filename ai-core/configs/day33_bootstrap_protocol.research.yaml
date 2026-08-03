@@ -1,0 +1,8 @@
+schema_version: day33-bootstrap-protocol.v1
+cluster_unit: subject_id
+random_state: 3301
+smoke_iterations: 500
+full_iterations: 2000
+confidence_level: 0.95
+interval: percentile
+window_bootstrap_allowed: false

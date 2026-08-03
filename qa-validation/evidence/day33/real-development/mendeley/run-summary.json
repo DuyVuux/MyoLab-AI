@@ -1,0 +1,23 @@
+{
+  "schema_version": "day33-evaluation-run.v1",
+  "mode": "REAL_DEVELOPMENT_EVALUATION",
+  "dataset_ids": [
+    "mendeley-4channel-hand-gesture-v2"
+  ],
+  "run_ids": [
+    "day32-baseline-v1"
+  ],
+  "prediction_rows": 37657,
+  "repetition_rows": 639,
+  "subject_count": 32,
+  "primary_metric": 0.739404524662966,
+  "bootstrap_ci": [
+    0.6673190998904374,
+    0.8018712751709076
+  ],
+  "failure_case_count": 179,
+  "sealed_test_rows_read": 0,
+  "pooled_evaluation_executed": false,
+  "synthetic_results_are_benchmark": false,
+  "fatigue_inference_allowed": false
+}

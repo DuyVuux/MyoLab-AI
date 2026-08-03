@@ -1,0 +1,9 @@
+{
+  "schema_version": "day33-aggregation-audit.v1",
+  "input_prediction_rows": 2856,
+  "output_repetition_rows": 2856,
+  "aggregation_methods": [
+    "mean_decision_function"
+  ],
+  "sealed_test_rows_read": 0
+}

@@ -1,0 +1,22 @@
+{
+  "mean": 0.9816861560713922,
+  "median": 1.0,
+  "std": 0.03824694918668737,
+  "p10": 0.9432988350322447,
+  "minimum": 0.8125,
+  "maximum": 1.0,
+  "subject_macro_repetition_macro_f1": 0.9816861560713922,
+  "worst_subject_id": "20",
+  "bottom_quartile_subject_ids": [
+    "20",
+    "14",
+    "24",
+    "39",
+    "17",
+    "15",
+    "5",
+    "11",
+    "2"
+  ],
+  "subject_count": 34
+}

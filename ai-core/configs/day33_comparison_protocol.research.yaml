@@ -1,0 +1,12 @@
+schema_version: day33-comparison-protocol.v1
+predeclared_model_pairs:
+  - [lda_shrinkage, logistic_regression]
+  - [lda_shrinkage, linear_svm]
+  - [lda_shrinkage, random_forest]
+  - [logistic_regression, linear_svm]
+  - [logistic_regression, random_forest]
+  - [linear_svm, random_forest]
+predeclared_feature_pairs:
+  - [F-TD8, F-ALL14]
+cross_dataset_direct_ranking_allowed: false
+winner_claim_allowed: false

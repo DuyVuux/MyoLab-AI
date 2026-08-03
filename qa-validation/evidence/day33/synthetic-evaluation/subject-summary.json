@@ -1,0 +1,15 @@
+{
+  "mean": 0.9666666666666667,
+  "median": 1.0,
+  "std": 0.06172133998483675,
+  "p10": 0.8666666666666667,
+  "minimum": 0.8666666666666667,
+  "maximum": 1.0,
+  "subject_macro_repetition_macro_f1": 0.9666666666666667,
+  "worst_subject_id": "S03",
+  "bottom_quartile_subject_ids": [
+    "S03",
+    "S07"
+  ],
+  "subject_count": 8
+}

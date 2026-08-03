@@ -1,0 +1,68 @@
+{
+  "schema_version": "grabmyo-validation-metrics.v1",
+  "created_at_utc": "2026-08-03T09:12:43.705992+00:00",
+  "selected_candidate_id": "F-ALL14__linear_svm",
+  "window": {
+    "accuracy": 0.966655643738977,
+    "balanced_accuracy": 0.966655643738977,
+    "macro_f1": 0.9666477883204774,
+    "weighted_f1": 0.9666477883204774,
+    "macro_precision": 0.9669190658703838,
+    "macro_recall": 0.966655643738977,
+    "cohen_kappa": 0.9555408583186361
+  },
+  "trial": {
+    "accuracy": 0.9880952380952381,
+    "balanced_accuracy": 0.9880952380952381,
+    "macro_f1": 0.9880755734928758,
+    "weighted_f1": 0.9880755734928759,
+    "macro_precision": 0.9882703420711658,
+    "macro_recall": 0.9880952380952381,
+    "cohen_kappa": 0.9841269841269842
+  },
+  "trial_classification_report": {
+    "rest": {
+      "precision": 0.9894736842105263,
+      "recall": 0.9947089947089947,
+      "f1-score": 0.9920844327176781,
+      "support": 189.0
+    },
+    "hand_close": {
+      "precision": 0.994535519125683,
+      "recall": 0.9629629629629629,
+      "f1-score": 0.978494623655914,
+      "support": 189.0
+    },
+    "wrist_flexion": {
+      "precision": 0.9690721649484536,
+      "recall": 0.9947089947089947,
+      "f1-score": 0.9817232375979112,
+      "support": 189.0
+    },
+    "wrist_extension": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 189.0
+    },
+    "accuracy": 0.9880952380952381,
+    "macro avg": {
+      "precision": 0.9882703420711657,
+      "recall": 0.9880952380952381,
+      "f1-score": 0.9880755734928759,
+      "support": 756.0
+    },
+    "weighted avg": {
+      "precision": 0.9882703420711657,
+      "recall": 0.9880952380952381,
+      "f1-score": 0.9880755734928759,
+      "support": 756.0
+    }
+  },
+  "validation_subject_count": 9,
+  "validation_window_count": 36288,
+  "validation_trial_count": 756,
+  "low_coverage_trials": 0,
+  "refit_seconds": 412.46405391400094,
+  "validation_open_count": 1
+}

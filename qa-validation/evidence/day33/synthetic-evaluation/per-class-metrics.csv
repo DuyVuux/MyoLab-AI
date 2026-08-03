@@ -1,0 +1,5 @@
+class_label,precision,recall,f1,support
+rest,1.0,1.0,1.0,16
+hand_close,0.8888888888888888,1.0,0.9411764705882353,16
+wrist_flexion,1.0,0.875,0.9333333333333333,16
+wrist_extension,1.0,1.0,1.0,16

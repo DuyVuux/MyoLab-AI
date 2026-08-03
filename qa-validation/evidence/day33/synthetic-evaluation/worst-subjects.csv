@@ -1,0 +1,9 @@
+subject_id,repetition_count,class_coverage,macro_f1,balanced_accuracy,error_count,high_disagreement_count,high_confidence_error_count
+S03,8,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",0.8666666666666667,0.875,1,1,0
+S07,8,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",0.8666666666666667,0.875,1,1,0
+S01,8,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",1.0,1.0,0,0,0
+S02,8,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",1.0,1.0,0,0,0
+S04,8,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",1.0,1.0,0,0,0
+S05,8,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",1.0,1.0,0,0,0
+S06,8,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",1.0,1.0,0,0,0
+S08,8,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",1.0,1.0,0,0,0

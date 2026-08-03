@@ -1,0 +1,30 @@
+{
+  "schema_version": "grabmyo-model-selection.v1",
+  "created_at_utc": "2026-08-03T08:35:10.006091+00:00",
+  "selection_metric": "OOF trial-level macro-F1 from subject-grouped CV",
+  "tie_breakers": [
+    "OOF trial balanced accuracy",
+    "OOF window macro-F1"
+  ],
+  "selected_candidate_id": "F-ALL14__linear_svm",
+  "selected_feature_arm": "F-ALL14",
+  "selected_model_name": "linear_svm",
+  "selected_feature_dimension": 224,
+  "selected_cv_metrics": {
+    "rank": 1,
+    "candidate_id": "F-ALL14__linear_svm",
+    "feature_arm": "F-ALL14",
+    "model_name": "linear_svm",
+    "feature_dimension": 224,
+    "oof_window_macro_f1": 0.9470826269493727,
+    "oof_window_balanced_accuracy": 0.9471288515406163,
+    "oof_trial_macro_f1": 0.9824917282762433,
+    "oof_trial_balanced_accuracy": 0.9824929971988796,
+    "oof_trial_accuracy": 0.9824929971988795,
+    "mean_fold_trial_macro_f1": 0.9829642676947087,
+    "std_fold_trial_macro_f1": 0.010144240856036364,
+    "elapsed_seconds": 1806.238916873
+  },
+  "validation_used_for_selection": false,
+  "hyperparameter_tuning_allowed": false
+}

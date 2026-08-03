@@ -1,0 +1,5 @@
+true_label,rest,hand_close,wrist_flexion,wrist_extension
+rest,188,0,1,0
+hand_close,2,182,5,0
+wrist_flexion,0,1,188,0
+wrist_extension,0,0,0,189

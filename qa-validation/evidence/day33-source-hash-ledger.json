@@ -1,0 +1,110 @@
+{
+  "schema_version": "day33-source-hash-ledger.v1",
+  "artifacts": [
+    {
+      "path": "DAY33_KE_HOACH_EVALUATION_ERROR_ANALYSIS_FINAL.md",
+      "sha256": "a6b480ad2b466ff2b9a9a8614458500d2db05b8a1fb33e32d2aa81f7c41119cc",
+      "bytes": 12522
+    },
+    {
+      "path": "docs/plans/DAY33_EXECUTION_PLAN.md",
+      "sha256": "a6b480ad2b466ff2b9a9a8614458500d2db05b8a1fb33e32d2aa81f7c41119cc",
+      "bytes": 12522
+    },
+    {
+      "path": "docs/07-evaluation/day33/11-day33-results-summary.md",
+      "sha256": "d9e2418beb3466d3c76fb62fa61aade28b08d497b1fca1a9dd776acde77b8ee7",
+      "bytes": 2075
+    },
+    {
+      "path": "ai-core/evaluation/day33/contracts.py",
+      "sha256": "06ebfce4b429e2533bf5bf785fa17187cd86f41785131f2a753b72a9d43513ac",
+      "bytes": 1098
+    },
+    {
+      "path": "ai-core/evaluation/day33/prediction_gate.py",
+      "sha256": "b37055a46905f7d8463cb1394392ebe17de767be165915544f622e11f57e7f34",
+      "bytes": 4772
+    },
+    {
+      "path": "ai-core/evaluation/day33/aggregation.py",
+      "sha256": "b6987d6a615352d689cc92ca1591d9d31d4a18c84b680461e4a913a5b701d674",
+      "bytes": 4174
+    },
+    {
+      "path": "ai-core/evaluation/day33/metrics.py",
+      "sha256": "edd482d32a808503a1a37d01385f6d9f4a0dac23b0dbebb52fd7311f3ecf67e9",
+      "bytes": 5890
+    },
+    {
+      "path": "ai-core/evaluation/day33/bootstrap.py",
+      "sha256": "d214cd67dd4e10cfd8a9bd1d7d183a5a44ab2d174d448d94ebe9d4c8e1e5f779",
+      "bytes": 1390
+    },
+    {
+      "path": "ai-core/evaluation/day33/failure_cases.py",
+      "sha256": "27f9e9c1fbb7a7f59d0006724918fb579ac87c0130f9c8313c33ed2ea7c42fce",
+      "bytes": 3489
+    },
+    {
+      "path": "ai-core/evaluation/day33/cross_day.py",
+      "sha256": "6856e4004a5d06f1dc0e31f630e4ad549701e69da05f6ac610a569971f73e168",
+      "bytes": 1417
+    },
+    {
+      "path": "ai-core/evaluation/day33/day32_adapters.py",
+      "sha256": "d827f4554ed6e2017c5916e58b1433d493712a829e7c444c89071ee8ce73b00c",
+      "bytes": 5884
+    },
+    {
+      "path": "ai-core/pipelines/day33_build_prediction_contract.py",
+      "sha256": "0d3540ed172a4fcc4807a0569f2f129e41f87637c57b959102c0f402981ca77d",
+      "bytes": 1422
+    },
+    {
+      "path": "ai-core/pipelines/day33_run_evaluation.py",
+      "sha256": "993cd738964a6cbb15479aff4e8d1f39e9270445cb99bc923369e2d873629d13",
+      "bytes": 4739
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day33.py",
+      "sha256": "4ed56463730359b7bcaa575185a5334cc22838def0ecf19fc67c53636ca63d2a",
+      "bytes": 4253
+    },
+    {
+      "path": "scripts/dev/run_day33_checks.sh",
+      "sha256": "5c78430712f9106a52b8182da6e53d7c7b9cb021212a83718433f4e4cd8addf2",
+      "bytes": 2477
+    },
+    {
+      "path": "qa-validation/evidence/day33/synthetic-evaluation/run-summary.json",
+      "sha256": "72f79e3f510d753f21c4adfdbdbbef6d5a80d3bdf2ebbcfdfd0b8bb7bbf98402",
+      "bytes": 543
+    },
+    {
+      "path": "qa-validation/evidence/day33/real-development/mendeley/run-summary.json",
+      "sha256": "8249d0c219ece1c8c0a37bfd689e3518bbd10582314de8648044b74c8b3b14a1",
+      "bytes": 567
+    },
+    {
+      "path": "qa-validation/evidence/day33/real-development/grabmyo/run-summary.json",
+      "sha256": "5f54cce84c95ff103f10d47c7d8ffd54d5d04928ee92f73eac43d1a1bbcb365b",
+      "bytes": 569
+    },
+    {
+      "path": "qa-validation/evidence/day33/input-day32/mendeley-day32-input-ledger.json",
+      "sha256": "99623ff787ae79a36a192b7af903e320aca30d1472f899a0e09a16d3a7b87fa9",
+      "bytes": 463
+    },
+    {
+      "path": "qa-validation/evidence/day33/input-day32/grabmyo-day32-input-ledger.json",
+      "sha256": "e76585a613f6ac09728a9dbf2c8a50daf7ee6afc2304b9e0d327ea1e1e9b6fee",
+      "bytes": 484
+    },
+    {
+      "path": "qa-validation/evidence/day33-check-run.log",
+      "sha256": "84413849f59c8b6f11e81e9cb5289460664030c83e6b31fe85c4ed001c828ee1",
+      "bytes": 4443
+    }
+  ]
+}

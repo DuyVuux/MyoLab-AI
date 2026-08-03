@@ -1,0 +1,461 @@
+{
+  "schema_version": "day33-evaluation-result.v1",
+  "class_order": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "repetition_metrics": {
+    "macro_f1": 0.9686274509803922,
+    "balanced_accuracy": 0.96875,
+    "per_class": {
+      "rest": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 16
+      },
+      "hand_close": {
+        "precision": 0.8888888888888888,
+        "recall": 1.0,
+        "f1": 0.9411764705882353,
+        "support": 16
+      },
+      "wrist_flexion": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "support": 16
+      },
+      "wrist_extension": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 16
+      }
+    },
+    "confusion_matrix": [
+      [
+        16,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        16,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        14,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        16
+      ]
+    ]
+  },
+  "subject_metrics": [
+    {
+      "subject_id": "S01",
+      "repetition_count": 8,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "S02",
+      "repetition_count": 8,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "S03",
+      "repetition_count": 8,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.8666666666666667,
+      "balanced_accuracy": 0.875,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "hand_close": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "support": 2
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "error_count": 1,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "S04",
+      "repetition_count": 8,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "S05",
+      "repetition_count": 8,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "S06",
+      "repetition_count": 8,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "S07",
+      "repetition_count": 8,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 0.8666666666666667,
+      "balanced_accuracy": 0.875,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "hand_close": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "support": 2
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "error_count": 1,
+      "high_disagreement_count": 1,
+      "high_confidence_error_count": 0
+    },
+    {
+      "subject_id": "S08",
+      "repetition_count": 8,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "per_class": {
+        "rest": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "hand_close": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_flexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "wrist_extension": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "error_count": 0,
+      "high_disagreement_count": 0,
+      "high_confidence_error_count": 0
+    }
+  ],
+  "subject_summary": {
+    "mean": 0.9666666666666667,
+    "median": 1.0,
+    "std": 0.06172133998483675,
+    "p10": 0.8666666666666667,
+    "minimum": 0.8666666666666667,
+    "maximum": 1.0,
+    "subject_macro_repetition_macro_f1": 0.9666666666666667,
+    "worst_subject_id": "S03",
+    "bottom_quartile_subject_ids": [
+      "S03",
+      "S07"
+    ],
+    "subject_count": 8
+  },
+  "fold_metrics": [
+    {
+      "outer_fold": 0,
+      "macro_f1": 0.9365079365079365,
+      "balanced_accuracy": 0.9375,
+      "subject_count": 2,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "repetition_count": 16
+    },
+    {
+      "outer_fold": 1,
+      "macro_f1": 0.958041958041958,
+      "balanced_accuracy": 0.9583333333333334,
+      "subject_count": 3,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "repetition_count": 24
+    },
+    {
+      "outer_fold": 2,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "subject_count": 3,
+      "class_coverage": [
+        "hand_close",
+        "rest",
+        "wrist_extension",
+        "wrist_flexion"
+      ],
+      "repetition_count": 24
+    }
+  ],
+  "fold_summary": {
+    "mean": 0.9648499648499649,
+    "median": 0.958041958041958,
+    "std": 0.03228888739401616,
+    "p10": 0.9408147408147408,
+    "minimum": 0.9365079365079365,
+    "maximum": 1.0
+  },
+  "repetition_count": 64,
+  "invalid_repetition_count": 0
+}

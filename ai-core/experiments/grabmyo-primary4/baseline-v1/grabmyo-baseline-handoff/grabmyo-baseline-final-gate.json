@@ -1,0 +1,20 @@
+{
+  "schema_version": "grabmyo-baseline-final-gate.v1",
+  "created_at_utc": "2026-08-03T09:12:47.538340+00:00",
+  "status": "PASS",
+  "checks": {
+    "input_gate_pass": true,
+    "subject_split_disjoint": true,
+    "cv_group_key_subject": true,
+    "selected_without_validation": true,
+    "validation_open_count_one": true,
+    "model_artifact_exists": true,
+    "finite_validation_scores": true,
+    "test_set_opened": false,
+    "pooled_training_allowed": false,
+    "clinical_use_allowed": false
+  },
+  "selected_candidate_id": "F-ALL14__linear_svm",
+  "validation_trial_macro_f1": 0.9880755734928758,
+  "validation_window_macro_f1": 0.9666477883204774
+}

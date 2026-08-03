@@ -1,0 +1,13 @@
+schema_version: day33-evaluation-protocol.v1
+status: READY_FOR_GATED_EXECUTION
+primary_metric: subject_macro_repetition_macro_f1
+sealed_test_access_allowed: false
+pooled_evaluation_allowed: false
+synthetic_results_are_benchmark: false
+allowed_splits: [validation, development_outer_validation]
+forbidden_splits: [test, sealed_test, outer_test]
+aggregation_priority:
+  - mean_probability
+  - mean_decision_function
+  - deterministic_majority_vote
+confusion_matrix: {rows: true_class, columns: predicted_class}

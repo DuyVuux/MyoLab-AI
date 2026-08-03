@@ -1,0 +1,14 @@
+schema_version: day33-execution-authorization.v1
+status: NOT_AUTHORIZED_TEMPLATE
+real_evaluation_allowed: false
+synthetic_tooling_allowed: true
+sealed_test_access_allowed: false
+pooled_evaluation_allowed: false
+day33_authorization_present: false
+required_inputs:
+  day32_commit_closed: false
+  prediction_inventory_present: false
+  prediction_hashes_verified: false
+  fold_manifest_hashes_verified: false
+  matrix_hashes_verified: false
+  prediction_gate_passed: false

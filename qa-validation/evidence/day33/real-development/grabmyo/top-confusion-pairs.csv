@@ -1,0 +1,8 @@
+y_true,y_pred,error_count
+wrist_flexion,hand_close,20
+hand_close,wrist_flexion,11
+wrist_extension,wrist_flexion,7
+hand_close,rest,6
+hand_close,wrist_extension,3
+rest,wrist_flexion,2
+wrist_extension,rest,1

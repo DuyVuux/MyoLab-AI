@@ -1,0 +1,6 @@
+outer_fold,macro_f1,balanced_accuracy,subject_count,class_coverage,repetition_count
+0,0.7778285724430557,0.7785714285714285,7,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",140
+1,0.8587809036658142,0.8583333333333334,6,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",120
+2,0.7726560253091745,0.7724137931034483,6,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",119
+3,0.8348654034137906,0.8333333333333333,6,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",120
+4,0.6485991629853523,0.6428571428571428,7,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",140

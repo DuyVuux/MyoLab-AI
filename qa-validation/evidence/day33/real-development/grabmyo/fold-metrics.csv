@@ -1,0 +1,2 @@
+outer_fold,macro_f1,balanced_accuracy,subject_count,class_coverage,repetition_count
+0,0.9824917282762433,0.9824929971988796,34,"[""hand_close"", ""rest"", ""wrist_extension"", ""wrist_flexion""]",2856

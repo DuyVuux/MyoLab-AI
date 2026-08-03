@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "cluster_unit",
+    "iterations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "day33-subject-cluster-bootstrap.v1"
+    },
+    "cluster_unit": {
+      "const": "subject_id"
+    },
+    "window_bootstrap_used": {
+      "const": false
+    }
+  }
+}

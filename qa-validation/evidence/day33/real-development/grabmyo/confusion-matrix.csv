@@ -1,0 +1,17 @@
+y_true,y_pred,count
+rest,rest,712
+rest,hand_close,0
+rest,wrist_flexion,2
+rest,wrist_extension,0
+hand_close,rest,6
+hand_close,hand_close,694
+hand_close,wrist_flexion,11
+hand_close,wrist_extension,3
+wrist_flexion,rest,0
+wrist_flexion,hand_close,20
+wrist_flexion,wrist_flexion,694
+wrist_flexion,wrist_extension,0
+wrist_extension,rest,1
+wrist_extension,hand_close,0
+wrist_extension,wrist_flexion,7
+wrist_extension,wrist_extension,706

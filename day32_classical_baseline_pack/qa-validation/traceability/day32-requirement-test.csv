@@ -1,7 +1,0 @@
-requirement,test
-Exact core model set,test_day32_models.py
-No pooled matrix,test_day32_matrix_gate.py
-No group leakage,test_day32_grouped_cv.py
-Authorization fail-closed,test_day32_authorization.py
-Repetition aggregation,test_day32_aggregation.py
-Core gate,test_day32_core_gate.py

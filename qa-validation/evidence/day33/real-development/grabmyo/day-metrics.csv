@@ -1,0 +1,4 @@
+model_id,feature_arm,day_id,session_id,macro_f1,balanced_accuracy,per_class_recall,subject_count,repetition_count,fatigue_inference_allowed
+linear_svm,F-ALL14,D1,1,0.9810960583528618,0.98109243697479,"{""hand_close"": 0.9831932773109243, ""rest"": 1.0, ""wrist_extension"": 0.9705882352941176, ""wrist_flexion"": 0.9705882352941176}",34,952,False
+linear_svm,F-ALL14,D2,2,0.981056727875508,0.98109243697479,"{""hand_close"": 0.957983193277311, ""rest"": 0.9957983193277311, ""wrist_extension"": 1.0, ""wrist_flexion"": 0.9705882352941176}",34,952,False
+linear_svm,F-ALL14,D3,3,0.9852872982584551,0.9852941176470589,"{""hand_close"": 0.9747899159663865, ""rest"": 0.9957983193277311, ""wrist_extension"": 0.9957983193277311, ""wrist_flexion"": 0.9747899159663865}",34,952,False

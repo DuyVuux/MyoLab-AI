@@ -1,0 +1,27 @@
+{
+  "schema_version": "grabmyo-etl-final-gate.v1.1",
+  "created_at_utc": "2026-08-03T06:52:01.037030+00:00",
+  "status": "PASS",
+  "run_mode": "FULL",
+  "checks": {
+    "all_active_records_processed": true,
+    "window_population_reconciled": true,
+    "finite_feature_matrix": true,
+    "feature_dimension_correct": true,
+    "subject_split_disjoint": true,
+    "no_duplicate_window_ids": true,
+    "raw_zip_not_downloaded": true,
+    "raw_records_not_persisted": true
+  },
+  "counts": {
+    "duplicate_window_id_count": 0,
+    "active_expected_records": 3612,
+    "processed_records": 3612,
+    "active_expected_windows": 173376,
+    "valid_windows": 173376,
+    "excluded_windows": 0
+  },
+  "npz_sha256": "cbd4e0f7203d85c7acb81ea985b436675eb451022fcd11bacb6f3d0433f5a197",
+  "fully_excluded_record_ids": [],
+  "partially_excluded_record_ids": []
+}

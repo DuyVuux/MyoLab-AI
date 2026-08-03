@@ -1,0 +1,23 @@
+{
+  "schema_version": "day33-evaluation-run.v1",
+  "mode": "TOOLING_VALIDATION",
+  "dataset_ids": [
+    "synthetic-day33-mendeley-like"
+  ],
+  "run_ids": [
+    "synthetic-logistic-F-ALL14"
+  ],
+  "prediction_rows": 256,
+  "repetition_rows": 64,
+  "subject_count": 8,
+  "primary_metric": 0.9666666666666667,
+  "bootstrap_ci": [
+    0.9333333333333333,
+    1.0
+  ],
+  "failure_case_count": 9,
+  "sealed_test_rows_read": 0,
+  "pooled_evaluation_executed": false,
+  "synthetic_results_are_benchmark": false,
+  "fatigue_inference_allowed": false
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "day33-subject-cluster-bootstrap.v1",
+  "cluster_unit": "subject_id",
+  "iterations": 500,
+  "seed": 3301,
+  "point_estimate": 0.739404524662966,
+  "ci_low": 0.6673190998904374,
+  "ci_high": 0.8018712751709076,
+  "window_bootstrap_used": false
+}

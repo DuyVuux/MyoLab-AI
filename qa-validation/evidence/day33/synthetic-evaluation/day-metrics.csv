@@ -1,0 +1,2 @@
+model_id,feature_arm,day_id,session_id,macro_f1,balanced_accuracy,per_class_recall,subject_count,repetition_count,fatigue_inference_allowed
+logistic_regression,F-ALL14,D1,SE1,0.9686274509803922,0.96875,"{""hand_close"": 1.0, ""rest"": 1.0, ""wrist_extension"": 1.0, ""wrist_flexion"": 0.875}",8,64,False

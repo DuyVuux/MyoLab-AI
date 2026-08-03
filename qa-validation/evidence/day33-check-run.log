@@ -1,0 +1,26 @@
++ env PYTHONDONTWRITEBYTECODE=1 python3 -m compileall -q -f ai-core/evaluation/day33 ai-core/pipelines/day33_build_prediction_contract.py ai-core/pipelines/day33_run_evaluation.py
++ ./.venv/bin/python -m ruff check ai-core/evaluation/day33 ai-core/pipelines/day33_build_prediction_contract.py ai-core/pipelines/day33_run_evaluation.py qa-validation/automated-tests/test_day33.py
+All checks passed!
++ python3 scripts/dev/check_day33_artifacts.py
+{
+  "schema_version": "day33-artifact-check.v1",
+  "missing": [],
+  "prohibited_artifacts": [],
+  "pass": true
+}
++ python3 scripts/data/day33_generate_synthetic_predictions.py
+/data/projects/semg-fatigue/MyoLab-AI/qa-validation/fixtures/day33-synthetic-window-predictions.csv
++ python3 ai-core/pipelines/day33_validate_predictions.py --predictions qa-validation/fixtures/day33-synthetic-window-predictions.csv --output qa-validation/evidence/day33/day33-synthetic-prediction-gate.json
+{'schema_version': 'day33-prediction-gate.v1', 'pass': True, 'errors': [], 'row_count': 256, 'dataset_ids': ['synthetic-day33-mendeley-like'], 'split_counts': {'development_outer_validation': 256}, 'score_types': ['probability'], 'unique_window_count': 256, 'repetition_count': 64, 'hash_counts': {'source_matrix_sha256': 1, 'fold_manifest_sha256': 1, 'model_config_sha256': 1}, 'sealed_test_rows_read': 0, 'pooled_evaluation_executed': False}
++ python3 ai-core/pipelines/day33_run_evaluation.py --predictions qa-validation/fixtures/day33-synthetic-window-predictions.csv --output-dir qa-validation/evidence/day33/synthetic-evaluation --bootstrap-iterations 200
+{'schema_version': 'day33-evaluation-run.v1', 'mode': 'TOOLING_VALIDATION', 'dataset_ids': ['synthetic-day33-mendeley-like'], 'run_ids': ['synthetic-logistic-F-ALL14'], 'prediction_rows': 256, 'repetition_rows': 64, 'subject_count': 8, 'primary_metric': 0.9666666666666667, 'bootstrap_ci': [0.9333333333333333, 1.0], 'failure_case_count': 9, 'sealed_test_rows_read': 0, 'pooled_evaluation_executed': False, 'synthetic_results_are_benchmark': False, 'fatigue_inference_allowed': False}
++ python3 ai-core/pipelines/day33_build_prediction_contract.py --source-kind mendeley-day32-oof --source ai-core/experiments/mendeley-primary/day32-baseline-v1 --output qa-validation/evidence/day33/predictions/mendeley-day32-oof-window-contract.csv --ledger qa-validation/evidence/day33/input-day32/mendeley-day32-input-ledger.json
++ python3 ai-core/pipelines/day33_run_evaluation.py --predictions qa-validation/evidence/day33/predictions/mendeley-day32-oof-window-contract.csv --output-dir qa-validation/evidence/day33/real-development/mendeley --bootstrap-iterations 500
+{'schema_version': 'day33-evaluation-run.v1', 'mode': 'REAL_DEVELOPMENT_EVALUATION', 'dataset_ids': ['mendeley-4channel-hand-gesture-v2'], 'run_ids': ['day32-baseline-v1'], 'prediction_rows': 37657, 'repetition_rows': 639, 'subject_count': 32, 'primary_metric': 0.739404524662966, 'bootstrap_ci': [0.6673190998904374, 0.8018712751709076], 'failure_case_count': 179, 'sealed_test_rows_read': 0, 'pooled_evaluation_executed': False, 'synthetic_results_are_benchmark': False, 'fatigue_inference_allowed': False}
++ python3 ai-core/pipelines/day33_build_prediction_contract.py --source-kind grabmyo-day32-oof --source ai-core/experiments/grabmyo-primary4/baseline-v1/grabmyo-baseline-handoff.zip --output qa-validation/evidence/day33/predictions/grabmyo-day32-oof-trial-contract.csv --ledger qa-validation/evidence/day33/input-day32/grabmyo-day32-input-ledger.json
++ python3 ai-core/pipelines/day33_run_evaluation.py --predictions qa-validation/evidence/day33/predictions/grabmyo-day32-oof-trial-contract.csv --output-dir qa-validation/evidence/day33/real-development/grabmyo --bootstrap-iterations 500
+{'schema_version': 'day33-evaluation-run.v1', 'mode': 'REAL_DEVELOPMENT_EVALUATION', 'dataset_ids': ['grabmyo-physionet-v1.1.0'], 'run_ids': ['grabmyo-primary4-baseline-v1'], 'prediction_rows': 2856, 'repetition_rows': 2856, 'subject_count': 34, 'primary_metric': 0.9816861560713922, 'bootstrap_ci': [0.9671839472264403, 0.9933168084855916], 'failure_case_count': 50, 'sealed_test_rows_read': 0, 'pooled_evaluation_executed': False, 'synthetic_results_are_benchmark': False, 'fatigue_inference_allowed': False}
++ python3 -m pytest -q qa-validation/automated-tests/test_day33.py
+.............                                                            [100%]
+13 passed in 2.66s
+DAY33_CHECKS_PASS

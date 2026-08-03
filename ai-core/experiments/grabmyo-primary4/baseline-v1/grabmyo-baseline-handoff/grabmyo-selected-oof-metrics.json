@@ -1,0 +1,21 @@
+{
+  "window": {
+    "accuracy": 0.9471288515406162,
+    "balanced_accuracy": 0.9471288515406163,
+    "macro_f1": 0.9470826269493727,
+    "weighted_f1": 0.9470826269493726,
+    "macro_precision": 0.9480131093158958,
+    "macro_recall": 0.9471288515406163,
+    "cohen_kappa": 0.9295051353874884
+  },
+  "trial": {
+    "accuracy": 0.9824929971988795,
+    "balanced_accuracy": 0.9824929971988796,
+    "macro_f1": 0.9824917282762433,
+    "weighted_f1": 0.9824917282762433,
+    "macro_precision": 0.9825026338101932,
+    "macro_recall": 0.9824929971988796,
+    "cohen_kappa": 0.976657329598506
+  },
+  "low_coverage_trials": 0
+}

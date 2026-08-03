@@ -1,0 +1,15 @@
+{
+  "schema_version": "day33-day32-input-ledger.v1",
+  "source_kind": "mendeley-day32-oof",
+  "source": "ai-core/experiments/mendeley-primary/day32-baseline-v1",
+  "output": "qa-validation/evidence/day33/predictions/mendeley-day32-oof-window-contract.csv",
+  "prediction_rows": 37657,
+  "dataset_ids": [
+    "mendeley-4channel-hand-gesture-v2"
+  ],
+  "run_ids": [
+    "day32-baseline-v1"
+  ],
+  "sealed_test_rows_read": 0,
+  "pooled_evaluation_executed": false
+}

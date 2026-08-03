@@ -1,0 +1,24 @@
+{
+  "schema_version": "day33-prediction-gate.v1",
+  "pass": true,
+  "errors": [],
+  "row_count": 256,
+  "dataset_ids": [
+    "synthetic-day33-mendeley-like"
+  ],
+  "split_counts": {
+    "development_outer_validation": 256
+  },
+  "score_types": [
+    "probability"
+  ],
+  "unique_window_count": 256,
+  "repetition_count": 64,
+  "hash_counts": {
+    "source_matrix_sha256": 1,
+    "fold_manifest_sha256": 1,
+    "model_config_sha256": 1
+  },
+  "sealed_test_rows_read": 0,
+  "pooled_evaluation_executed": false
+}
