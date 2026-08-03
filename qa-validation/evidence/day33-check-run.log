@@ -22,5 +22,5 @@ All checks passed!
 {'schema_version': 'day33-evaluation-run.v1', 'mode': 'REAL_DEVELOPMENT_EVALUATION', 'dataset_ids': ['grabmyo-physionet-v1.1.0'], 'run_ids': ['grabmyo-primary4-baseline-v1'], 'prediction_rows': 2856, 'repetition_rows': 2856, 'subject_count': 34, 'primary_metric': 0.9816861560713922, 'bootstrap_ci': [0.9671839472264403, 0.9933168084855916], 'failure_case_count': 50, 'sealed_test_rows_read': 0, 'pooled_evaluation_executed': False, 'synthetic_results_are_benchmark': False, 'fatigue_inference_allowed': False}
 + python3 -m pytest -q qa-validation/automated-tests/test_day33.py
 .............                                                            [100%]
-13 passed in 2.66s
+13 passed in 4.08s
 DAY33_CHECKS_PASS
