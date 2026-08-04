@@ -1,0 +1,20 @@
+{
+  "schema_version": "taskc-sensitivity-report.v2",
+  "created_at_utc": "2026-08-04T08:42:33.474293+00:00",
+  "epsilon_values_reviewed": [
+    1e-12,
+    1e-09,
+    1e-06
+  ],
+  "window_independence_claim": false,
+  "repetition_aggregation": "median",
+  "scaler_fit_partition": "train_only",
+  "universal_similarity_threshold": null,
+  "co_contraction_status": "NOT_ELIGIBLE_ANATOMICAL_MAPPING_UNVERIFIED",
+  "limitations": [
+    "Task C values are descriptive engineering evidence.",
+    "Repeatability is not clinical normality.",
+    "Similarity is not pathology.",
+    "Co-contraction is blocked without verified anatomy and synchronization."
+  ]
+}

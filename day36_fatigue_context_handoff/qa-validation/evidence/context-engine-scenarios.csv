@@ -1,6 +1,0 @@
-scenario,quality,protocol,spectral,amplitude,performance,expected_state
-multi_lane,pass,true,supportive,supportive,supportive,FATIGUE_CONTEXT_SUPPORTED
-single_lane,pass,true,supportive,neutral,neutral,POSSIBLE_FATIGUE_CONTEXT
-conflict,pass,true,supportive,contradictory,supportive,CONFLICTING_EVIDENCE
-quality_fail,fail,true,supportive,supportive,supportive,QUALITY_BLOCKED
-unsupported,pass,false,missing,missing,missing,UNSUPPORTED_PROTOCOL

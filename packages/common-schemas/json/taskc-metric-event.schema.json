@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Task C Metric Event",
+  "type": "object",
+  "properties": {
+    "metric_family": {
+      "type": "string",
+      "enum": ["repeatability", "similarity", "cocontraction"]
+    },
+    "metric_id": {
+      "type": "string"
+    },
+    "value": {
+      "type": ["number", "null"]
+    },
+    "supportability": {
+      "type": "string"
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "hard_fatigue_diagnosis_allowed": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "required": [
+    "metric_family",
+    "metric_id",
+    "value",
+    "supportability",
+    "reason_codes",
+    "provenance",
+    "hard_fatigue_diagnosis_allowed"
+  ],
+  "additionalProperties": false
+}

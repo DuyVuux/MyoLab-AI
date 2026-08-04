@@ -1,0 +1,20 @@
+{
+  "schema_version": "cocontraction-eligibility.v2",
+  "dataset_id": "mendeley-4channel-hand-gesture-v2",
+  "status": "NOT_ELIGIBLE_ANATOMICAL_MAPPING_UNVERIFIED",
+  "checks": {
+    "verified_agonist_antagonist_mapping": false,
+    "synchronized_time_base": false,
+    "normalization_method_declared": false
+  },
+  "numeric_zero_used_for_ineligible": false,
+  "reason_codes": [
+    "VERIFIED_AGONIST_ANTAGONIST_MAPPING",
+    "SYNCHRONIZED_TIME_BASE",
+    "NORMALIZATION_METHOD_DECLARED"
+  ],
+  "prohibited_inference": [
+    "pathological_cocontraction",
+    "fatigue_diagnosis"
+  ]
+}

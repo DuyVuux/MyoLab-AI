@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Co-contraction Envelope",
+  "type": "object",
+  "properties": {
+    "subject_id": { "type": "string" },
+    "session_id": { "type": "string" },
+    "protocol_id": { "type": "string" },
+    "repetition_id": { "type": "string" },
+    "time_seconds": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "muscle_id": { "type": "string" },
+    "side": { "type": "string" },
+    "functional_role": {
+      "type": "string",
+      "enum": ["agonist", "antagonist"]
+    },
+    "pair_id": { "type": "string" },
+    "envelope_value": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "envelope_unit": { "type": "string" },
+    "normalization_method": { "type": "string" },
+    "sampling_rate_hz": { "type": "number" },
+    "quality_status": { "type": "string" },
+    "source_signal_sha256": { "type": "string" }
+  },
+  "required": [
+    "subject_id",
+    "functional_role",
+    "envelope_value"
+  ]
+}

@@ -7,6 +7,7 @@
 
 import { useState, type ReactNode } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard,
@@ -115,14 +116,14 @@ export function AppShell({ children }: AppShellProps) {
         <div className={styles.brand}>
           {!collapsed && (
             <div className={styles.brandContent}>
-              <Activity size={24} className={styles.brandIcon} />
+              <Image src="/VINMEC_logo.png" alt="Vinmec Logo" width={54} height={32} className={styles.brandIcon} style={{ objectFit: 'contain', backgroundColor: 'white', padding: '4px', borderRadius: '6px' }} />
               <div>
                 <div className={styles.brandName}>MyoLab-AI</div>
                 <div className={styles.brandSubtitle}>sEMG Clinical Intelligence</div>
               </div>
             </div>
           )}
-          {collapsed && <Activity size={24} className={styles.brandIcon} />}
+          {collapsed && <Image src="/VINMEC_logo.png" alt="Vinmec Logo" width={54} height={32} className={styles.brandIcon} style={{ objectFit: 'contain', backgroundColor: 'white', padding: '4px', borderRadius: '6px' }} />}
           
           {/* Mobile close */}
           <button

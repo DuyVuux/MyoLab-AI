@@ -1,0 +1,22 @@
+{
+  "schema_version": "day37-day36-integration.v2",
+  "hard_fatigue_diagnosis_created": false,
+  "confidence_increase_allowed": false,
+  "quality_fail_semantics": "QUALITY_BLOCKED_NOT_NO_FATIGUE",
+  "events": [
+    {
+      "metric_family": "repeatability",
+      "metric_id": "median_srd",
+      "supportability": "SUPPORTED",
+      "context_lane": "performance_consistency",
+      "maximum_context_effect": "POSSIBLE"
+    },
+    {
+      "metric_family": "cocontraction",
+      "metric_id": "mean_cci",
+      "supportability": "NOT_ELIGIBLE_ANATOMICAL_MAPPING_UNVERIFIED",
+      "context_lane": "ignored_with_reason",
+      "maximum_context_effect": "NONE"
+    }
+  ]
+}

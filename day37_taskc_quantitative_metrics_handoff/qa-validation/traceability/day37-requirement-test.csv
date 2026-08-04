@@ -1,0 +1,6 @@
+requirement,test
+Repeatability contracts,test_day37_repeatability.py
+Similarity contracts,test_day37_similarity.py
+Co-contraction eligibility,test_day37_cocontraction.py
+Ineligible value policy,test_day37_supportability.py
+Notebook illustrative only,test_day37_notebook.py

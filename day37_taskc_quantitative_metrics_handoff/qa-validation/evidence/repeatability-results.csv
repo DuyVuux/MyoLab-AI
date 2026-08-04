@@ -1,0 +1,2 @@
+dataset_id,subject_id,metric_id,repetition_count,absolute_difference,symmetric_relative_difference,within_subject_cv_percent,robust_mad_ratio,supportability
+synthetic,S01,rms,3,0.05,0.0488,4.7619,0.0471,SUPPORTED

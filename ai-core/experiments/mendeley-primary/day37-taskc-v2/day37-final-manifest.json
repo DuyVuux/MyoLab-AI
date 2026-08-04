@@ -1,0 +1,74 @@
+{
+  "schema_version": "day37-final-manifest.v2",
+  "created_at_utc": "2026-08-04T08:42:33.511423+00:00",
+  "dataset_id": "mendeley-4channel-hand-gesture-v2",
+  "run_mode": "MENDELEY",
+  "status": "GO_FOR_DAY38_WITH_METRIC_LIMITATIONS",
+  "checks": {
+    "single_dataset_only": true,
+    "repetition_unit_preserved": true,
+    "no_nonfinite_features": true,
+    "train_only_scaler": true,
+    "co_contraction_fail_closed": true,
+    "hard_fatigue_diagnosis_absent": true,
+    "all_required_artifacts_exist": true
+  },
+  "failed_checks": [],
+  "sealed_test_opened": false,
+  "hard_fatigue_diagnosis_allowed": false,
+  "confidence_may_increase": false,
+  "artifacts": {
+    "taskc-metric-registry.yaml": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/taskc-metric-registry.yaml",
+      "sha256": "828aa750706ffd7ff1245a13338473636b5be18c1ba512dfd7eb7c08878be183"
+    },
+    "taskc-repetition-features.parquet": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/taskc-repetition-features.parquet",
+      "sha256": "4efad23877dc64e5e5328f201433947788f81abcffba2e3c18eb07afe6b6423c"
+    },
+    "taskc-repetition-feature-manifest.json": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/taskc-repetition-feature-manifest.json",
+      "sha256": "97edf870bde16720349723b3d4053ce6c091b27bd8f4b215e673cb3e086e7550"
+    },
+    "repeatability-results.csv": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/repeatability-results.csv",
+      "sha256": "73f827c400dc6d0e70bc4b6a540731f7b89d744da657d36ecec0c77949202328"
+    },
+    "repeatability-subject-summary.csv": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/repeatability-subject-summary.csv",
+      "sha256": "25d793ef2d4a90c679f74c42e821df1f5dce5d7a82c0e6e8b4895d16fd09f382"
+    },
+    "repeatability-icc-results.csv": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/repeatability-icc-results.csv",
+      "sha256": "a87137122294d66a24888f847135704cf68569d6bcc063b7b95ae8eb3461fe83"
+    },
+    "between-session-bland-altman.csv": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/between-session-bland-altman.csv",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "similarity-results.csv": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/similarity-results.csv",
+      "sha256": "0e8f0e22c375243e3d31c8d858472403155f160f33a260743bb76222481e239e"
+    },
+    "similarity-subject-summary.csv": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/similarity-subject-summary.csv",
+      "sha256": "9d5d0ddbd714e9b28fbe50f5e446437c449b8ad0f0e345d052ceb23cd29ffc8b"
+    },
+    "cocontraction-eligibility.json": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/cocontraction-eligibility.json",
+      "sha256": "54b20edddd2505f5fa74b21152ff18b574a3bfcde006c604c128bbcf29914f2c"
+    },
+    "cocontraction-results.csv": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/cocontraction-results.csv",
+      "sha256": "8778a0570141269c9c327f42e9660e620aedf3e4dcfdf48a68717ce3c4f87de0"
+    },
+    "taskc-sensitivity-report.json": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/taskc-sensitivity-report.json",
+      "sha256": "d2f5f002df47137b1714811dabac4e2bf021395663abe2d63eb5fe48f96cf2dc"
+    },
+    "day37-day36-integration-report.json": {
+      "path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day37-taskc/day37-taskc-v2/day37-day36-integration-report.json",
+      "sha256": "96103904ce3ab747c10c65fb00f26aff214328a24a4f98340292f82885db85f4"
+    }
+  }
+}

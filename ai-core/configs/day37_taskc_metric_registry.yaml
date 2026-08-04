@@ -1,0 +1,111 @@
+# Day 37 Task C Metric Registry
+# This file freezes the definitions for repeatability, similarity, and co-contraction metrics.
+
+metrics:
+  - metric_id: "within_subject_cv"
+    metric_family: "repeatability"
+    version: "1.0.0"
+    unit: "percent"
+    aggregation_unit: "subject_protocol_task_metric"
+    ratio_scale_positive_required: true
+    minimum_repetitions: 3
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false
+
+  - metric_id: "absolute_difference"
+    metric_family: "repeatability"
+    version: "1.0.0"
+    unit: "absolute"
+    aggregation_unit: "subject_protocol_task_metric"
+    ratio_scale_positive_required: false
+    minimum_repetitions: 2
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false
+
+  - metric_id: "symmetric_relative_difference"
+    metric_family: "repeatability"
+    version: "1.0.0"
+    unit: "relative"
+    aggregation_unit: "subject_protocol_task_metric"
+    ratio_scale_positive_required: false
+    minimum_repetitions: 2
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false
+
+  - metric_id: "robust_mad_ratio"
+    metric_family: "repeatability"
+    version: "1.0.0"
+    unit: "ratio"
+    aggregation_unit: "subject_protocol_task_metric"
+    ratio_scale_positive_required: false
+    minimum_repetitions: 3
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false
+
+  - metric_id: "bland_altman"
+    metric_family: "repeatability"
+    version: "1.0.0"
+    unit: "complex"
+    aggregation_unit: "subject_protocol_task_metric"
+    ratio_scale_positive_required: false
+    minimum_repetitions: 2
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false
+
+  - metric_id: "cosine_similarity"
+    metric_family: "similarity"
+    version: "1.0.0"
+    unit: "scalar"
+    aggregation_unit: "repetition_pair"
+    ratio_scale_positive_required: false
+    minimum_repetitions: 2
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false
+
+  - metric_id: "pearson_similarity"
+    metric_family: "similarity"
+    version: "1.0.0"
+    unit: "scalar"
+    aggregation_unit: "repetition_pair"
+    ratio_scale_positive_required: false
+    minimum_repetitions: 2
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false
+
+  - metric_id: "normalized_euclidean"
+    metric_family: "similarity"
+    version: "1.0.0"
+    unit: "scalar"
+    aggregation_unit: "repetition_pair"
+    ratio_scale_positive_required: false
+    minimum_repetitions: 2
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false
+
+  - metric_id: "cocontraction_metrics"
+    metric_family: "cocontraction"
+    version: "1.0.0"
+    unit: "complex"
+    aggregation_unit: "muscle_pair"
+    ratio_scale_positive_required: true
+    minimum_repetitions: 1
+    epsilon: 1.0e-12
+    nonfinite_policy: "block"
+    zero_denominator_policy: "unsupported"
+    clinical_interpretation_allowed: false

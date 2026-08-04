@@ -1,0 +1,296 @@
+{
+  "schema_version": "day37-source-hash-ledger.v1",
+  "file_count": 58,
+  "entries": [
+    {
+      "path": "DAY37_KE_HOACH_TASK_C_QUANTITATIVE_METRICS_FINAL.md",
+      "sha256": "68d8a39c43a360d342190a072d89e6caab09245f680e7e5d2ddab63d14ec0190",
+      "bytes": 18396
+    },
+    {
+      "path": "README.md",
+      "sha256": "5d90ba0b1a3f9d80f5733b522be621c0eb74a9848523da481667c83905301c05",
+      "bytes": 307
+    },
+    {
+      "path": "ai-core/configs/day37_context_integration.research.yaml",
+      "sha256": "6030c43ce5cb5008021b0dcbf01ae3b112fe1442dfd7f1cb1a263f5b57aee6d0",
+      "bytes": 272
+    },
+    {
+      "path": "ai-core/configs/day37_eligibility_policy.research.yaml",
+      "sha256": "d0e0a6b25f232c1640c549bd183cd0b7816707fd66b0b60ff5097e8522a756bf",
+      "bytes": 744
+    },
+    {
+      "path": "ai-core/configs/day37_taskc_metric_registry.research.yaml",
+      "sha256": "bf6e4b19f77e57768fa299537dc56813bf244cf999163983a9fff783c03b6200",
+      "bytes": 1188
+    },
+    {
+      "path": "ai-core/pipelines/__pycache__/day37_run_synthetic_validation.cpython-313.pyc",
+      "sha256": "a30455082a52b5bd6fabdfd55709a336c0365ba6d3815574e02fe17efea8c96f",
+      "bytes": 3294
+    },
+    {
+      "path": "ai-core/pipelines/day37_run_synthetic_validation.py",
+      "sha256": "dc7d7932ae1d5f6aebed1ef872d2d0f9e3dd7808bf9d1eb3aa17438f834cd0c8",
+      "bytes": 2183
+    },
+    {
+      "path": "ai-core/quantitative/day37/__init__.py",
+      "sha256": "3b01bda67ffdac543b4cac4796c5f018c767f9334c27cafd7a807850b1e20387",
+      "bytes": 243
+    },
+    {
+      "path": "ai-core/quantitative/day37/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "b6bcc79b0721000d02f820f93310fb9de4e56afc4f62f8a4d12ee088b0f03ab2",
+      "bytes": 467
+    },
+    {
+      "path": "ai-core/quantitative/day37/__pycache__/cocontraction.cpython-313.pyc",
+      "sha256": "ecb236c1d76ecc8ce9cbfceff7666cb657253a45e707dcf6ba98ee35cef7497c",
+      "bytes": 3927
+    },
+    {
+      "path": "ai-core/quantitative/day37/__pycache__/repeatability.cpython-313.pyc",
+      "sha256": "45709b4ea6a02d1055efc070b9112fb3fad36b666b346595c03bdec835fbc6d2",
+      "bytes": 3645
+    },
+    {
+      "path": "ai-core/quantitative/day37/__pycache__/similarity.cpython-313.pyc",
+      "sha256": "4fe29a725e314a4c005832141e1cca21891eb1e2cdc3fcb4dc2b39b5d21d331d",
+      "bytes": 2631
+    },
+    {
+      "path": "ai-core/quantitative/day37/__pycache__/supportability.cpython-313.pyc",
+      "sha256": "c4c6bb26709c0bd2b8e1b1818fbc868dafad4a6a3f2cda27d0040fa29c235a35",
+      "bytes": 1007
+    },
+    {
+      "path": "ai-core/quantitative/day37/cocontraction.py",
+      "sha256": "ce05881bf762076d8756c91a31ac82ca240ef21d20f43c04c36321f455ee2bb9",
+      "bytes": 2881
+    },
+    {
+      "path": "ai-core/quantitative/day37/repeatability.py",
+      "sha256": "f74fe795297ea664b6acc241c74e62dc5a5bfb85e2dcc59d262ef19db6418896",
+      "bytes": 2136
+    },
+    {
+      "path": "ai-core/quantitative/day37/similarity.py",
+      "sha256": "76158179d6c99b6464e7e3b2a4d838c1b2d67bba8329579989cf6751e4b5acdc",
+      "bytes": 1075
+    },
+    {
+      "path": "ai-core/quantitative/day37/supportability.py",
+      "sha256": "a54ca376d50e7715848f77f7a24b150bc6fd1f5ae8aed8d2b48cdf43dfaafec6",
+      "bytes": 942
+    },
+    {
+      "path": "data-platform/contracts/day37/cocontraction-result-columns.csv",
+      "sha256": "906395ff2fe77259fca8a5b44e060009181cc58a91c24ac8b73c9890e3b94b46",
+      "bytes": 670
+    },
+    {
+      "path": "data-platform/contracts/day37/repeatability-result-columns.csv",
+      "sha256": "b5573075032aafd64d2fa56866a1e0dedc9aeaa0be1725d43276b41b74557a86",
+      "bytes": 634
+    },
+    {
+      "path": "data-platform/contracts/day37/similarity-result-columns.csv",
+      "sha256": "2372216d9b0bc44b117676536784ee8f9f97be69bcd034b8a15cd79c071c0ceb",
+      "bytes": 506
+    },
+    {
+      "path": "data-platform/contracts/day37/taskc-event.schema.json",
+      "sha256": "1ad7c00e7ac0a09dbf92daf96336e8ef5be62e9582a10689417783a76b975e61",
+      "bytes": 822
+    },
+    {
+      "path": "docs/09-quantitative/day37/01-repeatability-contract.md",
+      "sha256": "589ed1f988755466918f20fd0ee257905a03ef4523411d144c72d0213ed302d6",
+      "bytes": 260
+    },
+    {
+      "path": "docs/09-quantitative/day37/02-similarity-contract.md",
+      "sha256": "a69dc7a3ea100ecdecefbaa974a8f307cd34de2ace4fa980f2444b89d52fe89d",
+      "bytes": 173
+    },
+    {
+      "path": "docs/09-quantitative/day37/03-cocontraction-contract.md",
+      "sha256": "5749f241d1522c888206bbe5d08d92fbdb194402325c52c616fdeaa18dc3f36c",
+      "bytes": 204
+    },
+    {
+      "path": "docs/09-quantitative/day37/04-context-engine-integration.md",
+      "sha256": "eaa58fded4c3806f27b46101695367e650019aee6e557b5af81ae28acf53d591",
+      "bytes": 184
+    },
+    {
+      "path": "docs/09-quantitative/day37/05-public-dataset-limitations.md",
+      "sha256": "cca71b315979bf335f41076f1e51eaba361b2c6d9ee49e84fa03d8120aa324cf",
+      "bytes": 213
+    },
+    {
+      "path": "docs/09-quantitative/day37/day38-handoff.md",
+      "sha256": "eb0aeeea8e2dff8039dd37dfdc1f767bdad24a2ce5c7fbdb5b5c2ca44e00ca1b",
+      "bytes": 206
+    },
+    {
+      "path": "docs/note/day37/01-learning-roadmap.md",
+      "sha256": "43735e8c05a08ea404fa2da3dd8837c93b69354677d3c2a73a8ffadfe911a710",
+      "bytes": 266
+    },
+    {
+      "path": "docs/note/day37/02-why-correlation-is-not-agreement.md",
+      "sha256": "9b9c621cd102bd6a2e52a221e65bb1be5530f0b674d22377258edb8a69e0080a",
+      "bytes": 220
+    },
+    {
+      "path": "docs/note/day37/03-cocontraction-boundaries.md",
+      "sha256": "4bfe5c52f70a48acee902da8461521437630e871ff00c1eca7b502846f2c7bb2",
+      "bytes": 171
+    },
+    {
+      "path": "docs/plans/DAY37_EXECUTION_PLAN.md",
+      "sha256": "68d8a39c43a360d342190a072d89e6caab09245f680e7e5d2ddab63d14ec0190",
+      "bytes": 18396
+    },
+    {
+      "path": "environment/day37-requirements.txt",
+      "sha256": "30c817589a80cd06e848ce3b4d5f38f69290010e5c679d82e46bbc62ac6c9ab8",
+      "bytes": 55
+    },
+    {
+      "path": "notebooks/Day37_TaskC_Quantitative_Metrics_Scenarios.ipynb",
+      "sha256": "b3dbc10253ed3209d7da783b621a054cffd5ef9b67e19b4b89a0f6e33bc44406",
+      "bytes": 4987
+    },
+    {
+      "path": "qa-validation/automated-tests/__pycache__/test_day37_cocontraction.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "40f8dbbdabd5c068eb79312cc03fcf71443dcaf18c9f780bc64d210ab7d121d5",
+      "bytes": 4571
+    },
+    {
+      "path": "qa-validation/automated-tests/__pycache__/test_day37_notebook.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "faed73fbee0afee846e9c3c0ba75011ef7140ca281c43de29424902f0cb37ef7",
+      "bytes": 3365
+    },
+    {
+      "path": "qa-validation/automated-tests/__pycache__/test_day37_repeatability.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "c2d31097447eddbfaaeb015871904f601db504f80da70c709eece672354f0099",
+      "bytes": 7082
+    },
+    {
+      "path": "qa-validation/automated-tests/__pycache__/test_day37_similarity.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "0733c08def79d9dca7503ab35fd5f2e3b34ccea9d602f083700c64b035bec989",
+      "bytes": 7004
+    },
+    {
+      "path": "qa-validation/automated-tests/__pycache__/test_day37_supportability.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "5f556d5124023d557f560425da46dc50acd7098496c680643e36126ced4ee99f",
+      "bytes": 2015
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day37_cocontraction.py",
+      "sha256": "2b62703feddf53f2d440c0e434a1bb1ab83811203782739642c9c5d66f6526fe",
+      "bytes": 1533
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day37_notebook.py",
+      "sha256": "9b13e2be3a3f1b0c8202a949c2a570e62919854ffb891699e6014d962e337416",
+      "bytes": 494
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day37_repeatability.py",
+      "sha256": "c7f50cdf951f467d0ac33c455ad1b806b6d3894f1652e43422204d0332720dd6",
+      "bytes": 958
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day37_similarity.py",
+      "sha256": "dd6a178eca5146b19293d5820dcf5641c51c64e6e52f06803cef7e9a641a8745",
+      "bytes": 765
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day37_supportability.py",
+      "sha256": "e4e1c717e70730eb7e02386fee3ac21e5974a226629f5b7b22f9b3a71621b44b",
+      "bytes": 637
+    },
+    {
+      "path": "qa-validation/evidence/cocontraction-eligibility.json",
+      "sha256": "e6deca346f6297fd69fea2a17101dd28c14770e690bc56e385f4e25316b3fabc",
+      "bytes": 221
+    },
+    {
+      "path": "qa-validation/evidence/cocontraction-results.csv",
+      "sha256": "84e06ea63918fdac0e041787aec68b66a2ff186917008d0baa6780e1a062a44e",
+      "bytes": 225
+    },
+    {
+      "path": "qa-validation/evidence/day37-artifact-check.json",
+      "sha256": "7e71564971be54fc0e57333080c30acd2556617d64b530ed9ce1d3ca1402376b",
+      "bytes": 126
+    },
+    {
+      "path": "qa-validation/evidence/day37-day36-integration-report.json",
+      "sha256": "e3a0c3b8034188e7f9314b3f83c9152892c19fce25e85f52b0e96e8259361e7b",
+      "bytes": 246
+    },
+    {
+      "path": "qa-validation/evidence/day37-final-manifest.json",
+      "sha256": "b741f14af75216d7807be2837759393a0fe103136090a81fd4c9463a9d54bf7f",
+      "bytes": 657
+    },
+    {
+      "path": "qa-validation/evidence/day37-metric-eligibility.json",
+      "sha256": "8902229585608c20fa5edf00255f2c8abee2983c97ed595f97825d87fb144e2d",
+      "bytes": 584
+    },
+    {
+      "path": "qa-validation/evidence/day37-synthetic-validation.json",
+      "sha256": "9ce953bdfc30f28338c2bb0c6fb6f4609415635f35e317989759d8eeb59f8389",
+      "bytes": 1101
+    },
+    {
+      "path": "qa-validation/evidence/repeatability-results.csv",
+      "sha256": "1cea42d161ff8c12453384e4c62c633de365ff27eb8f16a16987515b75324b34",
+      "bytes": 213
+    },
+    {
+      "path": "qa-validation/evidence/similarity-results.csv",
+      "sha256": "59e2fb0166ba65e739116ce2a0bfa6018caed0784c78dd80a16a8fcf45cc12a2",
+      "bytes": 200
+    },
+    {
+      "path": "qa-validation/evidence/taskc-sensitivity-report.json",
+      "sha256": "745dd74b2dc7fd6f4825ef965250717f29d85b91fc9cafcdfaa3acda9a88cab3",
+      "bytes": 347
+    },
+    {
+      "path": "qa-validation/requirements/day37-acceptance-criteria.md",
+      "sha256": "b8df8233c6c37d736ba678fc21af2876067ac3588b38346fcdd4aa7f97ca41e5",
+      "bytes": 421
+    },
+    {
+      "path": "qa-validation/test-plans/day37-test-plan.md",
+      "sha256": "aaa46a0d71925c3b3c178bc193ee188b004c5fb959f0a65039ca1869099d7c32",
+      "bytes": 343
+    },
+    {
+      "path": "qa-validation/traceability/day37-requirement-test.csv",
+      "sha256": "fe11cfcf9602b0ee461ea29a04e4d969956b593f30dba367768dec3c41cf8d0f",
+      "bytes": 273
+    },
+    {
+      "path": "scripts/dev/check_day37_artifacts.py",
+      "sha256": "27e3cbe25fea48360f4aabc70f4f3af5e2c275ea528191439eb67d19dcda0945",
+      "bytes": 1183
+    },
+    {
+      "path": "scripts/dev/run_day37_checks.sh",
+      "sha256": "d7d56e78acf0b33f43f3c6afc0e973b605e839acc2902d117eb746682dd14d41",
+      "bytes": 542
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": "day37-artifact-check.v1",
+  "missing": [],
+  "prohibited_raw_or_model_artifacts": [],
+  "pass": true
+}

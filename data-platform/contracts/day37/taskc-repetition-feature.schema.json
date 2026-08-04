@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Task C Repetition Feature",
+  "type": "object",
+  "properties": {
+    "dataset_id": { "type": "string" },
+    "dataset_view_id": { "type": "string" },
+    "subject_id": { "type": "string" },
+    "session_id": { "type": "string" },
+    "day_id": { "type": "string" },
+    "protocol_id": { "type": "string" },
+    "protocol_version": { "type": "string" },
+    "task_label": { "type": "string" },
+    "repetition_id": { "type": "string" },
+    "feature_arm": { "type": "string" },
+    "feature_vector": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "feature_columns": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "quality_status": { "type": "string" },
+    "source_feature_sha256": { "type": "string" },
+    "split_version": { "type": "string" },
+    "preprocessing_policy_id": { "type": "string" }
+  },
+  "required": [
+    "subject_id",
+    "protocol_id",
+    "task_label",
+    "repetition_id",
+    "feature_vector"
+  ]
+}

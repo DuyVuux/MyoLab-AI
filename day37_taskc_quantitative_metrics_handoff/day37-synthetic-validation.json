@@ -1,0 +1,47 @@
+{
+  "schema_version": "day37-synthetic-validation.v1",
+  "repeatability": {
+    "pair": {
+      "absolute_difference": 0.040000000000000036,
+      "symmetric_relative_difference": 0.03921568627450984,
+      "reason_code": null
+    },
+    "cv": [
+      2.556424650961994,
+      null
+    ],
+    "rmad": [
+      0.029358415841584183,
+      null
+    ]
+  },
+  "similarity": {
+    "cosine": [
+      0.9983545784974293,
+      null
+    ],
+    "pearson": [
+      0.9908470001860921,
+      null
+    ],
+    "normalized_euclidean": 0.1581138830084191
+  },
+  "cocontraction_eligibility": {
+    "eligible": true,
+    "state": "SUPPORTED",
+    "missing": []
+  },
+  "cocontraction": {
+    "mean_cci": 0.2636913007062782,
+    "median_cci": 0.0,
+    "q90_cci": 0.8809521323457515,
+    "overlap_area_ratio": 0.4878372826151739,
+    "coactivation_load": 0.20916004007967257,
+    "active_duration_seconds": 1.002004008016032,
+    "simultaneous_activation_duration_fraction": 0.324,
+    "threshold_reason_code": null
+  },
+  "sealed_test_rows_read": 0,
+  "pooled_dataset": false,
+  "hard_fatigue_diagnosis_allowed": false
+}

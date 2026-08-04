@@ -1,0 +1,45 @@
+schema_version: day37-taskc-metric-registry.v1
+status: PROVISIONAL_ENGINEERING_CONTRACT
+
+repeatability:
+  absolute_difference:
+    unit: inherited
+    minimum_repetitions: 2
+  symmetric_relative_difference:
+    unit: ratio
+    epsilon: 1.0e-12
+    minimum_repetitions: 2
+  within_subject_cv_percent:
+    unit: percent
+    minimum_repetitions: 3
+    eligibility: positive_ratio_scale_metric_only
+  robust_mad_ratio:
+    unit: ratio
+    minimum_repetitions: 3
+  icc_absolute_agreement:
+    type: ICC_A_1
+    minimum_subjects: 3
+    window_level_allowed: false
+  bland_altman:
+    minimum_repetitions: 2
+
+similarity:
+  cosine:
+    zero_norm_behavior: not_eligible
+  pearson:
+    constant_vector_behavior: not_eligible
+  normalized_euclidean:
+    scaler_fit_on_evaluation_allowed: false
+  template_distance:
+    template_source_must_be_declared: true
+
+cocontraction:
+  mean_cci:
+    formula: 2_min_over_sum
+    envelope_nonnegative_required: true
+  overlap_area_ratio:
+    formula: integral_min_over_integral_max
+  simultaneous_activation_duration_fraction:
+    threshold_source_must_be_declared: true
+  coactivation_load:
+    cross_subject_comparison_requires_compatible_normalization: true

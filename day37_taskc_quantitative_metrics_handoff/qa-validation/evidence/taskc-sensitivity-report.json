@@ -1,0 +1,14 @@
+{
+  "schema_version": "day37-taskc-sensitivity-report.v1",
+  "mode": "SYNTHETIC_SCENARIO_VALIDATION",
+  "checked": [
+    "near_zero_denominator",
+    "zero_norm_vector",
+    "constant_vector",
+    "nonfinite_values",
+    "mapping_unverified",
+    "unsynchronized_envelopes",
+    "threshold_missing"
+  ],
+  "hard_fatigue_diagnosis_allowed": false
+}

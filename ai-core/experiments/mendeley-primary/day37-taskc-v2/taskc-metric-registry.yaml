@@ -1,0 +1,36 @@
+schema_version: taskc-metric-registry.v2
+epsilon: 1.0e-12
+aggregation_unit: subject_session_protocol_class_repetition
+repeatability:
+  absolute_difference:
+    minimum_repetitions: 2
+  symmetric_relative_difference:
+    minimum_repetitions: 2
+  within_subject_cv_percent:
+    minimum_repetitions: 3
+    requires_positive_ratio_scale: true
+  robust_mad_ratio:
+    minimum_repetitions: 3
+  icc_a1:
+    implementation: standalone_two_way_random_absolute_agreement_single_measure_with_subject_bootstrap_ci
+    not_from_windows: true
+  bland_altman:
+    requires_paired_measurements: true
+similarity:
+  cosine:
+    block_state: ZERO_NORM_VECTOR
+  pearson:
+    block_state: CONSTANT_VECTOR
+  normalized_euclidean:
+    requires_frozen_scaler: true
+  universal_abnormal_threshold_allowed: false
+cocontraction:
+  requires_verified_anatomical_mapping: true
+  requires_synchronized_envelopes: true
+  requires_declared_normalization: true
+  ineligible_value_is_zero: false
+prohibited_inference:
+- hard_fatigue_diagnosis
+- clinical_normality_claim
+- pathology_claim
+- treatment_recommendation

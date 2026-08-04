@@ -1,0 +1,78 @@
+{
+  "schema_version": "day37-synthetic-validation.v1",
+  "repeatability": {
+    "pair": {
+      "metric_family": "repeatability",
+      "metric_id": "absolute_difference",
+      "value": 0.040000000000000036,
+      "supportability": "SUPPORTED",
+      "reason_codes": [],
+      "provenance": {},
+      "hard_fatigue_diagnosis_allowed": false
+    },
+    "cv": {
+      "metric_family": "repeatability",
+      "metric_id": "within_subject_cv",
+      "value": 2.556424650961994,
+      "supportability": "SUPPORTED",
+      "reason_codes": [],
+      "provenance": {},
+      "hard_fatigue_diagnosis_allowed": false
+    },
+    "rmad": {
+      "metric_family": "repeatability",
+      "metric_id": "robust_mad_ratio",
+      "value": 0.029358415841584183,
+      "supportability": "SUPPORTED",
+      "reason_codes": [],
+      "provenance": {},
+      "hard_fatigue_diagnosis_allowed": false
+    }
+  },
+  "similarity": {
+    "cosine": {
+      "metric_family": "similarity",
+      "metric_id": "cosine_similarity",
+      "value": 0.9983545784974294,
+      "supportability": "SUPPORTED",
+      "reason_codes": [],
+      "provenance": {},
+      "hard_fatigue_diagnosis_allowed": false
+    },
+    "pearson": {
+      "metric_family": "similarity",
+      "metric_id": "pearson_similarity",
+      "value": 0.9908470001860921,
+      "supportability": "SUPPORTED",
+      "reason_codes": [],
+      "provenance": {},
+      "hard_fatigue_diagnosis_allowed": false
+    },
+    "normalized_euclidean": {
+      "metric_family": "similarity",
+      "metric_id": "normalized_euclidean",
+      "value": 0.1581138830084191,
+      "supportability": "SUPPORTED",
+      "reason_codes": [],
+      "provenance": {},
+      "hard_fatigue_diagnosis_allowed": false
+    }
+  },
+  "sealed_test_rows_read": 0,
+  "pooled_dataset": false,
+  "hard_fatigue_diagnosis_allowed": false,
+  "cocontraction_eligibility": {
+    "eligible": true,
+    "state": "SUPPORTED",
+    "missing": []
+  },
+  "cocontraction": {
+    "metric_family": "cocontraction",
+    "metric_id": "mean_cci",
+    "value": 0.2636913007062782,
+    "supportability": "SUPPORTED",
+    "reason_codes": [],
+    "provenance": {},
+    "hard_fatigue_diagnosis_allowed": false
+  }
+}

@@ -6,6 +6,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import {
   User,
   Stethoscope,
@@ -75,7 +76,7 @@ export default function LoginPage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Activity size={40} className={styles.logo} />
+        <Image src="/VINMEC_logo.png" alt="Vinmec Logo" width={80} height={48} className={styles.logo} style={{ objectFit: 'contain', backgroundColor: 'white', padding: '6px', borderRadius: '8px' }} />
         <h1 className={styles.title}>MyoLab-AI</h1>
         <p className={styles.subtitle}>sEMG Clinical Intelligence Platform</p>
         <p className={styles.note}>

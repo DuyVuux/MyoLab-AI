@@ -1,0 +1,7 @@
+numpy
+scipy
+pandas
+PyYAML
+jsonschema
+pytest
+matplotlib
