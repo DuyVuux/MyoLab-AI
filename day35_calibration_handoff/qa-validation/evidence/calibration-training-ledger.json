@@ -1,8 +1,0 @@
-{
-  "schema_version": "day35-calibration-training-ledger.v1",
-  "mode": "SYNTHETIC_TOOLING_VALIDATION",
-  "fit_partition": "SYNTHETIC_OOF_ONLY",
-  "validation_used_for_fit": false,
-  "validation_used_for_threshold_selection": false,
-  "sealed_test_opened": false
-}

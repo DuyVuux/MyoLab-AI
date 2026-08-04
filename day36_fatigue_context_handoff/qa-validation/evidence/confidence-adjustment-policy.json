@@ -1,0 +1,11 @@
+{
+  "schema_version": "day36-confidence-adjustment-policy.v1",
+  "confidence_may_increase": false,
+  "penalties": {
+    "quality_warning": 0.1,
+    "possible_context": 0.05,
+    "conflicting_evidence": 0.15,
+    "insufficient_metadata": 0.1
+  },
+  "original_confidence_must_be_retained": true
+}

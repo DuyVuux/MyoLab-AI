@@ -1,0 +1,19 @@
+schema_version: day36-fatigue-context-policy.v1
+hard_fatigue_diagnosis_allowed: false
+treatment_recommendation_allowed: false
+single_feature_supported_state_allowed: false
+confidence_may_increase: false
+states:
+  - NO_CONTEXT_EVIDENCE
+  - POSSIBLE_FATIGUE_CONTEXT
+  - FATIGUE_CONTEXT_SUPPORTED
+  - CONFLICTING_EVIDENCE
+  - INSUFFICIENT_EVIDENCE
+  - UNSUPPORTED_PROTOCOL
+  - QUALITY_BLOCKED
+penalties:
+  quality_warning: 0.10
+  possible_context: 0.05
+  conflicting_evidence: 0.15
+  insufficient_metadata: 0.10
+mfcv_ineligibility_blocks_basic_semg: false

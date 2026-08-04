@@ -1,6 +1,0 @@
-{
-  "schema_version": "day35-calibration-metrics.v1",
-  "mode": "SYNTHETIC_TOOLING_VALIDATION",
-  "fit_partition": "SYNTHETIC_OOF_ONLY",
-  "synthetic_results_are_benchmark": false
-}

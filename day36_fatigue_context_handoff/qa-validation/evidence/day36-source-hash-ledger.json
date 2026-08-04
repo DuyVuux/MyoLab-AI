@@ -1,0 +1,131 @@
+{
+  "schema_version": "day36-source-hash-ledger.v1",
+  "file_count": 25,
+  "entries": [
+    {
+      "path": ".pytest_cache/.gitignore",
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "bytes": 37
+    },
+    {
+      "path": ".pytest_cache/CACHEDIR.TAG",
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "bytes": 191
+    },
+    {
+      "path": ".pytest_cache/README.md",
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "bytes": 302
+    },
+    {
+      "path": ".pytest_cache/v/cache/nodeids",
+      "sha256": "12beda3a15aae680b805571aedda5d30081d5ad3fb05032117d00da76db8d5af",
+      "bytes": 255
+    },
+    {
+      "path": "DAY36_KE_HOACH_FATIGUE_CONTEXT_ENGINE_FINAL.md",
+      "sha256": "978c9e6ad664b16f8dc91fe0425b23e730e77a01b2869d2578d3ecd66e85c2d4",
+      "bytes": 6371
+    },
+    {
+      "path": "README.md",
+      "sha256": "b99954130e78540556b00c5a8876aae04a52b9da57fd99b6d37d65ab005c50e6",
+      "bytes": 147
+    },
+    {
+      "path": "ai-core/configs/day36_fatigue_context_policy.research.yaml",
+      "sha256": "2b01a27a8f4d1684f337528dd45f522e1e28a10287f7d481f8b49b78a2cf21d6",
+      "bytes": 553
+    },
+    {
+      "path": "ai-core/context/day36/__init__.py",
+      "sha256": "7990e50a3d91a86e101ccf63cca60cb2896235fe62b37033a6e1892a4c561f18",
+      "bytes": 85
+    },
+    {
+      "path": "ai-core/context/day36/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "bb626db23010cc92b67325f832daa15944dea8f20bc455f1460490cacb6f21aa",
+      "bytes": 258
+    },
+    {
+      "path": "ai-core/context/day36/__pycache__/engine.cpython-313.pyc",
+      "sha256": "24c2cdf34d4bf3935a8ce61c25fc5b12f6642ff9c0c2bc35ede719eb65bacddb",
+      "bytes": 3648
+    },
+    {
+      "path": "ai-core/context/day36/__pycache__/reporting.cpython-313.pyc",
+      "sha256": "697e2ac6a559fe63d19a740ec918772076811c683c6afc18b842274e407568b6",
+      "bytes": 1088
+    },
+    {
+      "path": "ai-core/context/day36/engine.py",
+      "sha256": "8accab73fec1f65cd1fc192bb2bf5bef2aadd55110cb8dc33d766db3787bd923",
+      "bytes": 2155
+    },
+    {
+      "path": "ai-core/context/day36/reporting.py",
+      "sha256": "b34b7026420ed970f63e69909b822da383c432643f8843a5637fc0a04063e398",
+      "bytes": 884
+    },
+    {
+      "path": "data-platform/contracts/day36/context-engine-contract.json",
+      "sha256": "63d8b6a88a50709bb658bfe341a2da179873adc3f3f4ff91c0006272a31981bf",
+      "bytes": 524
+    },
+    {
+      "path": "docs/08-context-engine/day36/day37-handoff-gate.md",
+      "sha256": "845442f7775276587a6c0113c8b2ef8cbafeb6882b9e4e9553b6ce95ccaa0dcf",
+      "bytes": 465
+    },
+    {
+      "path": "docs/plans/DAY36_EXECUTION_PLAN.md",
+      "sha256": "978c9e6ad664b16f8dc91fe0425b23e730e77a01b2869d2578d3ecd66e85c2d4",
+      "bytes": 6371
+    },
+    {
+      "path": "qa-validation/automated-tests/__pycache__/test_day36.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "ce1be0bdb183346449bd8d3ae308a4eb1c8510ad4d904e68aea89b98436a0d01",
+      "bytes": 8030
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day36.py",
+      "sha256": "ef8edf21c78dbaf9b15adc64043ea2cf16f8520deffdf9ec62dfa73b8b74b12f",
+      "bytes": 1099
+    },
+    {
+      "path": "qa-validation/evidence/confidence-adjustment-policy.json",
+      "sha256": "63c8f4c3ba41f4f7996ce46e43dec0f0117d25cf18497f7ccb925faa606b534f",
+      "bytes": 295
+    },
+    {
+      "path": "qa-validation/evidence/context-engine-report.json",
+      "sha256": "7b51221c1b55ca44506c84166c9d85064559f5fc10b59831eeff0946efd2e2e5",
+      "bytes": 287
+    },
+    {
+      "path": "qa-validation/evidence/context-engine-scenarios.csv",
+      "sha256": "8a1f4d9b834a8312c6a3faf795cb07911a30e312349675ecd6abe0fb9e4dee4a",
+      "bytes": 442
+    },
+    {
+      "path": "qa-validation/evidence/day36-final-manifest.json",
+      "sha256": "9978d96a66853d5f54003cd16bb218ec126fc048bf6a87b3bfd005bacab2a83b",
+      "bytes": 407
+    },
+    {
+      "path": "qa-validation/evidence/day36-readiness-decision.json",
+      "sha256": "4cb5f4280eff9b0baeee74c891b24d46f5e22f3da66bb9ee0165238dfff4bd34",
+      "bytes": 325
+    },
+    {
+      "path": "qa-validation/evidence/fatigue-context-policy.yaml",
+      "sha256": "2b01a27a8f4d1684f337528dd45f522e1e28a10287f7d481f8b49b78a2cf21d6",
+      "bytes": 553
+    },
+    {
+      "path": "scripts/dev/run_day36_checks.sh",
+      "sha256": "02f2c43879c0e3b6f34bc18f94e95bf9579719e54a7316f3777e9f104ec8618d",
+      "bytes": 231
+    }
+  ]
+}

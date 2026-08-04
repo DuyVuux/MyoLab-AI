@@ -1,8 +1,0 @@
-schema_version: day35-calibration-protocol.v1
-day34_gate_required: true
-fit_partition: oof_training_subject_scores
-evaluation_partition: frozen_validation_scores
-label_only_allowed: false
-methods: [uncalibrated, temperature_scaling, platt_ovr, isotonic_ovr]
-selection_metrics: [brier_score, ece, negative_log_loss]
-sealed_test_access_allowed: false
