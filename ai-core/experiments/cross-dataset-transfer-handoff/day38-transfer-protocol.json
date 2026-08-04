@@ -1,0 +1,29 @@
+{
+  "schema_version": "day38-transfer-protocol.v2",
+  "created_at_utc": "2026-08-04T10:37:39.286645+00:00",
+  "class_order": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "directions": [
+    "mendeley_to_grabmyo",
+    "grabmyo_to_mendeley"
+  ],
+  "feature_arms": {
+    "TD8": 40,
+    "SP6": 30,
+    "ALL14": 70
+  },
+  "summary_statistics": [
+    "mean",
+    "std",
+    "min",
+    "max",
+    "median"
+  ],
+  "no_anatomy_equivalence_claim": true,
+  "pooled_training_allowed": false,
+  "target_fit_count_required": 0
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "day38-transfer-readiness.v2",
+  "created_at_utc": "2026-08-04T10:38:42.406381+00:00",
+  "status": "GO_FOR_DAY39_REPRODUCIBILITY_GOVERNANCE",
+  "checks": {
+    "four_class_intersection_frozen": true,
+    "both_directions_completed": true,
+    "no_pooled_training": true,
+    "target_fit_count_zero": true,
+    "source_scaler_only": true,
+    "target_labels_not_used_for_selection": true,
+    "common_representation_dimensions_valid": true,
+    "sealed_test_closed": true,
+    "calibration_wording_honest": true
+  },
+  "failed_checks": [],
+  "median_target_zero_shot_macro_f1": 1.0,
+  "max_domain_classifier_auc": 1.0,
+  "no_anatomy_equivalence_claim": true,
+  "sealed_test_opened": false,
+  "artifacts": {
+    "day38-transfer-protocol.json": {
+      "path": "/content/day38-transfer-synthetic-v2/day38-transfer-protocol.json",
+      "sha256": "4570b585ed369f897599631c4a471322c9334411f69f57bcb9ad76318adb4176"
+    },
+    "common-representation-manifest.json": {
+      "path": "/content/day38-transfer-synthetic-v2/common-representation-manifest.json",
+      "sha256": "745ab98ac93b28bac0e9f4eca9a95d63a0f19c45acc6b60395a0c796dc5620b7"
+    },
+    "domain-gap-summary.json": {
+      "path": "/content/day38-transfer-synthetic-v2/domain-gap-summary.json",
+      "sha256": "d3619dbcdd34b2da0acd792486ffd90aad8f1f3018e65e99cc55781b9d69dc5d"
+    },
+    "domain-gap-per-feature.csv": {
+      "path": "/content/day38-transfer-synthetic-v2/domain-gap-per-feature.csv",
+      "sha256": "c5553fc71a7ac861a217ed86b55c6243244f445f226076095cc3d556eeafd012"
+    },
+    "domain-classifier-results.json": {
+      "path": "/content/day38-transfer-synthetic-v2/domain-classifier-results.json",
+      "sha256": "b8faef845895b6a9a00cce3aeb3549c323636722a2466ba44815bfef808f449b"
+    },
+    "zero-shot-results.csv": {
+      "path": "/content/day38-transfer-synthetic-v2/zero-shot-results.csv",
+      "sha256": "f32f97fbb23789b2b5f537f8855697e5477b3f8956a67174592681d3e3b799f9"
+    },
+    "per-subject-transfer.csv": {
+      "path": "/content/day38-transfer-synthetic-v2/per-subject-transfer.csv",
+      "sha256": "6e782d239b701b97e2a064139cd9c7babb646c5e48a71f87f7cea79729e38b19"
+    },
+    "per-class-transfer.csv": {
+      "path": "/content/day38-transfer-synthetic-v2/per-class-transfer.csv",
+      "sha256": "e26d9f282d58528844b816c4b1358a1561efe4fa957949117ebfa0cfc77d2632"
+    },
+    "transfer-failure-cases.csv": {
+      "path": "/content/day38-transfer-synthetic-v2/transfer-failure-cases.csv",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "transfer-bundles.joblib": {
+      "path": "/content/day38-transfer-synthetic-v2/transfer-bundles.joblib",
+      "sha256": "e66de4823fc29eb0e2cca933b5563ce103352b2d9b2c26806c3facb1b5815abf"
+    }
+  }
+}

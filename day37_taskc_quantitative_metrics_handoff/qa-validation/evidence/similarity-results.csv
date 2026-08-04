@@ -1,2 +1,0 @@
-dataset_id,subject_id,reference_repetition_id,query_repetition_id,cosine_similarity,pearson_correlation,normalized_euclidean_distance,supportability
-synthetic,S01,R1,R2,0.9989,0.9972,0.0412,SUPPORTED

@@ -1,0 +1,20 @@
+{
+  "mendeley_to_grabmyo:TD8": {
+    "domain_classifier_auc": 1.0
+  },
+  "grabmyo_to_mendeley:TD8": {
+    "domain_classifier_auc": 1.0
+  },
+  "mendeley_to_grabmyo:SP6": {
+    "domain_classifier_auc": 1.0
+  },
+  "grabmyo_to_mendeley:SP6": {
+    "domain_classifier_auc": 1.0
+  },
+  "mendeley_to_grabmyo:ALL14": {
+    "domain_classifier_auc": 1.0
+  },
+  "grabmyo_to_mendeley:ALL14": {
+    "domain_classifier_auc": 1.0
+  }
+}

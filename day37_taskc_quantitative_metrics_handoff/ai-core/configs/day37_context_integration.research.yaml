@@ -1,6 +1,0 @@
-schema_version: day37-context-integration.v1
-context_lane: performance_consistency
-single_taskc_metric_supported_context_allowed: false
-unsupported_metric_behavior: ignore_with_reason
-quality_block_behavior: propagate_quality_blocked
-hard_fatigue_diagnosis_allowed: false

@@ -1,2 +1,0 @@
-dataset_id,subject_id,pair_id,mean_cci,median_cci,q90_cci,overlap_area_ratio,simultaneous_activation_duration_fraction,coactivation_load,supportability
-synthetic,S01,PAIR01,0.4210,0.4000,0.7200,0.3010,0.3500,0.8120,SUPPORTED

@@ -1,0 +1,9 @@
+direction,task_label,f1,support,mean_confidence
+mendeley_to_grabmyo,hand_close,1.0,20,0.9881977860034823
+mendeley_to_grabmyo,rest,1.0,20,0.9881977860034823
+mendeley_to_grabmyo,wrist_extension,1.0,20,0.9881977860034823
+mendeley_to_grabmyo,wrist_flexion,1.0,20,0.9881977860034823
+grabmyo_to_mendeley,hand_close,1.0,20,0.9881977860034823
+grabmyo_to_mendeley,rest,1.0,20,0.9881977860034823
+grabmyo_to_mendeley,wrist_extension,1.0,20,0.9881977860034823
+grabmyo_to_mendeley,wrist_flexion,1.0,20,0.9881977860034823

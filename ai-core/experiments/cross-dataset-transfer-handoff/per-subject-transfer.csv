@@ -1,0 +1,9 @@
+direction,subject_id,macro_f1,accuracy,coverage,error_count
+mendeley_to_grabmyo,GRS13,1.0,1.0,1.0,0
+mendeley_to_grabmyo,GRS14,1.0,1.0,1.0,0
+mendeley_to_grabmyo,GRS15,1.0,1.0,1.0,0
+mendeley_to_grabmyo,GRS16,1.0,1.0,1.0,0
+grabmyo_to_mendeley,MES13,1.0,1.0,1.0,0
+grabmyo_to_mendeley,MES14,1.0,1.0,1.0,0
+grabmyo_to_mendeley,MES15,1.0,1.0,1.0,0
+grabmyo_to_mendeley,MES16,1.0,1.0,1.0,0
