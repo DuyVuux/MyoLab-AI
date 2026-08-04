@@ -1,0 +1,13 @@
+{
+  "schema_version": "day34-final-manifest.v1",
+  "status": "TOOLING_READY_REAL_PERSONALIZATION_PENDING",
+  "notebook_present": true,
+  "real_experiment_executed": false,
+  "sealed_test_opened": false,
+  "day35_gate": "REQUIRES_DAY34_REAL_HANDOFF",
+  "portable_pack_checks_passed": true,
+  "automated_tests": {
+    "passed": 3,
+    "failed": 0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": "few-shot-protocol.v2",
+  "created_at_utc": "2026-08-04T03:18:13.001522+00:00",
+  "dataset_profile": "mendeley",
+  "dataset_view_id": "mendeley_core4_primary_v1",
+  "primary_unit": "repetition",
+  "class_order": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "k_values": [
+    2,
+    3
+  ],
+  "episode_seeds": [
+    3401,
+    3402,
+    3403,
+    3404,
+    3405,
+    3406,
+    3407,
+    3408,
+    3409,
+    3410,
+    3411,
+    3412,
+    3413,
+    3414,
+    3415,
+    3416,
+    3417,
+    3418,
+    3419,
+    3420
+  ],
+  "p0": "exact frozen Day 32 baseline; no subject calibration",
+  "p1": "train-subject-tuned shrinkage prototype adapter blended with frozen global score",
+  "calibration_pool": "all_trials",
+  "evaluation_policy": "all non-calibration repetitions",
+  "primary_selection_scope": "all_eval",
+  "policy_selection_partition": "train subjects only",
+  "validation_policy_tuning_allowed": false,
+  "baseline_refit_allowed": false,
+  "test_set_opened": false,
+  "clinical_use_allowed": false
+}

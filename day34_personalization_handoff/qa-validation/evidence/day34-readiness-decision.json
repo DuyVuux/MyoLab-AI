@@ -1,0 +1,10 @@
+{
+  "schema_version": "day34-readiness-decision.v1",
+  "status": "TOOLING_READY_REAL_PERSONALIZATION_PENDING",
+  "real_feature_npz_verified": false,
+  "real_frozen_baseline_verified": false,
+  "calibration_evaluation_overlap": 0,
+  "sealed_test_opened": false,
+  "next_day_allowed": false,
+  "required_next_status": "GO_FOR_DAY35_CONFIDENCE_CALIBRATION"
+}

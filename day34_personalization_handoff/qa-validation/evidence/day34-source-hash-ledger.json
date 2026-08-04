@@ -1,0 +1,136 @@
+{
+  "schema_version": "day34-source-hash-ledger.v1",
+  "file_count": 26,
+  "entries": [
+    {
+      "path": ".pytest_cache/.gitignore",
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "bytes": 37
+    },
+    {
+      "path": ".pytest_cache/CACHEDIR.TAG",
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "bytes": 191
+    },
+    {
+      "path": ".pytest_cache/README.md",
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "bytes": 302
+    },
+    {
+      "path": ".pytest_cache/v/cache/nodeids",
+      "sha256": "badb2fa573371151217679df67cc11afeb80c8b0acb57cf89f35d3edbcfcdf70",
+      "bytes": 187
+    },
+    {
+      "path": "DAY34_KE_HOACH_PERSONALIZATION_FEWSHOT_FINAL.md",
+      "sha256": "01deded7fe3b0a22af264f6e60c025e61597d69953e5d8c131bee3b4adcae142",
+      "bytes": 5408
+    },
+    {
+      "path": "README.md",
+      "sha256": "cacf22231e83704644a9bc5c80378ca8c88453c54baedc69484bd1744e9a8438",
+      "bytes": 142
+    },
+    {
+      "path": "ai-core/configs/day34_fewshot_protocol.research.yaml",
+      "sha256": "b801536659e28872bc16406dfb5dd64e4ee9f07f32a184b4ec63895d53208df0",
+      "bytes": 413
+    },
+    {
+      "path": "ai-core/configs/day34_personalization_gate.research.yaml",
+      "sha256": "a0f93e78c0196da516b7e2a55a5a8c8b14e456352bfc5458a4379abc502df49b",
+      "bytes": 297
+    },
+    {
+      "path": "ai-core/personalization/day34/__init__.py",
+      "sha256": "882ee9a71864c0ee5274d28d4e2914840bfb340379c4137adcf1faae231c9214",
+      "bytes": 83
+    },
+    {
+      "path": "ai-core/personalization/day34/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "cd93729ce9a0327b1e1e025280c95e229f255d45114dcb80db5627c2def6b0dd",
+      "bytes": 255
+    },
+    {
+      "path": "ai-core/personalization/day34/__pycache__/fewshot.cpython-313.pyc",
+      "sha256": "a94d907140a423025026c0f041f09f65efb367403d0350c019a82358fb0a6f31",
+      "bytes": 3090
+    },
+    {
+      "path": "ai-core/personalization/day34/__pycache__/gate.cpython-313.pyc",
+      "sha256": "6283a3dce93fc5f458227b0854304c3ed76bfb392edd17db78395a9a36f15d25",
+      "bytes": 614
+    },
+    {
+      "path": "ai-core/personalization/day34/fewshot.py",
+      "sha256": "27a0e44ba40fdf1e9329c8e2f39051e0fd8ff977c353f9e74eaa52620fa1caba",
+      "bytes": 1225
+    },
+    {
+      "path": "ai-core/personalization/day34/gate.py",
+      "sha256": "3d9826a791a36bffb7ac821bb703febd15233d60733f32ff77875de438d31e7f",
+      "bytes": 410
+    },
+    {
+      "path": "docs/plans/DAY34_EXECUTION_PLAN.md",
+      "sha256": "01deded7fe3b0a22af264f6e60c025e61597d69953e5d8c131bee3b4adcae142",
+      "bytes": 5408
+    },
+    {
+      "path": "notebooks/Day34_Personalization_FewShot.ipynb",
+      "sha256": "c6c981cfafe4b78b836652c554fb67215814739696696daa5cdb5b5ae1cba5d1",
+      "bytes": 2931
+    },
+    {
+      "path": "qa-validation/automated-tests/__pycache__/test_day34.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "050d0be8a787bf76f9e0461f3757e8aa5c85b3254fcbca95ff5bf89012df6644",
+      "bytes": 7364
+    },
+    {
+      "path": "qa-validation/automated-tests/test_day34.py",
+      "sha256": "c1103e623677650cc84f8d477c214695e58619400de18f9274bbcd530988f641",
+      "bytes": 774
+    },
+    {
+      "path": "qa-validation/evidence/day34-final-manifest.json",
+      "sha256": "fed45e3f9013c5df8a13d96578adb7a71b8fce2723183d0151811a23b857262d",
+      "bytes": 351
+    },
+    {
+      "path": "qa-validation/evidence/day34-readiness-decision.json",
+      "sha256": "6f0531f90cc519b06dc2e546ab7208675c290ff56540be3cc3e2377859d5f350",
+      "bytes": 356
+    },
+    {
+      "path": "qa-validation/evidence/few-shot-protocol.json",
+      "sha256": "07108f1e6404f72db0c5a134299f4151327016f213d534e17947013047722721",
+      "bytes": 166
+    },
+    {
+      "path": "qa-validation/evidence/few-shot-results.csv",
+      "sha256": "45d4ad013384f3186c06b4e71b371eaf3400b1c98fdc3b71885c9af82595f36a",
+      "bytes": 116
+    },
+    {
+      "path": "qa-validation/evidence/per-subject-improvement.csv",
+      "sha256": "484c9f046bbc396b85b6c89b1e4c0025aa01d847f7f9350db64246670e761f6e",
+      "bytes": 77
+    },
+    {
+      "path": "qa-validation/evidence/personalization-failure-delta.csv",
+      "sha256": "f46f221c4439fbce97018275ee4d1fc09c2576c379cb55069a89c18486ffef18",
+      "bytes": 118
+    },
+    {
+      "path": "qa-validation/evidence/personalization-vs-global.csv",
+      "sha256": "0f82d787c806bb5cafbfce306f1fb95557e4d5646b83d67c13a2f06798e27299",
+      "bytes": 97
+    },
+    {
+      "path": "scripts/dev/run_day34_checks.sh",
+      "sha256": "f5a5f0ad3e0c9387e6ad5706c31b289fe81dfa4c3f01b5d79948a719460685ae",
+      "bytes": 363
+    }
+  ]
+}

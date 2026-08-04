@@ -1,0 +1,58 @@
+{
+  "schema_version": "day34-final-gate.v2",
+  "created_at_utc": "2026-08-04T03:18:13.012755+00:00",
+  "status": "PASS",
+  "dataset_profile": "mendeley",
+  "checks": {
+    "official_run_not_smoke_test": true,
+    "input_gate_passed": true,
+    "baseline_p0_reproduced_exactly": true,
+    "baseline_model_not_refit": true,
+    "baseline_model_hash_unchanged": true,
+    "adapter_scaler_fit_train_only": true,
+    "policy_selection_train_subjects_only": true,
+    "validation_not_used_for_policy_selection": true,
+    "calibration_evaluation_disjoint": true,
+    "all_validation_episodes_completed": true,
+    "all_prediction_scores_finite": true,
+    "p0_p1_paired_on_same_evaluation_rows": true,
+    "test_set_remained_closed": true,
+    "pooled_dataset_blocked": true,
+    "clinical_use_blocked": true
+  },
+  "counts": {
+    "validation_subjects": 8,
+    "expected_episodes": 320,
+    "actual_episodes": 320,
+    "calibration_manifest_rows": 3200,
+    "evaluation_prediction_rows": 3200,
+    "calibration_evaluation_overlap_count": 0,
+    "p0_reproduction_mismatch_count": 0
+  },
+  "failed_checks": [],
+  "selected_policies": {
+    "2": {
+      "policy_id": "k2-policy10",
+      "distance_metric": "cosine",
+      "subject_prototype_weight": 0.75,
+      "personalization_blend_weight": 0.75,
+      "temperature": 0.5,
+      "selection_scope": "all_eval",
+      "training_p1_macro_f1_mean": 0.8220069275342713,
+      "training_delta_macro_f1_mean": 0.020841224747474747,
+      "training_harm_episode_fraction": 0.25
+    },
+    "3": {
+      "policy_id": "k3-policy17",
+      "distance_metric": "cosine",
+      "subject_prototype_weight": 1.0,
+      "personalization_blend_weight": 0.75,
+      "temperature": 1.0,
+      "selection_scope": "all_eval",
+      "training_p1_macro_f1_mean": 0.8220814732142857,
+      "training_delta_macro_f1_mean": 0.02183407738095238,
+      "training_harm_episode_fraction": 0.090625
+    }
+  },
+  "performance_is_not_a_structural_gate": true
+}

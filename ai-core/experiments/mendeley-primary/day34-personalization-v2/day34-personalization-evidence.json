@@ -1,0 +1,387 @@
+{
+  "schema_version": "day34-personalization-evidence.v2",
+  "created_at_utc": "2026-08-04T03:18:13.018900+00:00",
+  "status": "PASS",
+  "run_id": "day34-personalization-mendeley-v2",
+  "scope": "personalization_few_shot_adaptation",
+  "input": {
+    "schema_version": "day34-input-gate.v2",
+    "created_at_utc": "2026-08-04T02:58:39.444027+00:00",
+    "status": "PASS",
+    "dataset_profile": "mendeley",
+    "dataset_view_id": "mendeley_core4_primary_v1",
+    "npz_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day31-mendeley-primary-fall14.npz",
+    "npz_sha256": "f62b57d1669df5d863974405778ffab8c02ac3786134cde7a4651f1464dea9e6",
+    "npz_shape": [
+      47097,
+      42
+    ],
+    "model_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day32-baseline/day32-baseline-v1/day32-selected-model.joblib",
+    "model_sha256": "92d559362e97bbf3557413947a646b9b4a70ad3dfceb945f49da911b63fc5564",
+    "model_metadata_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day32-baseline/day32-baseline-v1/day32-selected-model-metadata.json",
+    "baseline_gate_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day32-baseline/day32-baseline-v1/day32-final-gate.json",
+    "baseline_predictions_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day32-baseline/day32-baseline-v1/day32-validation-repetition-predictions.csv",
+    "feature_arm": "F-ALL14",
+    "feature_dimension": 42,
+    "class_order": [
+      "rest",
+      "hand_close",
+      "wrist_flexion",
+      "wrist_extension"
+    ],
+    "train_subject_ids": [
+      "1",
+      "11",
+      "12",
+      "13",
+      "14",
+      "16",
+      "17",
+      "18",
+      "19",
+      "2",
+      "20",
+      "22",
+      "24",
+      "26",
+      "27",
+      "28",
+      "29",
+      "3",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "36",
+      "37",
+      "38",
+      "39",
+      "4",
+      "5",
+      "7",
+      "8",
+      "9"
+    ],
+    "validation_subject_ids": [
+      "10",
+      "15",
+      "21",
+      "23",
+      "25",
+      "35",
+      "40",
+      "6"
+    ],
+    "checks": {
+      "baseline_gate_pass": true,
+      "npz_checksum_matches_metadata": true,
+      "model_checksum_matches_metadata_when_available": true,
+      "feature_contract_matches": true,
+      "class_contract_matches": true,
+      "subject_split_disjoint": true,
+      "pooled_dataset": false
+    }
+  },
+  "protocol": {
+    "schema_version": "few-shot-protocol.v2",
+    "created_at_utc": "2026-08-04T03:18:13.001522+00:00",
+    "dataset_profile": "mendeley",
+    "dataset_view_id": "mendeley_core4_primary_v1",
+    "primary_unit": "repetition",
+    "class_order": [
+      "rest",
+      "hand_close",
+      "wrist_flexion",
+      "wrist_extension"
+    ],
+    "k_values": [
+      2,
+      3
+    ],
+    "episode_seeds": [
+      3401,
+      3402,
+      3403,
+      3404,
+      3405,
+      3406,
+      3407,
+      3408,
+      3409,
+      3410,
+      3411,
+      3412,
+      3413,
+      3414,
+      3415,
+      3416,
+      3417,
+      3418,
+      3419,
+      3420
+    ],
+    "p0": "exact frozen Day 32 baseline; no subject calibration",
+    "p1": "train-subject-tuned shrinkage prototype adapter blended with frozen global score",
+    "calibration_pool": "all_trials",
+    "evaluation_policy": "all non-calibration repetitions",
+    "primary_selection_scope": "all_eval",
+    "policy_selection_partition": "train subjects only",
+    "validation_policy_tuning_allowed": false,
+    "baseline_refit_allowed": false,
+    "test_set_opened": false,
+    "clinical_use_allowed": false
+  },
+  "policy_selection": {
+    "schema_version": "few-shot-policy-selection.v2",
+    "created_at_utc": "2026-08-04T03:18:00.331621+00:00",
+    "status": "PASS",
+    "dataset_profile": "mendeley",
+    "selection_subject_partition": "train_only",
+    "selection_subject_ids": [
+      "1",
+      "11",
+      "12",
+      "13",
+      "14",
+      "16",
+      "17",
+      "18",
+      "19",
+      "2",
+      "20",
+      "22",
+      "24",
+      "26",
+      "27",
+      "28",
+      "29",
+      "3",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "36",
+      "37",
+      "38",
+      "39",
+      "4",
+      "5",
+      "7",
+      "8",
+      "9"
+    ],
+    "validation_subject_ids_used": [],
+    "selection_seeds": [
+      3401,
+      3402,
+      3403,
+      3404,
+      3405,
+      3406,
+      3407,
+      3408,
+      3409,
+      3410,
+      3411,
+      3412,
+      3413,
+      3414,
+      3415,
+      3416,
+      3417,
+      3418,
+      3419,
+      3420
+    ],
+    "primary_selection_scope": "all_eval",
+    "candidate_grid_size": 36,
+    "selected_policies": {
+      "2": {
+        "policy_id": "k2-policy10",
+        "distance_metric": "cosine",
+        "subject_prototype_weight": 0.75,
+        "personalization_blend_weight": 0.75,
+        "temperature": 0.5,
+        "selection_scope": "all_eval",
+        "training_p1_macro_f1_mean": 0.8220069275342713,
+        "training_delta_macro_f1_mean": 0.020841224747474747,
+        "training_harm_episode_fraction": 0.25
+      },
+      "3": {
+        "policy_id": "k3-policy17",
+        "distance_metric": "cosine",
+        "subject_prototype_weight": 1.0,
+        "personalization_blend_weight": 0.75,
+        "temperature": 1.0,
+        "selection_scope": "all_eval",
+        "training_p1_macro_f1_mean": 0.8220814732142857,
+        "training_delta_macro_f1_mean": 0.02183407738095238,
+        "training_harm_episode_fraction": 0.090625
+      }
+    },
+    "validation_used_for_policy_selection": false
+  },
+  "validation_primary_summary": [
+    {
+      "dataset_profile": "mendeley",
+      "k": 2,
+      "primary_scope": "all_eval",
+      "subject_count": 8,
+      "episode_count": 160,
+      "p0_macro_f1_subject_mean": 0.7039143668831169,
+      "p1_macro_f1_subject_mean": 0.7801899576118326,
+      "delta_macro_f1_subject_mean": 0.07627559072871574,
+      "delta_macro_f1_ci95_low": -0.017322113433441574,
+      "delta_macro_f1_ci95_high": 0.17259751533189033,
+      "subjects_improved": 5,
+      "subjects_equal": 1,
+      "subjects_harmed": 2,
+      "wilcoxon_statistic_exploratory": 6.0,
+      "wilcoxon_pvalue_exploratory": 0.21875,
+      "selected_policy_id": "k2-policy10"
+    },
+    {
+      "dataset_profile": "mendeley",
+      "k": 3,
+      "primary_scope": "all_eval",
+      "subject_count": 8,
+      "episode_count": 160,
+      "p0_macro_f1_subject_mean": 0.7007961309523809,
+      "p1_macro_f1_subject_mean": 0.7457514880952381,
+      "delta_macro_f1_subject_mean": 0.044955357142857144,
+      "delta_macro_f1_ci95_low": -0.04177827380952381,
+      "delta_macro_f1_ci95_high": 0.12546670386904754,
+      "subjects_improved": 4,
+      "subjects_equal": 2,
+      "subjects_harmed": 2,
+      "wilcoxon_statistic_exploratory": 6.0,
+      "wilcoxon_pvalue_exploratory": 0.4375,
+      "selected_policy_id": "k3-policy17"
+    }
+  ],
+  "governance": {
+    "baseline_refit_allowed": false,
+    "validation_policy_tuning_allowed": false,
+    "test_set_opened": false,
+    "pooled_dataset_allowed": false,
+    "clinical_use_allowed": false
+  },
+  "technical_debt": [
+    "Prototype adapter is evaluated offline at trial/repetition level.",
+    "Confidence calibration and abstention are deferred to Day 35.",
+    "Performance deltas must be interpreted with subject-cluster uncertainty, not window count."
+  ],
+  "artifacts": {
+    "day34-input-gate.json": {
+      "size_bytes": 2132,
+      "sha256": "ff64c52d7c47ea0116d50c28a128d2909b37efdc00124646da7b70ad9c46f4aa",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/day34-input-gate.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/day34-input-gate.json"
+    },
+    "day34-p0-reproduction-audit.csv": {
+      "size_bytes": 11400,
+      "sha256": "65414890388979c375a02e5c94f37dd1260fe1cf245a10fab5ddfe9c12ae8e5d",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/day34-p0-reproduction-audit.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/day34-p0-reproduction-audit.csv"
+    },
+    "day34-p0-reproduction-audit.json": {
+      "size_bytes": 299,
+      "sha256": "d3ca95f900237d6e26fa5835d652816d225775aeefbbf99ade7b8cbbbd30b819",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/day34-p0-reproduction-audit.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/day34-p0-reproduction-audit.json"
+    },
+    "day34-adapter-representation.json": {
+      "size_bytes": 1818,
+      "sha256": "bc77e6a023491908a1cfd5c1c660c1841caf82580024129e8256009896b26a5a",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/day34-adapter-representation.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/day34-adapter-representation.json"
+    },
+    "few-shot-policy-search.csv": {
+      "size_bytes": 14111,
+      "sha256": "a0354d625aa6e9147f0ec8ad92528e1ce03f989f82dcff140a97815bb1401702",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-policy-search.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-policy-search.csv"
+    },
+    "few-shot-policy-selection.json": {
+      "size_bytes": 1757,
+      "sha256": "a98da851fd74411e9a3914601bd0449fffd67f3cf3b8ecdc1e1df51ea013ba13",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-policy-selection.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-policy-selection.json"
+    },
+    "few-shot-calibration-manifest.csv": {
+      "size_bytes": 471297,
+      "sha256": "4b2ded784ae630bdfe39cc0ed3cfdfd7b8f1a98908f0384be989056f5642394c",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-calibration-manifest.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-calibration-manifest.csv"
+    },
+    "few-shot-trial-predictions.csv.gz": {
+      "size_bytes": 429240,
+      "sha256": "49d63ebc6e7196d9f19350505704d6a5c16b3ae2329c545acac17495f8bc37d8",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-trial-predictions.csv.gz",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-trial-predictions.csv.gz"
+    },
+    "few-shot-results.csv": {
+      "size_bytes": 61651,
+      "sha256": "8f5df7353d9f96d395ab420bfa86b2eb7395c569d272da660ae86be9a28fde51",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-results.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-results.csv"
+    },
+    "per-subject-improvement.csv": {
+      "size_bytes": 1917,
+      "sha256": "e87fe944753c230c2d363c808fd90b45e702fa2b8c216422d7e259dcf2ceb920",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/per-subject-improvement.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/per-subject-improvement.csv"
+    },
+    "personalization-vs-global.csv": {
+      "size_bytes": 625,
+      "sha256": "6981aee3272364890cd8864505be6994e99025c07968973eab32137583b60aab",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/personalization-vs-global.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/personalization-vs-global.csv"
+    },
+    "few-shot-class-summary.csv": {
+      "size_bytes": 836,
+      "sha256": "5372a0285fa0873b5770b42e2a4551f31862ac121b171c59428f6b03e8cb1769",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-class-summary.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-class-summary.csv"
+    },
+    "few-shot-session-summary.csv": {
+      "size_bytes": 776,
+      "sha256": "dacd7df458874cd1373471b72bfbbac611055e090eaab1ff7a126bf083ef0dad",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-session-summary.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-session-summary.csv"
+    },
+    "personalization-vs-global.png": {
+      "size_bytes": 125565,
+      "sha256": "8162f0e0ef680f9356516b48ca7d08e61e4e4c8a14118f5090b6f24bc455042f",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/personalization-vs-global.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/personalization-vs-global.png"
+    },
+    "personalization-delta-distribution.png": {
+      "size_bytes": 48899,
+      "sha256": "9f1574c4e5c4c84ad7898af3a9637217561f0071b1c0c6f66933797ba9c82922",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/personalization-delta-distribution.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/personalization-delta-distribution.png"
+    },
+    "few-shot-protocol.json": {
+      "size_bytes": 1060,
+      "sha256": "5da2278d8e23c63c375cf4547f1b3eeec47f55fae50861b5aa34241bb406e31f",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-protocol.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-protocol.json"
+    },
+    "few-shot-adapter-bundle.joblib": {
+      "size_bytes": 4441,
+      "sha256": "6d00d7ff6c535dfe1e8c3b742f52b67e40ca11adcf129a55bc81f753f3bdb158",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/few-shot-adapter-bundle.joblib",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-adapter-bundle.joblib"
+    },
+    "day34-final-gate.json": {
+      "size_bytes": 1971,
+      "sha256": "4242c997fc69acfbe037b2318a40e81b659e66b498fbdc032253e248901f15cc",
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day34-personalization/day34-personalization-mendeley-v2/day34-final-gate.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/day34-final-gate.json"
+    }
+  },
+  "next_step": "Day 35 confidence calibration and abstention using P0/P1 probability, margin and entropy columns."
+}

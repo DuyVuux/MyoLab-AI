@@ -1,0 +1,2 @@
+dataset,subject_id,k,method,resolved_failures,new_failures,persistent_failures
+synthetic,S01,2,nearest_centroid,2,0,1
