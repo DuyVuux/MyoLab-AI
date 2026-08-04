@@ -1,0 +1,47 @@
+{
+  "schema_version": "day35-confidence-abstention-protocol.v2",
+  "created_at_utc": "2026-08-04T06:42:38.712625+00:00",
+  "dataset_profile": "grabmyo",
+  "dataset_view_id": "grabmyo-primary4-forearm16-fall14-v1",
+  "class_order": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "k_values": [
+    2,
+    3
+  ],
+  "arms": [
+    "p0",
+    "p1"
+  ],
+  "development_subject_partitions": {
+    "calibration_fit": "fit calibration parameters using subject-equal weighting",
+    "calibrator_select": "select identity versus scalar temperature using NLL",
+    "threshold_select": "select confidence score by subject-mean AURC and freeze thresholds"
+  },
+  "calibration_methods": [
+    "identity",
+    "scalar_temperature"
+  ],
+  "calibration_preserves_argmax": true,
+  "confidence_score_candidates": [
+    "max_probability",
+    "probability_margin",
+    "one_minus_normalized_entropy"
+  ],
+  "operating_coverage_targets": [
+    0.95,
+    0.9,
+    0.8
+  ],
+  "primary_operating_point": "coverage_90",
+  "risk_definition": "error rate among accepted predictions",
+  "coverage_definition": "accepted predictions divided by all eligible predictions",
+  "abstention_is_not_a_class": true,
+  "validation_used_for_fit_or_selection": false,
+  "test_set_opened": false,
+  "clinical_use_allowed": false
+}

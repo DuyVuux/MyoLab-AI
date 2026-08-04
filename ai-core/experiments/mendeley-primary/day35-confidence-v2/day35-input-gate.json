@@ -1,0 +1,41 @@
+{
+  "schema_version": "day35-input-gate.v2",
+  "created_at_utc": "2026-08-04T05:19:27.126043+00:00",
+  "status": "PASS",
+  "dataset_profile": "mendeley",
+  "dataset_view_id": "mendeley_core4_primary_v1",
+  "class_order": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "day34_gate_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/day34-final-gate.json",
+  "day34_gate_sha256": "4242c997fc69acfbe037b2318a40e81b659e66b498fbdc032253e248901f15cc",
+  "day34_adapter_bundle_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-adapter-bundle.joblib",
+  "day34_adapter_bundle_sha256": "6d00d7ff6c535dfe1e8c3b742f52b67e40ca11adcf129a55bc81f753f3bdb158",
+  "day34_validation_predictions_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-trial-predictions.csv.gz",
+  "day34_validation_predictions_sha256": "49d63ebc6e7196d9f19350505704d6a5c16b3ae2329c545acac17495f8bc37d8",
+  "npz_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day31-mendeley-primary-fall14.npz",
+  "npz_sha256": "f62b57d1669df5d863974405778ffab8c02ac3786134cde7a4651f1464dea9e6",
+  "baseline_model_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day32-baseline/day32-baseline-v1/day32-selected-model.joblib",
+  "baseline_model_sha256": "92d559362e97bbf3557413947a646b9b4a70ad3dfceb945f49da911b63fc5564",
+  "validation_subject_ids": [
+    "10",
+    "15",
+    "21",
+    "23",
+    "25",
+    "35",
+    "40",
+    "6"
+  ],
+  "checks": {
+    "day34_gate_pass": true,
+    "dataset_profile_matches": true,
+    "class_contract_matches": true,
+    "day34_calibration_evaluation_disjoint": true,
+    "validation_predictions_finite": true,
+    "validation_not_used_for_day34_policy_selection": true
+  }
+}

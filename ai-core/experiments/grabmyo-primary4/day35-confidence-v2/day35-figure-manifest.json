@@ -1,0 +1,46 @@
+{
+  "schema_version": "day35-figure-manifest.v1",
+  "created_at_utc": "2026-08-04T06:42:38.662773+00:00",
+  "figures": [
+    {
+      "filename": "day35-reliability-k2-p0-cross_session.png",
+      "sha256": "85dca30f8105053c005f000d9ac28ff7e520b21a4a2328e0eee8c6aaee14fdd3",
+      "size_bytes": 118504
+    },
+    {
+      "filename": "day35-coverage-risk-k2-p0-cross_session.png",
+      "sha256": "072b5259b085bc33f04297879f945495d8dc3e6862ecdbeeac1876ca0ec361cf",
+      "size_bytes": 65181
+    },
+    {
+      "filename": "day35-reliability-k2-p1-cross_session.png",
+      "sha256": "8d7e9230fbb3eb9d9e5be90275d3301cfad7c35edef6033ffbdd18c6410e37d5",
+      "size_bytes": 101301
+    },
+    {
+      "filename": "day35-coverage-risk-k2-p1-cross_session.png",
+      "sha256": "9d09f1c3fb5ce62c7034149a445334b3c147a8ef888d4886f04eb112266ce23d",
+      "size_bytes": 64251
+    },
+    {
+      "filename": "day35-reliability-k3-p0-cross_session.png",
+      "sha256": "a7277e2fc631c1de9b5fc9a19d1afdb784d78c18655edc23edd52d644ac8105f",
+      "size_bytes": 110127
+    },
+    {
+      "filename": "day35-coverage-risk-k3-p0-cross_session.png",
+      "sha256": "6172a8b6729a67c89ae586fad841db8b34159997fa39df2890786ac54f3ab5d9",
+      "size_bytes": 64534
+    },
+    {
+      "filename": "day35-reliability-k3-p1-cross_session.png",
+      "sha256": "0c4567d759daca668f2da919f36e39ceea61d9994f1b282f017648ecd0e162a8",
+      "size_bytes": 107746
+    },
+    {
+      "filename": "day35-coverage-risk-k3-p1-cross_session.png",
+      "sha256": "7984fcc97285eefe043d011c83c2ae1f80f58cda7cfeda86247e1bb2f7410210",
+      "size_bytes": 63789
+    }
+  ]
+}

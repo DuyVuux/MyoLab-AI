@@ -1,0 +1,7 @@
+{
+  "schema_version": "day35-abstention-policy.v1",
+  "threshold_source": "SYNTHETIC_OOF_ONLY",
+  "threshold": 0.7,
+  "quality_fail": "abstain",
+  "validation_retuning_allowed": false
+}

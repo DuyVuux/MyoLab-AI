@@ -1,0 +1,968 @@
+{
+  "schema_version": "day35-confidence-calibration-evidence.v2",
+  "created_at_utc": "2026-08-04T05:19:41.221188+00:00",
+  "status": "PASS",
+  "run_id": "day35-confidence-mendeley-v2",
+  "scope": "confidence_calibration_and_selective_prediction",
+  "input": {
+    "schema_version": "day35-input-gate.v2",
+    "created_at_utc": "2026-08-04T05:19:27.126043+00:00",
+    "status": "PASS",
+    "dataset_profile": "mendeley",
+    "dataset_view_id": "mendeley_core4_primary_v1",
+    "class_order": [
+      "rest",
+      "hand_close",
+      "wrist_flexion",
+      "wrist_extension"
+    ],
+    "day34_gate_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/day34-final-gate.json",
+    "day34_gate_sha256": "4242c997fc69acfbe037b2318a40e81b659e66b498fbdc032253e248901f15cc",
+    "day34_adapter_bundle_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-adapter-bundle.joblib",
+    "day34_adapter_bundle_sha256": "6d00d7ff6c535dfe1e8c3b742f52b67e40ca11adcf129a55bc81f753f3bdb158",
+    "day34_validation_predictions_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day34-personalization/day34-personalization-mendeley-v2/few-shot-trial-predictions.csv.gz",
+    "day34_validation_predictions_sha256": "49d63ebc6e7196d9f19350505704d6a5c16b3ae2329c545acac17495f8bc37d8",
+    "npz_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day31-mendeley-primary-fall14.npz",
+    "npz_sha256": "f62b57d1669df5d863974405778ffab8c02ac3786134cde7a4651f1464dea9e6",
+    "baseline_model_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day32-baseline/day32-baseline-v1/day32-selected-model.joblib",
+    "baseline_model_sha256": "92d559362e97bbf3557413947a646b9b4a70ad3dfceb945f49da911b63fc5564",
+    "validation_subject_ids": [
+      "10",
+      "15",
+      "21",
+      "23",
+      "25",
+      "35",
+      "40",
+      "6"
+    ],
+    "checks": {
+      "day34_gate_pass": true,
+      "dataset_profile_matches": true,
+      "class_contract_matches": true,
+      "day34_calibration_evaluation_disjoint": true,
+      "validation_predictions_finite": true,
+      "validation_not_used_for_day34_policy_selection": true
+    }
+  },
+  "protocol": {
+    "schema_version": "day35-confidence-abstention-protocol.v2",
+    "created_at_utc": "2026-08-04T05:19:41.191950+00:00",
+    "dataset_profile": "mendeley",
+    "dataset_view_id": "mendeley_core4_primary_v1",
+    "class_order": [
+      "rest",
+      "hand_close",
+      "wrist_flexion",
+      "wrist_extension"
+    ],
+    "k_values": [
+      2,
+      3
+    ],
+    "arms": [
+      "p0",
+      "p1"
+    ],
+    "development_subject_partitions": {
+      "calibration_fit": "fit calibration parameters using subject-equal weighting",
+      "calibrator_select": "select identity versus scalar temperature using NLL",
+      "threshold_select": "select confidence score by subject-mean AURC and freeze thresholds"
+    },
+    "calibration_methods": [
+      "identity",
+      "scalar_temperature"
+    ],
+    "calibration_preserves_argmax": true,
+    "confidence_score_candidates": [
+      "max_probability",
+      "probability_margin",
+      "one_minus_normalized_entropy"
+    ],
+    "operating_coverage_targets": [
+      0.95,
+      0.9,
+      0.8
+    ],
+    "primary_operating_point": "coverage_90",
+    "risk_definition": "error rate among accepted predictions",
+    "coverage_definition": "accepted predictions divided by all eligible predictions",
+    "abstention_is_not_a_class": true,
+    "validation_used_for_fit_or_selection": false,
+    "test_set_opened": false,
+    "clinical_use_allowed": false
+  },
+  "calibrator_selection": {
+    "schema_version": "day35-calibrator-selection.v2",
+    "created_at_utc": "2026-08-04T05:19:34.622828+00:00",
+    "dataset_profile": "mendeley",
+    "fit_partition": "calibration_fit",
+    "selection_partition": "calibrator_select",
+    "validation_subjects_used": [],
+    "selections": {
+      "k2:p0": {
+        "k": 2,
+        "arm": "p0",
+        "selected_method": "scalar_temperature",
+        "temperature_nll_gain_vs_identity": 0.4372797495617885,
+        "minimum_required_nll_gain": 0.0001,
+        "selected_metadata": {
+          "method": "scalar_temperature",
+          "temperature": 2.1381212255652446
+        },
+        "selection_metrics": {
+          "subject_count": 6,
+          "row_count": 72,
+          "nll": 0.8906484117597123,
+          "brier": 0.23846416496513115,
+          "ece_equal_width": 0.20571090996323993,
+          "ece_equal_mass": 0.2112438644968397,
+          "accuracy": 0.9305555555555556,
+          "confidence_mean": 0.7248446455923155
+        },
+        "argmax_preserved": true
+      },
+      "k2:p1": {
+        "k": 2,
+        "arm": "p1",
+        "selected_method": "scalar_temperature",
+        "temperature_nll_gain_vs_identity": 0.3641679706767652,
+        "minimum_required_nll_gain": 0.0001,
+        "selected_metadata": {
+          "method": "scalar_temperature",
+          "temperature": 0.2536971080769925
+        },
+        "selection_metrics": {
+          "subject_count": 6,
+          "row_count": 72,
+          "nll": 0.21054480099467807,
+          "brier": 0.11090125771823336,
+          "ece_equal_width": 0.09460258341360266,
+          "ece_equal_mass": 0.07617112481062141,
+          "accuracy": 0.9166666666666666,
+          "confidence_mean": 0.8712079630082529
+        },
+        "argmax_preserved": true
+      },
+      "k3:p0": {
+        "k": 3,
+        "arm": "p0",
+        "selected_method": "scalar_temperature",
+        "temperature_nll_gain_vs_identity": 0.13743307592851906,
+        "minimum_required_nll_gain": 0.0001,
+        "selected_metadata": {
+          "method": "scalar_temperature",
+          "temperature": 3.395665784133282
+        },
+        "selection_metrics": {
+          "subject_count": 6,
+          "row_count": 48,
+          "nll": 0.6780413743979131,
+          "brier": 0.30896366667711245,
+          "ece_equal_width": 0.27834320714219446,
+          "ece_equal_mass": 0.2783432071421944,
+          "accuracy": 0.9166666666666666,
+          "confidence_mean": 0.6383234595244722
+        },
+        "argmax_preserved": true
+      },
+      "k3:p1": {
+        "k": 3,
+        "arm": "p1",
+        "selected_method": "scalar_temperature",
+        "temperature_nll_gain_vs_identity": 0.492854631242286,
+        "minimum_required_nll_gain": 0.0001,
+        "selected_metadata": {
+          "method": "scalar_temperature",
+          "temperature": 0.2594833650972254
+        },
+        "selection_metrics": {
+          "subject_count": 6,
+          "row_count": 48,
+          "nll": 0.22558817302535372,
+          "brier": 0.10704589558634382,
+          "ece_equal_width": 0.0969057104151112,
+          "ece_equal_mass": 0.08656274399487934,
+          "accuracy": 0.9375,
+          "confidence_mean": 0.8633244699571758
+        },
+        "argmax_preserved": true
+      }
+    }
+  },
+  "abstention_policy": {
+    "schema_version": "day35-abstention-policy.v2",
+    "created_at_utc": "2026-08-04T05:19:34.797788+00:00",
+    "dataset_profile": "mendeley",
+    "selection_partition": "threshold_select",
+    "validation_subjects_used": [],
+    "primary_operating_point": "coverage_90",
+    "coverage_targets": [
+      0.95,
+      0.9,
+      0.8
+    ],
+    "policies": {
+      "k2:p0": {
+        "k": 2,
+        "arm": "p0",
+        "calibrator_method": {
+          "method": "scalar_temperature",
+          "temperature": 2.1381212255652446
+        },
+        "selected_score_name": "probability_margin",
+        "score_selection_metric": "subject_mean_aurc",
+        "score_candidate_metrics": [
+          {
+            "k": 2,
+            "arm": "p0",
+            "score_name": "probability_margin",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 83,
+            "pooled_aurc": 0.054144701838816756,
+            "subject_mean_aurc": 0.07956907510478939
+          },
+          {
+            "k": 2,
+            "arm": "p0",
+            "score_name": "max_probability",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 83,
+            "pooled_aurc": 0.058737249241428216,
+            "subject_mean_aurc": 0.08556869717584002
+          },
+          {
+            "k": 2,
+            "arm": "p0",
+            "score_name": "one_minus_normalized_entropy",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 83,
+            "pooled_aurc": 0.06667027652746232,
+            "subject_mean_aurc": 0.09913205181062323
+          }
+        ],
+        "operating_points": {
+          "no_abstention": {
+            "target_coverage": 1.0,
+            "threshold": 0.0
+          },
+          "coverage_95": {
+            "target_coverage": 0.95,
+            "threshold": 0.08460324604128105,
+            "development_observed_metrics": {
+              "n_rows": 83,
+              "accepted_count": 79,
+              "abstained_count": 4,
+              "coverage": 0.9518072289156626,
+              "abstention_rate": 0.048192771084337394,
+              "selective_risk": 0.17721518987341772,
+              "selective_accuracy": 0.8227848101265823,
+              "total_error_count": 16,
+              "accepted_error_count": 14,
+              "abstained_error_count": 2,
+              "error_capture_rate": 0.125,
+              "selective_balanced_accuracy": 0.8180555555555555,
+              "selective_macro_f1": 0.8172032751621968,
+              "selective_macro_precision": 0.8178780284043442,
+              "selective_macro_recall": 0.8180555555555555
+            }
+          },
+          "coverage_90": {
+            "target_coverage": 0.9,
+            "threshold": 0.12311876743082584,
+            "development_observed_metrics": {
+              "n_rows": 83,
+              "accepted_count": 75,
+              "abstained_count": 8,
+              "coverage": 0.9036144578313253,
+              "abstention_rate": 0.09638554216867468,
+              "selective_risk": 0.16,
+              "selective_accuracy": 0.84,
+              "total_error_count": 16,
+              "accepted_error_count": 12,
+              "abstained_error_count": 4,
+              "error_capture_rate": 0.25,
+              "selective_balanced_accuracy": 0.8322583419332645,
+              "selective_macro_f1": 0.8322583419332645,
+              "selective_macro_precision": 0.8322583419332645,
+              "selective_macro_recall": 0.8322583419332645
+            }
+          },
+          "coverage_80": {
+            "target_coverage": 0.8,
+            "threshold": 0.23019889999801424,
+            "development_observed_metrics": {
+              "n_rows": 83,
+              "accepted_count": 67,
+              "abstained_count": 16,
+              "coverage": 0.8072289156626506,
+              "abstention_rate": 0.19277108433734935,
+              "selective_risk": 0.13432835820895522,
+              "selective_accuracy": 0.8656716417910447,
+              "total_error_count": 16,
+              "accepted_error_count": 9,
+              "abstained_error_count": 7,
+              "error_capture_rate": 0.4375,
+              "selective_balanced_accuracy": 0.8572916666666667,
+              "selective_macro_f1": 0.8566471163245357,
+              "selective_macro_precision": 0.8615079365079366,
+              "selective_macro_recall": 0.8572916666666667
+            }
+          }
+        },
+        "threshold_partition": "threshold_select"
+      },
+      "k2:p1": {
+        "k": 2,
+        "arm": "p1",
+        "calibrator_method": {
+          "method": "scalar_temperature",
+          "temperature": 0.2536971080769925
+        },
+        "selected_score_name": "one_minus_normalized_entropy",
+        "score_selection_metric": "subject_mean_aurc",
+        "score_candidate_metrics": [
+          {
+            "k": 2,
+            "arm": "p1",
+            "score_name": "one_minus_normalized_entropy",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 83,
+            "pooled_aurc": 0.04687856958945624,
+            "subject_mean_aurc": 0.08171655484967173
+          },
+          {
+            "k": 2,
+            "arm": "p1",
+            "score_name": "max_probability",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 83,
+            "pooled_aurc": 0.04722011684660771,
+            "subject_mean_aurc": 0.08185183623495311
+          },
+          {
+            "k": 2,
+            "arm": "p1",
+            "score_name": "probability_margin",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 83,
+            "pooled_aurc": 0.04847264814511885,
+            "subject_mean_aurc": 0.0829340873172042
+          }
+        ],
+        "operating_points": {
+          "no_abstention": {
+            "target_coverage": 1.0,
+            "threshold": 0.0
+          },
+          "coverage_95": {
+            "target_coverage": 0.95,
+            "threshold": 0.29899750239451395,
+            "development_observed_metrics": {
+              "n_rows": 83,
+              "accepted_count": 79,
+              "abstained_count": 4,
+              "coverage": 0.9518072289156626,
+              "abstention_rate": 0.048192771084337394,
+              "selective_risk": 0.20253164556962025,
+              "selective_accuracy": 0.7974683544303798,
+              "total_error_count": 19,
+              "accepted_error_count": 16,
+              "abstained_error_count": 3,
+              "error_capture_rate": 0.15789473684210525,
+              "selective_balanced_accuracy": 0.7927631578947368,
+              "selective_macro_f1": 0.7953580203580204,
+              "selective_macro_precision": 0.8038194444444444,
+              "selective_macro_recall": 0.7927631578947368
+            }
+          },
+          "coverage_90": {
+            "target_coverage": 0.9,
+            "threshold": 0.36672657258282293,
+            "development_observed_metrics": {
+              "n_rows": 83,
+              "accepted_count": 75,
+              "abstained_count": 8,
+              "coverage": 0.9036144578313253,
+              "abstention_rate": 0.09638554216867468,
+              "selective_risk": 0.17333333333333334,
+              "selective_accuracy": 0.8266666666666667,
+              "total_error_count": 19,
+              "accepted_error_count": 13,
+              "abstained_error_count": 6,
+              "error_capture_rate": 0.3157894736842105,
+              "selective_balanced_accuracy": 0.8199174406604747,
+              "selective_macro_f1": 0.8221198156682028,
+              "selective_macro_precision": 0.8382571534745449,
+              "selective_macro_recall": 0.8199174406604747
+            }
+          },
+          "coverage_80": {
+            "target_coverage": 0.8,
+            "threshold": 0.4754987204444415,
+            "development_observed_metrics": {
+              "n_rows": 83,
+              "accepted_count": 67,
+              "abstained_count": 16,
+              "coverage": 0.8072289156626506,
+              "abstention_rate": 0.19277108433734935,
+              "selective_risk": 0.11940298507462686,
+              "selective_accuracy": 0.8805970149253731,
+              "total_error_count": 19,
+              "accepted_error_count": 8,
+              "abstained_error_count": 11,
+              "error_capture_rate": 0.5789473684210527,
+              "selective_balanced_accuracy": 0.8700980392156863,
+              "selective_macro_f1": 0.8732736572890025,
+              "selective_macro_precision": 0.8775995246583482,
+              "selective_macro_recall": 0.8700980392156863
+            }
+          }
+        },
+        "threshold_partition": "threshold_select"
+      },
+      "k3:p0": {
+        "k": 3,
+        "arm": "p0",
+        "calibrator_method": {
+          "method": "scalar_temperature",
+          "temperature": 3.395665784133282
+        },
+        "selected_score_name": "probability_margin",
+        "score_selection_metric": "subject_mean_aurc",
+        "score_candidate_metrics": [
+          {
+            "k": 3,
+            "arm": "p0",
+            "score_name": "probability_margin",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 55,
+            "pooled_aurc": 0.06669924820518863,
+            "subject_mean_aurc": 0.08357021379980564
+          },
+          {
+            "k": 3,
+            "arm": "p0",
+            "score_name": "max_probability",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 55,
+            "pooled_aurc": 0.0809454219982211,
+            "subject_mean_aurc": 0.08867225461613217
+          },
+          {
+            "k": 3,
+            "arm": "p0",
+            "score_name": "one_minus_normalized_entropy",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 55,
+            "pooled_aurc": 0.09846180518651611,
+            "subject_mean_aurc": 0.10580660835762877
+          }
+        ],
+        "operating_points": {
+          "no_abstention": {
+            "target_coverage": 1.0,
+            "threshold": 0.0
+          },
+          "coverage_95": {
+            "target_coverage": 0.95,
+            "threshold": 0.014980651384593091,
+            "development_observed_metrics": {
+              "n_rows": 55,
+              "accepted_count": 53,
+              "abstained_count": 2,
+              "coverage": 0.9636363636363636,
+              "abstention_rate": 0.036363636363636376,
+              "selective_risk": 0.20754716981132076,
+              "selective_accuracy": 0.7924528301886793,
+              "total_error_count": 13,
+              "accepted_error_count": 11,
+              "abstained_error_count": 2,
+              "error_capture_rate": 0.15384615384615385,
+              "selective_balanced_accuracy": 0.7884615384615384,
+              "selective_macro_f1": 0.7884615384615384,
+              "selective_macro_precision": 0.7884615384615384,
+              "selective_macro_recall": 0.7884615384615384
+            }
+          },
+          "coverage_90": {
+            "target_coverage": 0.9,
+            "threshold": 0.07357054479045205,
+            "development_observed_metrics": {
+              "n_rows": 55,
+              "accepted_count": 50,
+              "abstained_count": 5,
+              "coverage": 0.9090909090909091,
+              "abstention_rate": 0.09090909090909094,
+              "selective_risk": 0.18,
+              "selective_accuracy": 0.82,
+              "total_error_count": 13,
+              "accepted_error_count": 9,
+              "abstained_error_count": 4,
+              "error_capture_rate": 0.3076923076923077,
+              "selective_balanced_accuracy": 0.8167249417249418,
+              "selective_macro_f1": 0.8145454545454546,
+              "selective_macro_precision": 0.8135198135198135,
+              "selective_macro_recall": 0.8167249417249418
+            }
+          },
+          "coverage_80": {
+            "target_coverage": 0.8,
+            "threshold": 0.09151448618748809,
+            "development_observed_metrics": {
+              "n_rows": 55,
+              "accepted_count": 47,
+              "abstained_count": 8,
+              "coverage": 0.8545454545454545,
+              "abstention_rate": 0.1454545454545455,
+              "selective_risk": 0.14893617021276595,
+              "selective_accuracy": 0.851063829787234,
+              "total_error_count": 13,
+              "accepted_error_count": 7,
+              "abstained_error_count": 6,
+              "error_capture_rate": 0.46153846153846156,
+              "selective_balanced_accuracy": 0.8401515151515151,
+              "selective_macro_f1": 0.846135265700483,
+              "selective_macro_precision": 0.858974358974359,
+              "selective_macro_recall": 0.8401515151515151
+            }
+          }
+        },
+        "threshold_partition": "threshold_select"
+      },
+      "k3:p1": {
+        "k": 3,
+        "arm": "p1",
+        "calibrator_method": {
+          "method": "scalar_temperature",
+          "temperature": 0.2594833650972254
+        },
+        "selected_score_name": "max_probability",
+        "score_selection_metric": "subject_mean_aurc",
+        "score_candidate_metrics": [
+          {
+            "k": 3,
+            "arm": "p1",
+            "score_name": "max_probability",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 55,
+            "pooled_aurc": 0.04833446170815463,
+            "subject_mean_aurc": 0.08286868318756076
+          },
+          {
+            "k": 3,
+            "arm": "p1",
+            "score_name": "probability_margin",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 55,
+            "pooled_aurc": 0.05048263012018113,
+            "subject_mean_aurc": 0.08286868318756076
+          },
+          {
+            "k": 3,
+            "arm": "p1",
+            "score_name": "one_minus_normalized_entropy",
+            "threshold_subject_count": 7,
+            "threshold_row_count": 55,
+            "pooled_aurc": 0.0460247735697485,
+            "subject_mean_aurc": 0.08733296890184647
+          }
+        ],
+        "operating_points": {
+          "no_abstention": {
+            "target_coverage": 1.0,
+            "threshold": 0.0
+          },
+          "coverage_95": {
+            "target_coverage": 0.95,
+            "threshold": 0.475646641610507,
+            "development_observed_metrics": {
+              "n_rows": 55,
+              "accepted_count": 53,
+              "abstained_count": 2,
+              "coverage": 0.9636363636363636,
+              "abstention_rate": 0.036363636363636376,
+              "selective_risk": 0.20754716981132076,
+              "selective_accuracy": 0.7924528301886793,
+              "total_error_count": 12,
+              "accepted_error_count": 11,
+              "abstained_error_count": 1,
+              "error_capture_rate": 0.08333333333333333,
+              "selective_balanced_accuracy": 0.7884615384615385,
+              "selective_macro_f1": 0.7905219780219781,
+              "selective_macro_precision": 0.7968531468531469,
+              "selective_macro_recall": 0.7884615384615385
+            }
+          },
+          "coverage_90": {
+            "target_coverage": 0.9,
+            "threshold": 0.5528597085485536,
+            "development_observed_metrics": {
+              "n_rows": 55,
+              "accepted_count": 50,
+              "abstained_count": 5,
+              "coverage": 0.9090909090909091,
+              "abstention_rate": 0.09090909090909094,
+              "selective_risk": 0.18,
+              "selective_accuracy": 0.82,
+              "total_error_count": 12,
+              "accepted_error_count": 9,
+              "abstained_error_count": 3,
+              "error_capture_rate": 0.25,
+              "selective_balanced_accuracy": 0.8125,
+              "selective_macro_f1": 0.8145454545454546,
+              "selective_macro_precision": 0.8211538461538461,
+              "selective_macro_recall": 0.8125
+            }
+          },
+          "coverage_80": {
+            "target_coverage": 0.8,
+            "threshold": 0.6880992862827446,
+            "development_observed_metrics": {
+              "n_rows": 55,
+              "accepted_count": 45,
+              "abstained_count": 10,
+              "coverage": 0.8181818181818182,
+              "abstention_rate": 0.18181818181818177,
+              "selective_risk": 0.1111111111111111,
+              "selective_accuracy": 0.8888888888888888,
+              "total_error_count": 12,
+              "accepted_error_count": 5,
+              "abstained_error_count": 7,
+              "error_capture_rate": 0.5833333333333334,
+              "selective_balanced_accuracy": 0.8805555555555555,
+              "selective_macro_f1": 0.8841036414565826,
+              "selective_macro_precision": 0.8901515151515151,
+              "selective_macro_recall": 0.8805555555555555
+            }
+          }
+        },
+        "threshold_partition": "threshold_select"
+      }
+    }
+  },
+  "primary_validation_summary": [
+    {
+      "k": 2,
+      "arm": "p0",
+      "scope": "all_eval",
+      "operating_point": "coverage_90",
+      "threshold": 0.12311876743082584,
+      "score_name": "probability_margin",
+      "subject_count": 8,
+      "episode_count": 160,
+      "n_rows": 1920,
+      "accepted_count": 1551,
+      "abstained_count": 369,
+      "coverage": 0.8078125,
+      "abstention_rate": 0.19218749999999996,
+      "selective_risk": 0.19793681495809157,
+      "selective_accuracy": 0.8020631850419084,
+      "total_error_count": 471,
+      "accepted_error_count": 307,
+      "abstained_error_count": 164,
+      "error_capture_rate": 0.3481953290870488,
+      "selective_balanced_accuracy": 0.7800954768372922,
+      "selective_macro_f1": 0.7770266688302607,
+      "selective_macro_precision": 0.799751937124921,
+      "selective_macro_recall": 0.7800954768372922,
+      "subject_mean_coverage": 0.8078125,
+      "subject_mean_coverage_ci95_low": 0.7427083333333333,
+      "subject_mean_coverage_ci95_high": 0.8770833333333333,
+      "subject_mean_selective_risk": 0.18744694288711228,
+      "subject_mean_selective_risk_ci95_low": 0.06816436251920123,
+      "subject_mean_selective_risk_ci95_high": 0.30777218216396446
+    },
+    {
+      "k": 2,
+      "arm": "p1",
+      "scope": "all_eval",
+      "operating_point": "coverage_90",
+      "threshold": 0.36672657258282293,
+      "score_name": "one_minus_normalized_entropy",
+      "subject_count": 8,
+      "episode_count": 160,
+      "n_rows": 1920,
+      "accepted_count": 1624,
+      "abstained_count": 296,
+      "coverage": 0.8458333333333333,
+      "abstention_rate": 0.15416666666666667,
+      "selective_risk": 0.14839901477832512,
+      "selective_accuracy": 0.8516009852216748,
+      "total_error_count": 374,
+      "accepted_error_count": 241,
+      "abstained_error_count": 133,
+      "error_capture_rate": 0.35561497326203206,
+      "selective_balanced_accuracy": 0.8359183257467326,
+      "selective_macro_f1": 0.8422211949503042,
+      "selective_macro_precision": 0.861981673838796,
+      "selective_macro_recall": 0.8359183257467326,
+      "subject_mean_coverage": 0.8458333333333334,
+      "subject_mean_coverage_ci95_low": 0.778125,
+      "subject_mean_coverage_ci95_high": 0.909375,
+      "subject_mean_selective_risk": 0.15462918298392986,
+      "subject_mean_selective_risk_ci95_low": 0.05940964893375064,
+      "subject_mean_selective_risk_ci95_high": 0.26175327088038075
+    },
+    {
+      "k": 3,
+      "arm": "p0",
+      "scope": "all_eval",
+      "operating_point": "coverage_90",
+      "threshold": 0.07357054479045205,
+      "score_name": "probability_margin",
+      "subject_count": 8,
+      "episode_count": 160,
+      "n_rows": 1280,
+      "accepted_count": 1023,
+      "abstained_count": 257,
+      "coverage": 0.79921875,
+      "abstention_rate": 0.20078125000000002,
+      "selective_risk": 0.19452590420332355,
+      "selective_accuracy": 0.8054740957966764,
+      "total_error_count": 316,
+      "accepted_error_count": 199,
+      "abstained_error_count": 117,
+      "error_capture_rate": 0.370253164556962,
+      "selective_balanced_accuracy": 0.783654011241947,
+      "selective_macro_f1": 0.7800864885305696,
+      "selective_macro_precision": 0.8038427132759755,
+      "selective_macro_recall": 0.7836540112419471,
+      "subject_mean_coverage": 0.7992187500000001,
+      "subject_mean_coverage_ci95_low": 0.73515625,
+      "subject_mean_coverage_ci95_high": 0.8671875,
+      "subject_mean_selective_risk": 0.18648527768311834,
+      "subject_mean_selective_risk_ci95_low": 0.07705128205128205,
+      "subject_mean_selective_risk_ci95_high": 0.30676827910198945
+    },
+    {
+      "k": 3,
+      "arm": "p1",
+      "scope": "all_eval",
+      "operating_point": "coverage_90",
+      "threshold": 0.5528597085485536,
+      "score_name": "max_probability",
+      "subject_count": 8,
+      "episode_count": 160,
+      "n_rows": 1280,
+      "accepted_count": 1065,
+      "abstained_count": 215,
+      "coverage": 0.83203125,
+      "abstention_rate": 0.16796875,
+      "selective_risk": 0.1624413145539906,
+      "selective_accuracy": 0.8375586854460094,
+      "total_error_count": 276,
+      "accepted_error_count": 173,
+      "abstained_error_count": 103,
+      "error_capture_rate": 0.37318840579710144,
+      "selective_balanced_accuracy": 0.8200367371420003,
+      "selective_macro_f1": 0.8213883940466807,
+      "selective_macro_precision": 0.8410842620452649,
+      "selective_macro_recall": 0.8200367371420003,
+      "subject_mean_coverage": 0.83203125,
+      "subject_mean_coverage_ci95_low": 0.7749999999999999,
+      "subject_mean_coverage_ci95_high": 0.8929687500000001,
+      "subject_mean_selective_risk": 0.16757139242941266,
+      "subject_mean_selective_risk_ci95_low": 0.06954831154478897,
+      "subject_mean_selective_risk_ci95_high": 0.2746403385503133
+    }
+  ],
+  "governance": {
+    "baseline_refit_allowed": false,
+    "personalization_policy_refit_allowed": false,
+    "validation_calibrator_fit_allowed": false,
+    "validation_calibrator_selection_allowed": false,
+    "validation_threshold_selection_allowed": false,
+    "test_set_opened": false,
+    "pooled_dataset_allowed": false,
+    "clinical_use_allowed": false
+  },
+  "interpretation_limits": [
+    "Abstention means insufficient confidence for automated routing; it is not a new gesture class.",
+    "Coverage-risk results are offline and dataset-specific.",
+    "No clinical safety claim follows from Mendeley or GRABMyo performance.",
+    "Repeated few-shot episodes are summarized with subject-level uncertainty; row count is not an independent sample count."
+  ],
+  "technical_debt": [
+    "External-device and real Noraxon export calibration remain unvalidated.",
+    "Operating points require stakeholder risk tolerance before any pilot.",
+    "Day 36 should consume calibrated confidence and abstention as context, not hard diagnosis."
+  ],
+  "artifacts": {
+    "day35-input-gate.json": {
+      "sha256": "b6192dde6a5469aada8a89a39e312f8d3f7e1d59fd6df4eb40e9cb071a959499",
+      "size_bytes": 2063,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-input-gate.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-input-gate.json"
+    },
+    "day35-development-subject-partitions.csv": {
+      "sha256": "5a74a2b33ff8417b2aee752080b04a193ac4e33e5127fd2a5190a9e1972b9060",
+      "size_bytes": 658,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-development-subject-partitions.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-development-subject-partitions.csv"
+    },
+    "day35-development-episode-manifest.csv": {
+      "sha256": "b9738f194fe16f6872e86d1b5dbf9e806ed6387fbbd2a7c81d08e8bf115e777a",
+      "size_bytes": 58706,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-development-episode-manifest.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-development-episode-manifest.csv"
+    },
+    "day35-development-predictions.csv.gz": {
+      "sha256": "9045bc673ef5c0389e5230a4eb60374917aa05ec991a683bd554b95eac899e41",
+      "size_bytes": 39392,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-development-predictions.csv.gz",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-development-predictions.csv.gz"
+    },
+    "day35-calibrator-candidate-metrics.csv": {
+      "sha256": "7be2940bf3a031162c96d33041cf42bba8cae35e40c10a7d9c24146ae8becefa",
+      "size_bytes": 2532,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-calibrator-candidate-metrics.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-calibrator-candidate-metrics.csv"
+    },
+    "day35-calibrator-selection.json": {
+      "sha256": "2e7a5b5ffddb11df629143ce29274ffee8e828fc3b3c7c1679b9f08f3eb3d9e5",
+      "size_bytes": 3082,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-calibrator-selection.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-calibrator-selection.json"
+    },
+    "day35-abstention-score-selection.csv": {
+      "sha256": "f95474423c40df68a350b0d7e3d1059638648d1aa6495043e6f4ecab4134a1f6",
+      "size_bytes": 946,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-abstention-score-selection.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-abstention-score-selection.csv"
+    },
+    "day35-development-coverage-risk.csv": {
+      "sha256": "e508e3a048454379742a3a3fc1e10d9d9c7b6ad5dda9acbea0d09d91454ff8fa",
+      "size_bytes": 97558,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-development-coverage-risk.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-development-coverage-risk.csv"
+    },
+    "day35-abstention-policy.json": {
+      "sha256": "21b99bdad3abaf57823b811b01801145a2d99839a58d60602bdb026da4fb4cef",
+      "size_bytes": 16066,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-abstention-policy.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-abstention-policy.json"
+    },
+    "day35-validation-predictions.csv.gz": {
+      "sha256": "fc59a627c3c079664009aa927c30d51f3a777c2d256c4070bdafea4c8af7c60e",
+      "size_bytes": 462104,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-validation-predictions.csv.gz",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-validation-predictions.csv.gz"
+    },
+    "day35-validation-calibration-metrics.csv": {
+      "sha256": "30a8b28b65209ab0a45292a74232c9676864c61adaa533be2446557f4caab9b4",
+      "size_bytes": 1850,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-validation-calibration-metrics.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-validation-calibration-metrics.csv"
+    },
+    "day35-validation-selective-metrics.csv": {
+      "sha256": "d5dbfa4221e939eb471660fb3150e665fc9274d51470b8a2dd24089fdf5534a3",
+      "size_bytes": 5873,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-validation-selective-metrics.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-validation-selective-metrics.csv"
+    },
+    "day35-validation-subject-metrics.csv": {
+      "sha256": "f74a009d03d15127d8321c7beccfdee47bf2992abed7e825c7c047f688fba966",
+      "size_bytes": 20288,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-validation-subject-metrics.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-validation-subject-metrics.csv"
+    },
+    "day35-validation-class-metrics.csv": {
+      "sha256": "f808b2b82fcc98df116b4fa6bf50f4fd31256225cbb9b2690f95c71520534028",
+      "size_bytes": 11005,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-validation-class-metrics.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-validation-class-metrics.csv"
+    },
+    "day35-validation-session-metrics.csv": {
+      "sha256": "9f0a649f85f3d7f3648d04223404428eabe04988160d5fa02ce6625927cb3f12",
+      "size_bytes": 3515,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-validation-session-metrics.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-validation-session-metrics.csv"
+    },
+    "day35-validation-reliability-bins.csv": {
+      "sha256": "8a53a1c669c061e1a1467381839678c9f5d191f5b71e5a5bee0519deb52a76cc",
+      "size_bytes": 10435,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-validation-reliability-bins.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-validation-reliability-bins.csv"
+    },
+    "day35-validation-coverage-risk.csv": {
+      "sha256": "b3049378609d2c09f0b365c56f4265b10568f98c70e0e95753a885a85e2ac938",
+      "size_bytes": 35051,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-validation-coverage-risk.csv",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-validation-coverage-risk.csv"
+    },
+    "day35-figure-manifest.json": {
+      "sha256": "56f2f9923c19783d8893d303ff1f6877963bdaa5648475145397baa2fbc2b8ea",
+      "size_bytes": 1582,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-figure-manifest.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-figure-manifest.json"
+    },
+    "day35-confidence-abstention-protocol.json": {
+      "sha256": "324309a525a850ee138e3b6693ae6bc61d345fd9d022c74dec6e4e9121c40ed3",
+      "size_bytes": 1311,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-confidence-abstention-protocol.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-confidence-abstention-protocol.json"
+    },
+    "day35-calibration-abstention-bundle.joblib": {
+      "sha256": "4994af825e4c05c39137daf74114264eb738e2dc57095fc9de4a8fa2c4230c51",
+      "size_bytes": 2760,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-calibration-abstention-bundle.joblib",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-calibration-abstention-bundle.joblib"
+    },
+    "day35-reliability-k2-p0-all_eval.png": {
+      "sha256": "b38a82fefc6c53d9706b7e665459312234d90d665766447081e6de0afb08a29c",
+      "size_bytes": 97929,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-reliability-k2-p0-all_eval.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-reliability-k2-p0-all_eval.png"
+    },
+    "day35-coverage-risk-k2-p0-all_eval.png": {
+      "sha256": "d39c5283ec27084ce30153d9616b2a5dd2008dd9eadff8466b57df2e0d610197",
+      "size_bytes": 81247,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-coverage-risk-k2-p0-all_eval.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-coverage-risk-k2-p0-all_eval.png"
+    },
+    "day35-reliability-k2-p1-all_eval.png": {
+      "sha256": "9138e2f885dc058e9e6c549f7787e71ff68e1e65f814963efc29d3e9e6c2cca0",
+      "size_bytes": 89421,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-reliability-k2-p1-all_eval.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-reliability-k2-p1-all_eval.png"
+    },
+    "day35-coverage-risk-k2-p1-all_eval.png": {
+      "sha256": "317223d1c9abcfbdeb02ee2b41cb1ec6f8d76c9730d728c964e52cba0b5ea6b9",
+      "size_bytes": 77753,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-coverage-risk-k2-p1-all_eval.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-coverage-risk-k2-p1-all_eval.png"
+    },
+    "day35-reliability-k3-p0-all_eval.png": {
+      "sha256": "c7d908db767b8e655a13bcb6828566f84e2e135169dd67ada49d5a185eeeb47f",
+      "size_bytes": 100578,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-reliability-k3-p0-all_eval.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-reliability-k3-p0-all_eval.png"
+    },
+    "day35-coverage-risk-k3-p0-all_eval.png": {
+      "sha256": "4fcfd19cd913ecddf6777587d88256eeece104686d60605d40ad6e38d6fa7724",
+      "size_bytes": 81369,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-coverage-risk-k3-p0-all_eval.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-coverage-risk-k3-p0-all_eval.png"
+    },
+    "day35-reliability-k3-p1-all_eval.png": {
+      "sha256": "54b8d6b902643cf04698c1e4c059bb036425f2c07786c7869cdbc05cefcd6870",
+      "size_bytes": 95446,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-reliability-k3-p1-all_eval.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-reliability-k3-p1-all_eval.png"
+    },
+    "day35-coverage-risk-k3-p1-all_eval.png": {
+      "sha256": "47bf24443c18696e3ea74d438d98db93c632ce0afb20563a412c5baf8e1c21f9",
+      "size_bytes": 70916,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-coverage-risk-k3-p1-all_eval.png",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-coverage-risk-k3-p1-all_eval.png"
+    },
+    "day35-final-gate.json": {
+      "sha256": "0e9d98f0da875a25f562d3c08c4d609a96a7e33b65f5b8dc8798255eaa7d8e9c",
+      "size_bytes": 1435,
+      "runtime_path": "/content/data/mendeley-4channel-hand-gesture-v2/day35-confidence/day35-confidence-mendeley-v2/day35-final-gate.json",
+      "persistent_path": "/content/drive/MyDrive/MyoLab-AI-data/mendeley-4channel-hand-gesture-v2/outputs/day35-confidence/day35-confidence-mendeley-v2/day35-final-gate.json"
+    }
+  },
+  "next_step": "Day 36 fatigue-context architecture using calibrated confidence, coverage-risk policy and abstention state."
+}

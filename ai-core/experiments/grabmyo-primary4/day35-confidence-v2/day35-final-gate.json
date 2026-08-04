@@ -1,0 +1,40 @@
+{
+  "schema_version": "day35-final-gate.v2",
+  "created_at_utc": "2026-08-04T06:42:38.727577+00:00",
+  "status": "PASS",
+  "dataset_profile": "grabmyo",
+  "checks": {
+    "official_run_not_smoke_test": true,
+    "day34_input_gate_passed": true,
+    "day34_final_gate_passed": true,
+    "baseline_model_not_refit": true,
+    "personalization_policy_not_refit": true,
+    "development_partitions_disjoint": true,
+    "validation_development_subjects_disjoint": true,
+    "calibrator_fit_partition_only": true,
+    "calibrator_selection_partition_only": true,
+    "threshold_selection_partition_only": true,
+    "validation_not_used_for_calibration_fit": true,
+    "validation_not_used_for_calibrator_selection": true,
+    "validation_not_used_for_threshold_selection": true,
+    "calibration_preserved_argmax": true,
+    "validation_scores_finite": true,
+    "all_k_arm_policies_present": true,
+    "test_set_remained_closed": true,
+    "pooled_dataset_blocked": true,
+    "clinical_use_blocked": true
+  },
+  "counts": {
+    "training_subjects": 34,
+    "validation_subjects": 9,
+    "development_prediction_rows": 5032,
+    "validation_prediction_rows_long": 53280,
+    "development_partition_overlap_count": 0,
+    "validation_development_overlap_count": 0,
+    "calibration_argmax_change_count": 0,
+    "calibrator_count": 4,
+    "abstention_policy_count": 4
+  },
+  "failed_checks": [],
+  "performance_is_not_a_structural_gate": true
+}

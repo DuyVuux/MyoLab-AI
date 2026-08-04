@@ -1,7 +1,0 @@
-schema_version: day34-personalization-gate.v1
-engineering_defaults:
-  worst_subject_max_harm: -0.02
-  severe_harm: -0.05
-  require_mean_delta_positive: true
-  require_ci_lower_bound_positive_for_proven_improvement: true
-statuses: [PASS, PROMISING_NOT_PROVEN, HARM_DETECTED, BLOCKED_WITH_EVIDENCE]

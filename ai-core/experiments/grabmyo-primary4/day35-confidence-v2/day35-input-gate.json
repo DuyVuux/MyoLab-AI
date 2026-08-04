@@ -1,0 +1,42 @@
+{
+  "schema_version": "day35-input-gate.v2",
+  "created_at_utc": "2026-08-04T06:41:53.118924+00:00",
+  "status": "PASS",
+  "dataset_profile": "grabmyo",
+  "dataset_view_id": "grabmyo-primary4-forearm16-fall14-v1",
+  "class_order": [
+    "rest",
+    "hand_close",
+    "wrist_flexion",
+    "wrist_extension"
+  ],
+  "day34_gate_path": "/content/drive/MyDrive/MyoLab-AI-data/grabmyo-physionet-v1.1.0/outputs/day34-personalization/day34-personalization-grabmyo-v2/day34-final-gate.json",
+  "day34_gate_sha256": "475863d4303440869ecc452c4943cec86a3297a6cc637daf0a29e65ef2ceca91",
+  "day34_adapter_bundle_path": "/content/drive/MyDrive/MyoLab-AI-data/grabmyo-physionet-v1.1.0/outputs/day34-personalization/day34-personalization-grabmyo-v2/few-shot-adapter-bundle.joblib",
+  "day34_adapter_bundle_sha256": "5db95dda310364af5329a2f9926918e9589e35c4f473bab5e9403ccd9c16b7fb",
+  "day34_validation_predictions_path": "/content/drive/MyDrive/MyoLab-AI-data/grabmyo-physionet-v1.1.0/outputs/day34-personalization/day34-personalization-grabmyo-v2/few-shot-trial-predictions.csv.gz",
+  "day34_validation_predictions_sha256": "53e5c5165c039c651b3c850c3d60a93956f229258f693a9dc6308c7b6db5af08",
+  "npz_path": "/content/drive/MyDrive/MyoLab-AI-data/grabmyo-physionet-v1.1.0/outputs/grabmyo-primary4-forearm16-fall14.npz",
+  "npz_sha256": "cbd4e0f7203d85c7acb81ea985b436675eb451022fcd11bacb6f3d0433f5a197",
+  "baseline_model_path": "/content/drive/MyDrive/MyoLab-AI-data/grabmyo-physionet-v1.1.0/outputs/baseline/grabmyo-primary4-baseline-v1/grabmyo-selected-model.joblib",
+  "baseline_model_sha256": "cf4b2b254b53e7dfbcb7af03bfe2e8956531c8115424917b0dca2e60a04d8619",
+  "validation_subject_ids": [
+    "12",
+    "13",
+    "25",
+    "26",
+    "29",
+    "33",
+    "34",
+    "35",
+    "41"
+  ],
+  "checks": {
+    "day34_gate_pass": true,
+    "dataset_profile_matches": true,
+    "class_contract_matches": true,
+    "day34_calibration_evaluation_disjoint": true,
+    "validation_predictions_finite": true,
+    "validation_not_used_for_day34_policy_selection": true
+  }
+}

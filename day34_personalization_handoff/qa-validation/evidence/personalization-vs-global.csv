@@ -1,2 +1,0 @@
-dataset,k,method,mean_delta,ci_low,ci_high,gate
-synthetic,2,nearest_centroid,0.05,0.01,0.09,PASS

@@ -1,0 +1,15 @@
+{
+  "schema_version": "day35-final-manifest.v1",
+  "status": "TOOLING_READY_REAL_SCORE_EXPORT_PENDING",
+  "day34_real_gate_verified": false,
+  "notebook_present": true,
+  "real_calibrator_fitted": false,
+  "mendeley_label_only_blocked": true,
+  "sealed_test_opened": false,
+  "day36_gate": "REQUIRES_DAY35_REAL_HANDOFF",
+  "portable_pack_checks_passed": true,
+  "automated_tests": {
+    "passed": 3,
+    "failed": 0
+  }
+}

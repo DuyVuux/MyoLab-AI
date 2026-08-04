@@ -1,0 +1,98 @@
+{
+  "schema_version": "day35-calibrator-selection.v2",
+  "created_at_utc": "2026-08-04T06:42:09.822647+00:00",
+  "dataset_profile": "grabmyo",
+  "fit_partition": "calibration_fit",
+  "selection_partition": "calibrator_select",
+  "validation_subjects_used": [],
+  "selections": {
+    "k2:p0": {
+      "k": 2,
+      "arm": "p0",
+      "selected_method": "scalar_temperature",
+      "temperature_nll_gain_vs_identity": 0.14300727629217957,
+      "minimum_required_nll_gain": 0.0001,
+      "selected_metadata": {
+        "method": "scalar_temperature",
+        "temperature": 0.22375466297877883
+      },
+      "selection_metrics": {
+        "subject_count": 7,
+        "row_count": 532,
+        "nll": 0.0024801649042274637,
+        "brier": 0.0007606388819344578,
+        "ece_equal_width": 0.002232456974965068,
+        "ece_equal_mass": 0.0022324569749650833,
+        "accuracy": 1.0,
+        "confidence_mean": 0.9977675430250349
+      },
+      "argmax_preserved": true
+    },
+    "k2:p1": {
+      "k": 2,
+      "arm": "p1",
+      "selected_method": "scalar_temperature",
+      "temperature_nll_gain_vs_identity": 0.28774400840972764,
+      "minimum_required_nll_gain": 0.0001,
+      "selected_metadata": {
+        "method": "scalar_temperature",
+        "temperature": 0.17008595372327376
+      },
+      "selection_metrics": {
+        "subject_count": 7,
+        "row_count": 532,
+        "nll": 0.0023200421033218225,
+        "brier": 0.0007751784850593431,
+        "ece_equal_width": 0.0020734942683601275,
+        "ece_equal_mass": 0.002073494268360062,
+        "accuracy": 1.0,
+        "confidence_mean": 0.99792650573164
+      },
+      "argmax_preserved": true
+    },
+    "k3:p0": {
+      "k": 3,
+      "arm": "p0",
+      "selected_method": "scalar_temperature",
+      "temperature_nll_gain_vs_identity": 0.14180260186481128,
+      "minimum_required_nll_gain": 0.0001,
+      "selected_metadata": {
+        "method": "scalar_temperature",
+        "temperature": 0.21357499959267473
+      },
+      "selection_metrics": {
+        "subject_count": 7,
+        "row_count": 504,
+        "nll": 0.005491501634862878,
+        "brier": 0.003271297392132413,
+        "ece_equal_width": 0.0031877197849566356,
+        "ece_equal_mass": 0.0002537236702698242,
+        "accuracy": 0.998015873015873,
+        "confidence_mean": 0.9980356224505387
+      },
+      "argmax_preserved": true
+    },
+    "k3:p1": {
+      "k": 3,
+      "arm": "p1",
+      "selected_method": "scalar_temperature",
+      "temperature_nll_gain_vs_identity": 0.28670897761516206,
+      "minimum_required_nll_gain": 0.0001,
+      "selected_metadata": {
+        "method": "scalar_temperature",
+        "temperature": 0.16158212204017794
+      },
+      "selection_metrics": {
+        "subject_count": 7,
+        "row_count": 504,
+        "nll": 0.004983529756835185,
+        "brier": 0.0031023122354223867,
+        "ece_equal_width": 0.0029118902289686594,
+        "ece_equal_mass": 0.0005121889194523595,
+        "accuracy": 0.998015873015873,
+        "confidence_mean": 0.9983427066242061
+      },
+      "argmax_preserved": true
+    }
+  }
+}

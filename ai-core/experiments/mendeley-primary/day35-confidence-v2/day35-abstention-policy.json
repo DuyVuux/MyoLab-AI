@@ -1,0 +1,451 @@
+{
+  "schema_version": "day35-abstention-policy.v2",
+  "created_at_utc": "2026-08-04T05:19:34.797788+00:00",
+  "dataset_profile": "mendeley",
+  "selection_partition": "threshold_select",
+  "validation_subjects_used": [],
+  "primary_operating_point": "coverage_90",
+  "coverage_targets": [
+    0.95,
+    0.9,
+    0.8
+  ],
+  "policies": {
+    "k2:p0": {
+      "k": 2,
+      "arm": "p0",
+      "calibrator_method": {
+        "method": "scalar_temperature",
+        "temperature": 2.1381212255652446
+      },
+      "selected_score_name": "probability_margin",
+      "score_selection_metric": "subject_mean_aurc",
+      "score_candidate_metrics": [
+        {
+          "k": 2,
+          "arm": "p0",
+          "score_name": "probability_margin",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 83,
+          "pooled_aurc": 0.054144701838816756,
+          "subject_mean_aurc": 0.07956907510478939
+        },
+        {
+          "k": 2,
+          "arm": "p0",
+          "score_name": "max_probability",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 83,
+          "pooled_aurc": 0.058737249241428216,
+          "subject_mean_aurc": 0.08556869717584002
+        },
+        {
+          "k": 2,
+          "arm": "p0",
+          "score_name": "one_minus_normalized_entropy",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 83,
+          "pooled_aurc": 0.06667027652746232,
+          "subject_mean_aurc": 0.09913205181062323
+        }
+      ],
+      "operating_points": {
+        "no_abstention": {
+          "target_coverage": 1.0,
+          "threshold": 0.0
+        },
+        "coverage_95": {
+          "target_coverage": 0.95,
+          "threshold": 0.08460324604128105,
+          "development_observed_metrics": {
+            "n_rows": 83,
+            "accepted_count": 79,
+            "abstained_count": 4,
+            "coverage": 0.9518072289156626,
+            "abstention_rate": 0.048192771084337394,
+            "selective_risk": 0.17721518987341772,
+            "selective_accuracy": 0.8227848101265823,
+            "total_error_count": 16,
+            "accepted_error_count": 14,
+            "abstained_error_count": 2,
+            "error_capture_rate": 0.125,
+            "selective_balanced_accuracy": 0.8180555555555555,
+            "selective_macro_f1": 0.8172032751621968,
+            "selective_macro_precision": 0.8178780284043442,
+            "selective_macro_recall": 0.8180555555555555
+          }
+        },
+        "coverage_90": {
+          "target_coverage": 0.9,
+          "threshold": 0.12311876743082584,
+          "development_observed_metrics": {
+            "n_rows": 83,
+            "accepted_count": 75,
+            "abstained_count": 8,
+            "coverage": 0.9036144578313253,
+            "abstention_rate": 0.09638554216867468,
+            "selective_risk": 0.16,
+            "selective_accuracy": 0.84,
+            "total_error_count": 16,
+            "accepted_error_count": 12,
+            "abstained_error_count": 4,
+            "error_capture_rate": 0.25,
+            "selective_balanced_accuracy": 0.8322583419332645,
+            "selective_macro_f1": 0.8322583419332645,
+            "selective_macro_precision": 0.8322583419332645,
+            "selective_macro_recall": 0.8322583419332645
+          }
+        },
+        "coverage_80": {
+          "target_coverage": 0.8,
+          "threshold": 0.23019889999801424,
+          "development_observed_metrics": {
+            "n_rows": 83,
+            "accepted_count": 67,
+            "abstained_count": 16,
+            "coverage": 0.8072289156626506,
+            "abstention_rate": 0.19277108433734935,
+            "selective_risk": 0.13432835820895522,
+            "selective_accuracy": 0.8656716417910447,
+            "total_error_count": 16,
+            "accepted_error_count": 9,
+            "abstained_error_count": 7,
+            "error_capture_rate": 0.4375,
+            "selective_balanced_accuracy": 0.8572916666666667,
+            "selective_macro_f1": 0.8566471163245357,
+            "selective_macro_precision": 0.8615079365079366,
+            "selective_macro_recall": 0.8572916666666667
+          }
+        }
+      },
+      "threshold_partition": "threshold_select"
+    },
+    "k2:p1": {
+      "k": 2,
+      "arm": "p1",
+      "calibrator_method": {
+        "method": "scalar_temperature",
+        "temperature": 0.2536971080769925
+      },
+      "selected_score_name": "one_minus_normalized_entropy",
+      "score_selection_metric": "subject_mean_aurc",
+      "score_candidate_metrics": [
+        {
+          "k": 2,
+          "arm": "p1",
+          "score_name": "one_minus_normalized_entropy",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 83,
+          "pooled_aurc": 0.04687856958945624,
+          "subject_mean_aurc": 0.08171655484967173
+        },
+        {
+          "k": 2,
+          "arm": "p1",
+          "score_name": "max_probability",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 83,
+          "pooled_aurc": 0.04722011684660771,
+          "subject_mean_aurc": 0.08185183623495311
+        },
+        {
+          "k": 2,
+          "arm": "p1",
+          "score_name": "probability_margin",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 83,
+          "pooled_aurc": 0.04847264814511885,
+          "subject_mean_aurc": 0.0829340873172042
+        }
+      ],
+      "operating_points": {
+        "no_abstention": {
+          "target_coverage": 1.0,
+          "threshold": 0.0
+        },
+        "coverage_95": {
+          "target_coverage": 0.95,
+          "threshold": 0.29899750239451395,
+          "development_observed_metrics": {
+            "n_rows": 83,
+            "accepted_count": 79,
+            "abstained_count": 4,
+            "coverage": 0.9518072289156626,
+            "abstention_rate": 0.048192771084337394,
+            "selective_risk": 0.20253164556962025,
+            "selective_accuracy": 0.7974683544303798,
+            "total_error_count": 19,
+            "accepted_error_count": 16,
+            "abstained_error_count": 3,
+            "error_capture_rate": 0.15789473684210525,
+            "selective_balanced_accuracy": 0.7927631578947368,
+            "selective_macro_f1": 0.7953580203580204,
+            "selective_macro_precision": 0.8038194444444444,
+            "selective_macro_recall": 0.7927631578947368
+          }
+        },
+        "coverage_90": {
+          "target_coverage": 0.9,
+          "threshold": 0.36672657258282293,
+          "development_observed_metrics": {
+            "n_rows": 83,
+            "accepted_count": 75,
+            "abstained_count": 8,
+            "coverage": 0.9036144578313253,
+            "abstention_rate": 0.09638554216867468,
+            "selective_risk": 0.17333333333333334,
+            "selective_accuracy": 0.8266666666666667,
+            "total_error_count": 19,
+            "accepted_error_count": 13,
+            "abstained_error_count": 6,
+            "error_capture_rate": 0.3157894736842105,
+            "selective_balanced_accuracy": 0.8199174406604747,
+            "selective_macro_f1": 0.8221198156682028,
+            "selective_macro_precision": 0.8382571534745449,
+            "selective_macro_recall": 0.8199174406604747
+          }
+        },
+        "coverage_80": {
+          "target_coverage": 0.8,
+          "threshold": 0.4754987204444415,
+          "development_observed_metrics": {
+            "n_rows": 83,
+            "accepted_count": 67,
+            "abstained_count": 16,
+            "coverage": 0.8072289156626506,
+            "abstention_rate": 0.19277108433734935,
+            "selective_risk": 0.11940298507462686,
+            "selective_accuracy": 0.8805970149253731,
+            "total_error_count": 19,
+            "accepted_error_count": 8,
+            "abstained_error_count": 11,
+            "error_capture_rate": 0.5789473684210527,
+            "selective_balanced_accuracy": 0.8700980392156863,
+            "selective_macro_f1": 0.8732736572890025,
+            "selective_macro_precision": 0.8775995246583482,
+            "selective_macro_recall": 0.8700980392156863
+          }
+        }
+      },
+      "threshold_partition": "threshold_select"
+    },
+    "k3:p0": {
+      "k": 3,
+      "arm": "p0",
+      "calibrator_method": {
+        "method": "scalar_temperature",
+        "temperature": 3.395665784133282
+      },
+      "selected_score_name": "probability_margin",
+      "score_selection_metric": "subject_mean_aurc",
+      "score_candidate_metrics": [
+        {
+          "k": 3,
+          "arm": "p0",
+          "score_name": "probability_margin",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 55,
+          "pooled_aurc": 0.06669924820518863,
+          "subject_mean_aurc": 0.08357021379980564
+        },
+        {
+          "k": 3,
+          "arm": "p0",
+          "score_name": "max_probability",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 55,
+          "pooled_aurc": 0.0809454219982211,
+          "subject_mean_aurc": 0.08867225461613217
+        },
+        {
+          "k": 3,
+          "arm": "p0",
+          "score_name": "one_minus_normalized_entropy",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 55,
+          "pooled_aurc": 0.09846180518651611,
+          "subject_mean_aurc": 0.10580660835762877
+        }
+      ],
+      "operating_points": {
+        "no_abstention": {
+          "target_coverage": 1.0,
+          "threshold": 0.0
+        },
+        "coverage_95": {
+          "target_coverage": 0.95,
+          "threshold": 0.014980651384593091,
+          "development_observed_metrics": {
+            "n_rows": 55,
+            "accepted_count": 53,
+            "abstained_count": 2,
+            "coverage": 0.9636363636363636,
+            "abstention_rate": 0.036363636363636376,
+            "selective_risk": 0.20754716981132076,
+            "selective_accuracy": 0.7924528301886793,
+            "total_error_count": 13,
+            "accepted_error_count": 11,
+            "abstained_error_count": 2,
+            "error_capture_rate": 0.15384615384615385,
+            "selective_balanced_accuracy": 0.7884615384615384,
+            "selective_macro_f1": 0.7884615384615384,
+            "selective_macro_precision": 0.7884615384615384,
+            "selective_macro_recall": 0.7884615384615384
+          }
+        },
+        "coverage_90": {
+          "target_coverage": 0.9,
+          "threshold": 0.07357054479045205,
+          "development_observed_metrics": {
+            "n_rows": 55,
+            "accepted_count": 50,
+            "abstained_count": 5,
+            "coverage": 0.9090909090909091,
+            "abstention_rate": 0.09090909090909094,
+            "selective_risk": 0.18,
+            "selective_accuracy": 0.82,
+            "total_error_count": 13,
+            "accepted_error_count": 9,
+            "abstained_error_count": 4,
+            "error_capture_rate": 0.3076923076923077,
+            "selective_balanced_accuracy": 0.8167249417249418,
+            "selective_macro_f1": 0.8145454545454546,
+            "selective_macro_precision": 0.8135198135198135,
+            "selective_macro_recall": 0.8167249417249418
+          }
+        },
+        "coverage_80": {
+          "target_coverage": 0.8,
+          "threshold": 0.09151448618748809,
+          "development_observed_metrics": {
+            "n_rows": 55,
+            "accepted_count": 47,
+            "abstained_count": 8,
+            "coverage": 0.8545454545454545,
+            "abstention_rate": 0.1454545454545455,
+            "selective_risk": 0.14893617021276595,
+            "selective_accuracy": 0.851063829787234,
+            "total_error_count": 13,
+            "accepted_error_count": 7,
+            "abstained_error_count": 6,
+            "error_capture_rate": 0.46153846153846156,
+            "selective_balanced_accuracy": 0.8401515151515151,
+            "selective_macro_f1": 0.846135265700483,
+            "selective_macro_precision": 0.858974358974359,
+            "selective_macro_recall": 0.8401515151515151
+          }
+        }
+      },
+      "threshold_partition": "threshold_select"
+    },
+    "k3:p1": {
+      "k": 3,
+      "arm": "p1",
+      "calibrator_method": {
+        "method": "scalar_temperature",
+        "temperature": 0.2594833650972254
+      },
+      "selected_score_name": "max_probability",
+      "score_selection_metric": "subject_mean_aurc",
+      "score_candidate_metrics": [
+        {
+          "k": 3,
+          "arm": "p1",
+          "score_name": "max_probability",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 55,
+          "pooled_aurc": 0.04833446170815463,
+          "subject_mean_aurc": 0.08286868318756076
+        },
+        {
+          "k": 3,
+          "arm": "p1",
+          "score_name": "probability_margin",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 55,
+          "pooled_aurc": 0.05048263012018113,
+          "subject_mean_aurc": 0.08286868318756076
+        },
+        {
+          "k": 3,
+          "arm": "p1",
+          "score_name": "one_minus_normalized_entropy",
+          "threshold_subject_count": 7,
+          "threshold_row_count": 55,
+          "pooled_aurc": 0.0460247735697485,
+          "subject_mean_aurc": 0.08733296890184647
+        }
+      ],
+      "operating_points": {
+        "no_abstention": {
+          "target_coverage": 1.0,
+          "threshold": 0.0
+        },
+        "coverage_95": {
+          "target_coverage": 0.95,
+          "threshold": 0.475646641610507,
+          "development_observed_metrics": {
+            "n_rows": 55,
+            "accepted_count": 53,
+            "abstained_count": 2,
+            "coverage": 0.9636363636363636,
+            "abstention_rate": 0.036363636363636376,
+            "selective_risk": 0.20754716981132076,
+            "selective_accuracy": 0.7924528301886793,
+            "total_error_count": 12,
+            "accepted_error_count": 11,
+            "abstained_error_count": 1,
+            "error_capture_rate": 0.08333333333333333,
+            "selective_balanced_accuracy": 0.7884615384615385,
+            "selective_macro_f1": 0.7905219780219781,
+            "selective_macro_precision": 0.7968531468531469,
+            "selective_macro_recall": 0.7884615384615385
+          }
+        },
+        "coverage_90": {
+          "target_coverage": 0.9,
+          "threshold": 0.5528597085485536,
+          "development_observed_metrics": {
+            "n_rows": 55,
+            "accepted_count": 50,
+            "abstained_count": 5,
+            "coverage": 0.9090909090909091,
+            "abstention_rate": 0.09090909090909094,
+            "selective_risk": 0.18,
+            "selective_accuracy": 0.82,
+            "total_error_count": 12,
+            "accepted_error_count": 9,
+            "abstained_error_count": 3,
+            "error_capture_rate": 0.25,
+            "selective_balanced_accuracy": 0.8125,
+            "selective_macro_f1": 0.8145454545454546,
+            "selective_macro_precision": 0.8211538461538461,
+            "selective_macro_recall": 0.8125
+          }
+        },
+        "coverage_80": {
+          "target_coverage": 0.8,
+          "threshold": 0.6880992862827446,
+          "development_observed_metrics": {
+            "n_rows": 55,
+            "accepted_count": 45,
+            "abstained_count": 10,
+            "coverage": 0.8181818181818182,
+            "abstention_rate": 0.18181818181818177,
+            "selective_risk": 0.1111111111111111,
+            "selective_accuracy": 0.8888888888888888,
+            "total_error_count": 12,
+            "accepted_error_count": 5,
+            "abstained_error_count": 7,
+            "error_capture_rate": 0.5833333333333334,
+            "selective_balanced_accuracy": 0.8805555555555555,
+            "selective_macro_f1": 0.8841036414565826,
+            "selective_macro_precision": 0.8901515151515151,
+            "selective_macro_recall": 0.8805555555555555
+          }
+        }
+      },
+      "threshold_partition": "threshold_select"
+    }
+  }
+}
