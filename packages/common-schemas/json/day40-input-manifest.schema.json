@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Offline Pipeline Input Manifest",
+  "type": "object",
+  "required": [
+    "session_id",
+    "subject_id",
+    "dataset_id",
+    "source_type",
+    "raw_paths",
+    "raw_hashes",
+    "sampling_rate_hz",
+    "channel_metadata",
+    "protocol_id",
+    "protocol_version",
+    "privacy_scan_status"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "source_type": {
+      "enum": [
+        "raw_index",
+        "normalized",
+        "synthetic"
+      ]
+    },
+    "raw_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "raw_hashes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sampling_rate_hz": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "channel_metadata": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "protocol_id": {
+      "type": "string"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "privacy_scan_status": {
+      "enum": [
+        "pass",
+        "review_required",
+        "fail"
+      ]
+    }
+  }
+}

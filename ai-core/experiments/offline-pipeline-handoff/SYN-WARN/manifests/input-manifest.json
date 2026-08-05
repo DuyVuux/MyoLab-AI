@@ -1,0 +1,36 @@
+{
+  "session_id": "SYN-WARN",
+  "subject_id": "SYN-S01",
+  "dataset_id": "synthetic-day40",
+  "source_type": "synthetic_fixture",
+  "raw_paths": [],
+  "raw_hashes": [],
+  "sampling_rate_hz": 2000,
+  "channel_metadata": [
+    {
+      "channel_id": "CH1",
+      "muscle_id": null,
+      "side": null
+    },
+    {
+      "channel_id": "CH2",
+      "muscle_id": null,
+      "side": null
+    },
+    {
+      "channel_id": "CH3",
+      "muscle_id": null,
+      "side": null
+    }
+  ],
+  "protocol_id": "synthetic-gesture-primary4",
+  "protocol_version": "v1",
+  "task_label": "unknown_for_inference",
+  "active_phase": [
+    0.0,
+    5.0
+  ],
+  "unit": "mV",
+  "privacy_scan_status": "pass",
+  "force_warning": true
+}

@@ -1,0 +1,11 @@
+{
+  "quality_status": "fail",
+  "reason_codes": [
+    "FLATLINE_CHANNEL"
+  ],
+  "nonfinite_ratio": 0.0,
+  "flat_channels": [
+    1
+  ],
+  "protocol_supported": true
+}

@@ -1,0 +1,74 @@
+{
+  "run_id": "D40-2c10c389c0ef",
+  "state": "REPORTED",
+  "transitions": [
+    {
+      "from": "RECEIVED",
+      "to": "PREFLIGHT_PASSED",
+      "timestamp_utc": "2026-08-04T11:25:50.342578+00:00",
+      "reason": null
+    },
+    {
+      "from": "PREFLIGHT_PASSED",
+      "to": "IMPORTED",
+      "timestamp_utc": "2026-08-04T11:25:50.342891+00:00",
+      "reason": null
+    },
+    {
+      "from": "IMPORTED",
+      "to": "QC_PASSED",
+      "timestamp_utc": "2026-08-04T11:25:50.344178+00:00",
+      "reason": null
+    },
+    {
+      "from": "QC_PASSED",
+      "to": "FEATURES_READY",
+      "timestamp_utc": "2026-08-04T11:25:50.585103+00:00",
+      "reason": null
+    },
+    {
+      "from": "FEATURES_READY",
+      "to": "INFERENCE_READY",
+      "timestamp_utc": "2026-08-04T11:25:50.586025+00:00",
+      "reason": null
+    },
+    {
+      "from": "INFERENCE_READY",
+      "to": "ANALYZED",
+      "timestamp_utc": "2026-08-04T11:25:50.586049+00:00",
+      "reason": null
+    },
+    {
+      "from": "ANALYZED",
+      "to": "REPORTED",
+      "timestamp_utc": "2026-08-04T11:25:50.587091+00:00",
+      "reason": null
+    }
+  ],
+  "started_at_utc": "2026-08-04T11:25:50.341757+00:00",
+  "stages": [],
+  "ended_at_utc": "2026-08-04T11:25:50.587570+00:00",
+  "report": {
+    "session_id": "SYN-RERUN-B",
+    "protocol": "synthetic-gesture-primary4.v1",
+    "quality_outcome": "pass",
+    "model_status": "ACCEPTED_RESEARCH_PREDICTION",
+    "predicted_class": "hand_close",
+    "calibrated_confidence": 0.999999999246434,
+    "effective_confidence": 0.999999999246434,
+    "taskc_supportability": {
+      "repeatability": "INSUFFICIENT_REPETITIONS",
+      "similarity": "INSUFFICIENT_REPETITIONS",
+      "cocontraction": "NOT_ELIGIBLE_ANATOMICAL_MAPPING_UNVERIFIED",
+      "numeric_zero_used_for_ineligible": false
+    },
+    "context_state": "NO_FATIGUE_CONTEXT_CLAIM",
+    "human_review_required": true,
+    "safety_language": [
+      "Not approved for patient use.",
+      "AI output is decision-support only.",
+      "No automated treatment recommendation.",
+      "Quality fail is not equivalent to no fatigue."
+    ]
+  }
+}

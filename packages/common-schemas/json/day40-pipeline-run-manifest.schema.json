@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "session_id",
+    "pipeline_version",
+    "status",
+    "stages",
+    "sealed_test_opened",
+    "training_executed"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "RECEIVED",
+        "PREFLIGHT_PASSED",
+        "IMPORTED",
+        "QC_PASSED",
+        "QC_WARNING",
+        "QC_FAILED",
+        "FEATURES_READY",
+        "INFERENCE_READY",
+        "ABSTAINED",
+        "ANALYZED",
+        "REPORTED",
+        "FAILED"
+      ]
+    },
+    "sealed_test_opened": {
+      "const": false
+    },
+    "training_executed": {
+      "const": false
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "day40-rerun-comparison.v1",
+  "status": "EXACT_MATCH",
+  "field_equality": {
+    "quality_outcome": true,
+    "model_status": true,
+    "predicted_class": true,
+    "calibrated_confidence": true,
+    "effective_confidence": true,
+    "context_state": true
+  },
+  "timing_claim_exact": false,
+  "memory_claim_exact": false
+}

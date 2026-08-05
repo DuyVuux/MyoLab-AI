@@ -1,0 +1,49 @@
+{
+  "artifacts": [
+    {
+      "path": "context/context-result.json",
+      "sha256": "1c2377bff84844869befe17ba2b4d8ea1139ac9e77760eb9517625f8dcf35526",
+      "size_bytes": 350
+    },
+    {
+      "path": "features/feature-summary.json",
+      "sha256": "17abec01c3cd11d76515086fdbe0ab1bdf2ff0ada43032bc79ca9a19dc36055e",
+      "size_bytes": 126
+    },
+    {
+      "path": "inference/prediction.json",
+      "sha256": "510e26d7307d16d8327b0d19c6a9312b4d9fec7f473219ef6db6e4af346aba2e",
+      "size_bytes": 428
+    },
+    {
+      "path": "manifests/input-manifest.json",
+      "sha256": "1a0867cc7427394540b2b2f8bf08321b4c9b4ddc50840a6e33d0efd43723690f",
+      "size_bytes": 713
+    },
+    {
+      "path": "manifests/pipeline-run-manifest.json",
+      "sha256": "bebb5acb78e183dc9a98ea5fa62ec6d417e99dfcaa21248d6126639ac564ad2e",
+      "size_bytes": 2121
+    },
+    {
+      "path": "qc/quality-report.json",
+      "sha256": "13f74f4b02629c04ddbf6b99a6e569bb7e6a3c5db9196bc9ee52053f12d97817",
+      "size_bytes": 131
+    },
+    {
+      "path": "report/report.json",
+      "sha256": "6b4a79d892d03a7949fe94eb23ffc3a3377d7d4321205db3c2718fe2d512da85",
+      "size_bytes": 812
+    },
+    {
+      "path": "report/report.md",
+      "sha256": "5d1a11fd1ccf1388d840841ac73a1c808ac90b55703a726c921fa640fd1bf155",
+      "size_bytes": 259
+    },
+    {
+      "path": "taskc/quantitative-summary.json",
+      "sha256": "5b811b628f2f92c3d8f6ddcdca7397e6e30fed3ec7cc9e5836fefdd4a25e0ae1",
+      "size_bytes": 203
+    }
+  ]
+}

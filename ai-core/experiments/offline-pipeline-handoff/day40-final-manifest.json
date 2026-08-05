@@ -1,0 +1,35 @@
+{
+  "schema_version": "day40-final-manifest.v2",
+  "created_at_utc": "2026-08-04T11:25:50.621729+00:00",
+  "status": "OFFLINE_PIPELINE_V0_1_READY",
+  "run_mode": "SYNTHETIC",
+  "checks": {
+    "governed_bundle_verified": true,
+    "one_command_orchestrator_demonstrated": true,
+    "qc_before_features_and_model": true,
+    "fail_closed_transitions": true,
+    "no_fitting": true,
+    "exact_feature_contract": true,
+    "abstention_integrated": true,
+    "unsupported_protocol_effective_confidence_zero": true,
+    "raw_and_calibrated_confidence_preserved_for_audit": true,
+    "taskc_supportability_preserved": true,
+    "no_hard_fatigue_diagnosis": true,
+    "reports_include_provenance": true,
+    "raw_data_not_copied_to_report_dirs": true,
+    "all_synthetic_scenarios_completed": true,
+    "sealed_test_closed": true,
+    "rerun_exact_match": true
+  },
+  "failed_checks": [],
+  "clinical_use_allowed": false,
+  "hard_fatigue_diagnosis_allowed": false,
+  "treatment_recommendation_allowed": false,
+  "sealed_test_opened": false,
+  "safety_language": [
+    "Not approved for patient use.",
+    "AI output is decision-support only.",
+    "No automated treatment recommendation.",
+    "Quality fail is not equivalent to no fatigue."
+  ]
+}

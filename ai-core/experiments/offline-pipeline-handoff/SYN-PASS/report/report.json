@@ -1,0 +1,23 @@
+{
+  "session_id": "SYN-PASS",
+  "protocol": "synthetic-gesture-primary4.v1",
+  "quality_outcome": "pass",
+  "model_status": "ACCEPTED_RESEARCH_PREDICTION",
+  "predicted_class": "hand_close",
+  "calibrated_confidence": 0.999999999246434,
+  "effective_confidence": 0.999999999246434,
+  "taskc_supportability": {
+    "repeatability": "INSUFFICIENT_REPETITIONS",
+    "similarity": "INSUFFICIENT_REPETITIONS",
+    "cocontraction": "NOT_ELIGIBLE_ANATOMICAL_MAPPING_UNVERIFIED",
+    "numeric_zero_used_for_ineligible": false
+  },
+  "context_state": "NO_FATIGUE_CONTEXT_CLAIM",
+  "human_review_required": true,
+  "safety_language": [
+    "Not approved for patient use.",
+    "AI output is decision-support only.",
+    "No automated treatment recommendation.",
+    "Quality fail is not equivalent to no fatigue."
+  ]
+}

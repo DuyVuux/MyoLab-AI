@@ -1,0 +1,15 @@
+{
+  "prediction": null,
+  "audit_prediction_before_gate": null,
+  "context_state": "QUALITY_BLOCKED",
+  "raw_model_confidence": 0.0,
+  "calibrated_confidence": 0.0,
+  "effective_confidence": 0.0,
+  "decision_status": "ABSTAIN_QUALITY_FAIL",
+  "interpretation_allowed": false,
+  "hard_fatigue_diagnosis": null,
+  "reason_codes": [
+    "ABSTAIN_QUALITY_FAIL"
+  ],
+  "confidence_may_increase": false
+}

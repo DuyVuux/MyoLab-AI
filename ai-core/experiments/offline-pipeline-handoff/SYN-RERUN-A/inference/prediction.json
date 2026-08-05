@@ -1,0 +1,13 @@
+{
+  "prediction": "hand_close",
+  "audit_prediction_before_gate": "hand_close",
+  "context_state": "NO_FATIGUE_CONTEXT_CLAIM",
+  "raw_model_confidence": 1.0,
+  "calibrated_confidence": 0.999999999246434,
+  "effective_confidence": 0.999999999246434,
+  "decision_status": "ACCEPTED_RESEARCH_PREDICTION",
+  "interpretation_allowed": true,
+  "hard_fatigue_diagnosis": null,
+  "reason_codes": [],
+  "confidence_may_increase": false
+}

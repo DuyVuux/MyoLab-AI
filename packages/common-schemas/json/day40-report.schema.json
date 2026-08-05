@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "session_id",
+    "quality",
+    "inference",
+    "taskc",
+    "context",
+    "provenance",
+    "safety"
+  ],
+  "properties": {
+    "safety": {
+      "type": "object",
+      "required": [
+        "clinical_use_allowed",
+        "treatment_recommendation_allowed"
+      ]
+    }
+  }
+}

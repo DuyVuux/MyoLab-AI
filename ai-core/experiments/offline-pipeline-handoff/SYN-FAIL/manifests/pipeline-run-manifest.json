@@ -1,0 +1,62 @@
+{
+  "run_id": "D40-b4d139c03188",
+  "state": "REPORTED",
+  "transitions": [
+    {
+      "from": "RECEIVED",
+      "to": "PREFLIGHT_PASSED",
+      "timestamp_utc": "2026-08-04T11:25:49.737530+00:00",
+      "reason": null
+    },
+    {
+      "from": "PREFLIGHT_PASSED",
+      "to": "IMPORTED",
+      "timestamp_utc": "2026-08-04T11:25:49.737878+00:00",
+      "reason": null
+    },
+    {
+      "from": "IMPORTED",
+      "to": "QC_FAILED",
+      "timestamp_utc": "2026-08-04T11:25:49.739474+00:00",
+      "reason": "FLATLINE_CHANNEL"
+    },
+    {
+      "from": "QC_FAILED",
+      "to": "ABSTAINED",
+      "timestamp_utc": "2026-08-04T11:25:49.739491+00:00",
+      "reason": "ABSTAIN_QUALITY_FAIL"
+    },
+    {
+      "from": "ABSTAINED",
+      "to": "REPORTED",
+      "timestamp_utc": "2026-08-04T11:25:49.740151+00:00",
+      "reason": null
+    }
+  ],
+  "started_at_utc": "2026-08-04T11:25:49.736888+00:00",
+  "stages": [],
+  "ended_at_utc": "2026-08-04T11:25:49.740584+00:00",
+  "report": {
+    "session_id": "SYN-FAIL",
+    "protocol": "synthetic-gesture-primary4.v1",
+    "quality_outcome": "fail",
+    "model_status": "ABSTAIN_QUALITY_FAIL",
+    "predicted_class": null,
+    "calibrated_confidence": 0.0,
+    "effective_confidence": 0.0,
+    "taskc_supportability": {
+      "repeatability": "INSUFFICIENT_REPETITIONS",
+      "similarity": "INSUFFICIENT_REPETITIONS",
+      "cocontraction": "NOT_ELIGIBLE_ANATOMICAL_MAPPING_UNVERIFIED",
+      "numeric_zero_used_for_ineligible": false
+    },
+    "context_state": "QUALITY_BLOCKED",
+    "human_review_required": true,
+    "safety_language": [
+      "Not approved for patient use.",
+      "AI output is decision-support only.",
+      "No automated treatment recommendation.",
+      "Quality fail is not equivalent to no fatigue."
+    ]
+  }
+}

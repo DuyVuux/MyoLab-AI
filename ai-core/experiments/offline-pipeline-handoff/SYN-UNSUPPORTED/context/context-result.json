@@ -1,0 +1,13 @@
+{
+  "context_state": "UNSUPPORTED_PROTOCOL",
+  "raw_model_confidence": 1.0,
+  "calibrated_confidence": 0.999999999246434,
+  "effective_confidence": 0.0,
+  "decision_status": "ABSTAIN_UNSUPPORTED_PROTOCOL",
+  "interpretation_allowed": false,
+  "hard_fatigue_diagnosis": null,
+  "reason_codes": [
+    "ABSTAIN_UNSUPPORTED_PROTOCOL"
+  ],
+  "confidence_may_increase": false
+}

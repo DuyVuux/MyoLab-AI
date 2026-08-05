@@ -1,0 +1,28 @@
+schema_version: offline-pipeline.v0.1
+mode: offline
+clinical_use_allowed: false
+training_allowed: false
+scaler_fitting_allowed: false
+sealed_test_access_allowed: false
+
+stages:
+  - preflight
+  - ingestion
+  - protocol_mapping
+  - quality_gate
+  - preprocessing
+  - windowing
+  - feature_extraction
+  - matrix_materialization
+  - model_inference
+  - calibration_abstention
+  - taskc_quantitative
+  - context_engine
+  - report_rendering
+
+contracts:
+  qc_config: qc_v0.1
+  feature_contract: feature-set-14.v1.0.0
+  context_policy: day36-fatigue-context-policy.v1
+  taskc_registry: day37-taskc-metric-registry.v1
+  governance_policy: day39-governance-policy.v1

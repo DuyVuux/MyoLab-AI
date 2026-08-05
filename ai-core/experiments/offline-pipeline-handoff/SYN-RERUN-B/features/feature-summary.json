@@ -1,0 +1,6 @@
+{
+  "status": "READY",
+  "window_count": 49,
+  "feature_dimension": 42,
+  "aggregation": "median_probability_across_windows"
+}
