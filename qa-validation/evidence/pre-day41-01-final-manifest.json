@@ -1,0 +1,39 @@
+{
+  "day": "PRE_DAY41_01",
+  "title": "Parallel Portfolio and Intended-Use Freeze",
+  "status": "GO_FOR_PRE_DAY41_02_FUNCTIONAL_ANATOMY",
+  "portfolio_gate": "PORTFOLIO_GATE_PASS",
+  "parallel_branches": [
+    "A1",
+    "A2",
+    "B1",
+    "B2",
+    "C1",
+    "C2"
+  ],
+  "hand_gesture_status": "ACTIVE_PARALLEL",
+  "lower_limb_knee_acl_status": "ACTIVE_PARALLEL",
+  "training_executed": false,
+  "model_fitting_executed": false,
+  "sealed_test_rows_read": 0,
+  "real_patient_rows_read": 0,
+  "mfcv_site_eligibility": "NOT_VERIFIED",
+  "clinical_threshold_status": "PROVISIONAL_RESEARCH_ONLY",
+  "raw_clinical_files_in_pack": 0,
+  "tests": {
+    "command": "pytest -q -p no:cacheprovider --color=no qa-validation/automated-tests/test_pre_day41_01.py",
+    "result": "............                                                             [100%]\n12 passed in 0.96s",
+    "passed": true
+  },
+  "medical_learning": {
+    "domains": 4,
+    "minimum_self_check_score": "10/12",
+    "day_02_focus": "functional anatomy and electrode placement"
+  },
+  "created_at_utc": "2026-08-06T02:47:56.419129+00:00",
+  "packaging": {
+    "compiled_python_files": 0,
+    "runtime_cache_directories": 0,
+    "zip_integrity": "PASS"
+  }
+}

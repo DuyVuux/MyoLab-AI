@@ -1,0 +1,28 @@
+version: "0.1.0"
+allowed_research_language:
+  - PATTERN_COMPATIBLE_WITH_SUPPORTED_CLASS
+  - FATIGUE_RELATED_CONTEXT_EVIDENCE
+  - WITHIN_PROTOCOL_BILATERAL_DIFFERENCE
+  - CLINICIAN_REVIEW_REQUIRED
+  - INSUFFICIENT_DATA_FOR_ANALYSIS
+restricted_clinician_review_language:
+  - RECOVERY_TREND_SUGGESTION
+  - LOAD_PROGRESSION_DISCUSSION_SUPPORT
+  - RETURN_TO_SPORT_DISCUSSION_SUPPORT
+prohibited_automated_claims:
+  - phrase: "diagnose ACL tear"
+    code: DIAGNOSE_ACL_TEAR
+  - phrase: "bệnh nhân bị đứt ACL"
+    code: DIAGNOSE_ACL_TEAR_VI
+  - phrase: "cleared for return to sport"
+    code: AUTOMATIC_RTS_CLEARANCE
+  - phrase: "đủ điều kiện thi đấu"
+    code: AUTOMATIC_RTS_CLEARANCE_VI
+  - phrase: "increase load by"
+    code: AUTOMATIC_LOAD_PRESCRIPTION
+  - phrase: "tăng tải 20%"
+    code: AUTOMATIC_LOAD_PRESCRIPTION_VI
+  - phrase: "no muscle fatigue"
+    code: HARD_NEGATIVE_FATIGUE_CLAIM
+  - phrase: "không có mỏi cơ"
+    code: HARD_NEGATIVE_FATIGUE_CLAIM_VI

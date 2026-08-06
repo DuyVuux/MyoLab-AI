@@ -1,0 +1,234 @@
+program_id: MYOLAB_AI_PARALLEL_SEMG_CLINICAL_INTELLIGENCE
+version: "0.1.0"
+effective_date: "2026-08-06"
+status: RESEARCH_PORTFOLIO_ACTIVE
+governance:
+  training_allowed: false
+  model_fitting_allowed: false
+  scaler_fitting_allowed: false
+  sealed_test_opened: false
+  real_patient_data_allowed: false
+  automated_clinical_recommendation_allowed: false
+  human_review_required: true
+  mfcv_site_eligibility: NOT_VERIFIED
+  clinical_threshold_status: PROVISIONAL_RESEARCH_ONLY
+platform_principles:
+  - QC_BEFORE_AI
+  - ABSTAIN_WHEN_UNSUPPORTED
+  - SPLIT_FIRST_SEGMENT_SECOND_WINDOW_THIRD
+  - RAW_SIGNAL_NOT_COMMITTED
+  - PROVENANCE_REQUIRED
+  - HUMAN_IN_THE_LOOP
+  - DOMAIN_SPECIFIC_INTERPRETATION
+tasks:
+  A:
+    name: Functional intention and state recognition
+    problem_type: MULTICLASS_OR_STATE_RECOGNITION
+    branches:
+      - branch_id: A1
+        display_name: Upper-limb hand-gesture recognition
+        status: ACTIVE_PARALLEL
+        clinical_priority: ACTIVE_PROGRAM
+        body_region: UPPER_LIMB_HAND_WRIST_FOREARM
+        target_users:
+          - REHABILITATION_CLINICIAN
+          - PHYSIOTHERAPIST
+          - MOTION_LAB_OPERATOR
+          - RESEARCHER
+        target_populations:
+          - RESEARCH_PUBLIC_HEALTHY
+          - SITE_HEALTHY_VOLUNTEER
+          - SITE_PATIENT_CONTROLLED_PILOT
+        supported_protocol_families:
+          - ISOLATED_HAND_GESTURE
+          - WRIST_GESTURE
+          - TRANSITION_SEQUENCE
+          - CALIBRATED_REPETITION
+        output_families:
+          - GESTURE_LABEL
+          - CONFIDENCE_OR_SCORE
+          - ABSTENTION_REASON
+          - REPETITION_LEVEL_RESULT
+        dataset_roles:
+          - dataset_id: MENDELEY_4CH_HAND_GESTURE_V2
+            role: PRIMARY_SPARSE_GESTURE_ENGINEERING
+          - dataset_id: GRABMYO_V1_1_0
+            role: PRIMARY_CROSS_DAY_GESTURE
+          - dataset_id: GRABMYOFLOW_V1_0_0
+            role: TRANSITION_AND_ABSTENTION
+        site_data_required_for:
+          - NORAXON_CHANNEL_MAPPING
+          - LOCAL_CALIBRATION
+          - CLINICAL_TRANSFER
+        prohibited_claims:
+          - DIAGNOSE_NEUROLOGICAL_DISEASE
+          - REPLACE_CLINICIAN
+          - GUARANTEE_GESTURE_FUNCTION_RECOVERY
+      - branch_id: A2
+        display_name: Lower-limb functional-state recognition
+        status: ACTIVE_PARALLEL
+        clinical_priority: VINMEC_PRIORITY_ACTIVE_PROGRAM
+        body_region: LOWER_LIMB_KNEE
+        target_users:
+          - SPORTS_MEDICINE_CLINICIAN
+          - REHABILITATION_CLINICIAN
+          - PHYSIOTHERAPIST
+          - MOTION_LAB_OPERATOR
+          - RESEARCHER
+        target_populations:
+          - RESEARCH_PUBLIC_HEALTHY
+          - RESEARCH_PUBLIC_PATIENT
+          - SITE_HEALTHY_VOLUNTEER
+          - SITE_PATIENT_CONTROLLED_PILOT
+        supported_protocol_families:
+          - KNEE_EXTENSION
+          - SQUAT
+          - LEVEL_WALKING
+          - SIT_TO_STAND
+          - SINGLE_LEG_STANCE
+          - HOP_LANDING_LATER_CONTROLLED
+        output_families:
+          - EXERCISE_OR_STATE_LABEL
+          - MOVEMENT_PHASE
+          - CONFIDENCE_OR_SCORE
+          - ABSTENTION_REASON
+          - REPETITION_LEVEL_RESULT
+        dataset_roles:
+          - dataset_id: KNEE_PAD
+            role: PRIMARY_EXERCISE_AND_EXECUTION_QUALITY
+          - dataset_id: PHYSIONET_LONG_WALKING_SEMG
+            role: PRIMARY_GAIT_DSP_REFERENCE
+          - dataset_id: K2MUSE
+            role: ROBUSTNESS_AND_MULTIMODAL_REFERENCE
+        site_data_required_for:
+          - VINMEC_PROTOCOL_LABELS
+          - NORAXON_CHANNEL_MAPPING
+          - VICON_FORCE_ALIGNMENT
+          - CLINICAL_TRANSFER
+        prohibited_claims:
+          - DIAGNOSE_ACL_TEAR
+          - CLASSIFY_ACL_STATUS_BY_DEFAULT
+          - REPLACE_CLINICIAN
+  B:
+    name: Fatigue context, supportability, confidence and abstention
+    problem_type: RULE_FIRST_CONTEXT_AND_SAFETY_LAYER
+    shared_states:
+      - NO_CONTEXT_EVIDENCE
+      - POSSIBLE_FATIGUE_CONTEXT
+      - FATIGUE_CONTEXT_SUPPORTED
+      - CONFLICTING_EVIDENCE
+      - INSUFFICIENT_EVIDENCE
+      - UNSUPPORTED_PROTOCOL
+      - QUALITY_BLOCKED
+    branches:
+      - branch_id: B1
+        display_name: Upper-limb fatigue-context adapter
+        status: ACTIVE_PARALLEL
+        clinical_priority: ACTIVE_PROGRAM
+        body_region: UPPER_LIMB_HAND_WRIST_FOREARM
+        output_families:
+          - CONTEXT_STATE
+          - EVIDENCE_LANES
+          - CONFIDENCE_SAME_OR_LOWER
+          - ABSTENTION_REASON
+        dataset_roles:
+          - dataset_id: CERQUEIRA_FATIGUE
+            role: FATIGUE_CONTEXT_RESEARCH
+          - dataset_id: GRABMYO_V1_1_0
+            role: CROSS_DAY_DRIFT_PROXY
+        site_data_required_for:
+          - UPPER_LIMB_FATIGUE_PROTOCOL
+          - SITE_QC_THRESHOLDS
+        prohibited_claims:
+          - HARD_FATIGUE_DIAGNOSIS
+          - INCREASE_TASK_A_CONFIDENCE
+          - TREATMENT_PRESCRIPTION
+      - branch_id: B2
+        display_name: Lower-limb fatigue-context adapter
+        status: ACTIVE_PARALLEL
+        clinical_priority: VINMEC_PRIORITY_ACTIVE_PROGRAM
+        body_region: LOWER_LIMB_KNEE
+        output_families:
+          - CONTEXT_STATE
+          - EVIDENCE_LANES
+          - CONFIDENCE_SAME_OR_LOWER
+          - ABSTENTION_REASON
+        dataset_roles:
+          - dataset_id: K2MUSE
+            role: FATIGUE_SHIFT_INTERDAY_ELECTRODE_SHIFT_RESEARCH
+          - dataset_id: PHYSIONET_LONG_WALKING_SEMG
+            role: LONG_DURATION_CONTEXT_PROXY
+          - dataset_id: DRYAD_ACLR_REHAB
+            role: PERFORMANCE_CONTEXT_EXPLORATORY
+        site_data_required_for:
+          - LOWER_LIMB_FATIGUE_PROTOCOL
+          - FORCE_OR_TORQUE_CONTEXT
+          - SITE_QC_THRESHOLDS
+        prohibited_claims:
+          - HARD_FATIGUE_DIAGNOSIS
+          - ELAPSED_TIME_AS_FATIGUE_GROUND_TRUTH
+          - INCREASE_TASK_A_CONFIDENCE
+          - TREATMENT_PRESCRIPTION
+  C:
+    name: Provenance-backed quantitative assessment
+    problem_type: METRIC_PIPELINE
+    branches:
+      - branch_id: C1
+        display_name: Upper-limb quantitative assessment
+        status: ACTIVE_PARALLEL
+        clinical_priority: ACTIVE_PROGRAM
+        body_region: UPPER_LIMB_HAND_WRIST_FOREARM
+        output_families:
+          - REPETITION_CONSISTENCY
+          - REFERENCE_SIMILARITY
+          - CO_CONTRACTION_WHEN_ELIGIBLE
+          - LONGITUDINAL_COMPARISON_WHEN_COMPATIBLE
+        dataset_roles:
+          - dataset_id: GRABMYO_V1_1_0
+            role: REPEATABILITY_REFERENCE
+          - dataset_id: PHYSIOMIO_RESTRICTED
+            role: CLINICAL_LONGITUDINAL_REFERENCE_ONLY
+        site_data_required_for:
+          - BILATERAL_OR_REFERENCE_PROTOCOL
+          - CLINICAL_REVIEW
+        prohibited_claims:
+          - DIAGNOSE_STROKE_SEVERITY
+          - AUTOMATIC_TREATMENT_DECISION
+      - branch_id: C2
+        display_name: Lower-limb knee and ACL quantitative assessment
+        status: ACTIVE_PARALLEL
+        clinical_priority: VINMEC_PRIORITY_ACTIVE_PROGRAM
+        body_region: LOWER_LIMB_KNEE_ACL
+        output_families:
+          - INVOLVED_UNINVOLVED_DIFFERENCE
+          - ACTIVATION_TIMING
+          - REPETITION_CONSISTENCY
+          - TORQUE_EMG_RELATIONSHIP
+          - COACTIVATION_WHEN_ELIGIBLE
+          - LONGITUDINAL_COMPARISON_WHEN_COMPATIBLE
+        dataset_roles:
+          - dataset_id: DRYAD_ACLR_REHAB
+            role: PRIMARY_ACLR_QUANTITATIVE_DEVELOPMENT
+          - dataset_id: KNEE_PAD
+            role: EXERCISE_QUALITY_AND_REPETITION
+          - dataset_id: PHYSIONET_LONG_WALKING_SEMG
+            role: HEALTHY_GAIT_REFERENCE
+          - dataset_id: K2MUSE
+            role: MULTIMODAL_AND_ROBUSTNESS_REFERENCE
+        site_data_required_for:
+          - INJURED_OR_OPERATIVE_SIDE
+          - GRAFT_AND_POSTOP_METADATA_IF_APPLICABLE
+          - PROTOCOL_VERSION
+          - LOAD_SPEED_PHASE
+          - NORAXON_CHANNEL_MAPPING
+          - HUMAN_REVIEW
+        prohibited_claims:
+          - DIAGNOSE_ACL_TEAR
+          - DIAGNOSE_GRAFT_FAILURE
+          - AUTOMATIC_RETURN_TO_SPORT_CLEARANCE
+          - AUTOMATIC_LOAD_PRESCRIPTION
+          - CONTRALATERAL_LIMB_AS_UNCONDITIONAL_GROUND_TRUTH
+handoff:
+  target_day: PRE_DAY41_02
+  target_status: GO_FOR_PRE_DAY41_02_FUNCTIONAL_ANATOMY
+  required_gate: PORTFOLIO_GATE_PASS

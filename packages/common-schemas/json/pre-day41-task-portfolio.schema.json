@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PRE-DAY41 Task Portfolio",
+  "type": "object",
+  "required": [
+    "program_id",
+    "version",
+    "status",
+    "governance",
+    "tasks",
+    "handoff"
+  ],
+  "properties": {
+    "program_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "const": "RESEARCH_PORTFOLIO_ACTIVE"
+    },
+    "governance": {
+      "type": "object",
+      "required": [
+        "training_allowed",
+        "model_fitting_allowed",
+        "scaler_fitting_allowed",
+        "sealed_test_opened",
+        "real_patient_data_allowed",
+        "automated_clinical_recommendation_allowed",
+        "human_review_required",
+        "mfcv_site_eligibility",
+        "clinical_threshold_status"
+      ],
+      "properties": {
+        "training_allowed": {
+          "const": false
+        },
+        "model_fitting_allowed": {
+          "const": false
+        },
+        "scaler_fitting_allowed": {
+          "const": false
+        },
+        "sealed_test_opened": {
+          "const": false
+        },
+        "real_patient_data_allowed": {
+          "const": false
+        },
+        "automated_clinical_recommendation_allowed": {
+          "const": false
+        },
+        "human_review_required": {
+          "const": true
+        },
+        "mfcv_site_eligibility": {
+          "const": "NOT_VERIFIED"
+        },
+        "clinical_threshold_status": {
+          "const": "PROVISIONAL_RESEARCH_ONLY"
+        }
+      },
+      "additionalProperties": true
+    },
+    "tasks": {
+      "type": "object",
+      "required": [
+        "A",
+        "B",
+        "C"
+      ],
+      "properties": {
+        "A": {
+          "$ref": "#/$defs/task"
+        },
+        "B": {
+          "$ref": "#/$defs/task"
+        },
+        "C": {
+          "$ref": "#/$defs/task"
+        }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "required": [
+        "target_day",
+        "target_status",
+        "required_gate"
+      ],
+      "properties": {
+        "target_day": {
+          "const": "PRE_DAY41_02"
+        },
+        "target_status": {
+          "const": "GO_FOR_PRE_DAY41_02_FUNCTIONAL_ANATOMY"
+        },
+        "required_gate": {
+          "const": "PORTFOLIO_GATE_PASS"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "task": {
+      "type": "object",
+      "required": [
+        "name",
+        "problem_type",
+        "branches"
+      ],
+      "properties": {
+        "branches": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "branch_id",
+              "display_name",
+              "status",
+              "clinical_priority",
+              "body_region",
+              "output_families",
+              "dataset_roles",
+              "site_data_required_for",
+              "prohibited_claims"
+            ],
+            "properties": {
+              "branch_id": {
+                "type": "string"
+              },
+              "status": {
+                "const": "ACTIVE_PARALLEL"
+              },
+              "dataset_roles": {
+                "type": "array",
+                "minItems": 1
+              },
+              "site_data_required_for": {
+                "type": "array",
+                "minItems": 1
+              },
+              "prohibited_claims": {
+                "type": "array",
+                "minItems": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

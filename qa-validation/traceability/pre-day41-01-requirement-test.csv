@@ -1,0 +1,9 @@
+requirement_id,requirement,test_name
+REQ-01,Six parallel branches,test_all_parallel_branches_present
+REQ-02,A1 remains active,test_hand_track_is_not_demoted
+REQ-03,Governance flags false,test_governance_flags
+REQ-04,MFCV not verified,test_mfcv_site_not_verified
+REQ-05,Medical domains complete,test_medical_keyword_domains
+REQ-06,No unsafe output claims,test_no_unsafe_output_claims
+REQ-07,Handoff gate correct,test_handoff_gate
+REQ-08,No raw data,test_no_raw_data_extensions

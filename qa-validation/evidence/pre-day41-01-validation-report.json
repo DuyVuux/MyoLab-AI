@@ -1,0 +1,20 @@
+{
+  "day": "PRE_DAY41_01",
+  "gate": "PORTFOLIO_GATE_PASS",
+  "ok": true,
+  "branch_ids": [
+    "A1",
+    "A2",
+    "B1",
+    "B2",
+    "C1",
+    "C2"
+  ],
+  "errors": [],
+  "warnings": [],
+  "training_executed": false,
+  "sealed_test_rows_read": 0,
+  "real_patient_rows_read": 0,
+  "mfcv_site_eligibility": "NOT_VERIFIED",
+  "handoff_target": "GO_FOR_PRE_DAY41_02_FUNCTIONAL_ANATOMY"
+}

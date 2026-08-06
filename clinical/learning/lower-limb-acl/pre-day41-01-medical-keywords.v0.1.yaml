@@ -1,0 +1,140 @@
+version: "0.1.0"
+learning_day: PRE_DAY41_01
+minimum_mastery_score: 10
+domains:
+  anatomy_and_joint:
+    - term: anterior_cruciate_ligament
+      vi: dây chằng chéo trước
+      relevance: stabilizes against anterior tibial translation and contributes to rotational stability
+      boundary: not directly measured by surface EMG
+    - term: tibiofemoral_joint
+      vi: khớp chày đùi
+      relevance: primary joint context for ACL biomechanics
+      boundary: joint mechanics require protocol and multimodal context
+    - term: patellofemoral_joint
+      vi: khớp bánh chè đùi
+      relevance: important in knee-loading and quadriceps context
+      boundary: not interchangeable with tibiofemoral mechanics
+    - term: anterior_tibial_translation
+      vi: dịch chuyển xương chày ra trước
+      relevance: core ACL biomechanics concept
+      boundary: cannot be inferred from one sEMG channel
+    - term: rotational_stability
+      vi: ổn định xoay
+      relevance: important ACL function
+      boundary: requires biomechanical and clinical context
+    - term: meniscus
+      vi: sụn chêm
+      relevance: common concomitant structure affecting protocols
+      boundary: no diagnosis from sEMG
+  muscles:
+    - term: vastus_lateralis
+      vi: cơ rộng ngoài
+      relevance: quadriceps and knee-extension activity
+      boundary: amplitude is task/load/placement dependent
+    - term: vastus_medialis
+      vi: cơ rộng trong
+      relevance: quadriceps activation around knee
+      boundary: avoid simplistic medial-lateral balance claims
+    - term: rectus_femoris
+      vi: cơ thẳng đùi
+      relevance: biarticular quadriceps muscle
+      boundary: hip position affects interpretation
+    - term: biceps_femoris
+      vi: cơ nhị đầu đùi
+      relevance: lateral hamstring and knee-flexion activity
+      boundary: function depends on angle and task
+    - term: semitendinosus
+      vi: cơ bán gân
+      relevance: medial hamstring and potential graft-related metadata
+      boundary: graft status must be supplied, not inferred
+    - term: semimembranosus
+      vi: cơ bán mạc
+      relevance: medial hamstring
+      boundary: surface separation may be difficult
+    - term: gastrocnemius
+      vi: cơ bụng chân
+      relevance: crosses knee and ankle
+      boundary: activation must be phase-specific
+    - term: soleus
+      vi: cơ dép
+      relevance: ankle plantarflexion and lower-limb mechanics
+      boundary: does not cross the knee
+    - term: tibialis_anterior
+      vi: cơ chày trước
+      relevance: gait swing and foot-control context
+      boundary: not a direct ACL measure
+    - term: gluteus_medius
+      vi: cơ mông nhỡ
+      relevance: frontal-plane hip control in weight-bearing tasks
+      boundary: knee valgus is multifactorial
+  protocol_and_contraction:
+    - term: isometric
+      vi: co đẳng trường
+      relevance: controlled strength/fatigue protocols
+      boundary: joint angle and force target must be recorded
+    - term: isokinetic
+      vi: vận động đẳng tốc
+      relevance: dynamometer-controlled angular velocity
+      boundary: device and speed are required metadata
+    - term: concentric
+      vi: co hướng tâm
+      relevance: movement-phase interpretation
+      boundary: phase label must be synchronized
+    - term: eccentric
+      vi: co ly tâm
+      relevance: braking and landing control
+      boundary: not identifiable safely without phase evidence
+    - term: open_kinetic_chain
+      vi: chuỗi động học mở
+      relevance: knee-extension protocol family
+      boundary: loading differs from closed-chain tasks
+    - term: closed_kinetic_chain
+      vi: chuỗi động học kín
+      relevance: squat and weight-bearing tasks
+      boundary: multi-joint compensation must be considered
+    - term: gait_cycle
+      vi: chu kỳ dáng đi
+      relevance: phase-normalized lower-limb analysis
+      boundary: event detection method must be documented
+    - term: stance_phase
+      vi: pha chống
+      relevance: weight-bearing phase
+      boundary: exact definition depends on event source
+    - term: swing_phase
+      vi: pha vung
+      relevance: non-weight-bearing advancement phase
+      boundary: exact definition depends on event source
+  rehabilitation_and_outcomes:
+    - term: acl_reconstruction
+      vi: tái tạo dây chằng chéo trước
+      relevance: target rehabilitation context
+      boundary: surgery/graft metadata must be supplied
+    - term: involved_limb
+      vi: chi liên quan/tổn thương
+      relevance: side-specific analysis
+      boundary: must not be guessed
+    - term: contralateral_limb
+      vi: chi đối bên
+      relevance: conditional comparator
+      boundary: not unconditional healthy ground truth
+    - term: criterion_based_progression
+      vi: tiến triển phục hồi dựa trên tiêu chí
+      relevance: safer framing than time-only progression
+      boundary: criteria remain clinician-governed
+    - term: return_to_sport_continuum
+      vi: tiến trình trở lại thể thao
+      relevance: participation-to-sport-to-performance framework
+      boundary: no autonomous clearance
+    - term: limb_symmetry
+      vi: đối xứng hai chi
+      relevance: quantitative evidence family
+      boundary: one index is insufficient for RTS
+    - term: co_contraction
+      vi: đồng co cơ
+      relevance: agonist-antagonist coordination
+      boundary: requires verified muscle pair and synchronization
+    - term: neuromuscular_control
+      vi: kiểm soát thần kinh cơ
+      relevance: movement and rehabilitation context
+      boundary: broad construct, not a single metric

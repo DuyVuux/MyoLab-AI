@@ -1,0 +1,147 @@
+{
+  "day": "PRE_DAY41_01",
+  "generated_at_utc": "2026-08-06T02:47:56.418647+00:00",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "PRE_DAY41_01_EXECUTION_PLAN.md",
+      "sha256": "c83895525ab4d50e82bf8ebc9659bcae6eaeaa59e387f5b116f497403157f3d4",
+      "bytes": 29307
+    },
+    {
+      "path": "README.md",
+      "sha256": "72c8930fd16f8149b3f47a5e24ccc4935b45a45599ee33e034a305d7b3474dcd",
+      "bytes": 789
+    },
+    {
+      "path": "clinical/governance/claim-language-policy.v0.1.yaml",
+      "sha256": "8a89146a6e12233de0db425ecf3eb09bdc02b40b159ec28caa2b53fa717667cf",
+      "bytes": 986
+    },
+    {
+      "path": "clinical/governance/task-portfolio.v0.1.yaml",
+      "sha256": "53dd2974c206df9934ba1ef526014b6651a3bc8a16816f8a08d7beab4cb83c05",
+      "bytes": 8260
+    },
+    {
+      "path": "clinical/learning/lower-limb-acl/pre-day41-01-medical-keywords.v0.1.yaml",
+      "sha256": "64768e45d963606c0bf6a86dfffb06b71eb8cb944d71658e6ccb0eafabae2bbb",
+      "bytes": 5716
+    },
+    {
+      "path": "clinical/learning/lower-limb-acl/pre-day41-01-medical-learning-guide.md",
+      "sha256": "badd3b30070f17984f450af9a70fb558bd35920dd9e55a0a5ffbea8af171ee2b",
+      "bytes": 4091
+    },
+    {
+      "path": "clinical/learning/lower-limb-acl/pre-day41-01-medical-source-notes.md",
+      "sha256": "208dfa285138415ea3f28eb9b16a5bb124efc200bef8f4d8163122ad51be67b7",
+      "bytes": 1061
+    },
+    {
+      "path": "clinical/learning/lower-limb-acl/pre-day41-01-self-check.md",
+      "sha256": "90ec1086ac906da185c668c1c1fa03c3770326a6393eb60cdf2f172bf6a12e1e",
+      "bytes": 1003
+    },
+    {
+      "path": "docs/00-executive/pre-day41/decision-log.md",
+      "sha256": "e12c63f9d05bd5b07fb7ddbca96cf119697339148a3acab3cefb14e2a88b145f",
+      "bytes": 961
+    },
+    {
+      "path": "docs/02-clinical/pre-day41/parallel-intended-use.v0.1.md",
+      "sha256": "80752f48fe439a83eea9135dcad907755b6c77c5b48628d0e435248c47ef816a",
+      "bytes": 1831
+    },
+    {
+      "path": "docs/02-clinical/pre-day41/population-protocol-matrix.csv",
+      "sha256": "6309ebb76f16b156d3fb9123bf420d4fb502a09280b119e5da0d6573ee354c95",
+      "bytes": 607
+    },
+    {
+      "path": "docs/02-clinical/pre-day41/task-definitions.v0.1.md",
+      "sha256": "ef5a9f64cddfe55f33754c9548cf7d8427b33c7f45525d7d08f22ff4ae7fa16c",
+      "bytes": 1159
+    },
+    {
+      "path": "docs/02-clinical/pre-day41/unresolved-clinical-questions.md",
+      "sha256": "4c2de8a36a74da6db58979218bb466335cfd9d4fc65ca47e7677078f9f1b606c",
+      "bytes": 739
+    },
+    {
+      "path": "docs/note/pre-day41-01/learning-roadmap.md",
+      "sha256": "70c7186a0b92e2bfe9ba1fe66bcf6551feabe4920b8644a5230f63a6f92c99ff",
+      "bytes": 383
+    },
+    {
+      "path": "docs/plans/PRE_DAY41_01_EXECUTION_PLAN.md",
+      "sha256": "c83895525ab4d50e82bf8ebc9659bcae6eaeaa59e387f5b116f497403157f3d4",
+      "bytes": 29307
+    },
+    {
+      "path": "environment/pre-day41-01-requirements.txt",
+      "sha256": "a4a4392dcc08f2d745527ca862c72ce3f7c82f32813a3f994f31138a61c97e83",
+      "bytes": 41
+    },
+    {
+      "path": "packages/clinical-governance/pre_day41_01/__init__.py",
+      "sha256": "d276396829fa00faee9404677f0e3a0e4ac11f0e01a29bbc3fc84af848d4c736",
+      "bytes": 48
+    },
+    {
+      "path": "packages/clinical-governance/pre_day41_01/portfolio.py",
+      "sha256": "4e41eb840316bc496bcbe8f3e9ce1a8f5436388d3fbb322562e89153c78968d7",
+      "bytes": 5163
+    },
+    {
+      "path": "packages/common-schemas/json/pre-day41-task-portfolio.schema.json",
+      "sha256": "06834b725d6e3146124d1eeec03d38ab255acdb4d7cb579575b3c3cc38790bc8",
+      "bytes": 3656
+    },
+    {
+      "path": "qa-validation/automated-tests/test_pre_day41_01.py",
+      "sha256": "9f93e8681614501690f1569ff08ead0f90edae4a67322d83ca0081f2071c19c4",
+      "bytes": 3487
+    },
+    {
+      "path": "qa-validation/evidence/pre-day41-01-artifact-check.json",
+      "sha256": "f9b72a8c00f618ac3d577d6b73512ff75e8841acffa6dd2c0ecda7c96a81ee3a",
+      "bytes": 129
+    },
+    {
+      "path": "qa-validation/evidence/pre-day41-01-checks.log",
+      "sha256": "b1426011d2b0c8207ef14560503cb5265a1b83cac5df2c60e9fcabe60f3c1c2a",
+      "bytes": 4005
+    },
+    {
+      "path": "qa-validation/evidence/pre-day41-01-validation-report.json",
+      "sha256": "835bc306c8cee4673ebbda6bf0d929fa111fe55db93761a769523b87fba41560",
+      "bytes": 386
+    },
+    {
+      "path": "qa-validation/requirements/pre-day41-01-acceptance-criteria.md",
+      "sha256": "6dc59bbf021e382218b2a08ae30262dd0dd64033ac78003142ab7ec628987e95",
+      "bytes": 529
+    },
+    {
+      "path": "qa-validation/test-plans/pre-day41-01-test-plan.md",
+      "sha256": "dd4ac20913745f9a59b01233095f0b0e8f19f6118ab806498b475071b9de11fe",
+      "bytes": 322
+    },
+    {
+      "path": "qa-validation/traceability/pre-day41-01-requirement-test.csv",
+      "sha256": "88ab4f93f9070ddc264edcf3c539340e1b3ca4dccac96247e86ed45690b1742d",
+      "bytes": 485
+    },
+    {
+      "path": "scripts/dev/run_pre_day41_01_checks.sh",
+      "sha256": "4473a52f5e48df9933bcb17266f189e1a4f2a23fa1f3fc9854e9199dd72a3033",
+      "bytes": 952
+    },
+    {
+      "path": "scripts/dev/validate_pre_day41_01.py",
+      "sha256": "adf7330f8571846067e92682c578a25e36d7dec16acc79f7bbc469aa67c5a98d",
+      "bytes": 1396
+    }
+  ]
+}
