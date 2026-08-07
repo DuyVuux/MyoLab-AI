@@ -1,0 +1,92 @@
+{
+  "version": "0.1",
+  "day": "DAY04",
+  "scope": "DAY04_MANAGED_ARTIFACTS_ONLY",
+  "ownership_note": "This manifest validates only DAY04-owned artifacts; pre-existing monorepo assets are not treated as extras.",
+  "files": [
+    {
+      "path": "clinical/quality/qc-taxonomy.v0.1.yaml",
+      "sha256": "57bfc5a3a682e3f1d62fba24f91f05e3370cc320a2ea806f9a348390ef55ca0c"
+    },
+    {
+      "path": "clinical/quality/artifact-vs-physiology-guidance.v0.1.md",
+      "sha256": "d29e378d6a1e226393daa06348b1ed78ea96a19520fe53314df6d441fa164e97"
+    },
+    {
+      "path": "clinical/quality/DAY04_TAXONOMY_REVIEW_RUNBOOK.md",
+      "sha256": "6f3dc44220168275c335dd5842c7dcef4fafc21928f98a23f94bfddaeaff626e"
+    },
+    {
+      "path": "packages/common-schemas/json/quality-reason-codes.schema.json",
+      "sha256": "3973405b10ce02dcb2e777ac093c2b5c6ef686ea0f27dc9e5edc3b8a29e5b68a"
+    },
+    {
+      "path": "packages/common-schemas/json/qc-taxonomy.schema.json",
+      "sha256": "78c61da166451a31285ac62a9e078e0095c247cb3b9800a448786f8cd128992b"
+    },
+    {
+      "path": "qa-validation/test-data/day04/synthetic-quality-reason-cases.v0.1.yaml",
+      "sha256": "bec239efeb7856f2a2915841ddf75b3f3caf60282177bc04fae8cbee3adef1a7"
+    },
+    {
+      "path": "scripts/dev/day04_quality_taxonomy_utils.py",
+      "sha256": "3973a9483ae5569ca3003dc8907c421e53e756b886f31443f58eb2c28c8e1d88"
+    },
+    {
+      "path": "scripts/dev/validate_day04_quality_taxonomy.py",
+      "sha256": "714896f21ddfdcdd52fcd2a20bbf9811f1b3881b3c476d03f0302f0f0a10a35a"
+    },
+    {
+      "path": "scripts/dev/check_day04_artifacts.py",
+      "sha256": "8f0db6f560edb81ba32d39d6d39107accd50954bbcf65edeff0302c54897e214"
+    },
+    {
+      "path": "scripts/dev/run_day04_checks.sh",
+      "sha256": "c6846965de0e7989ba7addde4078a7bfcf587aa2a40d87d8e28a56e83323343e"
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py",
+      "sha256": "d3580eded5058cc089872516b072ba2ba2cdd6d87abf9a56407ebf71185e3caf"
+    },
+    {
+      "path": "qa-validation/requirements/day04-acceptance-criteria.md",
+      "sha256": "6b3eaf2e3e5b3961b95b06ce35f8d64cd06f59d7dd593de0789525074ed15681"
+    },
+    {
+      "path": "qa-validation/traceability/day04-requirement-test-matrix.csv",
+      "sha256": "7f641ec417bca0852b325fcaf52ff00a5d002d3ae494f82bbc2affb1b39c39f9"
+    },
+    {
+      "path": "qa-validation/evidence/day04-validation-report.json",
+      "sha256": null
+    },
+    {
+      "path": "qa-validation/evidence/day04-day03-handoff-snapshot.json",
+      "sha256": "909c8cd624d74a8905187f60e335f6d37ccfc75317f80ea9cc82517663acff41"
+    },
+    {
+      "path": "qa-validation/evidence/day04-source-hash-ledger.json",
+      "sha256": "81acfadd6e269ebb55a385138275e7dd97bc00966b50924e79c3d95d223711b8"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day04-quality-taxonomy-traceability.v0.1.csv",
+      "sha256": "3923fc997b4bc039bfe97b39830411f2fd993b56fcf1021759b8b2379f163de2"
+    },
+    {
+      "path": "docs/02-clinical/discovery/day04-open-question-impact.v0.1.md",
+      "sha256": "67bbbabee4f6d6f1cbc81e6c9f8dd1893a8cf8fd6ccca221b7d28fe2173c64cb"
+    },
+    {
+      "path": "docs/00-executive/decisions/day04-decision-impact-review.v0.1.yaml",
+      "sha256": "cfb951560b1f81974686203030776f459a29027344cdd1559366a99c2e1015ec"
+    },
+    {
+      "path": "docs/00-executive/day04/day04-closeout-summary.v0.1.md",
+      "sha256": "bb15d2b231fd8d2605b81a3c0195854b641d505a83d5ec3b4d9fd87dde0e5d3c"
+    },
+    {
+      "path": "qa-validation/evidence/day04-artifact-manifest.json",
+      "sha256": null
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+version: '0.1'
+day: DAY04
+new_decision_required: false
+conflict_found: false
+reviewed_decisions:
+- D07 quality before intelligence
+- D08 preserve physiology
+- D09 human final authority
+day04_position: No higher-priority-source conflict detected. Taxonomy operationalizes
+  existing PRD/SRS safety semantics without freezing thresholds.
+upstream_limitation: DAY03 is BLOCKED_WITH_EVIDENCE; no site workflow evidence is
+  claimed accepted.

@@ -1,0 +1,135 @@
+{
+  "version": "0.1",
+  "day": "DAY04",
+  "depends_on": "DAY03 GO_FOR_DAY_04 required by roadmap; packaged DAY03 currently BLOCKED_WITH_EVIDENCE",
+  "integration_policy": "ADD with collision REVIEW. Never blindly overwrite prior-day or legacy assets.",
+  "validation_scope": "DAY04_MANAGED_ARTIFACTS_ONLY",
+  "files": [
+    {
+      "path": "clinical/quality/qc-taxonomy.v0.1.yaml",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "clinical/quality/artifact-vs-physiology-guidance.v0.1.md",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "clinical/quality/DAY04_TAXONOMY_REVIEW_RUNBOOK.md",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "packages/common-schemas/json/quality-reason-codes.schema.json",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "packages/common-schemas/json/qc-taxonomy.schema.json",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/test-data/day04/synthetic-quality-reason-cases.v0.1.yaml",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/day04_quality_taxonomy_utils.py",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/validate_day04_quality_taxonomy.py",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/check_day04_artifacts.py",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/run_day04_checks.sh",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/requirements/day04-acceptance-criteria.md",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/traceability/day04-requirement-test-matrix.csv",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day04-validation-report.json",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day04-day03-handoff-snapshot.json",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day04-source-hash-ledger.json",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/03-architecture/traceability/day04-quality-taxonomy-traceability.v0.1.csv",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/02-clinical/discovery/day04-open-question-impact.v0.1.md",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/00-executive/decisions/day04-decision-impact-review.v0.1.yaml",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/00-executive/day04/day04-closeout-summary.v0.1.md",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day04-artifact-manifest.json",
+      "action": "ADD",
+      "day": "DAY04",
+      "safe_to_overwrite": false
+    }
+  ]
+}

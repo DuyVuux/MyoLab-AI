@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "day": "DAY04",
+  "status": "BLOCKED_WITH_EVIDENCE_UPSTREAM_DAY03",
+  "taxonomy_designed": true,
+  "taxonomy_site_validated": false,
+  "numeric_thresholds_frozen": false,
+  "training_executed": false,
+  "raw_patient_data_read": false,
+  "upstream_day03_required_status": "GO_FOR_DAY_04",
+  "validation_failures": [],
+  "tests_expected": 20,
+  "tests_passed": 21,
+  "pytest_return_code": 0,
+  "engineering_validation_passed": true
+}

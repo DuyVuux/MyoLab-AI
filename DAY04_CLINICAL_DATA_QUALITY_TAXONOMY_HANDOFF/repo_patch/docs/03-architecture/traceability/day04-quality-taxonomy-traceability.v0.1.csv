@@ -1,0 +1,14 @@
+requirement_id,day_state,artifact,secondary_artifact,verification,evidence_status,site_validation_status
+FR-030,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-031,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-032,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-033,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-034,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-035,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-036,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-037,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-038,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-039,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+FR-040,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+NFR-009,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED
+PRD-JTBD-03,DESIGNED,clinical/quality/qc-taxonomy.v0.1.yaml,clinical/quality/artifact-vs-physiology-guidance.v0.1.md,qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py,VERIFIED_DOCUMENTED,NOT_VERIFIED

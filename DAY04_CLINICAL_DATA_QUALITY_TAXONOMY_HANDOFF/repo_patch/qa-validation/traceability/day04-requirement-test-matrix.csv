@@ -1,0 +1,14 @@
+requirement_id,test_ids,primary_artifact,status
+FR-030,"06,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-031,"05,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-032,"05,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-033,"05,08,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-034,"05,08,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-035,"05,08,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-036,"05,09,14,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-037,"07,10,11,12,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-038,"12,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-039,"11,15,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+FR-040,"06,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+NFR-009,"11,14,15,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
+PRD-JTBD-03,"09,10,11,14,15,16",clinical/quality/qc-taxonomy.v0.1.yaml,DESIGNED
