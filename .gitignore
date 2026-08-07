@@ -134,3 +134,5 @@ ai-core/experiments/**/*.csv.gz
 ai-core/experiments/**/*.zip
 
 data-platform/raw/Vinmec/DAY02_WORKFLOW_TIME_MOTION_HANDOFF/
+DAY*_*_HANDOFF/
+DAY**/
