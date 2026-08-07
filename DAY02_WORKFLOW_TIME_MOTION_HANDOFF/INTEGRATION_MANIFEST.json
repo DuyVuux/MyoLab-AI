@@ -1,0 +1,160 @@
+{
+  "version": "0.1",
+  "day": "DAY02",
+  "depends_on": "DAY01 accepted governance baseline",
+  "integration_policy": "Default ADD with collision REVIEW. safe_to_overwrite=false for every file. Existing destination files must be compared and merged or blocked; never blindly replaced.",
+  "files": [
+    {
+      "path": "clinical/studies/time-motion-observation-form.v0.1.yaml",
+      "action": "ADD",
+      "domain_owner": "Clinical Product Analytics / Data Contract",
+      "purpose": "Machine-readable blank observation instrument.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "clinical/studies/time-motion-study-protocol.v0.1.md",
+      "action": "ADD",
+      "domain_owner": "Clinical Product Analytics / Human Factors",
+      "purpose": "Event-based time-motion measurement protocol.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "clinical/workflows/motionlab-current-state.v0.1.md",
+      "action": "ADD",
+      "domain_owner": "Clinical Product / Workflow Engineering",
+      "purpose": "Candidate current-state workflow map for DAY03 verification.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/00-executive/day02/day02-closeout-summary.v0.1.md",
+      "action": "ADD",
+      "domain_owner": "Technical Program Manager",
+      "purpose": "DAY02 closeout state and DAY03 handoff.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/00-executive/decisions/day02-decision-impact-review.v0.1.yaml",
+      "action": "ADD",
+      "domain_owner": "Product / Architecture Governance",
+      "purpose": "Review of inherited decisions and conflict status.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/01-product/motionlab-rebaseline/day02-open-question-status-update.v0.1.yaml",
+      "action": "ADD",
+      "domain_owner": "Clinical Product",
+      "purpose": "Explicit no-silent-closure delta for relevant OQs.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/03-architecture/traceability/day02-workflow-time-motion-traceability.v0.1.csv",
+      "action": "ADD",
+      "domain_owner": "Requirements Engineering",
+      "purpose": "DAY02 mapping for JTBD/KPI/AC-10.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "packages/common-schemas/json/time-motion-observation.schema.json",
+      "action": "ADD",
+      "domain_owner": "Software Architecture / Common Schemas",
+      "purpose": "JSON Schema supporting deterministic observation-form validation.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day02_workflow_time_motion.py",
+      "action": "ADD",
+      "domain_owner": "QA / V&V",
+      "purpose": "20 automated DAY02 acceptance controls.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day02-artifact-manifest.json",
+      "action": "ADD",
+      "domain_owner": "QA / V&V",
+      "purpose": "Static SHA-256 manifest of repo_patch artifacts excluding dynamic evidence files.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day02-day01-handoff-snapshot.json",
+      "action": "ADD",
+      "domain_owner": "QA / V&V",
+      "purpose": "Relevant accepted DAY01 facts/OQs for self-contained review.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day02-source-hash-ledger.json",
+      "action": "ADD",
+      "domain_owner": "QA / V&V",
+      "purpose": "SHA-256 ledger of source inputs.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day02-validation-report.json",
+      "action": "ADD",
+      "domain_owner": "QA / V&V",
+      "purpose": "Machine-generated DAY02 gate result.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/requirements/day02-acceptance-criteria.md",
+      "action": "ADD",
+      "domain_owner": "QA / V&V",
+      "purpose": "Human and machine Definition of Done.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/test-data/day02/synthetic-time-motion-observation.v0.1.yaml",
+      "action": "ADD",
+      "domain_owner": "QA / V&V",
+      "purpose": "Synthetic-only overlap/remeasurement fixture; never baseline evidence.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/traceability/day02-requirement-test-matrix.csv",
+      "action": "ADD",
+      "domain_owner": "QA / V&V",
+      "purpose": "20 control-to-test mapping.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/check_day02_artifacts.py",
+      "action": "ADD",
+      "domain_owner": "QA Automation / Developer Experience",
+      "purpose": "Artifact-manifest and forbidden-file checker.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/run_day02_checks.sh",
+      "action": "ADD",
+      "domain_owner": "QA Automation / Developer Experience",
+      "purpose": "Single-command DAY02 gate.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/validate_day02_workflow_time_motion.py",
+      "action": "ADD",
+      "domain_owner": "QA Automation / Developer Experience",
+      "purpose": "Semantic validator for DAY02 contracts and guards.",
+      "day": "DAY02",
+      "safe_to_overwrite": false
+    }
+  ]
+}

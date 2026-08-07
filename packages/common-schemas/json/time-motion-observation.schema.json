@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/time-motion-observation.schema.json",
+  "title": "MotionLab Time-Motion Observation v0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "template_id",
+    "data_policy",
+    "evidence_policy",
+    "observation",
+    "context",
+    "coding_dictionary",
+    "events",
+    "case_summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "template_id": {
+      "const": "MOTIONLAB-TIME-MOTION-OBS-V0.1"
+    },
+    "template_is_clinical_evidence": {
+      "const": false
+    },
+    "baseline_eligible": {
+      "type": "boolean"
+    },
+    "data_policy": {
+      "type": "object",
+      "required": [
+        "direct_phi_allowed",
+        "raw_signal_allowed",
+        "screenshots_allowed"
+      ],
+      "properties": {
+        "direct_phi_allowed": {
+          "const": false
+        },
+        "raw_signal_allowed": {
+          "const": false
+        },
+        "screenshots_allowed": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence_policy": {
+      "type": "object"
+    },
+    "observation": {
+      "type": "object",
+      "required": [
+        "observation_id",
+        "analysis_case_id",
+        "observation_mode",
+        "evidence_status"
+      ],
+      "properties": {
+        "observation_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "analysis_case_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observation_mode": {
+          "enum": [
+            null,
+            "DIRECT_OBSERVATION",
+            "RETROSPECTIVE_WORKFLOW_RECONSTRUCTION",
+            "INTERVIEW_ONLY",
+            "SYNTHETIC_QA"
+          ]
+        },
+        "evidence_status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "start_timestamp",
+          "end_timestamp",
+          "actor_role",
+          "activity_code",
+          "time_class",
+          "workflow_step_id",
+          "evidence_status"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_timestamp": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_timestamp": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "actor_role": {
+            "type": "string"
+          },
+          "activity_code": {
+            "type": "string"
+          },
+          "time_class": {
+            "type": "string"
+          },
+          "workflow_step_id": {
+            "type": "string"
+          },
+          "evidence_status": {
+            "type": "string"
+          },
+          "remeasurement": {
+            "type": "boolean"
+          },
+          "parallel_group_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "case_summary": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,209 @@
+schema_version: '0.1'
+template_id: MOTIONLAB-TIME-MOTION-OBS-V0.1
+day: DAY02
+template_type: TIME_MOTION_OBSERVATION
+template_is_clinical_evidence: false
+baseline_eligible: false
+baseline_eligibility_rule: Only a completed, approved site observation may become baseline evidence; this blank
+  template is never baseline evidence.
+data_policy:
+  direct_phi_allowed: false
+  raw_signal_allowed: false
+  screenshots_allowed: false
+  patient_name_allowed: false
+  mrn_allowed: false
+  free_text_rule: Do not enter direct identifiers. Record workflow facts only. Clinical/patient details are out
+    of scope for this form.
+evidence_policy:
+  allowed_statuses:
+  - VERIFIED_DOCUMENTED
+  - OBSERVED_SAMPLE_DATA
+  - SITE_VERIFIED
+  - INFERRED
+  - ASSUMPTION
+  - UNKNOWN
+  - TBD
+  - NOT_VERIFIED
+  - DISCOVERY_REQUIRED
+  - CONFLICTING
+  measurement_fact_must_be_separate_from_inference: true
+  operator_report_must_be_separate_from_observer_note: true
+observation:
+  observation_id: SYN-DAY02-001
+  analysis_case_id: SYNTHETIC-NON-PATIENT
+  observation_mode: SYNTHETIC_QA
+  site_or_workflow_scope: MotionLab workflow; exact site facts require approved observation.
+  observer_role: QA
+  observer_count: 1
+  observation_start: '2026-08-07T08:00:00+07:00'
+  observation_end: '2026-08-07T08:07:00+07:00'
+  governance_approval_reference: NOT_APPLICABLE_SYNTHETIC
+  evidence_status: ASSUMPTION
+context:
+  protocol_label:
+    value: SYNTHETIC_PROTOCOL
+    evidence_status: ASSUMPTION
+    source: QA_FIXTURE
+  task_label:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+  workflow_variant:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+  software_or_device_context:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+  complexity_notes_non_phi:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+coding_dictionary:
+  actor_roles:
+  - DOCTOR
+  - KTV
+  - DEVICE
+  - SOFTWARE
+  - OTHER
+  - UNKNOWN
+  time_classes:
+  - CLINICIAN_DATA_HANDS_ON
+  - TECHNICIAN_DATA_HANDS_ON
+  - ACQUISITION_HANDS_ON
+  - SYSTEM_ACTIVE
+  - WAITING_BLOCKED
+  - REMEASUREMENT
+  - CLINICAL_INTERPRETATION
+  - OTHER
+  - UNKNOWN
+  candidate_activity_codes:
+  - PREPARE_OR_SETUP
+  - ACQUIRE
+  - EXPORT_OR_RETRIEVE
+  - INSPECT_DATA
+  - IDENTIFY_DATA_ISSUE
+  - MANUAL_CLEAN_OR_CORRECT
+  - NORMALIZE_OR_REFERENCE
+  - PROCESS_OR_COMPUTE
+  - REMEASURE_DECISION
+  - REMEASURE
+  - INTERPRET
+  - DOCUMENT_OR_HANDOFF
+  - WAIT
+  - SYSTEM_PROCESS
+  - OTHER
+  - UNKNOWN
+  note: Activity codes are a DAY02 observation coding framework, not claims that every activity occurs at the site.
+events:
+- event_id: EVT-001
+  start_timestamp: '2026-08-07T08:00:00+07:00'
+  end_timestamp: '2026-08-07T08:02:00+07:00'
+  actor_role: KTV
+  activity_code: EXPORT_OR_RETRIEVE
+  time_class: TECHNICIAN_DATA_HANDS_ON
+  workflow_step_id: CW-03
+  manual_interaction: true
+  rework: false
+  remeasurement: false
+  remeasurement_episode_id: null
+  parallel_group_id: null
+  observed_action: Synthetic export preparation.
+  observed_output: Synthetic export initiated.
+  reason_reported_by_operator: null
+  observer_note: Synthetic QA only.
+  evidence_status: ASSUMPTION
+- event_id: EVT-002
+  start_timestamp: '2026-08-07T08:02:00+07:00'
+  end_timestamp: '2026-08-07T08:02:45+07:00'
+  actor_role: SOFTWARE
+  activity_code: SYSTEM_PROCESS
+  time_class: SYSTEM_ACTIVE
+  workflow_step_id: CW-03
+  manual_interaction: false
+  rework: false
+  remeasurement: false
+  remeasurement_episode_id: null
+  parallel_group_id: PAR-01
+  observed_action: Synthetic export processing.
+  observed_output: Synthetic file ready.
+  reason_reported_by_operator: null
+  observer_note: Overlaps EVT-003 by design.
+  evidence_status: ASSUMPTION
+- event_id: EVT-003
+  start_timestamp: '2026-08-07T08:02:10+07:00'
+  end_timestamp: '2026-08-07T08:03:30+07:00'
+  actor_role: DOCTOR
+  activity_code: INSPECT_DATA
+  time_class: CLINICIAN_DATA_HANDS_ON
+  workflow_step_id: CW-04
+  manual_interaction: true
+  rework: false
+  remeasurement: false
+  remeasurement_episode_id: null
+  parallel_group_id: PAR-01
+  observed_action: Synthetic review of another record.
+  observed_output: Synthetic inspection result.
+  reason_reported_by_operator: null
+  observer_note: Overlap tests interval logic.
+  evidence_status: ASSUMPTION
+- event_id: EVT-004
+  start_timestamp: '2026-08-07T08:03:30+07:00'
+  end_timestamp: '2026-08-07T08:06:20+07:00'
+  actor_role: DOCTOR
+  activity_code: IDENTIFY_DATA_ISSUE
+  time_class: CLINICIAN_DATA_HANDS_ON
+  workflow_step_id: CW-05
+  manual_interaction: true
+  rework: false
+  remeasurement: false
+  remeasurement_episode_id: null
+  parallel_group_id: null
+  observed_action: Synthetic issue inspection.
+  observed_output: Synthetic decision to request remeasurement.
+  reason_reported_by_operator: Synthetic reason only; not a site artifact label.
+  observer_note: Do not convert this free text into a QC taxonomy label in DAY02.
+  evidence_status: ASSUMPTION
+- event_id: EVT-005
+  start_timestamp: '2026-08-07T08:06:20+07:00'
+  end_timestamp: '2026-08-07T08:07:00+07:00'
+  actor_role: DOCTOR
+  activity_code: REMEASURE_DECISION
+  time_class: REMEASUREMENT
+  workflow_step_id: CW-09
+  manual_interaction: true
+  rework: true
+  remeasurement: true
+  remeasurement_episode_id: RM-001
+  parallel_group_id: null
+  observed_action: Synthetic remeasurement request.
+  observed_output: Synthetic branch back to acquisition.
+  reason_reported_by_operator: null
+  observer_note: Synthetic only.
+  evidence_status: ASSUMPTION
+case_summary:
+  derived_values_only: true
+  calculation_status: SYNTHETIC_QA_NOT_BASELINE
+  elapsed_time_sec: null
+  doctor_data_hands_on_union_sec: null
+  technician_data_hands_on_union_sec: null
+  acquisition_hands_on_union_sec: null
+  system_active_union_sec: null
+  waiting_blocked_union_sec: null
+  remeasurement_union_sec: null
+  clinical_interpretation_union_sec: null
+  parallel_time_union_sec: null
+  remeasurement_occurred: null
+  remeasurement_episode_count: null
+  full_manual_review_required: null
+  unresolved_questions:
+  - OQ-001
+  - OQ-002
+  - OQ-003
+  - OQ-005
+day03_handoff:
+  may_collect_site_baseline: true
+  condition: Only under approved observation/governance conditions and with direct-PHI/raw-signal exclusion unless
+    separately approved.
+  if_condition_not_met: BLOCKED_WITH_EVIDENCE or qualitative/interview evidence only; do not report a measured baseline.

@@ -1,0 +1,21 @@
+{
+  "files": [
+    {"path": "clinical/studies/time-motion-observation-form.v0.1.yaml"},
+    {"path": "clinical/studies/time-motion-study-protocol.v0.1.md"},
+    {"path": "clinical/workflows/motionlab-current-state.v0.1.md"},
+    {"path": "docs/00-executive/day02/day02-closeout-summary.v0.1.md"},
+    {"path": "docs/00-executive/decisions/day02-decision-impact-review.v0.1.yaml"},
+    {"path": "docs/01-product/motionlab-rebaseline/day02-open-question-status-update.v0.1.yaml"},
+    {"path": "docs/03-architecture/traceability/day02-workflow-time-motion-traceability.v0.1.csv"},
+    {"path": "packages/common-schemas/json/time-motion-observation.schema.json"},
+    {"path": "qa-validation/automated-tests/governance/test_day02_workflow_time_motion.py"},
+    {"path": "qa-validation/evidence/day02-day01-handoff-snapshot.json"},
+    {"path": "qa-validation/evidence/day02-source-hash-ledger.json"},
+    {"path": "qa-validation/requirements/day02-acceptance-criteria.md"},
+    {"path": "qa-validation/test-data/day02/synthetic-time-motion-observation.v0.1.yaml"},
+    {"path": "qa-validation/traceability/day02-requirement-test-matrix.csv"},
+    {"path": "scripts/dev/check_day02_artifacts.py"},
+    {"path": "scripts/dev/run_day02_checks.sh"},
+    {"path": "scripts/dev/validate_day02_workflow_time_motion.py"}
+  ]
+}

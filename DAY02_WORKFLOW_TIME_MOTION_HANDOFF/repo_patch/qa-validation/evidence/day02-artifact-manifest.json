@@ -1,0 +1,93 @@
+{
+  "version": "0.1",
+  "day": "DAY02",
+  "hash_algorithm": "SHA-256",
+  "scope": "repo_patch static artifacts; excludes self and dynamic validation report",
+  "files": [
+    {
+      "path": "clinical/studies/time-motion-observation-form.v0.1.yaml",
+      "sha256": "155fc359af27765d01ddc3cd617aaf325cc7f3144960557db404916057228f4c",
+      "bytes": 3324
+    },
+    {
+      "path": "clinical/studies/time-motion-study-protocol.v0.1.md",
+      "sha256": "80823f725980338e6c23ec33d4ae7403670de704f7a7a6f2345971e1c1536ed8",
+      "bytes": 14514
+    },
+    {
+      "path": "clinical/workflows/motionlab-current-state.v0.1.md",
+      "sha256": "86c8354ddd58520b4c5aa15ee6c922b1423653bf3c7281db6ff3c4f002baf50f",
+      "bytes": 11527
+    },
+    {
+      "path": "docs/00-executive/day02/day02-closeout-summary.v0.1.md",
+      "sha256": "c4f30bfb6cf86a09e5962efd3e85af5259934934f09812e1d36b37d2a3392e79",
+      "bytes": 1700
+    },
+    {
+      "path": "docs/00-executive/decisions/day02-decision-impact-review.v0.1.yaml",
+      "sha256": "6b01d1184dd31cab76461103daf7aa9535ba89370050fa6c176f64c28eb96e0c",
+      "bytes": 1040
+    },
+    {
+      "path": "docs/01-product/motionlab-rebaseline/day02-open-question-status-update.v0.1.yaml",
+      "sha256": "7dcd8f77164ea447d010f3c70ad57dcca1e13afc30baaf9778126b6a558f7828",
+      "bytes": 1952
+    },
+    {
+      "path": "docs/03-architecture/traceability/day02-workflow-time-motion-traceability.v0.1.csv",
+      "sha256": "4763a01ee87a1fa20bad60990ab312ea806528ede665f38afa3ffb6fe1bea6e2",
+      "bytes": 3731
+    },
+    {
+      "path": "packages/common-schemas/json/time-motion-observation.schema.json",
+      "sha256": "3c99deb65da22eb57396318778ec5ffa040029ca436b009ed96a4e01f5639389",
+      "bytes": 3357
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day02_workflow_time_motion.py",
+      "sha256": "198bdd610aa0bb7dc64b3223b182dd97a3d35849c12c47d48e941d8d943d2dd3",
+      "bytes": 5284
+    },
+    {
+      "path": "qa-validation/evidence/day02-day01-handoff-snapshot.json",
+      "sha256": "d79e7866d4cc1de1c9303e7d778e8910c84fca70faefb953142229f25298a9bc",
+      "bytes": 4624
+    },
+    {
+      "path": "qa-validation/evidence/day02-source-hash-ledger.json",
+      "sha256": "50ae1a5748992bc2e7a53b1be3d60a3e5fc59df654f3ac819c07f4f23186062c",
+      "bytes": 1770
+    },
+    {
+      "path": "qa-validation/requirements/day02-acceptance-criteria.md",
+      "sha256": "03bc946329dfc2fa8bad4b0e37079ca747c56e2105a8e4007bfd170ccb2cc021",
+      "bytes": 2106
+    },
+    {
+      "path": "qa-validation/test-data/day02/synthetic-time-motion-observation.v0.1.yaml",
+      "sha256": "636c19e477f6b5810171dce4bf42b9a52ae55c8918527f06e0ec26e12b91e7d2",
+      "bytes": 6368
+    },
+    {
+      "path": "qa-validation/traceability/day02-requirement-test-matrix.csv",
+      "sha256": "4ce349fdeed45f4d41e320da7656af72fb039c245802c3eb6ff90b484361aaf8",
+      "bytes": 1446
+    },
+    {
+      "path": "scripts/dev/check_day02_artifacts.py",
+      "sha256": "80e5dced42ff6ac2f6f4d940ede548979acd1082d5511dd5442e1638cb3e08ef",
+      "bytes": 2460
+    },
+    {
+      "path": "scripts/dev/run_day02_checks.sh",
+      "sha256": "a6f626ac55b192ea3a817cf5a61a2af98f929bd7bb6253e57df74abf6b3b809b",
+      "bytes": 2856
+    },
+    {
+      "path": "scripts/dev/validate_day02_workflow_time_motion.py",
+      "sha256": "60f58334d2d9903bfbfb88126a4e4bd82e0502f43c5e2be5d4ebb38672239ae9",
+      "bytes": 5564
+    }
+  ]
+}

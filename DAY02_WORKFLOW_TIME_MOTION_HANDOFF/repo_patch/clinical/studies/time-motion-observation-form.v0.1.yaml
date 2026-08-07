@@ -1,0 +1,120 @@
+schema_version: '0.1'
+template_id: MOTIONLAB-TIME-MOTION-OBS-V0.1
+day: DAY02
+template_type: TIME_MOTION_OBSERVATION
+template_is_clinical_evidence: false
+baseline_eligible: false
+baseline_eligibility_rule: Only a completed, approved site observation may become baseline evidence; this blank
+  template is never baseline evidence.
+data_policy:
+  direct_phi_allowed: false
+  raw_signal_allowed: false
+  screenshots_allowed: false
+  patient_name_allowed: false
+  mrn_allowed: false
+  free_text_rule: Do not enter direct identifiers. Record workflow facts only. Clinical/patient details are out
+    of scope for this form.
+evidence_policy:
+  allowed_statuses:
+  - VERIFIED_DOCUMENTED
+  - OBSERVED_SAMPLE_DATA
+  - SITE_VERIFIED
+  - INFERRED
+  - ASSUMPTION
+  - UNKNOWN
+  - TBD
+  - NOT_VERIFIED
+  - DISCOVERY_REQUIRED
+  - CONFLICTING
+  measurement_fact_must_be_separate_from_inference: true
+  operator_report_must_be_separate_from_observer_note: true
+observation:
+  observation_id: null
+  analysis_case_id: null
+  observation_mode: null
+  site_or_workflow_scope: MotionLab workflow; exact site facts require approved observation.
+  observer_role: null
+  observer_count: null
+  observation_start: null
+  observation_end: null
+  governance_approval_reference: null
+  evidence_status: UNKNOWN
+context:
+  protocol_label:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+  task_label:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+  workflow_variant:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+  software_or_device_context:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+  complexity_notes_non_phi:
+    value: null
+    evidence_status: UNKNOWN
+    source: null
+coding_dictionary:
+  actor_roles:
+  - DOCTOR
+  - KTV
+  - DEVICE
+  - SOFTWARE
+  - OTHER
+  - UNKNOWN
+  time_classes:
+  - CLINICIAN_DATA_HANDS_ON
+  - TECHNICIAN_DATA_HANDS_ON
+  - ACQUISITION_HANDS_ON
+  - SYSTEM_ACTIVE
+  - WAITING_BLOCKED
+  - REMEASUREMENT
+  - CLINICAL_INTERPRETATION
+  - OTHER
+  - UNKNOWN
+  candidate_activity_codes:
+  - PREPARE_OR_SETUP
+  - ACQUIRE
+  - EXPORT_OR_RETRIEVE
+  - INSPECT_DATA
+  - IDENTIFY_DATA_ISSUE
+  - MANUAL_CLEAN_OR_CORRECT
+  - NORMALIZE_OR_REFERENCE
+  - PROCESS_OR_COMPUTE
+  - REMEASURE_DECISION
+  - REMEASURE
+  - INTERPRET
+  - DOCUMENT_OR_HANDOFF
+  - WAIT
+  - SYSTEM_PROCESS
+  - OTHER
+  - UNKNOWN
+  note: Activity codes are a DAY02 observation coding framework, not claims that every activity occurs at the site.
+events: []
+case_summary:
+  derived_values_only: true
+  calculation_status: NOT_CALCULATED_IN_DAY02_TEMPLATE
+  elapsed_time_sec: null
+  doctor_data_hands_on_union_sec: null
+  technician_data_hands_on_union_sec: null
+  acquisition_hands_on_union_sec: null
+  system_active_union_sec: null
+  waiting_blocked_union_sec: null
+  remeasurement_union_sec: null
+  clinical_interpretation_union_sec: null
+  parallel_time_union_sec: null
+  remeasurement_occurred: null
+  remeasurement_episode_count: null
+  full_manual_review_required: null
+  unresolved_questions: []
+day03_handoff:
+  may_collect_site_baseline: true
+  condition: Only under approved observation/governance conditions and with direct-PHI/raw-signal exclusion unless
+    separately approved.
+  if_condition_not_met: BLOCKED_WITH_EVIDENCE or qualitative/interview evidence only; do not report a measured baseline.

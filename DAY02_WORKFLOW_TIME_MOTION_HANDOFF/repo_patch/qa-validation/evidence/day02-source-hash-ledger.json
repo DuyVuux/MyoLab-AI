@@ -1,0 +1,50 @@
+{
+  "version": "0.1",
+  "day": "DAY02",
+  "hash_algorithm": "SHA-256",
+  "hash_api": "hashlib.file_digest(file, \"sha256\")",
+  "sources": [
+    {
+      "source_id": "SRC-SRS-001",
+      "filename": "SRS_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "role": "Software requirements baseline",
+      "sha256": "ad416ae9b8cbbe18f980a3d7b7c74f2bcdd10197eae174451749f311fdfae20d",
+      "bytes": 51611
+    },
+    {
+      "source_id": "SRC-PRD-001",
+      "filename": "PRD_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "role": "Product requirements baseline",
+      "sha256": "41f3154bea76a5071801a4a229f045169ad5dbc9dff664016866d5cb7af92bb3",
+      "bytes": 48342
+    },
+    {
+      "source_id": "SRC-CSV-001",
+      "filename": "Motion_Lab_CSV_Architecture(1).md",
+      "role": "Observed sample export/data architecture",
+      "sha256": "eca1132b86a311faa1d1759b77374433ce971626f6d888d12611bf937ee9cab1",
+      "bytes": 12289
+    },
+    {
+      "source_id": "SRC-ROADMAP-001",
+      "filename": "MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0(2).md",
+      "role": "DAY02 execution baseline",
+      "sha256": "c6b8fb738e26423817c25033a1ff0b19dc72ba3d9871cd871f9d346e478f03e7",
+      "bytes": 460993
+    },
+    {
+      "source_id": "SRC-SKELETON-001",
+      "filename": "semg_mfcv_ai_project_skeleton(1).md",
+      "role": "Monorepo placement baseline",
+      "sha256": "12de751ec1511bbe4bb35b6a2f08d0ce29f73c524cc641d0aa4f9129dce5d9e5",
+      "bytes": 235842
+    },
+    {
+      "source_id": "SRC-DAY01-HANDOFF",
+      "filename": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF.zip",
+      "role": "Accepted governance handoff input",
+      "sha256": "9e531567fd95baaacff0f8e9bf5efa726b019bc8372638908e4b1ce047cad810",
+      "bytes": 96981
+    }
+  ]
+}
