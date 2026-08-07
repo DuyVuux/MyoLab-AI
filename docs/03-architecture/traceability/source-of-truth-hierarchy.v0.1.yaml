@@ -1,0 +1,57 @@
+version: '0.1'
+day: DAY01
+policy: HIGHER_PRIORITY_SOURCE_WINS unless an approved change record explicitly supersedes
+  it.
+sources:
+- priority: 1
+  source_id: SRC-SRS-001
+  document: SRS_MotionLab_Data_Intelligence_v0.1
+  role: Software requirements baseline
+  evidence_status: VERIFIED_DOCUMENTED
+- priority: 2
+  source_id: SRC-PRD-001
+  document: PRD_MotionLab_Data_Intelligence_v0.1
+  role: Product/business requirements baseline
+  evidence_status: VERIFIED_DOCUMENTED
+- priority: 3
+  source_id: SRC-CSV-001
+  document: Motion_Lab_CSV_Architecture
+  role: Observed sample export/data architecture
+  evidence_status: OBSERVED_SAMPLE_DATA
+- priority: 4
+  source_id: SRC-ROADMAP-001
+  document: MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0
+  role: Execution baseline and planned day/artifact mapping
+  evidence_status: VERIFIED_DOCUMENTED
+- priority: 5
+  source_id: SRC-SKELETON-001
+  document: semg_mfcv_ai_project_skeleton
+  role: Current monorepo responsibility/placement baseline
+  evidence_status: VERIFIED_DOCUMENTED
+- priority: 6
+  source_id: SRC-LEGACY-001
+  document: PRE-DAY41_01_and_existing_technical_assets
+  role: Legacy engineering assets; reuse/revalidate/regression only as decided
+  evidence_status: INFERRED
+- priority: 7
+  source_id: SRC-IMPL-OLD-001
+  document: Implementation_Plan_Realtime_Final
+  role: Old implementation/product framing; lower priority after re-baseline
+  evidence_status: VERIFIED_DOCUMENTED
+- priority: 8
+  source_id: SRC-ASSUMPTION
+  document: Assumption
+  role: Last resort only; must be explicit and classified
+  evidence_status: ASSUMPTION
+execution_directive:
+  document: MASTER_PROMPT_DAY01
+  role: Current execution/pack requirements; does not alter clinical facts from authoritative
+    sources.
+conflict_rules:
+- Never silently reconcile contradictory claims.
+- Record each material scope/architecture/safety conflict in the decision ledger.
+- Observed sample-data facts describe the provided sample, not guaranteed site-wide
+  behavior.
+- Unknown site facts remain UNKNOWN/TBD/NOT_VERIFIED/DISCOVERY_REQUIRED.
+- A documented requirement being VERIFIED_DOCUMENTED does not mean its implementation
+  is implemented or validated.

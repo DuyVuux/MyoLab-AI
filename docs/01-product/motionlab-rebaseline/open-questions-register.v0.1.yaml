@@ -1,0 +1,215 @@
+version: '0.1'
+day: DAY01
+questions:
+- question_id: OQ-001
+  question: Số ca sEMG/tháng và phân bố theo bệnh lý/protocol là bao nhiêu?
+  source:
+  - PRD §14
+  - SRS TBD-01
+  why_it_matters: Cần sizing workload, baseline và sampling plan.
+  evidence_needed: Case-volume log/de-identified operational count from MotionLab
+  owner: Clinical Product / MotionLab
+  target_day: DAY_03
+  blocking_scope: Time-motion baseline and pilot cohort sizing
+  fallback: Use qualitative workflow mapping; do not invent volume.
+  status: OPEN
+  evidence_status: UNKNOWN
+- question_id: OQ-002
+  question: Manual processing time theo từng công đoạn và toàn ca là bao nhiêu?
+  source:
+  - PRD §10, §14
+  why_it_matters: North Star và KPI giảm toil cần baseline thực đo.
+  evidence_needed: Time-motion observation with task-level timestamps
+  owner: Clinical Product Analytics
+  target_day: DAY_03
+  blocking_scope: KPI baseline and pilot success definition
+  fallback: Keep ≥60 min/case and ≥50% only as documented estimate/research target,
+    not baseline.
+  status: OPEN
+  evidence_status: UNKNOWN
+- question_id: OQ-003
+  question: Tỷ lệ đo lại là bao nhiêu và nguyên nhân đo lại được phân loại thế nào?
+  source:
+  - PRD §14
+  - SRS TBD-02
+  why_it_matters: QC benefit cannot be measured without remeasurement baseline/reasons.
+  evidence_needed: Historical/observed remeasurement log with reason taxonomy
+  owner: Clinical Product / MotionLab
+  target_day: DAY_03
+  blocking_scope: QC impact measurement
+  fallback: Record occurrence qualitatively; do not invent rate.
+  status: OPEN
+  evidence_status: UNKNOWN
+- question_id: OQ-004
+  question: Filter/normalization/window/protocol hiện bác sĩ dùng là gì và nguồn tham
+    chiếu nào?
+  source:
+  - PRD §14
+  - SRS TBD-03
+  why_it_matters: Preprocessing profile must preserve physiology and match workflow.
+  evidence_needed: Current MR4/myoRESEARCH settings, SOP/protocol and clinician confirmation
+  owner: Clinical + DSP
+  target_day: DAY_04
+  blocking_scope: Preprocessing design and QC taxonomy
+  fallback: No universal pipeline/threshold; configuration remains TBD.
+  status: OPEN
+  evidence_status: UNKNOWN
+- question_id: OQ-005
+  question: Output sEMG cuối hiện hỗ trợ quyết định lâm sàng cụ thể nào?
+  source:
+  - PRD §14
+  - SRS TBD-04
+  why_it_matters: Metric selection and interpretation boundary depend on actual decision
+    context.
+  evidence_needed: Clinician interview + current report/examples with de-identification
+  owner: Clinical Product
+  target_day: DAY_03
+  blocking_scope: Metric/evidence/report design
+  fallback: Limit Day01 to technical evidence support; no new clinical claim.
+  status: OPEN
+  evidence_status: UNKNOWN
+- question_id: OQ-006
+  question: Clinical/operator metadata được lưu ở đâu và mức đầy đủ ra sao?
+  source:
+  - PRD §14
+  - SRS FR-022/023
+  why_it_matters: Valid comparison and eligibility need protocol/context metadata.
+  evidence_needed: Actual metadata sources/data dictionary and sample de-identified
+    fields
+  owner: Data + Clinical
+  target_day: DAY_12
+  blocking_scope: Canonical Session/ProtocolContext contract
+  fallback: Missing metadata must warn/fail; never infer patient/protocol facts.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-007
+  question: PHI/identifier, consent và de-identification workflow site là gì?
+  source:
+  - PRD §14
+  - SRS TBD-05/NFR-004
+  why_it_matters: Real patient data governance is a prerequisite.
+  evidence_needed: Approved Vinmec governance path, de-identification SOP, access/retention
+    decision
+  owner: Privacy / Vinmec IT
+  target_day: DAY_05
+  blocking_scope: Real-data access and repository boundary
+  fallback: Do not ingest/commit raw patient data into the repo/Day01 pack.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-008
+  question: Ý nghĩa chính xác của LT/RT Force, pressure/contact/COP fields trong Noraxon
+    export là gì?
+  source:
+  - PRD §14
+  - SRS TBD-07
+  - CSV Architecture §3
+  why_it_matters: P1 left/right logic requires field semantics before algorithm design.
+  evidence_needed: Vendor/site confirmation + matched trial/reference
+  owner: Pressure P1 Lead
+  target_day: DAY_64
+  blocking_scope: Pressure P1 design
+  fallback: Keep semantics NOT_VERIFIED; no GRF/clinical interpretation overclaim.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-009
+  question: Tên chính xác knee angle/DOF/biomechanical variable gặp lỗi là gì?
+  source:
+  - SRS DR-K02
+  - PRD §14
+  why_it_matters: Cannot design correction without identifying the variable.
+  evidence_needed: Real failure case + software output naming
+  owner: Knee Discovery Lead / MotionLab
+  target_day: DAY_74
+  blocking_scope: Knee/ACL solution class
+  fallback: No correction algorithm.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-010
+  question: Knee failure là no output, wrong output, noisy output hay clinically uninterpretable?
+  source:
+  - SRS DR-K03
+  why_it_matters: Different failure classes imply different root causes and solutions.
+  evidence_needed: Clinician-labeled failure case and current output
+  owner: Knee Discovery Lead / MotionLab
+  target_day: DAY_74
+  blocking_scope: Knee root-cause classification
+  fallback: No correction algorithm.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-011
+  question: Vicon Nexus version, model, marker set và coordinate convention là gì?
+  source:
+  - SRS DR-K04
+  - CSV Architecture §2.4
+  why_it_matters: Axis/DOF interpretation cannot be hard-coded.
+  evidence_needed: Vicon project/config export + lab convention documentation
+  owner: Knee Discovery + Data
+  target_day: DAY_75
+  blocking_scope: Knee root-cause analysis
+  fallback: Do not map X/Y/Z to anatomical planes by assumption.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-012
+  question: Static calibration và anthropometric parameters nào được nhập thủ công?
+  source:
+  - SRS DR-K05
+  why_it_matters: Calibration/input errors may be root cause rather than AI problem.
+  evidence_needed: Calibration workflow/config and operator evidence
+  owner: Knee Discovery / MotionLab
+  target_day: DAY_76
+  blocking_scope: Knee root-cause analysis
+  fallback: No correction algorithm.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-013
+  question: Nhóm bệnh nhân/task nào có Knee failure, tần suất và workaround hiện tại?
+  source:
+  - SRS DR-K06
+  why_it_matters: Need reproducibility and scope before solution design.
+  evidence_needed: Case inventory and operator workflow observations
+  owner: Knee Discovery / MotionLab
+  target_day: DAY_77
+  blocking_scope: Knee discovery scope
+  fallback: Treat as isolated/unknown until evidenced.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-014
+  question: Ground/reference nào bác sĩ dùng để biết Knee output là sai?
+  source:
+  - SRS DR-K07
+  why_it_matters: Validation needs an explicit reference, not model self-consistency.
+  evidence_needed: Reference modality/clinical review criteria and matched case
+  owner: Knee Discovery / Clinical
+  target_day: DAY_78
+  blocking_scope: Knee verification design
+  fallback: No algorithm efficacy claim.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-015
+  question: Success criterion bác sĩ mong muốn cho Knee/ACL là gì?
+  source:
+  - SRS DR-K08
+  why_it_matters: Gate F requires a success definition before choosing solution class.
+  evidence_needed: Clinician-approved measurable criterion
+  owner: Knee Discovery / Clinical
+  target_day: DAY_79
+  blocking_scope: Gate F decision
+  fallback: Keep workstream discovery-only.
+  status: OPEN
+  evidence_status: DISCOVERY_REQUIRED
+- question_id: OQ-016
+  question: Cấu hình MotionLab có đủ điều kiện site cho MFCV không?
+  source:
+  - SRS FR-064
+  - SRS TBD-08
+  - Roadmap DAY49
+  why_it_matters: MFCV requires verified geometry/IED/alignment/site configuration.
+  evidence_needed: Site evidence for electrode geometry, IED, alignment, channel relation,
+    sampling/config
+  owner: DSP + MotionLab
+  target_day: DAY_49
+  blocking_scope: Optional MFCV capability
+  fallback: Return MFCV_NOT_ELIGIBLE/null + reason; MFCV unavailable is not system
+    failure.
+  status: OPEN
+  evidence_status: NOT_VERIFIED

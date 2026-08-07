@@ -1,0 +1,21 @@
+control_id,acceptance_control,pytest_test,verification_type,day
+T01,Required files exist,test_required_files_exist,AUTOMATED,DAY01
+T02,YAML/JSON parse successfully,test_yaml_json_parse,AUTOMATED,DAY01
+T03,JSON schemas are valid Draft 2020-12,test_json_schemas_are_valid,AUTOMATED,DAY01
+T04,Requirement IDs are unique,test_requirement_ids_unique,AUTOMATED,DAY01
+T05,Expected SRS IDs are represented exactly,test_expected_srs_ids_represented,AUTOMATED,DAY01
+T06,Every requirement has source,test_every_requirement_has_source,AUTOMATED,DAY01
+T07,Every requirement has evidence status,test_every_requirement_has_evidence_status,AUTOMATED,DAY01
+T08,Every requirement has implementation state,test_every_requirement_has_implementation_state,AUTOMATED,DAY01
+T09,Every requirement has roadmap mapping or explicit disposition,test_roadmap_mapping_or_disposition,AUTOMATED,DAY01
+T10,Decision IDs are unique,test_decision_ids_unique,AUTOMATED,DAY01
+T11,Decision source exists in hierarchy,test_decision_sources_exist,AUTOMATED,DAY01
+T12,Open questions have target day,test_open_questions_have_target_day,AUTOMATED,DAY01
+T13,No unknown evidence enum,test_no_unknown_evidence_enum,AUTOMATED,DAY01
+T14,No silent clinical threshold,test_no_silent_clinical_threshold,AUTOMATED,DAY01
+T15,MFCV remains optional and NOT_VERIFIED,test_mfcv_remains_optional_not_verified,AUTOMATED,DAY01
+T16,Knee algorithm remains discovery-gated,test_knee_remains_discovery_gated,AUTOMATED,DAY01
+T17,No autonomous diagnosis/treatment/finalization claim,test_no_autonomous_clinical_claim,AUTOMATED,DAY01
+T18,No raw patient signal artifact in pack,test_no_raw_patient_signal_artifact,AUTOMATED,DAY01
+T19,Traceability CSV row keys are unique,test_traceability_row_keys_unique,AUTOMATED,DAY01
+T20,Artifact manifest matches filesystem,test_artifact_manifest_matches_filesystem,AUTOMATED,DAY01

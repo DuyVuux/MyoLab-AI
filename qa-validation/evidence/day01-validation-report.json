@@ -1,0 +1,50 @@
+{
+  "day": "DAY01",
+  "task": "Requirements Re-baseline & Decision Ledger",
+  "requirement_registry_valid": true,
+  "registry_item_count": 130,
+  "srs_coverage": {
+    "FR": {
+      "expected": 57,
+      "found": 57,
+      "missing": []
+    },
+    "DR-K": {
+      "expected": 8,
+      "found": 8,
+      "missing": []
+    },
+    "NFR": {
+      "expected": 12,
+      "found": 12,
+      "missing": []
+    },
+    "AC": {
+      "expected": 10,
+      "found": 10,
+      "missing": []
+    },
+    "TBD": {
+      "expected": 8,
+      "found": 8,
+      "missing": []
+    }
+  },
+  "duplicate_requirement_ids": 0,
+  "missing_required_requirements": [],
+  "unexpected_srs_requirements": [],
+  "invalid_evidence_states": [],
+  "invalid_implementation_states": [],
+  "silent_assumption_count": 0,
+  "silent_clinical_threshold_count": 0,
+  "decision_count": 12,
+  "open_question_count": 16,
+  "mfcv_status": "NOT_VERIFIED",
+  "knee_algorithm_authorized": false,
+  "training_executed": false,
+  "real_patient_data_read": false,
+  "raw_patient_files_in_pack": 0,
+  "tests_passed": true,
+  "validation_failures": [],
+  "day_status": "GO_FOR_DAY_02"
+}

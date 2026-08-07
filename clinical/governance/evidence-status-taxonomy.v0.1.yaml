@@ -1,0 +1,56 @@
+version: '0.1'
+day: DAY01
+frozen: true
+principle: Evidence status and implementation lifecycle are independent dimensions.
+evidence_statuses:
+- id: VERIFIED_DOCUMENTED
+  definition: Explicitly stated in an authoritative project document; not equivalent
+    to implementation or site validation.
+- id: OBSERVED_SAMPLE_DATA
+  definition: Observed in provided sample data architecture/export; not guaranteed
+    site-wide.
+- id: SITE_VERIFIED
+  definition: Confirmed by evidence from the actual MotionLab site/configuration/workflow.
+- id: INFERRED
+  definition: Reasoned from evidence but not directly stated/observed; must remain
+    visibly marked.
+- id: ASSUMPTION
+  definition: Deliberately assumed for planning only; must never be silent.
+- id: UNKNOWN
+  definition: Answer is not known from current evidence.
+- id: TBD
+  definition: Known to require a future decision/value that has not been fixed.
+- id: NOT_VERIFIED
+  definition: A claim/capability has not been confirmed by sufficient evidence.
+- id: DISCOVERY_REQUIRED
+  definition: Dedicated evidence collection is required before design/decision can
+    close.
+- id: CONFLICTING
+  definition: Reliable sources disagree or cannot be reconciled without a decision
+    record.
+implementation_lifecycle:
+- id: IDENTIFIED
+  definition: Requirement exists and is mapped, but implementation is not claimed.
+- id: DESIGNED
+  definition: Design/contract is approved enough for implementation.
+- id: IMPLEMENTED
+  definition: Implementation exists; validation may still be pending.
+- id: VALIDATED
+  definition: Defined verification/validation evidence has passed.
+- id: FROZEN
+  definition: Baseline governance/product statement is version-frozen until change
+    control.
+- id: DEFERRED
+  definition: Intentionally postponed with rationale.
+- id: BLOCKED
+  definition: Cannot progress because an explicit dependency/evidence gap is open.
+- id: OUT_OF_SCOPE
+  definition: Not part of the current product/program scope.
+clinical_semantics:
+- physiological variation != artifact
+- pathology != noise
+- missing evidence != normal
+- metric unavailable != 0
+- MFCV unavailable != system failure
+change_control: Any change to enums, scope, clinical claim, or threshold requires
+  a decision record, impact assessment, and version bump.

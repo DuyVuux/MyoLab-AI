@@ -1,0 +1,291 @@
+version: '0.1'
+day: DAY01
+decisions:
+- decision_id: D01
+  title: 90-day roadmap supersedes the old post-PRE-DAY41_01 schedule
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Legacy work had strong gesture/fatigue/MFCV/lower-limb momentum; the Vinmec
+    problem framing changed.
+  decision: Use the 90-day re-baselined roadmap for work after PRE-DAY41_01; reuse
+    old assets only by explicit disposition.
+  rationale: Roadmap §2 and §5 state that continuation of the old schedule would violate
+    Automation of toil first.
+  source:
+  - SRC-ROADMAP-001
+  - SRC-PRD-001
+  alternatives:
+  - Continue PRE-DAY41_02 sequence
+  consequences:
+  - Legacy assets remain available for reuse/regression; schedule is superseded.
+  affected_requirements:
+  - PRD-NS-01
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D02
+  title: P0 is sEMG Data Processing & Quality Intelligence
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: The highest-priority observed need is time-consuming data/noise processing,
+    not a missing classifier.
+  decision: P0 is ingestion, immutable raw/provenance, validation, QC, versioned processing,
+    metric eligibility, evidence and clinician review.
+  rationale: PRD §7.1 and SRS §1–2 explicitly set this MVP priority.
+  source:
+  - SRC-PRD-001
+  - SRC-SRS-001
+  alternatives: []
+  consequences: []
+  affected_requirements:
+  - PRD-NEED-01
+  - FR-001
+  - FR-030
+  - FR-050
+  - FR-060
+  - FR-070
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D03
+  title: Plantar Pressure is P1
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Left/right assignment is a repeated workflow pain but secondary to the
+    sEMG P0.
+  decision: Keep plantar-pressure left/right correction as P1 with confidence, abstention,
+    clinician override and abnormal-gait evaluation.
+  rationale: PRD §7.2 and SRS §11 define this scope and its non-diagnostic boundary.
+  source:
+  - SRC-PRD-001
+  - SRC-SRS-001
+  alternatives: []
+  consequences: []
+  affected_requirements:
+  - PRD-NEED-05
+  - FR-080
+  - FR-081
+  - FR-082
+  - FR-083
+  - FR-084
+  - FR-085
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D04
+  title: Knee/ACL remains discovery-gated
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: The exact angle/DOF, failure mode and root cause are under-specified.
+  decision: Do not design or implement a Knee/ACL correction algorithm until DR-K01..DR-K08
+    are complete enough for design.
+  rationale: SRS §12 has an explicit gate; PRD §7.3 says not to call it AI correction
+    before root-cause clarification.
+  source:
+  - SRC-SRS-001
+  - SRC-PRD-001
+  alternatives: []
+  consequences:
+  - DAY73–80 are discovery/root-cause work, not algorithm development.
+  affected_requirements:
+  - DR-K01
+  - DR-K02
+  - DR-K03
+  - DR-K04
+  - DR-K05
+  - DR-K06
+  - DR-K07
+  - DR-K08
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D05
+  title: MFCV is optional and requires site eligibility
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Vendor/legacy capability does not prove site electrode geometry/IED/alignment.
+  decision: Keep MFCV disabled/not eligible unless site evidence satisfies FR-064;
+    MFCV unavailable is not a system failure.
+  rationale: SRS FR-064/TBD-08 and roadmap DAY49 explicitly make MFCV optional and
+    site-gated.
+  source:
+  - SRC-SRS-001
+  - SRC-ROADMAP-001
+  alternatives: []
+  consequences: []
+  affected_requirements:
+  - FR-064
+  - TBD-08
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: true
+- decision_id: D06
+  title: No autonomous diagnosis, treatment or finalization
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: The system is clinical decision-support/data automation.
+  decision: Never auto-diagnose, recommend treatment autonomously, or finalize a clinical
+    result without clinician approval.
+  rationale: SRS safety boundary/out-of-scope and PRD positioning/out-of-scope are
+    explicit.
+  source:
+  - SRC-SRS-001
+  - SRC-PRD-001
+  alternatives: []
+  consequences:
+  - Draft technical analysis remains non-final until clinician approval.
+  affected_requirements:
+  - FR-076
+  - FR-077
+  - NFR-012
+  - AC-08
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D07
+  title: Quality before intelligence
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Higher-level metrics are unsafe when input quality/supportability is inadequate.
+  decision: Gate downstream analysis on data/QC eligibility; fail or abstain when
+    unsupported.
+  rationale: PRD Product Principles and SRS QC/eligibility requirements.
+  source:
+  - SRC-PRD-001
+  - SRC-SRS-001
+  alternatives: []
+  consequences: []
+  affected_requirements:
+  - PRD-PP-01
+  - FR-038
+  - FR-060
+  - NFR-012
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D08
+  title: Preserve physiology
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Pathology/physiological variation can look different from healthy signals
+    and must not be erased as noise.
+  decision: Preserve raw and separate measurement artifact evidence from physiological
+    variation; do not normalize a patient toward healthy by assumption.
+  rationale: PRD Product Principles/risks and SRS definitions/FR-036/FR-053.
+  source:
+  - SRC-PRD-001
+  - SRC-SRS-001
+  alternatives: []
+  consequences: []
+  affected_requirements:
+  - PRD-PP-02
+  - FR-036
+  - FR-053
+  - FR-054
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D09
+  title: Human final authority
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Doctors/KTVs remain responsible for professional interpretation.
+  decision: The machine surfaces evidence/exceptions; clinicians accept/override/reprocess/remeasure/inconclusive
+    and approve finalization.
+  rationale: PRD Product Principles/workflow and SRS FR-070..077.
+  source:
+  - SRC-PRD-001
+  - SRC-SRS-001
+  alternatives: []
+  consequences: []
+  affected_requirements:
+  - PRD-PP-03
+  - FR-070
+  - FR-071
+  - FR-072
+  - FR-073
+  - FR-074
+  - FR-075
+  - FR-076
+  - FR-077
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D10
+  title: Raw data is immutable
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Traceability and safe reprocessing require preservation of the source signal.
+  decision: Never overwrite/interpolate raw; store source hash and keep masks/rejections
+    in derived layers.
+  rationale: SRS Raw definition, FR-007/008/053/054, NFR-003, AC-09.
+  source:
+  - SRC-SRS-001
+  - SRC-CSV-001
+  alternatives: []
+  consequences: []
+  affected_requirements:
+  - FR-007
+  - FR-008
+  - FR-053
+  - FR-054
+  - NFR-003
+  - AC-09
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D11
+  title: CSV availability does not authorize model training
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Having exportable data does not establish workflow, labels, quality taxonomy,
+    privacy or intended-use readiness.
+  decision: Do not start model training merely because CSV exists; training is not
+    part of DAY01.
+  rationale: PRD §15 acceptance gate and roadmap critical path put workflow/data/QC
+    evidence before modeling.
+  source:
+  - SRC-PRD-001
+  - SRC-ROADMAP-001
+  alternatives: []
+  consequences: []
+  affected_requirements:
+  - PRD-OQ-01
+  - PRD-OQ-02
+  - PRD-OQ-04
+  - PRD-OQ-09
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false
+- decision_id: D12
+  title: Public healthy datasets cannot establish Vinmec clinical effectiveness
+  date: '2026-08-07'
+  status: ACCEPTED
+  context: Legacy public datasets are engineering/research assets and differ from
+    the MotionLab patient population/site workflow.
+  decision: Keep public healthy datasets for regression/debugging/research; do not
+    use them as evidence of Vinmec clinical effectiveness.
+  rationale: Roadmap Legacy Asset Disposition explicitly states this limitation.
+  source:
+  - SRC-ROADMAP-001
+  - SRC-LEGACY-001
+  alternatives: []
+  consequences:
+  - Clinical effectiveness requires site-appropriate evidence/validation.
+  affected_requirements:
+  - PRD-NEED-03
+  supersedes: []
+  superseded_by: []
+  owner: VSF Product/Clinical AI/Architecture
+  review_required: false

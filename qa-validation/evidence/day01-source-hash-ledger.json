@@ -1,0 +1,92 @@
+{
+  "version": "0.1",
+  "day": "DAY01",
+  "hash_algorithm": "SHA-256",
+  "note": "Hashes identify source artifacts used to construct DAY01. Source files are not copied into repo_patch.",
+  "sources": [
+    {
+      "file_name": "SRS_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "role": "AUTHORITATIVE_1_SRS",
+      "size_bytes": 51611,
+      "sha256": "ad416ae9b8cbbe18f980a3d7b7c74f2bcdd10197eae174451749f311fdfae20d"
+    },
+    {
+      "file_name": "PRD_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "role": "AUTHORITATIVE_2_PRD",
+      "size_bytes": 48342,
+      "sha256": "41f3154bea76a5071801a4a229f045169ad5dbc9dff664016866d5cb7af92bb3"
+    },
+    {
+      "file_name": "Motion_Lab_CSV_Architecture(1).md",
+      "role": "AUTHORITATIVE_3_CSV_ARCHITECTURE",
+      "size_bytes": 12289,
+      "sha256": "eca1132b86a311faa1d1759b77374433ce971626f6d888d12611bf937ee9cab1"
+    },
+    {
+      "file_name": "MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0(2).md",
+      "role": "AUTHORITATIVE_4_ROADMAP",
+      "size_bytes": 460993,
+      "sha256": "c6b8fb738e26423817c25033a1ff0b19dc72ba3d9871cd871f9d346e478f03e7"
+    },
+    {
+      "file_name": "semg_mfcv_ai_project_skeleton.md",
+      "role": "AUTHORITATIVE_5_SKELETON",
+      "size_bytes": 134114,
+      "sha256": "a8f7b3b36c43b75bd232d49b33f8aa7af3f1cc09e826fe0490a59e15f7a0a1f4"
+    },
+    {
+      "file_name": "sEMG-quy-trinh-van-hanh.md",
+      "role": "LEGACY_TECHNICAL_ASSET",
+      "size_bytes": 5694,
+      "sha256": "d714a4a9c02596d14d35e448decab35cf42e0776dcfe637d6e17903bc6698aee"
+    },
+    {
+      "file_name": "sEMG_Dinh_vi_chuong.md",
+      "role": "LEGACY_TECHNICAL_ASSET",
+      "size_bytes": 13470,
+      "sha256": "e52eef305240068e73263cb185cf257a3782d61cc4313498af6d787f2699d76e"
+    },
+    {
+      "file_name": "Implementation_Plan_Realtime_Final.md",
+      "role": "AUTHORITATIVE_7_OLD_IMPLEMENTATION",
+      "size_bytes": 51213,
+      "sha256": "72061dba1d748c15b15f068201520ec27bc1f686f259438b3f73f98eec8c42b1"
+    },
+    {
+      "file_name": "DeXuat_sEMG_GestureRecognition_Vinmec.docx",
+      "role": "LEGACY_GESTURE_PROPOSAL",
+      "size_bytes": 26245,
+      "sha256": "687dae878f28477082d18083a5e635b64db7632d1c90410b6d859e41f8d49611"
+    },
+    {
+      "file_name": "Nghiên cứu sâu trước Day25 về kho dữ liệu sEMG cho dự án Clinical Intelligence dùng Noraxon Ultium EMG.md",
+      "role": "LEGACY_RESEARCH",
+      "size_bytes": 32315,
+      "sha256": "986e0adbfc2d2017b62a539e7533f6049bfdcc8b83b11658aeff2256dae500f8"
+    },
+    {
+      "file_name": "Nghiên cứu tiền Day 25 cho dự án sEMG Clinical Intelligence với Noraxon Ultium EMG và myoRESEARCH.md",
+      "role": "LEGACY_RESEARCH",
+      "size_bytes": 34931,
+      "sha256": "0eca8317a260374216ed5d5c239f9ef25331d6b00a186d7f84368ed4b0ae7491"
+    },
+    {
+      "file_name": "Báo cáo scoping review tiền Day25 cho dự án sEMG Clinical Intelligence với Noraxon Ultium EMG và myoRESEARCH.md",
+      "role": "LEGACY_RESEARCH",
+      "size_bytes": 30790,
+      "sha256": "48cf0805033af468a9a7c7daf2b73c0d5126aad5ee42642fb7f66f8b39aab512"
+    },
+    {
+      "file_name": "Báo cáo nghiên cứu sâu tiền Day25 cho dự án sEMG Clinical Intelligence với Noraxon Ultium EMG và myoRESEARCH.md",
+      "role": "LEGACY_RESEARCH",
+      "size_bytes": 39562,
+      "sha256": "c7d4d74a58230a0876b05787a754817e1e5f2b2b6f4ba773296df8887aa46912"
+    },
+    {
+      "file_name": "Kế hoạch đề xuất 20 ngày trước khi bắt đầu ngày 41-50 Noraxon-compatible Clinical Intelligence MVP.md",
+      "role": "LEGACY_20_DAY_SCHEDULE",
+      "size_bytes": 28439,
+      "sha256": "4abdc1c78c9efa91ee89def179d5d2c83c161e4847821b7d9733becfbd880541"
+    }
+  ]
+}

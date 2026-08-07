@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.vsf.local/schemas/requirement-registry.schema.json",
+  "title": "MotionLab Requirement Registry v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "day",
+    "evidence_status_enum",
+    "implementation_state_enum",
+    "requirements"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.1"
+    },
+    "day": {
+      "const": "DAY01"
+    },
+    "evidence_status_enum": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "VERIFIED_DOCUMENTED",
+          "OBSERVED_SAMPLE_DATA",
+          "SITE_VERIFIED",
+          "INFERRED",
+          "ASSUMPTION",
+          "UNKNOWN",
+          "TBD",
+          "NOT_VERIFIED",
+          "DISCOVERY_REQUIRED",
+          "CONFLICTING"
+        ]
+      },
+      "uniqueItems": true,
+      "minItems": 10
+    },
+    "implementation_state_enum": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "IDENTIFIED",
+          "DESIGNED",
+          "IMPLEMENTED",
+          "VALIDATED",
+          "FROZEN",
+          "DEFERRED",
+          "BLOCKED",
+          "OUT_OF_SCOPE"
+        ]
+      },
+      "uniqueItems": true,
+      "minItems": 8
+    },
+    "requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "requirement_id",
+          "requirement_type",
+          "source",
+          "requirement_text",
+          "priority",
+          "business_needs",
+          "scope",
+          "evidence",
+          "implementation",
+          "roadmap",
+          "verification",
+          "safety_critical",
+          "clinical_threshold_status",
+          "open_questions",
+          "notes"
+        ],
+        "properties": {
+          "requirement_id": {
+            "type": "string",
+            "minLength": 2
+          },
+          "requirement_type": {
+            "enum": [
+              "FUNCTIONAL",
+              "DISCOVERY",
+              "NON_FUNCTIONAL",
+              "ACCEPTANCE_CRITERION",
+              "TBD",
+              "BUSINESS_NEED",
+              "PRODUCT_NEED",
+              "JTBD",
+              "PRODUCT_PRINCIPLE",
+              "KPI_FRAMEWORK",
+              "OPEN_QUESTION"
+            ]
+          },
+          "source": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "document",
+              "section"
+            ],
+            "properties": {
+              "document": {
+                "type": "string",
+                "minLength": 1
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "requirement_text": {
+            "type": "string",
+            "minLength": 5
+          },
+          "priority": {
+            "enum": [
+              "MUST",
+              "SHOULD",
+              "DISCOVERY"
+            ]
+          },
+          "business_needs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product_priority",
+              "subsystem"
+            ],
+            "properties": {
+              "product_priority": {
+                "enum": [
+                  "P0",
+                  "P1",
+                  "DISCOVERY",
+                  "OPTIONAL"
+                ]
+              },
+              "subsystem": {
+                "type": "string",
+                "minLength": 2
+              }
+            }
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "source_refs",
+              "limitations"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "VERIFIED_DOCUMENTED",
+                  "OBSERVED_SAMPLE_DATA",
+                  "SITE_VERIFIED",
+                  "INFERRED",
+                  "ASSUMPTION",
+                  "UNKNOWN",
+                  "TBD",
+                  "NOT_VERIFIED",
+                  "DISCOVERY_REQUIRED",
+                  "CONFLICTING"
+                ]
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "limitations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "implementation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "reason"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "IDENTIFIED",
+                  "DESIGNED",
+                  "IMPLEMENTED",
+                  "VALIDATED",
+                  "FROZEN",
+                  "DEFERRED",
+                  "BLOCKED",
+                  "OUT_OF_SCOPE"
+                ]
+              },
+              "reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "roadmap": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "planned_days",
+              "target_artifacts"
+            ],
+            "properties": {
+              "planned_days": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^DAY_\\d{2}$"
+                },
+                "minItems": 1
+              },
+              "target_artifacts": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            }
+          },
+          "verification": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "methods",
+              "acceptance_evidence"
+            ],
+            "properties": {
+              "methods": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "acceptance_evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            }
+          },
+          "safety_critical": {
+            "type": "boolean"
+          },
+          "clinical_threshold_status": {
+            "enum": [
+              "NOT_APPLICABLE",
+              "TBD",
+              "NOT_VERIFIED",
+              "SITE_VERIFIED"
+            ]
+          },
+          "open_questions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^OQ-\\d{3}$"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
