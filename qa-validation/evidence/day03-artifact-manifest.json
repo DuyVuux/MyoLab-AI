@@ -1,0 +1,88 @@
+{
+  "version": "0.1",
+  "day": "DAY03",
+  "scope": "DAY03_MANAGED_ARTIFACTS_ONLY",
+  "hash_algorithm": "SHA-256",
+  "dynamic_exclusions": [
+    "qa-validation/evidence/day03-artifact-manifest.json",
+    "qa-validation/evidence/day03-validation-report.json"
+  ],
+  "files": [
+    {
+      "path": "clinical/studies/DAY03_FIELD_OBSERVATION_RUNBOOK.md",
+      "sha256": "71715cf6ec5c318ecd76347e7f0c72b4efd1b34dfbbfd2922c80c41242090e59"
+    },
+    {
+      "path": "clinical/studies/time-motion-baseline-round1.csv",
+      "sha256": "b837f9f278adafa4797db6f5837061b5a1c20eb832b0b0099257c76e9bb5ad72"
+    },
+    {
+      "path": "clinical/workflows/current-workflow-evidence-log.md",
+      "sha256": "4d4e7d94f72893be82113486637641560602e673ae8574963e6ac32d2dd1de46"
+    },
+    {
+      "path": "docs/00-executive/day03/day03-closeout-summary.v0.1.md",
+      "sha256": "99eea7de500f9cf1788f8688f13247c2d6d3eca2625581fbdc207e640b25a0da"
+    },
+    {
+      "path": "docs/00-executive/decisions/day03-decision-impact-review.v0.1.yaml",
+      "sha256": "0106177abca5554ed14c1c827c2064a01d2285851a80bb20fb6544b234599d03"
+    },
+    {
+      "path": "docs/02-clinical/discovery/open-questions-burndown.md",
+      "sha256": "d525ec94d3c757c5dbe15163a0e3186cc4ce9450f0ed643e356506ce3dec9386"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day03-workflow-observation-traceability.v0.1.csv",
+      "sha256": "e7e1fe52a524bbc976f52630b4f8b377ebf51b6090b77b9af201d0b00ee17567"
+    },
+    {
+      "path": "packages/common-schemas/json/day03-time-motion-baseline-row.schema.json",
+      "sha256": "38c6fb56b1d9bc06f26bd3b139f6e36a203a66113d529b5fdf67ed0d511d72f3"
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day03_workflow_observation.py",
+      "sha256": "6f3f85f762b64ad57fea14bbe10c195f56e82bff9140180b1508046de308f1a1"
+    },
+    {
+      "path": "qa-validation/evidence/day03-day02-handoff-snapshot.json",
+      "sha256": "08b6c84ebef0e8f2f98b41f72898c7d7a029e104ec73e9d0f6d65f054cbfb5f1"
+    },
+    {
+      "path": "qa-validation/evidence/day03-source-hash-ledger.json",
+      "sha256": "3809cd61e5347cf2c16e419456d1a68eae04886e8870042c77f7b7fb6d711275"
+    },
+    {
+      "path": "qa-validation/requirements/day03-acceptance-criteria.md",
+      "sha256": "11fc4e5436d8b7453121f90c81b0e2714670bdba9fa77cbefedd3c735f71c441"
+    },
+    {
+      "path": "qa-validation/test-data/day03/synthetic-time-motion-observation.v0.1.yaml",
+      "sha256": "43781c093ef5d003f3c69a956579ed880b6bb3e2c15ad4141a9b756bcf6931d2"
+    },
+    {
+      "path": "qa-validation/traceability/day03-requirement-test-matrix.csv",
+      "sha256": "67dd7f6d9d9400d7efc7754b2492cc5952d0137a2982df422dcea0a1f63fee93"
+    },
+    {
+      "path": "scripts/dev/check_day03_artifacts.py",
+      "sha256": "2542c7b8c6ee49710ea27bf80d5281d5d7450146ab5fc9903a1d1997b2674e4b"
+    },
+    {
+      "path": "scripts/dev/day03_time_motion_utils.py",
+      "sha256": "e6baad742b9b1a0dfe0aeddbe82890cc2b88cfd21ba1c957701e8d94ea6157e7"
+    },
+    {
+      "path": "scripts/dev/prepare_day03_candidate_row.py",
+      "sha256": "b45318bca32cf7f89ba08c9685a7901c9944c479aa46b518a335bcedecd9749b"
+    },
+    {
+      "path": "scripts/dev/run_day03_checks.sh",
+      "sha256": "6febd640109b0dac570e0edc1d8df6c3c752b4631f50c0d81ca1a8b542a8894b"
+    },
+    {
+      "path": "scripts/dev/validate_day03_workflow_observation.py",
+      "sha256": "61c09ef5adcdc81f911a7c07f967e05eaa18e68e08165e451e921f846003307e"
+    }
+  ]
+}

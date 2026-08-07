@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/day03-time-motion-baseline-row.schema.json",
+  "title": "DAY03 Time-Motion Baseline Row v0.1",
+  "type": "object",
+  "required": [
+    "baseline_row_id",
+    "observation_id",
+    "analysis_case_id",
+    "observation_mode",
+    "evidence_status",
+    "governance_approval_reference",
+    "source_observation_ref",
+    "source_sha256",
+    "partial_case",
+    "observed_start_boundary",
+    "observed_end_boundary",
+    "elapsed_time_sec",
+    "doctor_data_hands_on_union_sec",
+    "technician_data_hands_on_union_sec",
+    "acquisition_hands_on_union_sec",
+    "system_active_union_sec",
+    "waiting_blocked_union_sec",
+    "remeasurement_union_sec",
+    "clinical_interpretation_union_sec",
+    "parallel_time_union_sec",
+    "remeasurement_occurred",
+    "remeasurement_episode_count",
+    "full_manual_review_required",
+    "protocol_label",
+    "task_label",
+    "workflow_variant",
+    "reported_bottleneck_summary_non_phi",
+    "reported_remeasurement_reason_non_phi",
+    "measurement_fact_summary_non_phi",
+    "baseline_eligible",
+    "baseline_exclusion_reason",
+    "reviewer_status",
+    "reviewer_role",
+    "review_date",
+    "evidence_limitations",
+    "oq_links"
+  ],
+  "properties": {
+    "baseline_row_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "analysis_case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation_mode": {
+      "enum": [
+        "DIRECT_OBSERVATION",
+        "RETROSPECTIVE_WORKFLOW_RECONSTRUCTION",
+        "INTERVIEW_ONLY",
+        "SYNTHETIC_QA"
+      ]
+    },
+    "evidence_status": {
+      "type": "string"
+    },
+    "governance_approval_reference": {
+      "type": "string"
+    },
+    "source_observation_ref": {
+      "type": "string"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "partial_case": {
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "elapsed_time_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "doctor_data_hands_on_union_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "technician_data_hands_on_union_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "acquisition_hands_on_union_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "system_active_union_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "waiting_blocked_union_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "remeasurement_union_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "clinical_interpretation_union_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "parallel_time_union_sec": {
+      "type": "number",
+      "minimum": 0
+    },
+    "remeasurement_occurred": {
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "remeasurement_episode_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "full_manual_review_required": {
+      "enum": [
+        "true",
+        "false",
+        "unknown"
+      ]
+    },
+    "baseline_eligible": {
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "reviewer_status": {
+      "enum": [
+        "PENDING_REVIEW",
+        "ACCEPTED_FOR_ROUND1_BASELINE",
+        "EXCLUDED_FROM_BASELINE"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

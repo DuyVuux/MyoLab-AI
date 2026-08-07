@@ -1,0 +1,135 @@
+{
+  "version": "0.1",
+  "day": "DAY03",
+  "depends_on": "DAY02 GO_FOR_DAY_03 measurement design baseline",
+  "integration_policy": "ADD with collision REVIEW. Never blindly overwrite existing DAY01/DAY02 or legacy assets.",
+  "clinical_evidence_note": "No site observation is bundled. Integration does not make DAY03 GO_FOR_DAY_04.",
+  "files": [
+    {
+      "path": "clinical/studies/DAY03_FIELD_OBSERVATION_RUNBOOK.md",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "clinical/studies/time-motion-baseline-round1.csv",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "clinical/workflows/current-workflow-evidence-log.md",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/00-executive/day03/day03-closeout-summary.v0.1.md",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/00-executive/decisions/day03-decision-impact-review.v0.1.yaml",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/02-clinical/discovery/open-questions-burndown.md",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "docs/03-architecture/traceability/day03-workflow-observation-traceability.v0.1.csv",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "packages/common-schemas/json/day03-time-motion-baseline-row.schema.json",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day03_workflow_observation.py",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day03-artifact-manifest.json",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day03-day02-handoff-snapshot.json",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day03-source-hash-ledger.json",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/evidence/day03-validation-report.json",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/requirements/day03-acceptance-criteria.md",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/test-data/day03/synthetic-time-motion-observation.v0.1.yaml",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "qa-validation/traceability/day03-requirement-test-matrix.csv",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/check_day03_artifacts.py",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/day03_time_motion_utils.py",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/prepare_day03_candidate_row.py",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/run_day03_checks.sh",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    },
+    {
+      "path": "scripts/dev/validate_day03_workflow_observation.py",
+      "action": "ADD",
+      "day": "DAY03",
+      "safe_to_overwrite": false
+    }
+  ]
+}

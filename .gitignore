@@ -82,6 +82,7 @@ credentials.json
 *.mat
 # *.csv # Commented out, might be needed for small configs, but large ones should be ignored or LFS
 data/raw/
+data-platform/raw/
 data/processed/
 reports/pdf/
 
