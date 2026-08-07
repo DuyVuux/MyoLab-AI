@@ -132,4 +132,4 @@ ai-core/experiments/**/day32-selected-model.joblib
 ai-core/experiments/**/*.csv.gz
 ai-core/experiments/**/*.zip
 
-data-platform/raw/Vinmec/
+data-platform/raw/Vinmec/DAY02_WORKFLOW_TIME_MOTION_HANDOFF/
