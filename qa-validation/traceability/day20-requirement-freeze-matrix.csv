@@ -1,0 +1,26 @@
+requirement_id,requirement_summary,design_day,implementation_day,validation_freeze_day,day20_mapping_state,site_validation_state,primary_day20_evidence
+FR-001,Ingest Noraxon MR4 single CSV with metadata header and time-series table,D09,D16,D19-D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-002,Ingest Noraxon MR4 separated export with info.csv and independent signal files,D10,D17,D19-D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-003,Read per-signal metadata: type/name/begin_time/frequency/count/units when present,D09-D10,D16-D17,D19-D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-004,Do not assume all signals in one record share sampling rate,D09-D10,"D13,D16-D17",D19-D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-005,Validate monotonic time and metadata count versus rows when possible,D13,"D13,D16-D17",D19-D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-006,Distinguish V/uV; any conversion must have provenance,D13,"D13,D16-D17",D19-D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-007,Raw layer preserves missing values; no automatic interpolation,D11,"D11,D16-D19",D15-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-008,Every source file has checksum/hash and source identifier,D11,"D11,D16-D19",D15-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-009,Support Vicon stacked-section parser for approved use cases,D18,D18,D18-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-010,Do not hard-code X/Y/Z to anatomical planes without verified convention,D18,D18,D18-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-020,Create canonical Session ID without direct patient identifier,D12,D12,D19-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-021,"Preserve device/software version, measurement time, sampling, signal name, units, record name when available",D09-D12,D12-D19,D19-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-022,Support muscle/side/protocol/task/load-speed/clinical context when provided,D12-D14,D12-D14,D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-023,Missing mandatory metadata causes warning/fail per policy; never guessed,D12-D14,D13-D19,D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-024,Versioned vendor signal name to canonical muscle/channel ontology,D14,D14,D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+FR-025,Store de-identification and consent/governance metadata when available,"D05,D12",D12,D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+NFR-001,Reproducibility: same input + config/version yields same output within defined tolerance,D11-D15,D13-D19,D15-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+NFR-002,Traceability: source + processing/config + version for outputs,D11-D12,D11-D19,D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+NFR-003,Data integrity: raw immutable; checksum validation; processed does not overwrite raw,D11,D11-D19,D15-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+NFR-004,Privacy: do not expose/log unnecessary identifiers; real data follows approved policy,D05,"D05,D12,D19",D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+NFR-011,Version data schemas/configs/rules/models,D08-D14,D09-D20,D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+NFR-012,Failure safety: parser/QC/model error fails closed and cannot create final-looking result,D15,D15-D19,D19-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+AC-01,Parser ingests MR4 single + separated samples and creates canonical session without losing raw,D09-D12,D16-D19,D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+AC-02,Every signal has sampling/unit/provenance or is explicitly flagged missing,D10-D14,D13-D19,D20,FROZEN_MAPPING,NOT_SITE_VALIDATED,data-platform/contracts/noraxon/contract-freeze-v1.0.md
+AC-09,Raw data is immutable and checksum is verifiable,D11,D11-D19,D15-D20,FROZEN_MAPPING,EVIDENCE_DEPENDENT,data-platform/contracts/noraxon/contract-freeze-v1.0.md

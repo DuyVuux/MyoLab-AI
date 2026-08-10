@@ -1,0 +1,18 @@
+{
+  "scope_fidelity": 5,
+  "technical_depth": 5,
+  "execution_clarity": 5,
+  "beginner_usability": 5,
+  "testability": 5,
+  "traceability": 5,
+  "safety_rigor": 5,
+  "reproducibility": 5,
+  "repo_integration": 5,
+  "troubleshooting": 5,
+  "teaching_quality": 5,
+  "feynman_depth": 5,
+  "worked_examples": 5,
+  "exercises": 5,
+  "handoff_clarity": 5,
+  "notes": "Self-review before package freeze; scores are document-quality checks, not clinical/site evidence."
+}

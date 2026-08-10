@@ -1,0 +1,20 @@
+version: '1.0'
+day: DAY_20
+review_type: GATE_B_PEER_EXPERT_REVIEW
+status: PENDING
+reviewer_id: null
+reviewed_at: null
+checks:
+  mandatory_outputs_complete: PENDING
+  source_hierarchy_respected: PENDING
+  hidden_assumptions_absent: PENDING
+  privacy_evidence_adequate: PENDING
+  real_single_export_evidence_adequate: PENDING
+  real_separated_export_evidence_adequate: PENDING
+  live_day19_regression_reviewed: PENDING
+  property_safety_reviewed: PENDING
+  event_privacy_semantics_reviewed: PENDING
+  domain_context_ood_semantics_reviewed: PENDING
+  no_clinical_overclaim: PENDING
+critical_unresolved_count: null
+notes: null

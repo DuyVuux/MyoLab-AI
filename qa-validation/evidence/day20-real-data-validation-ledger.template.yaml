@@ -1,0 +1,34 @@
+version: '1.0'
+artifact: day20-real-data-validation-ledger
+contains_raw_patient_values: false
+records:
+  - evidence_id: D20-REAL-001
+    data_class: TBD
+    modality: MR4_SINGLE_CSV
+    approved_for_validation: false
+    privacy_approval_ref: null
+    deidentification_status: NOT_VERIFIED
+    opaque_source_ref: null
+    sha256: null
+    byte_size: null
+    parser_version: null
+    config_version: null
+    parse_result: NOT_RUN
+    deterministic_replay: NOT_RUN
+    raw_hash_unchanged: NOT_RUN
+    reviewer: null
+  - evidence_id: D20-REAL-002
+    data_class: TBD
+    modality: MR4_SEPARATED
+    approved_for_validation: false
+    privacy_approval_ref: null
+    deidentification_status: NOT_VERIFIED
+    opaque_source_ref: null
+    sha256: null
+    byte_size: null
+    parser_version: null
+    config_version: null
+    parse_result: NOT_RUN
+    deterministic_replay: NOT_RUN
+    raw_hash_unchanged: NOT_RUN
+    reviewer: null

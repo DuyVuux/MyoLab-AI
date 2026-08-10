@@ -1,0 +1,12 @@
+{
+  "gate_decision": "BLOCKED_PRIVACY",
+  "day_status": "BLOCKED_WITH_EVIDENCE",
+  "blockers": [
+    "GB-02: NOT_VERIFIED",
+    "GB-01: NOT_VERIFIED",
+    "GB-03: NOT_VERIFIED",
+    "GB-04: NOT_VERIFIED",
+    "MANUAL_REVIEW: PENDING"
+  ],
+  "source": "qa-validation/evidence/day20-gate-b-evidence.yaml"
+}

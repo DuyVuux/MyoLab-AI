@@ -1,0 +1,52 @@
+version: '1.0'
+freeze_id: motionlab-ingestion-contract-freeze-v1.0
+day: DAY_20
+state: PROPOSED_UNTIL_GATE_B_REAL_DATA_READY
+source_contracts:
+- id: mr4-single-csv
+  path: data-platform/contracts/noraxon/mr4-single-csv.schema.yaml
+  status: FROZEN_ENGINEERING_CONTRACT
+- id: mr4-separated
+  path: data-platform/contracts/noraxon/mr4-separated.schema.yaml
+  status: FROZEN_ENGINEERING_CONTRACT
+- id: mr4-signal-file
+  path: data-platform/contracts/noraxon/mr4-signal-file.schema.yaml
+  status: FROZEN_ENGINEERING_CONTRACT
+- id: vicon-stacked-minimal
+  path: data-platform/contracts/vicon/stacked-sections.v0.1.yaml
+  status: FROZEN_ENGINEERING_CONTRACT
+safety_invariants:
+- RAW_IMMUTABLE
+- UNKNOWN_UNIT_NEVER_INFERRED
+- NO_SILENT_CRASH
+- FAIL_CLOSED
+- HETEROGENEOUS_FS_ALLOWED
+- DETERMINISTIC_REPLAY
+technology_freeze:
+  process_correlation_event_emission:
+    maturity: FROZEN_MINIMUM_CONTRACT
+    gate_blocking: true
+  domain_context:
+    maturity: FROZEN_MINIMUM_CONTRACT
+    gate_blocking: true
+  distribution_ood:
+    maturity: METADATA_CONTRACT_ONLY
+    ood_model_required_for_gate_b: false
+    gate_blocking_as_model: false
+  multimodal_representation:
+    maturity: CONTRACT_ONLY
+    shared_embedding_training_allowed: false
+  self_supervised_emg:
+    maturity: DATA_PROVENANCE_POLICY_ONLY
+    training_allowed: false
+  clinical_event_store:
+    maturity: EVENT_EMISSION_CONTRACT_ONLY
+    persistent_store_implemented: false
+    target_day: 53
+unresolved_site_evidence:
+- privacy_deidentification_approval
+- single_csv_real_export_validation
+- separated_info_csv_physical_layout
+- live_day19_three_parser_binding
+clinical_claims_allowed: false
+training_allowed: false

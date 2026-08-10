@@ -1,0 +1,32 @@
+# MyoLab-AI Traceability Requirements Manifest
+# Source of truth for Phase 1 / Gate B requirement IDs
+
+expected_requirements:
+  functional:
+    - FR-001
+    - FR-002
+    - FR-003
+    - FR-004
+    - FR-005
+    - FR-006
+    - FR-007
+    - FR-008
+    - FR-009
+    - FR-010
+    - FR-020
+    - FR-021
+    - FR-022
+    - FR-023
+    - FR-024
+    - FR-025
+  non_functional:
+    - NFR-001
+    - NFR-002
+    - NFR-003
+    - NFR-004
+    - NFR-011
+    - NFR-012
+  acceptance_criteria:
+    - AC-01
+    - AC-02
+    - AC-09

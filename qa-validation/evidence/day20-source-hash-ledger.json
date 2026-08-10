@@ -1,0 +1,54 @@
+{
+  "generated_for": "DAY20",
+  "sources": [
+    {
+      "basename": "MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0(2).md",
+      "sha256": "c6b8fb738e26423817c25033a1ff0b19dc72ba3d9871cd871f9d346e478f03e7",
+      "byte_size": 460993,
+      "role": "authoritative_or_upstream_reference",
+      "site_verified": false
+    },
+    {
+      "basename": "MotionLab_90Day_Technology_Augmentation_Integration_Plan_v1.0(1).md",
+      "sha256": "7d312580569029bff9fe3c643eea43cfaae50a0295efa3c60421d9d60fabb3d5",
+      "byte_size": 68948,
+      "role": "authoritative_or_upstream_reference",
+      "site_verified": false
+    },
+    {
+      "basename": "Motion_Lab_CSV_Architecture(1).md",
+      "sha256": "eca1132b86a311faa1d1759b77374433ce971626f6d888d12611bf937ee9cab1",
+      "byte_size": 12289,
+      "role": "authoritative_or_upstream_reference",
+      "site_verified": false
+    },
+    {
+      "basename": "PRD_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "sha256": "41f3154bea76a5071801a4a229f045169ad5dbc9dff664016866d5cb7af92bb3",
+      "byte_size": 48342,
+      "role": "authoritative_or_upstream_reference",
+      "site_verified": false
+    },
+    {
+      "basename": "SRS_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "sha256": "ad416ae9b8cbbe18f980a3d7b7c74f2bcdd10197eae174451749f311fdfae20d",
+      "byte_size": 51611,
+      "role": "authoritative_or_upstream_reference",
+      "site_verified": false
+    },
+    {
+      "basename": "DAY19_INGESTION_INTEGRATION_EVENTS_SAFETY_HANDOFF.zip",
+      "sha256": "050da7555f666bc37cecb0b086aedfd428b41dd8ccb3fd7ad4b6461912477bac",
+      "byte_size": 79623,
+      "role": "authoritative_or_upstream_reference",
+      "site_verified": false
+    },
+    {
+      "basename": "DAY18_VICON_STACKED_MULTIMODAL_READINESS_HANDOFF.zip",
+      "sha256": "27a6c560258beba6d5e9c722e6b096f144cc15f62bbe92b15de996867c4f9a06",
+      "byte_size": 70262,
+      "role": "authoritative_or_upstream_reference",
+      "site_verified": false
+    }
+  ]
+}

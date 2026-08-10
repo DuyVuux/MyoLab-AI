@@ -1,0 +1,172 @@
+version: '1.0'
+gate_id: GATE_B
+day: DAY_20
+evaluation_mode: EVIDENCE_GATED
+criteria:
+- id: GB-01
+  name: DAY19 integrated facade and all three parser bindings pass on live repository
+  category: SCHEMA
+  critical: true
+  status: LIVE_REPO_VERIFIED
+  pass_statuses:
+  - LIVE_REPO_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-01
+  why: Gate B cannot freeze an ingestion path that has only baseline-handoff tests
+    but not the current Option-A live composition.
+- id: GB-02
+  name: Privacy/de-identification path is approved for the real/sample export class
+    used at Gate B
+  category: PRIVACY
+  critical: true
+  status: SITE_VERIFIED
+  pass_statuses:
+  - SITE_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-02
+  why: Real patient-derived exports must not be used for Gate B before the site governance
+    path is approved.
+- id: GB-03
+  name: Approved de-identified MR4 single CSV has been validated against the production
+    parser and frozen contract
+  category: SCHEMA
+  critical: true
+  status: SITE_VERIFIED
+  pass_statuses:
+  - SITE_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-03
+  why: Golden synthetic fixtures prove engineering behavior, not the exact site export
+    currently produced.
+- id: GB-04
+  name: Approved de-identified MR4 separated export including info.csv physical framing
+    has been validated
+  category: SCHEMA
+  critical: true
+  status: SITE_VERIFIED
+  pass_statuses:
+  - SITE_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-04
+  why: FR-002 is MUST; DAY10/DAY17 intentionally avoided inventing an unverified info.csv
+    physical layout.
+- id: GB-05
+  name: Minimal Vicon context contract preserves sections/units/missing markers without
+    anatomical-axis inference
+  category: SCHEMA
+  critical: true
+  status: SITE_VERIFIED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  - LIVE_REPO_VERIFIED
+  - SITE_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-05
+  why: Vicon is optional context; site synchronization can remain NOT_VERIFIED unless
+    an approved use case requires it.
+- id: GB-06
+  name: Raw immutability, source hashing and provenance contract are frozen
+  category: SAFETY
+  critical: true
+  status: LIVE_REPO_VERIFIED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  - LIVE_REPO_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-06
+  why: Raw bytes and lineage are foundational evidence, not a downstream processing
+    convenience.
+- id: GB-07
+  name: Property-based ingestion safety invariants remain release requirements
+  category: SAFETY
+  critical: true
+  status: LIVE_REPO_VERIFIED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  - LIVE_REPO_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-07
+  why: RAW_IMMUTABLE, UNKNOWN_UNIT_NEVER_INFERRED, NO_SILENT_CRASH and FAIL_CLOSED
+    remain binding after the parser implementations.
+- id: GB-08
+  name: Deterministic replay, duplicate/retry semantics and source lineage are documented
+    and tested
+  category: SAFETY
+  critical: true
+  status: LIVE_REPO_VERIFIED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  - LIVE_REPO_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-08
+  why: Retries must not create inconsistent state or misleading duplicate process
+    events.
+- id: GB-09
+  name: Minimum process correlation and ingestion event emission contract is frozen
+  category: TECHNOLOGY
+  critical: true
+  status: LIVE_REPO_VERIFIED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  - LIVE_REPO_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-09
+  why: Technology augmentation requires Gate B to preserve event correlation semantics
+    without implementing the full Clinical Event Store yet.
+- id: GB-10
+  name: Minimum DomainContext is frozen for later Distribution Support/OOD analysis
+  category: TECHNOLOGY
+  critical: true
+  status: LIVE_REPO_VERIFIED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  - LIVE_REPO_VERIFIED
+  evidence_refs:
+  - TEST_ONLY/GB-10
+  why: Gate B freezes metadata readiness only; an OOD model is explicitly not required.
+- id: GB-11
+  name: All 25 existing DAY20 requirements are mapped without inventing FR-011..FR-019
+  category: TRACEABILITY
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  evidence_refs:
+  - TEST_ONLY/GB-11
+  why: 'Roadmap range shorthand must resolve to the actual SRS IDs: FR-001..010 +
+    FR-020..025, six NFRs and three ACs.'
+- id: GB-12
+  name: No hidden assumption, clinical overclaim, OOD-model requirement or mandatory
+    MFCV claim is introduced
+  category: SAFETY
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  evidence_refs:
+  - TEST_ONLY/GB-12
+  why: Contract freeze must preserve unknowns and optional capabilities rather than
+    turn readiness into clinical capability.
+- id: GB-13
+  name: Open unknowns and source conflicts are carried forward explicitly
+  category: EVIDENCE
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  pass_statuses:
+  - VERIFIED_DOCUMENTED
+  evidence_refs:
+  - TEST_ONLY/GB-13
+  why: A freeze may contain UNKNOWN/NOT_VERIFIED, but must never hide them.
+manual_review:
+  status: APPROVED
+  reviewer_id: TEST_REVIEWER_ONLY
+  reviewed_at: null
+  evidence_scope_reviewed: []
+  notes: null
+decision:
+  gate_decision: BLOCKED_PRIVACY
+  day_status: BLOCKED_WITH_EVIDENCE
+  reason: No site-approved privacy/de-identification evidence or approved real-export
+    validation was provided to this isolated handoff builder.
+fixture_only: true
+fixture_name: gate-b-positive-test-only

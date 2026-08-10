@@ -1,0 +1,31 @@
+{
+  "day": 20,
+  "engineering_validation": "PASS",
+  "gate_decision": "BLOCKED_PRIVACY",
+  "day_status": "BLOCKED_WITH_EVIDENCE",
+  "day20_tests": {
+    "passed": 40,
+    "failed": 0
+  },
+  "strict_upstream_baseline_staging": {
+    "day18": 36,
+    "day19_e2e": 42,
+    "day19_property": 8,
+    "day20": 40,
+    "total_passed": 126,
+    "status": "PASS"
+  },
+  "site_evidence": {
+    "privacy": "NOT_VERIFIED",
+    "single_real_export": "NOT_VERIFIED",
+    "separated_real_export": "NOT_VERIFIED",
+    "live_day19_bindings": "NOT_VERIFIED"
+  },
+  "technology_maturity": {
+    "distribution_ood": "METADATA_CONTRACT_ONLY",
+    "process_events": "EVENT_EMISSION_CONTRACT_ONLY",
+    "clinical_event_store": "NOT_IMPLEMENTED",
+    "self_supervised_emg": "DATA_PROVENANCE_POLICY_ONLY"
+  },
+  "notes": "Baseline staging is not a substitute for current live-repository SITE/LIVE evidence. Gate remains evidence-blocked."
+}
