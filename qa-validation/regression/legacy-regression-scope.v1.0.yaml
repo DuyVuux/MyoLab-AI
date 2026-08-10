@@ -1,0 +1,113 @@
+schema_version: "1.0"
+document: legacy-regression-scope
+status: DESIGNED
+owner: QA_VALIDATION
+principles:
+  - regression_does_not_equal_site_validation
+  - parked_assets_may_be_regression_only
+  - deprecated_product_claims_are_not_regression_targets
+  - current_prd_srs_win_on_semantic_conflict
+  - same_input_config_version_should_be_reproducible_when_applicable
+suites:
+  - id: REG-INGEST-GENERIC
+    legacy_family: LA-01
+    disposition: ADAPT
+    purpose: protect generic parsing utilities while MR4 contracts are rebuilt
+    include:
+      - deterministic_text_csv_parsing
+      - explicit_missing_values
+      - source_record_identity
+    exclude:
+      - assumed_mr4_compatibility
+      - single_sampling_rate_assumption
+    trigger_days: [9, 10, 13, 16, 17, 19, 20]
+    clinical_claim_allowed: false
+  - id: REG-DSP-ANALYTICAL
+    legacy_family: LA-03
+    disposition: ADAPT
+    purpose: preserve mathematically valid DSP primitives
+    include:
+      - analytical_filter_response
+      - deterministic_windowing
+      - raw_not_overwritten
+    exclude:
+      - old_protocol_thresholds
+      - global_processing_profile
+    trigger_days: [40, 41, 42, 43, 45]
+    clinical_claim_allowed: false
+  - id: REG-METRIC-ANALYTICAL
+    legacy_family: LA-04
+    disposition: ADAPT
+    purpose: protect RMS/MAV/MDF/MNF calculations independent of clinical eligibility
+    include:
+      - known_signal_reference_calculations
+      - deterministic_metric_math
+    exclude:
+      - unsupported_window_emission
+      - old_normalization_assumptions
+    trigger_days: [46, 47]
+    clinical_claim_allowed: false
+  - id: REG-GESTURE-RESEARCH
+    legacy_family: LA-05
+    disposition: PARK
+    purpose: detect accidental breakage of shared research infrastructure only
+    include:
+      - selected_loader_smoke_tests
+      - selected_feature_contract_smoke_tests
+      - reproducibility_manifest_parse
+    exclude:
+      - model_performance_gate_for_p0
+      - clinical_effectiveness_claim
+    trigger_days: []
+    clinical_claim_allowed: false
+  - id: REG-CONFIDENCE-PATTERN
+    legacy_family: LA-07
+    disposition: ADAPT
+    purpose: preserve abstention plumbing, not old thresholds
+    include:
+      - explicit_abstention_state
+      - reason_presence
+    exclude:
+      - gesture_confidence_thresholds
+      - clinical_confidence_equivalence
+    trigger_days: [31, 68]
+    clinical_claim_allowed: false
+  - id: REG-MFCV-RESEARCH
+    legacy_family: LA-10
+    disposition: REVALIDATE
+    purpose: preserve algorithmic research until site eligibility is audited
+    include:
+      - analytical_code_smoke_if_no_site_claim
+    exclude:
+      - default_enablement
+      - site_eligibility_claim
+    trigger_days: [49]
+    clinical_claim_allowed: false
+  - id: REG-TASKC-METRIC-MATH
+    legacy_family: LA-11
+    disposition: ADAPT
+    purpose: preserve reusable quantitative metric math where eligible
+    include:
+      - repeatability_math
+      - symmetry_math_boundary_cases
+      - co_contraction_math_if_contract_known
+    exclude:
+      - unsupported_bilateral_comparison
+      - diagnosis_or_return_to_play_claim
+    trigger_days: [46, 47, 48, 50]
+    clinical_claim_allowed: false
+  - id: REG-GOVERNANCE
+    legacy_family: LA-17
+    disposition: REUSE_AS_IS
+    purpose: preserve model-agnostic versioning/reproducibility utilities
+    include:
+      - manifest_schema_parse
+      - version_presence
+      - deterministic_hashing
+    exclude:
+      - implicit_training_authorization
+    trigger_days: [38, 51, 82, 84]
+    clinical_claim_allowed: false
+regression_gate:
+  failure_meaning: "shared legacy behavior changed; investigate before merge"
+  success_meaning: "selected legacy behavior preserved; does not establish site validity"

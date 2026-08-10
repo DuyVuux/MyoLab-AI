@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "legacy-asset-inventory.schema.json",
+  "type": "object",
+  "required": ["schema_version", "status", "allowed_dispositions", "asset_families", "repo_confirmation"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "status": {"type": "string"},
+    "allowed_dispositions": {
+      "type": "array",
+      "const": ["REUSE_AS_IS", "ADAPT", "REVALIDATE", "PARK", "DEPRECATE"]
+    },
+    "asset_families": {
+      "type": "array",
+      "minItems": 15,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "disposition", "path_status", "safety_critical", "regression_role", "future_days"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^LA-[0-9]{2}$"},
+          "name": {"type": "string", "minLength": 3},
+          "disposition": {"enum": ["REUSE_AS_IS", "ADAPT", "REVALIDATE", "PARK", "DEPRECATE"]},
+          "path_status": {"enum": ["DOCUMENTED_IN_SKELETON", "CONFIRMED_IN_CURRENT_REPO", "MISSING_FROM_CURRENT_REPO", "UNCLASSIFIED_REVIEW_REQUIRED"]},
+          "safety_critical": {"type": "boolean"},
+          "regression_role": {"type": "string"},
+          "future_days": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 90}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "repo_confirmation": {
+      "type": "object",
+      "required": ["required", "command", "go_condition"],
+      "properties": {
+        "required": {"const": true},
+        "command": {"type": "string"},
+        "go_condition": {"type": "string"}
+      }
+    }
+  },
+  "additionalProperties": true
+}

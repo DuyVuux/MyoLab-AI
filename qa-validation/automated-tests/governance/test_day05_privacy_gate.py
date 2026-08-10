@@ -68,7 +68,7 @@ def test_18_fixture_not_clinical_evidence():
     f = load_yaml(FIX)
     assert f["clinical_evidence"] is False and f["data_class"] == "SYNTHETIC_QA_FIXTURE"
 def test_19_no_unauthorized_binary_data_in_project():
-    from day05_privacy_utils import scan_project_files
+    from qa_utils import scan_project_files
     files = scan_project_files(ROOT)
     forbidden_exts = {".npz", ".npy", ".mat", ".c3d", ".joblib", ".pkl", ".pickle", ".pt", ".pth", ".onnx"}
     whitelist_files = {"day5-preprocess-golden.npz"}

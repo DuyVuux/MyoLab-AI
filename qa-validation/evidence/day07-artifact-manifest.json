@@ -1,0 +1,27 @@
+{
+  "managed_files": {
+    "data-platform/catalog/legacy-asset-inventory.v1.0.yaml": "4762b61aae3e16f9693b6951550b2c2699c88f1dd027c39969c73ae4574ea33b",
+    "docs/00-executive/day07/DAY07_EXECUTION_PLAN.md": "c640fb257ce6d2fc51218dcb9435d4ec26173b8152750dfe162ff9572d4ee4d0",
+    "docs/00-executive/day07/DAY07_FEYNMAN_LEARNING_GUIDE.md": "45da352a0d28014b9ebb91eb3b8c47fc6c74915ab3297d6d07fb7af0e076ea41",
+    "docs/00-executive/day07/day07-closeout-summary.v1.0.md": "db29b56544634091314bc671a358e56fdc1087d6f9457b92a2baad22f0bcfa01",
+    "docs/00-executive/decisions/day07-legacy-disposition-decision-record.v1.0.yaml": "9002d11ea46a56ffcf560c396a572012f48a562f7ffdbd235b51b09294e9165c",
+    "docs/00-executive/rebaseline/legacy-asset-disposition.v1.0.md": "f6927e06bd3c2cfda0dbaf02a70b0b63bc2b8d5dead9ee22b77303573566a721",
+    "docs/00-executive/rebaseline/technical-debt-register.v1.0.md": "925ff7add1227df230143e415d7f1090f73d90d147741bef40802b383831d249",
+    "docs/03-architecture/traceability/day07-legacy-asset-traceability.v1.0.csv": "7558f7b886f762dafca5751f849d71bbb8e0094ec0db2c41128a014f4e653db9",
+    "packages/common-schemas/json/legacy-asset-inventory.schema.json": "e4e5b1a3ed4ed204a598868611fa125c1fad5c3cf0f6f5a0c3cfb9bdebfdbb78",
+    "packages/common-schemas/json/legacy-regression-scope.schema.json": "94f371f9966b6a75a013846cafd87afec4bbfef14cbab2ab76e6fc786f067f4f",
+    "qa-validation/automated-tests/governance/test_day07_legacy_asset_audit.py": "69760b168bfcea68ac979381dd027242c821b1e82fe0110460d18cdb06501831",
+    "qa-validation/evidence/day07-document-quality-review.json": "6ac417135d5f8ec4feb75e2763c42a0c70876224832bf53e1ce798b2e3997937",
+    "qa-validation/evidence/day07-human-review.template.yaml": "5e678906678f6060bfc49c42abeb9a2ad6f7403090c5c502765f2288026ba2cf",
+    "qa-validation/evidence/day07-source-hash-ledger.json": "0ab2d211049af8a6ec6597ee7c7d22468decf70aa54e568ea0df914e4a616c25",
+    "qa-validation/evidence/day07-validation-report.json": "79adbe2ade9db7264ee8a3ea1b5fcfd1eb2acf88eaad76e992deefa28ced60c8",
+    "qa-validation/regression/legacy-regression-scope.v1.0.yaml": "1eeb3d639168d443758c05e6cfb911b7f2351f4e56a4008e2e812fcdec84bbad",
+    "qa-validation/requirements/day07-acceptance-criteria.md": "18d5bc8de35b2210e5a37c93f9dd82d7e43b8e92071fc7e6bc1013a1de008a66",
+    "qa-validation/test-data/day07/synthetic-repo-asset-cases.yaml": "a17ebe3aed37b809d684e94b182e4cb9d72dc49d1e5511d031f7e78211f6c9db",
+    "scripts/dev/check_day07_artifacts.py": "8b7ccd36ab3ce754faa98de8c8c7cab7f8a5c668a805262516c76ce3ee77f8b0",
+    "scripts/dev/day07_asset_audit.py": "98173721bda43d33511c62b1a2c26fa2d34c70d13e46bfe381330c26fb27b3d7",
+    "scripts/dev/run_day07_checks.sh": "f606e9f8b5fc7b9a9acc637d5089479bfa5b414861bbb8295bc73d0cfb80222e",
+    "scripts/dev/validate_day07_legacy_assets.py": "05b828c6284fdf1311b964e6426cd175f654c2cbb074e6992b1803477ccae367"
+  },
+  "schema_version": "1.0"
+}

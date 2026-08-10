@@ -1,0 +1,168 @@
+schema_version: "1.0"
+document: legacy-asset-inventory
+status: BASELINE_DOCUMENTED_REPO_CONFIRMATION_REQUIRED
+owner: VSF_MOTIONLAB_ENGINEERING
+source_hierarchy:
+  - SRS_CURRENT
+  - PRD_CURRENT
+  - MOTIONLAB_CSV_ARCHITECTURE
+  - ROADMAP_REBASELINED_V1
+  - PROJECT_SKELETON
+  - LEGACY_ENGINEERING_ARTIFACTS
+allowed_dispositions:
+  - REUSE_AS_IS
+  - ADAPT
+  - REVALIDATE
+  - PARK
+  - DEPRECATE
+allowed_path_status:
+  - DOCUMENTED_IN_SKELETON
+  - CONFIRMED_IN_CURRENT_REPO
+  - MISSING_FROM_CURRENT_REPO
+  - UNCLASSIFIED_REVIEW_REQUIRED
+asset_families:
+  - id: LA-01
+    name: generic_ingestion_and_canonical_signal
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: selective
+    future_days: [9, 10, 11, 12, 13, 16, 17, 19, 20]
+  - id: LA-02
+    name: generic_qc_abstention
+    disposition: REVALIDATE
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: architecture_only
+    future_days: [21, 22, 30, 31, 35, 38, 39]
+  - id: LA-03
+    name: preprocessing_dsp_primitives
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: analytical
+    future_days: [40, 41, 42, 43, 44, 45]
+  - id: LA-04
+    name: rms_mav_mdf_mnf
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: analytical
+    future_days: [46, 47]
+  - id: LA-05
+    name: gesture_14_feature_and_classical_baselines
+    disposition: PARK
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: false
+    regression_role: regression_only
+    future_days: []
+  - id: LA-06
+    name: personalization_fewshot
+    disposition: PARK
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: false
+    regression_role: none_on_p0
+    future_days: []
+  - id: LA-07
+    name: confidence_calibration_abstention
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: concept_and_math_only
+    future_days: [31, 68]
+  - id: LA-08
+    name: fatigue_context
+    disposition: PARK
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: selective_evidence_patterns
+    future_days: [47, 50]
+  - id: LA-09
+    name: binary_fatigue_product_center
+    disposition: DEPRECATE
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: historical_only
+    future_days: []
+  - id: LA-10
+    name: mfcv_implementation_research
+    disposition: REVALIDATE
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: research_only
+    future_days: [49]
+  - id: LA-11
+    name: task_c_quantitative_metrics
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: analytical_selective
+    future_days: [46, 47, 48, 50]
+  - id: LA-12
+    name: cross_dataset_transfer
+    disposition: PARK
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: false
+    regression_role: research_only
+    future_days: []
+  - id: LA-13
+    name: offline_integrated_pipeline
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: orchestration_selective
+    future_days: [60]
+  - id: LA-14
+    name: api_common_schemas
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: contract_selective
+    future_days: [12, 19, 50, 52, 53, 54, 55]
+  - id: LA-15
+    name: web_portal_ui_shell
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: ui_shell_only
+    future_days: [56, 57, 58, 59, 63]
+  - id: LA-16
+    name: human_review_audit_concepts
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: concept_only_until_contract_freeze
+    future_days: [52, 53, 54, 59, 62]
+  - id: LA-17
+    name: model_governance_reproducibility
+    disposition: REUSE_AS_IS
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: full_if_model_agnostic
+    conditional: "ADAPT if schema assumes old task/model semantics"
+    future_days: [38, 51, 82, 84]
+  - id: LA-18
+    name: public_healthy_datasets
+    disposition: PARK
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: research_and_regression_only
+    future_days: []
+  - id: LA-19
+    name: old_post_preday41_lower_limb_schedule
+    disposition: DEPRECATE
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: none
+    future_days: []
+  - id: LA-20
+    name: preday41_01_governance_checkpoint
+    disposition: ADAPT
+    path_status: DOCUMENTED_IN_SKELETON
+    safety_critical: true
+    regression_role: governance_patterns
+    future_days: [8]
+repo_confirmation:
+  required: true
+  command: "python3 scripts/dev/day07_asset_audit.py --root . --output qa-validation/evidence/day07-repo-scan.json"
+  go_condition: "all discovered legacy paths classified or explicitly reviewed"

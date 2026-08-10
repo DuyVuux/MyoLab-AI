@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "day": "DAY07",
+  "review_scope": [
+    "DAY07_EXECUTION_PLAN.md",
+    "DAY07_FEYNMAN_LEARNING_GUIDE.md"
+  ],
+  "minimum_allowed_score": 4,
+  "dimensions": {
+    "scope_fidelity": {"score": 5, "evidence": "DAY07 remains audit/disposition only; DAY08 freeze and later implementation are explicitly excluded."},
+    "technical_depth": {"score": 5, "evidence": "Family-specific disposition, repo scanning, regression boundaries, technical-debt closure evidence and negative cases are concrete."},
+    "execution_clarity": {"score": 5, "evidence": "13 independently verifiable STEPs each use the required Goal/Input/Why/Action/Command/Expected/Verify/Stop/Pass format."},
+    "beginner_usability": {"score": 5, "evidence": "Commands, exact paths, expected output, examples and failure diagnosis are included."},
+    "testability": {"score": 5, "evidence": "30 automated tests plus repo-evidence and human-review gates."},
+    "traceability": {"score": 5, "evidence": "PRD Product Principles, NFR-001 and NFR-011 have explicit artifact/test linkage."},
+    "safety_rigor": {"score": 5, "evidence": "No public-to-site evidence promotion, no MFCV assumption, no classifier-first revival, fail-closed status rules."},
+    "reproducibility": {"score": 5, "evidence": "Regression scope, versioning, deterministic audit outputs and SHA-256 provenance are specified."},
+    "repo_integration": {"score": 5, "evidence": "Branch, collision review, rsync dry-run, actual copy, previous-day regression, diff and rollback are documented."},
+    "troubleshooting": {"score": 4, "evidence": "Negative checks and stop conditions are present per step; repo-specific unexpected layouts still require human judgment."},
+    "teaching_quality": {"score": 5, "evidence": "Vocabulary map, analogies, limitations, worked examples, flashcards, exercises, quiz and teach-back are included."},
+    "feynman_depth": {"score": 5, "evidence": "Core concepts move from simple explanation to analogy, technical definition, MotionLab application and counterexample."},
+    "worked_examples": {"score": 5, "evidence": "RMS reuse, confidence ambiguity and unsafe MFCV enablement are developed end-to-end."},
+    "exercises": {"score": 5, "evidence": "3 beginner, 2 intermediate and 1 integration exercise plus 15-question quiz."},
+    "handoff_clarity": {"score": 5, "evidence": "DAY08 receives exact artifact list and GO/READY/BLOCKED rules."}
+  },
+  "adversarial_review": {
+    "junior_engineer_test": "PASS",
+    "senior_engineer_test": "PASS",
+    "clinical_safety_test": "PASS",
+    "qa_test": "PASS",
+    "program_manager_test": "PASS",
+    "next_day_test": "PASS"
+  },
+  "result": "PASS"
+}

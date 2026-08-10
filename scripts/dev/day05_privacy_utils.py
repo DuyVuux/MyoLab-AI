@@ -46,25 +46,3 @@ def classify_structured_fields(fields: dict[str, Any]) -> str:
         return "FREE_TEXT_REVIEW_REQUIRED"
     return "PASS_STRUCTURED_ID_CHECK"
 
-def scan_project_files(root_dir: Path) -> list[Path]:
-    """Scans the project directory, skipping specified directories and honoring specific whitelists."""
-    skip_dirs = {"__pycache__", ".pytest_cache", ".venv", "env", ".git", "node_modules", "raw", "datasets", "experiments", "fixtures"}
-    found_files = []
-    
-    for path in root_dir.rglob("*"):
-        if not path.is_file():
-            continue
-        
-        # Check if file is in a skipped directory
-        is_skipped = False
-        for parent in path.parents:
-            if parent.name in skip_dirs:
-                is_skipped = True
-                break
-        
-        if is_skipped:
-            continue
-            
-        found_files.append(path)
-        
-    return found_files

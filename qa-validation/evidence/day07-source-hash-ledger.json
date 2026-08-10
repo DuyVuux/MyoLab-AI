@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "file_name": "SRS_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "role": "authoritative_or_upstream_reference",
+      "sha256": "ad416ae9b8cbbe18f980a3d7b7c74f2bcdd10197eae174451749f311fdfae20d"
+    },
+    {
+      "file_name": "PRD_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "role": "authoritative_or_upstream_reference",
+      "sha256": "41f3154bea76a5071801a4a229f045169ad5dbc9dff664016866d5cb7af92bb3"
+    },
+    {
+      "file_name": "Motion_Lab_CSV_Architecture(1).md",
+      "role": "authoritative_or_upstream_reference",
+      "sha256": "eca1132b86a311faa1d1759b77374433ce971626f6d888d12611bf937ee9cab1"
+    },
+    {
+      "file_name": "MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0(2).md",
+      "role": "authoritative_or_upstream_reference",
+      "sha256": "c6b8fb738e26423817c25033a1ff0b19dc72ba3d9871cd871f9d346e478f03e7"
+    },
+    {
+      "file_name": "semg_mfcv_ai_project_skeleton(1).md",
+      "role": "authoritative_or_upstream_reference",
+      "sha256": "12de751ec1511bbe4bb35b6a2f08d0ce29f73c524cc641d0aa4f9129dce5d9e5"
+    },
+    {
+      "file_name": "Pasted markdown(5).md",
+      "role": "authoritative_or_upstream_reference",
+      "sha256": "872edff0a1d1928bab67f23767edf00886771ec460f8393b0e93af38b4597a83"
+    },
+    {
+      "file_name": "DAY06_REAL_DATA_EVIDENCE_INVENTORY_ACCESS_HANDOFF.zip",
+      "role": "authoritative_or_upstream_reference",
+      "sha256": "e9e4413d2699e372581fd4116e0e4d698cbc5d9d7cba7861e40806c9b656d8a9"
+    }
+  ]
+}

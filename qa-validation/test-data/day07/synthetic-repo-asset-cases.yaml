@@ -1,0 +1,25 @@
+cases:
+  - name: gesture_feature_asset
+    path: ai-core/experiments/grabmyo-primary4/baseline-v1/model-selection.json
+    expected_family: LA-05
+  - name: personalization_asset
+    path: ai-core/experiments/grabmyo-primary4/day34-personalization-v2/few-shot-results.csv
+    expected_family: LA-06
+  - name: fatigue_context_asset
+    path: ai-core/configs/day36_fatigue_context_policy.yaml
+    expected_family: LA-08
+  - name: taskc_asset
+    path: ai-core/configs/day37_taskc_metric_registry.yaml
+    expected_family: LA-11
+  - name: transfer_asset
+    path: ai-core/experiments/cross-dataset-transfer-handoff/day38-transfer-protocol.json
+    expected_family: LA-12
+  - name: web_ui_asset
+    path: apps/web-portal/src/components/clinical/FatigueStatusBadge.tsx
+    expected_family: LA-15
+  - name: preday41_asset
+    path: docs/00-executive/pre-day41-01/pre-day41-01-summary.md
+    expected_family: LA-20
+  - name: old_lower_limb_plan
+    path: docs/legacy/lower-limb-20-day-roadmap.md
+    expected_family: LA-19

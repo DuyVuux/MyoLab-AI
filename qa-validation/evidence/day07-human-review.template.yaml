@@ -1,0 +1,7 @@
+schema_version: "1.0"
+review_day: DAY07
+reviewer: null
+reviewed_at: null
+approved: false
+critical_unresolved_count: null
+notes: "Template only. Copy to day07-human-review.yaml only after an actual semantic review."

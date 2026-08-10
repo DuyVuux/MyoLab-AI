@@ -1,0 +1,19 @@
+{
+  "asset_family_count": 20,
+  "day": "DAY07",
+  "engineering_validation": "PASS",
+  "final_status": "READY_WITH_LIMITATIONS",
+  "human_review_complete": false,
+  "human_review_present": false,
+  "limitations": [
+    "Current post-DAY06 repository path confirmation and/or human semantic review remains required before GO_FOR_DAY_08."
+  ],
+  "raw_patient_data_read": false,
+  "regression_suite_count": 8,
+  "repo_confirmation_complete": false,
+  "repo_scan_present": false,
+  "schema_version": "1.0",
+  "site_validation_claimed": false,
+  "tests_passed": true,
+  "training_executed": false
+}

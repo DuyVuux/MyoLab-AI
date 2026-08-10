@@ -2126,8 +2126,8 @@
     },
     {
       "path": ".gitignore",
-      "size_bytes": 3298,
-      "sha256": "2ce46615c3bb8be4eab07a21871e1ee4d84ab362e680370a30848071d54df392"
+      "size_bytes": 3376,
+      "sha256": "70ac65db46b8e501e8c287d537c3718f0f6c6dd807779a1391cd53452ddd9267"
     },
     {
       "path": ".ruff_cache/.gitignore",
@@ -2225,129 +2225,144 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/DAY01_EXECUTION_PLAN.md",
-      "size_bytes": 22276,
-      "sha256": "2b693ab5a3304c0ecd3576d3539156700127ae3e0316c8046b137f97a82806d3"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/DAY07_EXECUTION_PLAN.md",
+      "size_bytes": 45264,
+      "sha256": "c640fb257ce6d2fc51218dcb9435d4ec26173b8152750dfe162ff9572d4ee4d0"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/DAY01_FEYNMAN_LEARNING_GUIDE.md",
-      "size_bytes": 27177,
-      "sha256": "2f253d24768ede717601aea16a3c6d56655df2a502da9c136f58c62bec9c18e7"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/DAY07_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 35056,
+      "sha256": "45da352a0d28014b9ebb91eb3b8c47fc6c74915ab3297d6d07fb7af0e076ea41"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/INTEGRATION_MANIFEST.json",
-      "size_bytes": 6375,
-      "sha256": "f41829ac13ac2f21b2a8afc1387d7cffefe3159b0f46017bb92562dd22f61ea3"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/INTEGRATION_MANIFEST.json",
+      "size_bytes": 2132,
+      "sha256": "2f25d6ccfc7f454663384e336880f264e3ccb2ddc98c5427b6c449815856ef4f"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/README.md",
-      "size_bytes": 4043,
-      "sha256": "b5be79ec44ac0c9d30b090b824bec6eab832e56b6a3195849dcc3d5e1461589c"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/README.md",
+      "size_bytes": 2059,
+      "sha256": "ea1853333f79d20d9bae13f9c4a8c0ee330c74062d464b9af0a8475918bdf03f"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/SHA256SUMS",
-      "size_bytes": 3068,
-      "sha256": "5d14c6670e8ef29986e06480b300bf4c63af495687cbd51567e34a490700596d"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/SHA256SUMS",
+      "size_bytes": 3415,
+      "sha256": "8dd5fa7e6a21be2e4692cd76b453c3ce7784d9a9a6b84be4a9477d9d1a8408b9"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/clinical/governance/evidence-status-taxonomy.v0.1.yaml",
-      "size_bytes": 2281,
-      "sha256": "8896dbb4023613535f900a62516a69e6fe188862fc9b2c9ffbe5e46f4693be0a"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/data-platform/catalog/legacy-asset-inventory.v1.0.yaml",
+      "size_bytes": 5062,
+      "sha256": "4762b61aae3e16f9693b6951550b2c2699c88f1dd027c39969c73ae4574ea33b"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/data-platform/contracts/requirement-registry.v0.1.yaml",
-      "size_bytes": 210063,
-      "sha256": "0e04b0cce06d75778dc20e428ca7b3b5f5fccf74b041803a537001e1989d3c05"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/docs/00-executive/day07/DAY07_EXECUTION_PLAN.md",
+      "size_bytes": 45264,
+      "sha256": "c640fb257ce6d2fc51218dcb9435d4ec26173b8152750dfe162ff9572d4ee4d0"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/docs/00-executive/day01/requirements-rebaseline-summary.v0.1.md",
-      "size_bytes": 2385,
-      "sha256": "ca6ebac9c8c2bcdc616997986210fc544da97644d919df474b3524e7dfc1c103"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/docs/00-executive/day07/DAY07_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 35056,
+      "sha256": "45da352a0d28014b9ebb91eb3b8c47fc6c74915ab3297d6d07fb7af0e076ea41"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/docs/00-executive/decisions/motionlab-rebaseline-decision-ledger.v0.1.yaml",
-      "size_bytes": 8738,
-      "sha256": "5e653a147c9a567c7880e6af5c75706b295c45e3c7694dfbc28120b55c9fa219"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/docs/00-executive/day07/day07-closeout-summary.v1.0.md",
+      "size_bytes": 681,
+      "sha256": "db29b56544634091314bc671a358e56fdc1087d6f9457b92a2baad22f0bcfa01"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/docs/01-product/motionlab-rebaseline/open-questions-register.v0.1.yaml",
-      "size_bytes": 8507,
-      "sha256": "f400f649ed50a4fd176cbf66b0b81832fd943797d9cc83d38b849e253ee1e19c"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/docs/00-executive/decisions/day07-legacy-disposition-decision-record.v1.0.yaml",
+      "size_bytes": 1484,
+      "sha256": "9002d11ea46a56ffcf560c396a572012f48a562f7ffdbd235b51b09294e9165c"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/docs/01-product/motionlab-rebaseline/product-scope-delta.v0.1.md",
-      "size_bytes": 1625,
-      "sha256": "85c2475ec0af0741f9428db61556d9ad063fefb4aa56bbadbc4a9cbe42b1b0b8"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/docs/00-executive/rebaseline/legacy-asset-disposition.v1.0.md",
+      "size_bytes": 16810,
+      "sha256": "f6927e06bd3c2cfda0dbaf02a70b0b63bc2b8d5dead9ee22b77303573566a721"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/docs/03-architecture/traceability/requirements-traceability-baseline.v0.1.csv",
-      "size_bytes": 119118,
-      "sha256": "5a80a431d9ac832739deadf85b885837d0de2003ba706b56dcf31772614a16c8"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/docs/00-executive/rebaseline/technical-debt-register.v1.0.md",
+      "size_bytes": 7878,
+      "sha256": "925ff7add1227df230143e415d7f1090f73d90d147741bef40802b383831d249"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/docs/03-architecture/traceability/source-of-truth-hierarchy.v0.1.yaml",
-      "size_bytes": 2205,
-      "sha256": "83235887083b0ff08c82f809679bddc34b6edeeb962754be00104f49a37baec0"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/docs/03-architecture/traceability/day07-legacy-asset-traceability.v1.0.csv",
+      "size_bytes": 656,
+      "sha256": "7558f7b886f762dafca5751f849d71bbb8e0094ec0db2c41128a014f4e653db9"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/packages/common-schemas/json/decision-record.schema.json",
-      "size_bytes": 2815,
-      "sha256": "8d50c7617840f226b5d005cef777003ff0f21b7dadbfcc64d1da9dbf11bbca4b"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/packages/common-schemas/json/legacy-asset-inventory.schema.json",
+      "size_bytes": 1653,
+      "sha256": "e4e5b1a3ed4ed204a598868611fa125c1fad5c3cf0f6f5a0c3cfb9bdebfdbb78"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/packages/common-schemas/json/open-question.schema.json",
-      "size_bytes": 2439,
-      "sha256": "ad91be747a261759f6aec168399eba69ef93b3a883fd0ad630fcd8bbc29bfed7"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/packages/common-schemas/json/legacy-regression-scope.schema.json",
+      "size_bytes": 990,
+      "sha256": "94f371f9966b6a75a013846cafd87afec4bbfef14cbab2ab76e6fc786f067f4f"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/packages/common-schemas/json/requirement-registry.schema.json",
-      "size_bytes": 7643,
-      "sha256": "46ac1b11dde770a2fe71659ea1742f23b100fe71a5431b3392606e85b96e371c"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/automated-tests/governance/test_day07_legacy_asset_audit.py",
+      "size_bytes": 12688,
+      "sha256": "69760b168bfcea68ac979381dd027242c821b1e82fe0110460d18cdb06501831"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/qa-validation/automated-tests/governance/test_day01_requirements_rebaseline.py",
-      "size_bytes": 8033,
-      "sha256": "c8cf8f54b290e8c97181021fc0882308880a283f912dd76fb97a44e5b1d94f07"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/evidence/day07-artifact-manifest.json",
+      "size_bytes": 2941,
+      "sha256": "7a0faaecf92b649fad18c20c91bddadcc4bba3e88c21dcfd46cfb4148c7f1a68"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/qa-validation/evidence/day01-artifact-manifest.json",
-      "size_bytes": 3782,
-      "sha256": "cd9780f2badd2bfe6bff15644aa4eacb89c3d5c9d92e40bf1da243090846c7ea"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/evidence/day07-document-quality-review.json",
+      "size_bytes": 2690,
+      "sha256": "6ac417135d5f8ec4feb75e2763c42a0c70876224832bf53e1ce798b2e3997937"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/qa-validation/evidence/day01-source-hash-ledger.json",
-      "size_bytes": 3758,
-      "sha256": "b44baf975529ed4e6fa16218818e5ea8f18e0adf60792a7beaac6e28188bda63"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/evidence/day07-human-review.template.yaml",
+      "size_bytes": 215,
+      "sha256": "5e678906678f6060bfc49c42abeb9a2ad6f7403090c5c502765f2288026ba2cf"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/qa-validation/evidence/day01-validation-report.json",
-      "size_bytes": 1132,
-      "sha256": "51cfcc011078adf0fec3cdc5cd43de9b082650ef48636a5bd3d21f5c78827a75"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/evidence/day07-source-hash-ledger.json",
+      "size_bytes": 1558,
+      "sha256": "0ab2d211049af8a6ec6597ee7c7d22468decf70aa54e568ea0df914e4a616c25"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/qa-validation/requirements/day01-acceptance-criteria.md",
-      "size_bytes": 1620,
-      "sha256": "cf308c1d48dd3159a8cff3b1f5bf00e4474dc1b5c5a24feef07b629979344b03"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/evidence/day07-validation-report.json",
+      "size_bytes": 593,
+      "sha256": "79adbe2ade9db7264ee8a3ea1b5fcfd1eb2acf88eaad76e992deefa28ced60c8"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/qa-validation/traceability/day01-requirement-test-matrix.csv",
-      "size_bytes": 1872,
-      "sha256": "b6c1e568dcc34e07b9a08f1e457eff97d31722aec2990d39029d094ae7b39ede"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/regression/legacy-regression-scope.v1.0.yaml",
+      "size_bytes": 3737,
+      "sha256": "1eeb3d639168d443758c05e6cfb911b7f2351f4e56a4008e2e812fcdec84bbad"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/scripts/dev/check_day01_artifacts.py",
-      "size_bytes": 4150,
-      "sha256": "b233093d1a2610c0b1491ce37603691cdf359a5e8d6644f32d545984c5a10d03"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/requirements/day07-acceptance-criteria.md",
+      "size_bytes": 1515,
+      "sha256": "18d5bc8de35b2210e5a37c93f9dd82d7e43b8e92071fc7e6bc1013a1de008a66"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/scripts/dev/run_day01_checks.sh",
-      "size_bytes": 960,
-      "sha256": "1b5d5f9a81e8a21c01b5d9727d36160d9c8b47ff73a1b7028f42b2895c44ea9b"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/qa-validation/test-data/day07/synthetic-repo-asset-cases.yaml",
+      "size_bytes": 1015,
+      "sha256": "a17ebe3aed37b809d684e94b182e4cb9d72dc49d1e5511d031f7e78211f6c9db"
     },
     {
-      "path": "DAY01_REQUIREMENTS_REBASELINE_HANDOFF/repo_patch/scripts/dev/validate_day01_requirements.py",
-      "size_bytes": 11489,
-      "sha256": "1a033b04811574e7823c16794027b76e13d4d7e0a4e41638558d3afcc1a361a6"
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/scripts/dev/check_day07_artifacts.py",
+      "size_bytes": 2843,
+      "sha256": "8b7ccd36ab3ce754faa98de8c8c7cab7f8a5c668a805262516c76ce3ee77f8b0"
+    },
+    {
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/scripts/dev/day07_asset_audit.py",
+      "size_bytes": 6257,
+      "sha256": "98173721bda43d33511c62b1a2c26fa2d34c70d13e46bfe381330c26fb27b3d7"
+    },
+    {
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/scripts/dev/run_day07_checks.sh",
+      "size_bytes": 468,
+      "sha256": "f606e9f8b5fc7b9a9acc637d5089479bfa5b414861bbb8295bc73d0cfb80222e"
+    },
+    {
+      "path": "DAY07_LEGACY_ASSET_AUDIT_DISPOSITION_HANDOFF/repo_patch/scripts/dev/validate_day07_legacy_assets.py",
+      "size_bytes": 3935,
+      "sha256": "05b828c6284fdf1311b964e6426cd175f654c2cbb074e6992b1803477ccae367"
     },
     {
       "path": "LICENSE",
@@ -2358,11 +2373,6 @@
       "path": "Makefile",
       "size_bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "PRE_DAY41_01_EXECUTION_PLAN.md",
-      "size_bytes": 29307,
-      "sha256": "c83895525ab4d50e82bf8ebc9659bcae6eaeaa59e387f5b116f497403157f3d4"
     },
     {
       "path": "README.md",
@@ -5650,6 +5660,11 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "clinical/discovery/vinmec-data-request-pack.v0.1.md",
+      "size_bytes": 2778,
+      "sha256": "191783eaaa39bbd2b36913bab108c86cedc468492f5e64eb0b4889b414ddf7e0"
+    },
+    {
       "path": "clinical/governance/claim-language-policy.v0.1.yaml",
       "size_bytes": 986,
       "sha256": "8a89146a6e12233de0db425ecf3eb09bdc02b40b159ec28caa2b53fa717667cf"
@@ -5795,6 +5810,21 @@
       "sha256": "92725d26612c6bdc1486b29ff4499c293ad314b10d8622f90c03cfd1a2053af5"
     },
     {
+      "path": "clinical/quality/DAY04_TAXONOMY_REVIEW_RUNBOOK.md",
+      "size_bytes": 1387,
+      "sha256": "6f3dc44220168275c335dd5842c7dcef4fafc21928f98a23f94bfddaeaff626e"
+    },
+    {
+      "path": "clinical/quality/artifact-vs-physiology-guidance.v0.1.md",
+      "size_bytes": 7644,
+      "sha256": "d29e378d6a1e226393daa06348b1ed78ea96a19520fe53314df6d441fa164e97"
+    },
+    {
+      "path": "clinical/quality/qc-taxonomy.v0.1.yaml",
+      "size_bytes": 8104,
+      "sha256": "57bfc5a3a682e3f1d62fba24f91f05e3370cc320a2ea806f9a348390ef55ca0c"
+    },
+    {
       "path": "clinical/review-templates/clinical-review-checklist.v0.1.yaml",
       "size_bytes": 855,
       "sha256": "7307176865ebc5a2658000eb2a385f0df254a0faf8f198aa4f452ae3cc94e1c8"
@@ -5835,6 +5865,26 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "clinical/studies/DAY03_FIELD_OBSERVATION_RUNBOOK.md",
+      "size_bytes": 3047,
+      "sha256": "71715cf6ec5c318ecd76347e7f0c72b4efd1b34dfbbfd2922c80c41242090e59"
+    },
+    {
+      "path": "clinical/studies/time-motion-baseline-round1.csv",
+      "size_bytes": 798,
+      "sha256": "0b02d54ee7c8b987bc9ea80ad7e418b1ebf1d3248992e4626f5992477ad3c7f5"
+    },
+    {
+      "path": "clinical/studies/time-motion-observation-form.v0.1.yaml",
+      "size_bytes": 3324,
+      "sha256": "155fc359af27765d01ddc3cd617aaf325cc7f3144960557db404916057228f4c"
+    },
+    {
+      "path": "clinical/studies/time-motion-study-protocol.v0.1.md",
+      "size_bytes": 14514,
+      "sha256": "80823f725980338e6c23ec33d4ae7403670de704f7a7a6f2345971e1c1536ed8"
+    },
+    {
       "path": "clinical/training/doctor-review-guide.md",
       "size_bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -5855,9 +5905,29 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "clinical/workflows/current-workflow-evidence-log.md",
+      "size_bytes": 5136,
+      "sha256": "4d4e7d94f72893be82113486637641560602e673ae8574963e6ac32d2dd1de46"
+    },
+    {
+      "path": "clinical/workflows/motionlab-current-state.v0.1.md",
+      "size_bytes": 11527,
+      "sha256": "86c8354ddd58520b4c5aa15ee6c922b1423653bf3c7281db6ff3c4f002baf50f"
+    },
+    {
       "path": "data-platform/README.md",
       "size_bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data-platform/catalog/legacy-asset-inventory.v1.0.yaml",
+      "size_bytes": 5062,
+      "sha256": "4762b61aae3e16f9693b6951550b2c2699c88f1dd027c39969c73ae4574ea33b"
+    },
+    {
+      "path": "data-platform/catalog/motionlab-evidence-inventory.v0.1.yaml",
+      "size_bytes": 3317,
+      "sha256": "b05bf14a723912c2896de3a13427cb7a66112b5441a1981a3ba43d11a01c76e3"
     },
     {
       "path": "data-platform/configs/day30/common-ontology.yaml",
@@ -5948,6 +6018,11 @@
       "path": "data-platform/contracts/requirement-registry.v0.1.yaml",
       "size_bytes": 210063,
       "sha256": "0e04b0cce06d75778dc20e428ca7b3b5f5fccf74b041803a537001e1989d3c05"
+    },
+    {
+      "path": "data-platform/governance/evidence-tier-policy.v0.1.md",
+      "size_bytes": 2266,
+      "sha256": "5b2adf13f47864d1ec6f87502bdb094b0f0d29b60e41ab4750a4350aa2e34d57"
     },
     {
       "path": "data-platform/manifests/public-dataset-manifest.template.json",
@@ -6245,6 +6320,46 @@
       "sha256": "ca6ebac9c8c2bcdc616997986210fc544da97644d919df474b3524e7dfc1c103"
     },
     {
+      "path": "docs/00-executive/day02/day02-closeout-summary.v0.1.md",
+      "size_bytes": 1700,
+      "sha256": "c4f30bfb6cf86a09e5962efd3e85af5259934934f09812e1d36b37d2a3392e79"
+    },
+    {
+      "path": "docs/00-executive/day03/day03-closeout-summary.v0.1.md",
+      "size_bytes": 1410,
+      "sha256": "99eea7de500f9cf1788f8688f13247c2d6d3eca2625581fbdc207e640b25a0da"
+    },
+    {
+      "path": "docs/00-executive/day04/day04-closeout-summary.v0.1.md",
+      "size_bytes": 789,
+      "sha256": "bb15d2b231fd8d2605b81a3c0195854b641d505a83d5ec3b4d9fd87dde0e5d3c"
+    },
+    {
+      "path": "docs/00-executive/day05/day05-closeout-summary.v0.1.md",
+      "size_bytes": 212,
+      "sha256": "b0f430553c6c91f9247b5920a63bc5a09c6258361793bf5895adede7464d51fb"
+    },
+    {
+      "path": "docs/00-executive/day06/day06-closeout-summary.v0.1.md",
+      "size_bytes": 219,
+      "sha256": "f5b16273f761f900b1e917bfde74a0436fb8546c3f78e8276828efd60ec24830"
+    },
+    {
+      "path": "docs/00-executive/day07/DAY07_EXECUTION_PLAN.md",
+      "size_bytes": 45264,
+      "sha256": "c640fb257ce6d2fc51218dcb9435d4ec26173b8152750dfe162ff9572d4ee4d0"
+    },
+    {
+      "path": "docs/00-executive/day07/DAY07_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 35056,
+      "sha256": "45da352a0d28014b9ebb91eb3b8c47fc6c74915ab3297d6d07fb7af0e076ea41"
+    },
+    {
+      "path": "docs/00-executive/day07/day07-closeout-summary.v1.0.md",
+      "size_bytes": 681,
+      "sha256": "db29b56544634091314bc671a358e56fdc1087d6f9457b92a2baad22f0bcfa01"
+    },
+    {
       "path": "docs/00-executive/day10-decision-log-append.md",
       "size_bytes": 411,
       "sha256": "d9ffc9293d8607815f07edd3dfaabdb33f485d5edda1f9017f693f04ee6a3698"
@@ -6320,6 +6435,26 @@
       "sha256": "605578241b4b0e0a6ef975c9e681df9171e783f2ff56c6f9051353b56604a7c4"
     },
     {
+      "path": "docs/00-executive/decisions/day02-decision-impact-review.v0.1.yaml",
+      "size_bytes": 1040,
+      "sha256": "6b01d1184dd31cab76461103daf7aa9535ba89370050fa6c176f64c28eb96e0c"
+    },
+    {
+      "path": "docs/00-executive/decisions/day03-decision-impact-review.v0.1.yaml",
+      "size_bytes": 565,
+      "sha256": "0106177abca5554ed14c1c827c2064a01d2285851a80bb20fb6544b234599d03"
+    },
+    {
+      "path": "docs/00-executive/decisions/day04-decision-impact-review.v0.1.yaml",
+      "size_bytes": 438,
+      "sha256": "cfb951560b1f81974686203030776f459a29027344cdd1559366a99c2e1015ec"
+    },
+    {
+      "path": "docs/00-executive/decisions/day07-legacy-disposition-decision-record.v1.0.yaml",
+      "size_bytes": 1484,
+      "sha256": "9002d11ea46a56ffcf560c396a572012f48a562f7ffdbd235b51b09294e9165c"
+    },
+    {
       "path": "docs/00-executive/decisions/motionlab-rebaseline-decision-ledger.v0.1.yaml",
       "size_bytes": 8738,
       "sha256": "5e653a147c9a567c7880e6af5c75706b295c45e3c7694dfbc28120b55c9fa219"
@@ -6338,6 +6473,16 @@
       "path": "docs/00-executive/pre-day41/decision-log.md",
       "size_bytes": 961,
       "sha256": "e12c63f9d05bd5b07fb7ddbca96cf119697339148a3acab3cefb14e2a88b145f"
+    },
+    {
+      "path": "docs/00-executive/rebaseline/legacy-asset-disposition.v1.0.md",
+      "size_bytes": 16810,
+      "sha256": "f6927e06bd3c2cfda0dbaf02a70b0b63bc2b8d5dead9ee22b77303573566a721"
+    },
+    {
+      "path": "docs/00-executive/rebaseline/technical-debt-register.v1.0.md",
+      "size_bytes": 7878,
+      "sha256": "925ff7add1227df230143e415d7f1090f73d90d147741bef40802b383831d249"
     },
     {
       "path": "docs/00-executive/stakeholder-decision-log.md",
@@ -6455,6 +6600,11 @@
       "sha256": "710c0a80a8bcf058b010420216eb19b2c4a85dcc748fb4d585309715f7ef42fa"
     },
     {
+      "path": "docs/01-product/motionlab-rebaseline/day02-open-question-status-update.v0.1.yaml",
+      "size_bytes": 1952,
+      "sha256": "7dcd8f77164ea447d010f3c70ad57dcca1e13afc30baaf9778126b6a558f7828"
+    },
+    {
       "path": "docs/01-product/motionlab-rebaseline/open-questions-register.v0.1.yaml",
       "size_bytes": 8507,
       "sha256": "f400f649ed50a4fd176cbf66b0b81832fd943797d9cc83d38b849e253ee1e19c"
@@ -6523,6 +6673,26 @@
       "path": "docs/02-clinical/day24-human-review-and-signoff-policy.md",
       "size_bytes": 692,
       "sha256": "9032a33aa514fea3a73aafce84460d5e1f284c4f893cc712c3784374e9f94931"
+    },
+    {
+      "path": "docs/02-clinical/discovery/day04-open-question-impact.v0.1.md",
+      "size_bytes": 1113,
+      "sha256": "67bbbabee4f6d6f1cbc81e6c9f8dd1893a8cf8fd6ccca221b7d28fe2173c64cb"
+    },
+    {
+      "path": "docs/02-clinical/discovery/day05-open-question-impact.v0.1.md",
+      "size_bytes": 290,
+      "sha256": "d757db15ef29cfcd8d9e7932fc36b7bfcc1e91da88eb1dcadcdf45815975a3c0"
+    },
+    {
+      "path": "docs/02-clinical/discovery/day06-open-question-impact.v0.1.md",
+      "size_bytes": 331,
+      "sha256": "78a777add55e4925cf23a05a3f6ae2f7d054d149d3bfbc1b9c768cc6fa194c1f"
+    },
+    {
+      "path": "docs/02-clinical/discovery/open-questions-burndown.md",
+      "size_bytes": 2089,
+      "sha256": "d525ec94d3c757c5dbe15163a0e3186cc4ce9450f0ed643e356506ce3dec9386"
     },
     {
       "path": "docs/02-clinical/electrode-placement-guide.md",
@@ -6733,6 +6903,36 @@
       "path": "docs/03-architecture/threat-model-architecture.md",
       "size_bytes": 59,
       "sha256": "710c0a80a8bcf058b010420216eb19b2c4a85dcc748fb4d585309715f7ef42fa"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day02-workflow-time-motion-traceability.v0.1.csv",
+      "size_bytes": 3717,
+      "sha256": "0c90603952907798aabc0b6482104dc9051065a26fbdcb9e662da3f198588244"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day03-workflow-observation-traceability.v0.1.csv",
+      "size_bytes": 1607,
+      "sha256": "24253b70591fea6eabd524b70ec5c082a4d264c7367b7cf4f39d903546119913"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day04-quality-taxonomy-traceability.v0.1.csv",
+      "size_bytes": 2932,
+      "sha256": "215737733e256fcada8ae62376f63e44d4d77045b4f4292c5ba26e5c9f46ded0"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day05-privacy-traceability.v0.1.csv",
+      "size_bytes": 833,
+      "sha256": "90c6448f309d204f1578aca0459ee227d39d302c57b8ed625e5565b4193a6e17"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day06-evidence-inventory-traceability.v0.1.csv",
+      "size_bytes": 573,
+      "sha256": "c9fc2e00acefb4934c24e62ab57c9957dfc27b0f8fa5a2981bac2a21c1a086cd"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day07-legacy-asset-traceability.v1.0.csv",
+      "size_bytes": 656,
+      "sha256": "7558f7b886f762dafca5751f849d71bbb8e0094ec0db2c41128a014f4e653db9"
     },
     {
       "path": "docs/03-architecture/traceability/requirements-traceability-baseline.v0.1.csv",
@@ -9675,6 +9875,66 @@
       "sha256": "2f253d24768ede717601aea16a3c6d56655df2a502da9c136f58c62bec9c18e7"
     },
     {
+      "path": "docs/plans/version02/DAY02_EXECUTION_PLAN.md",
+      "size_bytes": 13351,
+      "sha256": "13d72b0d573e28ee75be2792099d1b8b4801b5ee4080e640ccee02cce2183b3d"
+    },
+    {
+      "path": "docs/plans/version02/DAY02_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 20823,
+      "sha256": "92bb6a9e758e436a0ad1a0876bc315e5e0c3525d611a8d8d16dbe36787ff80c7"
+    },
+    {
+      "path": "docs/plans/version02/DAY03_EXECUTION_PLAN.md",
+      "size_bytes": 4836,
+      "sha256": "f76efd0888c530bae10afd2e94e7dd73ef706c018783849d4c21e6806749cd96"
+    },
+    {
+      "path": "docs/plans/version02/DAY03_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 6854,
+      "sha256": "2554dec0b08f2a80921a2a0d354844395564b02c10b509f93a533158831f5c7a"
+    },
+    {
+      "path": "docs/plans/version02/DAY04_EXECUTION_PLAN.md",
+      "size_bytes": 4538,
+      "sha256": "d5f50df49d23856893666a99988b29a5033bc995d24be28d92b3aa06b2a86bc2"
+    },
+    {
+      "path": "docs/plans/version02/DAY04_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 10715,
+      "sha256": "aaaf752a8e56d30a5f14d91b967d6a312b94595c0d1c53984a566827e886f135"
+    },
+    {
+      "path": "docs/plans/version02/DAY05_EXECUTION_PLAN.md",
+      "size_bytes": 1124,
+      "sha256": "c3f8e06e80cba7330268fac49f67e6b9aab0420ec2d4408f8c8ee1322927b6fb"
+    },
+    {
+      "path": "docs/plans/version02/DAY05_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 2071,
+      "sha256": "bee19d834fbc5689fcad8c57770f0090b5efd23c69de4a4ce9f8a7c9868f3f17"
+    },
+    {
+      "path": "docs/plans/version02/DAY06_EXECUTION_PLAN.md",
+      "size_bytes": 1013,
+      "sha256": "b462447e3529750eca644b1a89f81bd2a2cf8b0a055623bb2430a55cb36cf9fd"
+    },
+    {
+      "path": "docs/plans/version02/DAY06_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 1626,
+      "sha256": "5f1441c253add1586f8e318d4c5406540e296022dcf8df912c0df1ab9694116e"
+    },
+    {
+      "path": "docs/plans/version02/DAY07_EXECUTION_PLAN.md",
+      "size_bytes": 45264,
+      "sha256": "c640fb257ce6d2fc51218dcb9435d4ec26173b8152750dfe162ff9572d4ee4d0"
+    },
+    {
+      "path": "docs/plans/version02/DAY07_FEYNMAN_LEARNING_GUIDE.md",
+      "size_bytes": 35056,
+      "sha256": "45da352a0d28014b9ebb91eb3b8c47fc6c74915ab3297d6d07fb7af0e076ea41"
+    },
+    {
       "path": "docs/plans/version02/MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0.md",
       "size_bytes": 461522,
       "sha256": "6e16678bd85a233a045b8596a49d59036b1f65bdf9d6c6b3e4cfb4829b9f01a6"
@@ -10565,6 +10825,11 @@
       "sha256": "4bc637352aa5be775eca86a362108af46ed76871a91b84a01155fb3cb0f50417"
     },
     {
+      "path": "packages/common-schemas/json/day03-time-motion-baseline-row.schema.json",
+      "size_bytes": 3445,
+      "sha256": "38c6fb56b1d9bc06f26bd3b139f6e36a203a66113d529b5fdf67ed0d511d72f3"
+    },
+    {
       "path": "packages/common-schemas/json/day26-blueprint.schema.json",
       "size_bytes": 750,
       "sha256": "ef8460876a717c06607bb1ed46d43221d7016df3bca4ca9c3a66091e33f1ffb6"
@@ -10830,6 +11095,16 @@
       "sha256": "ef23975696d4a904b87e232de740413fe68da45515e048a014a172887894e2bd"
     },
     {
+      "path": "packages/common-schemas/json/legacy-asset-inventory.schema.json",
+      "size_bytes": 1653,
+      "sha256": "e4e5b1a3ed4ed204a598868611fa125c1fad5c3cf0f6f5a0c3cfb9bdebfdbb78"
+    },
+    {
+      "path": "packages/common-schemas/json/legacy-regression-scope.schema.json",
+      "size_bytes": 990,
+      "sha256": "94f371f9966b6a75a013846cafd87afec4bbfef14cbab2ab76e6fc786f067f4f"
+    },
+    {
       "path": "packages/common-schemas/json/longitudinal-compatibility.v0.1.schema.json",
       "size_bytes": 2120,
       "sha256": "fea30c2cc126c3c552adc43e529ab863466973535e67def94d93c88769c84dde"
@@ -10838,6 +11113,11 @@
       "path": "packages/common-schemas/json/model-registry-record.schema.json",
       "size_bytes": 19005,
       "sha256": "eb2f02ae2dde9e91eca32f78c622551ef1be4ff07fb8b2b0de52d14f60c58fe7"
+    },
+    {
+      "path": "packages/common-schemas/json/motionlab-evidence-inventory.schema.json",
+      "size_bytes": 1011,
+      "sha256": "8715f24335132c729b828fe603adebabcce797e8408cdb4ce789695cc5871588"
     },
     {
       "path": "packages/common-schemas/json/mvp0-regression-report.schema.json",
@@ -10863,6 +11143,11 @@
       "path": "packages/common-schemas/json/open-question.schema.json",
       "size_bytes": 2439,
       "sha256": "ad91be747a261759f6aec168399eba69ef93b3a883fd0ad630fcd8bbc29bfed7"
+    },
+    {
+      "path": "packages/common-schemas/json/patient-data-access-matrix.schema.json",
+      "size_bytes": 1070,
+      "sha256": "a4377fe3b1608bbf9fb6a107389770ff41cc90046084b3cc41ff1c6c57f4b622"
     },
     {
       "path": "packages/common-schemas/json/patient.schema.json",
@@ -10908,6 +11193,16 @@
       "path": "packages/common-schemas/json/qc-result.schema.json",
       "size_bytes": 2877,
       "sha256": "915975d4b3a58b3d0d2dfe8ef8955ed7235c3c2ac8398aa74fdd090581fc5da2"
+    },
+    {
+      "path": "packages/common-schemas/json/qc-taxonomy.schema.json",
+      "size_bytes": 1145,
+      "sha256": "78c61da166451a31285ac62a9e078e0095c247cb3b9800a448786f8cd128992b"
+    },
+    {
+      "path": "packages/common-schemas/json/quality-reason-codes.schema.json",
+      "size_bytes": 2856,
+      "sha256": "3973405b10ce02dcb2e777ac093c2b5c6ef686ea0f27dc9e5edc3b8a29e5b68a"
     },
     {
       "path": "packages/common-schemas/json/raw-signal-ref.schema.json",
@@ -11033,6 +11328,11 @@
       "path": "packages/common-schemas/json/time-domain-feature-verification.schema.json",
       "size_bytes": 2823,
       "sha256": "4a5e3baf858bc1f665470e5931a0e9e646ba6001601de25d6d592d0b90155950"
+    },
+    {
+      "path": "packages/common-schemas/json/time-motion-observation.schema.json",
+      "size_bytes": 3357,
+      "sha256": "3c99deb65da22eb57396318778ec5ffa040029ca436b009ed96a4e01f5639389"
     },
     {
       "path": "packages/common-schemas/json/training-authorization.schema.json",
@@ -11473,6 +11773,36 @@
       "path": "qa-validation/automated-tests/governance/test_day01_requirements_rebaseline.py",
       "size_bytes": 8342,
       "sha256": "0fa15874b0d1f3af4a0b6ad8db7049731e29923dddac73cf7a32ec5bb16d391f"
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day02_workflow_time_motion.py",
+      "size_bytes": 6658,
+      "sha256": "ae71333d67cef48a2e1201a485863e0c8aee8d173e2cd76e16c9a069487f9045"
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day03_workflow_observation.py",
+      "size_bytes": 7410,
+      "sha256": "0bd39153f268cd110ccc1783e8779822ff741c6476c1349dcfcb0f46cf869ce4"
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day04_quality_taxonomy.py",
+      "size_bytes": 7446,
+      "sha256": "d3580eded5058cc089872516b072ba2ba2cdd6d87abf9a56407ebf71185e3caf"
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day05_privacy_gate.py",
+      "size_bytes": 4330,
+      "sha256": "3a0c25f5467ea4fc947ee2a2b64db7bdd5153c286ad28533e94200c38e7819b7"
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day06_evidence_inventory.py",
+      "size_bytes": 4588,
+      "sha256": "3b1704c3ba886d7611577d1260b0a4d75da5f68f1b50599b79e74a03c6ecc683"
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day07_legacy_asset_audit.py",
+      "size_bytes": 12183,
+      "sha256": "dba8fdc9d1e4d59f1e882680d91667a31e182f1a137b73dc3b842ce5877a38df"
     },
     {
       "path": "qa-validation/automated-tests/governance/test_day39_governance.py",
@@ -11983,6 +12313,131 @@
       "path": "qa-validation/evidence/day01-source-hash-ledger.json",
       "size_bytes": 3758,
       "sha256": "b44baf975529ed4e6fa16218818e5ea8f18e0adf60792a7beaac6e28188bda63"
+    },
+    {
+      "path": "qa-validation/evidence/day02-artifact-manifest.json",
+      "size_bytes": 1316,
+      "sha256": "5c80f6dbc990dec5e27dcb3505973bceaf0b76e1732f5e71135082fd699ff994"
+    },
+    {
+      "path": "qa-validation/evidence/day02-day01-handoff-snapshot.json",
+      "size_bytes": 4624,
+      "sha256": "d79e7866d4cc1de1c9303e7d778e8910c84fca70faefb953142229f25298a9bc"
+    },
+    {
+      "path": "qa-validation/evidence/day02-source-hash-ledger.json",
+      "size_bytes": 1770,
+      "sha256": "50ae1a5748992bc2e7a53b1be3d60a3e5fc59df654f3ac819c07f4f23186062c"
+    },
+    {
+      "path": "qa-validation/evidence/day02-validation-report.json",
+      "size_bytes": 730,
+      "sha256": "c1d687cf77f41078cc7e2ba61cf7f96640eea9d24f0a27bc9ce3eecdd7b1d4a1"
+    },
+    {
+      "path": "qa-validation/evidence/day03-artifact-manifest.json",
+      "size_bytes": 3490,
+      "sha256": "8a7d18ef07f29aea301367475028e2ccd2b39c58d53f3d8d96bc4282ac7a7b14"
+    },
+    {
+      "path": "qa-validation/evidence/day03-day02-handoff-snapshot.json",
+      "size_bytes": 525,
+      "sha256": "08b6c84ebef0e8f2f98b41f72898c7d7a029e104ec73e9d0f6d65f054cbfb5f1"
+    },
+    {
+      "path": "qa-validation/evidence/day03-source-hash-ledger.json",
+      "size_bytes": 1490,
+      "sha256": "3809cd61e5347cf2c16e419456d1a68eae04886e8870042c77f7b7fb6d711275"
+    },
+    {
+      "path": "qa-validation/evidence/day03-validation-report.json",
+      "size_bytes": 743,
+      "sha256": "b85ecf568331d5b7600fb6dbe296aa1377b718fa92cac4d17a2ab16a20d5b576"
+    },
+    {
+      "path": "qa-validation/evidence/day04-artifact-manifest.json",
+      "size_bytes": 3639,
+      "sha256": "769cdcc249e7c1039fb0485c8df7adcf523f32d64c1eecf86eb1920ce2d1d4a9"
+    },
+    {
+      "path": "qa-validation/evidence/day04-day03-handoff-snapshot.json",
+      "size_bytes": 369,
+      "sha256": "909c8cd624d74a8905187f60e335f6d37ccfc75317f80ea9cc82517663acff41"
+    },
+    {
+      "path": "qa-validation/evidence/day04-source-hash-ledger.json",
+      "size_bytes": 1291,
+      "sha256": "81acfadd6e269ebb55a385138275e7dd97bc00966b50924e79c3d95d223711b8"
+    },
+    {
+      "path": "qa-validation/evidence/day04-validation-report.json",
+      "size_bytes": 456,
+      "sha256": "8cec23ad23c17a1457d45b016715764a4511d67cba1e0652adb5164adef73b4d"
+    },
+    {
+      "path": "qa-validation/evidence/day05-artifact-manifest.json",
+      "size_bytes": 3868,
+      "sha256": "7eb57a82bbde5f72d821b7c00b0820ec0c6d8f8c5200335c381f274274b849f5"
+    },
+    {
+      "path": "qa-validation/evidence/day05-day04-handoff-snapshot.json",
+      "size_bytes": 270,
+      "sha256": "ffb8f9bfe2aff0ac1fe03ae10556f51bdb09cf443c4a305c8e5746fdde9bb420"
+    },
+    {
+      "path": "qa-validation/evidence/day05-source-hash-ledger.json",
+      "size_bytes": 1037,
+      "sha256": "4e85a9118303fa4eff2d1b80c3fe959e5102a42b4a436d3d04ea661d8a477a72"
+    },
+    {
+      "path": "qa-validation/evidence/day05-validation-report.json",
+      "size_bytes": 188,
+      "sha256": "ca400887962917a92ed3f4c3fa08e881ae5e3e08a3459c4f62bccfb5f7aded6a"
+    },
+    {
+      "path": "qa-validation/evidence/day06-artifact-manifest.json",
+      "size_bytes": 3883,
+      "sha256": "423003d0eb2e21a6e1ad4b011581ed6412153393589295db170ab3adfd18eb2a"
+    },
+    {
+      "path": "qa-validation/evidence/day06-day05-handoff-snapshot.json",
+      "size_bytes": 319,
+      "sha256": "1da8ed33b0a1bedb049c7deb7ee959a98ee1e64ff7ae668bb902c23f878ce550"
+    },
+    {
+      "path": "qa-validation/evidence/day06-source-hash-ledger.json",
+      "size_bytes": 1037,
+      "sha256": "4e85a9118303fa4eff2d1b80c3fe959e5102a42b4a436d3d04ea661d8a477a72"
+    },
+    {
+      "path": "qa-validation/evidence/day06-validation-report.json",
+      "size_bytes": 220,
+      "sha256": "15eb40625220ad64931bc2b78b0a4a797daf820f797bd58ee8efdc1f53838960"
+    },
+    {
+      "path": "qa-validation/evidence/day07-artifact-manifest.json",
+      "size_bytes": 2941,
+      "sha256": "7a0faaecf92b649fad18c20c91bddadcc4bba3e88c21dcfd46cfb4148c7f1a68"
+    },
+    {
+      "path": "qa-validation/evidence/day07-document-quality-review.json",
+      "size_bytes": 2690,
+      "sha256": "6ac417135d5f8ec4feb75e2763c42a0c70876224832bf53e1ce798b2e3997937"
+    },
+    {
+      "path": "qa-validation/evidence/day07-human-review.template.yaml",
+      "size_bytes": 215,
+      "sha256": "5e678906678f6060bfc49c42abeb9a2ad6f7403090c5c502765f2288026ba2cf"
+    },
+    {
+      "path": "qa-validation/evidence/day07-source-hash-ledger.json",
+      "size_bytes": 1558,
+      "sha256": "0ab2d211049af8a6ec6597ee7c7d22468decf70aa54e568ea0df914e4a616c25"
+    },
+    {
+      "path": "qa-validation/evidence/day07-validation-report.json",
+      "size_bytes": 593,
+      "sha256": "79adbe2ade9db7264ee8a3ea1b5fcfd1eb2acf88eaad76e992deefa28ced60c8"
     },
     {
       "path": "qa-validation/evidence/day10-frequency-features-blocked.json",
@@ -14065,6 +14520,11 @@
       "sha256": "835bc306c8cee4673ebbda6bf0d929fa111fe55db93761a769523b87fba41560"
     },
     {
+      "path": "qa-validation/regression/legacy-regression-scope.v1.0.yaml",
+      "size_bytes": 3737,
+      "sha256": "1eeb3d639168d443758c05e6cfb911b7f2351f4e56a4008e2e812fcdec84bbad"
+    },
+    {
       "path": "qa-validation/requirements/ai-signal-requirements.csv",
       "size_bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -14078,6 +14538,36 @@
       "path": "qa-validation/requirements/day01-acceptance-criteria.md",
       "size_bytes": 1620,
       "sha256": "cf308c1d48dd3159a8cff3b1f5bf00e4474dc1b5c5a24feef07b629979344b03"
+    },
+    {
+      "path": "qa-validation/requirements/day02-acceptance-criteria.md",
+      "size_bytes": 2106,
+      "sha256": "03bc946329dfc2fa8bad4b0e37079ca747c56e2105a8e4007bfd170ccb2cc021"
+    },
+    {
+      "path": "qa-validation/requirements/day03-acceptance-criteria.md",
+      "size_bytes": 1607,
+      "sha256": "11fc4e5436d8b7453121f90c81b0e2714670bdba9fa77cbefedd3c735f71c441"
+    },
+    {
+      "path": "qa-validation/requirements/day04-acceptance-criteria.md",
+      "size_bytes": 1336,
+      "sha256": "6b3eaf2e3e5b3961b95b06ce35f8d64cd06f59d7dd593de0789525074ed15681"
+    },
+    {
+      "path": "qa-validation/requirements/day05-acceptance-criteria.md",
+      "size_bytes": 378,
+      "sha256": "4d27e6b97f06b572a20d15219124325f0145c8592268f18f891d0ec61951bfa4"
+    },
+    {
+      "path": "qa-validation/requirements/day06-acceptance-criteria.md",
+      "size_bytes": 468,
+      "sha256": "7db02392072b0b60a36bf0c3ffefe76ad3f788965dbea43c714bfbb9bcfd4904"
+    },
+    {
+      "path": "qa-validation/requirements/day07-acceptance-criteria.md",
+      "size_bytes": 1515,
+      "sha256": "18d5bc8de35b2210e5a37c93f9dd82d7e43b8e92071fc7e6bc1013a1de008a66"
     },
     {
       "path": "qa-validation/requirements/day1-acceptance-criteria.md",
@@ -14293,6 +14783,36 @@
       "path": "qa-validation/requirements/security-requirements.csv",
       "size_bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa-validation/test-data/day02/synthetic-time-motion-observation.v0.1.yaml",
+      "size_bytes": 6368,
+      "sha256": "636c19e477f6b5810171dce4bf42b9a52ae55c8918527f06e0ec26e12b91e7d2"
+    },
+    {
+      "path": "qa-validation/test-data/day03/synthetic-time-motion-observation.v0.1.yaml",
+      "size_bytes": 6387,
+      "sha256": "43781c093ef5d003f3c69a956579ed880b6bb3e2c15ad4141a9b756bcf6931d2"
+    },
+    {
+      "path": "qa-validation/test-data/day04/synthetic-quality-reason-cases.v0.1.yaml",
+      "size_bytes": 2237,
+      "sha256": "bec239efeb7856f2a2915841ddf75b3f3caf60282177bc04fae8cbee3adef1a7"
+    },
+    {
+      "path": "qa-validation/test-data/day05/synthetic-privacy-boundary-cases.v0.1.yaml",
+      "size_bytes": 528,
+      "sha256": "01aea7e29f6b6575c7b4136c09eca618ec2993d82da38842d692e325217f8387"
+    },
+    {
+      "path": "qa-validation/test-data/day06/synthetic-evidence-promotion-cases.v0.1.yaml",
+      "size_bytes": 535,
+      "sha256": "830e6c6472b3a02ff7e90cf73e25788b86809678db3dab5e5784a400ed77924a"
+    },
+    {
+      "path": "qa-validation/test-data/day07/synthetic-repo-asset-cases.yaml",
+      "size_bytes": 1015,
+      "sha256": "a17ebe3aed37b809d684e94b182e4cb9d72dc49d1e5511d031f7e78211f6c9db"
     },
     {
       "path": "qa-validation/test-data/day27/README.md",
@@ -14523,6 +15043,21 @@
       "path": "qa-validation/traceability/day01-requirement-test-matrix.csv",
       "size_bytes": 1872,
       "sha256": "b6c1e568dcc34e07b9a08f1e457eff97d31722aec2990d39029d094ae7b39ede"
+    },
+    {
+      "path": "qa-validation/traceability/day02-requirement-test-matrix.csv",
+      "size_bytes": 1425,
+      "sha256": "11a508c78d6bbb9ce58c3a441177091fb834b7b1be3fa899b094f8419529cf8e"
+    },
+    {
+      "path": "qa-validation/traceability/day03-requirement-test-matrix.csv",
+      "size_bytes": 2252,
+      "sha256": "59c30d649a2460f1cb3fb39b1b40bfe53b60658ec2d144919228bfccd417d1e4"
+    },
+    {
+      "path": "qa-validation/traceability/day04-requirement-test-matrix.csv",
+      "size_bytes": 918,
+      "sha256": "bcef7861cb9c7e7047cad85cfb02a7f7886bea45e326b582d90878b0e4f80298"
     },
     {
       "path": "qa-validation/traceability/day16-requirement-test-traceability.csv",
@@ -15220,6 +15755,36 @@
       "sha256": "bbdb3be5302d4c5d6e51516a4e27b009682d36d8df002288065a207b4b0dac0c"
     },
     {
+      "path": "scripts/dev/check_day02_artifacts.py",
+      "size_bytes": 2286,
+      "sha256": "1f7f190675559195869190fc67a626f164d237f8e6b5a13531ff2cda2ff421a0"
+    },
+    {
+      "path": "scripts/dev/check_day03_artifacts.py",
+      "size_bytes": 1237,
+      "sha256": "2542c7b8c6ee49710ea27bf80d5281d5d7450146ab5fc9903a1d1997b2674e4b"
+    },
+    {
+      "path": "scripts/dev/check_day04_artifacts.py",
+      "size_bytes": 1137,
+      "sha256": "8f0db6f560edb81ba32d39d6d39107accd50954bbcf65edeff0302c54897e214"
+    },
+    {
+      "path": "scripts/dev/check_day05_artifacts.py",
+      "size_bytes": 862,
+      "sha256": "0df21558cda86c3bc557d451eb1759476c1f9af7c71b2948a989189584587e03"
+    },
+    {
+      "path": "scripts/dev/check_day06_artifacts.py",
+      "size_bytes": 934,
+      "sha256": "740ce59fe71c4a48907b11977979add3c207e3c2395612f583bdb6b292332784"
+    },
+    {
+      "path": "scripts/dev/check_day07_artifacts.py",
+      "size_bytes": 2843,
+      "sha256": "8b7ccd36ab3ce754faa98de8c8c7cab7f8a5c668a805262516c76ce3ee77f8b0"
+    },
+    {
       "path": "scripts/dev/check_day10_artifacts.py",
       "size_bytes": 1926,
       "sha256": "663a9094994c25d021213d510b97d19c654e28b1e52261cbb746c5d60c92a551"
@@ -15380,6 +15945,31 @@
       "sha256": "500fa2dadb44bbf316bc6dc4d1993cb928035b06850c7bfff5cb6d8b88745db2"
     },
     {
+      "path": "scripts/dev/day03_time_motion_utils.py",
+      "size_bytes": 6486,
+      "sha256": "e6baad742b9b1a0dfe0aeddbe82890cc2b88cfd21ba1c957701e8d94ea6157e7"
+    },
+    {
+      "path": "scripts/dev/day04_quality_taxonomy_utils.py",
+      "size_bytes": 2401,
+      "sha256": "3973a9483ae5569ca3003dc8907c421e53e756b886f31443f58eb2c28c8e1d88"
+    },
+    {
+      "path": "scripts/dev/day05_privacy_utils.py",
+      "size_bytes": 1822,
+      "sha256": "0eaec21c7715605a5b533341623ec13999c080431895934ea4e7e9580286e099"
+    },
+    {
+      "path": "scripts/dev/day06_evidence_utils.py",
+      "size_bytes": 1774,
+      "sha256": "62f39891bbbaa3e4d600c70a54737cccd6e1b9307560bd8c3719ba4d601a5678"
+    },
+    {
+      "path": "scripts/dev/day07_asset_audit.py",
+      "size_bytes": 6257,
+      "sha256": "98173721bda43d33511c62b1a2c26fa2d34c70d13e46bfe381330c26fb27b3d7"
+    },
+    {
       "path": "scripts/dev/day1_bootstrap.sh",
       "size_bytes": 19975,
       "sha256": "7b25132d34135d9474cd9f9ee94e7a4586d85b096eddc94bba0b13aafab6750b"
@@ -15418,6 +16008,16 @@
       "path": "scripts/dev/generate_day22_evidence.py",
       "size_bytes": 11255,
       "sha256": "3e2eabf236c63f0fd4cf8421b3f44d6e416fcb068d82c6e78f3dfcf3febf27f5"
+    },
+    {
+      "path": "scripts/dev/prepare_day03_candidate_row.py",
+      "size_bytes": 5210,
+      "sha256": "b45318bca32cf7f89ba08c9685a7901c9944c479aa46b518a335bcedecd9749b"
+    },
+    {
+      "path": "scripts/dev/qa_utils.py",
+      "size_bytes": 935,
+      "sha256": "a0010b8a4b18fc0634b491ffef213ca557c442fd2bb7f877696a11b7259dec77"
     },
     {
       "path": "scripts/dev/register_fatigue_evidence_v0_1.py",
@@ -15468,6 +16068,36 @@
       "path": "scripts/dev/run_day01_checks.sh",
       "size_bytes": 965,
       "sha256": "aba286927fa62d06d22f2581bc6c615f8ba68149cbd3394a0f9c39a5914eab73"
+    },
+    {
+      "path": "scripts/dev/run_day02_checks.sh",
+      "size_bytes": 2891,
+      "sha256": "fedd965506c65956dee9e20680e9ae320609d53cdee0170ab6ba9343c4784022"
+    },
+    {
+      "path": "scripts/dev/run_day03_checks.sh",
+      "size_bytes": 1911,
+      "sha256": "6febd640109b0dac570e0edc1d8df6c3c752b4631f50c0d81ca1a8b542a8894b"
+    },
+    {
+      "path": "scripts/dev/run_day04_checks.sh",
+      "size_bytes": 1024,
+      "sha256": "c6846965de0e7989ba7addde4078a7bfcf587aa2a40d87d8e28a56e83323343e"
+    },
+    {
+      "path": "scripts/dev/run_day05_checks.sh",
+      "size_bytes": 237,
+      "sha256": "d7b84f2d755152bb56dc95f88af19b81c11f7b7f4051b981e8d5822ae4aa03e1"
+    },
+    {
+      "path": "scripts/dev/run_day06_checks.sh",
+      "size_bytes": 267,
+      "sha256": "7c1da7abec59b83c7aa131ca135f5e33f9fec19f8d59695230de08a7a9b004ea"
+    },
+    {
+      "path": "scripts/dev/run_day07_checks.sh",
+      "size_bytes": 468,
+      "sha256": "f606e9f8b5fc7b9a9acc637d5089479bfa5b414861bbb8295bc73d0cfb80222e"
     },
     {
       "path": "scripts/dev/run_day10_checks.sh",
@@ -15715,6 +16345,36 @@
       "sha256": "47b6ad1836af027cbc9d6396af6a4e98a0f38524b67543bed6bcdccde874bd9e"
     },
     {
+      "path": "scripts/dev/validate_day02_workflow_time_motion.py",
+      "size_bytes": 6319,
+      "sha256": "ba3f7ebc17545c0699beb1b186b4b2269efd3425bfc1dbdee052f27bf1e09a81"
+    },
+    {
+      "path": "scripts/dev/validate_day03_workflow_observation.py",
+      "size_bytes": 6459,
+      "sha256": "61c09ef5adcdc81f911a7c07f967e05eaa18e68e08165e451e921f846003307e"
+    },
+    {
+      "path": "scripts/dev/validate_day04_quality_taxonomy.py",
+      "size_bytes": 3496,
+      "sha256": "714896f21ddfdcdd52fcd2a20bbf9811f1b3881b3c476d03f0302f0f0a10a35a"
+    },
+    {
+      "path": "scripts/dev/validate_day05_privacy_gate.py",
+      "size_bytes": 968,
+      "sha256": "482a02d313e47e8d887c449f144db476c7313a6425f733190e6dcf45311c55f2"
+    },
+    {
+      "path": "scripts/dev/validate_day06_evidence_inventory.py",
+      "size_bytes": 1170,
+      "sha256": "becd010b068dc2be210dd038050f8fc138780005191372f024fc61442fc67608"
+    },
+    {
+      "path": "scripts/dev/validate_day07_legacy_assets.py",
+      "size_bytes": 3935,
+      "sha256": "05b828c6284fdf1311b964e6426cd175f654c2cbb074e6992b1803477ccae367"
+    },
+    {
       "path": "scripts/dev/validate_day10_outputs.py",
       "size_bytes": 2249,
       "sha256": "6bd5bcb350181ce671eaecafe2c602dd10dbc992907a04d8b4744e5f9a320525"
@@ -15948,6 +16608,21 @@
       "path": "security-compliance/privacy/deidentification-sop.md",
       "size_bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "security-compliance/privacy/deidentification-sop.v0.1.md",
+      "size_bytes": 2514,
+      "sha256": "6fff462308d90e22059a65be816ac22e7ce8ec2f17cd25898cde4ab703bb8549"
+    },
+    {
+      "path": "security-compliance/privacy/motionlab-data-classification.v0.1.md",
+      "size_bytes": 3738,
+      "sha256": "96414474269f3b5baeb19335965b3370a80f14e060285d4e8275751b1a73e6e4"
+    },
+    {
+      "path": "security-compliance/privacy/patient-data-access-matrix.v0.1.yaml",
+      "size_bytes": 1353,
+      "sha256": "3ba1669f0bb927ec8b1837bc2644ce8af45c8ec8c5eae94f6cb5391d5fbefb2d"
     },
     {
       "path": "security-compliance/regulatory/clinical-evaluation-plan.md",

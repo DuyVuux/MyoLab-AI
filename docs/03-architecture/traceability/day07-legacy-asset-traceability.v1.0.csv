@@ -1,0 +1,4 @@
+requirement,source,day07_action,artifact,test_or_evidence,state_after_day07
+PRD_PRODUCT_PRINCIPLES,PRD_Section_9,Apply all seven product principles to legacy disposition,docs/00-executive/rebaseline/legacy-asset-disposition.v1.0.md,peer_review_plus_policy_tests,DESIGNED
+NFR-001,SRS,Define reproducibility-oriented regression scope for reusable legacy behavior,qa-validation/regression/legacy-regression-scope.v1.0.yaml,schema_and_contract_tests,DESIGNED
+NFR-011,SRS,Require versioned contracts/config/rules for any adapted or revalidated legacy asset,docs/00-executive/rebaseline/technical-debt-register.v1.0.md,traceability_and_versioning_tests,DESIGNED

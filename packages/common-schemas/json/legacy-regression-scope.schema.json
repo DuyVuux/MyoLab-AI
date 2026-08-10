@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "legacy-regression-scope.schema.json",
+  "type": "object",
+  "required": ["schema_version", "status", "principles", "suites", "regression_gate"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "status": {"enum": ["DESIGNED", "VALIDATED", "FROZEN"]},
+    "suites": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["id", "legacy_family", "disposition", "purpose", "include", "exclude", "trigger_days", "clinical_claim_allowed"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^REG-[A-Z0-9-]+$"},
+          "legacy_family": {"type": "string", "pattern": "^LA-[0-9]{2}$"},
+          "disposition": {"enum": ["REUSE_AS_IS", "ADAPT", "REVALIDATE", "PARK", "DEPRECATE"]},
+          "clinical_claim_allowed": {"const": false}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,33 @@
+decision_id: DR-DAY07-001
+version: "1.0"
+title: Re-baseline legacy engineering assets by disposition rather than delete-or-reuse globally
+status: PROPOSED_FOR_REPO_CONFIRMATION
+source_priority:
+  - current_srs
+  - current_prd
+  - observed_csv_architecture
+  - rebaselined_roadmap
+  - current_project_skeleton
+  - legacy_assets
+context: >-
+  The repository contains substantial engineering investment from gesture, fatigue,
+  MFCV, quantitative-metric, UI and governance work. Current product scope changed
+  after MotionLab discovery; blanket reuse would import stale assumptions, while
+  blanket deletion would destroy valuable regression and engineering assets.
+decision: >-
+  Classify legacy asset families as REUSE_AS_IS, ADAPT, REVALIDATE, PARK or DEPRECATE.
+  Bind family decisions to actual current paths using the DAY07 repo-audit helper.
+  Current PRD/SRS semantics override historical code behavior.
+consequences:
+  positive:
+    - preserves useful engineering investment
+    - prevents public-dataset thresholds and classifier claims from silently becoming site evidence
+    - creates explicit regression ownership
+    - supports NFR-001 reproducibility and NFR-011 versioning
+  negative:
+    - requires path-level review in current monorepo
+    - some mature models remain parked despite prior effort
+revisit_conditions:
+  - approved_change_record_changes_product_scope
+  - new_site_evidence_supports_revalidation
+  - current_repo_scan_finds_unclassified_high_risk_assets
