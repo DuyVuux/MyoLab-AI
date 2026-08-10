@@ -1,0 +1,7 @@
+type,begin_time,frequency,count,created with version,exported with version,measurement_date,record_name
+record,0.00000,2000,3,Noraxon MR 4.0.22,4.0.22,2025-08-26T17:29:12.325+07:00,SYNTHETIC_DAY15
+
+time,Activity,Marker,LT BICEPS FEM.,RT BICEPS FEM.
+0.00000,REST,,12.5,11.7
+0.00050,,,13.1,12.2
+0.00100,,M1,12.8,12.0

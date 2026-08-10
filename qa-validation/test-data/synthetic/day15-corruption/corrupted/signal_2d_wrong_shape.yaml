@@ -1,0 +1,21 @@
+fixture_id: D15-SIGNAL2D-WRONG-SHAPE
+data_class: SYNTHETIC_CONTRACT_FIXTURE
+metadata:
+  type: signal_2d
+  name: Pressure_Platform-Contacts-Foot_LT-LT_COP
+  time_units: s
+  begin_time: '0.00000'
+  frequency: 100
+  count: 3
+  units: mm
+columns:
+- time
+- value
+rows:
+- - 0.0
+  - 1.0
+- - 0.01
+  - 1.2
+- - 0.02
+  - 1.4
+clinical_evidence: false

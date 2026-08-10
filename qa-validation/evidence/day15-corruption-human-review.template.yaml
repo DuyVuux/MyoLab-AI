@@ -1,0 +1,22 @@
+schema_version: "1.0"
+day: 15
+review_status: PENDING
+reviewer: null
+reviewed_at: null
+checks:
+  factory_semantics_reviewed: false
+  invalid_vs_valid_edge_classification_reviewed: false
+  mixed_fs_confirmed_valid_edge: false
+  utf8_bom_confirmed_valid_edge: false
+  critical_invariants_reviewed: false
+  no_upstream_overwrite_confirmed: false
+  live_day09_day14_regression_passed: false
+  no_patient_data_confirmed: false
+  no_production_parser_claim_confirmed: false
+release_blockers: []
+limitations: []
+decision: PENDING
+allowed_decisions:
+  - GO_FOR_DAY_16
+  - READY_WITH_LIMITATIONS
+  - BLOCKED_WITH_EVIDENCE

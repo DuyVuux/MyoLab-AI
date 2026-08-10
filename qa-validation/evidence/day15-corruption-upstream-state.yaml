@@ -1,0 +1,18 @@
+schema_version: "1.0"
+day: 15
+source_type: USER_REPORTED_LIVE_REPOSITORY_STATE
+independently_verified_by_handoff_builder: false
+reported_state:
+  day14_integrated: true
+  day09_day14_regression_passed: true
+  regression_pass_rate_reported: "100%"
+  unlabeled_corpus_retention_policy_present: true
+  day14_artifacts_integrated:
+    - clinical/ontologies/muscle-channel-ontology.v0.1.yaml
+    - configs/validation/metadata-policy.v0.1.yaml
+    - data-platform/contracts/channel-layout-context.v0.1.yaml
+    - services/signal-ingestion-service/src/normalization/channel_mapper.py
+interpretation: >-
+  This is accepted as upstream execution context supplied by the user. It is not
+  relabeled as independently verified evidence because the live filesystem is not
+  mounted in this build environment.

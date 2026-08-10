@@ -1,0 +1,12 @@
+{
+  "factory_version": "day15-noraxon-corruption-factory.v0.1.0",
+  "fixed_fixture_count": 13,
+  "invalid_fixed_count": 8,
+  "manifest_sha256": "4172e2c61ba86c80837fbd0d87047c8562be8355e7b86aa69b6ca1dc68cfac7e",
+  "patient_data_used": false,
+  "property_case_count": 64,
+  "raw_mutation_performed": false,
+  "status": "PASS",
+  "training_executed": false,
+  "valid_edge_fixed_count": 4
+}

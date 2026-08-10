@@ -1,0 +1,83 @@
+schema_version: "1.0"
+invariant_set_id: ingestion-safety-invariants.v0.1
+version: "0.1.0"
+status: DAY15_CONTRACT_READY
+scope: >-
+  Property contracts for MR4 ingestion safety. DAY15 validates the harness and
+  synthetic fixtures; DAY16/DAY17 must bind these properties to production parsers.
+evidence_status: SYNTHETIC_ENGINEERING_EVIDENCE
+production_parser_bound: false
+clinical_validation: false
+
+critical_invariants:
+  - id: INV-001
+    name: RAW_IMMUTABLE
+    statement: Parser or validation must not modify source bytes or source path in place.
+    requirement_links: [FR-007, FR-008, NFR-003, AC-01]
+    violation_severity: RELEASE_BLOCKER
+  - id: INV-002
+    name: UNKNOWN_UNIT_NEVER_INFERRED
+    statement: Unknown or unverified unit must never be silently converted/inferred to V or uV.
+    requirement_links: [FR-006, FR-023, AC-02]
+    violation_severity: RELEASE_BLOCKER
+  - id: INV-003
+    name: NO_SILENT_CRASH
+    statement: Malformed input must return typed failure/rejection; unhandled parser crash is not acceptable.
+    requirement_links: [NFR-012, AC-01]
+    violation_severity: RELEASE_BLOCKER
+  - id: INV-004
+    name: FAIL_CLOSED
+    statement: Invalid input must not create final-looking curated/processed/clinical-success output.
+    requirement_links: [NFR-012, AC-01, AC-02]
+    violation_severity: RELEASE_BLOCKER
+
+boundary_invariants:
+  - id: INV-005
+    name: HETEROGENEOUS_FS_ALLOWED
+    statement: Different valid per-signal sampling rates must not be rejected solely for being different.
+    requirement_links: [FR-004, AC-02]
+  - id: INV-006
+    name: UTF8_BOM_TOLERATED
+    statement: Valid UTF-8 BOM source must remain parseable without source mutation.
+    requirement_links: [AC-01]
+  - id: INV-007
+    name: UNKNOWN_FIELDS_PRESERVED
+    statement: Unknown vendor fields must be preserved or surfaced, not silently dropped as proof of meaninglessness.
+    requirement_links: [AC-01]
+  - id: INV-008
+    name: MISSING_VALUES_NOT_INTERPOLATED_AT_RAW
+    statement: Missing raw values must remain missing; parser must not fabricate replacements.
+    requirement_links: [FR-007, NFR-003]
+  - id: INV-009
+    name: DETERMINISTIC_REPLAY
+    statement: Same source bytes plus same contract/config must yield the same typed outcome.
+    requirement_links: [NFR-001]
+  - id: INV-010
+    name: TYPED_FAILURE_HAS_REASON
+    statement: Rejected cases must expose a stable reason code suitable for traceability.
+    requirement_links: [FR-023, NFR-012]
+
+valid_edge_cases:
+  - MIXED_FS
+  - UTF8_BOM
+  - MISSING_VALUE_PRESERVED
+  - UNKNOWN_FIELD_PRESERVED
+
+invalid_cases:
+  - MALFORMED_HEADER
+  - COUNT_MISMATCH
+  - DUPLICATE_TIMESTAMP
+  - OUT_OF_ORDER_TIMESTAMP
+  - MISSING_ROW
+  - UNKNOWN_UNIT
+  - SIGNAL_2D_WRONG_SHAPE
+  - BINARY_GARBAGE
+
+not_in_scope_day15:
+  - production MR4 single CSV parser implementation
+  - production MR4 separated CSV assembler
+  - OOD detector or distribution score
+  - QC signal artifact detectors
+  - DSP preprocessing
+  - model training
+  - clinical threshold validation

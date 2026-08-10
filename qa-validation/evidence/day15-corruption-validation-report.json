@@ -1,0 +1,45 @@
+{
+  "day": 15,
+  "title": "Corrupted Fixture Factory for Data Contracts + Property-based Safety Verification",
+  "engineering_validation": "PASS",
+  "day15_local_tests": {
+    "status": "PASS",
+    "count": 72
+  },
+  "fixed_fixture_count": 13,
+  "checked_in_property_case_count": 64,
+  "generated_property_cases_exercised_per_run": 128,
+  "critical_invariants": [
+    "RAW_IMMUTABLE",
+    "UNKNOWN_UNIT_NEVER_INFERRED",
+    "NO_SILENT_CRASH",
+    "FAIL_CLOSED"
+  ],
+  "valid_edges": [
+    "MIXED_FS",
+    "UTF8_BOM",
+    "MISSING_VALUE_PRESERVED",
+    "UNKNOWN_FIELD_PRESERVED"
+  ],
+  "production_parser_bound": false,
+  "clinical_validation": false,
+  "site_validation": false,
+  "patient_data_used": false,
+  "training_executed": false,
+  "ood_model_executed": false,
+  "ssl_training_executed": false,
+  "live_repo_regression_independently_verified": false,
+  "human_review_complete": false,
+  "final_status": "READY_WITH_LIMITATIONS",
+  "promotion_rule": "Promote to GO_FOR_DAY_16 only after live DAY09-DAY14 regression and human semantic review pass.",
+  "baseline_handoff_cross_day_regression": {
+    "status": "PASS",
+    "passed": 290,
+    "failed": 0,
+    "scope": "DAY09-DAY15 baseline overlay"
+  },
+  "python_style_checks": {
+    "max_line_length_le_99": true,
+    "compileall_passed": true
+  }
+}

@@ -1,0 +1,50 @@
+fixture_id: D15-MIXED-FS
+data_class: SYNTHETIC_CONTRACT_FIXTURE
+signals:
+- fixture_id: D15-SEED-SIGNAL-001
+  data_class: SYNTHETIC_CONTRACT_FIXTURE
+  metadata:
+    type: signal
+    name: Ultium_EMG-LT_BICEPS_FEM.
+    time_units: s
+    begin_time: '0.00000'
+    frequency: 2000
+    count: 3
+    units: uV
+  columns:
+  - time
+  - value
+  rows:
+  - - 0.0
+    - 12.5
+  - - 0.0005
+    - 13.1
+  - - 0.001
+    - 12.8
+  clinical_evidence: false
+- fixture_id: D15-SEED-SIGNAL2D-001
+  data_class: SYNTHETIC_CONTRACT_FIXTURE
+  metadata:
+    type: signal_2d
+    name: Pressure_Platform-Contacts-Foot_LT-LT_COP
+    time_units: s
+    begin_time: '0.00000'
+    frequency: 50
+    count: 3
+    units: mm
+  columns:
+  - time
+  - x
+  - y
+  rows:
+  - - 0.0
+    - 1.0
+    - 2.0
+  - - 0.01
+    - 1.2
+    - 2.1
+  - - 0.02
+    - 1.4
+    - 2.3
+  clinical_evidence: false
+clinical_evidence: false

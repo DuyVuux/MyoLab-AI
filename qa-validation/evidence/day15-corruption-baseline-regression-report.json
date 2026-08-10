@@ -1,0 +1,27 @@
+{
+  "environment": "baseline_handoff_overlay_staging",
+  "independently_executed": true,
+  "scope": [
+    "DAY09",
+    "DAY10",
+    "DAY11 baseline handoff",
+    "DAY12 baseline handoff",
+    "DAY13 baseline handoff",
+    "DAY14 baseline handoff",
+    "DAY15"
+  ],
+  "test_counts": {
+    "DAY09": 30,
+    "DAY10": 32,
+    "DAY11": 32,
+    "DAY12": 38,
+    "DAY13": 40,
+    "DAY14": 46,
+    "DAY15": 72,
+    "total": 290
+  },
+  "passed": 290,
+  "failed": 0,
+  "status": "PASS",
+  "limitation": "This staging run uses baseline handoff artifacts, not the user's live monorepo with local integration refinements."
+}
