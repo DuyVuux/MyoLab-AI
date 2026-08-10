@@ -1,0 +1,24 @@
+day: DAY09
+sources:
+  - name: SRS_MotionLab_Data_Intelligence_v0.1
+    role: authoritative_requirements
+    evidence_status: AUTHORITATIVE
+  - name: PRD_MotionLab_Data_Intelligence_v0.1
+    role: product_scope
+    evidence_status: AUTHORITATIVE
+  - name: Motion_Lab_CSV_Architecture
+    role: observed_export_structure
+    evidence_status: OBSERVED_SAMPLE_DOCUMENTED
+  - name: MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0
+    role: day_scope
+    evidence_status: AUTHORITATIVE
+  - name: MotionLab_90Day_Technology_Augmentation_Integration_Plan_v1.0
+    role: roadmap_delta
+    evidence_status: ADDITIVE
+    day09_directive: KEEP_UNCHANGED
+site_raw_export_bundled: false
+patient_data_bundled: false
+synthetic_fixture_only: true
+known_open_items:
+  - LT/RT Force exact semantics remain NOT_VERIFIED.
+  - Contract is not a production parser; implementation is DAY16.

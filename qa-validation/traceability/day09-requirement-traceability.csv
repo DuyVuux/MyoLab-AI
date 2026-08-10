@@ -1,0 +1,6 @@
+requirement,source,day09_action,artifact,test_or_evidence,state_after_day09
+FR-001,SRS,Define observed MR4 single-CSV anatomy,data-platform/contracts/noraxon/mr4-single-csv.schema.yaml,test_schema_layout_keys,DESIGNED
+FR-003,SRS,Represent known metadata and preserve unknown metadata,data-platform/contracts/noraxon/mr4-single-csv.schema.yaml,test_known_metadata_and_unknown_policy,DESIGNED
+FR-004,SRS,Explicitly forbid carrying single-table Fs assumption into separated format,data-platform/contracts/noraxon/mr4-single-csv.schema.yaml,test_no_global_same_fs_assumption,DESIGNED
+FR-021,SRS,Capture software/version/measurement/record metadata when present,data-platform/contracts/noraxon/mr4-single-csv.schema.yaml,test_fr021_metadata_presence,DESIGNED
+AC-01,SRS,Provide golden contract fixtures without raw loss claim beyond contract scope,qa-validation/test-data/golden/noraxon/single_csv/README.md,test_fixture_hash_preservation,PARTIAL_DESIGN_EVIDENCE

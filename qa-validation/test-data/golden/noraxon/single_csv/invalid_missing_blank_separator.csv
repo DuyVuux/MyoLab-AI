@@ -1,0 +1,4 @@
+type,frequency,count,record_name
+record,2000,1,SYNTHETIC_BAD_SEPARATOR
+time,Activity
+0.00000,REST

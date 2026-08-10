@@ -1,0 +1,6 @@
+type,frequency,count,future_vendor_field,record_name
+record,2000,2,opaque-value,SYNTHETIC_UNKNOWN_FIELD
+
+time,Activity,FutureSensor-A
+0.00000,REST,7.1
+0.00050,,7.2

@@ -1,0 +1,20 @@
+{
+  "day": "DAY09",
+  "engineering_validation": "PASS",
+  "automated_tests": "30/30 PASS",
+  "final_status": "GO_FOR_DAY_10",
+  "upstream_day08": "USER_CONFIRMED_INTEGRATED",
+  "site_raw_export_bundled": false,
+  "training_executed": false,
+  "raw_patient_data_read_or_bundled": false,
+  "technology_augmentation": "UNCHANGED",
+  "mandatory_outputs": "3/3",
+  "synthetic_fixture_only": true,
+  "requirement_traceability": [
+    "FR-001",
+    "FR-003",
+    "FR-004",
+    "FR-021",
+    "AC-01"
+  ]
+}

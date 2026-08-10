@@ -1,0 +1,12 @@
+day: DAY09
+review_status: PENDING_HUMAN_REVIEW
+reviewer: null
+checks:
+  scope_matches_roadmap: null
+  observed_vs_inferred_fields_separated: null
+  unknown_fields_preserved: null
+  no_same_fs_assumption_for_separated_exports: null
+  no_raw_patient_data_in_repo: null
+  no_production_parser_added: null
+  traceability_complete: null
+comments: []

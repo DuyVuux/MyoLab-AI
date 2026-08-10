@@ -1,0 +1,96 @@
+{
+  "day": "DAY09",
+  "validation_scope": "MANAGED_DAY09_ARTIFACTS_ONLY",
+  "files": [
+    {
+      "path": "data-platform/contracts/noraxon/mr4-single-csv-examples.md",
+      "sha256": "d801368a0639b0f9263c7d2f2d1ca1012e1421f896dc604b158fe540c6993568",
+      "bytes": 2078
+    },
+    {
+      "path": "data-platform/contracts/noraxon/mr4-single-csv.schema.yaml",
+      "sha256": "c2fcbe2760fcc918726fe8d5ce820904fe03b82cd51a535cb16ed33ececd054f",
+      "bytes": 4245
+    },
+    {
+      "path": "qa-validation/automated-tests/contracts/test_day09_mr4_single_contract.py",
+      "sha256": "355b119eb55fad278b51e30379c96cef0a734e498bc1dfcc606c08b01e84843b",
+      "bytes": 5983
+    },
+    {
+      "path": "qa-validation/evidence/day09-peer-review.template.yaml",
+      "sha256": "da1dd24d0f031254ff33428793f118014b719d70f492f2d1ac1adb3fc64a37c8",
+      "bytes": 345
+    },
+    {
+      "path": "qa-validation/evidence/day09-source-evidence.yaml",
+      "sha256": "70c9a8a54e932afcc50be50512b671eb5d088b64c0706b9980e515669d53521b",
+      "bytes": 889
+    },
+    {
+      "path": "qa-validation/evidence/day09-validation-report.json",
+      "sha256": "ef85d44596fd191a80295c56ba03b00c0118cf79acc0d337e0f8cb7162155b61",
+      "bytes": 498
+    },
+    {
+      "path": "qa-validation/requirements/day09-acceptance-criteria.md",
+      "sha256": "eab86dbc635479e55d68f29ddd69e75412f8213b8f6896fda98bb7eaf3cab865",
+      "bytes": 798
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/single_csv/README.md",
+      "sha256": "8b71e9db4afd8e397e86e05b5f23bb4a0b6a7d23b54e57a1ed2df902a225389a",
+      "bytes": 744
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/single_csv/fixture-manifest.json",
+      "sha256": "3bc4fc1d2e90eacffe6f62ac19441348a3580c48543042cea431c497a7d221dc",
+      "bytes": 654
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/single_csv/invalid_missing_blank_separator.csv",
+      "sha256": "39a6dc57bf657d81cc2be2528cc5f8a7b6c4a2257b16e6abe6e6da6bc85b3a63",
+      "bytes": 98
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/single_csv/valid_minimal.csv",
+      "sha256": "01b4befe1d408d3d4fd94c7b34e12b8b7ef2c1d59b42620f3ca0d191b5a21812",
+      "bytes": 419
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/single_csv/valid_unknown_fields.csv",
+      "sha256": "5b3420196e0d9424566b54b4ddc237580210dd47d6249be6fb9818526378277b",
+      "bytes": 164
+    },
+    {
+      "path": "qa-validation/traceability/day09-requirement-traceability.csv",
+      "sha256": "4e40c735f267c4c4232bcb0bede2312d59b75ce92fc243c902e6f4e3b4c6dcb9",
+      "bytes": 957
+    },
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "475e6a61a1cd90ddcc3b3c924cfe005e0d81d802cb27a1466da12f20cd74a619",
+      "bytes": 17
+    },
+    {
+      "path": "scripts/dev/__init__.py",
+      "sha256": "475e6a61a1cd90ddcc3b3c924cfe005e0d81d802cb27a1466da12f20cd74a619",
+      "bytes": 17
+    },
+    {
+      "path": "scripts/dev/check_day09_artifacts.py",
+      "sha256": "4de9ad071bdd7f1c3be049eb1112f2b180ffbba3e2f26b0dc961d6cec29b092c",
+      "bytes": 1150
+    },
+    {
+      "path": "scripts/dev/run_day09_checks.sh",
+      "sha256": "32c8c22a19a0a310202b8b0654fecdf39bba413ee2b3806ae387fc3e222b92f3",
+      "bytes": 335
+    },
+    {
+      "path": "scripts/dev/validate_day09_single_contract.py",
+      "sha256": "222f28a3a53c265b51e8203cfcc4a7e307c218f7b85f40d624e1f81517aa2c70",
+      "bytes": 2689
+    }
+  ]
+}

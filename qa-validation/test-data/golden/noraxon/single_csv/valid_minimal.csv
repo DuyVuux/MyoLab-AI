@@ -1,0 +1,7 @@
+type,begin_time,frequency,count,created with version,exported with version,measurement_date,record_name
+record,0.00000,2000,3,Noraxon MR 4.0.22,4.0.22,2025-08-26T17:29:12.325+07:00,SYNTHETIC_TREADMILL_EMG
+
+time,Activity,Marker,Pressure Platform-Velocity,LT Force,RT Force,LT BICEPS FEM.,RT BICEPS FEM.
+0.00000,REST,,1.20,510.0,508.0,12.5,11.7
+0.00050,,,1.20,512.0,509.0,13.1,12.2
+0.00100,,M1,1.20,515.0,511.0,12.8,12.0

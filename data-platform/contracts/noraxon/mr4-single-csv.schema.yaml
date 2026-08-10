@@ -1,0 +1,136 @@
+contract_id: MR4_SINGLE_CSV_V0_1
+version: 0.1.0
+status: DESIGNED
+day: DAY09
+source_basis:
+- document: Motion_Lab_CSV_Architecture
+  evidence_status: OBSERVED_SAMPLE_DOCUMENTED
+- document: SRS_MotionLab_Data_Intelligence_v0.1
+  evidence_status: AUTHORITATIVE_REQUIREMENT
+- document: MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0
+  evidence_status: AUTHORITATIVE_DAY_SCOPE
+technology_augmentation:
+  status: UNCHANGED
+  note: Technology Augmentation Plan explicitly keeps DAY09 unchanged.
+scope:
+  format: Noraxon MR4 single CSV
+  production_parser_in_scope: false
+  raw_patient_data_allowed_in_repository: false
+encoding:
+  accepted:
+  - utf-8
+  - utf-8-sig
+  bom: ALLOW_AND_PRESERVE_RAW_BYTES
+layout:
+  row_1: metadata_header
+  row_2: metadata_values
+  row_3: blank_separator
+  row_4: data_header
+  row_5_plus: time_series_rows
+  blank_separator_required_by_observed_contract: true
+record_metadata:
+  known_fields:
+  - name: type
+    observed_example: record
+    required_for_contract_fixture: true
+    evidence_status: OBSERVED
+  - name: begin_time
+    observed_example: '0.00000'
+    required_for_contract_fixture: false
+    evidence_status: OBSERVED
+  - name: frequency
+    observed_example: '2000'
+    required_for_contract_fixture: false
+    semantic: table-level sampling metadata; must not be generalized to separated
+      signals
+    evidence_status: OBSERVED
+  - name: count
+    observed_example: '33000'
+    required_for_contract_fixture: false
+    evidence_status: OBSERVED
+  - name: created with version
+    observed_example: Noraxon MR 4.0.22
+    required_for_contract_fixture: false
+    evidence_status: OBSERVED
+  - name: exported with version
+    observed_example: 4.0.22
+    required_for_contract_fixture: false
+    evidence_status: OBSERVED
+  - name: measurement_date
+    observed_example: '2025-08-26T17:29:12.325+07:00'
+    required_for_contract_fixture: false
+    evidence_status: OBSERVED
+  - name: record_name
+    observed_example: Treadmill running EMG
+    required_for_contract_fixture: false
+    privacy_note: may contain user-entered identifying/context text; preserve raw,
+      classify before curated promotion
+    evidence_status: OBSERVED
+  unknown_field_policy: PRESERVE_NAME_AND_VALUE; DO_NOT_DROP; DO_NOT_INFER_SEMANTICS
+  duplicate_header_policy: FAIL_CONTRACT_REVIEW_UNTIL_EXPLICITLY_DEFINED
+data_columns:
+  required:
+  - time
+  known_groups:
+  - pattern: Activity
+    semantic: activity/event text
+    unit: text
+    evidence_status: OBSERVED
+  - pattern: Marker
+    semantic: marker/event text
+    unit: text
+    evidence_status: OBSERVED
+  - pattern: Pressure Platform-Velocity
+    semantic: platform/treadmill velocity
+    unit: m/s
+    evidence_status: OBSERVED
+  - pattern: LT Force|RT Force
+    semantic: vendor pressure/treadmill force field; exact GRF semantics NOT_VERIFIED
+    unit: N
+    evidence_status: OBSERVED_SEMANTICS_PARTIAL
+  - pattern: '*COP-x|*COP-y|*Local COP-x|*Local COP-y'
+    semantic: global/local COP coordinate fields as exported
+    unit: mm
+    evidence_status: OBSERVED
+  - pattern: LT Max Pressure|RT Max Pressure
+    semantic: maximum pressure
+    unit: N/cm^2
+    evidence_status: OBSERVED
+  - pattern: LT/RT <muscle>
+    semantic: sEMG channel naming family
+    unit: uV
+    evidence_status: OBSERVED
+  unknown_column_policy: PRESERVE_HEADER_AND_CELL_TEXT; DO_NOT DROP; SEMANTIC_STATUS=UNKNOWN
+validation_contract:
+  day09_checks:
+  - row anatomy
+  - metadata header/value arity
+  - blank separator
+  - time column presence
+  - unknown field preservation
+  - fixture hash preservation
+  deferred_to_day13:
+  - time monotonicity engine
+  - count-vs-row validation engine
+  - unit conversion engine
+  deferred_to_day16:
+  - production parsing
+  - typed ingestion failure
+  - canonical output construction
+safety_invariants:
+- no production parser in DAY09
+- no raw overwrite
+- no silent unknown-field dropping
+- no interpretation of LT/RT Force as full GRF without evidence
+- no same-Fs assumption exported to separated format
+- no patient identifiers in synthetic fixtures
+requirement_traceability:
+- FR-001
+- FR-003
+- FR-004
+- FR-021
+- AC-01
+day_status_rule:
+  pass: GO_FOR_DAY_10
+  limited: READY_WITH_LIMITATIONS
+  block: BLOCKED_WITH_EVIDENCE

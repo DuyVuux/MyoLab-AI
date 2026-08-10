@@ -1,0 +1,20 @@
+{
+  "invalid_missing_blank_separator.csv": {
+    "sha256": "39a6dc57bf657d81cc2be2528cc5f8a7b6c4a2257b16e6abe6e6da6bc85b3a63",
+    "bytes": 98,
+    "data_class": "SYNTHETIC_CONTRACT_FIXTURE",
+    "clinical_evidence": false
+  },
+  "valid_minimal.csv": {
+    "sha256": "01b4befe1d408d3d4fd94c7b34e12b8b7ef2c1d59b42620f3ca0d191b5a21812",
+    "bytes": 419,
+    "data_class": "SYNTHETIC_CONTRACT_FIXTURE",
+    "clinical_evidence": false
+  },
+  "valid_unknown_fields.csv": {
+    "sha256": "5b3420196e0d9424566b54b4ddc237580210dd47d6249be6fb9818526378277b",
+    "bytes": 164,
+    "data_class": "SYNTHETIC_CONTRACT_FIXTURE",
+    "clinical_evidence": false
+  }
+}
