@@ -1,0 +1,99 @@
+schema_version: '0.1'
+status: DESIGN_COMPLETE_ACCESS_EVIDENCE_PENDING
+promotion_rule: NO_TIER_PROMOTION_WITHOUT_EXPLICIT_GOVERNANCE_AND_DEIDENTIFICATION_STATUS
+source_classes:
+- SYNTHETIC
+- VENDOR_SAMPLE
+- DEIDENTIFIED_HISTORICAL
+- PROSPECTIVE
+- PILOT
+items:
+- evidence_id: EV-D06-001
+  source_class: SYNTHETIC
+  scope: P0
+  description: Synthetic fixtures for parser/QC contract testing
+  availability: AVAILABLE_BY_GENERATION
+  governance_status: NOT_APPLICABLE_NON_HUMAN
+  deidentification_status: NOT_APPLICABLE
+  evidence_level: ENGINEERING_ONLY
+  allowed_use:
+  - schema_test
+  - corrupted_fixture_test
+  - synthetic_QC_truth
+  clinical_effectiveness_support: false
+  site_compatibility_support: false
+- evidence_id: EV-D06-002
+  source_class: VENDOR_SAMPLE
+  scope: P0_P1
+  description: Observed/documented MR4/Vicon sample architecture from project source
+    documents
+  availability: DOCUMENTED_SAMPLE_STRUCTURE
+  governance_status: SOURCE_DOCUMENTED
+  deidentification_status: NOT_VERIFIED_FOR_ANY_FUTURE_FILE
+  evidence_level: FORMAT_DISCOVERY
+  allowed_use:
+  - contract_design
+  - parser_fixture_design
+  clinical_effectiveness_support: false
+  site_compatibility_support: false
+- evidence_id: EV-D06-003
+  source_class: DEIDENTIFIED_HISTORICAL
+  scope: P0
+  description: Representative historical Noraxon export from MotionLab after approved
+    de-identification
+  availability: REQUEST_REQUIRED
+  governance_status: UNKNOWN
+  deidentification_status: UNKNOWN
+  evidence_level: NOT_PROMOTED
+  allowed_use: []
+  clinical_effectiveness_support: false
+  site_compatibility_support: false
+  blocking_reason: DAY05 governance approval and actual file access required
+- evidence_id: EV-D06-004
+  source_class: PROSPECTIVE
+  scope: P0
+  description: Prospective workflow/QC observation with protocol context under approved
+    process
+  availability: NOT_COLLECTED
+  governance_status: UNKNOWN
+  deidentification_status: UNKNOWN
+  evidence_level: NOT_PROMOTED
+  allowed_use: []
+  clinical_effectiveness_support: false
+  site_compatibility_support: false
+- evidence_id: EV-D06-005
+  source_class: DEIDENTIFIED_HISTORICAL
+  scope: P1_PRESSURE
+  description: Pressure/contact/COP exports including abnormal gait and clinician
+    L/R reference
+  availability: REQUEST_REQUIRED
+  governance_status: UNKNOWN
+  deidentification_status: UNKNOWN
+  evidence_level: NOT_PROMOTED
+  allowed_use: []
+  clinical_effectiveness_support: false
+  site_compatibility_support: false
+- evidence_id: EV-D06-006
+  source_class: DEIDENTIFIED_HISTORICAL
+  scope: KNEE_DISCOVERY
+  description: One real Knee/ACL failure case package required by DR-K01
+  availability: REQUEST_REQUIRED
+  governance_status: UNKNOWN
+  deidentification_status: UNKNOWN
+  evidence_level: NOT_PROMOTED
+  allowed_use: []
+  clinical_effectiveness_support: false
+  site_compatibility_support: false
+  blocking_reason: DR-K01 remains discovery-blocked until a real governed failure
+    case exists
+- evidence_id: EV-D06-007
+  source_class: PILOT
+  scope: P0
+  description: Controlled pilot evidence for toil/QC/review outcomes
+  availability: FUTURE
+  governance_status: NOT_YET_APPLICABLE
+  deidentification_status: NOT_YET_APPLICABLE
+  evidence_level: FUTURE_ONLY
+  allowed_use: []
+  clinical_effectiveness_support: false
+  site_compatibility_support: false

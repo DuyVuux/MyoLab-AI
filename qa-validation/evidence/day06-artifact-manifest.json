@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "scope": "DAY06_MANAGED_ARTIFACTS_ONLY",
+  "hash_algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "clinical/discovery/vinmec-data-request-pack.v0.1.md",
+      "sha256": "191783eaaa39bbd2b36913bab108c86cedc468492f5e64eb0b4889b414ddf7e0",
+      "size_bytes": 2433
+    },
+    {
+      "path": "data-platform/catalog/motionlab-evidence-inventory.v0.1.yaml",
+      "sha256": "b05bf14a723912c2896de3a13427cb7a66112b5441a1981a3ba43d11a01c76e3",
+      "size_bytes": 3317
+    },
+    {
+      "path": "data-platform/governance/evidence-tier-policy.v0.1.md",
+      "sha256": "5b2adf13f47864d1ec6f87502bdb094b0f0d29b60e41ab4750a4350aa2e34d57",
+      "size_bytes": 1974
+    },
+    {
+      "path": "docs/00-executive/day06/day06-closeout-summary.v0.1.md",
+      "sha256": "f5b16273f761f900b1e917bfde74a0436fb8546c3f78e8276828efd60ec24830",
+      "size_bytes": 219
+    },
+    {
+      "path": "docs/02-clinical/discovery/day06-open-question-impact.v0.1.md",
+      "sha256": "78a777add55e4925cf23a05a3f6ae2f7d054d149d3bfbc1b9c768cc6fa194c1f",
+      "size_bytes": 331
+    },
+    {
+      "path": "docs/03-architecture/traceability/day06-evidence-inventory-traceability.v0.1.csv",
+      "sha256": "4e3b81dd0f9cd522ff3b21d69977f60e4c1d2b06889c670e0772b0d79e787b2d",
+      "size_bytes": 578
+    },
+    {
+      "path": "packages/common-schemas/json/motionlab-evidence-inventory.schema.json",
+      "sha256": "8715f24335132c729b828fe603adebabcce797e8408cdb4ce789695cc5871588",
+      "size_bytes": 1011
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/__pycache__/test_day06_evidence_inventory.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "5bdc031edd4fb7016dc4429350177a01f9428754d1a9d05dc8231eb1aa4158dd",
+      "size_bytes": 23747
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day06_evidence_inventory.py",
+      "sha256": "3b1704c3ba886d7611577d1260b0a4d75da5f68f1b50599b79e74a03c6ecc683",
+      "size_bytes": 4496
+    },
+    {
+      "path": "qa-validation/evidence/day06-day05-handoff-snapshot.json",
+      "sha256": "1da8ed33b0a1bedb049c7deb7ee959a98ee1e64ff7ae668bb902c23f878ce550",
+      "size_bytes": 319
+    },
+    {
+      "path": "qa-validation/evidence/day06-source-hash-ledger.json",
+      "sha256": "4e85a9118303fa4eff2d1b80c3fe959e5102a42b4a436d3d04ea661d8a477a72",
+      "size_bytes": 1037
+    },
+    {
+      "path": "qa-validation/evidence/day06-validation-report.json",
+      "sha256": "15eb40625220ad64931bc2b78b0a4a797daf820f797bd58ee8efdc1f53838960",
+      "size_bytes": 220
+    },
+    {
+      "path": "qa-validation/requirements/day06-acceptance-criteria.md",
+      "sha256": "7db02392072b0b60a36bf0c3ffefe76ad3f788965dbea43c714bfbb9bcfd4904",
+      "size_bytes": 468
+    },
+    {
+      "path": "qa-validation/test-data/day06/synthetic-evidence-promotion-cases.v0.1.yaml",
+      "sha256": "830e6c6472b3a02ff7e90cf73e25788b86809678db3dab5e5784a400ed77924a",
+      "size_bytes": 535
+    },
+    {
+      "path": "scripts/dev/__pycache__/day06_evidence_utils.cpython-313.pyc",
+      "sha256": "03947304f714acbedeb8eb820ff83593296a60b8fc1b45520ae83ff8b8239530",
+      "size_bytes": 2014
+    },
+    {
+      "path": "scripts/dev/check_day06_artifacts.py",
+      "sha256": "740ce59fe71c4a48907b11977979add3c207e3c2395612f583bdb6b292332784",
+      "size_bytes": 934
+    },
+    {
+      "path": "scripts/dev/day06_evidence_utils.py",
+      "sha256": "62f39891bbbaa3e4d600c70a54737cccd6e1b9307560bd8c3719ba4d601a5678",
+      "size_bytes": 1015
+    },
+    {
+      "path": "scripts/dev/run_day06_checks.sh",
+      "sha256": "7c1da7abec59b83c7aa131ca135f5e33f9fec19f8d59695230de08a7a9b004ea",
+      "size_bytes": 267
+    },
+    {
+      "path": "scripts/dev/validate_day06_evidence_inventory.py",
+      "sha256": "becd010b068dc2be210dd038050f8fc138780005191372f024fc61442fc67608",
+      "size_bytes": 1170
+    }
+  ]
+}

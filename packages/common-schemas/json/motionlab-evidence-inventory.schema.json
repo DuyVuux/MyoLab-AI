@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MotionLab Evidence Inventory v0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "promotion_rule",
+    "source_classes",
+    "items"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "promotion_rule": {
+      "type": "string"
+    },
+    "source_classes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "source_class",
+          "scope",
+          "description",
+          "availability",
+          "governance_status",
+          "deidentification_status",
+          "evidence_level",
+          "allowed_use",
+          "clinical_effectiveness_support",
+          "site_compatibility_support"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

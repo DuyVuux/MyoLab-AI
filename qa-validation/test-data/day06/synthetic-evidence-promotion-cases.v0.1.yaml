@@ -1,0 +1,18 @@
+schema_version: '0.1'
+clinical_evidence: false
+cases:
+- case_id: D06-001
+  source_class: SYNTHETIC
+  governance_status: NOT_APPLICABLE_NON_HUMAN
+  deidentification_status: NOT_APPLICABLE
+  expected_max_tier: E0
+- case_id: D06-002
+  source_class: DEIDENTIFIED_HISTORICAL
+  governance_status: UNKNOWN
+  deidentification_status: UNKNOWN
+  expected_max_tier: BLOCKED
+- case_id: D06-003
+  source_class: VENDOR_SAMPLE
+  governance_status: SOURCE_DOCUMENTED
+  deidentification_status: NOT_VERIFIED_FOR_ANY_FUTURE_FILE
+  expected_max_tier: E1

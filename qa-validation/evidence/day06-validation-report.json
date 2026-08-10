@@ -1,0 +1,8 @@
+{
+  "engineering_validation": "PASS",
+  "tests_passed": true,
+  "day06_status": "BLOCKED_WITH_EVIDENCE_UPSTREAM_DAY05",
+  "ready_for_data_request": true,
+  "go_for_day07": false,
+  "real_site_evidence_received": false
+}

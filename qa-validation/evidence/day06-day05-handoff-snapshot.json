@@ -1,0 +1,9 @@
+{
+  "day05_status": "BLOCKED_WITH_EVIDENCE_UPSTREAM_DAY04",
+  "day06_can_claim_upstream_acceptance": false,
+  "site_privacy_governance_confirmed": false,
+  "real_deidentified_motionlab_export_received": false,
+  "real_knee_failure_case_received": false,
+  "training_executed": false,
+  "raw_patient_data_read": false
+}

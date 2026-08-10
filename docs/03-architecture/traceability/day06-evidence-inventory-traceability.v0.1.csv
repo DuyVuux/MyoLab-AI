@@ -1,0 +1,5 @@
+requirement_id,artifact,verification,state,evidence_status
+PRD-11,data-platform/catalog/motionlab-evidence-inventory.v0.1.yaml,data readiness classes/inventory,DESIGNED,SOURCE_SUPPORTED
+PRD-14,clinical/discovery/vinmec-data-request-pack.v0.1.md,open-question evidence request,DESIGNED,SOURCE_SUPPORTED
+FR-025,data-platform/catalog/motionlab-evidence-inventory.v0.1.yaml,governance + deidentification fields mandatory,DESIGNED,SOURCE_SUPPORTED
+DR-K01,clinical/discovery/vinmec-data-request-pack.v0.1.md,real failure case request; no substitution,DESIGNED,DISCOVERY_REQUIRED
