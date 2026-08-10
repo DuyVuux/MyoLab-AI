@@ -12,6 +12,14 @@ from enum import StrEnum
 from pathlib import Path
 from typing import Any
 
+from adapters.common.provenance import (
+    ParserProvenance,
+    SourceLinkage,
+    sha256_file,
+    source_linkage,
+    stable_run_id,
+)
+
 
 class EvidenceStatus(StrEnum):
     OBSERVED = "OBSERVED"
@@ -53,15 +61,6 @@ class Mr4ParseError(ValueError):
 
 
 @dataclass(frozen=True)
-class SourceLinkage:
-    source_path: str
-    source_name: str
-    size_bytes: int
-    sha256: str
-    source_id: str
-
-
-@dataclass(frozen=True)
 class FieldValue:
     name: str
     raw_value: str
@@ -79,43 +78,6 @@ class SignalDescriptor:
     columns: tuple[str, ...]
     raw_values: tuple[tuple[str | None, ...], ...]
     unknown_semantics: bool
-
-
-@dataclass(frozen=True)
-class ParserProvenance:
-    parser_id: str
-    parser_version: str
-    contract_id: str
-    contract_version: str
-    source_id: str
-    run_id: str
-
-
-def sha256_file(path: Path) -> str:
-    with path.open("rb") as file_obj:
-        return hashlib.file_digest(file_obj, "sha256").hexdigest()
-
-
-def source_linkage(path: Path) -> SourceLinkage:
-    resolved = path.resolve()
-    digest = sha256_file(resolved)
-    return SourceLinkage(
-        source_path=str(resolved),
-        source_name=path.name,
-        size_bytes=resolved.stat().st_size,
-        sha256=digest,
-        source_id=f"src_sha256_{digest}",
-    )
-
-
-def stable_run_id(*, source_id: str, parser_version: str, contract_version: str) -> str:
-    payload = {
-        "source_id": source_id,
-        "parser_version": parser_version,
-        "contract_version": contract_version,
-    }
-    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
-    return "parse_sha256_" + hashlib.sha256(encoded).hexdigest()
 
 
 def stable_signal_id(source_id: str, vendor_name: str) -> str:

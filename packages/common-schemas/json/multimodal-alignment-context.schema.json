@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/multimodal-alignment-context.schema.json",
+  "title": "MultimodalAlignmentContext",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "modality_id",
+    "time_base",
+    "sync_source",
+    "offset_seconds",
+    "drift_ppm",
+    "sync_status",
+    "availability",
+    "quality",
+    "evidence_refs"
+  ],
+  "properties": {
+    "modality_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "time_base": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sync_source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "offset_seconds": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "drift_ppm": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "sync_status": {
+      "enum": [
+        "NOT_VERIFIED",
+        "VERIFIED",
+        "UNAVAILABLE"
+      ]
+    },
+    "availability": {
+      "enum": [
+        "AVAILABLE",
+        "UNAVAILABLE",
+        "PARTIAL"
+      ]
+    },
+    "quality": {
+      "enum": [
+        "NOT_VERIFIED",
+        "GOOD",
+        "WARNING",
+        "UNUSABLE"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "sync_status": {
+            "const": "NOT_VERIFIED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "offset_seconds": {
+            "type": "null"
+          },
+          "drift_ppm": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "sync_status": {
+            "const": "UNAVAILABLE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "offset_seconds": {
+            "type": "null"
+          },
+          "drift_ppm": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

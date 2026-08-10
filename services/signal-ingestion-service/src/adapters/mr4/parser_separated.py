@@ -15,13 +15,15 @@ from pathlib import Path
 
 import yaml
 
-from adapters.mr4.models import (
-    FieldValue,
-    Mr4ParseError,
+from adapters.common.provenance import (
     ParserProvenance,
     SourceLinkage,
     source_linkage,
     stable_run_id,
+)
+from adapters.mr4.models import (
+    FieldValue,
+    Mr4ParseError,
     stable_signal_id,
     SeparatedLayoutProfile,
     SeparatedSignal,

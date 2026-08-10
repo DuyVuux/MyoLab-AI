@@ -11,14 +11,16 @@ from io import StringIO
 from pathlib import Path
 
 from adapters.mr4.contracts import SingleCsvContract, MR4_SINGLE_CSV_V0_1
-from adapters.mr4.models import (
-    FieldValue,
-    Mr4ParseError,
+from adapters.common.provenance import (
     ParserProvenance,
-    SignalDescriptor,
     SourceLinkage,
     source_linkage,
     stable_run_id,
+)
+from adapters.mr4.models import (
+    FieldValue,
+    Mr4ParseError,
+    SignalDescriptor,
     stable_signal_id,
 )
 

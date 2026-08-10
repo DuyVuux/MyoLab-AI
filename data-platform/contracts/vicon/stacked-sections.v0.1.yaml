@@ -1,0 +1,46 @@
+contract_id: VICON_STACKED_SECTIONS_V0_1
+version: 0.1.0
+status: ENGINEERING_BASELINE
+source_basis: Motion_Lab_CSV_Architecture_observed_structure
+scope:
+  parse_supported_sections:
+    - Events
+    - Devices
+    - Model Outputs
+    - Trajectories
+  preserve_evidence_only_sections:
+    - Gait Cycle Parameters
+  generic_vicon_replacement: false
+  biomechanics_interpretation: false
+section_layouts:
+  Events:
+    sampling_rate_row: 1
+    header_rows: 1
+    column_header_index: 0
+    units_index: null
+  Devices:
+    sampling_rate_row: 1
+    header_rows: 3
+    column_header_index: 1
+    units_index: 2
+  Model Outputs:
+    sampling_rate_row: 1
+    header_rows: 3
+    column_header_index: 1
+    units_index: 2
+  Trajectories:
+    sampling_rate_row: 1
+    header_rows: 3
+    column_header_index: 1
+    units_index: 2
+invariants:
+  raw_source_immutable: true
+  preserve_multirow_headers: true
+  preserve_units: true
+  preserve_missing_cells: true
+  x_y_z_to_anatomical_plane: NOT_VERIFIED
+  interpolation_at_raw_or_context_parse: forbidden
+  resampling_at_context_parse: forbidden
+unknown_semantics:
+  action: FAIL_CLOSED_OR_PRESERVE_EVIDENCE_ONLY_AS_DECLARED
+  silent_guess: forbidden
