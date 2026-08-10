@@ -1,0 +1,37 @@
+{
+  "day": 14,
+  "title": "Vendor-to-Canonical Channel Ontology & Metadata Completeness Policy",
+  "engineering_validation": "PASS",
+  "final_status": "READY_WITH_LIMITATIONS",
+  "automated_tests": {
+    "passed": 46,
+    "failed": 0
+  },
+  "ood_readiness_level": "METADATA_CONTRACT_ONLY",
+  "ssl_readiness_level": "DATA_PROVENANCE_POLICY_ONLY",
+  "day11_retention_policy_backfilled": true,
+  "site_alias_inventory_complete": false,
+  "site_layout_geometry_verified": false,
+  "ood_model_executed": false,
+  "ssl_training_executed": false,
+  "raw_patient_data_read": false,
+  "limitations": [
+    "Live monorepo after user-specific DAY11/DAY12 changes is not available inside this build environment.",
+    "Full site vendor alias inventory is not verified.",
+    "Electrode geometry/placement/layout identity remains site-not-verified."
+  ],
+  "cross_day_baseline_staging": {
+    "passed": 218,
+    "failed": 0,
+    "scope": "DAY09-DAY14 baseline handoff overlay"
+  },
+  "upstream_day13_live_state": {
+    "source": "USER_REPORTED",
+    "status": "PASS",
+    "day13_tests": "40/40",
+    "legacy_regressions": "PASS"
+  },
+  "live_repo_day14_regression": "NOT_RUN_BY_BUILDER",
+  "manifest_scoped_validation": true,
+  "mapping_policy": "EXACT_APPROVED_ALIAS_ONLY"
+}

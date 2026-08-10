@@ -1,0 +1,15 @@
+day: 14
+review_status: PENDING
+reviewer: null
+checks:
+  day13_live_regression_passed: null
+  day11_retention_policy_backfill_present: null
+  vendor_mapping_exact_only_confirmed: null
+  no_fuzzy_anatomy_or_side_inference: null
+  site_alias_inventory_complete: false
+  site_alias_inventory_status: NOT_VERIFIED
+  site_layout_geometry_verified: false
+  site_layout_geometry_status: NOT_VERIFIED
+  ood_model_or_score_introduced: false
+  ssl_training_authorized: false
+notes: []

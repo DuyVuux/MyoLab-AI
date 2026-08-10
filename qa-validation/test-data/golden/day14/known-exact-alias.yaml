@@ -1,0 +1,5 @@
+vendor_signal_name: Ultium_EMG-LT_BICEPS_FEM.
+expected:
+  mapping_status: MAPPED
+  muscle: BICEPS_FEMORIS
+  side: LEFT

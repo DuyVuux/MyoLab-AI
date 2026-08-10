@@ -1,0 +1,5 @@
+profile_id: SEMG_QC_CONTEXT
+metadata:
+  source_record_id: src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  vendor_signal_name: Ultium_EMG-UNKNOWN_CHANNEL
+expected_status: WARNING

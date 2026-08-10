@@ -1,0 +1,4 @@
+vendor_signal_name: Ultium_EMG-UNKNOWN_CHANNEL
+expected:
+  mapping_status: UNMAPPED
+  side: UNKNOWN

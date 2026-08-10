@@ -1,0 +1,3 @@
+vendor_signal_name: ultium_emg-lt_biceps_fem.
+expected_mapping_status: UNMAPPED
+reason: case-insensitive fuzzy mapping is forbidden

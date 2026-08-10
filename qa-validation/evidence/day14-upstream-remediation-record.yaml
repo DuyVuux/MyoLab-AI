@@ -1,0 +1,12 @@
+remediation_id: DAY14-RM-001
+source_day: 11
+detected_at_day: 14
+artifact: data-platform/storage/unlabeled-corpus-retention-policy.v0.1.md
+issue: User confirmed artifact missing from live repository after DAY13 integration.
+action: Backfill exact policy from original DAY11 handoff package.
+ownership: DAY11_TECHNOLOGY_AUGMENTATION
+scope_change_to_day14: false
+training_authorization_changed: false
+ssl_readiness_after_repair: DATA_PROVENANCE_POLICY_ONLY
+source_policy_sha256: a0f69950ca6a83d199e9fb4f2af86e56b2488472e448539be2e34ea9d9a22191
+copied_unchanged_from_original_day11_handoff: true

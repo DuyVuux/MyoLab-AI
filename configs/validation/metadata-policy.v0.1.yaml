@@ -1,0 +1,67 @@
+policy_id: motionlab-metadata-completeness
+version: 0.1.0
+status: ENGINEERING_BASELINE
+semantics:
+  OPTIONAL: absence does not alter this profile completeness result
+  WARNING_IF_MISSING: continue only with explicit limitation/review
+  FAIL_IF_MISSING: profile readiness is blocked; do not auto-fill
+profiles:
+  INGESTION_BASE:
+    purpose: minimum source/canonical integrity before downstream ingestion handoff
+    fields:
+      source_record_id:
+        requirement: FAIL_IF_MISSING
+      vendor_signal_name:
+        requirement: FAIL_IF_MISSING
+      sampling_rate_hz:
+        requirement: FAIL_IF_MISSING
+      unit:
+        requirement: FAIL_IF_MISSING
+      canonical_muscle_id:
+        requirement: OPTIONAL
+      side:
+        requirement: OPTIONAL
+      protocol_id:
+        requirement: OPTIONAL
+      task:
+        requirement: OPTIONAL
+      channel_layout_id:
+        requirement: OPTIONAL
+  SEMG_QC_CONTEXT:
+    purpose: context completeness for channel-aware QC; basic structural QC may remain possible with warnings
+    fields:
+      source_record_id:
+        requirement: FAIL_IF_MISSING
+      vendor_signal_name:
+        requirement: FAIL_IF_MISSING
+      canonical_muscle_id:
+        requirement: WARNING_IF_MISSING
+      side:
+        requirement: WARNING_IF_MISSING
+      protocol_id:
+        requirement: WARNING_IF_MISSING
+      task:
+        requirement: WARNING_IF_MISSING
+      channel_layout_id:
+        requirement: WARNING_IF_MISSING
+  PROTOCOL_METRIC_CONTEXT:
+    purpose: strict context for protocol-dependent downstream metric eligibility; not a clinical threshold
+      policy
+    fields:
+      source_record_id:
+        requirement: FAIL_IF_MISSING
+      canonical_muscle_id:
+        requirement: FAIL_IF_MISSING
+      side:
+        requirement: FAIL_IF_MISSING
+      protocol_id:
+        requirement: FAIL_IF_MISSING
+      task:
+        requirement: FAIL_IF_MISSING
+      channel_layout_id:
+        requirement: WARNING_IF_MISSING
+safety:
+  autofill_missing_metadata: false
+  infer_muscle_from_unapproved_vendor_name: false
+  infer_side_from_unapproved_vendor_name: false
+  treat_pathology_as_metadata_failure: false

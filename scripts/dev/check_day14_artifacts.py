@@ -1,30 +1,52 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
+import hashlib
+import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-REQUIRED = [
-    "docs/plans/DAY14_EXECUTION_PLAN.md",
-    "docs/06-ai-signal-processing/technical-confidence-spec.md",
-    "services/inference-service/confidence/technical_confidence_v0.1.yaml",
-    "services/inference-service/src/confidence.py",
-    "services/inference-service/src/explainability.py",
-    "services/inference-service/src/result_formatter.py",
-    "packages/semg-core/semg_core/technical_confidence.py",
-    "packages/semg-core/semg_core/safety_wording.py",
-    "packages/common-schemas/json/explainable-inference-result.schema.json",
-    "scripts/data/run_explainable_inference.py",
-    "qa-validation/evidence/day14-explainable-inference.json",
-    "mlops/registry/confidence_engines.yaml",
-]
+
+def sha256_file(path: Path) -> str:
+    with path.open("rb") as file_obj:
+        return hashlib.file_digest(file_obj, "sha256").hexdigest()
+
+
+def find_pack_root(start: Path) -> Path:
+    for parent in [start, *start.parents]:
+        if (parent / "INTEGRATION_MANIFEST.json").exists():
+            return parent
+    raise SystemExit("DAY14 package root not found")
 
 
 def main() -> int:
-    missing = [item for item in REQUIRED if not (ROOT / item).is_file()]
-    if missing:
-        print("Thiếu artifact Day 14:\n" + "\n".join(f"- {item}" for item in missing))
-        return 1
-    print("Day 14 artifact check passed")
-    return 0
+    pack_root = find_pack_root(Path(__file__).resolve())
+    repo_root = pack_root / "repo_patch"
+    manifest = json.loads(
+        (pack_root / "INTEGRATION_MANIFEST.json").read_text(encoding="utf-8")
+    )
+    failures: list[str] = []
+    for item in manifest["managed_artifacts"]:
+        path = repo_root / item["path"]
+        if not path.is_file():
+            failures.append(f"missing: {item['path']}")
+            continue
+        if sha256_file(path) != item["sha256"]:
+            failures.append(f"hash mismatch: {item['path']}")
+
+    forbidden = {
+        ".npz", ".npy", ".mat", ".c3d", ".joblib", ".pkl", ".pickle",
+        ".pt", ".pth", ".onnx",
+    }
+    for item in manifest["managed_artifacts"]:
+        if Path(item["path"]).suffix.lower() in forbidden:
+            failures.append(f"DAY14 introduced forbidden artifact: {item['path']}")
+
+    print(json.dumps({
+        "managed": len(manifest["managed_artifacts"]),
+        "failures": failures,
+        "status": "PASS" if not failures else "FAIL",
+    }, indent=2))
+    return 1 if failures else 0
 
 
 if __name__ == "__main__":

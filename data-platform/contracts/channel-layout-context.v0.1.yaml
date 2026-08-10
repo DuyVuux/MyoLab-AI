@@ -1,0 +1,79 @@
+schema_version: channel-layout-context.v0.1
+status: OOD_METADATA_CONTRACT_READINESS_ONLY
+purpose: preserve channel/electrode layout facts for later distribution-support and OOD analysis
+required_fields:
+- mapping_version
+- geometry_status
+- placement_status
+- readiness_level
+fields:
+  layout_id:
+    type:
+    - string
+    - 'null'
+    rule: explicit only; never synthesized from vendor name
+  mapping_version:
+    type: string
+    rule: required and versioned
+  channel_count:
+    type:
+    - integer
+    - 'null'
+    minimum: 1
+  geometry_status:
+    enum:
+    - VERIFIED
+    - DOCUMENTED
+    - NOT_VERIFIED
+    - UNKNOWN
+  placement_status:
+    enum:
+    - VERIFIED
+    - DOCUMENTED
+    - NOT_VERIFIED
+    - UNKNOWN
+  electrode_model:
+    type:
+    - string
+    - 'null'
+  inter_electrode_distance_mm:
+    type:
+    - number
+    - 'null'
+    exclusiveMinimum: 0
+  orientation_description:
+    type:
+    - string
+    - 'null'
+  evidence_refs:
+    type: array
+    items: string
+  readiness_level:
+    const: METADATA_CONTRACT_ONLY
+default_site_state:
+  layout_id: null
+  mapping_version: motionlab-vendor-map.v0.1
+  channel_count: null
+  geometry_status: NOT_VERIFIED
+  placement_status: NOT_VERIFIED
+  electrode_model: null
+  inter_electrode_distance_mm: null
+  orientation_description: null
+  evidence_refs: []
+  readiness_level: METADATA_CONTRACT_ONLY
+future_shift_axes:
+- layout_id
+- mapping_version
+- channel_count
+- electrode_model
+- geometry_status
+- placement_status
+forbidden_at_day14:
+- ood_score
+- ood_probability
+- shift_threshold
+- reference_distribution_fit
+- automatic_domain_adaptation
+- pathology_from_ood
+interpretation_guard: Different/unknown layout is a domain-support fact, not a pathology label and not
+  a signal-quality diagnosis.

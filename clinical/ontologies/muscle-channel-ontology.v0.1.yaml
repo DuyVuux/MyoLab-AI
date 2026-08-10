@@ -1,0 +1,45 @@
+ontology_id: motionlab-muscle-channel-ontology
+version: 0.1.0
+mapping_version: motionlab-vendor-map.v0.1
+status: ENGINEERING_BASELINE_SITE_COVERAGE_NOT_VERIFIED
+principles:
+  match_policy: EXACT_APPROVED_ALIAS_ONLY
+  fuzzy_matching_allowed: false
+  unknown_must_abstain: true
+  vendor_text_preserved: true
+  site_mapping_coverage_complete: false
+canonical_muscles:
+- muscle_id: BICEPS_FEMORIS
+  preferred_name: Biceps femoris
+  status: CONTROLLED_VOCABULARY
+- muscle_id: RECTUS_FEMORIS
+  preferred_name: Rectus femoris
+  status: CONTROLLED_VOCABULARY
+- muscle_id: VASTUS_LATERALIS
+  preferred_name: Vastus lateralis
+  status: CONTROLLED_VOCABULARY
+- muscle_id: TIBIALIS_ANTERIOR
+  preferred_name: Tibialis anterior
+  status: CONTROLLED_VOCABULARY
+- muscle_id: GASTROCNEMIUS_MEDIALIS
+  preferred_name: Gastrocnemius medialis
+  status: CONTROLLED_VOCABULARY
+- muscle_id: BICEPS_BRACHII
+  preferred_name: Biceps brachii
+  status: CONTROLLED_VOCABULARY
+vendor_mappings:
+- vendor: Noraxon MR4
+  vendor_signal_name: Ultium_EMG-LT_BICEPS_FEM.
+  match_mode: EXACT
+  canonical_muscle_id: BICEPS_FEMORIS
+  side: LEFT
+  signal_role: SEMG
+  evidence_status: DOCUMENTED
+  evidence_note: Exact example appears in the current Motion Lab CSV Architecture; full site alias inventory
+    remains NOT_VERIFIED.
+unmapped_policy:
+  mapping_status: UNMAPPED
+  canonical_muscle_id: null
+  side: UNKNOWN
+  reason_code: VENDOR_ALIAS_NOT_IN_APPROVED_MAPPING
+  action: preserve vendor name and route to mapping review; do not fuzzy guess
