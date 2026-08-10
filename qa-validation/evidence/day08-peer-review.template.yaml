@@ -1,0 +1,51 @@
+version: '0.1'
+day: DAY_08
+gate: GATE_A
+status: PENDING
+reviewer_id: null
+reviewed_at: null
+checks:
+- id: PR-01
+  question: Source-of-truth hierarchy is respected; no lower-priority source overrides
+    SRS/PRD.
+  result: PENDING
+  evidence: []
+- id: PR-02
+  question: All FR/NFR/AC are present exactly once in the freeze matrix.
+  result: PENDING
+  evidence: []
+- id: PR-03
+  question: Unknown/TBD/NOT_VERIFIED/DISCOVERY_REQUIRED states remain explicit.
+  result: PENDING
+  evidence: []
+- id: PR-04
+  question: P0 success definition measures toil/quality/traceability rather than model
+    accuracy alone.
+  result: PENDING
+  evidence: []
+- id: PR-05
+  question: AC-10 is not converted into a >=50% commitment without measured baseline/pilot
+    design.
+  result: PENDING
+  evidence: []
+- id: PR-06
+  question: Privacy path is adequate for the next planned data class.
+  result: PENDING
+  evidence: []
+- id: PR-07
+  question: Pathology/body habitus is not represented as artifact/noise by default.
+  result: PENDING
+  evidence: []
+- id: PR-08
+  question: MFCV remains optional/site-gated and Knee remains discovery-gated.
+  result: PENDING
+  evidence: []
+- id: PR-09
+  question: No public healthy dataset is used as Vinmec clinical-effectiveness evidence.
+  result: PENDING
+  evidence: []
+- id: PR-10
+  question: Gate decision is supported by evidence, not schedule pressure.
+  result: PENDING
+  evidence: []
+final_comment: null

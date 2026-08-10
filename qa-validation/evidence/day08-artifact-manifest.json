@@ -1,0 +1,122 @@
+{
+  "version": "0.1",
+  "day": "DAY_08",
+  "scope": "DAY08_MANAGED_ARTIFACTS_ONLY",
+  "files": [
+    {
+      "path": "data-platform/contracts/requirements-freeze.v0.2.yaml",
+      "sha256": "a49e0519873b1eb75ee75961adb8858c6574cd5c9e90809a2093305a3da5d413",
+      "size_bytes": 55510
+    },
+    {
+      "path": "docs/00-executive/gates/GATE-A-requirements-readiness.md",
+      "sha256": "a8d1605ea6885a8517021d6a8573474e7063c6b0c5d228321f50c2fb54a93b60",
+      "size_bytes": 5520
+    },
+    {
+      "path": "docs/00-executive/rebaseline/day08-open-evidence-carry-forward.md",
+      "sha256": "19856e5dd378555f60fa3454da44c4dd3504731e4334b53e4a5424470a0d0877",
+      "size_bytes": 2789
+    },
+    {
+      "path": "docs/01-product/PRD-motionlab-rebaseline-delta.v0.2.md",
+      "sha256": "99d0d852c619a9d4b0a75767104c7bdece7e277be6dbeadbf1134114193444fc",
+      "size_bytes": 9619
+    },
+    {
+      "path": "docs/03-architecture/SRS-traceability-baseline.v0.2.md",
+      "sha256": "8d93772e5e73ddc5aa8aea8b4d3f939a2ee664dcb8bed347803deca2f793485b",
+      "size_bytes": 11023
+    },
+    {
+      "path": "packages/common-schemas/json/gate-a-readiness.schema.json",
+      "sha256": "b1754f0fa4ce9c8e1600b479ef84e5662a71f2f4e86ff04b851ca1d1685fd091",
+      "size_bytes": 3077
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day08_requirements_gate.py",
+      "sha256": "d57e909954d8b4c712ed63cc3575b5fdb5338e2610430369c4f50c44e427c9cb",
+      "size_bytes": 7150
+    },
+    {
+      "path": "qa-validation/evidence/day08-document-quality-review.json",
+      "sha256": "ddb4becc82e5a198b76116f67d76e8214fcaba9d719b5db768bb0187a0c4171c",
+      "size_bytes": 845
+    },
+    {
+      "path": "qa-validation/evidence/day08-gate-a-evaluation.json",
+      "sha256": "b36af3a2d9aef1489df50b97ad86cdb1fef9f9c61ee258b627e783420e371dc0",
+      "size_bytes": 400
+    },
+    {
+      "path": "qa-validation/evidence/day08-gate-a-evidence.yaml",
+      "sha256": "4a53bbc91dd252dc06e0dce7f9a9ebeab4916fe9022f5ef46416608a72d9420b",
+      "size_bytes": 3720
+    },
+    {
+      "path": "qa-validation/evidence/day08-peer-review.template.yaml",
+      "sha256": "465b844eb985b38c969384f422adc27bc15fa3ae436183f74ec2a9d4ef126ab5",
+      "size_bytes": 1430
+    },
+    {
+      "path": "qa-validation/evidence/day08-source-hash-ledger.json",
+      "sha256": "83654fe0d097564d658c77b374f12586c994d344878f80e9567b9617cff1c9ff",
+      "size_bytes": 982
+    },
+    {
+      "path": "qa-validation/evidence/day08-validation-report.json",
+      "sha256": "b70d2f4c6525ff270fa336d4acc6f85cf894552f566feb2ec6743f7a718bf970",
+      "size_bytes": 1410
+    },
+    {
+      "path": "qa-validation/requirements/day08-acceptance-criteria.md",
+      "sha256": "56cdb888ec7e8b83a27e170daffc07198e42be0fe3b1e606a19a0d5214311c8e",
+      "size_bytes": 1397
+    },
+    {
+      "path": "qa-validation/test-data/day08/gate-a-negative-missing-privacy.yaml",
+      "sha256": "2676bfc2851be78d2d969072423a7819f48e32813fce4c31c1e4d85aa8eb60bb",
+      "size_bytes": 3852
+    },
+    {
+      "path": "qa-validation/test-data/day08/gate-a-positive-test-only.yaml",
+      "sha256": "00ceaba284fcfa1cb633d81705c6c002000a902d9b42f2544e86a1129630a723",
+      "size_bytes": 3836
+    },
+    {
+      "path": "qa-validation/traceability/day08-requirement-freeze-matrix.csv",
+      "sha256": "9381ba68a613fa4540c98ce40d46e5bef4c14d82d4783fd6da75fdd5ffd4715b",
+      "size_bytes": 27547
+    },
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_bytes": 1
+    },
+    {
+      "path": "scripts/dev/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_bytes": 1
+    },
+    {
+      "path": "scripts/dev/check_day08_artifacts.py",
+      "sha256": "261639ce9ef5f8ad8adc6e079226f055a63b23feeb01ffc596dc0b349abac531",
+      "size_bytes": 1150
+    },
+    {
+      "path": "scripts/dev/evaluate_day08_gate_a.py",
+      "sha256": "4ab59e06b5bd76556fe47e8fd3676816a1452bf61e4966c764789924e2891460",
+      "size_bytes": 2091
+    },
+    {
+      "path": "scripts/dev/run_day08_checks.sh",
+      "sha256": "7fb2e05bcbe36d4b78b205daf52f1dff445179a1e9f6139123d7ee88e61bac7b",
+      "size_bytes": 1252
+    },
+    {
+      "path": "scripts/dev/validate_day08_requirements_gate.py",
+      "sha256": "c2d8e4eaf855b9b9dceb10983f91fdcc0ee3bf9d07e732d0f715c5e3e647703e",
+      "size_bytes": 3448
+    }
+  ]
+}

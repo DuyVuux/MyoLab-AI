@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "day": "DAY_08",
+  "algorithm": "SHA-256",
+  "note": "Hashes cover available non-patient authoritative/quality sources. DOCX sources are referenced by project authority but not duplicated into the handoff.",
+  "sources": [
+    {
+      "name": "MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0(2).md",
+      "sha256": "c6b8fb738e26423817c25033a1ff0b19dc72ba3d9871cd871f9d346e478f03e7",
+      "size_bytes": 460993
+    },
+    {
+      "name": "Motion_Lab_CSV_Architecture(1).md",
+      "sha256": "eca1132b86a311faa1d1759b77374433ce971626f6d888d12611bf937ee9cab1",
+      "size_bytes": 12289
+    },
+    {
+      "name": "semg_mfcv_ai_project_skeleton(1).md",
+      "sha256": "12de751ec1511bbe4bb35b6a2f08d0ce29f73c524cc641d0aa4f9129dce5d9e5",
+      "size_bytes": 235842
+    },
+    {
+      "name": "Pasted markdown(5).md",
+      "sha256": "872edff0a1d1928bab67f23767edf00886771ec460f8393b0e93af38b4597a83",
+      "size_bytes": 30277
+    }
+  ]
+}

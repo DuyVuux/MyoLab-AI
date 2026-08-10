@@ -1,0 +1,33 @@
+{
+  "day": "DAY_08",
+  "engineering_validation": "PASS",
+  "gate_a_decision": "BLOCKED_DISCOVERY",
+  "day_status": "BLOCKED_WITH_EVIDENCE",
+  "requirements_count": 79,
+  "tests_passed": true,
+  "test_count": 32,
+  "training_executed": false,
+  "raw_patient_data_read": false,
+  "clinical_validation_claimed": false,
+  "mfcv_site_eligibility": "NOT_VERIFIED",
+  "knee_algorithm_authorized": false,
+  "notes": [
+    "Gate is evidence-gated; engineering PASS does not promote Gate A."
+  ],
+  "automated_test_summary": "32/32 PASS",
+  "block_reason": "Current integrated repo/site evidence and manual review are not provable from isolated pack.",
+  "tool_logs": [
+    {
+      "returncode": 0,
+      "stdout_tail": "[PASS] DAY08 requirement freeze and Gate A artifacts are internally valid\n"
+    },
+    {
+      "returncode": 0,
+      "stdout_tail": "................................                                         [100%]\n32 passed in 1.27s\n"
+    },
+    {
+      "returncode": 0,
+      "stdout_tail": "{\"gate_decision\": \"BLOCKED_DISCOVERY\", \"day_status\": \"BLOCKED_WITH_EVIDENCE\", \"blockers\": [\"GA-01: NOT_VERIFIED\", \"GA-02: NOT_VERIFIED\", \"GA-03: NOT_VERIFIED\", \"GA-09: NOT_VERIFIED\", \"GA-10: NOT_VERIFIED\", \"MANUAL_REVIEW: PENDING\"], \"source\": \"/mnt/data/DAY08_REQUIREMENTS_V02_FREEZE_GATE_A_HANDOFF/repo_patch/qa-validation/evidence/day08-gate-a-evidence.yaml\"}\n"
+    }
+  ]
+}

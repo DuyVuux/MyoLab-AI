@@ -1,0 +1,101 @@
+version: '0.1'
+gate_id: GATE_A
+day: DAY_08
+evaluation_mode: EVIDENCE_GATED
+criteria:
+- id: GA-01
+  name: DAY07 outputs accepted and regression remains green
+  critical: true
+  status: NOT_VERIFIED
+  evidence_refs: []
+  why: DAY08 input contract requires accepted DAY07 outputs, not merely copied files.
+- id: GA-02
+  name: Current workflow map is available with explicit evidence boundaries
+  critical: true
+  status: NOT_VERIFIED
+  evidence_refs: []
+  why: Requirement freeze cannot invent the current MotionLab workflow.
+- id: GA-03
+  name: Privacy/de-identification path is adequate for the data class planned next
+  critical: true
+  status: NOT_VERIFIED
+  evidence_refs: []
+  why: Real-data implementation must not start with unresolved governance.
+- id: GA-04
+  name: Minimum real-data request/evidence package is defined
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  evidence_refs:
+  - data-platform/catalog/motionlab-evidence-inventory.v0.1.yaml
+  - clinical/discovery/vinmec-data-request-pack.v0.1.md
+  why: DAY06 established the request package design; site receipt remains separate.
+- id: GA-05
+  name: Artifact-vs-physiology taxonomy exists and preserves physiology
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  evidence_refs:
+  - clinical/quality/qc-taxonomy.v0.1.yaml
+  - clinical/quality/artifact-vs-physiology-guidance.v0.1.md
+  why: P0 must not turn pathology or body habitus into noise by default.
+- id: GA-06
+  name: P0 success definition is explicit and measurable without invented baseline
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  evidence_refs:
+  - docs/01-product/PRD-motionlab-rebaseline-delta.v0.2.md
+  why: Gate A must define success before implementation begins.
+- id: GA-07
+  name: All 57 FR + 12 NFR + 10 AC have DAY08 design mapping
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  evidence_refs:
+  - data-platform/contracts/requirements-freeze.v0.2.yaml
+  - qa-validation/traceability/day08-requirement-freeze-matrix.csv
+  why: No requirement may silently disappear at the phase boundary.
+- id: GA-08
+  name: AC-10 remains evidence-gated; no >=50% commitment is fabricated
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  evidence_refs:
+  - docs/03-architecture/SRS-traceability-baseline.v0.2.md
+  why: Pilot success must compare against measured baseline and a target fixed before
+    pilot.
+- id: GA-09
+  name: Legacy disposition does not promote old public-data performance into site
+    evidence
+  critical: true
+  status: NOT_VERIFIED
+  evidence_refs: []
+  why: DAY07 semantic review must be confirmed in the integrated repository.
+- id: GA-10
+  name: No unresolved critical source conflict is silently reconciled
+  critical: true
+  status: NOT_VERIFIED
+  evidence_refs: []
+  why: Higher-priority source must win or a decision record must exist.
+- id: GA-11
+  name: MFCV remains optional and site eligibility remains NOT_VERIFIED unless evidence
+    exists
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  evidence_refs:
+  - docs/01-product/PRD-motionlab-rebaseline-delta.v0.2.md
+  why: Sixteen sensors do not prove propagation geometry/IED/alignment.
+- id: GA-12
+  name: Knee/ACL remains discovery-gated; no correction algorithm authorized
+  critical: true
+  status: VERIFIED_DOCUMENTED
+  evidence_refs:
+  - docs/01-product/PRD-motionlab-rebaseline-delta.v0.2.md
+  why: DR-K01..DR-K08 must precede algorithm design.
+manual_review:
+  status: PENDING
+  reviewer_id: null
+  reviewed_at: null
+  evidence_scope_reviewed: []
+  notes: null
+decision:
+  gate_decision: BLOCKED_DISCOVERY
+  day_status: BLOCKED_WITH_EVIDENCE
+  reason: Pack cannot prove current integrated-repository acceptance, privacy approval,
+    workflow evidence, or conflict review without site/repo review.

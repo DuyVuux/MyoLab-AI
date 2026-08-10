@@ -1,0 +1,107 @@
+criteria:
+- critical: true
+  evidence_refs:
+  - TEST_FIXTURE_ONLY
+  id: GA-01
+  name: DAY07 outputs accepted and regression remains green
+  status: VERIFIED_DOCUMENTED
+  why: DAY08 input contract requires accepted DAY07 outputs, not merely copied files.
+- critical: true
+  evidence_refs:
+  - TEST_FIXTURE_ONLY
+  id: GA-02
+  name: Current workflow map is available with explicit evidence boundaries
+  status: VERIFIED_DOCUMENTED
+  why: Requirement freeze cannot invent the current MotionLab workflow.
+- critical: true
+  evidence_refs:
+  - TEST_FIXTURE_ONLY
+  id: GA-03
+  name: Privacy/de-identification path is adequate for the data class planned next
+  status: NOT_VERIFIED
+  why: Real-data implementation must not start with unresolved governance.
+- critical: true
+  evidence_refs:
+  - data-platform/catalog/motionlab-evidence-inventory.v0.1.yaml
+  - clinical/discovery/vinmec-data-request-pack.v0.1.md
+  id: GA-04
+  name: Minimum real-data request/evidence package is defined
+  status: VERIFIED_DOCUMENTED
+  why: DAY06 established the request package design; site receipt remains separate.
+- critical: true
+  evidence_refs:
+  - clinical/quality/qc-taxonomy.v0.1.yaml
+  - clinical/quality/artifact-vs-physiology-guidance.v0.1.md
+  id: GA-05
+  name: Artifact-vs-physiology taxonomy exists and preserves physiology
+  status: VERIFIED_DOCUMENTED
+  why: P0 must not turn pathology or body habitus into noise by default.
+- critical: true
+  evidence_refs:
+  - docs/01-product/PRD-motionlab-rebaseline-delta.v0.2.md
+  id: GA-06
+  name: P0 success definition is explicit and measurable without invented baseline
+  status: VERIFIED_DOCUMENTED
+  why: Gate A must define success before implementation begins.
+- critical: true
+  evidence_refs:
+  - data-platform/contracts/requirements-freeze.v0.2.yaml
+  - qa-validation/traceability/day08-requirement-freeze-matrix.csv
+  id: GA-07
+  name: All 57 FR + 12 NFR + 10 AC have DAY08 design mapping
+  status: VERIFIED_DOCUMENTED
+  why: No requirement may silently disappear at the phase boundary.
+- critical: true
+  evidence_refs:
+  - docs/03-architecture/SRS-traceability-baseline.v0.2.md
+  id: GA-08
+  name: AC-10 remains evidence-gated; no >=50% commitment is fabricated
+  status: VERIFIED_DOCUMENTED
+  why: Pilot success must compare against measured baseline and a target fixed before
+    pilot.
+- critical: true
+  evidence_refs:
+  - TEST_FIXTURE_ONLY
+  id: GA-09
+  name: Legacy disposition does not promote old public-data performance into site
+    evidence
+  status: VERIFIED_DOCUMENTED
+  why: DAY07 semantic review must be confirmed in the integrated repository.
+- critical: true
+  evidence_refs:
+  - TEST_FIXTURE_ONLY
+  id: GA-10
+  name: No unresolved critical source conflict is silently reconciled
+  status: VERIFIED_DOCUMENTED
+  why: Higher-priority source must win or a decision record must exist.
+- critical: true
+  evidence_refs:
+  - docs/01-product/PRD-motionlab-rebaseline-delta.v0.2.md
+  id: GA-11
+  name: MFCV remains optional and site eligibility remains NOT_VERIFIED unless evidence
+    exists
+  status: VERIFIED_DOCUMENTED
+  why: Sixteen sensors do not prove propagation geometry/IED/alignment.
+- critical: true
+  evidence_refs:
+  - docs/01-product/PRD-motionlab-rebaseline-delta.v0.2.md
+  id: GA-12
+  name: Knee/ACL remains discovery-gated; no correction algorithm authorized
+  status: VERIFIED_DOCUMENTED
+  why: DR-K01..DR-K08 must precede algorithm design.
+day: DAY_08
+decision:
+  gate_decision: BLOCKED_DISCOVERY
+  day_status: BLOCKED_WITH_EVIDENCE
+  reason: TEST_FIXTURE_ONLY missing privacy
+evaluation_mode: EVIDENCE_GATED
+gate_id: GATE_A
+manual_review:
+  evidence_scope_reviewed:
+  - TEST_FIXTURE_ONLY
+  notes: Synthetic unit-test fixture; never site evidence.
+  reviewed_at: '2099-01-01T00:00:00Z'
+  reviewer_id: TEST_REVIEWER_ONLY
+  status: APPROVED
+test_fixture_only: true
+version: '0.1'

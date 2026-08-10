@@ -1,0 +1,1589 @@
+version: '0.2'
+day: DAY_08
+gate: GATE_A
+scope: SRS FR/NFR/AC requirements only
+semantics:
+  DESIGNED: Requirement has an explicit roadmap/design mapping. It does not mean implemented.
+  NOT_VALIDATED: No downstream technical/clinical validation is claimed at Gate A.
+  FROZEN: Authoritative requirement text/source is frozen for this baseline; open
+    evidence remains explicit.
+counts:
+  functional: 57
+  non_functional: 12
+  acceptance_criteria: 10
+  total: 79
+requirements:
+- requirement_id: FR-001
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: Hệ thống phải ingest được Noraxon MR4 single CSV có metadata header
+    và bảng time-series.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_09
+  - DAY_16
+  - DAY_19
+  - DAY_20
+  - DAY_60
+  - DAY_82
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-002
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: Hệ thống phải ingest được Noraxon MR4 separated export gồm info.csv
+    và các signal files độc lập.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_10
+  - DAY_17
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-003
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: 'Parser phải đọc metadata từng signal: type, name, begin_time,
+    frequency, count, units nếu tồn tại.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_65
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-004
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: Parser không được giả định mọi signal trong cùng record có cùng
+    sampling rate.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_13
+  - DAY_15
+  - DAY_29
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-005
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: Hệ thống phải kiểm tra time tăng đơn điệu và metadata count khớp
+    số dòng khi có thể.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-006
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: Hệ thống phải phân biệt và lưu đơn vị V/uV; mọi conversion phải
+    có provenance.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-007
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: Raw layer phải giữ nguyên missing values; không tự nội suy.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_11
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-008
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: Mỗi file nguồn phải có checksum/hash và source identifier.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-009
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: SHOULD
+  requirement_text: Hệ thống phải hỗ trợ Vicon stacked-section parser cho Events/Devices/Model
+    Outputs/Trajectories khi use case yêu cầu.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_18
+  - DAY_75
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-010
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §5
+  priority: MUST
+  requirement_text: Không được hard-code mapping X/Y/Z sang mặt phẳng giải phẫu nếu
+    model/coordinate convention chưa xác nhận.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_48
+  - DAY_80
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-020
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §6
+  priority: MUST
+  requirement_text: Hệ thống phải tạo canonical Session ID không chứa định danh trực
+    tiếp của bệnh nhân.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_05
+  - DAY_12
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-021
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §6
+  priority: MUST
+  requirement_text: Hệ thống phải lưu device/software version, measurement time, sampling
+    rate, channel/signal name, units và record name khi nguồn có.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-022
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §6
+  priority: MUST
+  requirement_text: Hệ thống phải hỗ trợ metadata cơ, bên trái/phải, protocol, task,
+    load/speed và clinical context khi được cung cấp.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_14
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-023
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §6
+  priority: MUST
+  requirement_text: Thiếu metadata bắt buộc phải tạo validation warning/fail theo
+    policy, không tự điền phỏng đoán.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_25
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-024
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §6
+  priority: MUST
+  requirement_text: Hệ thống phải cho phép mapping tên signal vendor sang canonical
+    muscle/channel ontology có version.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-025
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §6
+  priority: MUST
+  requirement_text: Hệ thống phải lưu trạng thái de-identification và source consent/governance
+    metadata nếu có.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_05
+  - DAY_06
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-030
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: 'QC phải hoạt động tối thiểu ở ba mức: session, channel và time-window.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_04
+  - DAY_21
+  - DAY_22
+  - DAY_30
+  - DAY_32
+  - DAY_33
+  - DAY_37
+  - DAY_39
+  - DAY_83
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-031
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: QC phải phát hiện/định lượng missing/dropout và đoạn không có
+    dữ liệu.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_23
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-032
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: QC phải phát hiện clipping/saturation theo đặc tính dữ liệu/ADC
+    nếu xác định được.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_24
+  - DAY_35
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-033
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: QC phải đánh giá baseline/noise level theo protocol.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: TBD
+  planned_days:
+  - DAY_25
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-034
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: SHOULD
+  requirement_text: QC phải có detector/indicator cho power-line interference khi
+    applicable.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: TBD
+  planned_days:
+  - DAY_26
+  - DAY_42
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-035
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: SHOULD
+  requirement_text: QC phải có detector/indicator cho motion artifact/low-frequency
+    contamination.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: TBD
+  planned_days:
+  - DAY_27
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-036
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: SHOULD
+  requirement_text: QC phải hỗ trợ flag suspected poor contact/channel abnormality;
+    không tự quy nó thành pathology.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: TBD
+  planned_days:
+  - DAY_28
+  - DAY_36
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-037
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: QC phải trả signal_quality = PASS | WARNING | FAIL và reason codes.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_31
+  - DAY_34
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-038
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: QC FAIL phải block downstream metric không supportable và đưa
+    action suggestion ở mức kỹ thuật.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: TBD
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-039
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: QC WARNING phải chuyển vào review queue; bác sĩ có thể accept,
+    reject hoặc yêu cầu reprocess/re-measure.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_52
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-040
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: Hệ thống phải lưu usable-window ratio và danh sách bad windows/channels.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: TBD
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-041
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §7
+  priority: MUST
+  requirement_text: QC phải được versioned; thay đổi threshold/rule không được làm
+    mất khả năng tái lập kết quả cũ.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: TBD
+  planned_days:
+  - DAY_38
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-050
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §8
+  priority: MUST
+  requirement_text: Preprocessing phải được cấu hình theo protocol/profile, không
+    hard-code một pipeline cho mọi bệnh nhân/task.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_40
+  - DAY_51
+  - DAY_84
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-051
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §8
+  priority: MUST
+  requirement_text: Mỗi processing step phải lưu method, parameters, version và input/output
+    reference.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_41
+  - DAY_42
+  - DAY_45
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-052
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §8
+  priority: MUST
+  requirement_text: Các bước như band-pass/notch/rectification/smoothing phải bật/tắt
+    theo config đã phê duyệt.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_43
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-053
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §8
+  priority: MUST
+  requirement_text: Không được overwrite raw signal.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-054
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §8
+  priority: MUST
+  requirement_text: Hệ thống phải hỗ trợ mask/reject window thay vì xóa dữ liệu khỏi
+    raw.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_22
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-055
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §8
+  priority: MUST
+  requirement_text: Normalization (ví dụ MVC hoặc reference khác) chỉ được áp dụng
+    khi eligibility conditions được thỏa mãn.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_44
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-056
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §8
+  priority: MUST
+  requirement_text: Nếu normalization reference không hợp lệ/không có, metric phụ
+    thuộc normalization phải trả null + reason.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-057
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §8
+  priority: MUST
+  requirement_text: Hệ thống phải cho phép bác sĩ xem raw và processed signal cạnh
+    nhau.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_55
+  - DAY_57
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-060
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §9
+  priority: MUST
+  requirement_text: Metric extraction chỉ chạy trên windows/channels đủ quality/eligibility.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_46
+  - DAY_47
+  - DAY_58
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-061
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §9
+  priority: MUST
+  requirement_text: Hệ thống phải hỗ trợ registry metric versioned; ví dụ RMS/MAV/MDF/MNF/activation
+    timing khi protocol support.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_48
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-062
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §9
+  priority: MUST
+  requirement_text: Mỗi metric phải lưu source windows, channel, preprocessing version,
+    units và eligibility result.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_50
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-063
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §9
+  priority: MUST
+  requirement_text: Không được trả giá trị 0 để thay thế cho “không tính được”; phải
+    trả null + reason code.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-064
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §9
+  priority: MUST
+  requirement_text: MFCV phải là optional capability và chỉ enable khi electrode geometry/IED/alignment/site
+    config đạt eligibility đã được xác minh.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_VERIFIED
+  planned_days:
+  - DAY_49
+  - DAY_90
+  open_questions:
+  - OQ-016
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-065
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §9
+  priority: MUST
+  requirement_text: Fatigue-related metrics nếu có phải được trình bày như evidence/context,
+    không mặc định là chẩn đoán fatigue.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_61
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-066
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §9
+  priority: MUST
+  requirement_text: 'Hệ thống phải hỗ trợ evidence bundle cho từng session: QC + processing
+    + metrics + uncertainty + limitations.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-070
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §10
+  priority: MUST
+  requirement_text: Bác sĩ phải xem được trạng thái QC tổng thể và drill-down tới
+    channel/window.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_56
+  - DAY_62
+  - DAY_63
+  - DAY_85
+  - DAY_88
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-071
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §10
+  priority: MUST
+  requirement_text: Bác sĩ phải xem raw/processed overlay hoặc side-by-side.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-072
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §10
+  priority: MUST
+  requirement_text: Bác sĩ phải xem metric kèm eligibility/confidence/reason.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_58
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-073
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §10
+  priority: MUST
+  requirement_text: Bác sĩ phải có action Accept, Override, Mark for Reprocess, Request
+    Re-measurement, Inconclusive.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_54
+  - DAY_59
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-074
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §10
+  priority: MUST
+  requirement_text: Override phải yêu cầu reason code; optional free-text note.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_53
+  - DAY_68
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-075
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §10
+  priority: MUST
+  requirement_text: 'Hệ thống phải ghi audit log: user, timestamp, before/after, reason,
+    model/config version.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-076
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §10
+  priority: MUST
+  requirement_text: Draft analysis không được chuyển trạng thái Final nếu chưa có
+    clinician approval.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-077
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §10
+  priority: MUST
+  requirement_text: Hệ thống phải phân biệt “no abnormal finding / no evidence” với
+    “insufficient data”.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-080
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §11
+  priority: MUST
+  requirement_text: Hệ thống phải ingest pressure/contact/COP signals từ Noraxon export
+    nếu available.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_64
+  - DAY_65
+  - DAY_72
+  - DAY_90
+  open_questions:
+  - OQ-008
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-081
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §11
+  priority: MUST
+  requirement_text: Module phải phân loại/assign contact theo left/right với confidence.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_66
+  - DAY_67
+  - DAY_68
+  - DAY_70
+  - DAY_71
+  - DAY_90
+  open_questions:
+  - OQ-008
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-082
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §11
+  priority: MUST
+  requirement_text: Low-confidence assignment phải abstain và vào review queue.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions:
+  - OQ-008
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-083
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §11
+  priority: MUST
+  requirement_text: Bác sĩ phải có thể sửa assignment và lưu override.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions:
+  - OQ-008
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-084
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §11
+  priority: MUST
+  requirement_text: Evaluation phải tách pathological/abnormal gait cases khỏi healthy/easy
+    cases.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_69
+  - DAY_90
+  open_questions:
+  - OQ-008
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: FR-085
+  requirement_type: FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §11
+  priority: MUST
+  requirement_text: Module không được claim chẩn đoán fall risk/diabetic foot trong
+    scope này.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-001
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Reproducibility: Cùng input + cùng config/version phải tạo cùng
+    output trong tolerance xác định.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_07
+  - DAY_19
+  - DAY_20
+  - DAY_38
+  - DAY_39
+  - DAY_41
+  - DAY_42
+  - DAY_45
+  - DAY_47
+  - DAY_51
+  - DAY_60
+  - DAY_82
+  - DAY_84
+  - DAY_89
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-002
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Traceability: 100% metrics/draft outputs có source + processing/config
+    + version.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_11
+  - DAY_12
+  - DAY_46
+  - DAY_50
+  - DAY_55
+  - DAY_65
+  - DAY_87
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-003
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Data integrity: Raw immutable; checksum validation; processed
+    data không overwrite raw.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_43
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-004
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Privacy: Không hiển thị/ghi log định danh không cần thiết; data
+    người thật phải qua policy approved.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_05
+  - DAY_33
+  - DAY_69
+  - DAY_73
+  - DAY_81
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-005
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'RBAC: Role-based access tối thiểu: operator/doctor/admin/research/technical
+    reviewer theo pilot.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_53
+  - DAY_54
+  - DAY_59
+  - DAY_62
+  - DAY_85
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-006
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Auditability: Mọi override/approval/reprocess có timestamp và
+    user.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-007
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Availability: Offline/near-offline clinical workflow không được
+    phụ thuộc cloud Internet nếu Vinmec yêu cầu on-prem.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-008
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Performance: Offline analysis phải hoàn thành đủ nhanh để giảm
+    tổng manual time; SLA cụ thể chốt sau profiling data.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_86
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-009
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Explainability: QC/abstention/metric eligibility phải có reason
+    code người dùng hiểu được.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_04
+  - DAY_21
+  - DAY_34
+  - DAY_67
+  - DAY_70
+  - DAY_88
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-010
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Compatibility: Không yêu cầu thay đổi acquisition hardware ở
+    P0.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_18
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-011
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Versioning: Data schema, QC config, preprocessing, metric registry
+    và model/rule đều versioned.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_01
+  - DAY_14
+  - DAY_35
+  - DAY_40
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: NFR-012
+  requirement_type: NON_FUNCTIONAL
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §13
+  priority: MUST
+  requirement_text: 'Failure safety: Khi parser/QC/model lỗi, hệ thống fail closed:
+    không tạo final-looking clinical result.'
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_15
+  - DAY_29
+  - DAY_31
+  - DAY_36
+  - DAY_52
+  - DAY_61
+  - DAY_72
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-01
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: Parser ingest thành công tập sample MR4 single + separated và
+    tạo canonical session không mất raw.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_09
+  - DAY_10
+  - DAY_15
+  - DAY_16
+  - DAY_17
+  - DAY_19
+  - DAY_20
+  - DAY_82
+  - DAY_89
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-02
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: Mọi signal có sampling/unit/provenance rõ hoặc được flag thiếu.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_13
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-03
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: QC tạo PASS/WARNING/FAIL và reason ở session/channel/window.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_23
+  - DAY_30
+  - DAY_37
+  - DAY_39
+  - DAY_83
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-04
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: QC FAIL chặn metrics không supportable.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_31
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-05
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: Processing pipeline có version/config và chạy tái lập.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_38
+  - DAY_41
+  - DAY_44
+  - DAY_45
+  - DAY_51
+  - DAY_84
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-06
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: Doctor có thể xem raw vs processed, warning và metric provenance.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_46
+  - DAY_57
+  - DAY_63
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-07
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: Doctor override được với reason; audit log đầy đủ.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_62
+  - DAY_85
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-08
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: Không có final clinical conclusion nếu chưa clinician approve.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_61
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-09
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: Raw data bất biến và checksum xác minh được.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: NOT_APPLICABLE
+  planned_days:
+  - DAY_11
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text/source frozen; implementation and validation remain
+    future work.
+- requirement_id: AC-10
+  requirement_type: ACCEPTANCE_CRITERION
+  source_document: SRS_MotionLab_Data_Intelligence_v0.1
+  source_section: §17
+  priority: MUST
+  requirement_text: Pilot cho thấy giảm manual processing time so với baseline đo
+    thực tế; target chính thức được chốt trước pilot.
+  day08_design_mapping_state: DESIGNED
+  implementation_state_at_gate_a: IDENTIFIED
+  validation_state_at_gate_a: NOT_VALIDATED
+  requirement_text_freeze_state: FROZEN
+  evidence_status: VERIFIED_DOCUMENTED
+  clinical_threshold_status: TBD
+  planned_days:
+  - DAY_02
+  - DAY_03
+  - DAY_08
+  - DAY_81
+  - DAY_86
+  - DAY_87
+  - DAY_90
+  open_questions: []
+  gate_a_note: Requirement text frozen. Measured baseline and official pilot target
+    remain evidence-gated; >=50% is not converted into a commitment at DAY08.
