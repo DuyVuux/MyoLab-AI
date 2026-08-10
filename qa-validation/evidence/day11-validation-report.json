@@ -1,0 +1,47 @@
+{
+  "day": 11,
+  "engineering_validation": "PASS",
+  "day11_automated_tests": {
+    "passed": 32,
+    "failed": 0
+  },
+  "cross_day_regression": {
+    "day09": "30/30 PASS",
+    "day10": "32/32 PASS",
+    "day11": "32/32 PASS",
+    "combined": "94/94 PASS"
+  },
+  "contract_validator": "PASS",
+  "artifact_manifest": "PASS",
+  "raw_patient_data_used": false,
+  "training_executed": false,
+  "ssl_training_executed": false,
+  "ood_model_executed": false,
+  "site_verified": false,
+  "upstream_day10_acceptance_confirmed": false,
+  "day10_carried_limitation": "Physical info.csv framing remains unverified unless independently closed in the integrated repository.",
+  "manual_peer_review": "PENDING_INTEGRATED_REPO",
+  "technology_augmentation": {
+    "self_supervised_emg": "DATA_READINESS_ONLY",
+    "distribution_ood": "PROVENANCE_READINESS_ONLY"
+  },
+  "self_critique": {
+    "scope_fidelity": 5,
+    "technical_depth": 5,
+    "execution_clarity": 5,
+    "beginner_usability": 5,
+    "testability": 5,
+    "traceability": 5,
+    "safety_rigor": 5,
+    "reproducibility": 5,
+    "repo_integration": 5,
+    "troubleshooting": 5,
+    "teaching_quality": 5,
+    "feynman_depth": 5,
+    "worked_examples": 5,
+    "exercises": 5,
+    "handoff_clarity": 5
+  },
+  "final_status": "READY_WITH_LIMITATIONS",
+  "promotion_rule": "GO_FOR_DAY_12 only after integrated DAY10 acceptance/non-blocking limitation is confirmed and DAY11 manual review/regressions pass."
+}

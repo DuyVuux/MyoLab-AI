@@ -1,0 +1,16 @@
+schema_version: "0.1"
+day: 11
+evidence_class: SYNTHETIC_ENGINEERING
+clinical_evidence: false
+site_verified: false
+raw_patient_data_used: false
+training_executed: false
+source_fixture:
+  path: qa-validation/test-data/golden/provenance/day11/synthetic-mr4-source.csv
+  expected_sha256: 19b5800653c648307701cb134eb661900b66caea25530d70dea7ee5894c3f3f4
+upstream:
+  day09: EXPECTED_INTEGRATED
+  day10: CARRIED_LIMITATION_UNLESS_SEPARATELY_CLOSED
+technology_augmentation:
+  ssl: DATA_READINESS_ONLY
+  distribution_ood: PROVENANCE_READINESS_ONLY

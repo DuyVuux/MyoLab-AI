@@ -1,0 +1,14 @@
+schema_version: "0.1"
+day: 11
+reviewer: null
+review_date: null
+checks:
+  source_identity_semantics_correct: null
+  raw_immutability_policy_acceptable: null
+  privacy_boundary_preserved: null
+  governance_tristate_semantics_acceptable: null
+  no_day12_scope_creep: null
+  day10_carried_limitation_reviewed: null
+  previous_day_regression_passed: null
+review_decision: PENDING
+notes: []

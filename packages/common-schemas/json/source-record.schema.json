@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/source-record.schema.json",
+  "title": "MotionLab SourceRecord",
+  "description": "DAY11 source-level immutable provenance record. It identifies exact bytes and governance state; it does not represent canonical Session/ProtocolContext or signal quality.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_id",
+    "content_hash_algorithm",
+    "content_hash_digest",
+    "byte_size",
+    "original_filename",
+    "storage_reference",
+    "ingestion_timestamp",
+    "evidence_status",
+    "device_vendor",
+    "device_family",
+    "device_model",
+    "software_name",
+    "software_version",
+    "export_family",
+    "deidentification_status",
+    "governance_status",
+    "research_reuse_eligible",
+    "retention_class",
+    "immutable_raw"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^src_sha256_[0-9a-f]{64}$"
+    },
+    "content_hash_algorithm": {
+      "const": "sha256"
+    },
+    "content_hash_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "byte_size": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "original_filename": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Original source filename. This field can contain identifying text and belongs only in an approved provenance store; it must not be copied into public fixtures/logs."
+    },
+    "storage_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Opaque approved-storage reference, not a guarantee that the path is PHI-free."
+    },
+    "ingestion_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_status": {
+      "$ref": "#/$defs/evidenceStatus"
+    },
+    "device_vendor": {
+      "type": ["string", "null"]
+    },
+    "device_family": {
+      "type": ["string", "null"]
+    },
+    "device_model": {
+      "type": ["string", "null"]
+    },
+    "software_name": {
+      "type": ["string", "null"]
+    },
+    "software_version": {
+      "type": ["string", "null"]
+    },
+    "export_family": {
+      "type": ["string", "null"],
+      "description": "Source-format family only, e.g. MR4_SINGLE_CSV or MR4_SEPARATED_SIGNAL; not clinical/domain interpretation."
+    },
+    "deidentification_status": {
+      "enum": [
+        "NOT_APPLICABLE_SYNTHETIC",
+        "DEIDENTIFIED_APPROVED",
+        "PSEUDONYMIZED_RESTRICTED",
+        "IDENTIFIABLE_RESTRICTED",
+        "UNKNOWN",
+        "NOT_VERIFIED"
+      ]
+    },
+    "governance_status": {
+      "enum": [
+        "APPROVED_FOR_DEFINED_PURPOSE",
+        "RESTRICTED_APPROVED_ENVIRONMENT_ONLY",
+        "UNKNOWN",
+        "NOT_VERIFIED",
+        "BLOCKED"
+      ]
+    },
+    "research_reuse_eligible": {
+      "type": ["boolean", "null"],
+      "description": "Tri-state. null means permission is unknown/not verified and MUST NOT be treated as approval."
+    },
+    "retention_class": {
+      "type": ["string", "null"]
+    },
+    "immutable_raw": {
+      "const": true
+    }
+  },
+  "$defs": {
+    "evidenceStatus": {
+      "enum": [
+        "VERIFIED",
+        "OBSERVED",
+        "UNKNOWN",
+        "TBD",
+        "NOT_VERIFIED",
+        "DISCOVERY_REQUIRED"
+      ]
+    }
+  }
+}
