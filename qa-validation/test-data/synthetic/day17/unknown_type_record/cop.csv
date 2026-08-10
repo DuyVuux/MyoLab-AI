@@ -1,0 +1,7 @@
+type,name,time_units,begin_time,frequency,count,units
+signal_2d,Pressure_Platform-Contacts-Foot_LT-LT_COP,s,0.00000,100,3,mm
+
+time,x,y
+0.00000,1.0,2.0
+0.01000,1.2,2.1
+0.02000,1.4,2.3

@@ -1,0 +1,2 @@
+type,created_with_version,exported_with_version,project,last_name,first_name,born,sex,measurement_date,record_name
+record,Noraxon MR 4.0.22,4.0.22,SYNTHETIC_PROJECT,SYNTHETIC,SUBJECT,1900-01-01,X,2025-08-26T17:29:12.325+07:00,SYNTHETIC_RECORD

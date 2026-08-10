@@ -1,0 +1,11 @@
+profile_id: MR4_SEPARATED_SYNTHETIC_HORIZONTAL_V0_1
+version: 0.1.0
+status: SYNTHETIC_ENGINEERING_ONLY
+evidence_status: SYNTHETIC_NOT_SITE_VERIFIED
+info_layout: HORIZONTAL_HEADER_VALUE
+signal_layout: HORIZONTAL_HEADER_VALUE_BLANK_DATA_HEADER
+site_verified: false
+clinical_evidence: false
+notes:
+  - This profile exists only to exercise DAY17 production code against deterministic fixtures.
+  - It must not be silently promoted to a Vinmec/MR4 site profile.

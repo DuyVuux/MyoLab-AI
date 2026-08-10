@@ -1,0 +1,13 @@
+profile_id: null
+version: 0.1.0
+status: REQUIRES_SITE_AUDIT
+evidence_status: NOT_VERIFIED
+info_layout: NOT_VERIFIED
+signal_layout: NOT_VERIFIED
+site_verified: false
+clinical_evidence: false
+required_evidence:
+  - approved actual separated export structural audit
+  - file hashes/source refs
+  - reviewer approval
+rule: Do not set an executable layout until actual approved export evidence supports it.

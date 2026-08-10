@@ -1,0 +1,6 @@
+type,name,time_units,begin_time,frequency,count,units
+signal_3d,FutureSensor,s,0,50,2,mm
+
+time,x,y,z
+0,1,2,3
+0.02,2,3,4

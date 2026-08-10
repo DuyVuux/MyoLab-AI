@@ -1,0 +1,6 @@
+type,name,time_units,begin_time,frequency,count,units
+signal,,s,0,100,2,N
+
+time,value
+0,1
+0.01,2

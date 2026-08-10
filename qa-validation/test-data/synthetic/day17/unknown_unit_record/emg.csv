@@ -1,0 +1,7 @@
+type,name,time_units,begin_time,frequency,count,units
+signal,Ultium_EMG-LT_BICEPS_FEM.,s,0.00000,2000,3,mV?
+
+time,value
+0.00000,12.5
+0.00050,13.1
+0.00100,12.8
