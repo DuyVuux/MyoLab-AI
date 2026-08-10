@@ -1,0 +1,94 @@
+contract_id: MR4_SEPARATED_RECORD_V0_1
+version: 0.1.0
+status: DESIGNED_WITH_LAYOUT_LIMITATION
+day: DAY10
+technology_augmentation:
+  status: UNCHANGED
+  note: Technology Augmentation Plan explicitly keeps DAY10 unchanged.
+upstream:
+  day09_contract: data-platform/contracts/noraxon/mr4-single-csv.schema.yaml
+  required: true
+  cross_day_rule: single-table frequency MUST NOT become record-wide same-Fs assumption
+scope:
+  record_file: info.csv
+  signal_files: independent CSV files
+  production_parser_in_scope: false
+  raw_patient_data_allowed_in_repository: false
+physical_layout:
+  status: NOT_VERIFIED_FROM_AVAILABLE_DOCUMENTATION
+  rule: Do not invent byte/row framing for info.csv. Verify against approved actual
+    export before parser implementation.
+record_metadata:
+  known_fields:
+  - name: type
+    semantic: record type
+    privacy_class: NON_IDENTIFIER_BY_ITSELF
+    fhir_mapping: DocumentReference.type
+    evidence_status: OBSERVED
+  - name: created_with_version
+    semantic: software creation version
+    privacy_class: TECHNICAL_METADATA
+    fhir_mapping: Device.softwareVersion
+    evidence_status: OBSERVED
+  - name: exported_with_version
+    semantic: software export version
+    privacy_class: TECHNICAL_METADATA
+    fhir_mapping: Device.softwareVersion
+    evidence_status: OBSERVED
+  - name: project
+    semantic: project/subject label as exported
+    privacy_class: POTENTIAL_IDENTIFIER_OR_CONTEXT
+    fhir_mapping: ResearchStudy.title
+    evidence_status: OBSERVED
+  - name: last_name
+    semantic: subject last name if entered
+    privacy_class: HIPAA_18_IDENTIFIER_NAME
+    fhir_mapping: Patient.name.family
+    evidence_status: OBSERVED
+  - name: first_name
+    semantic: subject first name if entered
+    privacy_class: HIPAA_18_IDENTIFIER_NAME
+    fhir_mapping: Patient.name.given
+    evidence_status: OBSERVED
+  - name: born
+    semantic: birth metadata if entered
+    privacy_class: HIPAA_18_IDENTIFIER_DATE
+    fhir_mapping: Patient.birthDate
+    evidence_status: OBSERVED
+  - name: sex
+    semantic: sex metadata if entered
+    privacy_class: SENSITIVE_CONTEXT
+    fhir_mapping: Patient.gender
+    evidence_status: OBSERVED
+  - name: measurement_date
+    semantic: measurement timestamp/date
+    privacy_class: HIPAA_18_IDENTIFIER_DATE
+    fhir_mapping: Encounter.period.start
+    evidence_status: OBSERVED
+  - name: record_name
+    semantic: user/vendor record name
+    privacy_class: POTENTIAL_HIPAA_18_IDENTIFIER
+    fhir_mapping: DocumentReference.description
+    evidence_status: OBSERVED
+  unknown_field_policy: PRESERVE_IN_APPROVED_RAW_CONTEXT; DO_NOT COPY UNKNOWN VALUES
+    INTO LOGS; SEMANTICS=UNKNOWN
+  deidentification_rule: DAY10 identifies PHI-bearing surfaces; de-identification/storage
+    behavior must follow approved DAY05 policy and later canonical contract.
+assembly_contract:
+  record_has_one_info_csv: OBSERVED_SAMPLE_FAMILY
+  record_has_many_signal_files: OBSERVED_SAMPLE_FAMILY
+  signal_file_metadata_is_authoritative_for_signal_shape_rate_unit: true
+  same_sampling_rate_required: false
+  orphan_signal_behavior: PRESERVE_AND_FLAG_FOR_LATER_ASSEMBLER; DO_NOT_DROP
+  unknown_signal_type_behavior: PRESERVE_AND_FLAG; DO_NOT_COERCE_TO_SIGNAL
+requirement_traceability:
+- FR-002
+- FR-003
+- FR-004
+- FR-021
+- FR-025
+- AC-01
+day_status_rule:
+  engineering_pass: READY_WITH_LIMITATIONS
+  promotion_after_actual_layout_audit: GO_FOR_DAY_11
+  block: BLOCKED_WITH_EVIDENCE

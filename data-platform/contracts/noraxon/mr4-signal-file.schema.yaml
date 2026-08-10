@@ -1,0 +1,94 @@
+contract_id: MR4_SIGNAL_FILE_V0_1
+version: 0.1.0
+status: DESIGNED
+day: DAY10
+metadata:
+  known_fields:
+  - name: type
+    observed_values:
+    - signal
+    - signal_2d
+    bids_mapping: datatype (e.g., emg, motion)
+    evidence_status: OBSERVED
+  - name: name
+    semantic: vendor signal name
+    bids_mapping: name (in channels.tsv)
+    evidence_status: OBSERVED
+  - name: time_units
+    observed_example: s
+    bids_mapping: time unit (default s in BIDS)
+    evidence_status: OBSERVED
+  - name: begin_time
+    observed_example: '0.00000'
+    bids_mapping: StartTime (in _scans.tsv)
+    evidence_status: OBSERVED
+  - name: frequency
+    observed_examples:
+    - 2000
+    - 100
+    semantic: PER_SIGNAL sampling frequency
+    bids_mapping: SamplingFrequency
+    evidence_status: OBSERVED
+  - name: count
+    observed_examples:
+    - 33000
+    - 1650
+    semantic: PER_SIGNAL declared sample count
+    bids_mapping: Custom field or derive from FileSize
+    evidence_status: OBSERVED
+  - name: units
+    observed_examples:
+    - uV
+    - mm
+    semantic: PER_SIGNAL unit
+    bids_mapping: units (in channels.tsv)
+    evidence_status: OBSERVED
+  unknown_field_policy: PRESERVE_NAME_AND_VALUE_IN_RAW_CONTEXT; DO_NOT_INFER
+shapes:
+  signal:
+    required_columns:
+    - time
+    - value
+    bids_mapping: 1D time series (channels.tsv component)
+    examples:
+    - EMG
+    - force
+    - velocity
+    - max pressure or other 1D signals
+    evidence_status: OBSERVED
+  signal_2d:
+    required_columns:
+    - time
+    - x
+    - y
+    bids_mapping: 2D spatial coordinate tracking (motion datatype in BIDS)
+    examples:
+    - COP
+    - local COP 2D
+    evidence_status: OBSERVED
+  unknown:
+    policy: PRESERVE_AND_BLOCK_SHAPE_DEPENDENT_PROCESSING_UNTIL_CONTRACTED
+heterogeneous_sampling:
+  required_support: true
+  example: EMG 2000 Hz and COP 100 Hz may coexist in one record
+  same_fs_assumption_forbidden: true
+validation_ownership:
+  day10:
+  - logical metadata contract
+  - shape contract
+  - heterogeneous sampling examples
+  - privacy surface declaration
+  day13:
+  - monotonic time
+  - count-vs-rows
+  - unit/time/count engine
+  day17:
+  - production record assembler/parser
+  - orphan/unknown signal typed behavior
+safety_invariants:
+- per-signal metadata wins
+- no silent resampling
+- no unit conversion today
+- no PHI values in fixtures/logs
+- unknown signal preserved
+- no production parser in DAY10

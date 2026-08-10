@@ -1,0 +1,12 @@
+day: DAY10
+review_status: PENDING_HUMAN_REVIEW
+reviewer: null
+checks:
+  upstream_day09_contract_present: null
+  per_signal_metadata_preserved: null
+  heterogeneous_sampling_supported: null
+  signal_and_signal2d_distinct: null
+  phi_surfaces_explicit: null
+  physical_info_layout_not_invented: null
+  no_production_parser_added: null
+comments: []

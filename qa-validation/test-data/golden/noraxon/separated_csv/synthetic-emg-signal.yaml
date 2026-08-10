@@ -1,0 +1,21 @@
+fixture_id: D10-SIG-EMG-001
+data_class: SYNTHETIC_CONTRACT_FIXTURE
+metadata:
+  type: signal
+  name: Ultium_EMG-LT_BICEPS_FEM.
+  time_units: s
+  begin_time: '0.00000'
+  frequency: 2000
+  count: 3
+  units: uV
+columns:
+- time
+- value
+rows:
+- - 0.0
+  - 12.5
+- - 0.0005
+  - 13.1
+- - 0.001
+  - 12.8
+clinical_evidence: false

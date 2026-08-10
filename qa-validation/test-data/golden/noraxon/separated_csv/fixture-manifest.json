@@ -1,0 +1,22 @@
+{
+  "invalid-signal2d-wrong-shape.yaml": {
+    "sha256": "c968c24d3fbdb6741c7db1e09c83f19d70e8e67bb0b6724ea95950d998526dac",
+    "bytes": 252,
+    "clinical_evidence": false
+  },
+  "synthetic-cop-signal2d.yaml": {
+    "sha256": "a8be22715d8f94d6211ac7424f9620ccadbca005e7c0aa42a25b345574dad6ff",
+    "bytes": 354,
+    "clinical_evidence": false
+  },
+  "synthetic-emg-signal.yaml": {
+    "sha256": "a091b673492ed6b3e3d680d8cc17dd805837975827c01f66c55390e6d2759bd5",
+    "bytes": 318,
+    "clinical_evidence": false
+  },
+  "synthetic-info-logical.yaml": {
+    "sha256": "c494f1d1fc40f3a57e067488a64490d8dc67a9cbfda3fca2b78cd84eafba3d24",
+    "bytes": 405,
+    "clinical_evidence": false
+  }
+}

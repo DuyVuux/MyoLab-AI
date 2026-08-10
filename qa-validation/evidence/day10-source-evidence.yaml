@@ -1,0 +1,14 @@
+day: DAY10
+sources:
+  - name: SRS_MotionLab_Data_Intelligence_v0.1
+    role: authoritative_requirements
+  - name: Motion_Lab_CSV_Architecture
+    role: observed_logical_fields_and_signal_shapes
+    evidence_status: OBSERVED_SAMPLE_DOCUMENTED
+  - name: MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0
+    role: day_scope
+  - name: MotionLab_90Day_Technology_Augmentation_Integration_Plan_v1.0
+    role: additive_delta
+    day10_directive: KEEP_UNCHANGED
+physical_info_csv_row_layout: NOT_VERIFIED_FROM_AVAILABLE_DOCUMENTATION
+real_patient_data_bundled: false

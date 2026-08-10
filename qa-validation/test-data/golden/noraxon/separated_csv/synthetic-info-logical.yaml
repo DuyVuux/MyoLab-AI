@@ -1,0 +1,15 @@
+fixture_id: D10-REC-001
+data_class: SYNTHETIC_CONTRACT_FIXTURE
+logical_source: info.csv
+fields:
+  type: record
+  created_with_version: Noraxon MR 4.0.22
+  exported_with_version: 4.0.22
+  project: SYNTHETIC_PROJECT
+  last_name: SYNTHETIC
+  first_name: SUBJECT
+  born: '1900-01-01'
+  sex: X
+  measurement_date: '2025-08-26T17:29:12.325+07:00'
+  record_name: SYNTHETIC_TREADMILL_EMG
+clinical_evidence: false

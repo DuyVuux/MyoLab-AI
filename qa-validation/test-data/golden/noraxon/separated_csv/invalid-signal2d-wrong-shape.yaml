@@ -1,0 +1,17 @@
+fixture_id: D10-BAD-2D-001
+data_class: SYNTHETIC_NEGATIVE_FIXTURE
+metadata:
+  type: signal_2d
+  frequency: 100
+  count: 2
+  units: mm
+columns:
+- time
+- value
+rows:
+- - 0.0
+  - 1.0
+- - 0.01
+  - 1.2
+expected: FAIL_SHAPE_CONTRACT
+clinical_evidence: false

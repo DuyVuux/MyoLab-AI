@@ -1,0 +1,13 @@
+{
+  "day": "DAY10",
+  "engineering_validation": "PASS",
+  "automated_tests": "32/32 DAY10 PASS",
+  "day09_regression": "30/30 PASS",
+  "final_status": "READY_WITH_LIMITATIONS",
+  "physical_info_layout": "NOT_VERIFIED_FROM_AVAILABLE_DOCUMENTATION",
+  "real_patient_data_bundled": false,
+  "training_executed": false,
+  "technology_augmentation": "UNCHANGED",
+  "mandatory_outputs": "3/3",
+  "promotion_condition": "Run approved real separated-layout audit + human review; then GO_FOR_DAY_11 if compatible."
+}

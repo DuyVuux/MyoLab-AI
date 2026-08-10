@@ -1,0 +1,7 @@
+requirement,source,day10_action,artifact,state_after_day10
+FR-002,SRS,Define separated record plus independent signal-file contract,data-platform/contracts/noraxon/mr4-separated.schema.yaml,DESIGNED
+FR-003,SRS,Define per-signal type/name/begin_time/frequency/count/units,data-platform/contracts/noraxon/mr4-signal-file.schema.yaml,DESIGNED
+FR-004,SRS,Require heterogeneous per-signal sampling and forbid same-Fs assumption,data-platform/contracts/noraxon/mr4-signal-file.schema.yaml,DESIGNED
+FR-021,SRS,Represent record/software/measurement and signal metadata when present,data-platform/contracts/noraxon/mr4-separated.schema.yaml,DESIGNED
+FR-025,SRS,Declare identifier/governance-bearing surfaces and defer handling to approved policy,data-platform/contracts/noraxon/mr4-separated.schema.yaml,DESIGNED
+AC-01,SRS,Contribute separated golden-contract evidence; parser/canonical acceptance remains later,qa-validation/test-data/golden/noraxon/separated_csv/README.md,PARTIAL_DESIGN_EVIDENCE

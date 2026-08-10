@@ -1,0 +1,101 @@
+{
+  "day": "DAY10",
+  "validation_scope": "MANAGED_DAY10_ARTIFACTS_ONLY",
+  "files": [
+    {
+      "path": "data-platform/contracts/noraxon/mr4-separated-examples.md",
+      "sha256": "63c90fa2c8886c7508332420a77f6eb2f583d189a5bcfd3b3eb380c6a7d387f7",
+      "bytes": 1379
+    },
+    {
+      "path": "data-platform/contracts/noraxon/mr4-separated.schema.yaml",
+      "sha256": "fd283a4e2d9004580efdcf903579d5bed6f10522bee11df8ef3dd9747a1a7c3b",
+      "bytes": 3020
+    },
+    {
+      "path": "data-platform/contracts/noraxon/mr4-signal-file.schema.yaml",
+      "sha256": "1c27e9893a1c83a7edc038630e3a186c69c196821664e348008c34d1511739d5",
+      "bytes": 1957
+    },
+    {
+      "path": "qa-validation/automated-tests/contracts/test_day10_mr4_separated_contract.py",
+      "sha256": "27cd543c79e145534a0668e9bf069ef5d54e5426d6be97daaf0952673b120aab",
+      "bytes": 6621
+    },
+    {
+      "path": "qa-validation/evidence/day10-peer-review.template.yaml",
+      "sha256": "428d6f19d2d39fc6029ae7518526e4c8b02566cd4ac997dfb88aa8cae3c8f11f",
+      "bytes": 346
+    },
+    {
+      "path": "qa-validation/evidence/day10-source-evidence.yaml",
+      "sha256": "ce7928f9ad0b69a98e1eeb7834e7236786211976536247b79bcb6b2e39684bca",
+      "bytes": 580
+    },
+    {
+      "path": "qa-validation/evidence/day10-validation-report.json",
+      "sha256": "9e4290867827fcab708aa1d482e7e21583c7a7a4aa344c1dfd3b3341477ae519",
+      "bytes": 508
+    },
+    {
+      "path": "qa-validation/requirements/day10-acceptance-criteria.md",
+      "sha256": "b2175046754fa124b21af6a3b4d54924b2a48a5ddbfebf5eabe3ca4a815b8753",
+      "bytes": 813
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/separated_csv/README.md",
+      "sha256": "2dad3e9ebf0be6849538dc3754b48e47983e1d8a7a347f3365c8c3604d94dfbd",
+      "bytes": 753
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/separated_csv/fixture-manifest.json",
+      "sha256": "c5f2d4b8e4e2e9408037ee95f6895803f514908ce819ec67b14d643a63f5a9e3",
+      "bytes": 691
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/separated_csv/invalid-signal2d-wrong-shape.yaml",
+      "sha256": "c968c24d3fbdb6741c7db1e09c83f19d70e8e67bb0b6724ea95950d998526dac",
+      "bytes": 252
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/separated_csv/synthetic-cop-signal2d.yaml",
+      "sha256": "a8be22715d8f94d6211ac7424f9620ccadbca005e7c0aa42a25b345574dad6ff",
+      "bytes": 354
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/separated_csv/synthetic-emg-signal.yaml",
+      "sha256": "a091b673492ed6b3e3d680d8cc17dd805837975827c01f66c55390e6d2759bd5",
+      "bytes": 318
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/separated_csv/synthetic-info-logical.yaml",
+      "sha256": "c494f1d1fc40f3a57e067488a64490d8dc67a9cbfda3fca2b78cd84eafba3d24",
+      "bytes": 405
+    },
+    {
+      "path": "qa-validation/traceability/day10-requirement-traceability.csv",
+      "sha256": "d3287df175805bfb6519d26550335589cab5e15682769e4285c1a84289250570",
+      "bytes": 990
+    },
+    {
+      "path": "scripts/dev/audit_day10_real_separated_layout.py",
+      "sha256": "5eafc8de504b38e1f8fdef576c04c7ada04d86cf35ad2832736604893b3a46b5",
+      "bytes": 2672
+    },
+    {
+      "path": "scripts/dev/check_day10_artifacts.py",
+      "sha256": "aa5e7120e60dd7cf55001146a5abe441213a8a8b924a79deb60029e1d0841ac1",
+      "bytes": 1155
+    },
+    {
+      "path": "scripts/dev/run_day10_checks.sh",
+      "sha256": "b40cab46d466db94a9e00f98134258faa818be5db63d0bf67915b18357c84181",
+      "bytes": 415
+    },
+    {
+      "path": "scripts/dev/validate_day10_separated_contract.py",
+      "sha256": "03eb3f2fce23c3a53552fd32166e50093b7f8828730f3e06aade2bddd076c022",
+      "bytes": 2316
+    }
+  ]
+}
