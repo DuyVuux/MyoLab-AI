@@ -1,0 +1,7 @@
+requirement,source,day11_contribution,artifact,test_or_evidence,state_after_day11
+FR-007,SRS,"Raw bytes/missing values are never rewritten by source ledger","data-platform/storage/raw-immutability-policy.md","test_raw_bytes_unchanged_after_register; verify_source",IMPLEMENTED_PARTIAL
+FR-008,SRS,"SHA-256 checksum and deterministic source identifier","packages/common-schemas/json/source-record.schema.json; source_ledger.py","test_sha256_and_source_id_are_deterministic",IMPLEMENTED
+FR-053,SRS,"No processed/derived operation overwrites raw","data-platform/storage/raw-immutability-policy.md","test_raw_bytes_unchanged_after_register",DESIGNED_AND_GUARDED
+NFR-002,SRS,"Source provenance includes identity/hash/original filename/device/software/version","source-record.schema.json; source_ledger.py","schema validation + source record tests",IMPLEMENTED_PARTIAL
+NFR-003,SRS,"Immutable raw and checksum verification","raw-immutability-policy.md; source_ledger.py","test_verify_detects_mutation; duplicate replay",IMPLEMENTED
+AC-09,SRS,"Raw data immutable and checksum verifiable","source_ledger.py; golden fixture","golden registration + mutation negative test",REVALIDATED_SYNTHETIC

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "day": 11,
+  "scope": "DAY11_MANAGED_STATIC_ARTIFACTS_ONLY",
+  "managed_files": [
+    {
+      "path": "README.md",
+      "sha256": "67bca23db1deeeb1e8c325756d8048b08d78455ef3a5b5dc03c2d79e5620162b",
+      "bytes": 400
+    },
+    {
+      "path": "data-platform/storage/raw-immutability-policy.md",
+      "sha256": "ea90533fd0e48f642b6fb69697fba95acd1053dbada66dcdf5c17c626c5a624b",
+      "bytes": 4081
+    },
+    {
+      "path": "data-platform/storage/unlabeled-corpus-retention-policy.v0.1.md",
+      "sha256": "a0f69950ca6a83d199e9fb4f2af86e56b2488472e448539be2e34ea9d9a22191",
+      "bytes": 3039
+    },
+    {
+      "path": "docs/00-executive/rebaseline/day11-decision-log.md",
+      "sha256": "c185610f8d9bd70685f632cbdde110de6b3b3a7f57fe3ceee29a959579505f5a",
+      "bytes": 1075
+    },
+    {
+      "path": "packages/common-schemas/json/source-record.schema.json",
+      "sha256": "56bd638ea8d3ea6f984dfe2d4902da87ba06f06c53073026e258cb39958f9bb4",
+      "bytes": 3384
+    },
+    {
+      "path": "qa-validation/automated-tests/provenance/test_day11_source_ledger.py",
+      "sha256": "655cb6304a0c5cf446169a12293de63e3f500c7ced23b4678c9048c977745873",
+      "bytes": 11987
+    },
+    {
+      "path": "qa-validation/evidence/day11-peer-review.template.yaml",
+      "sha256": "7bce9bba1853ec21833855bce5f3554d9868d9035e66495be25bf9a4fb69a7e3",
+      "bytes": 385
+    },
+    {
+      "path": "qa-validation/evidence/day11-source-evidence.yaml",
+      "sha256": "f4332f89bc22ed7c438ccee1ff44f7d497408d2526fc07d0c2b29befa4999b56",
+      "bytes": 539
+    },
+    {
+      "path": "qa-validation/requirements/day11-acceptance-criteria.md",
+      "sha256": "535ea7df5e3a9d4061f557e82a9c318334968a98045abb64e7cd90194afc8617",
+      "bytes": 1419
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/provenance/day11/malformed-ledger.jsonl",
+      "sha256": "e1d6ca27d0a8791298fdb33f50cdbee6d55f60dce8b770c7e5027acdefbb0b54",
+      "bytes": 48
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/provenance/day11/mutated-same-name.csv",
+      "sha256": "54496caecdac1933a450cad68e695ca45aa4ddc0de7d6671732656ff960aa185",
+      "bytes": 253
+    },
+    {
+      "path": "qa-validation/test-data/golden/provenance/day11/README.md",
+      "sha256": "76b064fc921263fef5e6cc02e3a4ee968409bc88039fc331b44ca553b58834cf",
+      "bytes": 529
+    },
+    {
+      "path": "qa-validation/test-data/golden/provenance/day11/synthetic-mr4-source-duplicate-name-copy.csv",
+      "sha256": "19b5800653c648307701cb134eb661900b66caea25530d70dea7ee5894c3f3f4",
+      "bytes": 251
+    },
+    {
+      "path": "qa-validation/test-data/golden/provenance/day11/synthetic-mr4-source.csv",
+      "sha256": "19b5800653c648307701cb134eb661900b66caea25530d70dea7ee5894c3f3f4",
+      "bytes": 251
+    },
+    {
+      "path": "qa-validation/traceability/day11-requirement-traceability.csv",
+      "sha256": "8e242a94c95dbd443364724a80632517af134b1ad5ec943aa6e3e59a7d04fef0",
+      "bytes": 1183
+    },
+    {
+      "path": "scripts/dev/check_day11_artifacts.py",
+      "sha256": "8dfb12776c6a774f70021f742b4780aed96dd0af629f72ddfc169fa7626fc9f0",
+      "bytes": 1329
+    },
+    {
+      "path": "scripts/dev/run_day11_checks.sh",
+      "sha256": "c88d1b24cb88a0c932a29bbdd596019e72a2454b7c4b3e90d592e97276a88002",
+      "bytes": 866
+    },
+    {
+      "path": "scripts/dev/validate_day11_source_ledger.py",
+      "sha256": "b9fb7b5996e5bb9c831911a7f07a364a73cbb3e38cffff701e805fc9275f437d",
+      "bytes": 2608
+    },
+    {
+      "path": "services/signal-ingestion-service/src/provenance/source_ledger.py",
+      "sha256": "b50550d48c28b2771fe11370ed5b73da6811906d7d3897e2d38017193b697b79",
+      "bytes": 11045
+    }
+  ],
+  "excluded_mutable_evidence": [
+    "qa-validation/evidence/day11-artifact-manifest.json",
+    "qa-validation/evidence/day11-validation-report.json"
+  ],
+  "pruned_infrastructure_dirs": [
+    ".git",
+    ".pytest_cache",
+    ".venv",
+    "__pycache__",
+    "node_modules"
+  ]
+}

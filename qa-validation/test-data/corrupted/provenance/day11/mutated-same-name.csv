@@ -1,0 +1,7 @@
+type,frequency,count,created with version,exported with version,measurement_date,record_name
+record,2000,3,Noraxon MR 4.0.22,4.0.22,2026-01-01T00:00:00+07:00,SYNTHETIC_DAY11
+
+time,Activity,Marker,LT_SYNTH_EMG
+0.000,,,-1.25
+0.0005,,,999.00
+0.0010,,,0.00

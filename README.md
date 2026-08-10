@@ -1,6 +1,12 @@
-# DAY12 repo_patch
+# MyoLab-AI Project
 
-Copy this patch into the project root only after reviewing collisions. It is designed to add DAY12-owned contracts/tests/tooling and should not replace DAY11 SourceLedger implementation.
+## Integrated Handoffs
+
+### DAY11 Immutable Raw & Source Ledger
+The package implements source-level integrity/provenance only. It does not implement MR4 parsing, canonical Session/DomainContext, QC, DSP, SSL training, or OOD modeling.
+
+### DAY12 Canonical Session Contract
+Adds DAY12-owned contracts/tests/tooling without replacing DAY11 SourceLedger implementation.
 
 Primary files:
 - `packages/common-schemas/json/session.schema.json`
@@ -10,8 +16,7 @@ Primary files:
 - `packages/common-schemas/json/process-correlation.schema.json`
 - `services/signal-ingestion-service/src/canonical/session_contracts.py`
 
-Run:
-
+Run DAY12 checks:
 ```bash
 bash scripts/dev/run_day12_checks.sh
 ```
