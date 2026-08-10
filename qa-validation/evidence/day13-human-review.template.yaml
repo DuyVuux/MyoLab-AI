@@ -1,0 +1,11 @@
+schema_version: "0.1"
+day: 13
+review_status: PENDING
+reviewer: null
+checks:
+  unit_registry_semantics_reviewed: false
+  engineering_tolerances_reviewed: false
+  no_site_threshold_claim_confirmed: false
+  day12_contract_non_regression_confirmed: false
+  day14_scope_boundary_confirmed: false
+notes: []

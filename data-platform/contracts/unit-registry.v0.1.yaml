@@ -1,0 +1,47 @@
+schema_version: "0.1.0"
+registry_id: "motionlab-unit-registry"
+registry_version: "v0.1"
+units:
+  - symbol: "s"
+    dimension: "time"
+    canonical_unit: "s"
+    observed_in_project: true
+  - symbol: "V"
+    dimension: "electric_potential"
+    canonical_unit: "V"
+    observed_in_project: true
+  - symbol: "uV"
+    dimension: "electric_potential"
+    canonical_unit: "V"
+    observed_in_project: true
+  - symbol: "N"
+    dimension: "force"
+    canonical_unit: "N"
+    observed_in_project: true
+  - symbol: "mm"
+    dimension: "length"
+    canonical_unit: "mm"
+    observed_in_project: true
+  - symbol: "m/s"
+    dimension: "velocity"
+    canonical_unit: "m/s"
+    observed_in_project: true
+  - symbol: "N/cm^2"
+    dimension: "pressure"
+    canonical_unit: "N/cm^2"
+    observed_in_project: true
+  - symbol: "FS"
+    dimension: "vendor_flag_or_switch"
+    canonical_unit: "FS"
+    observed_in_project: true
+conversions:
+  - source_unit: "V"
+    target_unit: "uV"
+    factor: 1000000.0
+    operation: "multiply"
+    evidence_basis: "SI prefix conversion; source V and target microvolt"
+  - source_unit: "uV"
+    target_unit: "V"
+    factor: 0.000001
+    operation: "multiply"
+    evidence_basis: "SI prefix conversion; source microvolt and target V"

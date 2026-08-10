@@ -1,0 +1,15 @@
+{
+  "source_record_id": "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "signal_id": "sig_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "timestamps_seconds": [
+    0.0,
+    0.0005,
+    0.0005,
+    0.0015
+  ],
+  "metadata_count": 4,
+  "begin_time_seconds": 0.0,
+  "sampling_rate_hz": 2000.0,
+  "unit": "uV",
+  "evidence_status": "SOURCE_REPORTED"
+}

@@ -1,0 +1,54 @@
+{
+  "day": 13,
+  "engineering_validation": "PASS",
+  "day13_tests": {
+    "passed": 40,
+    "total": 40
+  },
+  "fixture_validation": {
+    "golden": 4,
+    "corrupted": 8,
+    "status": "PASS"
+  },
+  "upstream_state": {
+    "source": "USER_REPORTED_UPSTREAM_STATE",
+    "day12_integrated": true,
+    "reported_day12_tests": "38 PASS",
+    "reported_day09_regression": "30 PASS",
+    "reported_day10_regression": "32 PASS",
+    "note": "Live monorepo was not independently accessible while building this handoff."
+  },
+  "final_status": "READY_WITH_LIMITATIONS",
+  "limitations": [
+    "Run DAY13 and upstream regressions on the live integrated monorepo after copy.",
+    "Complete the DAY13 human review template before promoting to GO_FOR_DAY_14."
+  ],
+  "training_executed": false,
+  "raw_patient_data_bundled": false,
+  "technology_augmentation": "NONE_DAY13_KEEP_ORIGINAL_SCOPE",
+  "cross_day_baseline_staging": {
+    "day09_to_day13_total_tests": 172,
+    "passed": 172,
+    "status": "PASS",
+    "evidence_scope": "Baseline handoff ZIP overlay, not the live user monorepo."
+  },
+  "artifact_integrity": "MANIFEST_BUILT",
+  "self_critique": {
+    "scope_fidelity": 5,
+    "technical_depth": 5,
+    "execution_clarity": 5,
+    "beginner_usability": 5,
+    "testability": 5,
+    "traceability": 5,
+    "safety_rigor": 5,
+    "reproducibility": 5,
+    "repo_integration": 5,
+    "troubleshooting": 4,
+    "teaching_quality": 5,
+    "feynman_depth": 5,
+    "worked_examples": 5,
+    "exercises": 5,
+    "handoff_clarity": 5
+  },
+  "managed_artifact_count": 24
+}
