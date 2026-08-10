@@ -1,0 +1,49 @@
+{
+  "day": "DAY12",
+  "title": "Canonical Session, Signal & ProtocolContext Contract",
+  "engineering_validation": "PASS",
+  "final_status": "READY_WITH_LIMITATIONS",
+  "status_reason": "DAY12-owned contracts and runtime models pass local validation and baseline cross-day regression. The assistant cannot inspect the user's live monorepo after DAY11 integration; integrated-repo collision review and human review remain required before promoting to GO_FOR_DAY_13.",
+  "tests": {
+    "day12_local": {"passed": 38, "failed": 0},
+    "day09_baseline_handoff_regression": {"passed": 30, "failed": 0},
+    "day10_baseline_handoff_regression": {"passed": 32, "failed": 0},
+    "day11_baseline_handoff_regression": {"passed": 32, "failed": 0},
+    "cross_day_baseline_total": {"passed": 132, "failed": 0}
+  },
+  "user_reported_upstream_state": {
+    "day11_integrated": true,
+    "pydantic_runtime_validation": true,
+    "filelock_concurrency_safety": true,
+    "reported_pytest_result": "32 passed in 0.95s",
+    "evidence_class": "USER_REPORTED_UPSTREAM_STATE",
+    "note": "Not independently re-executed against the user's live repository by this handoff build."
+  },
+  "contracts": {
+    "session": "packages/common-schemas/json/session.schema.json",
+    "signal": "packages/common-schemas/json/signal.schema.json",
+    "protocol_context": "packages/common-schemas/json/protocol-context.schema.json",
+    "domain_context": "packages/common-schemas/json/domain-context.schema.json",
+    "process_correlation": "packages/common-schemas/json/process-correlation.schema.json",
+    "runtime_models": "services/signal-ingestion-service/src/canonical/session_contracts.py"
+  },
+  "safety_assertions": {
+    "non_phi_opaque_session_id": true,
+    "no_signal_name_to_muscle_side_inference": true,
+    "source_vendor_text_preserved_without_silent_trim": true,
+    "domain_context_contains_no_ood_score": true,
+    "process_correlation_contains_no_raw_payload": true,
+    "production_parser_implemented": false,
+    "ood_model_executed": false,
+    "ssl_training_executed": false,
+    "source_ledger_overwritten": false,
+    "raw_patient_data_bundled": false
+  },
+  "evidence": {
+    "golden_fixtures_accepted": 2,
+    "corrupted_fixtures_rejected": 8,
+    "integrated_repo_confirmation_complete": false,
+    "human_review_complete": false
+  },
+  "promotion_rule": "Promote to GO_FOR_DAY_13 only after controlled integration, DAY11/DAY10/DAY09 regression in the actual monorepo, collision review, and human review are PASS."
+}

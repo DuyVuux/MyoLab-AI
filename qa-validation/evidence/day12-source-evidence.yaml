@@ -1,0 +1,42 @@
+day: 12
+status: ENGINEERING_EVIDENCE_ONLY
+sources:
+  - id: ROADMAP_D12
+    authority: AUTHORITATIVE_SCOPE
+    supports:
+      - canonical_session_non_phi
+      - signal_descriptor
+      - protocol_context
+      - no_silent_inference
+      - FR-020..024
+      - NFR-002
+      - NFR-011
+  - id: SRS_V0_1
+    authority: REQUIREMENT_SOURCE
+    supports:
+      - FR-020
+      - FR-021
+      - FR-022
+      - FR-023
+      - FR-024
+      - FR-025
+      - NFR-002
+      - NFR-011
+  - id: TECHNOLOGY_AUGMENTATION_D12
+    authority: ADDITIVE_DELTA
+    supports:
+      - DomainContext
+      - process_correlation
+      - explicit_unknowns
+  - id: USER_DAY11_INTEGRATION_REPORT
+    authority: USER_REPORTED_UPSTREAM_STATE
+    supports:
+      - pydantic_v2_runtime_validation_present
+      - filelock_concurrency_safety_present
+      - day11_tests_32_passed
+limitations:
+  - actual_integrated_monorepo_not_mounted_in_this_build_environment
+  - site_protocol_metadata_completeness_not_verified
+  - electrode_channel_layout_not_verified
+  - domain_context_is_not_ood_validation
+  - process_correlation_is_not_event_store_implementation

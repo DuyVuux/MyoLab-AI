@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/signal.schema.json",
+  "title": "MotionLab Canonical Signal Descriptor",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "signal_id",
+    "source_record_id",
+    "source_signal_name",
+    "signal_type",
+    "shape",
+    "sampling_rate_hz",
+    "units",
+    "canonical_channel_ref"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "signal_id": {"type": "string", "pattern": "^sig_[0-9a-f]{32}$"},
+    "source_record_id": {"type": "string", "pattern": "^src_sha256_[0-9a-f]{64}$"},
+    "source_signal_name": {"$ref": "#/$defs/evidenceString"},
+    "signal_type": {
+      "type": "string",
+      "enum": ["EMG", "PRESSURE", "COP", "FORCE", "EVENT", "KINEMATIC", "OTHER", "UNKNOWN"]
+    },
+    "shape": {"type": "string", "enum": ["SIGNAL_1D", "SIGNAL_2D", "TABLE", "UNKNOWN"]},
+    "sampling_rate_hz": {"$ref": "#/$defs/evidencePositiveNumber"},
+    "units": {"$ref": "#/$defs/evidenceString"},
+    "canonical_channel_ref": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["channel_id", "mapping_version", "evidence_status", "evidence_refs"],
+      "properties": {
+        "channel_id": {"type": ["string", "null"], "minLength": 1},
+        "mapping_version": {"type": ["string", "null"], "minLength": 1},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    }
+  },
+  "$defs": {
+    "evidenceStatus": {
+      "type": "string",
+      "enum": ["VERIFIED", "SOURCE_REPORTED", "UNKNOWN", "NOT_VERIFIED", "DISCOVERY_REQUIRED"]
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "evidenceString": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "evidence_status", "evidence_refs"],
+      "properties": {
+        "value": {"type": ["string", "null"]},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    },
+    "evidencePositiveNumber": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "evidence_status", "evidence_refs"],
+      "properties": {
+        "value": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "day": "DAY12",
+  "validation_scope": "DAY12_MANAGED_ARTIFACTS_ONLY",
+  "does_not_audit_entire_repository": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "3aab0fc8f8b9674ed69679a017a6af5dbd6bdfd4fae08dab172a0d0eea1c2b95",
+      "bytes": 1241
+    },
+    {
+      "path": "data-platform/contracts/canonical/day12-contract-notes.md",
+      "sha256": "b24b2a5311ffc5736f1823b8d7590b475cd7bea77898efa697e21a79069281fd",
+      "bytes": 2873
+    },
+    {
+      "path": "docs/00-executive/rebaseline/day12-decision-log.md",
+      "sha256": "71ea82e630f7c53ad33a613fcc68c9df27544dc09ecba0819ef6e6a9f0ce85c1",
+      "bytes": 2548
+    },
+    {
+      "path": "packages/common-schemas/json/domain-context.schema.json",
+      "sha256": "1bf39b624aaa67c0381225ca5fd4956d3da6c538ae66e5f4a67437d68c31be08",
+      "bytes": 2786
+    },
+    {
+      "path": "packages/common-schemas/json/process-correlation.schema.json",
+      "sha256": "1419b97f11b7d96ef4dbc2c98aed000fdfe2aeb685f9fc3b5a5516267c7ac1de",
+      "bytes": 993
+    },
+    {
+      "path": "packages/common-schemas/json/protocol-context.schema.json",
+      "sha256": "5158b3840a7513cb7da96302e7c980a2ec63cd49d08773e86f8dffcabfedbee6",
+      "bytes": 2630
+    },
+    {
+      "path": "packages/common-schemas/json/session.schema.json",
+      "sha256": "110711816fb8dd29578598f2dbbb0dd6ccdccae3477881c5500e936f6351ad87",
+      "bytes": 3125
+    },
+    {
+      "path": "packages/common-schemas/json/signal.schema.json",
+      "sha256": "55ab0bc52e6f96532e0e33217f97fe2531a3bc92a377096674961f843b80da1c",
+      "bytes": 2596
+    },
+    {
+      "path": "qa-validation/automated-tests/contracts/test_day12_canonical_session.py",
+      "sha256": "c82da75de69f3398454107e482415c7b836a753303d1c84a2322b48ba39ae4df",
+      "bytes": 13323
+    },
+    {
+      "path": "qa-validation/evidence/day12-peer-review.template.yaml",
+      "sha256": "27d66c6685ec3275a7c1b16d16d02c4f54156846ccc21704a788d95895caaa0c",
+      "bytes": 488
+    },
+    {
+      "path": "qa-validation/evidence/day12-source-evidence.yaml",
+      "sha256": "2ff5f51aa534caf6d1db886db2b29a46624f03809f978a49a057a51077e44e99",
+      "bytes": 1121
+    },
+    {
+      "path": "qa-validation/evidence/day12-validation-report.json",
+      "sha256": "3506e2f78cd84a16afdd63e182f6b87f25eb55382e8a4424cc79c968ccefe24f",
+      "bytes": 2514
+    },
+    {
+      "path": "qa-validation/requirements/day12-acceptance-criteria.md",
+      "sha256": "335d5f1a952fd53493390eb555a76b9f72d0744ce90c78b11bd6faab9f538586",
+      "bytes": 2184
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/canonical/day12/invalid_correlation_session_mismatch.json",
+      "sha256": "bc9c5cd642d64e741677d5aaf831a8d0df38f0507f514d424d776d3936456ecd",
+      "bytes": 5888
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/canonical/day12/invalid_duplicate_source_ids.json",
+      "sha256": "fdafc75064cc1be14743505091751859fe185106eca95d454fb027c20704d4e6",
+      "bytes": 5971
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/canonical/day12/invalid_negative_sampling_rate.json",
+      "sha256": "bc7f1f8c224b7f6c87c5572863465b741eb06ea1c561d6dd1282f6b64ad8d7c5",
+      "bytes": 5887
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/canonical/day12/invalid_phi_like_session_id.json",
+      "sha256": "59fb9bb5b55c62ec9497dad2e0d38c0d5183e15fc34b217620a6b9474531eb1d",
+      "bytes": 5872
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/canonical/day12/invalid_process_raw_payload.json",
+      "sha256": "d63bfb09e9d5aa0f70d3c62773d75d8267961e17bbc8c26ea96c99e499cc997f",
+      "bytes": 5887
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/canonical/day12/invalid_signal_orphan_source.json",
+      "sha256": "b48f5f715bbd2ce841b2f152e1e4b2ca37f89a1eaeda5e6cea6ecca36824cd71",
+      "bytes": 5888
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/canonical/day12/invalid_unknown_side_with_value.json",
+      "sha256": "afb2553ad94619e5c15a50260c8bbf39937911d2967eb7ba7fab740416f69049",
+      "bytes": 5890
+    },
+    {
+      "path": "qa-validation/test-data/corrupted/canonical/day12/invalid_verified_without_evidence.json",
+      "sha256": "6c42e22cd53dca843d39aea319946a471d4f92da41f5078bfdf5e62ca2e89ab0",
+      "bytes": 5888
+    },
+    {
+      "path": "qa-validation/test-data/golden/canonical/day12/session_unknown_safe.json",
+      "sha256": "8481e7d0e5745d4b78f942b248ae68a2d1be6e1872af956eecaa53c6f4cadf94",
+      "bytes": 5888
+    },
+    {
+      "path": "qa-validation/test-data/golden/canonical/day12/session_verified_protocol_synthetic.json",
+      "sha256": "911235a50747264571d8a4efafef23d22574605789667f5aecb4bd9ef6deb3ba",
+      "bytes": 6020
+    },
+    {
+      "path": "qa-validation/traceability/day12-requirement-traceability.csv",
+      "sha256": "d745031453c8fbb1aaf3159a73db2b34d6cc771e95b60618df9bb1e34e66b41d",
+      "bytes": 2235
+    },
+    {
+      "path": "scripts/dev/check_day12_artifacts.py",
+      "sha256": "5a8e1a630fd15a1074b1389302e04651d5b725c52d5e9314be4b99940ace41c9",
+      "bytes": 1033
+    },
+    {
+      "path": "scripts/dev/run_day12_checks.sh",
+      "sha256": "bd7fbfc71337be894116ed3a85285067fc58a999ebfece9449f49b67e530716e",
+      "bytes": 1350
+    },
+    {
+      "path": "scripts/dev/validate_day12_contracts.py",
+      "sha256": "51b1ae5fc6916a3ebac8a1e8b2dc3b7e1425a701be5aad0699e8ba971d8dc74a",
+      "bytes": 2508
+    },
+    {
+      "path": "services/signal-ingestion-service/src/canonical/session_contracts.py",
+      "sha256": "5adf6be583733eef636eb47a541c85cf7b4ac628aebe86304903332df735dd16",
+      "bytes": 14799
+    }
+  ]
+}

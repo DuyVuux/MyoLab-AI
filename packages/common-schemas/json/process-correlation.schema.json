@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/process-correlation.schema.json",
+  "title": "MotionLab Process Correlation Envelope",
+  "description": "Identity/correlation only; Clinical Event Store events are defined later. Raw payloads are forbidden.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "case_id", "correlation_id", "session_id", "parent_correlation_id", "correlation_scope", "raw_payload_included"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "case_id": {"type": "string", "pattern": "^case_[0-9a-f]{32}$"},
+    "correlation_id": {"type": "string", "pattern": "^corr_[0-9a-f]{32}$"},
+    "session_id": {"type": "string", "pattern": "^ses_[0-9a-f]{32}$"},
+    "parent_correlation_id": {"type": ["string", "null"], "pattern": "^corr_[0-9a-f]{32}$"},
+    "correlation_scope": {"const": "INGESTION_TO_REVIEW"},
+    "raw_payload_included": {"const": false}
+  }
+}

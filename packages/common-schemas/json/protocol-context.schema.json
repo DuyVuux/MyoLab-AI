@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/protocol-context.schema.json",
+  "title": "MotionLab ProtocolContext",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_id",
+    "protocol_version",
+    "task",
+    "muscle_context",
+    "side",
+    "load",
+    "speed",
+    "markers",
+    "clinical_context_ref",
+    "normalization_reference"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "protocol_id": {"$ref": "#/$defs/evidenceString"},
+    "protocol_version": {"$ref": "#/$defs/evidenceString"},
+    "task": {"$ref": "#/$defs/evidenceString"},
+    "muscle_context": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidenceString"},
+      "uniqueItems": false
+    },
+    "side": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "evidence_status", "evidence_refs"],
+      "properties": {
+        "value": {"type": ["string", "null"], "enum": ["LEFT", "RIGHT", "BILATERAL", "NOT_APPLICABLE", "UNKNOWN", null]},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    },
+    "load": {"$ref": "#/$defs/evidenceQuantity"},
+    "speed": {"$ref": "#/$defs/evidenceQuantity"},
+    "markers": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidenceString"}
+    },
+    "clinical_context_ref": {"$ref": "#/$defs/evidenceString"},
+    "normalization_reference": {"$ref": "#/$defs/evidenceString"}
+  },
+  "$defs": {
+    "evidenceStatus": {
+      "type": "string",
+      "enum": ["VERIFIED", "SOURCE_REPORTED", "UNKNOWN", "NOT_VERIFIED", "DISCOVERY_REQUIRED"]
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "evidenceString": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "evidence_status", "evidence_refs"],
+      "properties": {
+        "value": {"type": ["string", "null"]},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    },
+    "evidenceQuantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "unit", "evidence_status", "evidence_refs"],
+      "properties": {
+        "value": {"type": ["number", "null"]},
+        "unit": {"type": ["string", "null"]},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    }
+  }
+}

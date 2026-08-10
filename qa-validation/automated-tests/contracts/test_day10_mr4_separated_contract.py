@@ -73,8 +73,8 @@ def test_09_direct_identifier_surface() -> None:
         item["name"]: item
         for item in load_yaml(SEPARATED_CONTRACT)["record_metadata"]["known_fields"]
     }
-    assert fields["last_name"]["privacy_class"] == "DIRECT_IDENTIFIER"
-    assert fields["first_name"]["privacy_class"] == "DIRECT_IDENTIFIER"
+    assert fields["last_name"]["privacy_class"] == "HIPAA_18_IDENTIFIER_NAME"
+    assert fields["first_name"]["privacy_class"] == "HIPAA_18_IDENTIFIER_NAME"
 
 
 def test_10_free_text_risk() -> None:

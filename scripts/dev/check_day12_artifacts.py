@@ -1,11 +1,37 @@
-#!/usr/bin/env python3
+from __future__ import annotations
+
+import hashlib
+import json
 from pathlib import Path
-R=Path(__file__).resolve().parents[2]; REQ=['packages/semg-core/semg_core/fatigue_evidence.py','services/inference-service/evidence/fatigue_evidence_v0.1.yaml','services/inference-service/src/evidence_engine.py','scripts/data/run_fatigue_evidence.py','docs/06-ai-signal-processing/fatigue-evidence-engine-spec.md','qa-validation/requirements/day12-acceptance-criteria.md']
-def main():
- m=[x for x in REQ if not (R/x).is_file()]
- if m:raise SystemExit('Thiếu '+str(m))
- c=(R/'services/inference-service/evidence/fatigue_evidence_v0.1.yaml').read_text()
- for x in ['clinical_validation_status: not_validated','do_not_output_fatigue_detected: true','do_not_output_probability: true','do_not_generate_frs: true','do_not_generate_clinical_recommendation: true']:
-  if x not in c:raise SystemExit('Thiếu '+x)
- print('Day 12 artifact/safety check: PASS');return 0
-if __name__=='__main__':raise SystemExit(main())
+
+
+ROOT = Path(__file__).resolve().parents[2]
+MANIFEST = ROOT / "qa-validation/evidence/day12-artifact-manifest.json"
+
+
+def sha256_file(path: Path) -> str:
+    with path.open("rb") as file_obj:
+        return hashlib.file_digest(file_obj, "sha256").hexdigest()
+
+
+def main() -> int:
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    errors: list[str] = []
+    for item in manifest["files"]:
+        path = ROOT / item["path"]
+        if not path.is_file():
+            errors.append(f"missing: {item['path']}")
+            continue
+        digest = sha256_file(path)
+        if digest != item["sha256"]:
+            errors.append(f"hash mismatch: {item['path']}")
+    if errors:
+        for error in errors:
+            print(f"[FAIL] {error}")
+        return 1
+    print(f"[PASS] DAY12 managed artifacts: {len(manifest['files'])}/{len(manifest['files'])}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
