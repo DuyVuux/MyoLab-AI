@@ -1,0 +1,21 @@
+schema_version: '0.1'
+clinical_evidence: false
+data_class: SYNTHETIC_QA_FIXTURE
+cases:
+- case_id: D05-001
+  fields:
+    first_name: SYNTHETIC_NAME
+    last_name: SYNTHETIC_SURNAME
+  expected: DIRECT_IDENTIFIER_DETECTED
+- case_id: D05-002
+  fields:
+    analysis_session_id: SES-4f983d0a
+  expected: PASS_STRUCTURED_ID_CHECK
+- case_id: D05-003
+  fields:
+    record_name: patient-name treadmill
+  expected: FREE_TEXT_REVIEW_REQUIRED
+- case_id: D05-004
+  fields:
+    governance_status: UNKNOWN
+  expected: GOVERNANCE_STATUS_UNKNOWN

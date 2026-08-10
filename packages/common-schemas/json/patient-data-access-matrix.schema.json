@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Patient Data Access Matrix v0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "principles",
+    "data_classes",
+    "roles",
+    "hard_rules",
+    "site_tbd"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "principles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_classes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "roles": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "restricted_source_clinical",
+          "deidentified_derivative",
+          "can_export"
+        ]
+      }
+    },
+    "hard_rules": {
+      "type": "object"
+    },
+    "site_tbd": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

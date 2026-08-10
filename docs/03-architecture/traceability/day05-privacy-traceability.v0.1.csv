@@ -1,0 +1,7 @@
+requirement_id,artifact,verification,state,evidence_status
+FR-020,security-compliance/privacy/deidentification-sop.v0.1.md,canonical non-PHI ID rule,DESIGNED,SUPPORTED_BY_SRS
+FR-025,security-compliance/privacy/motionlab-data-classification.v0.1.md,de-id/governance metadata classification,DESIGNED,SUPPORTED_BY_SRS
+NFR-004,security-compliance/privacy/motionlab-data-classification.v0.1.md,privacy fail-closed review,DESIGNED,SUPPORTED_BY_SRS
+NFR-005,security-compliance/privacy/patient-data-access-matrix.v0.1.yaml,role matrix validation,DESIGNED,SUPPORTED_BY_SRS
+NFR-006,security-compliance/privacy/deidentification-sop.v0.1.md,audit event requirements,DESIGNED,SUPPORTED_BY_SRS
+TBD-05,qa-validation/evidence/day05-day04-handoff-snapshot.json,must remain unresolved without site confirmation,IDENTIFIED,NEED_GOVERNANCE_CONFIRMATION

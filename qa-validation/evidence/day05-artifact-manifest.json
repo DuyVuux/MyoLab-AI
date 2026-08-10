@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "scope": "DAY05_MANAGED_ARTIFACTS_ONLY",
+  "hash_algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "docs/00-executive/day05/day05-closeout-summary.v0.1.md",
+      "sha256": "b0f430553c6c91f9247b5920a63bc5a09c6258361793bf5895adede7464d51fb",
+      "size_bytes": 212
+    },
+    {
+      "path": "docs/02-clinical/discovery/day05-open-question-impact.v0.1.md",
+      "sha256": "d757db15ef29cfcd8d9e7932fc36b7bfcc1e91da88eb1dcadcdf45815975a3c0",
+      "size_bytes": 290
+    },
+    {
+      "path": "docs/03-architecture/traceability/day05-privacy-traceability.v0.1.csv",
+      "sha256": "83a264e1249e8378049331ae5d0790cd01c93fc80dbe9b34176d3b37618d5b15",
+      "size_bytes": 840
+    },
+    {
+      "path": "packages/common-schemas/json/patient-data-access-matrix.schema.json",
+      "sha256": "a4377fe3b1608bbf9fb6a107389770ff41cc90046084b3cc41ff1c6c57f4b622",
+      "size_bytes": 1070
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/__pycache__/test_day05_privacy_gate.cpython-313-pytest-9.0.2.pyc",
+      "sha256": "55ed28958476324c77b0ab13e446913ea449073146e99f0771ba5f58ccc56700",
+      "size_bytes": 20113
+    },
+    {
+      "path": "qa-validation/automated-tests/governance/test_day05_privacy_gate.py",
+      "sha256": "437abf710fe32c3452f0046624dc8665434bf7197e776012f2acd66991673688",
+      "size_bytes": 4082
+    },
+    {
+      "path": "qa-validation/evidence/day05-day04-handoff-snapshot.json",
+      "sha256": "ffb8f9bfe2aff0ac1fe03ae10556f51bdb09cf443c4a305c8e5746fdde9bb420",
+      "size_bytes": 270
+    },
+    {
+      "path": "qa-validation/evidence/day05-source-hash-ledger.json",
+      "sha256": "4e85a9118303fa4eff2d1b80c3fe959e5102a42b4a436d3d04ea661d8a477a72",
+      "size_bytes": 1037
+    },
+    {
+      "path": "qa-validation/evidence/day05-validation-report.json",
+      "sha256": "ca400887962917a92ed3f4c3fa08e881ae5e3e08a3459c4f62bccfb5f7aded6a",
+      "size_bytes": 188
+    },
+    {
+      "path": "qa-validation/requirements/day05-acceptance-criteria.md",
+      "sha256": "4d27e6b97f06b572a20d15219124325f0145c8592268f18f891d0ec61951bfa4",
+      "size_bytes": 378
+    },
+    {
+      "path": "qa-validation/test-data/day05/synthetic-privacy-boundary-cases.v0.1.yaml",
+      "sha256": "01aea7e29f6b6575c7b4136c09eca618ec2993d82da38842d692e325217f8387",
+      "size_bytes": 528
+    },
+    {
+      "path": "scripts/dev/__pycache__/day05_privacy_utils.cpython-313.pyc",
+      "sha256": "d6d0ef9b5694e27092b9389861b27b91d976ac3e0ec119e940473f5ad18e53e7",
+      "size_bytes": 2201
+    },
+    {
+      "path": "scripts/dev/check_day05_artifacts.py",
+      "sha256": "0df21558cda86c3bc557d451eb1759476c1f9af7c71b2948a989189584587e03",
+      "size_bytes": 862
+    },
+    {
+      "path": "scripts/dev/day05_privacy_utils.py",
+      "sha256": "b6ad6eb4842e83167e03ae65244232c51785d45f28de7f5aec4bdbfc056a105a",
+      "size_bytes": 1167
+    },
+    {
+      "path": "scripts/dev/run_day05_checks.sh",
+      "sha256": "d7b84f2d755152bb56dc95f88af19b81c11f7b7f4051b981e8d5822ae4aa03e1",
+      "size_bytes": 237
+    },
+    {
+      "path": "scripts/dev/validate_day05_privacy_gate.py",
+      "sha256": "482a02d313e47e8d887c449f144db476c7313a6425f733190e6dcf45311c55f2",
+      "size_bytes": 968
+    },
+    {
+      "path": "security-compliance/privacy/deidentification-sop.v0.1.md",
+      "sha256": "6fff462308d90e22059a65be816ac22e7ce8ec2f17cd25898cde4ab703bb8549",
+      "size_bytes": 2360
+    },
+    {
+      "path": "security-compliance/privacy/motionlab-data-classification.v0.1.md",
+      "sha256": "96414474269f3b5baeb19335965b3370a80f14e060285d4e8275751b1a73e6e4",
+      "size_bytes": 3728
+    },
+    {
+      "path": "security-compliance/privacy/patient-data-access-matrix.v0.1.yaml",
+      "sha256": "3ba1669f0bb927ec8b1837bc2644ce8af45c8ec8c5eae94f6cb5391d5fbefb2d",
+      "size_bytes": 1353
+    }
+  ]
+}

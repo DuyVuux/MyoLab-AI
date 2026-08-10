@@ -1,0 +1,47 @@
+schema_version: '0.1'
+status: DRAFT_SITE_APPROVAL_REQUIRED
+principles:
+- LEAST_PRIVILEGE
+- PURPOSE_LIMITATION
+- AUDITABLE_ACCESS
+- FAIL_CLOSED
+data_classes:
+- PUBLIC_SYNTHETIC
+- VENDOR_PUBLIC_SAMPLE
+- RESTRICTED_SOURCE_CLINICAL
+- DEIDENTIFIED_CLINICAL_DERIVATIVE
+- RESEARCH_DERIVED_AGGREGATE
+- UNKNOWN_CLASSIFICATION
+roles:
+- role: operator
+  restricted_source_clinical: CONDITIONAL_SITE_POLICY
+  deidentified_derivative: CONDITIONAL_SITE_POLICY
+  can_export: false
+- role: doctor
+  restricted_source_clinical: CONDITIONAL_SITE_POLICY
+  deidentified_derivative: CONDITIONAL_SITE_POLICY
+  can_export: false
+- role: admin
+  restricted_source_clinical: NO_DEFAULT_CONTENT_ACCESS
+  deidentified_derivative: NO_DEFAULT_CONTENT_ACCESS
+  can_export: false
+- role: research
+  restricted_source_clinical: DENY_BY_DEFAULT
+  deidentified_derivative: APPROVAL_REQUIRED
+  can_export: false
+- role: technical_reviewer
+  restricted_source_clinical: DENY_BY_DEFAULT
+  deidentified_derivative: APPROVAL_REQUIRED
+  can_export: false
+hard_rules:
+  unknown_classification_access: DENY
+  git_raw_patient_data: DENY
+  direct_identifier_in_analysis_id: DENY
+  audit_required_for_clinical_access: true
+  external_transfer_default: DENY_UNTIL_APPROVED
+site_tbd:
+- approved_raw_location
+- retention_period
+- consent_or_legal_basis
+- identity_map_location
+- named_role_membership

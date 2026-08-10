@@ -1,0 +1,30 @@
+{
+  "hash_algorithm": "SHA-256",
+  "sources": [
+    {
+      "source_key": "prd",
+      "filename": "PRD_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "sha256": "41f3154bea76a5071801a4a229f045169ad5dbc9dff664016866d5cb7af92bb3"
+    },
+    {
+      "source_key": "srs",
+      "filename": "SRS_MotionLab_Data_Intelligence_v0.1(1).docx",
+      "sha256": "ad416ae9b8cbbe18f980a3d7b7c74f2bcdd10197eae174451749f311fdfae20d"
+    },
+    {
+      "source_key": "csv_arch",
+      "filename": "Motion_Lab_CSV_Architecture(1).md",
+      "sha256": "eca1132b86a311faa1d1759b77374433ce971626f6d888d12611bf937ee9cab1"
+    },
+    {
+      "source_key": "roadmap",
+      "filename": "MotionLab_Data_Intelligence_90_Day_Rebaselined_Execution_Roadmap_v1.0(2).md",
+      "sha256": "c6b8fb738e26423817c25033a1ff0b19dc72ba3d9871cd871f9d346e478f03e7"
+    },
+    {
+      "source_key": "day04_zip",
+      "filename": "DAY04_CLINICAL_DATA_QUALITY_TAXONOMY_HANDOFF.zip",
+      "sha256": "7a153aad3ddb78c39074e5a9d3579dec693ed223dd29cd038f719e3818378a3d"
+    }
+  ]
+}
