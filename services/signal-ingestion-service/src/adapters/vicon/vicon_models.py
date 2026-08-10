@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 
-from adapters.common.provenance import (
+from src.adapters.common.provenance import (
     ParserProvenance,
     SourceLinkage,
     sha256_file,

@@ -5,7 +5,7 @@ from pathlib import Path
 
 import yaml
 
-from adapters.vicon.vicon_models import ViconParseError
+from .vicon_models import ViconParseError
 
 
 @dataclass(frozen=True)

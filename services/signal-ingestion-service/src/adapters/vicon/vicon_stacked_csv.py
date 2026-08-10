@@ -9,13 +9,13 @@ import csv
 from io import StringIO
 from pathlib import Path
 
-from adapters.vicon.vicon_contracts import ViconStackedContract, load_vicon_contract
-from adapters.common.provenance import (
+from .vicon_contracts import ViconStackedContract, load_vicon_contract
+from src.adapters.common.provenance import (
     ParserProvenance,
     source_linkage,
     stable_run_id,
 )
-from adapters.vicon.vicon_models import (
+from .vicon_models import (
     MultimodalAlignmentContext,
     UnsupportedSectionEvidence,
     ViconColumnDescriptor,

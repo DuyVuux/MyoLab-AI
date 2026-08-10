@@ -1,0 +1,52 @@
+contract_id: INGESTION_EVENT_EMISSION_V0_1
+version: 0.1.0
+scope: DAY19_MINIMAL_PROCESS_EVENTS
+persistent_event_store_implemented: false
+persistent_event_store_target_day: 53
+allowed_event_types:
+  - IMPORT_STARTED
+  - IMPORT_SUCCEEDED
+  - IMPORT_FAILED
+  - VALIDATION_FAILED
+required_fields:
+  - event_id
+  - event_type
+  - operation_id
+  - case_id
+  - correlation_id
+  - session_id
+  - input_kind
+  - source_refs
+  - config_version
+  - emitted_at_utc
+  - outcome_status
+  - reason_code
+privacy:
+  raw_payload: forbidden
+  patient_name: forbidden
+  mrn: forbidden
+  free_text_clinical_note: forbidden
+  source_path: forbidden_in_event
+  source_reference: sha256_source_id_only
+semantics:
+  IMPORT_STARTED:
+    terminal: false
+  IMPORT_SUCCEEDED:
+    terminal: true
+    requires_status: SUCCEEDED
+  IMPORT_FAILED:
+    terminal: true
+    requires_status: FAILED
+  VALIDATION_FAILED:
+    terminal: true
+    requires_status: FAILED
+idempotency:
+  exact_operation_retry_reuses_result: true
+  exact_operation_retry_emits_duplicate_events: false
+  event_id_deterministic_from_operation_type_sequence: true
+safety:
+  failure_payload_must_be_null: true
+  success_stage: INGESTED
+  success_processed: false
+  success_final_looking: false
+  parser_exception_must_not_escape_as_success: true
