@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/session.schema.json",
+  "title": "MotionLab Canonical Session",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "session_id",
+    "subject_analysis_id",
+    "source_record_ids",
+    "record_name_ref",
+    "measurement_time",
+    "deidentification_status",
+    "governance_status",
+    "protocol_context",
+    "domain_context",
+    "process_correlation",
+    "signals",
+    "canonicalization_reasons"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "session_id": {"type": "string", "pattern": "^ses_[0-9a-f]{32}$"},
+    "subject_analysis_id": {"type": "string", "pattern": "^subj_[0-9a-f]{32}$"},
+    "source_record_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^src_sha256_[0-9a-f]{64}$"}
+    },
+    "record_name_ref": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["source_record_id", "field_path", "exposure_policy"],
+      "properties": {
+        "source_record_id": {"type": "string", "pattern": "^src_sha256_[0-9a-f]{64}$"},
+        "field_path": {"const": "record_name"},
+        "exposure_policy": {"const": "RESTRICTED_SOURCE_METADATA"}
+      }
+    },
+    "measurement_time": {"$ref": "#/$defs/evidenceTimestamp"},
+    "deidentification_status": {
+      "type": "string",
+      "enum": ["VERIFIED_DEIDENTIFIED", "NOT_VERIFIED", "UNKNOWN", "NOT_APPLICABLE"]
+    },
+    "governance_status": {
+      "type": "string",
+      "enum": ["APPROVED", "RESTRICTED", "NOT_VERIFIED", "UNKNOWN"]
+    },
+    "protocol_context": {"$ref": "protocol-context.schema.json"},
+    "domain_context": {"$ref": "domain-context.schema.json"},
+    "process_correlation": {"$ref": "process-correlation.schema.json"},
+    "signals": {
+      "type": "array",
+      "items": {"$ref": "signal.schema.json"}
+    },
+    "canonicalization_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "MISSING_PROTOCOL_METADATA",
+          "UNKNOWN_SIDE",
+          "UNKNOWN_MUSCLE_CONTEXT",
+          "UNKNOWN_CHANNEL_MAPPING",
+          "UNKNOWN_LAYOUT",
+          "UNKNOWN_SITE_CONFIGURATION",
+          "GOVERNANCE_NOT_VERIFIED",
+          "DEIDENTIFICATION_NOT_VERIFIED"
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "evidenceStatus": {
+      "type": "string",
+      "enum": ["VERIFIED", "SOURCE_REPORTED", "UNKNOWN", "NOT_VERIFIED", "DISCOVERY_REQUIRED"]
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "evidenceTimestamp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "evidence_status", "evidence_refs"],
+      "properties": {
+        "value": {"type": ["string", "null"], "format": "date-time"},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+day: 12
+review_status: PENDING
+reviewers:
+  data_engineering: null
+  clinical_dsp: null
+  privacy_governance: null
+  architecture: null
+checks:
+  canonical_ids_non_phi: PENDING
+  record_name_reference_boundary: PENDING
+  no_vendor_name_semantic_inference: PENDING
+  source_text_preservation: PENDING
+  explicit_unknown_semantics: PENDING
+  domain_context_readiness_only: PENDING
+  process_correlation_identity_only: PENDING
+  day11_regression_passed_in_integrated_repo: PENDING
+notes: []

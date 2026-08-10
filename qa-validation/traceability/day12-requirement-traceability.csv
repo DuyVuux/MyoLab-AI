@@ -1,0 +1,11 @@
+requirement,source,day12_action,artifact,test_or_evidence,state_after_day12
+FR-020,SRS,"Define opaque non-PHI canonical Session ID and subject analysis ID","packages/common-schemas/json/session.schema.json; services/signal-ingestion-service/src/canonical/session_contracts.py","test_08; test_09",IMPLEMENTED_CONTRACT
+FR-021,SRS,"Preserve source/device/software/time/sampling/unit references without copying restricted record_name into open canonical fields","session.schema.json; signal.schema.json; domain-context.schema.json","test_12; test_19; golden fixtures",IMPLEMENTED_CONTRACT
+FR-022,SRS,"Represent protocol/task/muscle/side/load/speed/clinical context as evidence-bearing fields","protocol-context.schema.json; session_contracts.py","test_23; test_24",IMPLEMENTED_CONTRACT
+FR-023,SRS,"Unknown/missing metadata remains explicit UNKNOWN/NOT_VERIFIED/DISCOVERY_REQUIRED; no silent inference","all DAY12 schemas; session_contracts.py","test_05; test_20; test_30; corrupted fixtures",DESIGNED_IMPLEMENTED_CONTRACT
+FR-024,SRS,"Provide versioned canonical_channel_ref hook but do not perform vendor-to-canonical mapping before DAY14","signal.schema.json; session_contracts.py","test_17; test_18; test_20",DESIGNED_INTERFACE_ONLY
+FR-025,SRS,"Carry de-identification and governance status into canonical Session","session.schema.json","golden fixtures; peer review",IMPLEMENTED_CONTRACT
+NFR-002,SRS,"Link Session/Signal to SourceRecord IDs and evidence references","session.schema.json; signal.schema.json; session_contracts.py","test_13; test_33",DESIGNED_IMPLEMENTED_CONTRACT
+NFR-011,SRS,"Pin schema_version for Session/Signal/ProtocolContext/DomainContext/ProcessCorrelation","all DAY12 schemas","test_26",IMPLEMENTED_VERSIONING
+TECH-D12-DOMAIN,Technology Augmentation,"Add descriptive DomainContext for later distribution-support/OOD readiness without OOD scoring","packages/common-schemas/json/domain-context.schema.json","test_21; test_23",READINESS_ONLY
+TECH-D12-CORRELATION,Technology Augmentation,"Add case_id/correlation_id/session_id linkage for future ingestion-QC-review events without event-store payload","packages/common-schemas/json/process-correlation.schema.json","test_10; test_11; test_22; test_34",READINESS_ONLY

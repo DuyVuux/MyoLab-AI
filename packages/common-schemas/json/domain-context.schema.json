@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/domain-context.schema.json",
+  "title": "MotionLab DomainContext for Distribution Support Readiness",
+  "description": "Descriptive domain axes only. This schema MUST NOT be interpreted as an OOD score or clinical generalization guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "acquisition_site_id",
+    "device_manufacturer",
+    "device_model",
+    "device_revision",
+    "software_name",
+    "software_version",
+    "protocol_version",
+    "electrode_layout_id",
+    "channel_layout_id",
+    "session_day_index",
+    "task",
+    "load_context",
+    "speed_context",
+    "context_category"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "acquisition_site_id": {"$ref": "#/$defs/evidenceString"},
+    "device_manufacturer": {"$ref": "#/$defs/evidenceString"},
+    "device_model": {"$ref": "#/$defs/evidenceString"},
+    "device_revision": {"$ref": "#/$defs/evidenceString"},
+    "software_name": {"$ref": "#/$defs/evidenceString"},
+    "software_version": {"$ref": "#/$defs/evidenceString"},
+    "protocol_version": {"$ref": "#/$defs/evidenceString"},
+    "electrode_layout_id": {"$ref": "#/$defs/evidenceString"},
+    "channel_layout_id": {"$ref": "#/$defs/evidenceString"},
+    "session_day_index": {"$ref": "#/$defs/evidenceInteger"},
+    "task": {"$ref": "#/$defs/evidenceString"},
+    "load_context": {"$ref": "#/$defs/evidenceString"},
+    "speed_context": {"$ref": "#/$defs/evidenceString"},
+    "context_category": {
+      "type": "string",
+      "enum": ["CLINICAL_PATIENT", "HEALTHY_VOLUNTEER", "PUBLIC_DATASET", "VENDOR_SAMPLE", "SYNTHETIC", "UNKNOWN"]
+    }
+  },
+  "$defs": {
+    "evidenceStatus": {
+      "type": "string",
+      "enum": ["VERIFIED", "SOURCE_REPORTED", "UNKNOWN", "NOT_VERIFIED", "DISCOVERY_REQUIRED"]
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "evidenceString": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "evidence_status", "evidence_refs"],
+      "properties": {
+        "value": {"type": ["string", "null"]},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    },
+    "evidenceInteger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "evidence_status", "evidence_refs"],
+      "properties": {
+        "value": {"type": ["integer", "null"], "minimum": 0},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    }
+  }
+}

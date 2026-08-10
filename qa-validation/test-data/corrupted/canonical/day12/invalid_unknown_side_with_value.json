@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0.0",
+  "session_id": "ses_11111111111111111111111111111111",
+  "subject_analysis_id": "subj_22222222222222222222222222222222",
+  "source_record_ids": [
+    "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  ],
+  "record_name_ref": {
+    "source_record_id": "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "field_path": "record_name",
+    "exposure_policy": "RESTRICTED_SOURCE_METADATA"
+  },
+  "measurement_time": {
+    "value": "2026-08-10T10:00:00+07:00",
+    "evidence_status": "SOURCE_REPORTED",
+    "evidence_refs": [
+      "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:measurement_date"
+    ]
+  },
+  "deidentification_status": "NOT_VERIFIED",
+  "governance_status": "NOT_VERIFIED",
+  "protocol_context": {
+    "schema_version": "1.0.0",
+    "protocol_id": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "protocol_version": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "task": {
+      "value": "treadmill_running",
+      "evidence_status": "SOURCE_REPORTED",
+      "evidence_refs": [
+        "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:record_context"
+      ]
+    },
+    "muscle_context": [],
+    "side": {
+      "value": "LEFT",
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "load": {
+      "value": null,
+      "unit": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "speed": {
+      "value": null,
+      "unit": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "markers": [],
+    "clinical_context_ref": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "normalization_reference": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    }
+  },
+  "domain_context": {
+    "schema_version": "1.0.0",
+    "acquisition_site_id": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "device_manufacturer": {
+      "value": "Noraxon",
+      "evidence_status": "SOURCE_REPORTED",
+      "evidence_refs": [
+        "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:device_vendor"
+      ]
+    },
+    "device_model": {
+      "value": null,
+      "evidence_status": "NOT_VERIFIED",
+      "evidence_refs": []
+    },
+    "device_revision": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "software_name": {
+      "value": "Noraxon MR",
+      "evidence_status": "SOURCE_REPORTED",
+      "evidence_refs": [
+        "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:created_with_version"
+      ]
+    },
+    "software_version": {
+      "value": "4.0.22",
+      "evidence_status": "SOURCE_REPORTED",
+      "evidence_refs": [
+        "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:created_with_version"
+      ]
+    },
+    "protocol_version": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "electrode_layout_id": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "channel_layout_id": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "session_day_index": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "task": {
+      "value": "treadmill_running",
+      "evidence_status": "SOURCE_REPORTED",
+      "evidence_refs": [
+        "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:record_context"
+      ]
+    },
+    "load_context": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "speed_context": {
+      "value": null,
+      "evidence_status": "UNKNOWN",
+      "evidence_refs": []
+    },
+    "context_category": "UNKNOWN"
+  },
+  "process_correlation": {
+    "schema_version": "1.0.0",
+    "case_id": "case_33333333333333333333333333333333",
+    "correlation_id": "corr_44444444444444444444444444444444",
+    "session_id": "ses_11111111111111111111111111111111",
+    "parent_correlation_id": null,
+    "correlation_scope": "INGESTION_TO_REVIEW",
+    "raw_payload_included": false
+  },
+  "signals": [
+    {
+      "schema_version": "1.0.0",
+      "signal_id": "sig_55555555555555555555555555555555",
+      "source_record_id": "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "source_signal_name": {
+        "value": "Ultium_EMG-LT_BICEPS_FEM.",
+        "evidence_status": "SOURCE_REPORTED",
+        "evidence_refs": [
+          "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:signal_name"
+        ]
+      },
+      "signal_type": "EMG",
+      "shape": "SIGNAL_1D",
+      "sampling_rate_hz": {
+        "value": 2000.0,
+        "evidence_status": "SOURCE_REPORTED",
+        "evidence_refs": [
+          "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:frequency"
+        ]
+      },
+      "units": {
+        "value": "uV",
+        "evidence_status": "SOURCE_REPORTED",
+        "evidence_refs": [
+          "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:units"
+        ]
+      },
+      "canonical_channel_ref": {
+        "channel_id": null,
+        "mapping_version": null,
+        "evidence_status": "UNKNOWN",
+        "evidence_refs": []
+      }
+    }
+  ],
+  "canonicalization_reasons": [
+    "MISSING_PROTOCOL_METADATA",
+    "UNKNOWN_SIDE",
+    "UNKNOWN_MUSCLE_CONTEXT",
+    "UNKNOWN_CHANNEL_MAPPING",
+    "UNKNOWN_LAYOUT",
+    "UNKNOWN_SITE_CONFIGURATION",
+    "GOVERNANCE_NOT_VERIFIED",
+    "DEIDENTIFICATION_NOT_VERIFIED"
+  ]
+}
