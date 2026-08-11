@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.2",
+  "status": "PASS",
+  "claim_scope": "RESEARCH_ONLY",
+  "cases": 12,
+  "axes": [
+    "AMPLITUDE_SCALING",
+    "ELECTRODE_LAYOUT",
+    "MISSING_MODALITY",
+    "PROTOCOL_TASK",
+    "SAMPLING_RATE",
+    "SESSION_DAY",
+    "SIGNAL_MORPHOLOGY"
+  ],
+  "quality_blocked_cases": 2,
+  "shifted_cases": 6,
+  "unknown_support_cases": 2,
+  "physiology_false_blocks": 0,
+  "ood_score_emitted": false,
+  "clinical_edge_case_validation": "NOT_PERFORMED"
+}

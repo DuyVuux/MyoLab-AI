@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.2",
+  "status": "PASS",
+  "claim_scope": "RESEARCH_ONLY",
+  "strata": 15,
+  "final_qc_false_allow": 0,
+  "final_qc_false_block": 0,
+  "unresolved": 26,
+  "top_risk_cases": 20,
+  "acquisition_proxy": {
+    "items": 12,
+    "proxy_informative_items": 11,
+    "proxy_information_yield": 0.9166666666666666,
+    "strata": {
+      "HIGH_WORKFLOW_IMPACT": 6,
+      "DETECTOR_DISAGREEMENT": 4,
+      "ARTIFACT_VS_PHYSIOLOGY_AMBIGUITY": 1,
+      "REPRESENTATIVE_RANDOM": 1
+    },
+    "interpretation": "PROXY_ONLY_NOT_ACTIVE_LEARNING_PERFORMANCE"
+  },
+  "channel_scope_status": "NOT_EVALUATED_NO_REFERENCE_LABELS",
+  "session_scope_status": "NOT_EVALUATED_NO_REFERENCE_LABELS",
+  "clinical_sensitivity_claim": false
+}

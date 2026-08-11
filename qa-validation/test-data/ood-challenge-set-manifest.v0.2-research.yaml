@@ -1,0 +1,183 @@
+schema_version: '0.2'
+challenge_set_id: day36-physiology-preserving-domain-challenge-v0.2
+claim_scope: RESEARCH_ONLY
+clinical_edge_case_validation: NOT_PERFORMED
+public_raw_payload_evaluated: false
+ood_method_status: NOT_IMPLEMENTED
+ood_score_allowed: false
+reference_domain:
+  sampling_rate_hz: 2000
+  electrode_layout_id: synthetic-layout-A
+  channel_layout_id: synthetic-channel-layout-A
+  protocol_version: protocol-v1
+  task: controlled-contraction
+  session_day_index: 1
+  required_modalities: [SEMG]
+axes:
+  - AMPLITUDE_SCALING
+  - SIGNAL_MORPHOLOGY
+  - SAMPLING_RATE
+  - ELECTRODE_LAYOUT
+  - PROTOCOL_TASK
+  - SESSION_DAY
+  - MISSING_MODALITY
+cases:
+  - case_id: D36-REF-CLEAN
+    axis: REFERENCE
+    seed: 36001
+    sampling_rate_hz: 2000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: COMPLETE
+    expected_distribution_support: SUPPORTED
+    expected_quality_blocked: false
+  - case_id: D36-AMP-LOW-010
+    axis: AMPLITUDE_SCALING
+    seed: 36002
+    sampling_rate_hz: 2000
+    amplitude_scale: 0.10
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: COMPLETE
+    physiology_preservation_stress: true
+    expected_distribution_support: SUPPORTED
+    expected_quality_blocked: false
+  - case_id: D36-AMP-LOW-025
+    axis: AMPLITUDE_SCALING
+    seed: 36003
+    sampling_rate_hz: 2000
+    amplitude_scale: 0.25
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: COMPLETE
+    physiology_preservation_stress: true
+    expected_distribution_support: SUPPORTED
+    expected_quality_blocked: false
+  - case_id: D36-MORPH-HARMONIC
+    axis: SIGNAL_MORPHOLOGY
+    seed: 36004
+    sampling_rate_hz: 2000
+    amplitude_scale: 1.0
+    morphology: HARMONIC_VARIANT
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: COMPLETE
+    expected_distribution_support: SHIFTED
+    expected_quality_blocked: false
+  - case_id: D36-FS-1000
+    axis: SAMPLING_RATE
+    seed: 36005
+    sampling_rate_hz: 1000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: COMPLETE
+    expected_distribution_support: SHIFTED
+    expected_quality_blocked: false
+  - case_id: D36-FS-4000
+    axis: SAMPLING_RATE
+    seed: 36006
+    sampling_rate_hz: 4000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: COMPLETE
+    expected_distribution_support: SHIFTED
+    expected_quality_blocked: false
+  - case_id: D36-LAYOUT-B
+    axis: ELECTRODE_LAYOUT
+    seed: 36007
+    sampling_rate_hz: 2000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-B
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: COMPLETE
+    expected_distribution_support: SHIFTED
+    expected_quality_blocked: false
+  - case_id: D36-PROTOCOL-V2
+    axis: PROTOCOL_TASK
+    seed: 36008
+    sampling_rate_hz: 2000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v2
+    task: novel-task
+    session_day_index: 1
+    modality_status: COMPLETE
+    expected_distribution_support: SHIFTED
+    expected_quality_blocked: false
+  - case_id: D36-SESSION-DAY7
+    axis: SESSION_DAY
+    seed: 36009
+    sampling_rate_hz: 2000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 7
+    modality_status: COMPLETE
+    expected_distribution_support: SHIFTED
+    expected_quality_blocked: false
+  - case_id: D36-OPTIONAL-MODALITY-UNKNOWN
+    axis: MISSING_MODALITY
+    seed: 36010
+    sampling_rate_hz: 2000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: OPTIONAL_CONTEXT_MISSING
+    expected_distribution_support: UNKNOWN
+    expected_quality_blocked: false
+  - case_id: D36-DROPOUT-HARD-CONTROL
+    axis: QUALITY_FAILURE_CONTROL
+    seed: 36011
+    sampling_rate_hz: 2000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: COMPLETE
+    inject_dropout_fraction: 0.40
+    expected_distribution_support: SUPPORTED
+    expected_quality_blocked: true
+  - case_id: D36-REQUIRED-MODALITY-MISSING
+    axis: MISSING_MODALITY
+    seed: 36012
+    sampling_rate_hz: 2000
+    amplitude_scale: 1.0
+    morphology: BASE
+    layout_id: synthetic-layout-A
+    protocol_version: protocol-v1
+    task: controlled-contraction
+    session_day_index: 1
+    modality_status: REQUIRED_SEMG_MISSING
+    expected_distribution_support: UNKNOWN
+    expected_quality_blocked: true

@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.2",
+  "freeze_id": "qc-core-research-freeze-candidate-day38",
+  "claim_scope": "RESEARCH_ONLY",
+  "items": [
+    {
+      "path": "clinical/quality/qc-taxonomy.v0.2.yaml",
+      "sha256": "9b5365e9b7f4eb8b242fcd2483c58cea956c9bc8bae76acd77c0a8c1064e4535"
+    },
+    {
+      "path": "clinical/labels/qc-labeling-function-registry.v0.1.yaml",
+      "sha256": "d65bdb4107b1dfa16253582aee7c1e4a17505edf6d3c1d8867116ea0ba8ef79a"
+    },
+    {
+      "path": "services/quality-gate-service/src/detectors/dropout.py",
+      "sha256": "6cdbef9ada77cb1de767e9821bdedc83ff3719c38ffe4c5f453d30eab040d789"
+    },
+    {
+      "path": "services/quality-gate-service/src/detectors/clipping.py",
+      "sha256": "b1d1845678a74109f7e34834efa62c6d3ec754f41b592708b0be67a1184083ed"
+    },
+    {
+      "path": "services/quality-gate-service/src/detectors/baseline_noise.py",
+      "sha256": "38748149871c9a414eefd84a0ba21e515b9f068612eac1489355412cad542e71"
+    },
+    {
+      "path": "services/quality-gate-service/src/detectors/powerline.py",
+      "sha256": "2c3d26a47e1b7e4a1804ddda6a301b6278daa2c43697dfffcc0f4d99bb141a1c"
+    },
+    {
+      "path": "services/quality-gate-service/src/detectors/motion_artifact.py",
+      "sha256": "f4dce142893d744ed7b791edb7e1ee151ee7da4032d5dce4eae600d6bb07c7ea"
+    },
+    {
+      "path": "services/quality-gate-service/src/detectors/channel_abnormality.py",
+      "sha256": "73648876ef1b4245da1556a3cf23f424a8635d8b4eb785c922c6474f74fdaf26"
+    },
+    {
+      "path": "services/quality-gate-service/src/detectors/data_integrity.py",
+      "sha256": "a2c017f7bcf972937e9e89d41f78bfa8e6ac8344d20687779b5b368865454ece"
+    },
+    {
+      "path": "services/quality-gate-service/src/aggregation/session_quality.py",
+      "sha256": "08077f7349ab3e156989e189234a077ee4470f5b4f949f38d7e491c33e4bc4d0"
+    },
+    {
+      "path": "services/quality-gate-service/src/application/quality_gate.py",
+      "sha256": "a62e228aed36f3dc5acea53ff99ac9bb1d7c99bcf5442180905f9ae75085d77b"
+    },
+    {
+      "path": "configs/qc/thresholds.research-v0.1.yaml",
+      "sha256": "64b5d18cf0bb3d2a45c26657ef6fb5b4fe47623eb522a3747b329175498c0861"
+    },
+    {
+      "path": "qa-validation/evidence/research-benchmark-corpus-v0.1.manifest.yaml",
+      "sha256": "4f590fd15e2cad2c06ad06dc0e0a3051e8d845dfc118e3d386e7db262dd58475"
+    },
+    {
+      "path": "qa-validation/evidence/day35-threshold-study-fixtures.v0.1.manifest.yaml",
+      "sha256": "64b79355e559b30468829f2063ad82c8ea4ed3b05f941e97e141b63e4ea61ee4"
+    },
+    {
+      "path": "qa-validation/test-data/ood-challenge-set-manifest.v0.2-research.yaml",
+      "sha256": "b2511275a6d89d56e17cacb83f16ff527506fe97eca4bf9b13dff0174a28ae0b"
+    }
+  ],
+  "site_threshold_status": "NOT_VERIFIED",
+  "locked_evaluation_consumed": 0
+}

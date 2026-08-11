@@ -1,0 +1,182 @@
+[
+  {
+    "case_id": "rbw_sha256_149323075a106bb92b0fb05546c046ba6a92dd293d5ac1144579f8053fc7f034",
+    "source": "DAY34",
+    "category": "CORPUS_TRUTH_GAP",
+    "severity_score": 166,
+    "reason": "CORPUS_TRUTH_WINDOW_MISALIGNMENT;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_af2e62669302d7f10a04082bf95f367f458bbf7af55fcce5261a176d6f19c952",
+    "source": "DAY34",
+    "category": "CORPUS_TRUTH_GAP",
+    "severity_score": 166,
+    "reason": "CORPUS_TRUTH_WINDOW_MISALIGNMENT;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_bc1f293f3cac5f5d6a3243a01c2cd32cb4ff9ee0129972b7988a042ffdf19036",
+    "source": "DAY34",
+    "category": "CORPUS_TRUTH_GAP",
+    "severity_score": 166,
+    "reason": "CORPUS_TRUTH_WINDOW_MISALIGNMENT;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_eb2d3c3aedca993e0175ff913a8410f8f3e92b80d8fa7a3b0f39118734ca4b21",
+    "source": "DAY34",
+    "category": "CORPUS_TRUTH_GAP",
+    "severity_score": 166,
+    "reason": "CORPUS_TRUTH_WINDOW_MISALIGNMENT;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_356219d09c031de34a5c8ce7568bcad74e31d97f838f314352720943cc47baf0",
+    "source": "DAY34",
+    "category": "HARD_INTEGRITY_CONTROL",
+    "severity_score": 126,
+    "reason": "DAY29_HARD_INTEGRITY_OVERRIDE;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_86076e1e773151f6e16b5199441cafd7b92a3a2ca26fa1e80414c76643c8a8fb",
+    "source": "DAY34",
+    "category": "HARD_INTEGRITY_CONTROL",
+    "severity_score": 126,
+    "reason": "DAY29_HARD_INTEGRITY_OVERRIDE;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_396c54907282fbb4dab620de8ae7e02f900b25586b2f3fbc48f8438a6a72e6bd",
+    "source": "DAY34",
+    "category": "UNRESOLVED_KNOWN_TRUTH",
+    "severity_score": 121,
+    "reason": "KNOWN_TRUTH_TARGET_UNRESOLVED_FAIL_CLOSED;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_4a7f23b1168a3001f8885afe28fd8c43c1adbbae9a4d977a5990d52bbc77c647",
+    "source": "DAY34",
+    "category": "PHYSIOLOGY_SENTINEL",
+    "severity_score": 111,
+    "reason": "PHYSIOLOGY_PRESERVATION_SENTINEL;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_0d670244b7e3913b80b398af7541050fecd0e9dfceb3a037a0227174ff528caf",
+    "source": "DAY34",
+    "category": "DETECTOR_DISAGREEMENT",
+    "severity_score": 81,
+    "reason": "DETECTOR_DISAGREEMENT;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_f04fdf53fe57dcb9f53eaf9ccafce3ccd25058dd4aea58b7b62c90dee200b1a6",
+    "source": "DAY34",
+    "category": "DETECTOR_DISAGREEMENT",
+    "severity_score": 81,
+    "reason": "DETECTOR_DISAGREEMENT;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "rbw_sha256_fd96f5f236d14104824b52a9be69cb6cb66a9391a7a23a947e06fff4379f9986",
+    "source": "DAY34",
+    "category": "DETECTOR_DISAGREEMENT",
+    "severity_score": 81,
+    "reason": "DETECTOR_DISAGREEMENT;UNRESOLVED_LF_COUNT_2",
+    "replay_command": "python3 scripts/dev/day34_analysis_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-AMP-LOW-010",
+    "source": "DAY36",
+    "category": "PHYSIOLOGY_SENTINEL",
+    "severity_score": 80,
+    "reason": "REFERENCE_CONTEXT_MATCH",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-AMP-LOW-025",
+    "source": "DAY36",
+    "category": "PHYSIOLOGY_SENTINEL",
+    "severity_score": 80,
+    "reason": "REFERENCE_CONTEXT_MATCH",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-DROPOUT-HARD-CONTROL",
+    "source": "DAY36",
+    "category": "EXPECTED_HARD_BLOCK_CONTROL",
+    "severity_score": 75,
+    "reason": "REFERENCE_CONTEXT_MATCH",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-REQUIRED-MODALITY-MISSING",
+    "source": "DAY36",
+    "category": "EXPECTED_HARD_BLOCK_CONTROL",
+    "severity_score": 75,
+    "reason": "REQUIRED_MODALITY_MISSING",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-OPTIONAL-MODALITY-UNKNOWN",
+    "source": "DAY36",
+    "category": "DOMAIN_SUPPORT_UNKNOWN",
+    "severity_score": 70,
+    "reason": "OPTIONAL_MODALITY_SUPPORT_UNKNOWN",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-FS-1000",
+    "source": "DAY36",
+    "category": "DOMAIN_SHIFT_SENTINEL",
+    "severity_score": 55,
+    "reason": "SAMPLING_RATE_CONTEXT_SHIFT",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-FS-4000",
+    "source": "DAY36",
+    "category": "DOMAIN_SHIFT_SENTINEL",
+    "severity_score": 55,
+    "reason": "SAMPLING_RATE_CONTEXT_SHIFT",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-LAYOUT-B",
+    "source": "DAY36",
+    "category": "DOMAIN_SHIFT_SENTINEL",
+    "severity_score": 55,
+    "reason": "ELECTRODE_LAYOUT_CONTEXT_SHIFT",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  },
+  {
+    "case_id": "D36-MORPH-HARMONIC",
+    "source": "DAY36",
+    "category": "DOMAIN_SHIFT_SENTINEL",
+    "severity_score": 55,
+    "reason": "SIGNAL_MORPHOLOGY_CONTEXT_SHIFT",
+    "replay_command": "python3 scripts/dev/day36_challenge_runner.py",
+    "clinical_claim": false
+  }
+]

@@ -1,0 +1,8 @@
+schema_version: '0.1'
+python: 3.12.3
+implementation: CPython
+platform: Linux-6.18.35-x86_64-with-glibc2.39
+numpy: 2.2.6
+scipy: 1.15.2
+pytest: 8.3.5
+claim_scope: RESEARCH_ONLY
