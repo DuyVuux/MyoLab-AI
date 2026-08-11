@@ -1,0 +1,18 @@
+base_registry_version: '0.1'
+merge_policy: OPTION_B_RECONCILE_WITH_LIVE_REGISTRY
+reason_codes:
+  - code: DROPOUT_NOT_DETECTED
+    requirement: FR-031
+    semantic_class: SIGNAL_QUALITY_INDICATOR
+    labeling_function_candidate: true
+    clinical_claim: false
+  - code: FLATLINE_DETECTED
+    requirement: FR-031
+    semantic_class: DATA_INTEGRITY
+    labeling_function_candidate: true
+    clinical_claim: false
+  - code: FLATLINE_NOT_DETECTED
+    requirement: FR-031
+    semantic_class: SIGNAL_QUALITY_INDICATOR
+    labeling_function_candidate: true
+    clinical_claim: false

@@ -1,0 +1,97 @@
+{
+  "day": 23,
+  "scope": "DAY-managed repo_patch artifacts",
+  "count": 18,
+  "artifacts": [
+    {
+      "path": "clinical/labels/day23-qc-labeling-function-registry-delta.v0.1.yaml",
+      "sha256": "e6edc7767e9fab0d6dbc9a0d9c7e749aec704c244f87a74355c0a8f9b7883d06",
+      "bytes": 666
+    },
+    {
+      "path": "docs/00-executive/day23/DAY23_EXECUTION_PLAN.md",
+      "sha256": "e7137318aeb6c896c32828c54418b4574249f8f015d813118efac8eb35e7bba3",
+      "bytes": 88198
+    },
+    {
+      "path": "docs/00-executive/day23/DAY23_FEYNMAN_LEARNING_GUIDE.md",
+      "sha256": "665589747fbf01870c7c4e532d4a7f4419b9fda497f04893b8e643aee09caaa3",
+      "bytes": 20161
+    },
+    {
+      "path": "docs/00-executive/day23/DAY23_INTEGRATION_NOTES.md",
+      "sha256": "fd14d45a114d23faf084c0d875c33504c65a06194977a00ca4a4f1ebb751bc21",
+      "bytes": 973
+    },
+    {
+      "path": "docs/00-executive/rebaseline/day23-open-questions-and-decisions.md",
+      "sha256": "bc08ad5918edf5d53f7641e328657a5b0d55ed9e3abbc3b52fd27df344751129",
+      "bytes": 556
+    },
+    {
+      "path": "qa-validation/automated-tests/qc/test_dropout_detector.py",
+      "sha256": "723cfe151fc49e8c8ae554647b3023f62f7fdb866a16f9e1b62e61231fc2be72",
+      "bytes": 7443
+    },
+    {
+      "path": "qa-validation/evidence/day23-peer-review.template.yaml",
+      "sha256": "f773c645217353376a15dc58032fa113f913a6fd62b32a183c2cb0a2e5b44a9a",
+      "bytes": 322
+    },
+    {
+      "path": "qa-validation/evidence/day23-quality-self-audit.md",
+      "sha256": "541f1c67ae99a1cf23b009150fc511c61e145cf480b8d8164d03ee3d6d800307",
+      "bytes": 371
+    },
+    {
+      "path": "qa-validation/evidence/day23-validation-report.json",
+      "sha256": "e9903b1f696f1ba9a99ee8dac54c5aeabc0a11bc5515dd102f878346df6498e9",
+      "bytes": 671
+    },
+    {
+      "path": "qa-validation/requirements/day23-acceptance-criteria.md",
+      "sha256": "1ccef77af087b77c7af65342ac51d4e9f6471697be9b2abdd25ed65df232b7e2",
+      "bytes": 630
+    },
+    {
+      "path": "qa-validation/test-data/golden/qc/dropout/manifest.yaml",
+      "sha256": "735b7080bd97f00c737d7728be252c8b354aab6f0425af02d4d305ecb7603475",
+      "bytes": 808
+    },
+    {
+      "path": "qa-validation/test-data/synthetic/generators/semg_dropout_factory.py",
+      "sha256": "ab4b177bb3f67c25cc847320c5bb4e6d59c07694587cfb6598da1ab91e8fb52b",
+      "bytes": 1989
+    },
+    {
+      "path": "qa-validation/traceability/day23-requirement-impact.yaml",
+      "sha256": "b9d2190d35bad6f7f4584ea32de30f97b333048f973bb408cc9e0dbabc407aee",
+      "bytes": 149
+    },
+    {
+      "path": "scripts/dev/check_day23_artifacts.py",
+      "sha256": "72dbb654e9c2c402dbf9ff52b86e55e2acd08c3268e5a3161e04e7b1c0f455ec",
+      "bytes": 982
+    },
+    {
+      "path": "scripts/dev/day23_contract_validator.py",
+      "sha256": "59846eaf51b80684aebfd6d544707390a9a3c25b5446a27debeb2d44701aeeca",
+      "bytes": 1574
+    },
+    {
+      "path": "scripts/dev/run_day23_checks.sh",
+      "sha256": "179962f08acfe22f3b45ba14ca35f0c371e5e03a54b5afe8bd73c204ec714a52",
+      "bytes": 343
+    },
+    {
+      "path": "services/quality-gate-service/configs/day23-reason-code-delta.v0.1.yaml",
+      "sha256": "ac4857d123a29430cbed3bf464ef5d5ab3f1f900d485085f4b79b225e9f7f2a0",
+      "bytes": 575
+    },
+    {
+      "path": "services/quality-gate-service/src/detectors/dropout.py",
+      "sha256": "6cdbef9ada77cb1de767e9821bdedc83ff3719c38ffe4c5f453d30eab040d789",
+      "bytes": 9149
+    }
+  ]
+}

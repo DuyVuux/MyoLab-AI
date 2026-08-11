@@ -1,0 +1,19 @@
+{
+  "day": 23,
+  "engineering_validation": "PASS",
+  "day_tests_passed": 42,
+  "shared_day21_day22_functional_regression_passed": 103,
+  "historical_temporal_guards_deselected": 1,
+  "combined_passed": 145,
+  "window_identity_inherited_from_day22": true,
+  "labeling_function_output_inherited_from_day21": true,
+  "raw_mutation_allowed": false,
+  "final_qc_aggregation_implemented": false,
+  "final_qc_aggregation_target_day": 30,
+  "ground_truth_claim_allowed": false,
+  "expert_label_claim_allowed": false,
+  "active_learning_selection_running": false,
+  "label_model_trained": false,
+  "clinical_site_validation_claimed": false,
+  "status": "READY_WITH_LIMITATIONS"
+}

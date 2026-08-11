@@ -1,0 +1,12 @@
+day: 23
+status: PENDING
+review_items:
+  window_identity_inherited: PENDING
+  labeling_function_output_inherited: PENDING
+  raw_immutable: PENDING
+  no_ground_truth_claim: PENDING
+  abstain_unknown_safe: PENDING
+  option_b_registry_reconciled: PENDING
+  final_qc_deferred_to_day30: PENDING
+reviewer: null
+reviewed_at: null

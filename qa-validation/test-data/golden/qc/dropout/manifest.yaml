@@ -1,0 +1,25 @@
+version: '0.1'
+status: SYNTHETIC_KNOWN_TRUTH_ONLY
+clinical_evidence: false
+factory: qa-validation/test-data/synthetic/generators/semg_dropout_factory.py
+scenarios:
+  - id: clean_control
+    scenario: CLEAN
+    expected_dropout_candidate: PASS_CANDIDATE
+    expected_flatline_candidate: PASS_CANDIDATE
+  - id: missing_25pct
+    scenario: MISSING
+    expected_dropout_candidate: FAIL_CANDIDATE
+    truth: SYNTHETIC_KNOWN_TRUTH
+  - id: zero_dropout_75pct
+    scenario: ZERO_DROPOUT
+    expected_dropout_candidate: FAIL_CANDIDATE
+    truth: SYNTHETIC_KNOWN_TRUTH
+  - id: flatline_full_window
+    scenario: FLATLINE
+    expected_flatline_candidate: FAIL_CANDIDATE
+    truth: SYNTHETIC_KNOWN_TRUTH
+rules:
+  interpolation_forbidden: true
+  raw_mutation_forbidden: true
+  detector_ground_truth_claim_forbidden: true
