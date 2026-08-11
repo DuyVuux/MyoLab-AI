@@ -1,0 +1,12 @@
+config_version: "0.1.0"
+rule_version: "0.1.0"
+relative_rms_low_ratio: 0.15
+min_adjacent_channels: 2
+min_corroborating_artifact_signals: 1
+min_samples: 16
+safety:
+  low_activation_alone_is_not_poor_contact: true
+  auto_repair_forbidden: true
+  causal_diagnosis_forbidden: true
+  autonomous_session_block_forbidden: true
+threshold_status: ENGINEERING_PROVISIONAL

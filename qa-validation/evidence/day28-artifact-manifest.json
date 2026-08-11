@@ -1,0 +1,19 @@
+{
+  "day": 28,
+  "managed_files": [
+    "clinical/labels/day28-qc-labeling-function-registry-delta.v0.1.yaml",
+    "clinical/quality/poor-contact-review-guide.v0.1.md",
+    "configs/qc/channel-abnormality.v0.1.yaml",
+    "DAY28_POOR_CONTACT_CHANNEL_ABNORMALITY_WEAK_LABEL_HANDOFF/DAY28_EXECUTION_PLAN.md",
+    "DAY28_POOR_CONTACT_CHANNEL_ABNORMALITY_WEAK_LABEL_HANDOFF/DAY28_FEYNMAN_LEARNING_GUIDE.md",
+    "qa-validation/automated-tests/qc/test_channel_abnormality.py",
+    "qa-validation/traceability/day28-requirement-impact.yaml",
+    "scripts/dev/check_day28_artifacts.py",
+    "scripts/dev/day28_contract_validator.py",
+    "scripts/dev/run_day28_checks.sh",
+    "services/quality-gate-service/configs/day28-reason-code-delta.v0.1.yaml",
+    "services/quality-gate-service/src/detectors/channel_abnormality.py"
+  ],
+  "count": 12,
+  "scope": "DAY28 integrated repo artifacts; shared registries represented by deltas"
+}

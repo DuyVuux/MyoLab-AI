@@ -1,0 +1,7 @@
+schema_version: "0.1"
+base_registry: reason-codes.v0.1.yaml
+reason_codes:
+  - {"code": "POOR_CONTACT_SUSPECTED", "owner_day": 28, "status": "ENGINEERING", "labeling_function_candidate": true}
+  - {"code": "LOW_ACTIVATION_CAUSE_UNRESOLVED", "owner_day": 28, "status": "ENGINEERING", "labeling_function_candidate": true}
+  - {"code": "CHANNEL_ABNORMALITY_UNRESOLVED", "owner_day": 28, "status": "ENGINEERING", "labeling_function_candidate": true}
+  - {"code": "CHANNEL_ABNORMALITY_NOT_OBSERVED", "owner_day": 28, "status": "ENGINEERING", "labeling_function_candidate": true}

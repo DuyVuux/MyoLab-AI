@@ -1,0 +1,7 @@
+schema_version: "0.1"
+day: 28
+requirements:
+  - FR-036
+  - FR-037
+  - PRD_PRESERVE_PHYSIOLOGY
+integration_policy: RECONCILE_WITH_LIVE_REQUIREMENTS_MANIFEST
