@@ -1,0 +1,30 @@
+schema_version: day32-data-readiness.v0.2
+project_mode: INDEPENDENT_RESEARCH_PORTFOLIO
+allowed_values:
+  day33_data_readiness:
+  - RESEARCH_READY
+  - SYNTHETIC_ONLY_READY_WITH_LIMITATIONS
+  - BLOCKED_DATA_GOVERNANCE
+decision_rules:
+- RESEARCH_READY if >=1 public source is license/provenance verified and synthetic
+  fixtures are available.
+- SYNTHETIC_ONLY_READY_WITH_LIMITATIONS if synthetic known-truth corpus exists but
+  no public source is yet verified.
+- BLOCKED_DATA_GOVERNANCE if neither an eligible public source nor a reproducible
+  synthetic corpus is available.
+clinical_claims_allowed: false
+assessment_id: day32-reference-builder-state
+assessment_date: '2026-08-11'
+inputs:
+  synthetic_fixture_status: USER_REPORTED_AVAILABLE_FROM_DAY23_28
+  public_dataset_status: NOT_VERIFIED_IN_DAY32_BUILDER
+  public_license_status: NOT_VERIFIED_IN_DAY32_BUILDER
+  real_clinical_data_status: NOT_AVAILABLE_BY_CONTINUATION_MODEL
+  expert_reviewer_status: NOT_REQUIRED_FOR_DAY32
+day33_data_readiness: SYNTHETIC_ONLY_READY_WITH_LIMITATIONS
+notes:
+- DAY32 engineering can pass without clinical data.
+- DAY33 research corpus should upgrade to RESEARCH_READY only after public source/license/provenance
+  verification.
+- No synthetic low-amplitude sample may be relabeled as stroke/paresis/atrophy clinical
+  truth.

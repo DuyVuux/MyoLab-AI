@@ -1,0 +1,55 @@
+{
+  "schema_version": "qc-annotation-item.research.v0.2",
+  "item_id": "ann_sha256_b3cc0475bb78a5026098858e9889acf666d31062d513d303314eca31d36e72f2",
+  "evidence_tier": "SYNTHETIC_KNOWN_TRUTH",
+  "annotation_unit_type": "RANDOM_CROP",
+  "window_context": {
+    "window_id": "qcw_sha256_1111111111111111111111111111111111111111111111111111111111111111",
+    "session_id": "session-research-001",
+    "channel_id": "channel-left-biceps",
+    "source_id": "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "start_sample": 1000,
+    "end_sample_exclusive": 1500,
+    "context_start_sample": 500,
+    "context_end_sample_exclusive": 2000,
+    "sampling_rate_hz": 2000.0,
+    "windowing_profile_fingerprint": "wprof_sha256_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "protocol_context_ref": "protocol://research-demo",
+    "domain_context_ref": null
+  },
+  "source_context": {
+    "evidence_source_class": "SYNTHETIC_FIXTURE",
+    "dataset_id": "synthetic://day23-28-fixtures",
+    "license_status": "NOT_APPLICABLE",
+    "clinical_evidence": false,
+    "source_manifest_ref": "qa-validation/test-data/synthetic/manifest"
+  },
+  "machine_evidence": [],
+  "human_annotation": null,
+  "synthetic_truth": {
+    "truth_category": "POWERLINE_INJECTION",
+    "generator_id": "synthetic-powerline-factory",
+    "generator_version": "0.1.0",
+    "seed": 3201,
+    "transform_provenance": [
+      "added 50Hz sinusoid to engineering fixture"
+    ],
+    "clinical_truth_claim": false
+  },
+  "adjudication": null,
+  "presentation": {
+    "waveform_core_visible": true,
+    "waveform_context_visible": true,
+    "machine_label_visibility": "HIDDEN_UNTIL_INITIAL_JUDGMENT",
+    "direct_identifiers_present": false,
+    "diagnostic_suggestion_present": false
+  },
+  "claim_scope": "RESEARCH_ONLY",
+  "provenance": {
+    "annotation_contract_version": "0.2.0-research",
+    "window_contract_version": "qc-window-identity.v0.1",
+    "qc_contract_version": "DAY21-v0.1",
+    "created_by_process": "SCHEMA_FIXTURE",
+    "clinical_validation_status": "NOT_PERFORMED"
+  }
+}

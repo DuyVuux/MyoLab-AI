@@ -1,0 +1,70 @@
+{
+  "schema_version": "qc-annotation-item.research.v0.2",
+  "item_id": "ann_sha256_9e1575bed95d5fc01a105e447a285820efe68814b76901765d6e9211b528259e",
+  "evidence_tier": "EXPERT_ANNOTATION",
+  "annotation_unit_type": "QC_WINDOW_WITH_CONTEXT",
+  "window_context": {
+    "window_id": "qcw_sha256_1111111111111111111111111111111111111111111111111111111111111111",
+    "session_id": "session-research-001",
+    "channel_id": "channel-left-biceps",
+    "source_id": "src_sha256_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "start_sample": 1000,
+    "end_sample_exclusive": 1500,
+    "context_start_sample": 500,
+    "context_end_sample_exclusive": 2000,
+    "sampling_rate_hz": 2000.0,
+    "windowing_profile_fingerprint": "wprof_sha256_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "protocol_context_ref": "protocol://research-demo",
+    "domain_context_ref": null
+  },
+  "source_context": {
+    "evidence_source_class": "SYNTHETIC_FIXTURE",
+    "dataset_id": "synthetic://day23-28-fixtures",
+    "license_status": "NOT_APPLICABLE",
+    "clinical_evidence": false,
+    "source_manifest_ref": "qa-validation/test-data/synthetic/manifest"
+  },
+  "machine_evidence": [
+    {
+      "lf_id": "LF_POWERLINE",
+      "lf_version": "0.1.0",
+      "reason_code": "POWERLINE_INTERFERENCE_SUSPECTED",
+      "label_candidate": "WARNING_CANDIDATE",
+      "evidence_refs": [
+        "qcw_sha256_1111111111111111111111111111111111111111111111111111111111111111"
+      ],
+      "ground_truth_claim": false,
+      "expert_label_claim": false,
+      "rule_confidence": "MODERATE"
+    }
+  ],
+  "human_annotation": {
+    "reviewer_id": "synthetic-qualified-expert-fixture",
+    "reviewer_class": "BIOMEDICAL_SIGNAL_EXPERT",
+    "artifact_category": "UNRESOLVED",
+    "severity": "UNKNOWN",
+    "supportability": "REVIEW_REQUIRED",
+    "artifact_vs_physiology": "INSUFFICIENT_EVIDENCE",
+    "technical_action": "FLAG_FOR_REVIEW",
+    "reviewer_confidence": "LOW",
+    "independent_initial_judgment": true,
+    "rationale": "Schema-only synthetic expert fixture; not real expert evidence."
+  },
+  "synthetic_truth": null,
+  "adjudication": null,
+  "presentation": {
+    "waveform_core_visible": true,
+    "waveform_context_visible": true,
+    "machine_label_visibility": "HIDDEN_UNTIL_INITIAL_JUDGMENT",
+    "direct_identifiers_present": false,
+    "diagnostic_suggestion_present": false
+  },
+  "claim_scope": "RESEARCH_ONLY",
+  "provenance": {
+    "annotation_contract_version": "0.2.0-research",
+    "window_contract_version": "qc-window-identity.v0.1",
+    "qc_contract_version": "DAY21-v0.1",
+    "created_by_process": "SCHEMA_FIXTURE",
+    "clinical_validation_status": "NOT_PERFORMED"
+  }
+}

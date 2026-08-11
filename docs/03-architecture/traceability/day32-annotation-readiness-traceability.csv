@@ -1,0 +1,7 @@
+requirement_id,day32_artifact,verification
+ICR-002,clinical/labels/qc-annotation-schema.v0.2-research.yaml,test_diagnosis_labels_forbidden
+ICR-003,qa-validation/evidence/day32-data-readiness.template.yaml,test_day33_readiness_allowed_statuses
+ICR-004,clinical/labels/qc-annotation-protocol.v0.2-research.md,test_negative_fixtures_rejected_by_schema_or_semantics
+ICR-012,clinical/review-templates/qc-adjudication-policy.v0.2-research.md,test_nonclinical_reviewer_not_expert
+DAY22,packages/common-schemas/json/qc-annotation-item.research.v0.2.schema.json,test_random_crop_forbidden
+DAY21,packages/common-schemas/json/qc-annotation-item.research.v0.2.schema.json,test_machine_or_synthetic_cannot_auto_promote_to_expert

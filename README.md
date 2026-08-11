@@ -27,3 +27,23 @@ bash scripts/dev/run_day12_checks.sh
 - DAY12 **không production parser**; parser MR4 single/separated vẫn thuộc DAY16/DAY17.
 - Canonicalization **không suy đoán muscle/side/protocol** từ vendor signal name mơ hồ; thiếu evidence phải giữ `UNKNOWN`/`NOT_VERIFIED` kèm reason/evidence state.
 - Không overwrite hoặc làm yếu `source_ledger.py` của DAY11; runtime validation và concurrency locking của upstream phải được regression-protected sau integration.
+
+
+Origin:
+The project originated as an exploratory R&D initiative conducted
+during my work at VSF around a real MotionLab workflow problem.
+
+Status:
+The organizational initiative concluded before access to a
+clinically annotated validation cohort.
+
+Continuation:
+I continued the engineering work independently to study
+safety-aware biomedical signal processing, reproducibility,
+QC architecture and clinical-AI system design.
+
+Clinical validation:
+Not performed.
+
+Clinical claims:
+None.

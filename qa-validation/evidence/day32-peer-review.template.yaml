@@ -1,0 +1,15 @@
+day: DAY32
+review_status: PENDING
+review_roles:
+- DSP_ENGINEER
+- DATA_GOVERNANCE_REVIEWER
+- HUMAN_FACTORS_REVIEWER
+- QA_REVIEWER
+questions:
+- Does any path promote synthetic/weak evidence to expert automatically?
+- Can a random crop bypass WindowIdentity context?
+- Can a non-clinical reviewer create EXPERT_ANNOTATION?
+- Does the protocol force artifact-vs-pathology binary classification?
+- Are machine labels hidden by default before initial human judgment?
+- Are DAY33 readiness claims separated from clinical evidence?
+approval: null

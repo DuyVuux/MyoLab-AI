@@ -1,0 +1,73 @@
+policy_id: annotation-acquisition-policy.research.v0.2
+version: 0.2.0-research
+status: DESIGN_ONLY_NOT_RUNNING
+active_learning_model_required: false
+selection_unit: QC_WINDOW_WITH_CONTEXT
+random_crop_forbidden: true
+selection_strata:
+- id: REPRESENTATIVE_RANDOM
+  purpose: Control selection bias and retain ordinary-case coverage.
+  signals:
+  - ELIGIBLE_WINDOW_POOL
+  requires_real_or_public_pool: true
+  hard_quota: null
+- id: DETECTOR_DISAGREEMENT
+  purpose: Prioritize conflicting weak-label candidates or abstention patterns.
+  signals:
+  - LF_LABEL_CONFLICT
+  - LF_ABSTAIN_WITH_OTHER_EVIDENCE
+  requires_real_or_public_pool: false
+  hard_quota: null
+- id: DOMAIN_NOVELTY
+  purpose: Surface underrepresented protocol/layout/Fs/unit/session-day contexts.
+  signals:
+  - DISTRIBUTION_SHIFTED
+  - DISTRIBUTION_UNKNOWN
+  - RARE_DOMAIN_CONTEXT
+  requires_real_or_public_pool: true
+  hard_quota: null
+- id: HIGH_RISK_FALSE_ALLOW
+  purpose: Inspect cases that appear allowed despite conflicting high-risk evidence.
+  signals:
+  - QC_PASS_WITH_CONFLICTING_WEAK_EVIDENCE
+  - INTEGRITY_NEAR_BOUNDARY
+  requires_real_or_public_pool: false
+  hard_quota: null
+- id: HIGH_WORKFLOW_IMPACT
+  purpose: Prioritize cases likely to trigger review, reprocess, or remeasurement
+    workflows.
+  signals:
+  - QC_WARNING
+  - METRIC_REVIEW_REQUIRED
+  - REMEASURE_SUGGESTED
+  requires_real_or_public_pool: false
+  hard_quota: null
+- id: ARTIFACT_VS_PHYSIOLOGY_AMBIGUITY
+  purpose: Challenge preserve-physiology guardrails without fabricating pathology.
+  signals:
+  - PHYSIOLOGY_POSSIBLE
+  - ARTIFACT_VS_PHYSIOLOGY_UNRESOLVED
+  requires_real_or_public_pool: false
+  hard_quota: null
+selection_order:
+- eligibility_and_governance_filter
+- deduplicate_by_window_id
+- assign_all_matching_strata
+- retain_representative_random_control
+- rank_information_value_within_stratum_without_probability_claim
+- apply_time_budget_after_pilot
+- record_selection_reason_and_bias_metadata
+forbidden:
+- DIAGNOSIS_BASED_QUOTA_WITHOUT_REAL_METADATA
+- RANDOM_CROP_WITHOUT_WINDOW_IDENTITY
+- SYNTHETIC_STROKE_LABEL
+- PROBABILITY_RANKING_WITHOUT_CALIBRATED_MODEL
+- HIDE_SELECTION_BIAS
+machine_evidence_display:
+  default: HIDDEN_UNTIL_INITIAL_JUDGMENT
+  objective_evidence_can_be_revealed: true
+  reason: Reduce anchoring/automation bias while retaining auditability.
+maturity:
+  selection_engine_running: false
+  trained_active_learning_model: false
+  label_model_trained: false

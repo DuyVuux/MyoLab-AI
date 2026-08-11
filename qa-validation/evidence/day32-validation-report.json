@@ -1,0 +1,37 @@
+{
+  "day": "DAY32",
+  "engineering_validation": "PASS",
+  "annotation_readiness": "ENGINEERING_READY",
+  "focused_tests": {
+    "passed": 50,
+    "failed": 0
+  },
+  "contract_validator": {
+    "status": "PASS",
+    "evidence_tiers": 4,
+    "acquisition_strata": 6,
+    "positive_fixtures": 4,
+    "negative_fixtures_rejected": 10
+  },
+  "reference_overlay_regression": {
+    "scope": "DAY30 + DAY31 + DAY32 reference handoff overlay",
+    "passed": 178,
+    "failed": 0,
+    "live_monorepo_independently_verified": false
+  },
+  "expert_validation": "NOT_PERFORMED",
+  "clinical_validation": false,
+  "active_learning_selection_running": false,
+  "label_model_trained": false,
+  "day33_data_readiness": "SYNTHETIC_ONLY_READY_WITH_LIMITATIONS",
+  "peer_review": "PENDING",
+  "final_status": "READY_WITH_LIMITATIONS",
+  "final_reference_runner": {
+    "day32_focused": 50,
+    "day31_focused": 44,
+    "day31_property": 16,
+    "runner_total": 110,
+    "managed_artifacts": 38,
+    "status": "PASS"
+  }
+}

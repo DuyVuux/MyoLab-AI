@@ -1,0 +1,126 @@
+contract_id: qc-annotation-research.v0.2
+version: 0.2.0-research
+status: ENGINEERING_CONTRACT
+project_continuation_mode: INDEPENDENT_RESEARCH_PORTFOLIO
+clinical_validation_status: NOT_PERFORMED
+purpose: Define annotation semantics, evidence tiers, reviewer rubric, and WindowIdentity-linked
+  annotation items without claiming expert validation.
+evidence_tiers:
+- id: SYNTHETIC_KNOWN_TRUTH
+  authority: TECHNICAL_FIXTURE_ONLY
+  requires_human_reviewer: false
+  may_claim_clinical_truth: false
+  description: Known by construction from deterministic synthetic fixture provenance.
+- id: WEAK_LABEL_CANDIDATE
+  authority: RULE_OR_DETECTOR_CANDIDATE
+  requires_human_reviewer: false
+  may_claim_clinical_truth: false
+  description: Machine/rule candidate evidence; never expert ground truth.
+- id: EXPERT_ANNOTATION
+  authority: SINGLE_QUALIFIED_HUMAN_OPINION
+  requires_human_reviewer: true
+  may_claim_clinical_truth: false
+  description: One qualified expert opinion; not adjudicated reference.
+- id: ADJUDICATED_REFERENCE
+  authority: MULTI_EXPERT_ADJUDICATION
+  requires_human_reviewer: true
+  may_claim_clinical_truth: false
+  description: Multi-expert adjudicated research reference. Clinical gold-standard
+    claim requires separate clinical governance evidence and is outside DAY32.
+automatic_promotion_forbidden: true
+allowed_transition_rules:
+- from: SYNTHETIC_KNOWN_TRUTH
+  to: EXPERT_ANNOTATION
+  automatic: false
+  requires:
+  - NEW_QUALIFIED_HUMAN_REVIEW
+- from: WEAK_LABEL_CANDIDATE
+  to: EXPERT_ANNOTATION
+  automatic: false
+  requires:
+  - NEW_QUALIFIED_HUMAN_REVIEW
+- from: EXPERT_ANNOTATION
+  to: ADJUDICATED_REFERENCE
+  automatic: false
+  requires:
+  - AT_LEAST_TWO_INDEPENDENT_EXPERT_ANNOTATIONS
+  - ADJUDICATION_ACTION
+annotation_unit:
+  required_type: QC_WINDOW_WITH_CONTEXT
+  window_id_pattern: ^qcw_sha256_[0-9a-f]{64}$
+  requires_day22_window_identity: true
+  context_required: true
+  random_crop_forbidden: true
+  raw_mutation_forbidden: true
+rubric:
+  artifact_category:
+  - NO_OBVIOUS_ARTIFACT
+  - MISSING_DROPOUT
+  - FLATLINE
+  - CLIPPING_SUSPECTED
+  - BASELINE_NOISE_ELEVATED
+  - POWERLINE_INTERFERENCE_SUSPECTED
+  - LOW_FREQUENCY_CONTAMINATION_SUSPECTED
+  - POOR_CONTACT_SUSPECTED
+  - MULTIPLE_ARTIFACTS
+  - UNRESOLVED
+  severity:
+  - INFO
+  - LOW
+  - MODERATE
+  - HIGH
+  - CRITICAL
+  - UNKNOWN
+  supportability:
+  - SUPPORTABLE
+  - REVIEW_REQUIRED
+  - BLOCKED
+  - UNKNOWN
+  - NOT_EVALUATED
+  artifact_vs_physiology:
+  - ARTIFACT_SUPPORTED
+  - PHYSIOLOGY_POSSIBLE
+  - BOTH_POSSIBLE
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  technical_action:
+  - CONTINUE_QC
+  - FLAG_FOR_REVIEW
+  - REQUEST_REMEASUREMENT
+  - CHECK_ELECTRODE_CONTACT
+  - CHECK_MAINS_EARTHING
+  - VERIFY_PROTOCOL_CONTEXT
+  - VERIFY_METADATA
+  - NO_AUTOMATED_ACTION
+  reviewer_confidence:
+  - LOW
+  - MODERATE
+  - HIGH
+  - UNKNOWN
+  binary_artifact_vs_pathology_forbidden: true
+  diagnosis_labels_forbidden: true
+reviewer_classes:
+- CLINICAL_EXPERT
+- BIOMEDICAL_SIGNAL_EXPERT
+- NON_CLINICAL_REVIEWER
+expert_annotation_allowed_reviewer_classes:
+- CLINICAL_EXPERT
+- BIOMEDICAL_SIGNAL_EXPERT
+presentation_policy:
+  waveform_core_required: true
+  waveform_context_required: true
+  objective_machine_evidence_allowed: true
+  machine_label_visibility_default: HIDDEN_UNTIL_INITIAL_JUDGMENT
+  direct_identifiers_allowed: false
+  diagnostic_suggestion_allowed: false
+  reason: Reduce anchoring bias and preserve non-diagnostic annotation semantics.
+day30_day31_boundaries:
+  annotation_may_override_day30_qc_automatically: false
+  annotation_may_compute_metric: false
+  annotation_may_bypass_day31_eligibility: false
+x_safety:
+  synthetic_pathology_claim_forbidden: true
+  weak_label_is_ground_truth: false
+  single_reviewer_is_adjudicated_reference: false
+  clinical_validation_claim: false
+  requires_real_clinical_data_for_day32_engineering_pass: false

@@ -1,59 +1,50 @@
-#!/usr/bin/env python3
-"""Day 32 — Artifact integrity checker.
+from __future__ import annotations
 
-Verifies that all required Day 32 files exist in the project root
-and that no prohibited model artifacts (joblib, pkl, onnx, pt) are present.
-"""
-from pathlib import Path
+import argparse
+import hashlib
 import json
+from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
 
-required = [
-    "docs/plans/DAY32_EXECUTION_PLAN.md",
-    "ai-core/configs/day32_core_models.research.yaml",
-    "ai-core/configs/day32_optional_models.research.yaml",
-    "ai-core/configs/day32_baseline_protocol.research.yaml",
-    "ai-core/modeling/day32/model_factory.py",
-    "ai-core/modeling/day32/authorization.py",
-    "ai-core/modeling/day32/matrix_gate.py",
-    "ai-core/modeling/day32/grouped_cv.py",
-    "ai-core/modeling/day32/aggregation.py",
-    "ai-core/modeling/day32/metrics.py",
-    "ai-core/modeling/day32/smoke_runner.py",
-    "ai-core/modeling/day32/core_gate.py",
-    "ai-core/pipelines/day32_run_core_baselines.py",
-    "ai-core/pipelines/day32_materialize_matrix.py",
-    "ai-core/pipelines/day32_run_optional_baselines.py",
-    "scripts/dev/run_day32_checks.sh",
-    "scripts/data/day32_generate_synthetic_matrix.py",
-    "scripts/data/day32_preflight.py",
-]
-
-missing = [p for p in required if not (ROOT / p).exists()]
-
-prohibited_suffixes = {".joblib", ".pkl", ".pickle", ".onnx", ".pt", ".pth"}
-# Only scan day32-related directories for prohibited artifacts
-scan_dirs = [
-    ROOT / "ai-core" / "modeling" / "day32",
-    ROOT / "qa-validation" / "evidence" / "day32",
-]
-artifacts = []
-for scan_dir in scan_dirs:
-    if scan_dir.exists():
-        for p in scan_dir.rglob("*"):
-            if p.is_file() and p.suffix.lower() in prohibited_suffixes:
-                artifacts.append(str(p.relative_to(ROOT)))
-
-result = {
-    "schema_version": "day32-artifact-check.v1",
-    "missing": missing,
-    "model_artifacts_in_repo": artifacts,
-    "pass": not missing and not artifacts,
+FORBIDDEN_SUFFIXES = {
+    ".pyc", ".pkl", ".pickle", ".joblib", ".onnx", ".pt", ".pth"
 }
+FORBIDDEN_DIRS = {"__pycache__", ".pytest_cache"}
 
-out = ROOT / "qa-validation" / "evidence" / "day32" / "day32-artifact-check.json"
-out.parent.mkdir(parents=True, exist_ok=True)
-out.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-print(json.dumps(result, indent=2))
-raise SystemExit(0 if result["pass"] else 2)
+
+def sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--repo-root", default=".")
+    args = parser.parse_args()
+    root = Path(args.repo_root).resolve()
+    manifest_path = root / "qa-validation/evidence/day32-artifact-manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    for rel, expected in manifest["artifacts"].items():
+        path = root / rel
+        if not path.is_file():
+            raise SystemExit(f"missing managed artifact: {rel}")
+        if any(part in FORBIDDEN_DIRS for part in Path(rel).parts):
+            raise SystemExit(f"forbidden managed cache path: {rel}")
+        if path.suffix in FORBIDDEN_SUFFIXES:
+            raise SystemExit(f"forbidden managed binary/model artifact: {rel}")
+        actual = sha256(path)
+        if actual != expected:
+            raise SystemExit(f"hash mismatch: {rel}: {actual} != {expected}")
+    result = {
+        "status": "PASS",
+        "managed_artifacts": len(manifest["artifacts"]),
+    }
+    print(json.dumps(result, indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

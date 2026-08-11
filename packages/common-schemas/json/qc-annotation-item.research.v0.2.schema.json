@@ -1,0 +1,607 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/qc-annotation-item.research.v0.2.schema.json",
+  "title": "MyoLab-AI QC Annotation Item — Research v0.2",
+  "description": "Research annotation item bound to DAY22 WindowIdentity. It preserves evidence-tier boundaries and forbids synthetic/weak-label promotion to clinical truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "item_id",
+    "evidence_tier",
+    "annotation_unit_type",
+    "window_context",
+    "source_context",
+    "machine_evidence",
+    "human_annotation",
+    "synthetic_truth",
+    "adjudication",
+    "presentation",
+    "claim_scope",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "qc-annotation-item.research.v0.2"
+    },
+    "item_id": {
+      "type": "string",
+      "pattern": "^ann_sha256_[0-9a-f]{64}$"
+    },
+    "evidence_tier": {
+      "enum": [
+        "SYNTHETIC_KNOWN_TRUTH",
+        "WEAK_LABEL_CANDIDATE",
+        "EXPERT_ANNOTATION",
+        "ADJUDICATED_REFERENCE"
+      ]
+    },
+    "annotation_unit_type": {
+      "const": "QC_WINDOW_WITH_CONTEXT"
+    },
+    "window_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "window_id",
+        "session_id",
+        "channel_id",
+        "source_id",
+        "start_sample",
+        "end_sample_exclusive",
+        "context_start_sample",
+        "context_end_sample_exclusive",
+        "sampling_rate_hz",
+        "windowing_profile_fingerprint"
+      ],
+      "properties": {
+        "window_id": {
+          "type": "string",
+          "pattern": "^qcw_sha256_[0-9a-f]{64}$"
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_sample": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_sample_exclusive": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "context_start_sample": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "context_end_sample_exclusive": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sampling_rate_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "windowing_profile_fingerprint": {
+          "type": "string",
+          "pattern": "^wprof_sha256_[0-9a-f]{64}$"
+        },
+        "protocol_context_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "domain_context_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "source_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_source_class",
+        "dataset_id",
+        "license_status",
+        "clinical_evidence"
+      ],
+      "properties": {
+        "evidence_source_class": {
+          "enum": [
+            "SYNTHETIC_FIXTURE",
+            "PUBLIC_EXTERNAL",
+            "ORGANIZATIONAL_ENGINEERING",
+            "APPROVED_RESEARCH_DATA"
+          ]
+        },
+        "dataset_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license_status": {
+          "enum": [
+            "NOT_APPLICABLE",
+            "VERIFIED",
+            "NOT_VERIFIED",
+            "RESTRICTED"
+          ]
+        },
+        "clinical_evidence": {
+          "type": "boolean"
+        },
+        "source_manifest_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "machine_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "lf_id",
+          "lf_version",
+          "reason_code",
+          "label_candidate",
+          "evidence_refs",
+          "ground_truth_claim",
+          "expert_label_claim"
+        ],
+        "properties": {
+          "lf_id": {
+            "type": "string",
+            "pattern": "^LF_[A-Z0-9_]+$"
+          },
+          "lf_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason_code": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]+$"
+          },
+          "label_candidate": {
+            "enum": [
+              "PASS_CANDIDATE",
+              "WARNING_CANDIDATE",
+              "FAIL_CANDIDATE",
+              "ABSTAIN",
+              "UNKNOWN"
+            ]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "ground_truth_claim": {
+            "const": false
+          },
+          "expert_label_claim": {
+            "const": false
+          },
+          "rule_confidence": {
+            "enum": [
+              "LOW",
+              "MODERATE",
+              "HIGH",
+              "UNKNOWN",
+              "NOT_APPLICABLE"
+            ]
+          }
+        }
+      }
+    },
+    "human_annotation": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reviewer_id",
+            "reviewer_class",
+            "artifact_category",
+            "severity",
+            "supportability",
+            "artifact_vs_physiology",
+            "technical_action",
+            "reviewer_confidence",
+            "independent_initial_judgment"
+          ],
+          "properties": {
+            "reviewer_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewer_class": {
+              "enum": [
+                "CLINICAL_EXPERT",
+                "BIOMEDICAL_SIGNAL_EXPERT",
+                "NON_CLINICAL_REVIEWER"
+              ]
+            },
+            "artifact_category": {
+              "enum": [
+                "NO_OBVIOUS_ARTIFACT",
+                "MISSING_DROPOUT",
+                "FLATLINE",
+                "CLIPPING_SUSPECTED",
+                "BASELINE_NOISE_ELEVATED",
+                "POWERLINE_INTERFERENCE_SUSPECTED",
+                "LOW_FREQUENCY_CONTAMINATION_SUSPECTED",
+                "POOR_CONTACT_SUSPECTED",
+                "MULTIPLE_ARTIFACTS",
+                "UNRESOLVED"
+              ]
+            },
+            "severity": {
+              "enum": [
+                "INFO",
+                "LOW",
+                "MODERATE",
+                "HIGH",
+                "CRITICAL",
+                "UNKNOWN"
+              ]
+            },
+            "supportability": {
+              "enum": [
+                "SUPPORTABLE",
+                "REVIEW_REQUIRED",
+                "BLOCKED",
+                "UNKNOWN",
+                "NOT_EVALUATED"
+              ]
+            },
+            "artifact_vs_physiology": {
+              "enum": [
+                "ARTIFACT_SUPPORTED",
+                "PHYSIOLOGY_POSSIBLE",
+                "BOTH_POSSIBLE",
+                "INSUFFICIENT_EVIDENCE",
+                "NOT_APPLICABLE"
+              ]
+            },
+            "technical_action": {
+              "enum": [
+                "CONTINUE_QC",
+                "FLAG_FOR_REVIEW",
+                "REQUEST_REMEASUREMENT",
+                "CHECK_ELECTRODE_CONTACT",
+                "CHECK_MAINS_EARTHING",
+                "VERIFY_PROTOCOL_CONTEXT",
+                "VERIFY_METADATA",
+                "NO_AUTOMATED_ACTION"
+              ]
+            },
+            "reviewer_confidence": {
+              "enum": [
+                "LOW",
+                "MODERATE",
+                "HIGH",
+                "UNKNOWN"
+              ]
+            },
+            "independent_initial_judgment": {
+              "type": "boolean"
+            },
+            "rationale": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 2000
+            }
+          }
+        }
+      ]
+    },
+    "synthetic_truth": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "truth_category",
+            "generator_id",
+            "generator_version",
+            "seed",
+            "clinical_truth_claim"
+          ],
+          "properties": {
+            "truth_category": {
+              "type": "string",
+              "minLength": 1
+            },
+            "generator_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "generator_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "seed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "transform_provenance": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "clinical_truth_claim": {
+              "const": false
+            }
+          }
+        }
+      ]
+    },
+    "adjudication": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "expert_annotation_refs",
+            "adjudicator_id",
+            "adjudicator_class",
+            "final_artifact_category",
+            "final_artifact_vs_physiology",
+            "rationale",
+            "reference_scope"
+          ],
+          "properties": {
+            "expert_annotation_refs": {
+              "type": "array",
+              "minItems": 2,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "adjudicator_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "adjudicator_class": {
+              "enum": [
+                "CLINICAL_EXPERT",
+                "BIOMEDICAL_SIGNAL_EXPERT"
+              ]
+            },
+            "final_artifact_category": {
+              "enum": [
+                "NO_OBVIOUS_ARTIFACT",
+                "MISSING_DROPOUT",
+                "FLATLINE",
+                "CLIPPING_SUSPECTED",
+                "BASELINE_NOISE_ELEVATED",
+                "POWERLINE_INTERFERENCE_SUSPECTED",
+                "LOW_FREQUENCY_CONTAMINATION_SUSPECTED",
+                "POOR_CONTACT_SUSPECTED",
+                "MULTIPLE_ARTIFACTS",
+                "UNRESOLVED"
+              ]
+            },
+            "final_artifact_vs_physiology": {
+              "enum": [
+                "ARTIFACT_SUPPORTED",
+                "PHYSIOLOGY_POSSIBLE",
+                "BOTH_POSSIBLE",
+                "INSUFFICIENT_EVIDENCE",
+                "NOT_APPLICABLE"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "reference_scope": {
+              "enum": [
+                "RESEARCH_ONLY",
+                "CLINICAL_GOVERNED"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "waveform_core_visible",
+        "waveform_context_visible",
+        "machine_label_visibility",
+        "direct_identifiers_present",
+        "diagnostic_suggestion_present"
+      ],
+      "properties": {
+        "waveform_core_visible": {
+          "const": true
+        },
+        "waveform_context_visible": {
+          "const": true
+        },
+        "machine_label_visibility": {
+          "enum": [
+            "HIDDEN_UNTIL_INITIAL_JUDGMENT",
+            "VISIBLE_WITH_DISCLOSURE",
+            "HIDDEN"
+          ]
+        },
+        "direct_identifiers_present": {
+          "const": false
+        },
+        "diagnostic_suggestion_present": {
+          "const": false
+        }
+      }
+    },
+    "claim_scope": {
+      "const": "RESEARCH_ONLY"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annotation_contract_version",
+        "window_contract_version",
+        "qc_contract_version",
+        "created_by_process",
+        "clinical_validation_status"
+      ],
+      "properties": {
+        "annotation_contract_version": {
+          "const": "0.2.0-research"
+        },
+        "window_contract_version": {
+          "const": "qc-window-identity.v0.1"
+        },
+        "qc_contract_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_by_process": {
+          "enum": [
+            "DRY_RUN",
+            "RESEARCH_ANNOTATION",
+            "SCHEMA_FIXTURE"
+          ]
+        },
+        "clinical_validation_status": {
+          "const": "NOT_PERFORMED"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evidence_tier": {
+            "const": "SYNTHETIC_KNOWN_TRUTH"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "synthetic_truth": {
+            "type": "object"
+          },
+          "human_annotation": {
+            "type": "null"
+          },
+          "adjudication": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evidence_tier": {
+            "const": "WEAK_LABEL_CANDIDATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "machine_evidence": {
+            "minItems": 1
+          },
+          "human_annotation": {
+            "type": "null"
+          },
+          "adjudication": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evidence_tier": {
+            "const": "EXPERT_ANNOTATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "human_annotation": {
+            "type": "object",
+            "properties": {
+              "reviewer_class": {
+                "enum": [
+                  "CLINICAL_EXPERT",
+                  "BIOMEDICAL_SIGNAL_EXPERT"
+                ]
+              }
+            }
+          },
+          "adjudication": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evidence_tier": {
+            "const": "ADJUDICATED_REFERENCE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "adjudication": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "x-safety": {
+    "random_crop_forbidden": true,
+    "weak_label_is_ground_truth": false,
+    "synthetic_is_pathology": false,
+    "single_reviewer_is_adjudicated_reference": false,
+    "clinical_claim": false
+  }
+}

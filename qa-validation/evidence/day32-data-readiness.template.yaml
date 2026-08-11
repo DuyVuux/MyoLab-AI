@@ -1,0 +1,25 @@
+schema_version: day32-data-readiness.v0.2
+assessment_id: <fill>
+assessment_date: <YYYY-MM-DD>
+project_mode: INDEPENDENT_RESEARCH_PORTFOLIO
+inputs:
+  synthetic_fixture_status: NOT_VERIFIED
+  public_dataset_status: NOT_VERIFIED
+  public_license_status: NOT_VERIFIED
+  real_clinical_data_status: NOT_AVAILABLE
+  expert_reviewer_status: NOT_REQUIRED_FOR_DAY32
+day33_data_readiness: BLOCKED_DATA_GOVERNANCE
+allowed_values:
+  day33_data_readiness:
+  - RESEARCH_READY
+  - SYNTHETIC_ONLY_READY_WITH_LIMITATIONS
+  - BLOCKED_DATA_GOVERNANCE
+decision_rules:
+- RESEARCH_READY if >=1 public source is license/provenance verified and synthetic
+  fixtures are available.
+- SYNTHETIC_ONLY_READY_WITH_LIMITATIONS if synthetic known-truth corpus exists but
+  no public source is yet verified.
+- BLOCKED_DATA_GOVERNANCE if neither an eligible public source nor a reproducible
+  synthetic corpus is available.
+clinical_claims_allowed: false
+notes: []

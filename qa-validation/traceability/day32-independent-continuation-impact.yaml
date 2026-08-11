@@ -1,0 +1,20 @@
+day: DAY32
+roadmap: MyoLab_AI_DAY32_90_Independent_Portfolio_Roadmap_v2.0
+requirements:
+- id: ICR-002
+  coverage: No clinical/site claims without evidence.
+- id: ICR-003
+  coverage: Only synthetic/public/governed research data in continuation.
+- id: ICR-004
+  coverage: Synthetic low-amplitude/artifact is not pathology.
+- id: ICR-012
+  coverage: Non-clinical review cannot be called clinician usability/expert evidence.
+upstream_contracts:
+- DAY21 LabelingFunctionOutput
+- DAY22 WindowIdentity
+- DAY30 QcAggregationResult
+- DAY31 quality eligibility boundary
+shared_files_not_overwritten:
+- qa-validation/traceability/requirements-manifest.yaml
+- clinical/labels/qc-labeling-function-registry.v0.1.yaml
+- services/quality-gate-service/configs/reason-codes.v0.1.yaml

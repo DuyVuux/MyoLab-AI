@@ -1,0 +1,9 @@
+day: DAY32
+upstream_user_report:
+  day31_engineering_validation: PASS
+  day31_final_status: READY_WITH_LIMITATIONS
+  live_independent_verification_by_builder: false
+continuation_mode: INDEPENDENT_RESEARCH_PORTFOLIO
+real_clinical_data_required_for_day32: false
+expert_reviewer_required_for_day32: false
+clinical_validation_status: NOT_PERFORMED
