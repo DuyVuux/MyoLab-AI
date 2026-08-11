@@ -1,0 +1,18 @@
+schema_version: "0.1"
+day: DAY30
+requirements:
+  - id: FR-030
+    states: [IMPLEMENT, VALIDATE]
+    artifacts: [services/quality-gate-service/src/aggregation/session_quality.py]
+  - id: FR-037
+    states: [IMPLEMENT, VALIDATE]
+    artifacts: [packages/common-schemas/json/qc-aggregation-result.v0.1.schema.json]
+  - id: FR-040
+    states: [IMPLEMENT, VALIDATE]
+    artifacts: [services/quality-gate-service/src/aggregation/session_quality.py]
+  - id: FR-041
+    states: [IMPLEMENT, VALIDATE]
+    artifacts: [configs/qc/aggregation.v0.1.yaml]
+  - id: AC-03
+    states: [VALIDATE]
+    artifacts: [qa-validation/automated-tests/qc/test_qc_aggregation.py]

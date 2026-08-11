@@ -1,0 +1,13 @@
+schema_version: "0.1"
+owner_day: DAY30
+reason_codes:
+  - code: AGGREGATION_THRESHOLD_NOT_VERIFIED
+    semantic_class: POLICY_EVIDENCE_GAP
+    default_evaluation_status: INSUFFICIENT_EVIDENCE
+    default_signal_quality: null
+    technical_action: VERIFY_AGGREGATION_POLICY
+  - code: AGGREGATION_INPUT_CONTRADICTION
+    semantic_class: DATA_CONTRACT_FAILURE
+    default_evaluation_status: INSUFFICIENT_EVIDENCE
+    default_signal_quality: null
+    technical_action: BLOCK_RESULT_EMISSION

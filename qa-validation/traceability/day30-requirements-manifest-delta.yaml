@@ -1,0 +1,5 @@
+schema_version: "0.1"
+day: DAY30
+required_ids: [FR-030, FR-037, FR-040, FR-041, AC-03]
+merge_policy: RECONCILE_WITH_LIVE_OPTION_B_MANIFEST
+shared_manifest_overwrite_allowed: false

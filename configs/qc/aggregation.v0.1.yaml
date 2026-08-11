@@ -1,0 +1,61 @@
+schema_version: "0.1"
+config_id: day30-qc-aggregation
+status: ENGINEERING_BASELINE_SITE_THRESHOLDS_NOT_VERIFIED
+principles:
+  deterministic: true
+  preserve_three_layers: true
+  raw_detector_evidence_is_not_policy_decision: true
+  weak_label_is_not_ground_truth: true
+  physiology_context_never_auto_fails_qc: true
+  missing_evidence_never_defaults_to_pass: true
+  day29_hard_integrity_precedence: true
+  day31_metric_handoff_deferred: true
+profiles:
+  site-template:
+    version: "0.1-site-template"
+    threshold_status: NOT_VERIFIED
+    required_lf_ids:
+      - LF_MISSING_DROPOUT
+      - LF_CLIPPING_SATURATION
+      - LF_BASELINE_NOISE
+      - LF_POWERLINE
+      - LF_LOW_FREQUENCY_CONTAMINATION
+      - LF_POOR_CONTACT
+    optional_lf_ids: []
+    window_fail_reason_codes:
+      - MISSING_DROPOUT
+      - FLATLINE_DETECTED
+    physiology_protection_reason_codes:
+      - PHYSIOLOGICAL_VARIATION_POSSIBLE
+    ambiguous_reason_codes:
+      - ARTIFACT_VS_PHYSIOLOGY_UNRESOLVED
+      - LOW_ACTIVATION_CAUSE_UNRESOLVED
+      - CHANNEL_ABNORMALITY_UNRESOLVED
+    channel_min_usable_window_ratio: null
+    session_max_allowed_bad_channels: null
+    require_complete_window_evidence: true
+  synthetic-engineering-only:
+    version: "0.1-synthetic"
+    threshold_status: VERIFIED_FOR_SYNTHETIC
+    required_lf_ids:
+      - LF_MISSING_DROPOUT
+      - LF_CLIPPING_SATURATION
+      - LF_BASELINE_NOISE
+      - LF_POWERLINE
+      - LF_LOW_FREQUENCY_CONTAMINATION
+      - LF_POOR_CONTACT
+    optional_lf_ids: []
+    window_fail_reason_codes:
+      - MISSING_DROPOUT
+      - FLATLINE_DETECTED
+    physiology_protection_reason_codes:
+      - PHYSIOLOGICAL_VARIATION_POSSIBLE
+    ambiguous_reason_codes:
+      - ARTIFACT_VS_PHYSIOLOGY_UNRESOLVED
+      - LOW_ACTIVATION_CAUSE_UNRESOLVED
+      - CHANNEL_ABNORMALITY_UNRESOLVED
+    channel_min_usable_window_ratio: 0.80
+    session_max_allowed_bad_channels: 1
+    require_complete_window_evidence: true
+    clinical_evidence: false
+    warning: DO_NOT_COPY_THRESHOLDS_TO_SITE_PROFILE

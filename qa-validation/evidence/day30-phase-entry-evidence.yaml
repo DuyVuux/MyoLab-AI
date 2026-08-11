@@ -1,0 +1,6 @@
+schema_version: "0.1"
+day: DAY30
+upstream_day29_status: USER_REPORTED_ACCEPTED
+live_qc_regression_before_day30: USER_REPORTED_336_PASS_AT_DAY29_ENTRY
+independently_verified_live_repo: false
+note: Standalone builder does not claim access to the user's live MyoLab-AI filesystem.

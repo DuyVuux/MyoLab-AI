@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "day": "DAY30",
+  "engineering_validation": "PASS",
+  "focused_test_result": {
+    "passed": 68,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "baseline_overlay_day29_day30": {
+    "passed": 124,
+    "failed": 0,
+    "status": "PASS",
+    "scope": "reference DAY29 repo_patch + DAY30 repo_patch"
+  },
+  "live_pre_day30_qc_suite": {
+    "status": "USER_REPORTED",
+    "passed": 336,
+    "note": "Reported by user in DAY29 entry context; not independently rerun by builder."
+  },
+  "live_post_merge_regression": "NOT_INDEPENDENTLY_VERIFIED",
+  "site_aggregation_thresholds": "NOT_VERIFIED",
+  "synthetic_thresholds_clinical_evidence": false,
+  "weak_supervision_maturity": "RULE_CANDIDATES_AGGREGATED_NOT_GROUND_TRUTH",
+  "label_model_trained": false,
+  "ood_score_implemented": false,
+  "metric_handoff_implemented": false,
+  "clinical_validation": false,
+  "final_status": "READY_WITH_LIMITATIONS"
+}

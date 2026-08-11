@@ -1,0 +1,13 @@
+schema_version: "0.1"
+day: DAY30
+review_status: PENDING
+reviewer: null
+checks:
+  three_layer_isolation: PENDING
+  hard_integrity_precedence: PENDING
+  physiology_protection: PENDING
+  missing_evidence_fail_closed: PENDING
+  threshold_maturity: PENDING
+  weak_label_not_ground_truth: PENDING
+  day31_scope_guard: PENDING
+comments: []

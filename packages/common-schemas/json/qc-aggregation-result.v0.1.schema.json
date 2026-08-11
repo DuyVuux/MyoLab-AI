@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/qc-aggregation-result.v0.1.schema.json",
+  "title": "MotionLab sEMG QC Aggregation Result v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "taxonomy_version",
+    "evaluation_status",
+    "scope_hierarchy",
+    "signal_quality",
+    "qc_supportability",
+    "metrics",
+    "reasons",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "taxonomy_version": {
+      "const": "0.2"
+    },
+    "evaluation_status": {
+      "enum": [
+        "EVALUATED",
+        "NOT_EVALUATED",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    "scope_hierarchy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_id",
+        "target_scope",
+        "channel_id",
+        "window_id"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "window_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_scope": {
+          "enum": [
+            "SESSION",
+            "CHANNEL",
+            "WINDOW"
+          ]
+        }
+      }
+    },
+    "signal_quality": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "PASS",
+        "WARNING",
+        "FAIL",
+        null
+      ]
+    },
+    "qc_supportability": {
+      "enum": [
+        "SUPPORTABLE",
+        "REVIEW_REQUIRED",
+        "BLOCKED",
+        "UNKNOWN",
+        "NOT_EVALUATED"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "usable_window_ratio",
+        "total_evaluated_windows",
+        "usable_windows_count",
+        "bad_window_count",
+        "bad_channel_count",
+        "total_channels_count"
+      ],
+      "properties": {
+        "usable_window_ratio": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "total_evaluated_windows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "usable_windows_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bad_window_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bad_channel_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_channels_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "reasons": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_reasons",
+        "disposition_reasons"
+      ],
+      "properties": {
+        "evidence_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]+$"
+          }
+        },
+        "disposition_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]+$"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "qc_contract_version",
+        "aggregation_algorithm_version",
+        "config_version",
+        "policy_profile_id",
+        "source_refs"
+      ],
+      "properties": {
+        "qc_contract_version": {
+          "const": "DAY30-v0.1"
+        },
+        "aggregation_algorithm_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "config_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "policy_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "const": "EVALUATED"
+          }
+        },
+        "required": [
+          "evaluation_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "signal_quality": {
+            "enum": [
+              "PASS",
+              "WARNING",
+              "FAIL"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "enum": [
+              "NOT_EVALUATED",
+              "INSUFFICIENT_EVIDENCE"
+            ]
+          }
+        },
+        "required": [
+          "evaluation_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "signal_quality": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "signal_quality": {
+            "const": "PASS"
+          }
+        },
+        "required": [
+          "signal_quality"
+        ]
+      },
+      "then": {
+        "properties": {
+          "qc_supportability": {
+            "not": {
+              "const": "BLOCKED"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

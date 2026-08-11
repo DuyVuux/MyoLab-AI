@@ -1,0 +1,6 @@
+requirement_id,artifact,test_or_evidence,state
+FR-030,services/quality-gate-service/src/aggregation/session_quality.py,test_qc_aggregation.py,IMPLEMENTED
+FR-037,packages/common-schemas/json/qc-aggregation-result.v0.1.schema.json,test_qc_aggregation.py,VALIDATED
+FR-040,services/quality-gate-service/src/aggregation/session_quality.py,test_qc_aggregation.py,IMPLEMENTED
+FR-041,configs/qc/aggregation.v0.1.yaml,test_qc_aggregation.py,IMPLEMENTED
+AC-03,qa-validation/automated-tests/qc/test_qc_aggregation.py,day30-validation-report.json,VALIDATED

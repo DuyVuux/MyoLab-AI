@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1",
+  "day": "DAY30",
+  "generated_after_final_static_edits": true,
+  "artifacts": [
+    {
+      "path": "clinical/labels/weak-supervision-aggregation-contract.v0.1.md",
+      "sha256": "0b7efaad658bb92afd0a746b84963e55103c33588b0476a96f54c22c4fca56e7",
+      "bytes": 1651
+    },
+    {
+      "path": "configs/qc/aggregation.v0.1.yaml",
+      "sha256": "0fdf0f51900757352592a1605cb82b3d684bd6cc47416858be15a601571cf1e4",
+      "bytes": 2020
+    },
+    {
+      "path": "docs/00-executive/day30/DAY30_EXECUTION_PLAN.md",
+      "sha256": "978339f023aed736ce99deed904e24710dd1427b0936d44736b2887e568cf82c",
+      "bytes": 32868
+    },
+    {
+      "path": "docs/00-executive/day30/DAY30_FEYNMAN_LEARNING_GUIDE.md",
+      "sha256": "880d6c8adfbf35f5bcfd7639fd229bf2ff3708e8e86b5335fd24e249719aaaca",
+      "bytes": 27328
+    },
+    {
+      "path": "docs/00-executive/day30/DAY30_INTEGRATION_NOTES.md",
+      "sha256": "8f1f58caa5258089b9bde9ac13c2b3fcaaf80a9db0e579c0d9a8a4545017a3df",
+      "bytes": 563
+    },
+    {
+      "path": "docs/00-executive/rebaseline/day30-open-questions-and-decisions.md",
+      "sha256": "d95e5b9638791a4444fe4dff3a9dcddea74b77245c1fd9e327839e00da3b423b",
+      "bytes": 923
+    },
+    {
+      "path": "docs/03-architecture/traceability/day30-qc-aggregation-traceability.csv",
+      "sha256": "9fda05a0a8889285697cbbd886914eb32faab54e55d27c7958b520d033c49c88",
+      "bytes": 545
+    },
+    {
+      "path": "packages/common-schemas/json/qc-aggregation-result.v0.1.schema.json",
+      "sha256": "bc61d2477d99f88c5227c498e25a3a18e9e0642fb43e2a42e259e732b6849835",
+      "bytes": 5341
+    },
+    {
+      "path": "qa-validation/automated-tests/qc/test_qc_aggregation.py",
+      "sha256": "b72ea2c45e3d25d36690af6e6530f0a07e43baf1f25777a41299801d60b5f31d",
+      "bytes": 27404
+    },
+    {
+      "path": "qa-validation/evidence/day30-peer-review.template.yaml",
+      "sha256": "05d08a9f420dbdf5b6af88a43ac4d7eb5095aacce7b157b36fff55cc4709273e",
+      "bytes": 333
+    },
+    {
+      "path": "qa-validation/evidence/day30-phase-entry-evidence.yaml",
+      "sha256": "ee42543833fbce7396d7bf083ccf525526a8f78c84fe0d0f0892ad8eb2c48a33",
+      "bytes": 278
+    },
+    {
+      "path": "qa-validation/evidence/day30-quality-self-audit.md",
+      "sha256": "17180b866a4dbf941c85efcd5fdc3b168a7db0f29c41bc8caa1b64dd89036efe",
+      "bytes": 1691
+    },
+    {
+      "path": "qa-validation/evidence/day30-validation-report.json",
+      "sha256": "0bf9708ea82043a1bc180ac8ad651e70060149b29dc361d963dc36cff6453d5f",
+      "bytes": 930
+    },
+    {
+      "path": "qa-validation/requirements/day30-acceptance-criteria.md",
+      "sha256": "4d8f447949dae0d7bbf5222d4c13dc5d78dfc98503e4b93926f6bc8032d87bca",
+      "bytes": 778
+    },
+    {
+      "path": "qa-validation/traceability/day30-requirement-impact.yaml",
+      "sha256": "397488e75bb9bb9147d7adea829eb014c88a92b7e604284132ca8f4cf7358f15",
+      "bytes": 652
+    },
+    {
+      "path": "qa-validation/traceability/day30-requirements-manifest-delta.yaml",
+      "sha256": "283d8efa316b38b34e313845eabc5e92016aa30fe566f184c9cac1a9486375cd",
+      "bytes": 180
+    },
+    {
+      "path": "scripts/dev/check_day30_artifacts.py",
+      "sha256": "9306fca318b5baefcbcb9cd9b3aff73b7e0fea0f035fee6dc2d37cdd7d636c05",
+      "bytes": 1057
+    },
+    {
+      "path": "scripts/dev/day30_contract_validator.py",
+      "sha256": "5181bdfe27be6bb12265164f6215a0075fa0baa771546373a81fea0cc4f162c0",
+      "bytes": 1668
+    },
+    {
+      "path": "scripts/dev/run_day30_checks.sh",
+      "sha256": "d22f87d4809fd3fecf0e04e9194e5bceb049e6674397023bec4609a4fad5a454",
+      "bytes": 608
+    },
+    {
+      "path": "services/quality-gate-service/configs/day30-reason-code-delta.v0.1.yaml",
+      "sha256": "041d274d40d7eb32b5a5235b53400d2ecdc3b684865f79c1d514448dac7e9391",
+      "bytes": 486
+    },
+    {
+      "path": "services/quality-gate-service/src/aggregation/session_quality.py",
+      "sha256": "08077f7349ab3e156989e189234a077ee4470f5b4f949f38d7e491c33e4bc4d0",
+      "bytes": 31594
+    }
+  ]
+}
