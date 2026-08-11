@@ -1,0 +1,38 @@
+{
+  "day": "DAY36",
+  "status": "PASS",
+  "focused_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "upstream_qc_property_regression": {
+    "passed": 660,
+    "failed": 0,
+    "deselected": 1,
+    "deselected_reason": "DAY21 anti-future-scope guard"
+  },
+  "challenge_summary": {
+    "schema_version": "0.2",
+    "status": "PASS",
+    "claim_scope": "RESEARCH_ONLY",
+    "cases": 12,
+    "axes": [
+      "AMPLITUDE_SCALING",
+      "ELECTRODE_LAYOUT",
+      "MISSING_MODALITY",
+      "PROTOCOL_TASK",
+      "SAMPLING_RATE",
+      "SESSION_DAY",
+      "SIGNAL_MORPHOLOGY"
+    ],
+    "quality_blocked_cases": 2,
+    "shifted_cases": 6,
+    "unknown_support_cases": 2,
+    "physiology_false_blocks": 0,
+    "ood_score_emitted": false,
+    "clinical_edge_case_validation": "NOT_PERFORMED"
+  },
+  "clinical_validation": "NOT_PERFORMED",
+  "ood_model": "NOT_IMPLEMENTED",
+  "site_threshold_status": "NOT_VERIFIED"
+}

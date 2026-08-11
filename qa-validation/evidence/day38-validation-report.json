@@ -1,0 +1,19 @@
+{
+  "day": "DAY38",
+  "status": "PASS",
+  "focused_property_tests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "full_qc_property_regression": {
+    "passed": 667,
+    "failed": 0,
+    "deselected": 1
+  },
+  "freeze_hashes": {
+    "passed": 15,
+    "failed": 0
+  },
+  "hard_integrity_false_allow_unresolved": false,
+  "clinical_validation": "NOT_PERFORMED"
+}

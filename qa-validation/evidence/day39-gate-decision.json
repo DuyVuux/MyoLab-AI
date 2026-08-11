@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "gate": "GATE-C-R",
+  "status": "QC_RESEARCH_CORE_READY",
+  "claim_scope": "RESEARCH_ONLY",
+  "checks": {
+    "required_evidence_complete": true,
+    "freeze_hashes_match": true,
+    "site_threshold_status_not_verified": true,
+    "hard_integrity_false_allow_unresolved": false,
+    "final_qc_false_allow_zero": true,
+    "reproducibility_pass": true,
+    "locked_evaluation_consumed_zero": true
+  },
+  "missing": [],
+  "hash_errors": [],
+  "weak_supervision_maturity": "RESEARCH_ONLY",
+  "weak_supervision_annotation_aid_validation": "NOT_PERFORMED",
+  "distribution_support_maturity": "INFORMATIONAL_RESEARCH_ONLY",
+  "distribution_support_blocking_gate_enabled": false,
+  "ood_model": "NOT_IMPLEMENTED",
+  "ood_score": null,
+  "clinical_validation": "NOT_PERFORMED",
+  "site_validation": "NOT_PERFORMED",
+  "release_tag_candidate": "qc-core-research-v0.1"
+}

@@ -1,0 +1,11 @@
+schema_version: '0.1'
+qc_core_version: qc-core-research-v0.1
+claim_scope: RESEARCH_ONLY
+gate_status: QC_RESEARCH_CORE_READY
+freeze_manifest_ref: qa-validation/evidence/day38-qc-freeze-manifest.v0.2.json
+research_threshold_ref: configs/qc/thresholds.research-v0.1.yaml
+site_threshold_status: NOT_VERIFIED
+weak_supervision_maturity: RESEARCH_ONLY
+distribution_support_maturity: INFORMATIONAL_RESEARCH_ONLY
+distribution_support_blocking_gate_enabled: false
+ood_model: NOT_IMPLEMENTED
