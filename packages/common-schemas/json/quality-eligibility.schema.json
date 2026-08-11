@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/quality-eligibility.schema.json",
+  "title": "DAY31 Quality Eligibility and Metric Handoff v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "qc_contract_version", "metric_id", "requested_scope",
+    "session_id", "channel_id", "window_id", "qc_evaluation_status",
+    "qc_signal_quality", "qc_supportability", "distribution_support_status",
+    "metric_handoff_status", "processing_permission", "reason_codes",
+    "distribution_support", "uncertainty", "metric_value", "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "qc_contract_version": {"const": "DAY31-v0.1"},
+    "metric_id": {"type": "string", "minLength": 1},
+    "requested_scope": {"enum": ["SESSION", "CHANNEL", "WINDOW"]},
+    "session_id": {"type": "string", "minLength": 1},
+    "channel_id": {"type": ["string", "null"]},
+    "window_id": {"type": ["string", "null"]},
+    "qc_evaluation_status": {"enum": ["EVALUATED", "NOT_EVALUATED", "INSUFFICIENT_EVIDENCE"]},
+    "qc_signal_quality": {"type": ["string", "null"], "enum": ["PASS", "WARNING", "FAIL", null]},
+    "qc_supportability": {"enum": ["SUPPORTABLE", "REVIEW_REQUIRED", "BLOCKED", "UNKNOWN", "NOT_EVALUATED"]},
+    "distribution_support_status": {"enum": ["SUPPORTED", "SHIFTED", "UNKNOWN", "NOT_EVALUATED"]},
+    "metric_handoff_status": {"enum": ["ELIGIBLE", "REVIEW_REQUIRED", "BLOCKED", "ABSTAINED"]},
+    "processing_permission": {"enum": ["ALLOW_PROFILED_PROCESSING", "HOLD_FOR_REVIEW", "BLOCK_UNSUPPORTED_METRIC", "ABSTAIN"]},
+    "reason_codes": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"}},
+    "distribution_support": {"$ref": "distribution-support.schema.json"},
+    "uncertainty": {"$ref": "uncertainty-handoff.schema.json"},
+    "metric_value": {"type": "null"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["quality_gate_version", "config_version", "evidence_refs"],
+      "properties": {
+        "quality_gate_version": {"const": "day31-quality-gate.v0.1.0"},
+        "config_version": {"type": "string", "minLength": 1},
+        "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"qc_signal_quality": {"const": "FAIL"}}, "required": ["qc_signal_quality"]},
+      "then": {"properties": {
+        "metric_handoff_status": {"const": "BLOCKED"},
+        "processing_permission": {"const": "BLOCK_UNSUPPORTED_METRIC"}
+      }}
+    },
+    {
+      "if": {"properties": {"qc_signal_quality": {"const": "WARNING"}}, "required": ["qc_signal_quality"]},
+      "then": {"properties": {
+        "metric_handoff_status": {"const": "REVIEW_REQUIRED"},
+        "processing_permission": {"const": "HOLD_FOR_REVIEW"}
+      }}
+    },
+    {
+      "if": {"properties": {"qc_signal_quality": {"type": "null"}}, "required": ["qc_signal_quality"]},
+      "then": {"properties": {
+        "metric_handoff_status": {"const": "ABSTAINED"},
+        "processing_permission": {"const": "ABSTAIN"}
+      }}
+    },
+    {
+      "if": {"properties": {"metric_handoff_status": {"const": "ELIGIBLE"}}, "required": ["metric_handoff_status"]},
+      "then": {"properties": {"qc_signal_quality": {"const": "PASS"}, "processing_permission": {"const": "ALLOW_PROFILED_PROCESSING"}}}
+    }
+  ]
+}

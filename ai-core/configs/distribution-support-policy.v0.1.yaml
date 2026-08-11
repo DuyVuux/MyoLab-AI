@@ -1,0 +1,26 @@
+schema_version: "0.1"
+policy_id: distribution-support-readiness-day31
+maturity: CONTEXT_ONLY_NO_VALIDATED_OOD_SCORE
+allowed_statuses: [SUPPORTED, SHIFTED, UNKNOWN, NOT_EVALUATED]
+support_basis_candidates:
+  - protocol_match
+  - acquisition_config_match
+  - channel_layout_match
+  - sampling_rate_supported
+  - unit_semantics_supported
+  - sync_supportability
+  - missing_modality_context
+  - session_day_context
+  - reference_domain_coverage
+rules:
+  shifted_is_not_pathology: true
+  unknown_is_not_normal: true
+  not_evaluated_is_valid: true
+  qc_fail_precedes_distribution_logic: true
+  ood_score_requires_validated_method: true
+forbidden:
+  - invent_ood_probability
+  - infer_pathology_from_shift
+  - auto_adapt_on_shift
+  - test_time_adaptation
+  - fit_reference_distribution_on_day31

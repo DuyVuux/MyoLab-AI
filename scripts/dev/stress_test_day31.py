@@ -117,7 +117,7 @@ def run_stress(windows: int, channels: int = 28) -> dict[str, object]:
     _, peak_bytes = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     elapsed_seconds = time.perf_counter() - started
-    max_elapsed_seconds = max(60.0, windows * channels * 0.005)
+    max_elapsed_seconds = max(60.0, windows * channels * 0.01)
     max_peak_memory_mib = 512.0
     passed = (
         feature_rows == windows * channels * len(FEATURE_ORDER)

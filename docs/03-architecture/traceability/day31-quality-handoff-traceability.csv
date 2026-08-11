@@ -1,0 +1,8 @@
+requirement_id,artifact,test,evidence_status
+FR-037,packages/common-schemas/json/quality-eligibility.schema.json,qa-validation/automated-tests/qc/test_quality_handoff.py,ENGINEERING_VALIDATED
+FR-038,services/quality-gate-service/src/application/quality_gate.py,qa-validation/property-tests/test_day31_quality_handoff_properties.py,ENGINEERING_VALIDATED
+FR-039,services/quality-gate-service/src/application/quality_gate.py,qa-validation/automated-tests/qc/test_quality_handoff.py,ENGINEERING_VALIDATED
+FR-040,services/quality-gate-service/src/application/quality_gate.py,qa-validation/automated-tests/qc/test_quality_handoff.py,REVALIDATED
+FR-060,packages/common-schemas/json/quality-eligibility.schema.json,qa-validation/automated-tests/qc/test_quality_handoff.py,ENGINEERING_VALIDATED
+AC-04,services/quality-gate-service/src/application/quality_gate.py,qa-validation/property-tests/test_day31_quality_handoff_properties.py,ENGINEERING_VALIDATED
+NFR-012,qa-validation/property-tests/test_day31_quality_handoff_properties.py,qa-validation/property-tests/test_day31_quality_handoff_properties.py,ENGINEERING_VALIDATED

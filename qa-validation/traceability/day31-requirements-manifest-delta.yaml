@@ -1,0 +1,6 @@
+schema_version: "0.1"
+day: DAY31
+required_ids: [FR-037, FR-038, FR-039, FR-040, FR-060, AC-04, NFR-012]
+integration_instruction: >-
+  Reconcile these IDs against the live Option-B requirements-manifest.yaml.
+  Do not overwrite the shared manifest from this handoff package.

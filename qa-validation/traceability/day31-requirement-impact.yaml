@@ -1,0 +1,24 @@
+schema_version: "0.1"
+day: DAY31
+requirements:
+  FR-037:
+    state: REVALIDATED
+    artifacts: [packages/common-schemas/json/quality-eligibility.schema.json]
+  FR-038:
+    state: IMPLEMENTED
+    artifacts: [services/quality-gate-service/src/application/quality_gate.py]
+  FR-039:
+    state: IMPLEMENTED
+    artifacts: [services/quality-gate-service/src/application/quality_gate.py]
+  FR-040:
+    state: REVALIDATED
+    artifacts: [services/quality-gate-service/src/application/quality_gate.py]
+  FR-060:
+    state: IMPLEMENTED
+    artifacts: [packages/common-schemas/json/quality-eligibility.schema.json]
+  AC-04:
+    state: VALIDATED
+    artifacts: [qa-validation/automated-tests/qc/test_quality_handoff.py]
+  NFR-012:
+    state: VALIDATED
+    artifacts: [qa-validation/property-tests/test_day31_quality_handoff_properties.py]

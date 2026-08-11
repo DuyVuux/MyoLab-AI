@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/distribution-support.schema.json",
+  "title": "Distribution Support Handoff v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status", "support_basis", "reason_codes", "policy_version",
+    "ood_method_status", "ood_score", "ood_method_ref"
+  ],
+  "properties": {
+    "status": {"enum": ["SUPPORTED", "SHIFTED", "UNKNOWN", "NOT_EVALUATED"]},
+    "support_basis": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "reason_codes": {"type": "array", "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"}},
+    "policy_version": {"type": "string", "minLength": 1},
+    "ood_method_status": {"enum": ["NOT_IMPLEMENTED", "NOT_VALIDATED", "VALIDATED"]},
+    "ood_score": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+    "ood_method_ref": {"type": ["string", "null"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"ood_method_status": {"const": "VALIDATED"}}, "required": ["ood_method_status"]},
+      "then": {},
+      "else": {"properties": {"ood_score": {"type": "null"}, "ood_method_ref": {"type": "null"}}}
+    },
+    {
+      "if": {"properties": {"ood_score": {"type": "number"}}, "required": ["ood_score"]},
+      "then": {
+        "properties": {"ood_method_status": {"const": "VALIDATED"}, "ood_method_ref": {"type": "string", "minLength": 1}}
+      }
+    }
+  ]
+}

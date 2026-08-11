@@ -1,0 +1,33 @@
+schema_version: "0.1"
+day: DAY31
+invariants:
+  - id: P31-01
+    name: QC_FAIL_BLOCKS_METRIC
+    statement: QC FAIL/BLOCKED/critical_failure implies metric_handoff_status=BLOCKED.
+  - id: P31-02
+    name: WARNING_NEVER_AUTO_ELIGIBLE
+    statement: QC WARNING/REVIEW_REQUIRED implies REVIEW_REQUIRED regardless of distribution state.
+  - id: P31-03
+    name: MISSING_QC_ABSTAINS
+    statement: NOT_EVALUATED or INSUFFICIENT_EVIDENCE never defaults to PASS/ELIGIBLE.
+  - id: P31-04
+    name: DISTRIBUTION_REQUIREDNESS_IS_CAPABILITY_SPECIFIC
+    statement: Distribution support gates only capabilities that explicitly require it.
+  - id: P31-05
+    name: SHIFT_IS_NOT_PATHOLOGY
+    statement: SHIFTED never emits pathology/diagnosis semantics.
+  - id: P31-06
+    name: NO_FAKE_OOD_SCORE
+    statement: Numeric ood_score requires a validated method and provenance reference.
+  - id: P31-07
+    name: NO_FAKE_PROBABILITY
+    statement: Numeric calibrated_probability requires CALIBRATED status and calibration_ref.
+  - id: P31-08
+    name: UNCERTAINTY_TYPES_DO_NOT_MIX
+    statement: Rule confidence, calibrated probability, conformal set and N/A are mutually exclusive.
+  - id: P31-09
+    name: DAY31_NO_METRIC_VALUE
+    statement: metric_value is always null; DAY31 authorizes but does not compute metrics.
+  - id: P31-10
+    name: DETERMINISTIC_REPLAY
+    statement: Identical immutable inputs yield byte-equivalent semantic output after canonical serialization.

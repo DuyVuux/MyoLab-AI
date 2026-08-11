@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "ai-core" / "data"))
 from day31.io import dump_json_strict
 
 REQUIRED = (
-    "docs/plans/DAY31_EXECUTION_PLAN.md",
+    "docs/plans/version01/DAY31_EXECUTION_PLAN.md",
     "docs/06-ai-signal-processing/day31/README.md",
     "ai-core/configs/day31_feature_contract.v1.yaml",
     "ai-core/configs/day31_spectral_contract.v1.yaml",
@@ -181,18 +181,37 @@ def main() -> int:
                     f"{path.relative_to(ROOT)}:{pattern.pattern}"
                 )
 
+    manifest_errors: list[str] = []
+    manifest_path = ROOT / "qa-validation/evidence/day31-artifact-manifest.json"
+    if manifest_path.exists():
+        import hashlib
+        try:
+            raw_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            for item in raw_manifest.get("artifacts", []):
+                item_path = ROOT / item["path"]
+                if not item_path.exists():
+                    manifest_errors.append(f"manifest_missing:{item['path']}")
+                    continue
+                digest = hashlib.sha256(item_path.read_bytes()).hexdigest()
+                if digest != item["sha256"]:
+                    manifest_errors.append(f"manifest_hash_mismatch:{item['path']}")
+        except (json.JSONDecodeError, OSError, KeyError, TypeError, ValueError) as error:
+            manifest_errors.append(f"manifest_parse_error:{error}")
+
     result = {
         "schema_version": "day31-artifact-check.v1",
         "missing": missing,
         "prohibited_artifacts": sorted(prohibited),
         "unsafe_flags": sorted(unsafe),
         "schema_errors": sorted(schema_errors),
+        "manifest_errors": sorted(manifest_errors),
         "prohibited_training_calls": sorted(prohibited_calls),
         "pass": not (
             missing
             or prohibited
             or unsafe
             or schema_errors
+            or manifest_errors
             or prohibited_calls
         ),
     }

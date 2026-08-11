@@ -1,0 +1,107 @@
+{
+  "schema_version": "0.1",
+  "day": "DAY31",
+  "artifact_count": 25,
+  "artifacts": [
+    {
+      "path": "ai-core/configs/distribution-support-policy.v0.1.yaml",
+      "sha256": "2b99fe0e4780775799f1708daed806814c5a91730181d4cadbd546b9a0869882"
+    },
+    {
+      "path": "configs/qc/quality-handoff.v0.1.yaml",
+      "sha256": "94c3079defccfa73f936250dcffc632c57d50f898933ae8c2bf85c2b931b81e3"
+    },
+    {
+      "path": "docs/00-executive/day31/DAY31_EXECUTION_PLAN.md",
+      "sha256": "5e88bb9996e6dde8f48899cdf3fff21b19dee65a2e32997bac4c9ed7e084983e"
+    },
+    {
+      "path": "docs/00-executive/day31/DAY31_FEYNMAN_LEARNING_GUIDE.md",
+      "sha256": "c597a9eccbbcfad389421c876c2c57071f60bd964909daaf93043e5c28c6d59a"
+    },
+    {
+      "path": "docs/00-executive/day31/DAY31_INTEGRATION_NOTES.md",
+      "sha256": "0f082ff57b58936fe516396d0fbeffbf053fc49a635ba7ce2a59cbb09d754869"
+    },
+    {
+      "path": "docs/00-executive/rebaseline/day31-open-questions-and-decisions.md",
+      "sha256": "3dcc008af1f1d5162e4edf2430af07c3ffae00074b3bad4310b9aca2471fb48e"
+    },
+    {
+      "path": "docs/03-architecture/traceability/day31-quality-handoff-traceability.csv",
+      "sha256": "d35f4c7ccd0c92007bd0b446533ac01d9ed5cb0e890d1bdd0ee1668b622dc37a"
+    },
+    {
+      "path": "packages/common-schemas/json/distribution-support.schema.json",
+      "sha256": "8ffe2e7243741b878db478d0fdc24f968d72b800df410cca21c2d18e67203cae"
+    },
+    {
+      "path": "packages/common-schemas/json/quality-eligibility.schema.json",
+      "sha256": "140060f40ba972674652f47fdb139babf416de104e28487748e95551ae9f59db"
+    },
+    {
+      "path": "packages/common-schemas/json/uncertainty-handoff.schema.json",
+      "sha256": "dffc849365ed772af0153520ec523f6409e3dc92212cb710bdd5f8f6af37066c"
+    },
+    {
+      "path": "qa-validation/automated-tests/qc/test_quality_handoff.py",
+      "sha256": "0f07ddbe9267c5c80ccbc142c37b1c569a5f05f957fa602bee0c0b6c70e164a7"
+    },
+    {
+      "path": "qa-validation/evidence/day31-peer-review.template.yaml",
+      "sha256": "db8fba26c39c38611442461b1f78cb02ebe775391b6064e0327eeda202b5ba9c"
+    },
+    {
+      "path": "qa-validation/evidence/day31-phase-entry-evidence.yaml",
+      "sha256": "2d746988fd83b90e2fd533648395ac978187d68afd24cac7dd412e3de73f538c"
+    },
+    {
+      "path": "qa-validation/evidence/day31-property-safety-invariants.v0.1.yaml",
+      "sha256": "a1e9aaa7af398bb955a994efc374ef59bad4fa1c767e060e27644181707299b3"
+    },
+    {
+      "path": "qa-validation/evidence/day31-quality-self-audit.md",
+      "sha256": "676167374dc5353720a5f9e3d32daf43bdb5bdf300d87f81d584c929c64e3d72"
+    },
+    {
+      "path": "qa-validation/evidence/day31-validation-report.json",
+      "sha256": "357cd6042bafab7a23f686cf5c7e7f6f0208ff9b6690a4502e4594463e33b0ac"
+    },
+    {
+      "path": "qa-validation/property-tests/test_day31_quality_handoff_properties.py",
+      "sha256": "f23c83600daf2941f3d65622894c4264287ded93f090a8c337c6a7030e22823a"
+    },
+    {
+      "path": "qa-validation/requirements/day31-acceptance-criteria.md",
+      "sha256": "5a4a774be936ae0fa18e516ec7a7d488002d949f0cc714ec203e13b949c74c8a"
+    },
+    {
+      "path": "qa-validation/traceability/day31-requirement-impact.yaml",
+      "sha256": "c92fc823d59259d5e8c29f363d5f3670673df212b450d8d693b358306199d4ff"
+    },
+    {
+      "path": "qa-validation/traceability/day31-requirements-manifest-delta.yaml",
+      "sha256": "9eec60dd8c5efbb611547461d47ee30c3d02f9d3edba1ad88d0166d97a877ba9"
+    },
+    {
+      "path": "scripts/dev/check_day31_artifacts.py",
+      "sha256": "e285a209e64e158dfbbe79e7fad2f6272e11a8dff65893cf707a38d9f1dfd26d"
+    },
+    {
+      "path": "scripts/dev/day31_contract_validator.py",
+      "sha256": "d36b84c2744e64743757b8581d66172807d19d500b5c61cb93987961d9f2c319"
+    },
+    {
+      "path": "scripts/dev/run_day31_checks.sh",
+      "sha256": "753a565637ca567897f327ff24e0aea0565ae19eda5f47deed099150836fc4b3"
+    },
+    {
+      "path": "services/quality-gate-service/configs/day31-reason-code-delta.v0.1.yaml",
+      "sha256": "d5b31a77e0812bcddafdd8d0241cbdeb32394a4b0348802c6777f8dfab4bd913"
+    },
+    {
+      "path": "services/quality-gate-service/src/application/quality_gate.py",
+      "sha256": "a62e228aed36f3dc5acea53ff99ac9bb1d7c99bcf5442180905f9ae75085d77b"
+    }
+  ]
+}

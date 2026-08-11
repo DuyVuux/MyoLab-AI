@@ -1,0 +1,12 @@
+schema_version: "0.1"
+day: DAY31
+upstream:
+  day30_status: USER_REPORTED_ACCEPTED_CONTEXT
+  day30_focused_tests: USER_REPORTED_68_PASS
+  day29_to_day30_overlay: USER_REPORTED_124_PASS
+  live_full_qc_regression: NOT_INDEPENDENTLY_VERIFIED
+limitations:
+  - No validated OOD detector or OOD score exists on DAY31.
+  - No calibrated probability model is introduced on DAY31.
+  - No conformal calibration is introduced on DAY31.
+  - Metric computation is intentionally out of scope; only eligibility is emitted.

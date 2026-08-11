@@ -4,6 +4,7 @@
   "prohibited_artifacts": [],
   "unsafe_flags": [],
   "schema_errors": [],
+  "manifest_errors": [],
   "prohibited_training_calls": [],
   "pass": true
 }

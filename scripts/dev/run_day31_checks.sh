@@ -30,8 +30,7 @@ run() {
 }
 
 run env PYTHONDONTWRITEBYTECODE=1 "$PYTHON_BIN" -m pytest -q \
-  -p no:cacheprovider qa-validation/automated-tests/test_day30_*.py
-run "$PYTHON_BIN" scripts/dev/check_day30_artifacts.py
+  -p no:cacheprovider qa-validation/automated-tests/qc/
 run env PYTHONPYCACHEPREFIX="$PYCACHE_ROOT" "$PYTHON_BIN" -m compileall -q -f \
   packages/semg-core/semg_core/day31_features \
   ai-core/data/day31 \
@@ -96,6 +95,11 @@ run "$PYTHON_BIN" scripts/data/day31_build_readiness_decision.py \
   --stress "$EVIDENCE_DIR/day31-stress-test.json" \
   --manifest "$EVIDENCE_DIR/day31-feature-manifest.json" \
   --output "$EVIDENCE_DIR/day31-readiness-decision.json"
+run "$PYTHON_BIN" scripts/dev/day31_contract_validator.py --repo-root "$ROOT"
+run env PYTHONDONTWRITEBYTECODE=1 "$PYTHON_BIN" -m pytest -q \
+  -p no:cacheprovider qa-validation/automated-tests/qc/test_quality_handoff.py
+run env PYTHONDONTWRITEBYTECODE=1 "$PYTHON_BIN" -m pytest -q \
+  -p no:cacheprovider qa-validation/property-tests/test_day31_quality_handoff_properties.py
 run "$PYTHON_BIN" scripts/dev/check_day31_artifacts.py
 
 echo "DAY31_CHECKS_PASS" | tee -a "$LOG"

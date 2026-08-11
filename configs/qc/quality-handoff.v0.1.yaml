@@ -1,0 +1,37 @@
+schema_version: "0.1"
+config_id: day31-quality-handoff
+status: ENGINEERING_CONTRACT_NO_SITE_OOD_OR_CALIBRATION_CLAIM
+principles:
+  qc_fail_precedes_everything: true
+  warning_routes_review: true
+  missing_evidence_abstains: true
+  continue_on_error_forbidden: true
+  metric_value_not_computed_on_day31: true
+  distribution_support_is_orthogonal_to_qc: true
+  ood_shift_is_not_pathology: true
+  fake_ood_score_forbidden: true
+  fake_probability_forbidden: true
+  uncertainty_sources_must_not_mix: true
+  downstream_capability_declares_distribution_requirement: true
+profiles:
+  deterministic-dsp-metric:
+    version: "0.1"
+    distribution_support_required: false
+    allowed_automatic_qc_quality: [PASS]
+    warning_action: HOLD_FOR_REVIEW
+    fail_action: BLOCK_UNSUPPORTED_METRIC
+    unknown_action: ABSTAIN
+  distribution-sensitive-model-output:
+    version: "0.1"
+    distribution_support_required: true
+    required_distribution_status: SUPPORTED
+    allowed_automatic_qc_quality: [PASS]
+    shifted_action: HOLD_FOR_REVIEW
+    unknown_action: ABSTAIN
+    fail_action: BLOCK_UNSUPPORTED_METRIC
+maturity:
+  ood_model_implemented: false
+  ood_score_available: false
+  calibration_model_available: false
+  conformal_calibration_available: false
+  selective_prediction_runtime_available: false

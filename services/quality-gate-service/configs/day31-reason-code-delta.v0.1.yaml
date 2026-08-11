@@ -1,0 +1,21 @@
+schema_version: "0.1"
+owner_day: DAY31
+reason_codes:
+  - code: QUALITY_ELIGIBILITY_NOT_EVALUATED
+    semantic_class: REVIEW_OR_DISPOSITION
+    default_action: ABSTAIN
+  - code: QUALITY_REVIEW_REQUIRED
+    semantic_class: REVIEW_OR_DISPOSITION
+    default_action: HOLD_FOR_REVIEW
+  - code: DISTRIBUTION_SHIFT_REVIEW_REQUIRED
+    semantic_class: DISTRIBUTION_SUPPORTABILITY
+    default_action: HOLD_FOR_REVIEW
+  - code: DISTRIBUTION_SUPPORT_NOT_EVALUATED
+    semantic_class: DISTRIBUTION_SUPPORTABILITY
+    default_action: ABSTAIN
+  - code: QC_FAIL_BLOCKS_METRIC
+    semantic_class: REVIEW_OR_DISPOSITION
+    default_action: BLOCK_UNSUPPORTED_METRIC
+  - code: UNCERTAINTY_ABSTENTION
+    semantic_class: UNCERTAINTY_HANDOFF
+    default_action: ABSTAIN

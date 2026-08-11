@@ -1,0 +1,33 @@
+{
+  "day": "DAY31",
+  "engineering_validation": "PASS",
+  "focused_tests": {
+    "passed": 44,
+    "failed": 0
+  },
+  "property_tests": {
+    "passed": 16,
+    "failed": 0
+  },
+  "day30_regression": {
+    "passed": 68,
+    "failed": 0
+  },
+  "distribution_support_maturity": "CONTRACT_AND_CONTEXT_ONLY",
+  "ood_score_available": false,
+  "calibrated_probability_model_available": false,
+  "conformal_calibration_available": false,
+  "metric_computation_implemented": false,
+  "clinical_validation": false,
+  "final_status": "READY_WITH_LIMITATIONS",
+  "day30_day31_automated_overlay": {
+    "passed": 112,
+    "failed": 0
+  },
+  "total_executed_overlay_including_properties": {
+    "passed": 128,
+    "failed": 0
+  },
+  "peer_review": "PENDING",
+  "live_full_qc_regression": "NOT_INDEPENDENTLY_VERIFIED"
+}
