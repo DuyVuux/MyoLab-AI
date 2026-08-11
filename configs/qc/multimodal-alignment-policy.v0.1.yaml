@@ -1,0 +1,18 @@
+schema_version: "0.1"
+profiles:
+  site-template:
+    version: "0.1.0"
+    status: REQUIRES_SITE_VERIFICATION
+    threshold_status: NOT_VERIFIED
+    max_abs_offset_seconds: null
+    max_abs_drift_ppm: null
+    note: >-
+      Site thresholds must be evidence-backed. Do not replace null values with
+      textbook or engineering defaults and then claim SITE_VERIFIED.
+  synthetic-engineering-only:
+    version: "0.1.0-test"
+    status: TEST_FIXTURE_ONLY
+    threshold_status: VERIFIED
+    max_abs_offset_seconds: 0.010
+    max_abs_drift_ppm: 50.0
+    clinical_evidence: false

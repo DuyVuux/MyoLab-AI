@@ -1,0 +1,15 @@
+day: 29
+option_b_policy: ENSURE_PRESENT_IN_SHARED_REQUIREMENTS_MANIFEST_DO_NOT_OVERWRITE
+requirements:
+  - FR-004
+  - FR-005
+  - FR-006
+  - FR-010
+  - FR-037
+  - FR-038
+  - NFR-012
+artifacts:
+  - services/quality-gate-service/src/detectors/data_integrity.py
+  - packages/common-schemas/json/qc-data-quality-codes.schema.json
+  - qa-validation/automated-tests/qc/test_data_integrity_qc.py
+  - ai-core/configs/distribution-support-inputs.v0.1.yaml

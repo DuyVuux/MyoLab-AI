@@ -1,0 +1,59 @@
+schema_version: "0.1"
+merge_policy: OPTION_B_RECONCILE_DO_NOT_OVERWRITE_SHARED_REGISTRY
+reason_codes:
+  - code: TIMESTAMP_NON_MONOTONIC
+    semantic_class: DATA_INTEGRITY
+    severity: HIGH
+    qc_supportability: BLOCKED
+  - code: TIMESTAMP_DUPLICATE
+    semantic_class: DATA_INTEGRITY
+    severity: HIGH
+    qc_supportability: BLOCKED
+  - code: SAMPLING_INTERVAL_MISMATCH
+    semantic_class: DATA_INTEGRITY
+    severity: HIGH
+    qc_supportability: BLOCKED
+  - code: SAMPLING_RATE_NOT_VERIFIED
+    semantic_class: DATA_INTEGRITY
+    severity: HIGH
+    qc_supportability: BLOCKED
+  - code: UNIT_MISMATCH
+    semantic_class: DATA_INTEGRITY
+    severity: HIGH
+    qc_supportability: BLOCKED
+  - code: UNIT_NOT_VERIFIED
+    semantic_class: DATA_INTEGRITY
+    severity: HIGH
+    qc_supportability: BLOCKED
+  - code: COORDINATE_CONVENTION_NOT_VERIFIED
+    semantic_class: MULTIMODAL_SUPPORTABILITY
+    severity: MODERATE
+    qc_supportability: REVIEW_REQUIRED
+  - code: MULTIMODAL_SYNC_NOT_VERIFIED
+    semantic_class: MULTIMODAL_SUPPORTABILITY
+    severity: MODERATE_OR_HIGH_BY_REQUIREDNESS
+    qc_supportability: REVIEW_OR_BLOCK_BY_REQUIREDNESS
+  - code: SYNC_OFFSET_EXCEEDED
+    semantic_class: MULTIMODAL_SUPPORTABILITY
+    severity: HIGH
+    qc_supportability: BLOCKED_WHEN_REQUIRED
+  - code: SYNC_DRIFT_EXCEEDED
+    semantic_class: MULTIMODAL_SUPPORTABILITY
+    severity: HIGH
+    qc_supportability: BLOCKED_WHEN_REQUIRED
+  - code: SYNC_THRESHOLD_NOT_VERIFIED
+    semantic_class: MULTIMODAL_SUPPORTABILITY
+    severity: MODERATE_OR_HIGH_BY_REQUIREDNESS
+    qc_supportability: REVIEW_OR_BLOCK_BY_REQUIREDNESS
+  - code: MISSING_REQUIRED_MODALITY
+    semantic_class: MULTIMODAL_SUPPORTABILITY
+    severity: HIGH
+    qc_supportability: BLOCKED
+  - code: DATA_INTEGRITY_VALIDATED
+    semantic_class: DATA_INTEGRITY
+    severity: INFO
+    qc_supportability: SUPPORTABLE
+  - code: MISSING_OPTIONAL_MODALITY
+    semantic_class: MULTIMODAL_SUPPORTABILITY
+    severity: INFO
+    qc_supportability: REVIEW_REQUIRED

@@ -298,8 +298,8 @@ def test_42_phase_entry_report_does_not_fake_gate():
     assert entry["phase_entry_interpretation"]["site_real_data_qc_claim_allowed"] is False
 
 
-def test_43_no_day22_window_implementation():
-    assert not (ROOT / "packages/common-schemas/json/qc-window-identity.schema.json").exists()
+def test_43_day22_window_implementation():
+    assert (ROOT / "packages/common-schemas/json/qc-window-identity.schema.json").exists()
 
 
 def test_44_no_detector_implementation_day23_28():

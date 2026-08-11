@@ -1,0 +1,13 @@
+schema_version: "0.1"
+config_id: day29-data-integrity
+version: "0.1.0"
+status: ENGINEERING_BASELINE_SITE_SYNC_THRESHOLDS_NOT_VERIFIED
+principles:
+  heterogeneous_sampling_rates_allowed: true
+  resampling_allowed_in_qc: false
+  interpolation_allowed_in_qc: false
+  serious_integrity_failure_blocks_downstream: true
+  coordinate_axes_never_mapped_to_anatomical_planes_without_evidence: true
+  missing_evidence_never_defaults_to_pass: true
+  ood_score_production_allowed: false
+alignment_policy_ref: configs/qc/multimodal-alignment-policy.v0.1.yaml

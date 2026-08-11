@@ -1,26 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+export PYTHONDONTWRITEBYTECODE=1
+ROOT="${1:-$(pwd)}"
 cd "$ROOT"
-mkdir -p qa-validation/evidence
-LOG="qa-validation/evidence/day29-check-run.log"
-: > "$LOG"
-
-run() {
-  echo "+ $*" | tee -a "$LOG"
-  "$@" 2>&1 | tee -a "$LOG"
-}
-
-if [[ -x scripts/dev/run_day28_checks.sh ]]; then
-  run bash scripts/dev/run_day28_checks.sh
-else
-  echo "Day28 regression: SKIPPED_NOT_PRESENT_IN_THIS_PACK" | tee -a "$LOG"
+PY="python3"
+PYTEST=(pytest -q -p no:cacheprovider)
+if command -v uv >/dev/null 2>&1 && [[ -f pyproject.toml ]]; then
+  PYTEST=(uv run pytest -q -p no:cacheprovider)
+  PY="uv run python"
 fi
 
-run env PYTHONDONTWRITEBYTECODE=1 python3 -m compileall -q -f ai-core/data/day29 scripts/data scripts/dev
-run python3 scripts/dev/check_day29_artifacts.py
-run python3 scripts/dev/day29_tooling_smoke.py
-run env PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider qa-validation/automated-tests/test_day29*.py
+echo "[1/3] DAY29 contract validator"
+$PY scripts/dev/day29_contract_validator.py --repo-root "$ROOT"
 
-echo "DAY29_CHECKS_PASS" | tee -a "$LOG"
+echo "[2/3] DAY29 focused tests"
+"${PYTEST[@]}" qa-validation/automated-tests/qc/test_data_integrity_qc.py
+
+echo "[3/3] Full QC regression suite"
+"${PYTEST[@]}" qa-validation/automated-tests/qc/
+
+echo "All DAY29 checks passed."

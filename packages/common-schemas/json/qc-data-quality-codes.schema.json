@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/qc-data-quality-codes.schema.json",
+  "title": "DAY29 QC Data Quality Result",
+  "type": "object",
+  "required": [
+    "schema_version", "evaluator_version", "config_version", "scope",
+    "evaluation_status", "signal_quality", "integrity_gate_status",
+    "downstream_supportable", "final_policy_status", "reasons",
+    "distribution_support_inputs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "evaluator_version": {"type": "string", "minLength": 1},
+    "config_version": {"type": "string", "minLength": 1},
+    "scope": {"const": "SESSION"},
+    "evaluation_status": {"const": "EVALUATED"},
+    "signal_quality": {"enum": ["PASS", "WARNING", "FAIL"]},
+    "integrity_gate_status": {"enum": ["SUPPORTABLE", "REVIEW_REQUIRED", "BLOCKED"]},
+    "downstream_supportable": {"type": "boolean"},
+    "final_policy_status": {"const": "DATA_INTEGRITY_GATE_ONLY_DAY30_QC_AGGREGATION_DEFERRED"},
+    "reasons": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/reason"}
+    },
+    "distribution_support_inputs": {"$ref": "#/$defs/distributionInputs"}
+  },
+  "$defs": {
+    "evidenceStatus": {
+      "enum": ["VERIFIED", "SOURCE_REPORTED", "UNKNOWN", "NOT_VERIFIED", "DISCOVERY_REQUIRED"]
+    },
+    "code": {
+      "enum": [
+        "TIMESTAMP_NON_MONOTONIC", "TIMESTAMP_DUPLICATE",
+        "SAMPLING_INTERVAL_MISMATCH", "SAMPLING_RATE_NOT_VERIFIED",
+        "UNIT_MISMATCH", "UNIT_NOT_VERIFIED",
+        "COORDINATE_CONVENTION_NOT_VERIFIED",
+        "MULTIMODAL_SYNC_NOT_VERIFIED", "SYNC_OFFSET_EXCEEDED",
+        "SYNC_DRIFT_EXCEEDED", "SYNC_THRESHOLD_NOT_VERIFIED",
+        "MISSING_REQUIRED_MODALITY", "MISSING_OPTIONAL_MODALITY",
+        "DATA_INTEGRITY_VALIDATED"
+      ]
+    },
+    "reason": {
+      "type": "object",
+      "required": ["code", "severity", "qc_supportability", "evidence_status", "evidence_refs", "modality_id"],
+      "additionalProperties": false,
+      "properties": {
+        "code": {"$ref": "#/$defs/code"},
+        "severity": {"enum": ["INFO", "LOW", "MODERATE", "HIGH", "CRITICAL", "UNKNOWN"]},
+        "qc_supportability": {"enum": ["SUPPORTABLE", "REVIEW_REQUIRED", "BLOCKED", "UNKNOWN"]},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "modality_id": {"type": ["string", "null"]}
+      }
+    },
+    "distributionInputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "readiness_level", "session_id", "session_day", "protocol_id",
+        "protocol_status", "layout_id", "layout_status", "mapping_version",
+        "sampling_rates_hz", "sampling_status", "unit_tokens", "unit_status",
+        "sync_status_by_modality", "missing_modalities", "coordinate_convention_status"
+      ],
+      "properties": {
+        "readiness_level": {"const": "CONTEXT_ONLY_NO_OOD_SCORE"},
+        "session_id": {"type": "string", "minLength": 1},
+        "session_day": {"type": ["string", "null"]},
+        "protocol_id": {"type": ["string", "null"]},
+        "protocol_status": {"$ref": "#/$defs/evidenceStatus"},
+        "layout_id": {"type": ["string", "null"]},
+        "layout_status": {"$ref": "#/$defs/evidenceStatus"},
+        "mapping_version": {"type": ["string", "null"]},
+        "sampling_rates_hz": {"type": "array", "items": {"type": "number", "exclusiveMinimum": 0}},
+        "sampling_status": {"$ref": "#/$defs/evidenceStatus"},
+        "unit_tokens": {"type": "array", "items": {"type": "string"}},
+        "unit_status": {"$ref": "#/$defs/evidenceStatus"},
+        "sync_status_by_modality": {
+          "type": "array",
+          "items": {"type": "array", "prefixItems": [{"type": "string"}, {"$ref": "#/$defs/evidenceStatus"}], "minItems": 2, "maxItems": 2}
+        },
+        "missing_modalities": {"type": "array", "items": {"type": "string"}},
+        "coordinate_convention_status": {"$ref": "#/$defs/evidenceStatus"}
+      }
+    }
+  }
+}

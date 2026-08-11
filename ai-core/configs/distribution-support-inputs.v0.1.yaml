@@ -1,0 +1,39 @@
+schema_version: "0.1"
+contract_id: distribution-support-inputs
+version: "0.1.0"
+status: CONTEXT_ONLY_NO_OOD_SCORE
+purpose: >-
+  Preserve deterministic domain/supportability context for later validated
+  distribution-support or OOD work. This is not an OOD detector.
+axes:
+  protocol:
+    fields: [protocol_id, protocol_status]
+  layout:
+    fields: [layout_id, layout_status, mapping_version]
+  sampling:
+    fields: [sampling_rates_hz, sampling_status]
+    heterogeneous_rates_are_valid: true
+  unit:
+    fields: [unit_tokens, unit_status]
+  synchronization:
+    fields: [sync_status_by_modality]
+  modality_availability:
+    fields: [missing_modalities]
+  longitudinal:
+    fields: [session_id, session_day]
+  coordinate_context:
+    fields: [coordinate_convention_status]
+forbidden_outputs:
+  - ood_score
+  - ood_probability
+  - shift_threshold
+  - reference_distribution_fit
+  - automatic_domain_adaptation
+  - test_time_adaptation
+  - shared_embedding
+interpretation_guards:
+  - OOD_OR_SHIFT_IS_NOT_QC_FAILURE_BY_DEFINITION
+  - OOD_OR_SHIFT_IS_NOT_PATHOLOGY
+  - SYNC_FAILURE_IS_A_SUPPORTABILITY_SIGNAL
+  - MISSING_MODALITY_IS_NOT_NORMALITY
+  - NO_PRODUCTION_OOD_SCORE_ON_DAY29

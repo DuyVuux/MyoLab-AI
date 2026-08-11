@@ -264,3 +264,199 @@ reason_codes:
   technical_action_default: REVIEW_CHANNEL
   forbidden_inference: Insufficient evidence must not be encoded as normal/no abnormality.
   threshold_status: NOT_APPLICABLE
+- code: TIMESTAMP_NON_MONOTONIC
+  semantic_class: DATA_INTEGRITY
+  requirement: FR-004
+  definition: Timestamps decrease or move backward in time.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION, CHANNEL, WINDOW]
+  evidence_type_candidates: [TEMPORAL, DEVICE_METADATA]
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Non-monotonic timestamp is an ingestion data integrity failure.
+  threshold_status: VERIFIED
+- code: TIMESTAMP_DUPLICATE
+  semantic_class: DATA_INTEGRITY
+  requirement: FR-004
+  definition: Duplicate timestamps detected in acquisition stream.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION, CHANNEL, WINDOW]
+  evidence_type_candidates: [TEMPORAL, DEVICE_METADATA]
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Duplicate timestamps must not be silently de-duplicated without audit.
+  threshold_status: VERIFIED
+- code: SAMPLING_INTERVAL_MISMATCH
+  semantic_class: DATA_INTEGRITY
+  requirement: FR-005
+  definition: Sampling interval deviates from declared contract.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION, CHANNEL, WINDOW]
+  evidence_type_candidates: [TEMPORAL, DEVICE_METADATA]
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Interval mismatch must not be fixed by arbitrary interpolation in QC.
+  threshold_status: VERIFIED
+- code: SAMPLING_RATE_NOT_VERIFIED
+  semantic_class: DATA_INTEGRITY
+  requirement: FR-005
+  definition: Nominal sampling rate lacks verified provenance evidence.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION, CHANNEL, WINDOW]
+  evidence_type_candidates: [DEVICE_METADATA]
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Unverified sampling rate must not default to assumed frequency.
+  threshold_status: NOT_VERIFIED
+- code: UNIT_MISMATCH
+  semantic_class: DATA_INTEGRITY
+  requirement: FR-006
+  definition: Unit token differs from expected channel physical unit.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION, CHANNEL, WINDOW]
+  evidence_type_candidates: [DEVICE_METADATA, RAW_STRUCTURAL]
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Unit mismatch must not be automatically re-scaled without contract.
+  threshold_status: VERIFIED
+- code: UNIT_NOT_VERIFIED
+  semantic_class: DATA_INTEGRITY
+  requirement: FR-006
+  definition: Physical unit token is unverified or missing provenance.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION, CHANNEL, WINDOW]
+  evidence_type_candidates: [DEVICE_METADATA]
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Unverified unit token must not be assumed to be uV or mV.
+  threshold_status: NOT_VERIFIED
+- code: COORDINATE_CONVENTION_NOT_VERIFIED
+  semantic_class: MULTIMODAL_SUPPORTABILITY
+  requirement: FR-010
+  definition: Coordinate system convention for 3D trajectory/force lacks verification evidence.
+  default_quality_effect: WARNING
+  default_severity: MODERATE
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes: [SESSION, CHANNEL, WINDOW]
+  evidence_type_candidates: [DEVICE_METADATA]
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: REVIEW_CHANNEL
+  forbidden_inference: XYZ axes must never be mapped to anatomical planes without evidence.
+  threshold_status: NOT_VERIFIED
+- code: MULTIMODAL_SYNC_NOT_VERIFIED
+  semantic_class: MULTIMODAL_SUPPORTABILITY
+  requirement: FR-037
+  definition: Synchronization status between modalities lacks verification evidence.
+  default_quality_effect: WARNING
+  default_severity: HIGH
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes: [SESSION, CHANNEL, WINDOW]
+  evidence_type_candidates: [DEVICE_METADATA, TEMPORAL]
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: REVIEW_CHANNEL
+  forbidden_inference: Unverified sync status blocks alignment-dependent paths but permits unaligned analysis.
+  threshold_status: NOT_VERIFIED
+- code: SYNC_OFFSET_EXCEEDED
+  semantic_class: MULTIMODAL_SUPPORTABILITY
+  requirement: FR-037
+  definition: Multimodal time offset exceeds max allowable policy threshold.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION, WINDOW]
+  evidence_type_candidates: [TEMPORAL]
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Offset exceedance invalidates cross-modality temporal alignment.
+  threshold_status: VERIFIED
+- code: SYNC_DRIFT_EXCEEDED
+  semantic_class: MULTIMODAL_SUPPORTABILITY
+  requirement: FR-037
+  definition: Multimodal clock drift exceeds max allowable policy threshold.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION, WINDOW]
+  evidence_type_candidates: [TEMPORAL]
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Clock drift exceedance causes progressive alignment breakdown over session.
+  threshold_status: VERIFIED
+- code: SYNC_THRESHOLD_NOT_VERIFIED
+  semantic_class: MULTIMODAL_SUPPORTABILITY
+  requirement: FR-037
+  definition: Alignment policy thresholds have not been site-verified for target clinical protocol.
+  default_quality_effect: WARNING
+  default_severity: MODERATE
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes: [SESSION, WINDOW]
+  evidence_type_candidates: [POLICY_DECISION]
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: REVIEW_CHANNEL
+  forbidden_inference: Unverified alignment thresholds require site validation before clinical use.
+  threshold_status: NOT_VERIFIED
+- code: MISSING_REQUIRED_MODALITY
+  semantic_class: MULTIMODAL_SUPPORTABILITY
+  requirement: FR-038
+  definition: Modality required for target protocol is missing from session.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes: [SESSION]
+  evidence_type_candidates: [RAW_STRUCTURAL]
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Missing required modality blocks execution of multimodal protocol.
+  threshold_status: VERIFIED
+- code: MISSING_OPTIONAL_MODALITY
+  semantic_class: MULTIMODAL_SUPPORTABILITY
+  requirement: FR-038
+  definition: Optional auxiliary modality is missing from session.
+  default_quality_effect: NONE
+  default_severity: INFO
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes: [SESSION]
+  evidence_type_candidates: [RAW_STRUCTURAL]
+  evidence_required: false
+  labeling_function_candidate: false
+  technical_action_default: CONTINUE_QC
+  forbidden_inference: Missing optional modality does not block sEMG-only downstream tasks.
+  threshold_status: VERIFIED
+- code: DATA_INTEGRITY_VALIDATED
+  semantic_class: DATA_INTEGRITY
+  requirement: NFR-012
+  definition: Session data contract, sampling rates, units, and synchronization pass integrity gate.
+  default_quality_effect: PASS
+  default_severity: INFO
+  default_qc_supportability: SUPPORTABLE
+  allowed_scopes: [SESSION]
+  evidence_type_candidates: [POLICY_DECISION]
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: CONTINUE_QC
+  forbidden_inference: Data integrity validation confirms contract correctness, not clinical normality.
+  threshold_status: VERIFIED
