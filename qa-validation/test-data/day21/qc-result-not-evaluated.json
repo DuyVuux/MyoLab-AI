@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "taxonomy_version": "0.2",
+  "reason_registry_version": "0.1",
+  "evaluation_status": "NOT_EVALUATED",
+  "scope": "CHANNEL",
+  "scope_ref": "window:test:004",
+  "signal_quality": null,
+  "reasons": [
+    {
+      "code": "QC_NOT_EVALUATED",
+      "semantic_class": "REVIEW_OR_DISPOSITION",
+      "severity": "INFO",
+      "qc_supportability": "NOT_EVALUATED",
+      "evidence_type": [
+        "POLICY_DECISION"
+      ],
+      "evidence_status": "NOT_VERIFIED",
+      "evidence_refs": [
+        "fixture://day21/not-evaluated"
+      ],
+      "technical_action": "ABSTAIN",
+      "details": {
+        "test_fixture_only": true
+      }
+    }
+  ],
+  "provenance": {
+    "qc_contract_version": "DAY21-v0.1",
+    "config_version": "synthetic-v0.1",
+    "evaluator_version": "contract-test-v0.1",
+    "source_refs": [
+      "fixture://day21/not-evaluated"
+    ]
+  }
+}

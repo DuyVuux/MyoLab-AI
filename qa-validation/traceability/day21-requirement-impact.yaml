@@ -1,0 +1,30 @@
+day: DAY21
+source_of_truth: qa-validation/traceability/requirements-manifest.yaml
+authoritative_manifest_expected_in_live_repo: true
+requirements:
+- requirement_id: FR-030
+  contribution: DESIGNED
+  artifact: clinical/quality/qc-taxonomy.v0.2.yaml
+- requirement_id: FR-037
+  contribution: DESIGNED
+  artifact: packages/common-schemas/json/qc-result.v0.2.schema.json
+- requirement_id: FR-038
+  contribution: DESIGNED
+  artifact: services/quality-gate-service/configs/reason-codes.v0.1.yaml
+- requirement_id: FR-039
+  contribution: DESIGNED
+  artifact: services/quality-gate-service/configs/reason-codes.v0.1.yaml
+- requirement_id: FR-040
+  contribution: DESIGNED
+  artifact: packages/common-schemas/json/qc-result.v0.2.schema.json
+- requirement_id: FR-041
+  contribution: DESIGNED
+  artifact: clinical/quality/qc-taxonomy.v0.2.yaml
+- requirement_id: NFR-009
+  contribution: DESIGNED
+  artifact: services/quality-gate-service/configs/reason-codes.v0.1.yaml
+- requirement_id: NFR-011
+  contribution: DESIGNED
+  artifact: clinical/quality/qc-taxonomy.v0.2.yaml
+python_hardcoded_requirement_count: false
+validation_rule: Validator reads this impact config and, when live authoritative manifest is present, verifies every ID is a subset of that manifest.

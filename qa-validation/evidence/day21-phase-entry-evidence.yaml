@@ -1,0 +1,13 @@
+day: DAY21
+upstream: DAY20
+user_reported_state:
+  integration_complete: true
+  architecture: OPTION_B_CONFIGURATION_DRIVEN_REQUIREMENTS
+  day20_governance_tests: 40_PASS
+  gate_b_evaluator_semantics_preserved: true
+  reported_gate_b_decision: NOT_STATED_IN_REPORT
+phase_entry_interpretation:
+  engineering_contract_work_allowed: true
+  site_real_data_qc_claim_allowed: false
+  go_for_day22_requires_gate_b_real_data_ready: true
+  evidence_status: USER_REPORTED_UPSTREAM_STATE

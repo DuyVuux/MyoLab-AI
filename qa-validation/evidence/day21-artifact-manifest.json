@@ -1,0 +1,151 @@
+{
+  "day": "DAY21",
+  "scope": "DAY21-managed static artifacts only (Option B integration)",
+  "artifacts": [
+    {
+      "path": "clinical/labels/qc-labeling-function-registry.v0.1.yaml",
+      "sha256": "d65bdb4107b1dfa16253582aee7c1e4a17505edf6d3c1d8867116ea0ba8ef79a",
+      "size_bytes": 2191
+    },
+    {
+      "path": "clinical/quality/qc-taxonomy.v0.2.yaml",
+      "sha256": "3e5b3f91296465e225fbaf7eb8796bd306658ee2abac52072c7e0760986ede50",
+      "size_bytes": 3929
+    },
+    {
+      "path": "docs/00-executive/day21/DAY21_EXECUTION_PLAN.md",
+      "sha256": "efae3efa89731df254bef04e2c106f5675c5597afa041ec70f5d98e68ade5a8f",
+      "size_bytes": 31113
+    },
+    {
+      "path": "docs/00-executive/day21/DAY21_FEYNMAN_LEARNING_GUIDE.md",
+      "sha256": "99a145a7d5af779a050fcdd83503452c97146256207de2260fa554b44e69787d",
+      "size_bytes": 30040
+    },
+    {
+      "path": "docs/00-executive/day21/DAY21_INTEGRATION_NOTES.md",
+      "sha256": "a18e4213d9d5e9bb2ac664f62ab73f04403ae958b60a1525bbb84d6d63f62b76",
+      "size_bytes": 674
+    },
+    {
+      "path": "docs/00-executive/rebaseline/day21-open-questions-and-decisions.md",
+      "sha256": "5fe6e51ca8a946a5a16f706773e385bfdb9d79251e3a6c6a2e6f54710be4172b",
+      "size_bytes": 1082
+    },
+    {
+      "path": "docs/03-architecture/traceability/day21-qc-traceability.csv",
+      "sha256": "9d5b8891dc7b7c41de3ba921b437477658b3a83ca991280580c7911dbaf9101b",
+      "size_bytes": 1111
+    },
+    {
+      "path": "packages/common-schemas/json/labeling-function-output.schema.json",
+      "sha256": "b451bf44f4fd5d96a076d24ca8e2c1e505833c40aa2eb6f891af48ab7058b428",
+      "size_bytes": 2454
+    },
+    {
+      "path": "packages/common-schemas/json/qc-result.v0.2.schema.json",
+      "sha256": "78ea144c2f831e19a9976ffd3b0af0103e6d9bc8e4af3b340a2c3924252df798",
+      "size_bytes": 4512
+    },
+    {
+      "path": "qa-validation/automated-tests/qc/test_day21_qc_taxonomy.py",
+      "sha256": "e3e0b6b5ab97db930dc83431dab29b46901425a06b85dbb79f21cf55c4c3aacd",
+      "size_bytes": 11669
+    },
+    {
+      "path": "qa-validation/evidence/day21-peer-review.template.yaml",
+      "sha256": "8b89bb489d5c8559d8b64da4f8c3efaa19986244d1bbe9f73ba28eaafbf68bab",
+      "size_bytes": 570
+    },
+    {
+      "path": "qa-validation/evidence/day21-phase-entry-evidence.yaml",
+      "sha256": "73ff72342285f11e0a2a1f1083bbb30321a7cf8a68ce1471985098492f928aa9",
+      "size_bytes": 476
+    },
+    {
+      "path": "qa-validation/evidence/day21-quality-self-audit.md",
+      "sha256": "afd8c0e895677ebd09164531e3bda146a918f1632c3d3e6ec03b72812971e5cb",
+      "size_bytes": 2344
+    },
+    {
+      "path": "qa-validation/evidence/day21-regression-evidence.json",
+      "sha256": "39843fd9512c9bee79fd8b184dc06944c70e3c06404f5c26dfc841498774b8ea",
+      "size_bytes": 820
+    },
+    {
+      "path": "qa-validation/requirements/day21-acceptance-criteria.md",
+      "sha256": "285cf8c639b5d5c4cfd14e730763bd4b7e37ee0eac8fc0e6d1aa66e089114c69",
+      "size_bytes": 1066
+    },
+    {
+      "path": "qa-validation/test-data/day21/labeling-function-output-invalid-ground-truth.json",
+      "sha256": "43caafd790ba4b07518f21d18c34aab1cd36580f371abd9b50c1dc1ade370b67",
+      "size_bytes": 577
+    },
+    {
+      "path": "qa-validation/test-data/day21/labeling-function-output-positive.json",
+      "sha256": "f528452fcd9e8d6cfae869f738d3c78073323b0c6e4419c12f906bfc97b720e9",
+      "size_bytes": 578
+    },
+    {
+      "path": "qa-validation/test-data/day21/qc-result-fail.json",
+      "sha256": "66e814126da353fd40dc35c4e5bc0139386767401546b85865488abb44a3fb31",
+      "size_bytes": 982
+    },
+    {
+      "path": "qa-validation/test-data/day21/qc-result-invalid-diagnosis-field.json",
+      "sha256": "6ff26a76b624665c650e60742512ccdc24ad7f9da23f19b7af5431a4f6032996",
+      "size_bytes": 981
+    },
+    {
+      "path": "qa-validation/test-data/day21/qc-result-invalid-not-evaluated-pass.json",
+      "sha256": "01a33bc578b9ab88b490b960bd2a1a2edf577ae56729a9b999bd77e53ffc3096",
+      "size_bytes": 893
+    },
+    {
+      "path": "qa-validation/test-data/day21/qc-result-not-evaluated.json",
+      "sha256": "e302f54fddd0190846c3479b815e42ed098d779afe5cea2b83941f6335bb08bd",
+      "size_bytes": 891
+    },
+    {
+      "path": "qa-validation/test-data/day21/qc-result-pass.json",
+      "sha256": "99f716767b4945b33baf53284814cc7ccd955d346ce50a0e9502578b888b695f",
+      "size_bytes": 903
+    },
+    {
+      "path": "qa-validation/test-data/day21/qc-result-warning.json",
+      "sha256": "39003c20afc754d740d47c925c58fa22cbf7432099d2d9ee81e6ce1f0142c3d9",
+      "size_bytes": 956
+    },
+    {
+      "path": "qa-validation/traceability/day21-requirement-impact.yaml",
+      "sha256": "d18684aa258593a423b6728d53163fb13a0037eac2dd4d8912da0a823c09b3f1",
+      "size_bytes": 1249
+    },
+    {
+      "path": "scripts/dev/check_day21_qc_artifacts.py",
+      "sha256": "50ccae10193a2b65c041671ca339cf35a273b598c6ece1975d977faf2fba9038",
+      "size_bytes": 1308
+    },
+    {
+      "path": "scripts/dev/day21_qc_contract_validator.py",
+      "sha256": "c47f600e124ee0de3e28cfbc330052a0dd1a3e3e2be0e1df5ac0e607a3cd67fc",
+      "size_bytes": 6765
+    },
+    {
+      "path": "scripts/dev/day21_qc_semantics.py",
+      "sha256": "ac307a9245bccf88dfacad0505acf49cae0a6f16af8814c42225727ef3107f4d",
+      "size_bytes": 1667
+    },
+    {
+      "path": "scripts/dev/run_day21_qc_checks.sh",
+      "sha256": "8956782bcbf1846163ba90440c59d28e9804c92c709234f7a972ebb0903ab616",
+      "size_bytes": 1439
+    },
+    {
+      "path": "services/quality-gate-service/configs/reason-codes.v0.1.yaml",
+      "sha256": "d479f2ac04aff6c24603aa1fb8432478b50fd4214286f3c6bc21b2056392b809",
+      "size_bytes": 9480
+    }
+  ]
+}

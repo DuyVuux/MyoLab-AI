@@ -1,0 +1,28 @@
+{
+  "day": "DAY21",
+  "evidence_scope": "builder baseline staging; not live monorepo verification",
+  "day21_local": {
+    "contract_validator": "PASS",
+    "pytest": {"passed": 48, "failed": 0},
+    "artifact_checker": "PASS"
+  },
+  "day20_day21_baseline_staging": {
+    "day20_governance_tests": 40,
+    "day21_qc_tests": 48,
+    "total_passed": 88,
+    "failed": 0,
+    "result": "PASS"
+  },
+  "phase_entry": {
+    "user_reported_day20_integration": "COMPLETE",
+    "user_reported_day20_tests": "40 PASS",
+    "gate_b_decision_in_user_report": "NOT_STATED",
+    "real_site_qc_validation_claimed": false
+  },
+  "technology_maturity": {
+    "active_learning": "CONTRACT_ONLY_NOT_RUNNING",
+    "weak_supervision": "CONTRACT_AND_REGISTRY_ONLY",
+    "label_model_trained": false,
+    "site_thresholds_frozen": false
+  }
+}

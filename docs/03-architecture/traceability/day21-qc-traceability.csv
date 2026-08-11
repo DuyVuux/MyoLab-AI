@@ -1,0 +1,9 @@
+requirement_id,day21_contribution,artifact,verification,evidence_status
+FR-030,DESIGNED,clinical/quality/qc-taxonomy.v0.2.yaml,taxonomy scopes SESSION/CHANNEL/WINDOW,VERIFIED_DOCUMENTED
+FR-037,DESIGNED,packages/common-schemas/json/qc-result.v0.2.schema.json,PASS/WARNING/FAIL schema + reasons,VERIFIED_DOCUMENTED
+FR-038,DESIGNED,services/quality-gate-service/configs/reason-codes.v0.1.yaml,QUALITY_BLOCKED action is technical/non-diagnostic,VERIFIED_DOCUMENTED
+FR-039,DESIGNED,services/quality-gate-service/configs/reason-codes.v0.1.yaml,CLINICIAN_REVIEW_REQUIRED / CHANNEL_WARNING,VERIFIED_DOCUMENTED
+FR-040,DESIGNED,packages/common-schemas/json/qc-result.v0.2.schema.json,scope-level result contract; aggregation deferred DAY30,VERIFIED_DOCUMENTED
+FR-041,DESIGNED,clinical/quality/qc-taxonomy.v0.2.yaml,versioned taxonomy + registry references,VERIFIED_DOCUMENTED
+NFR-009,DESIGNED,services/quality-gate-service/configs/reason-codes.v0.1.yaml,typed human-readable reason semantics,VERIFIED_DOCUMENTED
+NFR-011,DESIGNED,clinical/quality/qc-taxonomy.v0.2.yaml,explicit versioning + supersedes,VERIFIED_DOCUMENTED

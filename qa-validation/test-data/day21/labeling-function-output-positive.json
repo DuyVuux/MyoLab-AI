@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1",
+  "lf_id": "LF_MISSING_DROPOUT",
+  "lf_version": "test-v0.1",
+  "reason_code": "MISSING_DROPOUT",
+  "label_candidate": "WARNING_CANDIDATE",
+  "evidence_type": [
+    "RAW_STRUCTURAL",
+    "TEMPORAL"
+  ],
+  "severity": "MODERATE",
+  "qc_supportability": "REVIEW_REQUIRED",
+  "evidence_strength": "HIGH",
+  "evidence_refs": [
+    "fixture://day21/lf"
+  ],
+  "ground_truth_claim": false,
+  "expert_label_claim": false,
+  "provenance": {
+    "registry_version": "0.1",
+    "rule_version": "test-rule-v0.1",
+    "config_version": "test-config-v0.1"
+  }
+}

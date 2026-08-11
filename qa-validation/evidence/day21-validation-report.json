@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "reason_code_count": 14,
+  "labeling_function_registry_count": 6,
+  "requirement_impact_count": 8,
+  "authoritative_manifest_check": "PASS",
+  "weak_supervision_maturity": "CONTRACT_AND_REGISTRY_ONLY",
+  "label_model_trained": false,
+  "active_learning_selection_running": false,
+  "site_thresholds_frozen": false
+}

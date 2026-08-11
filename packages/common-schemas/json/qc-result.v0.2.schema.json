@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/qc-result.v0.2.schema.json",
+  "title": "MotionLab QC Result v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "taxonomy_version",
+    "reason_registry_version",
+    "evaluation_status",
+    "scope",
+    "scope_ref",
+    "signal_quality",
+    "reasons",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "taxonomy_version": {
+      "const": "0.2"
+    },
+    "reason_registry_version": {
+      "const": "0.1"
+    },
+    "evaluation_status": {
+      "enum": [
+        "EVALUATED",
+        "NOT_EVALUATED",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    "scope": {
+      "enum": [
+        "SESSION",
+        "CHANNEL",
+        "WINDOW"
+      ]
+    },
+    "scope_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "signal_quality": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "PASS",
+        "WARNING",
+        "FAIL",
+        null
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "semantic_class",
+          "severity",
+          "qc_supportability",
+          "evidence_type",
+          "evidence_status",
+          "evidence_refs",
+          "technical_action"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]+$"
+          },
+          "semantic_class": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "INFO",
+              "LOW",
+              "MODERATE",
+              "HIGH",
+              "CRITICAL",
+              "UNKNOWN"
+            ]
+          },
+          "qc_supportability": {
+            "enum": [
+              "SUPPORTABLE",
+              "REVIEW_REQUIRED",
+              "BLOCKED",
+              "UNKNOWN",
+              "NOT_EVALUATED"
+            ]
+          },
+          "evidence_type": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_status": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "technical_action": {
+            "enum": [
+              "NONE",
+              "CONTINUE_QC",
+              "REVIEW_WINDOW",
+              "REVIEW_CHANNEL",
+              "REVIEW_SESSION",
+              "CHECK_ACQUISITION_SETUP",
+              "CHECK_PROTOCOL_CONTEXT",
+              "CONSIDER_REMEASUREMENT",
+              "BLOCK_UNSUPPORTED_DOWNSTREAM",
+              "ABSTAIN"
+            ]
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "qc_contract_version",
+        "config_version",
+        "evaluator_version",
+        "source_refs"
+      ],
+      "properties": {
+        "qc_contract_version": {
+          "const": "DAY21-v0.1"
+        },
+        "config_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluator_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "const": "EVALUATED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "signal_quality": {
+            "enum": [
+              "PASS",
+              "WARNING",
+              "FAIL"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evaluation_status": {
+            "enum": [
+              "NOT_EVALUATED",
+              "INSUFFICIENT_EVIDENCE"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "signal_quality": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

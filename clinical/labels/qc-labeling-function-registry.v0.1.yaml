@@ -1,0 +1,61 @@
+version: '0.1'
+status: REGISTRY_DESIGNED_NO_LABEL_MODEL
+output_schema: packages/common-schemas/json/labeling-function-output.schema.json
+ground_truth_policy:
+  weak_label_is_expert_ground_truth: false
+  synthetic_known_truth_remains_truth_for_synthetic_fixture: true
+  expert_annotation_is_separate_evidence_class: true
+  label_model_training_authorized: false
+  active_learning_selection_authorized_today: false
+labeling_functions:
+- lf_id: LF_MISSING_DROPOUT
+  reason_code: MISSING_DROPOUT
+  implementation_status: PLANNED_DAY23
+  output_kind: WEAK_LABEL_CANDIDATE
+  rule_version: TBD
+  config_version: TBD
+  notes: Implement only when DAY23 controlled-fixture detector exists.
+- lf_id: LF_CLIPPING_SATURATION
+  reason_code: CLIPPING_SATURATION_SUSPECTED
+  implementation_status: PLANNED_DAY24
+  output_kind: WEAK_LABEL_CANDIDATE
+  rule_version: TBD
+  config_version: TBD
+  notes: Must abstain/unknown if ADC saturation semantics are not verified.
+- lf_id: LF_BASELINE_NOISE
+  reason_code: BASELINE_NOISE_ELEVATED
+  implementation_status: PLANNED_DAY25
+  output_kind: WEAK_LABEL_CANDIDATE
+  rule_version: TBD
+  config_version: TBD
+  notes: Protocol/reference dependent; no global threshold.
+- lf_id: LF_POWERLINE
+  reason_code: POWERLINE_INTERFERENCE_SUSPECTED
+  implementation_status: PLANNED_DAY26
+  output_kind: WEAK_LABEL_CANDIDATE
+  rule_version: TBD
+  config_version: TBD
+  notes: Site mains configuration must be explicit.
+- lf_id: LF_LOW_FREQUENCY_CONTAMINATION
+  reason_code: LOW_FREQUENCY_CONTAMINATION_SUSPECTED
+  implementation_status: PLANNED_DAY27
+  output_kind: WEAK_LABEL_CANDIDATE
+  rule_version: TBD
+  config_version: TBD
+  notes: Low-frequency evidence does not itself prove artifact.
+- lf_id: LF_POOR_CONTACT
+  reason_code: POOR_CONTACT_SUSPECTED
+  implementation_status: PLANNED_DAY28
+  output_kind: WEAK_LABEL_CANDIDATE
+  rule_version: TBD
+  config_version: TBD
+  notes: Never infer pathology from low activation or atypical morphology.
+non_candidates:
+- CHANNEL_ABNORMALITY_UNRESOLVED
+- PHYSIOLOGICAL_VARIATION_POSSIBLE
+- ARTIFACT_VS_PHYSIOLOGY_UNRESOLVED
+- CHANNEL_WARNING
+- QUALITY_BLOCKED
+- CLINICIAN_REVIEW_REQUIRED
+- QC_NOT_EVALUATED
+- INSUFFICIENT_QC_EVIDENCE

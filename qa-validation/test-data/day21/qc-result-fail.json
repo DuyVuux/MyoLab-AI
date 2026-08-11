@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "taxonomy_version": "0.2",
+  "reason_registry_version": "0.1",
+  "evaluation_status": "EVALUATED",
+  "scope": "CHANNEL",
+  "scope_ref": "channel:test:003",
+  "signal_quality": "FAIL",
+  "reasons": [
+    {
+      "code": "QUALITY_BLOCKED",
+      "semantic_class": "REVIEW_OR_DISPOSITION",
+      "severity": "HIGH",
+      "qc_supportability": "BLOCKED",
+      "evidence_type": [
+        "POLICY_DECISION"
+      ],
+      "evidence_status": "SYNTHETIC_KNOWN_TRUTH",
+      "evidence_refs": [
+        "fixture://day21/blocking-policy"
+      ],
+      "technical_action": "BLOCK_UNSUPPORTED_DOWNSTREAM",
+      "details": {
+        "underlying_reason_codes": [
+          "MISSING_DROPOUT"
+        ],
+        "test_fixture_only": true
+      }
+    }
+  ],
+  "provenance": {
+    "qc_contract_version": "DAY21-v0.1",
+    "config_version": "synthetic-v0.1",
+    "evaluator_version": "contract-test-v0.1",
+    "source_refs": [
+      "fixture://day21/fail"
+    ]
+  }
+}

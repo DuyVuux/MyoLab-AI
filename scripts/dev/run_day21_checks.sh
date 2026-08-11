@@ -51,4 +51,8 @@ PY_EVIDENCE
 echo '[5/5] Artifact and safety check'
 "$PYTHON" scripts/dev/check_day21_artifacts.py
 rm -rf .day21-build
+
+echo '[6/6] Day 21 QC Taxonomy & Weak Supervision Contract check'
+bash "$ROOT/scripts/dev/run_day21_qc_checks.sh"
+
 echo 'All Day 21 checks passed.'

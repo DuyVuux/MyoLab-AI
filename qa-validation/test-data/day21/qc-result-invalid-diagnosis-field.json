@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "taxonomy_version": "0.2",
+  "reason_registry_version": "0.1",
+  "evaluation_status": "EVALUATED",
+  "scope": "CHANNEL",
+  "scope_ref": "channel:test:002",
+  "signal_quality": "WARNING",
+  "reasons": [
+    {
+      "code": "ARTIFACT_VS_PHYSIOLOGY_UNRESOLVED",
+      "semantic_class": "AMBIGUOUS_ARTIFACT_VS_PHYSIOLOGY",
+      "severity": "MODERATE",
+      "qc_supportability": "REVIEW_REQUIRED",
+      "evidence_type": [
+        "OTHER_TYPED_EVIDENCE",
+        "PROTOCOL_CONTEXT"
+      ],
+      "evidence_status": "CONFLICTING",
+      "evidence_refs": [
+        "fixture://day21/ambiguous"
+      ],
+      "technical_action": "REVIEW_CHANNEL",
+      "details": {
+        "test_fixture_only": true
+      }
+    }
+  ],
+  "provenance": {
+    "qc_contract_version": "DAY21-v0.1",
+    "config_version": "synthetic-v0.1",
+    "evaluator_version": "contract-test-v0.1",
+    "source_refs": [
+      "fixture://day21/warning"
+    ]
+  },
+  "diagnosis": "stroke"
+}

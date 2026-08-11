@@ -19,11 +19,18 @@ expected_requirements:
     - FR-023
     - FR-024
     - FR-025
+    - FR-030
+    - FR-037
+    - FR-038
+    - FR-039
+    - FR-040
+    - FR-041
   non_functional:
     - NFR-001
     - NFR-002
     - NFR-003
     - NFR-004
+    - NFR-009
     - NFR-011
     - NFR-012
   acceptance_criteria:

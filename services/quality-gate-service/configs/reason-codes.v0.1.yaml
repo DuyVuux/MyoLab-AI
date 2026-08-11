@@ -1,0 +1,266 @@
+version: '0.1'
+taxonomy_version: '0.2'
+status: DESIGNED_NOT_SITE_VALIDATED
+schema_ref: packages/common-schemas/json/qc-result.v0.2.schema.json
+rules:
+  unknown_reason_code: FAIL_CLOSED_CONFIGURATION_ERROR
+  diagnosis_or_pathology_label_forbidden: true
+  numeric_thresholds_forbidden_in_registry: true
+  technical_action_only: true
+  underlying_evidence_reason_required_for_disposition: true
+reason_codes:
+- code: MISSING_DROPOUT
+  semantic_class: DATA_INTEGRITY
+  requirement: FR-031
+  definition: Missing samples/dropout/no-data interval is observed or quantified.
+  default_quality_effect: POLICY_DEPENDENT
+  default_severity: UNKNOWN
+  default_qc_supportability: UNKNOWN
+  allowed_scopes:
+  - SESSION
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - RAW_STRUCTURAL
+  - TEMPORAL
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: CONTINUE_QC
+  forbidden_inference: Do not infer pathology from missing data.
+  threshold_status: TBD_OR_POLICY_DEPENDENT
+- code: CLIPPING_SATURATION_SUSPECTED
+  semantic_class: ACQUISITION_ARTIFACT_SUSPECTED
+  requirement: FR-032
+  definition: Signal behavior is consistent with possible clipping/saturation conditional on acquisition evidence.
+  default_quality_effect: POLICY_DEPENDENT
+  default_severity: UNKNOWN
+  default_qc_supportability: UNKNOWN
+  allowed_scopes:
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - AMPLITUDE
+  - DEVICE_METADATA
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: CONTINUE_QC
+  forbidden_inference: Do not call a flat or large waveform clipping without acquisition/ADC evidence.
+  threshold_status: TBD_OR_POLICY_DEPENDENT
+- code: BASELINE_NOISE_ELEVATED
+  semantic_class: SIGNAL_QUALITY_INDICATOR
+  requirement: FR-033
+  definition: Baseline/noise indicator is elevated relative to an approved reference when such reference exists.
+  default_quality_effect: POLICY_DEPENDENT
+  default_severity: UNKNOWN
+  default_qc_supportability: UNKNOWN
+  allowed_scopes:
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - AMPLITUDE
+  - PROTOCOL_CONTEXT
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: CONTINUE_QC
+  forbidden_inference: No universal noise threshold is defined in DAY21.
+  threshold_status: TBD_OR_POLICY_DEPENDENT
+- code: POWERLINE_INTERFERENCE_SUSPECTED
+  semantic_class: ACQUISITION_ARTIFACT_SUSPECTED
+  requirement: FR-034
+  definition: Spectral evidence suggests power-line interference in an applicable acquisition context.
+  default_quality_effect: POLICY_DEPENDENT
+  default_severity: UNKNOWN
+  default_qc_supportability: UNKNOWN
+  allowed_scopes:
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - SPECTRAL
+  - DEVICE_METADATA
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: CONTINUE_QC
+  forbidden_inference: Do not hard-code site mains frequency or threshold before approved configuration.
+  threshold_status: TBD_OR_POLICY_DEPENDENT
+- code: LOW_FREQUENCY_CONTAMINATION_SUSPECTED
+  semantic_class: ACQUISITION_ARTIFACT_SUSPECTED
+  requirement: FR-035
+  definition: Evidence suggests motion artifact or low-frequency contamination.
+  default_quality_effect: POLICY_DEPENDENT
+  default_severity: UNKNOWN
+  default_qc_supportability: UNKNOWN
+  allowed_scopes:
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - TEMPORAL
+  - SPECTRAL
+  - PROTOCOL_CONTEXT
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: CONTINUE_QC
+  forbidden_inference: Low-frequency content alone does not prove artifact or justify deleting waveform.
+  threshold_status: TBD_OR_POLICY_DEPENDENT
+- code: POOR_CONTACT_SUSPECTED
+  semantic_class: ACQUISITION_ARTIFACT_SUSPECTED
+  requirement: FR-036
+  definition: Evidence suggests electrode/contact or acquisition-channel abnormality.
+  default_quality_effect: POLICY_DEPENDENT
+  default_severity: UNKNOWN
+  default_qc_supportability: UNKNOWN
+  allowed_scopes:
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - AMPLITUDE
+  - CROSS_CHANNEL
+  - DEVICE_METADATA
+  evidence_required: true
+  labeling_function_candidate: true
+  technical_action_default: CONTINUE_QC
+  forbidden_inference: Do not convert suspected poor contact into a diagnosis or pathology label.
+  threshold_status: TBD_OR_POLICY_DEPENDENT
+- code: CHANNEL_ABNORMALITY_UNRESOLVED
+  semantic_class: AMBIGUOUS_ARTIFACT_VS_PHYSIOLOGY
+  requirement: FR-036
+  definition: Channel is atypical but current evidence cannot establish acquisition artifact versus physiological variation.
+  default_quality_effect: WARNING
+  default_severity: MODERATE
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes:
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - CROSS_CHANNEL
+  - PROTOCOL_CONTEXT
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: REVIEW_CHANNEL
+  forbidden_inference: Do not automatically clean, reject, or relabel as pathology.
+  threshold_status: NOT_APPLICABLE
+- code: PHYSIOLOGICAL_VARIATION_POSSIBLE
+  semantic_class: PHYSIOLOGICAL_VARIATION_POSSIBLE
+  requirement: PRD-JTBD-03
+  definition: Observed difference may reflect physiology/pathology/state rather than measurement artifact; current evidence is insufficient to discard it.
+  default_quality_effect: NONE
+  default_severity: INFO
+  default_qc_supportability: SUPPORTABLE
+  allowed_scopes:
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - PROTOCOL_CONTEXT
+  - OTHER_TYPED_EVIDENCE
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: NONE
+  forbidden_inference: This is not a diagnosis and is not a reason to mark signal as noise.
+  threshold_status: NOT_APPLICABLE
+- code: ARTIFACT_VS_PHYSIOLOGY_UNRESOLVED
+  semantic_class: AMBIGUOUS_ARTIFACT_VS_PHYSIOLOGY
+  requirement: PRD-JTBD-03
+  definition: Available evidence cannot safely distinguish acquisition artifact from physiological variation.
+  default_quality_effect: WARNING
+  default_severity: MODERATE
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes:
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - OTHER_TYPED_EVIDENCE
+  - PROTOCOL_CONTEXT
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: REVIEW_CHANNEL
+  forbidden_inference: No forced cleanup or pathology conclusion.
+  threshold_status: NOT_APPLICABLE
+- code: CHANNEL_WARNING
+  semantic_class: REVIEW_OR_DISPOSITION
+  requirement: FR-037/FR-039
+  definition: One or more channels/windows require review while some data may remain supportable.
+  default_quality_effect: WARNING
+  default_severity: MODERATE
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes:
+  - SESSION
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - POLICY_DECISION
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: REVIEW_CHANNEL
+  forbidden_inference: Generic warning must not replace the underlying evidence reason.
+  threshold_status: NOT_APPLICABLE
+- code: QUALITY_BLOCKED
+  semantic_class: REVIEW_OR_DISPOSITION
+  requirement: FR-038
+  definition: Quality evidence is sufficient under approved policy to block unsupported downstream capability.
+  default_quality_effect: FAIL
+  default_severity: HIGH
+  default_qc_supportability: BLOCKED
+  allowed_scopes:
+  - SESSION
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - POLICY_DECISION
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: BLOCK_UNSUPPORTED_DOWNSTREAM
+  forbidden_inference: Blocking unsupported analysis is not a clinical diagnosis.
+  threshold_status: TBD_OR_POLICY_DEPENDENT
+- code: CLINICIAN_REVIEW_REQUIRED
+  semantic_class: REVIEW_OR_DISPOSITION
+  requirement: FR-039/NFR-009
+  definition: System requires clinician/operator review of an exception or ambiguity.
+  default_quality_effect: WARNING
+  default_severity: MODERATE
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes:
+  - SESSION
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - POLICY_DECISION
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: REVIEW_CHANNEL
+  forbidden_inference: Review-required is not equivalent to abnormal clinical finding.
+  threshold_status: NOT_APPLICABLE
+- code: QC_NOT_EVALUATED
+  semantic_class: REVIEW_OR_DISPOSITION
+  requirement: NFR-009
+  definition: QC was not evaluated because the necessary evidence or applicable rule was unavailable.
+  default_quality_effect: NONE
+  default_severity: INFO
+  default_qc_supportability: SUPPORTABLE
+  allowed_scopes:
+  - SESSION
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - POLICY_DECISION
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: NONE
+  forbidden_inference: Not evaluated must never be encoded as PASS.
+  threshold_status: NOT_APPLICABLE
+- code: INSUFFICIENT_QC_EVIDENCE
+  semantic_class: REVIEW_OR_DISPOSITION
+  requirement: NFR-009
+  definition: Available evidence is insufficient to support a reliable QC decision.
+  default_quality_effect: WARNING
+  default_severity: MODERATE
+  default_qc_supportability: REVIEW_REQUIRED
+  allowed_scopes:
+  - SESSION
+  - CHANNEL
+  - WINDOW
+  evidence_type_candidates:
+  - POLICY_DECISION
+  evidence_required: true
+  labeling_function_candidate: false
+  technical_action_default: REVIEW_CHANNEL
+  forbidden_inference: Insufficient evidence must not be encoded as normal/no abnormality.
+  threshold_status: NOT_APPLICABLE

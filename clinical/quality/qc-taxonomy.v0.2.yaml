@@ -1,0 +1,142 @@
+version: '0.2'
+day: DAY21
+title: MotionLab sEMG QC Taxonomy — Machine-Readable Quality Semantics
+status: DESIGNED_NOT_SITE_VALIDATED
+supersedes: clinical/quality/qc-taxonomy.v0.1.yaml
+source_lineage:
+- source: SRS MotionLab Data Intelligence v0.1
+  priority: 1
+  evidence_status: VERIFIED_DOCUMENTED
+- source: PRD MotionLab Data Intelligence v0.1
+  priority: 2
+  evidence_status: VERIFIED_DOCUMENTED
+- source: DAY04 qc-taxonomy.v0.1.yaml
+  priority: 7
+  evidence_status: ENGINEERING_BASELINE
+- source: DAY20 Gate B integration report supplied by user
+  priority: 7
+  evidence_status: USER_REPORTED_UPSTREAM_STATE
+authoritative_requirements:
+- FR-030
+- FR-037
+- FR-038
+- FR-039
+- FR-040
+- FR-041
+- NFR-009
+- NFR-011
+principles:
+- quality evidence != diagnosis
+- physiological variation != acquisition artifact
+- pathology != noise
+- measurement fact != clinical interpretation
+- ambiguous evidence => review/abstain, not forced cleanup
+- reason code must reference evidence and versioned policy
+- weak label candidate != expert ground truth
+- PASS/WARNING/FAIL describes QC supportability, not disease severity
+- raw signal remains immutable
+- no numeric clinical/QC threshold is frozen in DAY21
+scope_enum:
+- SESSION
+- CHANNEL
+- WINDOW
+signal_quality_enum:
+- PASS
+- WARNING
+- FAIL
+evaluation_status_enum:
+- EVALUATED
+- NOT_EVALUATED
+- INSUFFICIENT_EVIDENCE
+semantic_class_enum:
+- DATA_INTEGRITY
+- ACQUISITION_ARTIFACT_SUSPECTED
+- SIGNAL_QUALITY_INDICATOR
+- PHYSIOLOGICAL_VARIATION_POSSIBLE
+- AMBIGUOUS_ARTIFACT_VS_PHYSIOLOGY
+- REVIEW_OR_DISPOSITION
+severity_enum:
+- INFO
+- LOW
+- MODERATE
+- HIGH
+- CRITICAL
+- UNKNOWN
+qc_supportability_enum:
+- SUPPORTABLE
+- REVIEW_REQUIRED
+- BLOCKED
+- UNKNOWN
+- NOT_EVALUATED
+evidence_type_enum:
+- RAW_STRUCTURAL
+- TEMPORAL
+- AMPLITUDE
+- SPECTRAL
+- CROSS_CHANNEL
+- DEVICE_METADATA
+- PROTOCOL_CONTEXT
+- MULTIMODAL_SYNC
+- SYNTHETIC_KNOWN_TRUTH
+- EXPERT_REVIEW
+- POLICY_DECISION
+- OTHER_TYPED_EVIDENCE
+evidence_status_enum:
+- VERIFIED_DOCUMENTED
+- OBSERVED_SAMPLE_DATA
+- SITE_VERIFIED
+- EXPERT_ANNOTATED
+- SYNTHETIC_KNOWN_TRUTH
+- INFERRED
+- ASSUMPTION
+- UNKNOWN
+- TBD
+- NOT_VERIFIED
+- DISCOVERY_REQUIRED
+- CONFLICTING
+technical_action_enum:
+- NONE
+- CONTINUE_QC
+- REVIEW_WINDOW
+- REVIEW_CHANNEL
+- REVIEW_SESSION
+- CHECK_ACQUISITION_SETUP
+- CHECK_PROTOCOL_CONTEXT
+- CONSIDER_REMEASUREMENT
+- BLOCK_UNSUPPORTED_DOWNSTREAM
+- ABSTAIN
+context_tags_never_sufficient_for_qc_failure:
+- tag: STROKE_CONTEXT
+  evidence_status: VERIFIED_DOCUMENTED
+- tag: PARALYSIS_OR_PARESIS_CONTEXT
+  evidence_status: VERIFIED_DOCUMENTED
+- tag: MUSCLE_ATROPHY_CONTEXT
+  evidence_status: VERIFIED_DOCUMENTED
+- tag: BODY_HABITUS_HIGH_ADIPOSITY_CONTEXT
+  evidence_status: VERIFIED_DOCUMENTED
+- tag: BODY_HABITUS_LOW_MASS_CONTEXT
+  evidence_status: VERIFIED_DOCUMENTED
+reason_code_policy:
+  registry_path: services/quality-gate-service/configs/reason-codes.v0.1.yaml
+  unknown_code_behavior: FAIL_CLOSED_CONFIGURATION_ERROR
+  diagnosis_fields_allowed: false
+  threshold_freeze_allowed_day21: false
+  reason_without_evidence_allowed: false
+aggregation_boundary:
+  implemented_today: false
+  target_day: DAY30
+  principle: DAY21 defines semantics only; it does not implement window/channel/session aggregation.
+  non_negotiable_rules:
+  - PHYSIOLOGICAL_VARIATION_POSSIBLE cannot downgrade QC by itself.
+  - POLICY_DEPENDENT evidence cannot become WARNING/FAIL without an approved versioned policy.
+  - Disposition reasons cannot erase underlying detector/evidence reasons.
+threshold_policy:
+  numeric_thresholds_frozen: false
+  status: TBD_SITE_VALIDATION_REQUIRED
+  reason: SRS defines capability requirements; thresholds require later evidence/site validation and clinician approval.
+weak_supervision_boundary:
+  enabled_as_contract: true
+  label_model_trained: false
+  active_learning_selection_running: false
+  expert_ground_truth_claim_allowed: false
+  future_registry: clinical/labels/qc-labeling-function-registry.v0.1.yaml

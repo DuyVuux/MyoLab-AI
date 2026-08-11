@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/labeling-function-output.schema.json",
+  "title": "QC Labeling Function Candidate Output v0.1",
+  "description": "Weak-supervision candidate evidence. Never expert ground truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "lf_id",
+    "lf_version",
+    "reason_code",
+    "label_candidate",
+    "evidence_type",
+    "severity",
+    "qc_supportability",
+    "evidence_strength",
+    "evidence_refs",
+    "ground_truth_claim",
+    "expert_label_claim",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "lf_id": {
+      "type": "string",
+      "pattern": "^LF_[A-Z0-9_]+$"
+    },
+    "lf_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reason_code": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]+$"
+    },
+    "label_candidate": {
+      "enum": [
+        "PASS_CANDIDATE",
+        "WARNING_CANDIDATE",
+        "FAIL_CANDIDATE",
+        "ABSTAIN",
+        "UNKNOWN"
+      ]
+    },
+    "evidence_type": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "severity": {
+      "enum": [
+        "INFO",
+        "LOW",
+        "MODERATE",
+        "HIGH",
+        "CRITICAL",
+        "UNKNOWN"
+      ]
+    },
+    "qc_supportability": {
+      "enum": [
+        "SUPPORTABLE",
+        "REVIEW_REQUIRED",
+        "BLOCKED",
+        "UNKNOWN",
+        "NOT_EVALUATED"
+      ]
+    },
+    "evidence_strength": {
+      "enum": [
+        "LOW",
+        "MODERATE",
+        "HIGH",
+        "UNKNOWN",
+        "NOT_APPLICABLE"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "ground_truth_claim": {
+      "const": false
+    },
+    "expert_label_claim": {
+      "const": false
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_version",
+        "rule_version",
+        "config_version"
+      ],
+      "properties": {
+        "registry_version": {
+          "const": "0.1"
+        },
+        "rule_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "config_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

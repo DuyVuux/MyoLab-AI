@@ -1,0 +1,20 @@
+day: DAY21
+status: PENDING
+reviewer: null
+reviewed_at: null
+checks:
+- id: MR-01
+  question: Does taxonomy preserve artifact-vs-physiology ambiguity without diagnosis?
+  status: PENDING
+- id: MR-02
+  question: Are reason actions technical only and understandable?
+  status: PENDING
+- id: MR-03
+  question: Do weak-label contracts clearly deny ground-truth status?
+  status: PENDING
+- id: MR-04
+  question: Are no thresholds/site facts silently frozen?
+  status: PENDING
+- id: MR-05
+  question: Does DAY21 avoid implementing DAY22+ detector/window work?
+  status: PENDING
