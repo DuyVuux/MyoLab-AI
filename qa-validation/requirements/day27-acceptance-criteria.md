@@ -1,10 +1,11 @@
-# Day 27 Acceptance Criteria
+# DAY27 Acceptance Criteria
 
-- Tooling pack validates without network/raw data.
-- Source record with placeholders fails.
-- Download defaults to dry-run and requires explicit license acceptance.
-- Unsafe archive path is rejected.
-- Unknown label cannot map to rest.
-- Group split is subject-safe and test sealed.
-- Engineering gate keeps training false.
-- No raw/archive/model artifact is included in pack.
+- Mandatory roadmap artifacts exist.
+- Output conforms DAY21 LabelingFunctionOutput.
+- First `evidence_refs` item is exact DAY22 `window_id`.
+- Raw array remains unchanged.
+- No resampling/interpolation/auto-clean/auto-repair.
+- No ground-truth or expert-label claim.
+- No final session QC; DAY30 deferred.
+- Traceability: FR-035, FR-036, FR-037.
+- Tests and artifact integrity pass.

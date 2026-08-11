@@ -1,0 +1,5 @@
+schema_version: "0.1"
+base_registry: reason-codes.v0.1.yaml
+reason_codes:
+  - {"code": "MOTION_ARTIFACT_SUSPECTED", "owner_day": 27, "status": "ENGINEERING", "labeling_function_candidate": true}
+  - {"code": "MOTION_ARTIFACT_NOT_OBSERVED", "owner_day": 27, "status": "ENGINEERING", "labeling_function_candidate": true}

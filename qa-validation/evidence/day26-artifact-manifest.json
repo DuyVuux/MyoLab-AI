@@ -1,0 +1,19 @@
+{
+  "day": 26,
+  "managed_files": [
+    "clinical/labels/day26-qc-labeling-function-registry-delta.v0.1.yaml",
+    "configs/qc/powerline.v0.1.yaml",
+    "qa-validation/automated-tests/qc/test_powerline.py",
+    "qa-validation/evidence/day26-peer-review.template.yaml",
+    "qa-validation/evidence/day26-quality-self-audit.md",
+    "qa-validation/evidence/day26-validation-report.json",
+    "qa-validation/traceability/day26-requirement-impact.yaml",
+    "scripts/dev/check_day26_artifacts.py",
+    "scripts/dev/day26_contract_validator.py",
+    "scripts/dev/run_day26_checks.sh",
+    "services/quality-gate-service/configs/day26-reason-code-delta.v0.1.yaml",
+    "services/quality-gate-service/src/detectors/powerline.py"
+  ],
+  "count": 12,
+  "scope": "DAY-owned repo_patch artifacts; shared registries represented by deltas"
+}

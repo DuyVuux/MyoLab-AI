@@ -1,0 +1,25 @@
+{
+  "day": 27,
+  "managed_files": [
+    "clinical/labels/day27-qc-labeling-function-registry-delta.v0.1.yaml",
+    "configs/qc/motion-artifact.v0.1.yaml",
+    "docs/00-executive/day27/DAY27_EXECUTION_PLAN.md",
+    "docs/00-executive/day27/DAY27_FEYNMAN_LEARNING_GUIDE.md",
+    "docs/00-executive/day27/DAY27_INTEGRATION_NOTES.md",
+    "docs/00-executive/rebaseline/day27-open-questions-and-decisions.md",
+    "qa-validation/automated-tests/qc/test_motion_artifact.py",
+    "qa-validation/evidence/day27-peer-review.template.yaml",
+    "qa-validation/evidence/day27-quality-self-audit.md",
+    "qa-validation/evidence/day27-validation-report.json",
+    "qa-validation/requirements/day27-acceptance-criteria.md",
+    "qa-validation/test-data/synthetic/generators/motion_artifact_factory.py",
+    "qa-validation/traceability/day27-requirement-impact.yaml",
+    "scripts/dev/check_day27_artifacts.py",
+    "scripts/dev/day27_contract_validator.py",
+    "scripts/dev/run_day27_checks.sh",
+    "services/quality-gate-service/configs/day27-reason-code-delta.v0.1.yaml",
+    "services/quality-gate-service/src/detectors/motion_artifact.py"
+  ],
+  "count": 18,
+  "scope": "DAY-owned repo_patch artifacts; shared registries represented by deltas"
+}

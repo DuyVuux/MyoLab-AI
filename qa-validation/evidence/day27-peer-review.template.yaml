@@ -1,0 +1,10 @@
+day: 27
+review_status: PENDING
+reviewer: null
+checks:
+  window_identity_linkage: PENDING
+  weak_label_truth_boundary: PENDING
+  raw_immutability: PENDING
+  preserve_physiology: PENDING
+  no_final_aggregation: PENDING
+notes: []

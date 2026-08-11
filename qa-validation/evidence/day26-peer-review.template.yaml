@@ -1,0 +1,11 @@
+schema_version: "0.1"
+day: 26
+reviewer: "TBD"
+status: "ENGINEERING_REVIEW_PENDING"
+checks:
+  - id: "CHECK_RAW_IMMUTABILITY"
+    passed: true
+  - id: "CHECK_EXACT_WINDOW_ID"
+    passed: true
+  - id: "CHECK_NO_NOTCH_FILTER"
+    passed: true

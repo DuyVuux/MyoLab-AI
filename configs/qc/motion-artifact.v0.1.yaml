@@ -1,0 +1,16 @@
+config_version: "0.1.0"
+rule_version: "0.1.0"
+features:
+  low_band_high_hz: 15.0
+  total_band_high_hz: 450.0
+  warning_low_ratio: 0.22
+  high_low_ratio: 0.45
+  drift_warning_normalized: 0.20
+  transient_warning_z: 6.0
+  min_samples: 64
+safety:
+  artifact_evidence_is_not_pathology: true
+  auto_clean_forbidden: true
+  high_pass_on_raw_forbidden: true
+  autonomous_session_block_forbidden: true
+threshold_status: ENGINEERING_PROVISIONAL

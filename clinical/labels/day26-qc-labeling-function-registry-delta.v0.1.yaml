@@ -1,0 +1,4 @@
+schema_version: "0.1"
+base_registry: qc-labeling-function-registry.v0.1.yaml
+updates:
+  - {"lf_id": "LF_POWERLINE", "lf_version": "0.1.0", "owner_day": 26, "status": "IMPLEMENTED_ENGINEERING", "output_schema": "labeling-function-output.schema.json", "ground_truth_claim_allowed": false, "expert_label_claim_allowed": false}

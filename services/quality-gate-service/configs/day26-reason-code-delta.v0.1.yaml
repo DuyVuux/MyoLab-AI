@@ -1,0 +1,6 @@
+schema_version: "0.1"
+base_registry: reason-codes.v0.1.yaml
+reason_codes:
+  - {"code": "POWERLINE_INTERFERENCE_SUSPECTED", "owner_day": 26, "status": "ENGINEERING", "labeling_function_candidate": true}
+  - {"code": "POWERLINE_INTERFERENCE_NOT_OBSERVED", "owner_day": 26, "status": "ENGINEERING", "labeling_function_candidate": true}
+  - {"code": "POWERLINE_SITE_FREQUENCY_NOT_VERIFIED", "owner_day": 26, "status": "ENGINEERING", "labeling_function_candidate": true}

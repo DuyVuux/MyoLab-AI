@@ -1,0 +1,7 @@
+schema_version: "0.1"
+day: 26
+requirements:
+  - FR-034
+  - FR-037
+  - FR-041
+notes: Powerline interference weak label candidate indicator delta.

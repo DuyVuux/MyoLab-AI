@@ -1,0 +1,16 @@
+config_version: "0.1.0"
+rule_version: "0.1.0"
+site:
+  status: NOT_VERIFIED
+  mains_frequency_hz: null
+analysis:
+  total_band_hz: [20.0, 450.0]
+  line_half_width_hz: 3.0
+  harmonics: [1, 2, 3]
+  warning_ratio: 0.08
+  high_ratio: 0.20
+  min_samples: 64
+safety:
+  notch_before_qc_forbidden: true
+  autonomous_session_block_forbidden: true
+  raw_mutation_forbidden: true
