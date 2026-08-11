@@ -1,0 +1,2 @@
+gate_id,total_items,truth_positive_count,truth_negative_count,tp,fp,tn,fn,recall,specificity,evaluation_scope,clinical_claim
+DAY29_TIMESTAMP_INTEGRITY,12,2,10,2,0,10,0,1.0,1.0,TIMESTAMP_STRUCTURE_ONLY_SYNTHETIC,False

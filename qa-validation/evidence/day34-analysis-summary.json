@@ -1,0 +1,23 @@
+{
+  "analysis_version": "day34-weak-label-analysis.v0.1.0",
+  "canonical_lf_families": [
+    "LF_MISSING_DROPOUT",
+    "LF_CLIPPING_SATURATION",
+    "LF_BASELINE_NOISE",
+    "LF_POWERLINE",
+    "LF_LOW_FREQUENCY_CONTAMINATION",
+    "LF_POOR_CONTACT"
+  ],
+  "claim_scope": "RESEARCH_ONLY",
+  "clinical_validation": "NOT_PERFORMED",
+  "cohen_kappa_status": "NOT_APPLICABLE_MACHINE_RULES_ARE_NOT_REVIEWERS",
+  "development_items": 12,
+  "event_localization_metrics": "NOT_APPLICABLE_DETECTORS_EMIT_WINDOW_LEVEL_CANDIDATES",
+  "expert_agreement_status": "NOT_PERFORMED",
+  "family_output_rows": 72,
+  "integrity_rows": 12,
+  "label_model_training": false,
+  "locked_items_consumed": 0,
+  "threshold_tuning": false,
+  "truth_window_misaligned_items": 4
+}

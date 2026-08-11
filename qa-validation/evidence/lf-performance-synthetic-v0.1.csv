@@ -1,0 +1,7 @@
+family_id,truth_status,total_items,declared_truth_positive_count,truth_localization_gap_count,scorable_item_count,scorable_truth_positive_count,scorable_truth_negative_count,evaluated_binary_count,coverage_on_scorable,evaluated_positive_count,positive_coverage,evaluated_negative_count,negative_coverage,tp,fp,tn,fn,positive_unresolved,negative_unresolved,precision_selective,recall_selective,recall_effective,specificity_selective,f1_selective,clinical_claim,expert_reference,evaluation_scope
+LF_MISSING_DROPOUT,FULL_POSITIVE_NEGATIVE_FIXTURES,12,3,3,9,0,9,9,1.0,0,,9,1.0,0,0,9,0,0,0,,,,1.0,,False,False,WINDOW_LEVEL_SYNTHETIC_KNOWN_TRUTH
+LF_CLIPPING_SATURATION,FULL_POSITIVE_NEGATIVE_FIXTURES,12,1,1,11,0,11,11,1.0,0,,11,1.0,0,0,11,0,0,0,,,,1.0,,False,False,WINDOW_LEVEL_SYNTHETIC_KNOWN_TRUTH
+LF_BASELINE_NOISE,FULL_POSITIVE_NEGATIVE_FIXTURES,12,1,0,12,1,11,0,0.0,0,0.0,0,0.0,0,0,0,0,1,11,,,0.0,,,False,False,WINDOW_LEVEL_SYNTHETIC_KNOWN_TRUTH
+LF_POWERLINE,FULL_POSITIVE_NEGATIVE_FIXTURES,12,1,0,12,1,11,12,1.0,1,1.0,11,1.0,1,0,11,0,0,0,1.0,1.0,1.0,1.0,1.0,False,False,WINDOW_LEVEL_SYNTHETIC_KNOWN_TRUTH
+LF_LOW_FREQUENCY_CONTAMINATION,FULL_POSITIVE_NEGATIVE_FIXTURES,12,2,0,12,2,10,12,1.0,2,1.0,10,1.0,2,0,10,0,0,0,1.0,1.0,1.0,1.0,1.0,False,False,WINDOW_LEVEL_SYNTHETIC_KNOWN_TRUTH
+LF_POOR_CONTACT,NEGATIVE_ONLY_NO_POSITIVE_FIXTURE,12,0,0,12,0,12,0,0.0,0,,0,0.0,0,0,0,0,0,12,,,,,,False,False,WINDOW_LEVEL_SYNTHETIC_KNOWN_TRUTH

@@ -1,0 +1,57 @@
+schema_version: day34-evaluation-profile.v0.1
+analysis_version: day34-weak-label-analysis.v0.1.0
+claim_scope: RESEARCH_ONLY
+training_allowed: false
+label_model_training_allowed: false
+threshold_tuning_allowed: false
+locked_partition_access_allowed: false
+input_partition: benchmark-development
+expected_evidence_tier: SYNTHETIC_KNOWN_TRUTH
+canonical_lf_families:
+  - LF_MISSING_DROPOUT
+  - LF_CLIPPING_SATURATION
+  - LF_BASELINE_NOISE
+  - LF_POWERLINE
+  - LF_LOW_FREQUENCY_CONTAMINATION
+  - LF_POOR_CONTACT
+family_normalization:
+  LF_MISSING_DROPOUT:
+    raw_subrules: [LF_MISSING_DROPOUT, LF_FLATLINE]
+    policy: max_candidate_severity_union
+  LF_LOW_FREQUENCY_CONTAMINATION:
+    raw_detector_id: LF_MOTION_ARTIFACT
+    canonical_family_id: LF_LOW_FREQUENCY_CONTAMINATION
+  LF_POOR_CONTACT:
+    raw_detector_id: LF_CHANNEL_ABNORMALITY
+    canonical_family_id: LF_POOR_CONTACT
+evaluation_context:
+  clipping:
+    adc_semantics_status: NOT_VERIFIED
+    note: do_not_invent_adc_rails_for_day33_corpus
+  baseline_noise:
+    threshold_status: NOT_VERIFIED
+    note: amplitude_scale_and_site_threshold_not_verified_day35_owns_sensitivity
+  powerline:
+    fixture_grid_frequency_hz: 50.0
+    fixture_grid_frequency_status: VERIFIED_SYNTHETIC_METADATA_ONLY
+    site_frequency_claim: false
+  poor_contact:
+    cross_channel_peers_available: false
+    supervised_scoring: false
+    reason: NOT_SCORABLE_NO_CROSS_CHANNEL_PEERS
+truth_localization:
+  generator_version: day33-synthetic-factory.v0.1.0
+  local_scenarios:
+    MISSING: day33_generator_n_over_3_segment
+    ZERO_DROPOUT: day33_generator_n_over_3_segment
+    FLATLINE: day33_generator_n_over_3_segment
+    CLIPPING: day33_generator_n_over_3_segment
+    MOTION_TRANSIENT: day33_generator_n_over_2_segment
+  rule: positive_window_metric_only_if_injected_truth_overlaps_window_core
+metrics:
+  binary_positive_candidates: [WARNING_CANDIDATE, FAIL_CANDIDATE]
+  binary_negative_candidates: [PASS_CANDIDATE]
+  unresolved_candidates: [UNKNOWN, ABSTAIN]
+  correlation: pairwise_phi_pearson_on_coevaluated_binary_votes
+  expert_agreement: NOT_PERFORMED
+  cohen_kappa: NOT_APPLICABLE_MACHINE_RULES_ARE_NOT_REVIEWERS

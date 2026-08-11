@@ -1,0 +1,22 @@
+day: DAY34
+status: IMPLEMENTED_FOR_RESEARCH
+roadmap: MyoLab_AI_DAY32_90_Independent_Portfolio_Roadmap_v2.0
+requirements:
+  ICR-002:
+    status: COVERED
+    evidence: qa-validation/evidence/day34-analysis-summary.json
+  ICR-004:
+    status: COVERED
+    evidence: qa-validation/automated-tests/research/test_day34_weak_label_analysis.py
+  ICR-005:
+    status: COVERED
+    evidence: qa-validation/evidence/day34-validation-report.json
+  ICR-007:
+    status: COVERED
+    evidence: configs/qc/day34-evaluation-profile.v0.1.yaml
+safety_boundaries:
+  locked_partition_consumed: false
+  expert_agreement_performed: false
+  label_model_trained: false
+  threshold_tuned: false
+  clinical_validation_performed: false

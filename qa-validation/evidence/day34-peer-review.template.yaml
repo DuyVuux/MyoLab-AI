@@ -1,0 +1,12 @@
+review_id: DAY34-PEER-REVIEW
+status: PENDING
+review_scope: RESEARCH_ENGINEERING
+checks:
+  locked_partition_not_consumed: PENDING
+  truth_localization_logic_correct: PENDING
+  machine_rule_correlation_not_called_inter_rater: PENDING
+  no_threshold_tuning: PENDING
+  low_amplitude_not_pathology: PENDING
+  day35_handoff_safe: PENDING
+reviewer: null
+notes: []

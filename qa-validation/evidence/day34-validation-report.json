@@ -1,0 +1,72 @@
+{
+  "adjudication": "NOT_PERFORMED",
+  "allowed_claim": "WEAK_LABEL_ANALYTICAL_EVIDENCE_READY",
+  "canonical_lf_families": 6,
+  "claim_scope": "RESEARCH_ONLY",
+  "clinical_validation": "NOT_PERFORMED",
+  "combined_functional_tests_passed": 713,
+  "day": "DAY34",
+  "day33_regression": {
+    "failed": 0,
+    "passed": 64
+  },
+  "development_items": 12,
+  "engineering_corpus_repair_items": 4,
+  "expert_agreement": "NOT_PERFORMED",
+  "family_output_rows": 72,
+  "final_status": "READY_WITH_LIMITATIONS",
+  "findings": {
+    "baseline_noise": {
+      "reason": "threshold not verified",
+      "scorable_positives": 1,
+      "unresolved": 1
+    },
+    "clipping": {
+      "declared_positives": 1,
+      "reason": "localized truth outside core window",
+      "scorable_positives": 0
+    },
+    "dropout_flatline": {
+      "declared_positives": 3,
+      "reason": "localized truth outside core window",
+      "scorable_positives": 0
+    },
+    "motion_low_frequency": {
+      "scope": "synthetic only",
+      "scorable_positives": 2,
+      "tp": 2
+    },
+    "poor_contact": {
+      "reason": "no cross-channel peers and no positive poor-contact truth fixture",
+      "scorable_binary_outputs": 0
+    },
+    "powerline": {
+      "scope": "synthetic only",
+      "scorable_positives": 1,
+      "tp": 1
+    },
+    "timestamp_integrity": {
+      "positives": 2,
+      "scope": "synthetic timestamp structure only",
+      "tp": 2
+    }
+  },
+  "focused_tests": {
+    "failed": 0,
+    "passed": 80
+  },
+  "label_model_training": false,
+  "locked_items_consumed": 0,
+  "peer_review": "PENDING",
+  "public_raw_data_evaluated": false,
+  "qc_property_regression": {
+    "deselected": 1,
+    "deselected_test": "test_43_no_day22_window_implementation",
+    "failed": 0,
+    "passed": 569,
+    "reason": "historical DAY21 anti-future-scope guard"
+  },
+  "status": "PASS",
+  "threshold_tuning": false,
+  "truth_window_misaligned_items": 4
+}

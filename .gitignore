@@ -137,3 +137,8 @@ ai-core/experiments/**/*.zip
 data-platform/raw/Vinmec/DAY02_WORKFLOW_TIME_MOTION_HANDOFF/
 DAY*_*_HANDOFF/
 DAY**/
+
+# Handoff context packs
+DAY*_HANDOFF_TO_DAY*.md
+DAY*_HANDOFF_TO_DAY*.yaml
+

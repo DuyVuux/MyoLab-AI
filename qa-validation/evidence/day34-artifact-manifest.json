@@ -1,0 +1,132 @@
+{
+  "artifacts": [
+    {
+      "path": "ai-core/notebooks/05_rule_disagreement_analysis.ipynb",
+      "sha256": "97eba8faf084e8a2d304da2435d3c9d437b9b8c2cc69a203564a321ed2ade0d1",
+      "size_bytes": 2250
+    },
+    {
+      "path": "configs/qc/day34-evaluation-profile.v0.1.yaml",
+      "sha256": "4dd81a931216ab6a00d234cd4e51f7201c37c4cf641878c8560720c5dfbf3cff",
+      "size_bytes": 2156
+    },
+    {
+      "path": "docs/00-executive/day34/DAY34_CLAIM_BOUNDARY.md",
+      "sha256": "4604ce1eb789858e2ca0b734cab704cf319f0e044400daaac62925801cc74d2d",
+      "size_bytes": 383
+    },
+    {
+      "path": "docs/00-executive/day34/DAY34_EXECUTION_PLAN.md",
+      "sha256": "8a43fcaf19c079993133766a5779c5e3f6573de64e1139a8eef9ec4c432cb2f2",
+      "size_bytes": 31223
+    },
+    {
+      "path": "docs/00-executive/day34/DAY34_FEYNMAN_LEARNING_GUIDE.md",
+      "sha256": "7010767b578edee3d1d30a62e254c7651419ec165a4f6df1e605fa05402e6702",
+      "size_bytes": 28037
+    },
+    {
+      "path": "docs/00-executive/day34/DAY34_INTEGRATION_NOTES.md",
+      "sha256": "b9bba1d8f044fbabae482880b71b40f029398ca62bf5f747764f3a8018e8dd83",
+      "size_bytes": 717
+    },
+    {
+      "path": "docs/00-executive/day34/DAY34_TO_DAY35_HANDOFF.md",
+      "sha256": "322b7c1d564009d056045fd533a95b93bd5d093b155f2a77a0bbc98266bbd90a",
+      "size_bytes": 4495
+    },
+    {
+      "path": "qa-validation/automated-tests/research/test_day34_weak_label_analysis.py",
+      "sha256": "85037332c4a12a78131f14625ed15100406c8b1136038f71d357566a761cf371",
+      "size_bytes": 15076
+    },
+    {
+      "path": "qa-validation/evidence/data-integrity-performance-synthetic-v0.1.csv",
+      "sha256": "d7fa820173bcd7cd8ef31f07d45734884db960180453497500c7ca4655c356e7",
+      "size_bytes": 219
+    },
+    {
+      "path": "qa-validation/evidence/day34-analysis-summary.json",
+      "sha256": "d3ca86a4ca97a08c6f9b9a9b5932ac364bd3a7dac2b40301bd0e13135a474a77",
+      "size_bytes": 750
+    },
+    {
+      "path": "qa-validation/evidence/day34-lf-window-outputs-v0.1.csv",
+      "sha256": "032e01af71f3a2cb57712af44ef40f4e3e13b316bb48cec5fd2ee446c40a7ce6",
+      "size_bytes": 35317
+    },
+    {
+      "path": "qa-validation/evidence/day34-peer-review.template.yaml",
+      "sha256": "5a90758cd4b2086b88f1f425e0e7e62ac1d0116a3bfff25b4972b825eb80386a",
+      "size_bytes": 357
+    },
+    {
+      "path": "qa-validation/evidence/day34-quality-self-audit.md",
+      "sha256": "82a0b5d86980e6041074be240f96f628919502ee1031a35315bbe53e634e058d",
+      "size_bytes": 1489
+    },
+    {
+      "path": "qa-validation/evidence/day34-validation-report.json",
+      "sha256": "8936cb36560d9f94cb0be46e059e72b0bbda9451bdee43a955889f2609087b2f",
+      "size_bytes": 1924
+    },
+    {
+      "path": "qa-validation/evidence/lf-correlation-v0.1.csv",
+      "sha256": "9de4aa0ae47655b20299d9e27fa6e63a492e0481af3143b2a98ba11d9146edcb",
+      "size_bytes": 4574
+    },
+    {
+      "path": "qa-validation/evidence/lf-disagreement-matrix-v0.1.csv",
+      "sha256": "517f874dbc987151a1e589f7f0388d0e7362062bbfaee9ec4d440fd594785742",
+      "size_bytes": 471
+    },
+    {
+      "path": "qa-validation/evidence/lf-performance-synthetic-v0.1.csv",
+      "sha256": "54c2ca94a35dd468d05f5e1db35e48324e7a08d08fc44dce3cd38d099800e4fd",
+      "size_bytes": 1436
+    },
+    {
+      "path": "qa-validation/evidence/research-review-candidate-list-v0.1.csv",
+      "sha256": "92ada3a46cc4136c5e948c9547f86f015726157f99fa580eeaa23dc26039109b",
+      "size_bytes": 4620
+    },
+    {
+      "path": "qa-validation/lib/day34_weak_label_analysis.py",
+      "sha256": "1400cddcad0998cb72efb8c45f106ad04cd13c78c497e8165d264bf1159f493f",
+      "size_bytes": 36038
+    },
+    {
+      "path": "qa-validation/requirements/day34-acceptance-criteria.md",
+      "sha256": "378ba116e3de4a3476c3e0b2d0b716cb1796f633d94f7de927e2cc3ff6a75c87",
+      "size_bytes": 1299
+    },
+    {
+      "path": "qa-validation/traceability/day34-independent-continuation-impact.yaml",
+      "sha256": "59077f1ef809a84381b3214aa6c2bb5fc85982958916f8ddf3d9a2c415eb09e8",
+      "size_bytes": 706
+    },
+    {
+      "path": "scripts/dev/check_day34_artifacts.py",
+      "sha256": "1e708694ca9f06144edb969049faf05512035fe0ff480d7dbd5219b502977f43",
+      "size_bytes": 948
+    },
+    {
+      "path": "scripts/dev/day34_analysis_runner.py",
+      "sha256": "9a65d702bef0899afff4a672659e4eadc854f9a5e7ead68760cae40bcf8e2870",
+      "size_bytes": 1140
+    },
+    {
+      "path": "scripts/dev/day34_contract_validator.py",
+      "sha256": "ab2075c2545642c32864c2af419c04a9ec13ad14a6a5a2ae6f017477851d6c9a",
+      "size_bytes": 2717
+    },
+    {
+      "path": "scripts/dev/run_day34_checks.sh",
+      "sha256": "e200292381ca3f2ba9bf3e5448b57f4a43d155002cda9b599e52d83301fd6666",
+      "size_bytes": 1095
+    }
+  ],
+  "day": "DAY34",
+  "managed_count": 25,
+  "schema_version": "artifact-manifest.v0.1"
+}
