@@ -1,0 +1,12 @@
+base_registry_version: '0.1'
+merge_policy: OPTION_B_RECONCILE_WITH_LIVE_REGISTRY
+updates:
+  - lf_id: LF_CLIPPING_SATURATION
+    reason_code: CLIPPING_SATURATION_SUSPECTED
+    implementation_status: IMPLEMENTED_DAY24
+    rule_version: 0.1.0
+    config_version: 0.1.0
+    output_schema: packages/common-schemas/json/labeling-function-output.schema.json
+    adc_semantics_default: NOT_VERIFIED
+    ground_truth_claim: false
+    expert_label_claim: false

@@ -1,0 +1,15 @@
+base_registry_version: '0.1'
+merge_policy: OPTION_B_RECONCILE_WITH_LIVE_REGISTRY
+reason_codes:
+  - code: INSUFFICIENT_REFERENCE
+    requirement: FR-033/FR-023
+    semantic_class: REFERENCE_ELIGIBILITY
+    labeling_function_candidate: true
+  - code: BASELINE_NOISE_THRESHOLD_NOT_VERIFIED
+    requirement: FR-033/FR-023
+    semantic_class: REFERENCE_ELIGIBILITY
+    labeling_function_candidate: true
+  - code: BASELINE_NOISE_WITHIN_REFERENCE
+    requirement: FR-033
+    semantic_class: SIGNAL_QUALITY_INDICATOR
+    labeling_function_candidate: true

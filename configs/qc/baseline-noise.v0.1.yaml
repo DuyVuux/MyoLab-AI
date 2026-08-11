@@ -1,0 +1,22 @@
+version: '0.1'
+status: PROTOCOL_SPECIFIC_ENGINEERING_CONTRACT
+rules:
+  global_threshold_forbidden: true
+  infer_rest_from_low_amplitude_forbidden: true
+  protocol_reference_required: true
+  raw_mutation_forbidden: true
+profiles:
+  - protocol_ref: protocol://synthetic/day25/rest
+    config_version: synthetic-rest-v0.1
+    threshold_status: SYNTHETIC_ENGINEERING_ONLY
+    allowed_reference_roles: [REST, BASELINE_REFERENCE]
+    rms_warning_threshold: 0.0002
+    mad_warning_threshold: 0.0001
+    clinical_threshold_claim: false
+  - protocol_ref: protocol://motionlab/site-template
+    config_version: site-template-v0.1
+    threshold_status: NOT_VERIFIED
+    allowed_reference_roles: [REST, BASELINE_REFERENCE]
+    rms_warning_threshold: null
+    mad_warning_threshold: null
+    clinical_threshold_claim: false

@@ -1,0 +1,12 @@
+base_registry_version: '0.1'
+merge_policy: OPTION_B_RECONCILE_WITH_LIVE_REGISTRY
+updates:
+  - lf_id: LF_BASELINE_NOISE
+    reason_code: BASELINE_NOISE_ELEVATED
+    implementation_status: IMPLEMENTED_DAY25
+    rule_version: 0.1.0
+    config_version: PROTOCOL_SPECIFIC
+    protocol_reference_required: true
+    output_schema: packages/common-schemas/json/labeling-function-output.schema.json
+    ground_truth_claim: false
+    expert_label_claim: false

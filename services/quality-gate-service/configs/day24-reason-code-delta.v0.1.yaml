@@ -1,0 +1,11 @@
+base_registry_version: '0.1'
+merge_policy: OPTION_B_RECONCILE_WITH_LIVE_REGISTRY
+reason_codes:
+  - code: CLIPPING_NOT_OBSERVED
+    requirement: FR-032
+    semantic_class: SIGNAL_QUALITY_INDICATOR
+    labeling_function_candidate: true
+  - code: CLIPPING_NOT_OBSERVED_BY_HEURISTIC
+    requirement: FR-032
+    semantic_class: SIGNAL_QUALITY_INDICATOR
+    labeling_function_candidate: true

@@ -1,0 +1,24 @@
+version: '0.1'
+status: ENGINEERING_PROVISIONAL_NOT_SITE_VALIDATED
+default_profile:
+  profile_id: generic-heuristic-v0.1
+  adc_semantics_status: NOT_VERIFIED
+  adc_lower_limit: null
+  adc_upper_limit: null
+  repeated_extrema_fraction: 0.10
+  plateau_run_min_samples: 4
+  extrema_tolerance: 1.0e-12
+  threshold_evidence_status: NOT_VERIFIED_SITE
+synthetic_verified_profile:
+  profile_id: synthetic-adc-known-v0.1
+  adc_semantics_status: VERIFIED
+  adc_lower_limit: -1.0
+  adc_upper_limit: 1.0
+  repeated_extrema_fraction: 0.10
+  plateau_run_min_samples: 4
+  extrema_tolerance: 1.0e-12
+  threshold_evidence_status: SYNTHETIC_ENGINEERING_ONLY
+safety:
+  absolute_device_truth_claim_requires_verified_adc_semantics: true
+  raw_mutation_forbidden: true
+  final_session_qc_deferred_to_day30: true
