@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionlab.local/schemas/qc-window-identity.v0.1.schema.json",
+  "title": "QC Window Identity v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "window_id",
+    "session_id",
+    "channel_id",
+    "source_id",
+    "start_sample",
+    "end_sample_exclusive",
+    "context_start_sample",
+    "context_end_sample_exclusive",
+    "start_time_seconds",
+    "end_time_seconds",
+    "context_start_time_seconds",
+    "context_end_time_seconds",
+    "requested_duration_seconds",
+    "realized_duration_seconds",
+    "sampling_rate_hz",
+    "windowing_profile_id",
+    "windowing_profile_version",
+    "windowing_profile_fingerprint",
+    "annotation_unit_type",
+    "partial_window"
+  ],
+  "properties": {
+    "schema_version": {"const": "qc-window-identity.v0.1"},
+    "window_id": {"type": "string", "pattern": "^qcw_sha256_[0-9a-f]{64}$"},
+    "session_id": {"type": "string", "minLength": 1},
+    "channel_id": {"type": "string", "minLength": 1},
+    "source_id": {"type": "string", "minLength": 1},
+    "start_sample": {"type": "integer", "minimum": 0},
+    "end_sample_exclusive": {"type": "integer", "minimum": 1},
+    "context_start_sample": {"type": "integer", "minimum": 0},
+    "context_end_sample_exclusive": {"type": "integer", "minimum": 1},
+    "start_time_seconds": {"type": "number"},
+    "end_time_seconds": {"type": "number"},
+    "context_start_time_seconds": {"type": "number"},
+    "context_end_time_seconds": {"type": "number"},
+    "requested_duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "realized_duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "sampling_rate_hz": {"type": "number", "exclusiveMinimum": 0},
+    "windowing_profile_id": {"type": "string", "minLength": 1},
+    "windowing_profile_version": {"type": "string", "minLength": 1},
+    "windowing_profile_fingerprint": {
+      "type": "string",
+      "pattern": "^wprof_sha256_[0-9a-f]{64}$"
+    },
+    "protocol_context_ref": {"type": ["string", "null"]},
+    "domain_context_ref": {"type": ["string", "null"]},
+    "annotation_unit_type": {"const": "QC_WINDOW_WITH_CONTEXT"},
+    "partial_window": {"type": "boolean"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"partial_window": {"const": false}}},
+      "then": {
+        "description": "Non-partial windows should realize the configured duration within sampling-rounding tolerance."
+      }
+    }
+  ],
+  "x-safety": {
+    "contains_raw_samples": false,
+    "contains_direct_patient_identifiers": false,
+    "ground_truth_claim": false,
+    "clinical_interpretation_claim": false,
+    "active_learning_unit": true
+  }
+}

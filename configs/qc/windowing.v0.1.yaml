@@ -1,0 +1,49 @@
+{
+  "schema_version": "windowing-config.v0.1",
+  "policy_status": "ENGINEERING_DEFAULT_NOT_SITE_THRESHOLD",
+  "profiles": [
+    {
+      "profile_id": "qc-sem-generic-250ms-50pct-overlap",
+      "version": "0.1.0",
+      "intended_use": "synthetic_and_engineering_qc_fixture_default",
+      "requested_duration_seconds": "0.250",
+      "requested_step_seconds": "0.125",
+      "rounding_policy": "HALF_UP",
+      "boundary_policy": "DROP_PARTIAL",
+      "context_before_seconds": "0.250",
+      "context_after_seconds": "0.250",
+      "context_boundary_policy": "CLIP_TO_SIGNAL",
+      "annotation_unit_type": "QC_WINDOW_WITH_CONTEXT",
+      "evidence_status": "ENGINEERING_DEFAULT",
+      "site_threshold_frozen": false
+    },
+    {
+      "profile_id": "qc-sem-generic-500ms-no-overlap",
+      "version": "0.1.0",
+      "intended_use": "alternative_engineering_profile_to_prove_no_global_window_size",
+      "requested_duration_seconds": "0.500",
+      "requested_step_seconds": "0.500",
+      "rounding_policy": "HALF_UP",
+      "boundary_policy": "KEEP_PARTIAL",
+      "context_before_seconds": "0.500",
+      "context_after_seconds": "0.500",
+      "context_boundary_policy": "CLIP_TO_SIGNAL",
+      "annotation_unit_type": "QC_WINDOW_WITH_CONTEXT",
+      "evidence_status": "ENGINEERING_DEFAULT",
+      "site_threshold_frozen": false
+    }
+  ],
+  "invariants": {
+    "one_global_window_size_for_all_protocols": false,
+    "raw_deleted_when_window_bad": false,
+    "final_qc_aggregation_implemented": false,
+    "active_learning_random_cut_without_context_allowed": false,
+    "window_identity_is_annotation_unit": true
+  },
+  "future_owners": {
+    "detector_specific_profiles": "DAY23-DAY28",
+    "final_qc_aggregation_policy": "DAY30",
+    "blocking_and_metric_handoff": "DAY31",
+    "expert_annotation_protocol": "DAY32"
+  }
+}

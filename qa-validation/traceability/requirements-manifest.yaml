@@ -25,6 +25,7 @@ expected_requirements:
     - FR-039
     - FR-040
     - FR-041
+    - FR-054
   non_functional:
     - NFR-001
     - NFR-002

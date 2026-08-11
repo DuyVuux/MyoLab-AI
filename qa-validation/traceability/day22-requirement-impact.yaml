@@ -1,0 +1,15 @@
+{
+  "day": 22,
+  "requirements": [
+    {"id": "FR-030", "day22_state": "DESIGNED_IMPLEMENTED", "evidence": "three-level identity/coverage architecture"},
+    {"id": "FR-040", "day22_state": "DESIGNED_IMPLEMENTED", "evidence": "usable-window ratio and bad-window/channel propagation architecture"},
+    {"id": "FR-041", "day22_state": "DESIGNED_IMPLEMENTED", "evidence": "versioned profile + stable fingerprint + deterministic replay"},
+    {"id": "FR-054", "day22_state": "DESIGNED", "evidence": "WindowMask metadata forbids raw deletion; processing implementation remains DAY43"}
+  ],
+  "technology_augmentation": {
+    "active_learning_weak_supervision": "WINDOW_IDENTITY_CONTRACT_ONLY",
+    "annotation_unit": "QC_WINDOW_WITH_CONTEXT",
+    "active_learning_selection_running": false,
+    "label_model_trained": false
+  }
+}
