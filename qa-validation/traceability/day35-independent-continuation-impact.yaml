@@ -1,0 +1,16 @@
+schema_version: day35-independent-continuation-impact.v0.1
+claim_scope: RESEARCH_ONLY
+requirements:
+  ICR-002:
+    artifacts: [configs/qc/thresholds.research-v0.1.yaml, docs/00-executive/day35/DAY35_CLAIM_BOUNDARY.md]
+    status: COVERED
+  ICR-005:
+    artifacts: [qa-validation/evidence/day35-threshold-study-fixtures.v0.1.manifest.yaml, qa-validation/evidence/day35-threshold-sensitivity-results-v0.1.csv]
+    status: COVERED
+  ICR-011:
+    artifacts: [qa-validation/evidence/day35-threshold-selection-decision.v0.1.json]
+    status: COVERED
+safety:
+  locked_partition_consumed: 0
+  site_threshold_status: NOT_VERIFIED
+  clinical_validation: NOT_PERFORMED

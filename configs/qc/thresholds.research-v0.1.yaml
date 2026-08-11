@@ -1,0 +1,70 @@
+schema_version: '0.1'
+claim_scope: RESEARCH_ONLY
+site_threshold_status: NOT_VERIFIED
+profiles:
+  site-template:
+    status: SITE_NOT_VERIFIED
+    thresholds:
+      missing_warning_fraction: null
+      zero_run_warning_fraction: null
+      flatline_peak_to_peak_epsilon: null
+      clipping_repeated_extrema_fraction: null
+      baseline_rms_warning_threshold: null
+      baseline_mad_warning_threshold: null
+      powerline_warning_ratio: null
+      motion_warning_low_ratio: null
+      motion_drift_warning_normalized: null
+      motion_transient_warning_z: null
+      poor_contact_relative_rms_low_ratio: null
+    clinical_threshold_claim: false
+  research-synthetic-v0.1:
+    status: RESEARCH_HEURISTIC
+    clinical_threshold_claim: false
+    scope: SYNTHETIC_ENGINEERING_AND_PUBLIC_RESEARCH_ONLY
+    detectors:
+      LF_MISSING_DROPOUT:
+        status: SELECTED_RESEARCH_HEURISTIC
+        evidence_class: RESEARCH_HEURISTIC
+        parameters:
+          missing_warning_fraction: 0.01
+          zero_run_warning_fraction: 0.25
+          flatline_peak_to_peak_epsilon: 1.0e-12
+        clinical_threshold_claim: false
+      LF_CLIPPING_SATURATION:
+        status: SELECTED_RESEARCH_HEURISTIC
+        evidence_class: RESEARCH_HEURISTIC
+        parameters:
+          repeated_extrema_fraction: 0.1
+        clinical_threshold_claim: false
+      LF_BASELINE_NOISE:
+        status: SELECTED_RESEARCH_HEURISTIC
+        evidence_class: RESEARCH_HEURISTIC
+        parameters:
+          rms_warning_threshold: 0.0002
+          mad_warning_threshold: 0.0001
+        clinical_threshold_claim: false
+      LF_POWERLINE:
+        status: SELECTED_RESEARCH_HEURISTIC
+        evidence_class: RESEARCH_HEURISTIC
+        parameters:
+          warning_ratio: 0.08
+        clinical_threshold_claim: false
+      LF_LOW_FREQUENCY_CONTAMINATION:
+        status: SELECTED_RESEARCH_HEURISTIC
+        evidence_class: RESEARCH_HEURISTIC
+        parameters:
+          warning_low_ratio: 0.22
+          drift_warning_normalized: 0.2
+          transient_warning_z: 6.0
+        clinical_threshold_claim: false
+      LF_POOR_CONTACT:
+        status: HOLD_NOT_SCORABLE
+        evidence_class: SITE_NOT_VERIFIED
+        parameters: {}
+        clinical_threshold_claim: false
+provenance:
+  study_version: day35-threshold-sensitivity.v0.1.0
+  selection_evidence_ref: qa-validation/evidence/day35-threshold-selection-decision.v0.1.json
+  fixture_manifest_ref: qa-validation/evidence/day35-threshold-study-fixtures.v0.1.manifest.yaml
+  locked_partition_consumed: 0
+  day33_history_mutated: false

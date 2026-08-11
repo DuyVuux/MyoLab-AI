@@ -1,0 +1,9 @@
+{
+  "schema_version": "day35-threshold-policy-delta.v0.1",
+  "operation": "ADD_RESEARCH_PROFILE_ONLY",
+  "target": "configs/qc/thresholds.research-v0.1.yaml",
+  "site_config_mutation_allowed": false,
+  "clinical_config_mutation_allowed": false,
+  "research_profile_id": "research-synthetic-v0.1",
+  "rollback": "disable_or_remove_research_profile_without_site_change"
+}

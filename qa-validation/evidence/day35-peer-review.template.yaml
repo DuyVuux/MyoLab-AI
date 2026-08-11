@@ -1,0 +1,12 @@
+schema_version: day35-peer-review.v0.1
+status: PENDING
+reviewer: null
+checks:
+  truth_readiness_matrix_reviewed: null
+  day33_history_preserved: null
+  locked_partition_zero_consumption_confirmed: null
+  site_template_null_confirmed: null
+  selected_research_profile_reproducible: null
+  poor_contact_hold_confirmed: null
+  claim_language_acceptable: null
+notes: []

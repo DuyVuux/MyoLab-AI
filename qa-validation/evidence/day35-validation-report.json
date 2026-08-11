@@ -1,0 +1,34 @@
+{
+  "schema_version": "day35-validation-report.v0.1",
+  "day": "DAY35",
+  "title": "Research-Only Threshold Sensitivity & Configuration Study",
+  "engineering_validation": "PASS",
+  "claim_scope": "RESEARCH_ONLY",
+  "site_threshold_status": "NOT_VERIFIED",
+  "clinical_validation": "NOT_PERFORMED",
+  "expert_validation": "NOT_PERFORMED",
+  "public_raw_evaluation": "NOT_PERFORMED",
+  "locked_partition_consumed": 0,
+  "day33_history_mutated": false,
+  "fixtures": {
+    "total": 90,
+    "primary": 30,
+    "robustness": 60
+  },
+  "detector_families": {
+    "selected_research_heuristic": 5,
+    "poor_contact": "HOLD_NOT_SCORABLE"
+  },
+  "tests": {
+    "day35_focused_passed": 40,
+    "day33_day34_research_regression_passed": 144,
+    "qc_property_regression_passed": 569,
+    "historical_anti_future_scope_deselected": 1,
+    "combined_functional_passed": 753,
+    "failed": 0
+  },
+  "selected_values_equal_upstream_provisional": true,
+  "selection_interpretation": "NO_RESEARCH_EVIDENCE_TO_FORCE_CONFIG_CHANGE_ON_CURRENT_SYNTHETIC_FIXTURES",
+  "final_status": "READY_WITH_LIMITATIONS",
+  "highest_allowed_claim": "RESEARCH_THRESHOLDS_FROZEN_V0.1"
+}

@@ -1,0 +1,83 @@
+schema_version: day35-threshold-study-profile.v0.1
+study_version: day35-threshold-sensitivity.v0.1.0
+claim_scope: RESEARCH_ONLY
+training_allowed: false
+label_model_training_allowed: false
+locked_partition_access_allowed: false
+input_partition: benchmark-development
+selection_objective:
+  false_negative_weight: 3.0
+  false_positive_weight: 1.0
+  tie_break_1: minimum_weighted_error
+  tie_break_2: minimum_distance_from_upstream_provisional
+  tie_break_3: lexicographic_parameter_order
+primary_stratum:
+  sampling_rate_hz: 2000
+  window_duration_seconds: 0.25
+robustness_strata:
+  sampling_rate_hz: [1000, 2000, 4000]
+  window_duration_seconds: [0.25, 0.50]
+readiness:
+  LF_MISSING_DROPOUT:
+    status: ALIGNED_DAY35_FIXTURES_REQUIRED_AND_PROVIDED
+    upstream_issue: DAY33_LOCAL_TRUTH_OUTSIDE_CORE
+  LF_CLIPPING_SATURATION:
+    status: ALIGNED_DAY35_FIXTURES_REQUIRED_AND_PROVIDED
+    upstream_issue: DAY33_LOCAL_TRUTH_OUTSIDE_CORE
+  LF_BASELINE_NOISE:
+    status: GO_RESEARCH_SWEEP
+  LF_POWERLINE:
+    status: GO_RESEARCH_SWEEP
+  LF_LOW_FREQUENCY_CONTAMINATION:
+    status: GO_RESEARCH_SWEEP
+  LF_POOR_CONTACT:
+    status: HOLD_NOT_SCORABLE
+    reason: NO_MULTI_CHANNEL_POSITIVE_KNOWN_TRUTH
+sweep_grids:
+  LF_MISSING_DROPOUT:
+    missing_warning_fraction: [0.005, 0.01, 0.02, 0.05]
+    zero_run_warning_fraction: [0.10, 0.20, 0.25, 0.30, 0.40]
+    flatline_peak_to_peak_epsilon: [1.0e-14, 1.0e-13, 1.0e-12, 1.0e-11]
+    fixed:
+      missing_fail_fraction: 0.20
+      zero_run_fail_fraction: 0.75
+  LF_CLIPPING_SATURATION:
+    repeated_extrema_fraction: [0.02, 0.05, 0.08, 0.10, 0.15, 0.20]
+    plateau_run_min_samples: 4
+    synthetic_adc_lower_limit: -1.0
+    synthetic_adc_upper_limit: 1.0
+  LF_BASELINE_NOISE:
+    rms_warning_threshold: [0.00010, 0.00015, 0.00020, 0.00025, 0.00030]
+    mad_warning_threshold: [0.00005, 0.000075, 0.00010, 0.000125, 0.00015]
+  LF_POWERLINE:
+    warning_ratio: [0.02, 0.04, 0.06, 0.08, 0.10, 0.12, 0.16]
+    fixed:
+      high_ratio: 0.20
+      synthetic_mains_frequency_hz: 50.0
+  LF_LOW_FREQUENCY_CONTAMINATION:
+    warning_low_ratio: [0.10, 0.15, 0.22, 0.30]
+    drift_warning_normalized: [0.10, 0.20, 0.30]
+    transient_warning_z: [4.0, 6.0, 8.0]
+upstream_provisional:
+  LF_MISSING_DROPOUT:
+    missing_warning_fraction: 0.01
+    zero_run_warning_fraction: 0.25
+    flatline_peak_to_peak_epsilon: 1.0e-12
+  LF_CLIPPING_SATURATION:
+    repeated_extrema_fraction: 0.10
+  LF_BASELINE_NOISE:
+    rms_warning_threshold: 0.00020
+    mad_warning_threshold: 0.00010
+  LF_POWERLINE:
+    warning_ratio: 0.08
+  LF_LOW_FREQUENCY_CONTAMINATION:
+    warning_low_ratio: 0.22
+    drift_warning_normalized: 0.20
+    transient_warning_z: 6.0
+safety:
+  day33_history_mutation_forbidden: true
+  site_template_overwrite_forbidden: true
+  locked_truth_access_forbidden: true
+  synthetic_pathology_claim_forbidden: true
+  clinical_optimum_language_forbidden: true
+  poor_contact_threshold_selection_forbidden: true

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/qc-threshold-research-profile.v0.1.schema.json",
+  "title": "MyoLab DAY35 Research Threshold Profile v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "claim_scope",
+    "site_threshold_status",
+    "profiles",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "claim_scope": {
+      "const": "RESEARCH_ONLY"
+    },
+    "site_threshold_status": {
+      "const": "NOT_VERIFIED"
+    },
+    "profiles": {
+      "type": "object",
+      "required": [
+        "site-template",
+        "research-synthetic-v0.1"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "study_version",
+        "selection_evidence_ref",
+        "locked_partition_consumed"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+schema_version: day35-corpus-repair-evidence.v0.1
+claim_scope: RESEARCH_ONLY
+day33_history_mutated: false
+upstream_finding:
+  source: DAY34
+  issue: DAY33_TRUTH_WINDOW_MISALIGNMENT
+  affected_scenarios: [MISSING, ZERO_DROPOUT, FLATLINE, CLIPPING]
+repair_strategy:
+  method: CREATE_VERSIONED_DAY35_ALIGNED_DEVELOPMENT_FIXTURES
+  target_core_alignment_required: true
+  exact_event_bounds_recorded: true
+  locked_partition_used: false
+  clinical_evidence: false
+result:
+  LF_MISSING_DROPOUT: SCORABLE_ON_DAY35_ALIGNED_FIXTURES
+  LF_CLIPPING_SATURATION: SCORABLE_ON_DAY35_ALIGNED_FIXTURES
+  LF_POOR_CONTACT: STILL_NOT_SCORABLE
+safety:
+  synthetic_pathology_claim: false
+  site_threshold_claim: false
+  day33_manifest_rewrite: false
