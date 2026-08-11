@@ -1,0 +1,14 @@
+schema_version: day33-public-acquisition-plan.v0.1
+storage_policy:
+  raw_public_data_in_repo: false
+  required_environment_variable: MYOLAB_PUBLIC_DATA_ROOT
+  required_registration_step: register_public_dataset_files.py
+priority_order:
+- GRABMYO_V1_1_0
+- MENDELEY_4CH_HAND_GESTURE_V2
+- CERQUEIRA_FATIGUE_V2
+- HYSER_V2_0_0
+notes:
+- Metadata/license verification is complete for DAY33.
+- Bulk raw acquisition is deliberately deferred to external storage.
+- No training is authorized by this acquisition plan.

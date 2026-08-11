@@ -1,0 +1,112 @@
+schema_version: public-semg-catalog.v0.1
+project_mode: INDEPENDENT_RESEARCH_PORTFOLIO
+clinical_validation_status: NOT_PERFORMED
+catalog_status: VERIFIED_SOURCE_METADATA
+verified_on: '2026-08-11'
+raw_payload_policy: EXTERNAL_STORAGE_ONLY_NOT_COMMITTED
+datasets:
+- dataset_id: GRABMYO_V1_1_0
+  title: Gesture Recognition and Biometrics ElectroMyogram (GRABMyo)
+  version: 1.1.0
+  source_type: PUBLIC_EXTERNAL
+  repository: PhysioNet
+  doi: 10.13026/89dm-f662
+  canonical_source_url: https://physionet.org/content/grabmyo/1.1.0/
+  license: CC BY 4.0
+  license_status: VERIFIED
+  access_status: OPEN_ACCESS
+  subjects: 43
+  sessions_per_subject: 3
+  sampling_rate_hz: 2048
+  channel_summary: 32 recorded channels; forearm/wrist bipolar layouts plus unused
+    channels
+  task_summary: 16 hand/wrist gestures with rest recordings
+  corpus_eligible: true
+  portfolio_role:
+  - cross_day_external_signal_source
+  - gesture_structure_reference
+  clinical_evidence: false
+  site_representative: false
+  raw_payload_in_repo: false
+  acquisition_status: METADATA_VERIFIED_NOT_ACQUIRED
+- dataset_id: HYSER_V2_0_0
+  title: Open Access Dataset and Toolbox of High-Density Surface Electromyogram Recordings
+  version: 2.0.0
+  source_type: PUBLIC_EXTERNAL
+  repository: PhysioNet
+  doi: 10.13026/hxan-pe94
+  canonical_source_url: https://physionet.org/content/hd-semg/2.0.0/
+  license: Open Data Commons Attribution License v1.0
+  license_status: VERIFIED
+  access_status: OPEN_ACCESS
+  subjects: 20
+  sessions_per_subject: 2
+  sampling_rate_hz: 2048
+  channel_summary: 256-channel HD-sEMG
+  task_summary: 34 gestures plus MVC, 1-DoF, N-DoF, random force tasks
+  corpus_eligible: true
+  portfolio_role:
+  - hd_semg_external_source
+  - cross_day_domain_challenge
+  clinical_evidence: false
+  site_representative: false
+  raw_payload_in_repo: false
+  acquisition_status: METADATA_VERIFIED_NOT_ACQUIRED
+- dataset_id: MENDELEY_4CH_HAND_GESTURE_V2
+  title: Dataset for multi-channel surface electromyography (sEMG) signals of hand
+    gestures
+  version: '2'
+  source_type: PUBLIC_EXTERNAL
+  repository: Mendeley Data
+  doi: 10.17632/ckwc76xr2z.2
+  canonical_source_url: https://data.mendeley.com/datasets/ckwc76xr2z/2
+  license: CC BY 4.0
+  license_status: VERIFIED
+  access_status: OPEN_ACCESS
+  subjects: 40
+  sessions_per_subject: null
+  sampling_rate_hz: null
+  channel_summary: 4 forearm sEMG channels
+  task_summary: 10 hand/wrist gestures including rest, wrist extension/flexion and
+    grip
+  corpus_eligible: true
+  portfolio_role:
+  - sparse_channel_external_source
+  - gesture_label_reference
+  clinical_evidence: false
+  site_representative: false
+  raw_payload_in_repo: false
+  acquisition_status: METADATA_VERIFIED_NOT_ACQUIRED
+- dataset_id: CERQUEIRA_FATIGUE_V2
+  title: A Dataset of sEMG and Self-Perceived Fatigue Levels for Muscle Fatigue Analysis
+  version: v2
+  source_type: PUBLIC_EXTERNAL
+  repository: Zenodo
+  doi: 10.5281/zenodo.14182446
+  canonical_source_url: https://zenodo.org/records/14182446
+  license: CC BY 4.0
+  license_status: VERIFIED
+  access_status: OPEN_ACCESS
+  subjects: 13
+  sessions_per_subject: null
+  sampling_rate_hz: 1259
+  channel_summary: 8 muscles, four per arm
+  task_summary: 12 upper-body dynamic movements plus self-perceived fatigue ratings
+  corpus_eligible: true
+  portfolio_role:
+  - fatigue_context_external_source
+  - nonstationarity_reference
+  clinical_evidence: false
+  site_representative: false
+  raw_payload_in_repo: false
+  acquisition_status: METADATA_VERIFIED_NOT_ACQUIRED
+excluded_or_deferred:
+- dataset_id: NINAPRO_FAMILY
+  reason: LICENSE_REUSE_NOT_VERIFIED_IN_CURRENT_PRIMARY_SOURCE_AUDIT
+  default_corpus_eligible: false
+- dataset_id: PUTEMG
+  reason: CC_BY_NC_4_0_NOT_DEFAULT_FOR_PORTFOLIO_REUSE
+  default_corpus_eligible: false
+- dataset_id: PHYSIOMIO
+  reason: RESTRICTED_CUSTOM_DUA_RESEARCH_ONLY_NO_REDISTRIBUTION
+  default_corpus_eligible: false

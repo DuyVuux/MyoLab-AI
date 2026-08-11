@@ -1,0 +1,29 @@
+{
+  "schema_version": "day33-locked-truth-commitments.v0.1",
+  "commitments": [
+    {
+      "item_id": "rbw_sha256_ac48423ebca99d59b8f60a692895ea70613e8b770fbe293dc66cdddef9d7be70",
+      "truth_commitment_sha256": "e625a73163ec9ca730823441e6fa7e32f03b558fbc7efe9c8d2a4d96ddced59f"
+    },
+    {
+      "item_id": "rbw_sha256_686bb7474fbaf0ae640947642828ca1e0e119acce1d1e5a60bf1c1691adf7ce1",
+      "truth_commitment_sha256": "be79804a1e51cb2176a9bb3b9ebb417cf3924c3b6acf27e9f01cbddc99a702e0"
+    },
+    {
+      "item_id": "rbw_sha256_fefb99ba386ea929a11a0ec4dbc9b7c98ae4eb198bcd834a4915f61d6eb68f49",
+      "truth_commitment_sha256": "a7ed0d8a661546e9fa94f628ac036892d5e66bfd8998c36a372b71b248096c0d"
+    },
+    {
+      "item_id": "rbw_sha256_2e7c4105064f47ade4afdb57c6c401c6733f219e64763a0e3fade837e4fb6101",
+      "truth_commitment_sha256": "345a36b08271d14c0b0320706db8901d62f8b78d9606b84c7e76895d15abd30f"
+    },
+    {
+      "item_id": "rbw_sha256_cf175630f2a277cfeab302c8b507468fdfc03d9242a1decf176ac13453a4cab1",
+      "truth_commitment_sha256": "5a68920f17f727ec5fa906e78adc23d84631eddb6779d99e15fc735a5cb48bc8"
+    },
+    {
+      "item_id": "rbw_sha256_94a97c8299f0c4c7d255c6bed4d58d310e224d4e1732274122337ad7f4152456",
+      "truth_commitment_sha256": "3a84bc83d0af299b7d173ae08ce03fd42a488f48d3146c001ae95cd994b23daa"
+    }
+  ]
+}

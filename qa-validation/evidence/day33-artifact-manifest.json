@@ -1,0 +1,244 @@
+{
+  "schema_version": "day33-artifact-manifest.v0.1",
+  "generated_on": "2026-08-11",
+  "artifact_count": 47,
+  "artifacts": [
+    {
+      "path": "data-platform/datasets/day33-public-acquisition-plan.v0.1.yaml",
+      "sha256": "2fc908e60d487dc7dec94bda4d3e8b08de835fdd72379b650f5dbd6a5dd24896",
+      "size_bytes": 507
+    },
+    {
+      "path": "data-platform/datasets/public-sEMG-catalog.v0.1.yaml",
+      "sha256": "9406e3cfe0444329ba4c9d2fce3b184cda17281ae6a2fbb229daba7e8b76a5e4",
+      "size_bytes": 3905
+    },
+    {
+      "path": "docs/00-executive/day33/DAY33_CLAIM_BOUNDARY.md",
+      "sha256": "05bacf51c2d4f9289db36f09d1a15e6832eb44666cbcc4c870fc0d00011b76a8",
+      "size_bytes": 493
+    },
+    {
+      "path": "docs/00-executive/day33/DAY33_EXECUTION_PLAN.md",
+      "sha256": "bedf39d6229474cbc596e5ee34c0079fe7eec4c12de4c19829479aa5926384dc",
+      "size_bytes": 31195
+    },
+    {
+      "path": "docs/00-executive/day33/DAY33_FEYNMAN_LEARNING_GUIDE.md",
+      "sha256": "90e42b7fa43c07b90fc9e6dc65cec0926074d225fea94cda61f2255f4a9114af",
+      "size_bytes": 31347
+    },
+    {
+      "path": "docs/00-executive/day33/DAY33_INTEGRATION_NOTES.md",
+      "sha256": "4280367ecdb080099e9e72136d3beb135ca47d4d6163e064cf98432dc3294797",
+      "size_bytes": 1076
+    },
+    {
+      "path": "docs/05-data/dataset-cards/Cerqueira-fatigue-v2.md",
+      "sha256": "ca3895081c83d97fd435f390d46bc46f4fe4fb7aeeee9bc82eb4550933e72944",
+      "size_bytes": 854
+    },
+    {
+      "path": "docs/05-data/dataset-cards/GRABMyo-v1.1.0.md",
+      "sha256": "923708edb283eaa161682aa80d51a2102e684ef507a000f8af4d88065fa0804e",
+      "size_bytes": 1123
+    },
+    {
+      "path": "docs/05-data/dataset-cards/Hyser-v2.0.0.md",
+      "sha256": "bf11a45451accc6cd80475de8e478261cac2e882de777e9a8e714652393de79a",
+      "size_bytes": 1018
+    },
+    {
+      "path": "docs/05-data/dataset-cards/Mendeley-4ch-hand-gesture-v2.md",
+      "sha256": "d72bc3ef075d7de10dac24d8b838356ed1011ff9343c34c76472f64045c203bd",
+      "size_bytes": 867
+    },
+    {
+      "path": "packages/common-schemas/json/research-benchmark-corpus.v0.1.schema.json",
+      "sha256": "2d5ad8a80747d271a33e782e4540907b45e9050eaf8a21dd7139ab909adf2559",
+      "size_bytes": 9635
+    },
+    {
+      "path": "qa-validation/automated-tests/research/test_day33_research_corpus.py",
+      "sha256": "740739718c0a1de7195e44b5d1c9dbdd5ae55792d4abc9ec2555374132b9c52f",
+      "size_bytes": 13067
+    },
+    {
+      "path": "qa-validation/evidence/day33-data-readiness.reference.yaml",
+      "sha256": "669d8d4c4c2650b9b6420534710fc354d3fdd8da87664b850a787ed8200b923b",
+      "size_bytes": 688
+    },
+    {
+      "path": "qa-validation/evidence/day33-locked-truth-commitments.v0.1.json",
+      "sha256": "f8208badcb1b9ed9e3afeb458a9de0adc0333449e53c31d1f5b8593b1348319b",
+      "size_bytes": 1339
+    },
+    {
+      "path": "qa-validation/evidence/day33-peer-review.template.yaml",
+      "sha256": "f370db574ecc1493eab72ea46f2ea02b42efff19f85d2b8411a4eece3b932f95",
+      "size_bytes": 311
+    },
+    {
+      "path": "qa-validation/evidence/day33-phase-entry-evidence.yaml",
+      "sha256": "56a4e26d351a2dfba59783aeafdf666d45179e19d115539e689563e8303ce563",
+      "size_bytes": 298
+    },
+    {
+      "path": "qa-validation/evidence/day33-public-source-verification.v0.1.yaml",
+      "sha256": "cb331d01cd05548b76cfdd73f0f900cff35bfba2e01b5cd9d4831bd956e343b0",
+      "size_bytes": 1277
+    },
+    {
+      "path": "qa-validation/evidence/day33-quality-self-audit.md",
+      "sha256": "379b7e07727e8c4f1f891a73f286ca0e023e9392a4dcb4daa971b5d4820d0b87",
+      "size_bytes": 1611
+    },
+    {
+      "path": "qa-validation/evidence/day33-validation-report.json",
+      "sha256": "759006ec852707ca1977e717b6731f65ac5bfa1facc3ece199ddb6f236085084",
+      "size_bytes": 1261
+    },
+    {
+      "path": "qa-validation/evidence/research-benchmark-corpus-v0.1.manifest.yaml",
+      "sha256": "4f590fd15e2cad2c06ad06dc0e0a3051e8d845dfc118e3d386e7db262dd58475",
+      "size_bytes": 28496
+    },
+    {
+      "path": "qa-validation/lib/day33_corpus_semantics.py",
+      "sha256": "072a4a8d223c78db3ecea6751b98e8416e9bed937a20529590ed6d1dafd37a8f",
+      "size_bytes": 4301
+    },
+    {
+      "path": "qa-validation/requirements/day33-acceptance-criteria.md",
+      "sha256": "ab09f8d90698ebcab8c0fc8c292bef545fb3f2d33893841a42dae2a35c154dc2",
+      "size_bytes": 948
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/README.md",
+      "sha256": "431712c2ac6c92adaef93864ef7c1f66f29f5db33bc814955a2a7a914eb4c62b",
+      "size_bytes": 1545
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_0d670244b7e3913b80b398af7541050fecd0e9dfceb3a037a0227174ff528caf.npz",
+      "sha256": "2d0bc18d9a4f112f71292709c5a19560d5555e878911542e9d0caadd14a1f1de",
+      "size_bytes": 20792
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_149323075a106bb92b0fb05546c046ba6a92dd293d5ac1144579f8053fc7f034.npz",
+      "sha256": "17c3f39fa2d9f9ff0de7a23478b1fbdb96444dcd4a6b504dc4796d2d15164c90",
+      "size_bytes": 19494
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_2e7c4105064f47ade4afdb57c6c401c6733f219e64763a0e3fade837e4fb6101.npz",
+      "sha256": "f624793363404e7a81cf67a52723d4c4bcb09dbd06b20866898b1bc8718be827",
+      "size_bytes": 20789
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_356219d09c031de34a5c8ce7568bcad74e31d97f838f314352720943cc47baf0.npz",
+      "sha256": "ccf856ceb35c6745e9364062937ede944679d045ca98965105af9a43c68f4452",
+      "size_bytes": 20806
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_396c54907282fbb4dab620de8ae7e02f900b25586b2f3fbc48f8438a6a72e6bd.npz",
+      "sha256": "087cc1a954acbfe7bbe0d3fa271237d3f30f1e2c17b667374dd978470719036a",
+      "size_bytes": 20812
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_4a7f23b1168a3001f8885afe28fd8c43c1adbbae9a4d977a5990d52bbc77c647.npz",
+      "sha256": "fb80a97752c2499d9a6311518ca5d8ae2d2e8aeef89b765f46ac54a40b3ee116",
+      "size_bytes": 20804
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_686bb7474fbaf0ae640947642828ca1e0e119acce1d1e5a60bf1c1691adf7ce1.npz",
+      "sha256": "65cb6d80d87cd845dec1e54c533c84bb920e4e010a01e46ae7fe5bc1e47b5860",
+      "size_bytes": 19515
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_86076e1e773151f6e16b5199441cafd7b92a3a2ca26fa1e80414c76643c8a8fb.npz",
+      "sha256": "739fc08cc79ce02a9c63cc95e5c988cd86381c3610bb925d56aa537c52272b2e",
+      "size_bytes": 20798
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_94a97c8299f0c4c7d255c6bed4d58d310e224d4e1732274122337ad7f4152456.npz",
+      "sha256": "5b9f318e7d94039a948e72fa0292ebc792c9d9bddb42c4f33992b5bed4828367",
+      "size_bytes": 20799
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_a6b87d4f4e08684e6e63683515f12e11db7c9f997bcdb1f189b30bbf63b2e59f.npz",
+      "sha256": "7d442a9d1126921c32d0f27fe0be10f363eeb6b4d01596a98f781511d0ce4bc9",
+      "size_bytes": 20781
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_ac48423ebca99d59b8f60a692895ea70613e8b770fbe293dc66cdddef9d7be70.npz",
+      "sha256": "bef9919a23cb2bcee8048d59f06e23d401366e2bd0cc3be6ce6210ef2e9f2b3e",
+      "size_bytes": 19279
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_af2e62669302d7f10a04082bf95f367f458bbf7af55fcce5261a176d6f19c952.npz",
+      "sha256": "9afba787732f2759ed9549480d3c00dc3b0b8262a4a172a08cbe9e70f26d3e76",
+      "size_bytes": 19272
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_bc1f293f3cac5f5d6a3243a01c2cd32cb4ff9ee0129972b7988a042ffdf19036.npz",
+      "sha256": "2a6c9ea55b7f0ef449b19495c2453ab0554c343a698bf232a2fec03785edf975",
+      "size_bytes": 19285
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_cf175630f2a277cfeab302c8b507468fdfc03d9242a1decf176ac13453a4cab1.npz",
+      "sha256": "a0640309f7aeb9d786d866d61d9858e8d635e1f891850e6802bfebb39713f14e",
+      "size_bytes": 20788
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_eb2d3c3aedca993e0175ff913a8410f8f3e92b80d8fa7a3b0f39118734ca4b21.npz",
+      "sha256": "9197fd7facef966c20bd2185aa2e6c5fce915d7565a36f7fddf1b79786d2c449",
+      "size_bytes": 19292
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_f04fdf53fe57dcb9f53eaf9ccafce3ccd25058dd4aea58b7b62c90dee200b1a6.npz",
+      "sha256": "e4fd4ae328fa0e9b163472ae9a4ceb6bfd0bff5cd3c07ef7033ea4cb84511360",
+      "size_bytes": 20800
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_fd96f5f236d14104824b52a9be69cb6cb66a9391a7a23a947e06fff4379f9986.npz",
+      "sha256": "ef72582d1c4572ee28745d41a03457ffd1a763694018c0ded8924b1284cdcaa5",
+      "size_bytes": 20800
+    },
+    {
+      "path": "qa-validation/test-data/research/day33/corpus/signals/rbw_sha256_fefb99ba386ea929a11a0ec4dbc9b7c98ae4eb198bcd834a4915f61d6eb68f49.npz",
+      "sha256": "74505afd8e2090ce049a169ca44fbfe4d4b44f559532695d7209422e28a7c613",
+      "size_bytes": 20810
+    },
+    {
+      "path": "qa-validation/traceability/day33-independent-continuation-impact.yaml",
+      "sha256": "47ad2dfaa806f1da4c8ecf97f0798c0ab6836e25300a77a5e0c2b949b741e9bf",
+      "size_bytes": 520
+    },
+    {
+      "path": "scripts/data/build_research_benchmark_corpus.py",
+      "sha256": "7b813ed80ef07e154cdb477fa5c4f82da7746426b77d42f22ae05817acdaaaca",
+      "size_bytes": 13729
+    },
+    {
+      "path": "scripts/data/register_public_dataset_files.py",
+      "sha256": "75cd680223e8fca2e0848a1d65f05937c2eee2dd960fc8523e6e124184f55a43",
+      "size_bytes": 1665
+    },
+    {
+      "path": "scripts/dev/check_day33_artifacts.py",
+      "sha256": "8a8df9e98dbc753f64c915bf39b15451e711ea8da244ae9a5e45e77d907280fa",
+      "size_bytes": 1139
+    },
+    {
+      "path": "scripts/dev/day33_corpus_contract_validator.py",
+      "sha256": "94c39cd03baeda428b335ca69d91479d6fdff5c9a8d9af22c0990d69a56cd384",
+      "size_bytes": 1948
+    },
+    {
+      "path": "scripts/dev/run_day33_checks.sh",
+      "sha256": "e8efea12e08cd337475971b554d5d54ed91910012eabf9d9b9ca9a295de7e235",
+      "size_bytes": 1789
+    }
+  ],
+  "raw_patient_data_included": false,
+  "bulk_public_raw_data_included": false
+}

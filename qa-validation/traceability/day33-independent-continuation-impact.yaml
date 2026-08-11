@@ -1,0 +1,20 @@
+schema_version: day33-independent-continuation-impact.v0.1
+roadmap_day: 33
+requirements:
+- id: ICR-003
+  status: IMPLEMENTED_AND_TESTED
+- id: ICR-004
+  status: IMPLEMENTED_AND_TESTED
+- id: ICR-005
+  status: IMPLEMENTED_AND_TESTED
+- id: ICR-008
+  status: IMPLEMENTED_AND_TESTED
+- id: ICR-009
+  status: IMPLEMENTED_AND_TESTED
+- id: ICR-011
+  status: DESIGN_ENFORCED_NO_TRAINING
+upstream_contracts:
+- DAY22 WindowIdentity
+- DAY32 qc-annotation-research.v0.2
+- DAY32 data-readiness decision rules
+claim_scope: RESEARCH_ONLY

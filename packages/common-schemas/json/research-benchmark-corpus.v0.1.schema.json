@@ -1,0 +1,373 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/research-benchmark-corpus.v0.1.schema.json",
+  "title": "MyoLab-AI Research Benchmark Corpus Manifest v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "claim_scope",
+    "project_mode",
+    "public_sources",
+    "partition_policy",
+    "items",
+    "locked_truth_commitments",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "research-benchmark-corpus.v0.1"
+    },
+    "claim_scope": {
+      "const": "RESEARCH_ONLY"
+    },
+    "project_mode": {
+      "const": "INDEPENDENT_RESEARCH_PORTFOLIO"
+    },
+    "public_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dataset_id",
+          "license_status",
+          "acquisition_status",
+          "raw_payload_in_repo"
+        ],
+        "properties": {
+          "dataset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license_status": {
+            "const": "VERIFIED"
+          },
+          "acquisition_status": {
+            "enum": [
+              "METADATA_VERIFIED_NOT_ACQUIRED",
+              "ACQUIRED_EXTERNAL_STORAGE_HASHED"
+            ]
+          },
+          "raw_payload_in_repo": {
+            "const": false
+          }
+        }
+      }
+    },
+    "partition_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "development_partition",
+        "locked_partition",
+        "locked_truth_visible_to_day33",
+        "partition_seed_overlap_forbidden"
+      ],
+      "properties": {
+        "development_partition": {
+          "const": "benchmark-development"
+        },
+        "locked_partition": {
+          "const": "benchmark-locked"
+        },
+        "locked_truth_visible_to_day33": {
+          "const": false
+        },
+        "partition_seed_overlap_forbidden": {
+          "const": true
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    },
+    "locked_truth_commitments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "item_id",
+          "truth_commitment_sha256"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "pattern": "^rbw_sha256_[0-9a-f]{64}$"
+          },
+          "truth_commitment_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "builder_version",
+        "catalog_version",
+        "day32_contract_version",
+        "window_identity_contract",
+        "clinical_evidence"
+      ],
+      "properties": {
+        "builder_version": {
+          "const": "day33-corpus-builder.v0.1.0"
+        },
+        "catalog_version": {
+          "const": "public-semg-catalog.v0.1"
+        },
+        "day32_contract_version": {
+          "const": "qc-annotation-research.v0.2"
+        },
+        "window_identity_contract": {
+          "const": "QC_WINDOW_WITH_CONTEXT"
+        },
+        "clinical_evidence": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "partition",
+        "evidence_tier",
+        "source_context",
+        "window_context",
+        "signal_artifact",
+        "synthetic_truth",
+        "claim_scope",
+        "provenance"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "pattern": "^rbw_sha256_[0-9a-f]{64}$"
+        },
+        "partition": {
+          "enum": [
+            "benchmark-development",
+            "benchmark-locked"
+          ]
+        },
+        "evidence_tier": {
+          "const": "SYNTHETIC_KNOWN_TRUTH"
+        },
+        "source_context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_class",
+            "dataset_id",
+            "license_status",
+            "clinical_evidence",
+            "direct_identifiers_present"
+          ],
+          "properties": {
+            "source_class": {
+              "const": "SYNTHETIC_FIXTURE"
+            },
+            "dataset_id": {
+              "const": "DAY33_SYNTHETIC_CORPUS"
+            },
+            "license_status": {
+              "const": "NOT_APPLICABLE"
+            },
+            "clinical_evidence": {
+              "const": false
+            },
+            "direct_identifiers_present": {
+              "const": false
+            }
+          }
+        },
+        "window_context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "window_id",
+            "session_id",
+            "channel_id",
+            "source_id",
+            "start_sample",
+            "end_sample_exclusive",
+            "context_start_sample",
+            "context_end_sample_exclusive",
+            "sampling_rate_hz",
+            "windowing_profile_fingerprint",
+            "annotation_unit_type"
+          ],
+          "properties": {
+            "window_id": {
+              "type": "string",
+              "pattern": "^qcw_sha256_[0-9a-f]{64}$"
+            },
+            "session_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "channel_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_id": {
+              "type": "string",
+              "pattern": "^src_sha256_[0-9a-f]{64}$"
+            },
+            "start_sample": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "end_sample_exclusive": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "context_start_sample": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "context_end_sample_exclusive": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sampling_rate_hz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "windowing_profile_fingerprint": {
+              "type": "string",
+              "pattern": "^wprof_sha256_[0-9a-f]{64}$"
+            },
+            "annotation_unit_type": {
+              "const": "QC_WINDOW_WITH_CONTEXT"
+            }
+          }
+        },
+        "signal_artifact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "relative_path",
+            "sha256",
+            "raw_patient_data"
+          ],
+          "properties": {
+            "relative_path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "raw_patient_data": {
+              "const": false
+            }
+          }
+        },
+        "synthetic_truth": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "scenario",
+                "truth_class",
+                "clinical_truth_claim"
+              ],
+              "properties": {
+                "scenario": {
+                  "enum": [
+                    "CLEAN",
+                    "MISSING",
+                    "ZERO_DROPOUT",
+                    "FLATLINE",
+                    "CLIPPING",
+                    "BASELINE_NOISE",
+                    "POWERLINE_50HZ",
+                    "MOTION_DRIFT",
+                    "MOTION_TRANSIENT",
+                    "SYNTHETIC_LOW_AMPLITUDE_STRESS",
+                    "TIMESTAMP_DUPLICATE",
+                    "TIMESTAMP_NON_MONOTONIC"
+                  ]
+                },
+                "truth_class": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "clinical_truth_claim": {
+                  "const": false
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "claim_scope": {
+          "const": "RESEARCH_ONLY"
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "seed",
+            "generator_version",
+            "transform_chain"
+          ],
+          "properties": {
+            "seed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generator_version": {
+              "const": "day33-synthetic-factory.v0.1.0"
+            },
+            "transform_chain": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "partition": {
+                "const": "benchmark-locked"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "synthetic_truth": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

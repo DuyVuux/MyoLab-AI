@@ -1,0 +1,14 @@
+schema_version: day33-peer-review.v0.1
+status: PENDING
+review_roles:
+- DATA_ENGINEER
+- DSP_ENGINEER
+- ML_RESEARCHER
+- SAFETY_QA
+- PORTFOLIO_REVIEWER
+must_review:
+- license/provenance accuracy
+- locked partition leakage
+- no pathology fabrication
+- raw public data exclusion
+- DAY22/DAY32 contract compatibility

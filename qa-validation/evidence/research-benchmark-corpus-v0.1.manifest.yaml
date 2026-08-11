@@ -1,0 +1,674 @@
+schema_version: research-benchmark-corpus.v0.1
+claim_scope: RESEARCH_ONLY
+project_mode: INDEPENDENT_RESEARCH_PORTFOLIO
+public_sources:
+- dataset_id: GRABMYO_V1_1_0
+  license_status: VERIFIED
+  acquisition_status: METADATA_VERIFIED_NOT_ACQUIRED
+  raw_payload_in_repo: false
+- dataset_id: HYSER_V2_0_0
+  license_status: VERIFIED
+  acquisition_status: METADATA_VERIFIED_NOT_ACQUIRED
+  raw_payload_in_repo: false
+- dataset_id: MENDELEY_4CH_HAND_GESTURE_V2
+  license_status: VERIFIED
+  acquisition_status: METADATA_VERIFIED_NOT_ACQUIRED
+  raw_payload_in_repo: false
+- dataset_id: CERQUEIRA_FATIGUE_V2
+  license_status: VERIFIED
+  acquisition_status: METADATA_VERIFIED_NOT_ACQUIRED
+  raw_payload_in_repo: false
+partition_policy:
+  development_partition: benchmark-development
+  locked_partition: benchmark-locked
+  locked_truth_visible_to_day33: false
+  partition_seed_overlap_forbidden: true
+items:
+- item_id: rbw_sha256_a6b87d4f4e08684e6e63683515f12e11db7c9f997bcdb1f189b30bbf63b2e59f
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_fa365f1f4675b8922ccb90e54036c092a4780d036f0a77e26c0341a205ca488d
+    session_id: day33_syn_session_33000
+    channel_id: channel_semg_01
+    source_id: src_sha256_307c6e79903dba28e333fb00d56aae4819453623ea1de4dcc962539375782bb7
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_a6b87d4f4e08684e6e63683515f12e11db7c9f997bcdb1f189b30bbf63b2e59f.npz
+    sha256: 7d442a9d1126921c32d0f27fe0be10f363eeb6b4d01596a98f781511d0ce4bc9
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: CLEAN
+    truth_class: NO_INJECTED_ARTIFACT
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33000
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+- item_id: rbw_sha256_bc1f293f3cac5f5d6a3243a01c2cd32cb4ff9ee0129972b7988a042ffdf19036
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_af3f157b232e97076af883c0161042381d0e10504138b9fef389d893299bad9c
+    session_id: day33_syn_session_33001
+    channel_id: channel_semg_01
+    source_id: src_sha256_f89f326476fb3ad09813d8a2cac53793dfd56f2be0cc3249db68949b25e75f08
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_bc1f293f3cac5f5d6a3243a01c2cd32cb4ff9ee0129972b7988a042ffdf19036.npz
+    sha256: 2a6c9ea55b7f0ef449b19495c2453ab0554c343a698bf232a2fec03785edf975
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: MISSING
+    truth_class: MISSING_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33001
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - INJECT_NAN_MISSING_SEGMENT
+- item_id: rbw_sha256_af2e62669302d7f10a04082bf95f367f458bbf7af55fcce5261a176d6f19c952
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_e118607cf657c8b34977d9c6c475a994316ddc0126add5c7ed259f67171cb60d
+    session_id: day33_syn_session_33002
+    channel_id: channel_semg_01
+    source_id: src_sha256_ee6f79215743205696a75c66d56e04441fc6f9f0abe353ed95202a171543d31f
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_af2e62669302d7f10a04082bf95f367f458bbf7af55fcce5261a176d6f19c952.npz
+    sha256: 9afba787732f2759ed9549480d3c00dc3b0b8262a4a172a08cbe9e70f26d3e76
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: ZERO_DROPOUT
+    truth_class: ZERO_DROPOUT_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33002
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - INJECT_ZERO_DROPOUT_SEGMENT
+- item_id: rbw_sha256_eb2d3c3aedca993e0175ff913a8410f8f3e92b80d8fa7a3b0f39118734ca4b21
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_517dac9603b3f611aba5382deb5e1677278a8d21f7fe198c18d65c39959fdbbd
+    session_id: day33_syn_session_33003
+    channel_id: channel_semg_01
+    source_id: src_sha256_8f3ab032b3c906ef2c12db5914e5be71a8590ee91cd41340c3c5474777d7f9fa
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_eb2d3c3aedca993e0175ff913a8410f8f3e92b80d8fa7a3b0f39118734ca4b21.npz
+    sha256: 9197fd7facef966c20bd2185aa2e6c5fce915d7565a36f7fddf1b79786d2c449
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: FLATLINE
+    truth_class: FLATLINE_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33003
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - INJECT_CONSTANT_PLATEAU
+- item_id: rbw_sha256_149323075a106bb92b0fb05546c046ba6a92dd293d5ac1144579f8053fc7f034
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_5cc79dbfec77556ea4958b4cf29b6baae605ec8a93c57af442ef9af27797b6b5
+    session_id: day33_syn_session_33004
+    channel_id: channel_semg_01
+    source_id: src_sha256_232898ffc498385db621cf0f8779d1453d970f0041d31196545fbee60b7648bd
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_149323075a106bb92b0fb05546c046ba6a92dd293d5ac1144579f8053fc7f034.npz
+    sha256: 17c3f39fa2d9f9ff0de7a23478b1fbdb96444dcd4a6b504dc4796d2d15164c90
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: CLIPPING
+    truth_class: CLIPPING_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33004
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - INJECT_RAIL_CLIPPING
+- item_id: rbw_sha256_396c54907282fbb4dab620de8ae7e02f900b25586b2f3fbc48f8438a6a72e6bd
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_b3c64afbfb25e470805483e0752fdc168afc55e6a7189009a10724c8c3ffd0aa
+    session_id: day33_syn_session_33005
+    channel_id: channel_semg_01
+    source_id: src_sha256_1505406934454ec308cffef5053732359d48b224584d09001f1492085fc05430
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_396c54907282fbb4dab620de8ae7e02f900b25586b2f3fbc48f8438a6a72e6bd.npz
+    sha256: 087cc1a954acbfe7bbe0d3fa271237d3f30f1e2c17b667374dd978470719036a
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: BASELINE_NOISE
+    truth_class: BASELINE_NOISE_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33005
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - INJECT_BROADBAND_BASELINE_NOISE
+- item_id: rbw_sha256_f04fdf53fe57dcb9f53eaf9ccafce3ccd25058dd4aea58b7b62c90dee200b1a6
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_9dc95f6333f09f172c960c9186e4ff6f7266a0d6bfc39dac78dd251078c2edc4
+    session_id: day33_syn_session_33006
+    channel_id: channel_semg_01
+    source_id: src_sha256_78a457fe238ade86e4d9017189949fc60fd179b649b0b55736a4bf5a46f3c30a
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_f04fdf53fe57dcb9f53eaf9ccafce3ccd25058dd4aea58b7b62c90dee200b1a6.npz
+    sha256: e4fd4ae328fa0e9b163472ae9a4ceb6bfd0bff5cd3c07ef7033ea4cb84511360
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: POWERLINE_50HZ
+    truth_class: POWERLINE_50HZ_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33006
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - ADD_50HZ_SINUSOID
+- item_id: rbw_sha256_0d670244b7e3913b80b398af7541050fecd0e9dfceb3a037a0227174ff528caf
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_534b361e0dd5573b197e7d02dbcbfcd98053c6c0cf2cf344ed0793ecb2195bb7
+    session_id: day33_syn_session_33007
+    channel_id: channel_semg_01
+    source_id: src_sha256_b3f8bd19ffbe660ef2031384c7296cd5a0f03d0fdbc298d310c0ed01ba021c55
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_0d670244b7e3913b80b398af7541050fecd0e9dfceb3a037a0227174ff528caf.npz
+    sha256: 2d0bc18d9a4f112f71292709c5a19560d5555e878911542e9d0caadd14a1f1de
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: MOTION_DRIFT
+    truth_class: LOW_FREQUENCY_DRIFT_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33007
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - ADD_2HZ_BASELINE_DRIFT
+- item_id: rbw_sha256_fd96f5f236d14104824b52a9be69cb6cb66a9391a7a23a947e06fff4379f9986
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_144dbb744fcff94c1fdd86a67dd43aecfd9a478d384880985114869f8fcdcf08
+    session_id: day33_syn_session_33008
+    channel_id: channel_semg_01
+    source_id: src_sha256_802c1a58b471df633bf6f429312b85aaef7d60739f15e03e0e372dcfb08da457
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_fd96f5f236d14104824b52a9be69cb6cb66a9391a7a23a947e06fff4379f9986.npz
+    sha256: ef72582d1c4572ee28745d41a03457ffd1a763694018c0ded8924b1284cdcaa5
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: MOTION_TRANSIENT
+    truth_class: MOVEMENT_TRANSIENT_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33008
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - ADD_HIGH_AMPLITUDE_TRANSIENT
+- item_id: rbw_sha256_4a7f23b1168a3001f8885afe28fd8c43c1adbbae9a4d977a5990d52bbc77c647
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_bd77e0f00d31eddd1a56a4973fc0f733ee74bf28520b18bbcd01476fcc441082
+    session_id: day33_syn_session_33009
+    channel_id: channel_semg_01
+    source_id: src_sha256_7da2821c4cb6b42863e0433f4637ecb77350854362f26ea304de2805997d54a7
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_4a7f23b1168a3001f8885afe28fd8c43c1adbbae9a4d977a5990d52bbc77c647.npz
+    sha256: fb80a97752c2499d9a6311518ca5d8ae2d2e8aeef89b765f46ac54a40b3ee116
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: SYNTHETIC_LOW_AMPLITUDE_STRESS
+    truth_class: LOW_AMPLITUDE_ENGINEERING_STRESS
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33009
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - SCALE_AMPLITUDE_0_10_NON_PATHOLOGY
+- item_id: rbw_sha256_86076e1e773151f6e16b5199441cafd7b92a3a2ca26fa1e80414c76643c8a8fb
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_930aba6c18d8fdcddd4a0f214dd133ac444748951b51bec363d143c1bbf5dfdf
+    session_id: day33_syn_session_33010
+    channel_id: channel_semg_01
+    source_id: src_sha256_769d454d922a13263f18dcdb98f6d56c0897cb1de3c5004dec930aa9de47f2c2
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_86076e1e773151f6e16b5199441cafd7b92a3a2ca26fa1e80414c76643c8a8fb.npz
+    sha256: 739fc08cc79ce02a9c63cc95e5c988cd86381c3610bb925d56aa537c52272b2e
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: TIMESTAMP_DUPLICATE
+    truth_class: TIMESTAMP_DUPLICATE_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33010
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - DUPLICATE_RAW_TIMESTAMP
+- item_id: rbw_sha256_356219d09c031de34a5c8ce7568bcad74e31d97f838f314352720943cc47baf0
+  partition: benchmark-development
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_3a3ee80545c5f310f5dffa1c4cb13d3194b5c01df59ba164af4ed19a7123045b
+    session_id: day33_syn_session_33011
+    channel_id: channel_semg_01
+    source_id: src_sha256_bf3d12ac12760295d7323c76eb9496ff417dd55dd34ad56b9fef93762c68454d
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_356219d09c031de34a5c8ce7568bcad74e31d97f838f314352720943cc47baf0.npz
+    sha256: ccf856ceb35c6745e9364062937ede944679d045ca98965105af9a43c68f4452
+    raw_patient_data: false
+  synthetic_truth:
+    scenario: TIMESTAMP_NON_MONOTONIC
+    truth_class: TIMESTAMP_NON_MONOTONIC_INJECTED
+    clinical_truth_claim: false
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33011
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - REVERSE_ONE_RAW_TIMESTAMP_STEP
+- item_id: rbw_sha256_ac48423ebca99d59b8f60a692895ea70613e8b770fbe293dc66cdddef9d7be70
+  partition: benchmark-locked
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_8aad3eddcb9aba6f50d818193bb650bf8cf2d82d404beb59aeedb01985dad5ec
+    session_id: day33_syn_session_33900
+    channel_id: channel_semg_01
+    source_id: src_sha256_a4187e4fa57ffa79f062e2ea3c4d1464ed756299c0e42c00e190a042334282e6
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_ac48423ebca99d59b8f60a692895ea70613e8b770fbe293dc66cdddef9d7be70.npz
+    sha256: bef9919a23cb2bcee8048d59f06e23d401366e2bd0cc3be6ce6210ef2e9f2b3e
+    raw_patient_data: false
+  synthetic_truth: null
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33900
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - INJECT_NAN_MISSING_SEGMENT
+- item_id: rbw_sha256_686bb7474fbaf0ae640947642828ca1e0e119acce1d1e5a60bf1c1691adf7ce1
+  partition: benchmark-locked
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_bd12b5c59c5764c1bc7b576dfdf1d0da729b939e11db4f7207d252b7b7daec56
+    session_id: day33_syn_session_33901
+    channel_id: channel_semg_01
+    source_id: src_sha256_40ba10c4da3f6f84bdd10f141524048a648d1405318fe5f7694675d29d41eec5
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_686bb7474fbaf0ae640947642828ca1e0e119acce1d1e5a60bf1c1691adf7ce1.npz
+    sha256: 65cb6d80d87cd845dec1e54c533c84bb920e4e010a01e46ae7fe5bc1e47b5860
+    raw_patient_data: false
+  synthetic_truth: null
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33901
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - INJECT_RAIL_CLIPPING
+- item_id: rbw_sha256_fefb99ba386ea929a11a0ec4dbc9b7c98ae4eb198bcd834a4915f61d6eb68f49
+  partition: benchmark-locked
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_9560083571c052262a971f32cf89798e19bdc7d765b98e6a8e80e937144c56fa
+    session_id: day33_syn_session_33902
+    channel_id: channel_semg_01
+    source_id: src_sha256_89f516369baa3bbe0df3f1cb22162d39942291b1882ce30126271c0ee442d6f2
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_fefb99ba386ea929a11a0ec4dbc9b7c98ae4eb198bcd834a4915f61d6eb68f49.npz
+    sha256: 74505afd8e2090ce049a169ca44fbfe4d4b44f559532695d7209422e28a7c613
+    raw_patient_data: false
+  synthetic_truth: null
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33902
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - ADD_50HZ_SINUSOID
+- item_id: rbw_sha256_2e7c4105064f47ade4afdb57c6c401c6733f219e64763a0e3fade837e4fb6101
+  partition: benchmark-locked
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_ea1ce011b6775afb5be87ba4fdd301d49469724db7df3b537b6db11b34d3465f
+    session_id: day33_syn_session_33903
+    channel_id: channel_semg_01
+    source_id: src_sha256_505ba8cad03e7b1f5aa1fc9e192eecfc5b5ebd2b88672af3c422a08136aea06d
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_2e7c4105064f47ade4afdb57c6c401c6733f219e64763a0e3fade837e4fb6101.npz
+    sha256: f624793363404e7a81cf67a52723d4c4bcb09dbd06b20866898b1bc8718be827
+    raw_patient_data: false
+  synthetic_truth: null
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33903
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - ADD_HIGH_AMPLITUDE_TRANSIENT
+- item_id: rbw_sha256_cf175630f2a277cfeab302c8b507468fdfc03d9242a1decf176ac13453a4cab1
+  partition: benchmark-locked
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_9d063e58ff735aaa0622834bbd922156b20a0ba055f2c60383c5c0e6ff039a32
+    session_id: day33_syn_session_33904
+    channel_id: channel_semg_01
+    source_id: src_sha256_c45617a85401402d0c324f5b4ea1f33897a7805e46c4be9b9177278820f7cfb0
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_cf175630f2a277cfeab302c8b507468fdfc03d9242a1decf176ac13453a4cab1.npz
+    sha256: a0640309f7aeb9d786d866d61d9858e8d635e1f891850e6802bfebb39713f14e
+    raw_patient_data: false
+  synthetic_truth: null
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33904
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - SCALE_AMPLITUDE_0_10_NON_PATHOLOGY
+- item_id: rbw_sha256_94a97c8299f0c4c7d255c6bed4d58d310e224d4e1732274122337ad7f4152456
+  partition: benchmark-locked
+  evidence_tier: SYNTHETIC_KNOWN_TRUTH
+  source_context:
+    source_class: SYNTHETIC_FIXTURE
+    dataset_id: DAY33_SYNTHETIC_CORPUS
+    license_status: NOT_APPLICABLE
+    clinical_evidence: false
+    direct_identifiers_present: false
+  window_context:
+    window_id: qcw_sha256_bd629b1cace5b99f4d028e730c8a68d1a7c2aa66fbf34af8a6b2c96fb4791643
+    session_id: day33_syn_session_33905
+    channel_id: channel_semg_01
+    source_id: src_sha256_fd166c8ad1302aafdc6bafbe5af9975b41ec1fd9785d3added3af2533e66c7c0
+    start_sample: 1000
+    end_sample_exclusive: 1500
+    context_start_sample: 500
+    context_end_sample_exclusive: 2000
+    sampling_rate_hz: 2000.0
+    windowing_profile_fingerprint: wprof_sha256_5b99b474f779d683b565fa26968000c3a724ebb619e3921d7cc8297b44b6fa0b
+    annotation_unit_type: QC_WINDOW_WITH_CONTEXT
+  signal_artifact:
+    relative_path: signals/rbw_sha256_94a97c8299f0c4c7d255c6bed4d58d310e224d4e1732274122337ad7f4152456.npz
+    sha256: 5b9f318e7d94039a948e72fa0292ebc792c9d9bddb42c4f33992b5bed4828367
+    raw_patient_data: false
+  synthetic_truth: null
+  claim_scope: RESEARCH_ONLY
+  provenance:
+    seed: 33905
+    generator_version: day33-synthetic-factory.v0.1.0
+    transform_chain:
+    - DAY33_BASE_SYNTHETIC_SIGNAL
+    - REVERSE_ONE_RAW_TIMESTAMP_STEP
+locked_truth_commitments:
+- item_id: rbw_sha256_ac48423ebca99d59b8f60a692895ea70613e8b770fbe293dc66cdddef9d7be70
+  truth_commitment_sha256: e625a73163ec9ca730823441e6fa7e32f03b558fbc7efe9c8d2a4d96ddced59f
+- item_id: rbw_sha256_686bb7474fbaf0ae640947642828ca1e0e119acce1d1e5a60bf1c1691adf7ce1
+  truth_commitment_sha256: be79804a1e51cb2176a9bb3b9ebb417cf3924c3b6acf27e9f01cbddc99a702e0
+- item_id: rbw_sha256_fefb99ba386ea929a11a0ec4dbc9b7c98ae4eb198bcd834a4915f61d6eb68f49
+  truth_commitment_sha256: a7ed0d8a661546e9fa94f628ac036892d5e66bfd8998c36a372b71b248096c0d
+- item_id: rbw_sha256_2e7c4105064f47ade4afdb57c6c401c6733f219e64763a0e3fade837e4fb6101
+  truth_commitment_sha256: 345a36b08271d14c0b0320706db8901d62f8b78d9606b84c7e76895d15abd30f
+- item_id: rbw_sha256_cf175630f2a277cfeab302c8b507468fdfc03d9242a1decf176ac13453a4cab1
+  truth_commitment_sha256: 5a68920f17f727ec5fa906e78adc23d84631eddb6779d99e15fc735a5cb48bc8
+- item_id: rbw_sha256_94a97c8299f0c4c7d255c6bed4d58d310e224d4e1732274122337ad7f4152456
+  truth_commitment_sha256: 3a84bc83d0af299b7d173ae08ce03fd42a488f48d3146c001ae95cd994b23daa
+provenance:
+  builder_version: day33-corpus-builder.v0.1.0
+  catalog_version: public-semg-catalog.v0.1
+  day32_contract_version: qc-annotation-research.v0.2
+  window_identity_contract: QC_WINDOW_WITH_CONTEXT
+  clinical_evidence: false

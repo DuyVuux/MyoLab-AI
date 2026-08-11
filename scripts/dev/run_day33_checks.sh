@@ -2,20 +2,47 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT"
-mkdir -p qa-validation/evidence/day33
-LOG=qa-validation/evidence/day33-check-run.log
-: > "$LOG"
-run() { echo "+ $*" | tee -a "$LOG"; "$@" 2>&1 | tee -a "$LOG"; }
+export PYTHONPATH="$ROOT/packages/semg-core${PYTHONPATH:+:$PYTHONPATH}"
 
-run env PYTHONDONTWRITEBYTECODE=1 python3 -m compileall -q -f ai-core/evaluation/day33 ai-core/pipelines/day33_build_prediction_contract.py ai-core/pipelines/day33_run_evaluation.py
-run ./.venv/bin/python -m ruff check ai-core/evaluation/day33 ai-core/pipelines/day33_build_prediction_contract.py ai-core/pipelines/day33_run_evaluation.py qa-validation/automated-tests/test_day33.py
-run python3 scripts/dev/check_day33_artifacts.py
-run python3 scripts/data/day33_generate_synthetic_predictions.py
-run python3 ai-core/pipelines/day33_validate_predictions.py --predictions qa-validation/fixtures/day33-synthetic-window-predictions.csv --output qa-validation/evidence/day33/day33-synthetic-prediction-gate.json
-run python3 ai-core/pipelines/day33_run_evaluation.py --predictions qa-validation/fixtures/day33-synthetic-window-predictions.csv --output-dir qa-validation/evidence/day33/synthetic-evaluation --bootstrap-iterations 200
-run python3 ai-core/pipelines/day33_build_prediction_contract.py --source-kind mendeley-day32-oof --source ai-core/experiments/mendeley-primary/day32-baseline-v1 --output qa-validation/evidence/day33/predictions/mendeley-day32-oof-window-contract.csv --ledger qa-validation/evidence/day33/input-day32/mendeley-day32-input-ledger.json
-run python3 ai-core/pipelines/day33_run_evaluation.py --predictions qa-validation/evidence/day33/predictions/mendeley-day32-oof-window-contract.csv --output-dir qa-validation/evidence/day33/real-development/mendeley --bootstrap-iterations 500
-run python3 ai-core/pipelines/day33_build_prediction_contract.py --source-kind grabmyo-day32-oof --source ai-core/experiments/grabmyo-primary4/baseline-v1/grabmyo-baseline-handoff.zip --output qa-validation/evidence/day33/predictions/grabmyo-day32-oof-trial-contract.csv --ledger qa-validation/evidence/day33/input-day32/grabmyo-day32-input-ledger.json
-run python3 ai-core/pipelines/day33_run_evaluation.py --predictions qa-validation/evidence/day33/predictions/grabmyo-day32-oof-trial-contract.csv --output-dir qa-validation/evidence/day33/real-development/grabmyo --bootstrap-iterations 500
-run python3 -m pytest -q qa-validation/automated-tests/test_day33.py
-echo DAY33_CHECKS_PASS | tee -a "$LOG"
+if [[ -f "$ROOT/.venv/bin/python" ]]; then
+  PYTHON="$ROOT/.venv/bin/python"
+else
+  PYTHON="python3"
+fi
+
+echo "[1/6] DAY33 contract validator"
+"$PYTHON" scripts/dev/day33_corpus_contract_validator.py --repo-root "$ROOT"
+
+echo "[2/6] DAY33 focused tests"
+"$PYTHON" -m pytest -q qa-validation/automated-tests/research/test_day33_research_corpus.py
+
+echo "[3/6] DAY32 focused regression when present"
+if [[ -f qa-validation/automated-tests/qc/test_day32_annotation_readiness.py ]]; then
+  "$PYTHON" -m pytest -q qa-validation/automated-tests/qc/test_day32_annotation_readiness.py
+else
+  echo "DAY32 focused test not present in standalone handoff; skipped."
+fi
+
+echo "[4/6] Full live QC + property regression when present"
+REGRESSION_PATHS=()
+[[ -d qa-validation/automated-tests/qc ]] && REGRESSION_PATHS+=(qa-validation/automated-tests/qc)
+[[ -d qa-validation/property-tests ]] && REGRESSION_PATHS+=(qa-validation/property-tests)
+if (( ${#REGRESSION_PATHS[@]} )); then
+  "$PYTHON" -m pytest -q "${REGRESSION_PATHS[@]}"
+else
+  echo "No upstream regression directories present; skipped."
+fi
+
+echo "[5/6] Artifact integrity"
+"$PYTHON" scripts/dev/check_day33_artifacts.py
+
+echo "[6/6] Cache hygiene cleanup/check"
+find . -type f -name '*.pyc' -delete 2>/dev/null || true
+find qa-validation packages/semg-core services/quality-gate-service ai-core scripts -type d \( -name __pycache__ -o -name .pytest_cache \) -prune -exec rm -rf {} + 2>/dev/null || true
+rm -rf .pytest_cache
+if find . -type f -name '*.pyc' -print -quit | grep -q .; then
+  echo "Unexpected .pyc remains" >&2
+  exit 1
+fi
+
+echo "DAY33 CHECKS PASS"

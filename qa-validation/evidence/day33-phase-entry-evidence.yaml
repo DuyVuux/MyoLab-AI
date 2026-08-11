@@ -1,0 +1,8 @@
+schema_version: day33-phase-entry-evidence.v0.1
+day32_status: PASS_USER_HANDOFF
+day33_may_begin: true
+required_upstream:
+  day32_annotation_contract: EXPECTED_IN_LIVE_REPO
+  day22_window_identity: EXPECTED_IN_LIVE_REPO
+public_source_verification: COMPLETED_2026_08_11
+clinical_data_required: false
