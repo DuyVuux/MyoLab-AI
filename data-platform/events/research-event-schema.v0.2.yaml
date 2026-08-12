@@ -1,0 +1,37 @@
+schema_version: 0.2-research
+claim_scope: RESEARCH_ONLY
+schema_id: research-event-schema.v0.2
+purpose: append-only process events for workflow reconstruction and research analytics
+required_fields:
+  - event_id
+  - event_type
+  - case_id
+  - activity
+  - actor_role
+  - event_time_utc
+  - correlation_id
+  - reason_codes
+  - source_refs
+  - versions
+allowed_event_types:
+  - REVIEW_TRANSITION
+  - REVIEW_ACTION
+  - PROCESSING_LIFECYCLE
+  - SYSTEM_WORKFLOW
+privacy:
+  waveform: forbidden
+  raw_samples: forbidden
+  diagnosis: forbidden
+  patient_name: forbidden
+  mrn: forbidden
+  source_path: forbidden
+  free_text_clinical_note: forbidden
+process_mining_fields:
+  state_before: optional
+  state_after: optional
+  duration_ms: optional
+  parent_event_id: optional
+  outcome: optional
+future_readiness:
+  action_outcome_timing_recorded: true
+  offline_rl_training_authorized: false

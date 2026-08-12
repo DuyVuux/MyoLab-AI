@@ -1,0 +1,29 @@
+contract_id: PROCESS_MINING_LOG_V0_1
+version: 0.1.0
+scope: RESEARCH_ONLY
+case_key: case_id
+activity_key: activity
+timestamp_key: event_time_utc
+correlation_key: correlation_id
+minimum_fields:
+  - event_id
+  - case_id
+  - activity
+  - actor_role
+  - event_time_utc
+  - state_before
+  - state_after
+  - reason_codes
+  - source_refs
+  - versions
+ordering:
+  primary: sequence
+  secondary: event_time_utc
+semantics:
+  no_diagnostic_labels: true
+  no_raw_signal_payload: true
+  duration_ms_optional: true
+  parent_event_id_optional: true
+future_research:
+  offline_rl_contextual_bandit_readiness: EVENT_DATA_ONLY
+  policy_training: FORBIDDEN_IN_CURRENT_ROADMAP

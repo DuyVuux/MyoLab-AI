@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: MyoLab-AI Research Evidence Read API
+  version: 0.1.0
+  description: Research-only evidence/read contract. No frontend QC recomputation or clinical interpretation.
+paths:
+  /research/cases/{case_id}:
+    get:
+      operationId: getCaseSummary
+      parameters:
+        - {name: case_id, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Typed case summary}
+        '404': {description: CASE_NOT_FOUND}
+  /research/cases/{case_id}/qc:
+    get:
+      operationId: getQcEvidence
+      parameters:
+        - {name: case_id, in: path, required: true, schema: {type: string}}
+      responses: {'200': {description: QC evidence from backend contract}}
+  /research/cases/{case_id}/processing:
+    get:
+      operationId: getProcessingEvidence
+      parameters:
+        - {name: case_id, in: path, required: true, schema: {type: string}}
+      responses: {'200': {description: Processing provenance metadata}}
+  /research/cases/{case_id}/metrics:
+    get:
+      operationId: listMetrics
+      parameters:
+        - {name: case_id, in: path, required: true, schema: {type: string}}
+        - {name: page, in: query, schema: {type: integer, minimum: 1, default: 1}}
+        - {name: page_size, in: query, schema: {type: integer, minimum: 1, maximum: 100, default: 20}}
+      responses: {'200': {description: Metrics preserving unavailable/null reason semantics}}
+  /research/cases/{case_id}/timeline:
+    get:
+      operationId: getCaseTimeline
+      parameters:
+        - {name: case_id, in: path, required: true, schema: {type: string}}
+        - {name: page, in: query, schema: {type: integer, minimum: 1, default: 1}}
+        - {name: page_size, in: query, schema: {type: integer, minimum: 1, maximum: 100, default: 50}}
+      responses: {'200': {description: Research process timeline with no raw waveform/PHI}}
+  /research/cases/{case_id}/raw-window:
+    get:
+      operationId: getApprovedLocalRawWindow
+      description: Only from an approved local research store. Filesystem path is never returned.
+      parameters:
+        - {name: case_id, in: path, required: true, schema: {type: string}}
+        - {name: source_ref, in: query, required: true, schema: {type: string}}
+        - {name: relative_path, in: query, required: true, schema: {type: string}}
+        - {name: start, in: query, required: true, schema: {type: integer, minimum: 0}}
+        - {name: end, in: query, required: true, schema: {type: integer, minimum: 1}}
+      responses:
+        '200': {description: Research waveform window with source reference only}
+        '403': {description: Access forbidden or path traversal blocked}

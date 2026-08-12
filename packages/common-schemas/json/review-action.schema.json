@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/review-action.v0.1.json",
+  "title": "DAY54 Review Action Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id","current_state","action","reviewer_id","reviewer_role","evidence_bundle_id","idempotency_key","requested_at_utc","correlation_id","qc_signal_quality","metric_states"],
+  "properties": {
+    "case_id": {"type":"string","minLength":1},
+    "current_state": {"enum":["REVIEWING"]},
+    "action": {"enum":["ACCEPT_TECHNICAL","OVERRIDE_WITH_REASON","REQUEST_REPROCESS","SUGGEST_REMEASURE","MARK_INCONCLUSIVE"]},
+    "reviewer_id": {"type":"string","minLength":1},
+    "reviewer_role": {"enum":["REVIEWER","TECHNICAL_REVIEWER","ADMIN"]},
+    "evidence_bundle_id": {"type":"string","minLength":1},
+    "idempotency_key": {"type":"string","minLength":8,"maxLength":128},
+    "requested_at_utc": {"type":"string","minLength":1},
+    "correlation_id": {"type":"string","minLength":1},
+    "reason_code": {"type":["string","null"]},
+    "new_evidence_bundle_ref": {"type":["string","null"]},
+    "reviewer_approval": {"type":"boolean"},
+    "qc_signal_quality": {"type":["string","null"]},
+    "metric_states": {"type":"array","items":{"type":"string"}}
+  }
+}
