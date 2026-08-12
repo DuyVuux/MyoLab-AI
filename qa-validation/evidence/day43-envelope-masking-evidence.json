@@ -1,0 +1,13 @@
+{
+  "sample_count_in": 1000,
+  "sample_count_out": 1000,
+  "mask_count_in": 50,
+  "mask_count_out": 50,
+  "masked_values_are_nan": true,
+  "raw_unchanged": true,
+  "metric_eligible": false,
+  "metric_reason_codes": [
+    "MASKED_WINDOW_EXCLUDED_FROM_METRIC"
+  ],
+  "status": "PASS"
+}

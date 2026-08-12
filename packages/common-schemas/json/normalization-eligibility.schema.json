@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://myolab-ai.local/schemas/normalization-eligibility.v0.1.json",
+  "title":"Normalization Eligibility v0.1",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","status","method","source_window_id","metric_value","reason_codes","reference","provenance"],
+  "properties":{
+    "schema_version":{"const":"0.1"},
+    "status":{"enum":["ELIGIBLE","UNAVAILABLE","BLOCKED"]},
+    "method":{"enum":["NONE","MVC_PERCENT","REFERENCE_RATIO"]},
+    "source_window_id":{"type":"string","minLength":1},
+    "metric_value":{"type":"null"},
+    "reason_codes":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "reference":{"anyOf":[{"type":"null"},{"type":"object","additionalProperties":false,"required":["reference_id","reference_type","sha256","version","protocol_id","domain_id","partition"],"properties":{"reference_id":{"type":"string"},"reference_type":{"enum":["MVC","REFERENCE_CONTRACTION"]},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"version":{"type":"string"},"protocol_id":{"type":"string"},"domain_id":{"type":"string"},"partition":{"type":"string"},"units":{"type":"string"}}}]},
+    "provenance":{"type":"object","required":["policy_version","selection_policy","claim_scope"],"properties":{"policy_version":{"type":"string"},"selection_policy":{"type":"string"},"claim_scope":{"const":"RESEARCH_ONLY"}},"additionalProperties":true}
+  }
+}

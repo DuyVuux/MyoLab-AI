@@ -1,0 +1,6 @@
+{
+  "target_attenuation_db": 31.91103771198843,
+  "unrelated_173hz_amplitude_ratio": 0.9999105494658768,
+  "pre_notch_spectral_evidence_ref": "spev_sha256_389ba54d4f31526d0cba881045886215a7101223ced91ece2b30ebd63669559f",
+  "status": "PASS"
+}

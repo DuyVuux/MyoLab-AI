@@ -1,0 +1,29 @@
+{
+  "fs_hz": 2000.0,
+  "spec": {
+    "low_cut_hz": 20,
+    "high_cut_hz": 400,
+    "filter_order": 4,
+    "method": "butterworth_sos",
+    "phase_mode": "ZERO_PHASE",
+    "version": "day41-bandpass.v0.1.0"
+  },
+  "gain_db": {
+    "5Hz": -49.583759694394736,
+    "100Hz": -1.3404151785090793e-13,
+    "700Hz": -35.85836552583376
+  },
+  "zero_phase_bulk_lag_samples": 0,
+  "causal_group_delay_100hz_samples": 3.6811491896950166,
+  "tolerances": {
+    "100Hz_min_db": -0.2,
+    "5Hz_max_db": -24,
+    "700Hz_max_db": -18,
+    "bulk_lag_abs_max_samples": 2,
+    "causal_group_delay_100hz_range_samples": [
+      0,
+      20
+    ]
+  },
+  "status": "PASS"
+}

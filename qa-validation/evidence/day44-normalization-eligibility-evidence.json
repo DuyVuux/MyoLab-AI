@@ -1,0 +1,81 @@
+{
+  "cases": {
+    "eligible": {
+      "schema_version": "0.1",
+      "status": "ELIGIBLE",
+      "method": "MVC_PERCENT",
+      "source_window_id": "w",
+      "metric_value": null,
+      "reason_codes": [],
+      "reference": {
+        "reference_id": "mvc-01",
+        "reference_type": "MVC",
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "version": "1.0.0",
+        "protocol_id": "p1",
+        "domain_id": "d1",
+        "partition": "reference-development",
+        "units": "uV"
+      },
+      "provenance": {
+        "policy_version": "day44-normalization-eligibility.v0.1",
+        "selection_policy": "EXPLICIT_ID_OR_UNIQUE_COMPATIBLE_MATCH",
+        "claim_scope": "RESEARCH_ONLY",
+        "locked_set_fitting_allowed": false
+      }
+    },
+    "missing": {
+      "schema_version": "0.1",
+      "status": "UNAVAILABLE",
+      "method": "MVC_PERCENT",
+      "source_window_id": "w",
+      "metric_value": null,
+      "reason_codes": [
+        "NORMALIZATION_REFERENCE_UNAVAILABLE_OR_INCOMPATIBLE"
+      ],
+      "reference": null,
+      "provenance": {
+        "policy_version": "day44-normalization-eligibility.v0.1",
+        "selection_policy": "EXPLICIT_ID_OR_UNIQUE_COMPATIBLE_MATCH",
+        "claim_scope": "RESEARCH_ONLY",
+        "locked_set_fitting_allowed": false
+      }
+    },
+    "domain_mismatch": {
+      "schema_version": "0.1",
+      "status": "UNAVAILABLE",
+      "method": "MVC_PERCENT",
+      "source_window_id": "w",
+      "metric_value": null,
+      "reason_codes": [
+        "NORMALIZATION_DOMAIN_MISMATCH",
+        "NORMALIZATION_REFERENCE_UNAVAILABLE_OR_INCOMPATIBLE"
+      ],
+      "reference": null,
+      "provenance": {
+        "policy_version": "day44-normalization-eligibility.v0.1",
+        "selection_policy": "EXPLICIT_ID_OR_UNIQUE_COMPATIBLE_MATCH",
+        "claim_scope": "RESEARCH_ONLY",
+        "locked_set_fitting_allowed": false
+      }
+    },
+    "locked": {
+      "schema_version": "0.1",
+      "status": "BLOCKED",
+      "method": "MVC_PERCENT",
+      "source_window_id": "w",
+      "metric_value": null,
+      "reason_codes": [
+        "LOCKED_EVALUATION_NORMALIZATION_FITTING_FORBIDDEN"
+      ],
+      "reference": null,
+      "provenance": {
+        "policy_version": "day44-normalization-eligibility.v0.1",
+        "selection_policy": "EXPLICIT_ID_OR_UNIQUE_COMPATIBLE_MATCH",
+        "claim_scope": "RESEARCH_ONLY",
+        "locked_set_fitting_allowed": false
+      }
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,74 @@
+current_day: 44
+next_day: 45
+dependency_type: CONVERGENCE_HANDOFF
+day_status: PASS
+next_day_may_begin: true
+
+required_context:
+  - path: packages/semg-core/semg_core/processing/bandpass.py
+    source_day: 41
+    purpose: Bandpass filter engine
+    status: FOUND
+  - path: packages/semg-core/semg_core/processing/notch.py
+    source_day: 42
+    purpose: Notch filter engine with pre-notch evidence
+    status: FOUND
+  - path: packages/semg-core/semg_core/processing/masking.py
+    source_day: 43
+    purpose: Mask-not-delete semantics and metric leakage guard
+    status: FOUND
+  - path: packages/semg-core/semg_core/processing/envelope.py
+    source_day: 43
+    purpose: Rectification and smoothing primitives
+    status: FOUND
+  - path: services/quality-gate-service/src/application/normalization_eligibility.py
+    source_day: 44
+    purpose: Normalization eligibility evaluator
+    status: FOUND
+  - path: packages/common-schemas/json/normalization-eligibility.schema.json
+    source_day: 44
+    purpose: JSON schema for normalization eligibility
+    status: FOUND
+  - path: packages/semg-core/semg_core/processing/profile_contract.py
+    source_day: 40
+    purpose: Baseline profile contract and fingerprint logic
+    status: FOUND
+
+frozen_decisions:
+  - id: RAW_IS_IMMUTABLE
+    value: SHA-256 validation forbids raw array mutations
+    status: FROZEN
+  - id: MASK_NOT_DELETE
+    value: Preserve 1:1 sample alignment, masked samples set to NaN
+    status: FROZEN
+  - id: NO_SILENT_DEFAULT_MAINS_FREQUENCY
+    value: Unknown mains frequency keeps notch disabled
+    status: FROZEN
+  - id: MASKED_WINDOW_EXCLUDED_FROM_METRIC
+    value: Masked windows excluded from metric computation by default
+    status: FROZEN
+  - id: NULL_WITH_REASON
+    value: metric_value is null with explicit reason_codes
+    status: FROZEN
+  - id: NO_LOCKED_SET_FITTING
+    value: benchmark-locked partition fitting forbidden
+    status: FROZEN
+
+tests:
+  passed: 78
+  failed: 0
+  unresolved: 0
+
+blockers: []
+
+claim_boundaries:
+  - BANDPASS_ANALYTICALLY_VERIFIED_FOR_RESEARCH
+  - NOTCH_RESEARCH_READY
+  - ENVELOPE_MASKING_READY
+  - NORMALIZATION_ELIGIBILITY_READY
+
+recommended_first_action: >-
+  Define the unified ProcessingManifest schema linking raw source hash,
+  WindowIdentity, processor profile/version/fingerprint, input/output hashes,
+  mask lineage, native/processed grid and unit provenance across all 4 sibling
+  processors.

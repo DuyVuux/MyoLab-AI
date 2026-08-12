@@ -1,0 +1,15 @@
+schema_version: '0.1'
+claim_scope: RESEARCH_ONLY
+profiles:
+  - profile_id: research-bandpass-analytical-20-400-v0.1
+    status: RESEARCH_TEST_ONLY
+    parameter_origin: ANALYTICAL_RESEARCH
+    enabled: true
+    method: butterworth_sos
+    low_cut_hz: 20.0
+    high_cut_hz: 400.0
+    filter_order: 4
+    phase_mode: ZERO_PHASE
+    runtime_fs_required: true
+    site_binding: null
+    note: Explicit analytical fixture profile; not a global/site preprocessing default.

@@ -1,0 +1,23 @@
+schema_version: '0.1'
+claim_scope: RESEARCH_ONLY
+policy_id: day44-normalization-eligibility.v0.1
+fitting_allowed: false
+locked_partition_fitting_allowed: false
+selection_policy: EXPLICIT_ID_OR_UNIQUE_COMPATIBLE_MATCH
+methods:
+  NONE:
+    reference_required: false
+  MVC_PERCENT:
+    reference_required: true
+    reference_type: MVC
+    require_same_protocol: true
+    require_same_domain: true
+    require_same_unit: true
+  REFERENCE_RATIO:
+    reference_required: true
+    reference_type: REFERENCE_CONTRACTION
+    require_same_protocol: true
+    require_same_domain: true
+    require_same_unit: true
+site_reference_registry: null
+site_status: NOT_VERIFIED

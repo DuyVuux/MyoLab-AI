@@ -1,0 +1,16 @@
+schema_version: '0.1'
+claim_scope: RESEARCH_ONLY
+options:
+  rectification: [NONE, FULL_WAVE, HALF_WAVE]
+  smoothing: [NONE, MOVING_AVERAGE, BUTTERWORTH_LOWPASS]
+research_examples:
+  - profile_id: research-envelope-ma50-v0.1
+    rectification: FULL_WAVE
+    smoothing:
+      method: MOVING_AVERAGE
+      window_ms: 50.0
+    site_binding: null
+mask_policy:
+  delete_masked_samples: false
+  preserve_sample_alignment: true
+  any_masked_sample_blocks_metric_window_by_default: true

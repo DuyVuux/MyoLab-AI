@@ -1,0 +1,28 @@
+schema_version: '0.1'
+claim_scope: RESEARCH_ONLY
+default_policy:
+  enabled: false
+  mains_frequency_hz: null
+  q_factor: null
+  bandwidth_hz: null
+  harmonics: [1]
+  rationale: Unknown mains frequency must keep notch disabled.
+analytical_profiles:
+  - profile_id: research-notch-50hz-q30-v0.1
+    status: RESEARCH_TEST_ONLY
+    enabled: true
+    mains_frequency_hz: 50.0
+    q_factor: 30.0
+    bandwidth_hz: null
+    harmonics: [1]
+    phase_mode: ZERO_PHASE
+    site_binding: null
+  - profile_id: research-notch-60hz-q30-v0.1
+    status: RESEARCH_TEST_ONLY
+    enabled: true
+    mains_frequency_hz: 60.0
+    q_factor: 30.0
+    bandwidth_hz: null
+    harmonics: [1]
+    phase_mode: ZERO_PHASE
+    site_binding: null
