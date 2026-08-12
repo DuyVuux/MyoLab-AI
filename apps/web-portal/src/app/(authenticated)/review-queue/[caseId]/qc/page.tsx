@@ -1,0 +1,1 @@
+export default function Page({params}:{params:{caseId:string}}){return <main><aside><strong>RESEARCH ONLY</strong></aside><h1>QC Evidence — {params.caseId}</h1><p>Backend-owned QC semantics. UNKNOWN is not PASS.</p><p data-attention="FAIL">FAIL/BLOCKED cases receive highest attention.</p></main>}

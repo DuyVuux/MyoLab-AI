@@ -1,0 +1,1 @@
+export default function Page({params}:{params:{caseId:string}}){return <main><aside><strong>RESEARCH ONLY</strong></aside><h1>Signal Viewer — {params.caseId}</h1><section><h2>RAW</h2><p>source_ref: src_demo</p></section><section><h2>PROCESSED</h2><p>manifest_id: pman_demo</p></section><p>Masked samples remain unavailable and are not silently interpolated.</p></main>}

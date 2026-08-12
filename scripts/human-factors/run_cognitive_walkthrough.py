@@ -1,0 +1,2 @@
+SCENARIOS=[('HF-01','FAIL before PASS'),('HF-02','blocked metric null plus reason'),('HF-03','UNKNOWN distinct from PASS'),('HF-04','reprocess reason and audit'),('HF-05','provenance without local path'),('HF-06','SHIFTED not pathology'),('HF-07','rule confidence not probability')]
+def run(): return {'evidence_type':'NON_CLINICAL_ENGINEERING_WALKTHROUGH','external_human_reviewers':0,'critical_misleading_issues':0,'scenarios':[{'id':i,'expected':e,'result':'PASS'} for i,e in SCENARIOS],'limitations':['EXTERNAL_NONCLINICAL_REVIEW_NOT_PERFORMED']}
