@@ -1,0 +1,24 @@
+schema_version: '0.2'
+claim_scope: RESEARCH_ONLY
+invariants:
+- id: REV-INV-001
+  rule: QC_FAIL -> no VALID metric
+  severity: BLOCKING
+- id: REV-INV-002
+  rule: FINALIZED_DEMO -> reviewer_approval == true
+  severity: BLOCKING
+- id: REV-INV-003
+  rule: REPROCESS_REQUESTED -> cannot FINALIZED_DEMO
+  severity: BLOCKING
+- id: REV-INV-004
+  rule: INSUFFICIENT_DATA != NO_EVIDENCE
+  severity: BLOCKING
+- id: REV-INV-005
+  rule: every accepted transition emits exactly one deterministic research event
+  severity: BLOCKING
+- id: REV-INV-006
+  rule: state names and actions are non-diagnostic
+  severity: BLOCKING
+- id: REV-INV-007
+  rule: frozen M3-R artifacts are read-only; DAY52 may only reference them
+  severity: BLOCKING

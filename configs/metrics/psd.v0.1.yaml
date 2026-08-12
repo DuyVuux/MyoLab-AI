@@ -1,14 +1,11 @@
 schema_version: "0.1"
 claim_scope: RESEARCH_ONLY
-psd_defaults:
-  window: hann
-  detrend: constant
-  fmin_hz: 0.0
-  scaling: density
-metrics:
-  MDF:
-    definition: Median power frequency dividing Welch PSD integral into equal halves
-    unit_rule: Hz
-  MNF:
-    definition: Mean power frequency (spectral centroid of Welch PSD)
-    unit_rule: Hz
+method: WELCH
+window: hann
+detrend: constant
+nperseg_policy: EXPLICIT_PER_PROFILE
+noverlap_policy: EXPLICIT_PER_PROFILE
+frequency_range_policy: EXPLICIT_AND_BELOW_NYQUIST
+mdf_definition: frequency at cumulative PSD power = 50 percent using trapezoidal integration
+mnf_definition: integral(f*PSD)/integral(PSD)
+distribution_monitoring: INFORMATIONAL_RESEARCH_ONLY

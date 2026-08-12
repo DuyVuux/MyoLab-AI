@@ -1,0 +1,151 @@
+{
+  "freeze_id": "m3r_sha256_5d9e78bb8e67c1efead36dbbac913a79425b216555159c0ef01cb62839f921bc",
+  "milestone": "M3-R",
+  "status": "PROCESSING_METRIC_RESEARCH_READY",
+  "claim_scope": "RESEARCH_ONLY",
+  "artifact_count": 25,
+  "artifacts": [
+    {
+      "path": "configs/processing/preprocessing-profiles.v0.1.yaml",
+      "sha256": "3a6800cf423ebc792b4d9e91e8e6a15f9abaee51d8e84c3535a12aadb4fa3ada",
+      "bytes": 4744
+    },
+    {
+      "path": "configs/processing/bandpass.research-v0.1.yaml",
+      "sha256": "0e17e7040d1563f92061e7a955ab13c3831888899070087a0eeacda64dfd64b2",
+      "bytes": 467
+    },
+    {
+      "path": "configs/processing/notch.v0.1.yaml",
+      "sha256": "44b528710a0e4b19412164b99d6496c390ad3d397b510351be72a365866c2298",
+      "bytes": 716
+    },
+    {
+      "path": "configs/processing/envelope.v0.1.yaml",
+      "sha256": "b902e06c7509128cf6c419b6382a4165241fac514fdfb59a4c65105974dae942",
+      "bytes": 478
+    },
+    {
+      "path": "configs/processing/normalization.v0.1.yaml",
+      "sha256": "6297ab2c160e5ed04bc9741f81b64828da772215f5c84da70cfb850277451f91",
+      "bytes": 658
+    },
+    {
+      "path": "configs/processing/day45-convergence-recipe.v0.1.yaml",
+      "sha256": "ea741166151abe407837e31957b7d61ac30cbba50398d6c56c21facfbc533192",
+      "bytes": 1727
+    },
+    {
+      "path": "configs/metrics/metric-registry.v0.1.yaml",
+      "sha256": "95929e2f8e20cbc2f8c01db1718ccaf68cffa304de54aad2a733c57925d98525",
+      "bytes": 462
+    },
+    {
+      "path": "configs/metrics/psd.v0.1.yaml",
+      "sha256": "a8e4099e11a375da0bf7d5c1bf13969029f567cd871c92ed4ba6dee138b9feeb",
+      "bytes": 412
+    },
+    {
+      "path": "packages/semg-core/semg_core/processing/profile_contract.py",
+      "sha256": "e7ee8ae18a82e8b3aaddc544ecff95113c4e20c70771d58c77a69c0407fce9c7",
+      "bytes": 13033
+    },
+    {
+      "path": "packages/semg-core/semg_core/processing/bandpass.py",
+      "sha256": "28d1040a8152364e947b7bb539dcd9584edbb71c4b6bff26a3d231dcde770fd2",
+      "bytes": 5661
+    },
+    {
+      "path": "packages/semg-core/semg_core/processing/notch.py",
+      "sha256": "25825c95ee97c4bbf7004c098ab9c418e02ffe23c176563d3efb9336967d9113",
+      "bytes": 7286
+    },
+    {
+      "path": "packages/semg-core/semg_core/processing/masking.py",
+      "sha256": "ff03bbdf001ec7405bf8d2e71b080de9875fd54ef38e3dc2c30525c6b168479b",
+      "bytes": 3185
+    },
+    {
+      "path": "packages/semg-core/semg_core/processing/envelope.py",
+      "sha256": "60ce31d309c79c3debeb1865fa2ebe2aea2d2f286cb8efce8157eacfef1c7ad0",
+      "bytes": 4794
+    },
+    {
+      "path": "packages/semg-core/semg_core/provenance/processing_manifest.py",
+      "sha256": "5f412f74bb961e1fc7854cf49ffd2cca29f1addf82ce7999583b1813b24c1616",
+      "bytes": 27353
+    },
+    {
+      "path": "packages/semg-core/semg_core/metrics/amplitude.py",
+      "sha256": "59d7366c438d4cf9ea64f1f1c437d3135b7ba8197e2f199285709c7154b04c5b",
+      "bytes": 3149
+    },
+    {
+      "path": "packages/semg-core/semg_core/metrics/spectral.py",
+      "sha256": "c8f870408d7187314de0fd071dbb0e85baa4021cfaaf8a27af39252ff47670a2",
+      "bytes": 2413
+    },
+    {
+      "path": "packages/semg-core/semg_core/metrics/activation_timing.py",
+      "sha256": "13ee9814c9de2de348242d58415d76ff47e00d61cc5dd3dc5f214382313491fe",
+      "bytes": 1931
+    },
+    {
+      "path": "services/quality-gate-service/src/application/normalization_eligibility.py",
+      "sha256": "e542915da5f25e749967da19923771cabaed355a87acfecd2280545558a7da6d",
+      "bytes": 6275
+    },
+    {
+      "path": "services/quality-gate-service/src/application/mfcv_eligibility.py",
+      "sha256": "9200ce9ad6a39728c87bc222fe1793c4f9dd0e2d8cd82af4fbd3b80952e23be9",
+      "bytes": 4142
+    },
+    {
+      "path": "services/evidence-service/src/build_bundle.py",
+      "sha256": "79108a49e1336ae8f374b44a96e0be53315abf2c0f2fa68d3029362ccac78369",
+      "bytes": 4306
+    },
+    {
+      "path": "packages/common-schemas/json/processing-profile.schema.json",
+      "sha256": "ebbe74d40f29d405fb8ec0e924d7f8edecb527cda335bede0379ca36db50e3ce",
+      "bytes": 17873
+    },
+    {
+      "path": "packages/common-schemas/json/processing-manifest.schema.json",
+      "sha256": "791ec265e184165d27357905d0e909d653ea2d6c0b4315e9fbf5e6b5bbbb855d",
+      "bytes": 8891
+    },
+    {
+      "path": "packages/common-schemas/json/normalization-eligibility.schema.json",
+      "sha256": "be8f296a9a168dc3e69a4656e4a8e166523749fb0870868c05a6c20251b9c025",
+      "bytes": 1470
+    },
+    {
+      "path": "packages/common-schemas/json/activation-timing-eligibility.schema.json",
+      "sha256": "cd1ee7bc1b60c78ecb2c6e7763dc5e743758e81430d96b577ebcc84db03ff850",
+      "bytes": 534
+    },
+    {
+      "path": "packages/common-schemas/json/session-evidence-bundle.v0.1.schema.json",
+      "sha256": "b8e7e80daead797a9d593bef284ec8317e4ac84f4da4efe925597e1d5cdea388",
+      "bytes": 7932
+    }
+  ],
+  "extension_points": {
+    "distribution_support": "FROZEN_INFORMATIONAL_RESEARCH_ONLY",
+    "uncertainty": "FROZEN_TYPED_CONTRACT_NO_CALIBRATED_MODEL_REQUIRED"
+  },
+  "unsupported_capabilities": [
+    "ACTIVATION_TIMING_REAL_COHORT",
+    "MFCV_SITE",
+    "CALIBRATED_PROBABILITY",
+    "CONFORMAL_SET",
+    "OOD_SCORE"
+  ],
+  "prohibitions": [
+    "NO_CLINICAL_METRIC_CLAIM",
+    "NO_SITE_THRESHOLD_PROMOTION",
+    "NO_UNSUPPORTED_METRIC_NON_NULL",
+    "NO_ELIGIBILITY_BYPASS"
+  ]
+}

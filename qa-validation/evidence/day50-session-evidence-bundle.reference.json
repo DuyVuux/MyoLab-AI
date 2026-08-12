@@ -1,0 +1,156 @@
+{
+  "bundle_id": "seb_sha256_c4e62a7b59558cf99370365871e42e59e43d66f8d979fa52fcddb3010a465114",
+  "schema_version": "0.1",
+  "claim_scope": "RESEARCH_ONLY",
+  "session_id": "session_day45_evidence",
+  "source_refs": [
+    "src_sha256_81d1f5bb86ea5e9db292056a34717cf2001eeae275f1613f8287221274f4de58"
+  ],
+  "qc": {
+    "signal_quality": "PASS",
+    "supportability": "SUPPORTABLE",
+    "evaluation_status": "EVALUATED",
+    "reason_codes": [
+      "REFERENCE_RESEARCH_QC_PASS"
+    ],
+    "evidence_refs": [
+      "DAY30_AGGREGATION",
+      "DAY31_ELIGIBILITY"
+    ]
+  },
+  "processing": {
+    "manifest_id": "pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c",
+    "processing_run_id": "prun_sha256_203ffa82c3769d184e1b7f92374e6483eae453a8d7d580704eae2df3860f3547",
+    "processed_artifact_id": "part_sha256_590f2f1296ba85d3254dfa22eca526c73fff486a95897e5c2eb39621467444b7",
+    "profile_id": "day45-research-convergence-replay-v0.1",
+    "profile_fingerprint": "precipe_sha256_07dfd4b38537be69dd6d6435c92a1923f1b928a095f5de385cbb83bc1b9d7401",
+    "outcome": "COMPLETED"
+  },
+  "metrics": [
+    {
+      "metric_id": "metric_sha256_24f061b7bbebbd85175c208ba365803055cf9be81aa7b0b660854bfa96912dca",
+      "metric_name": "RMS",
+      "status": "AVAILABLE",
+      "value": 3.5355339059327378,
+      "units": "uV",
+      "reason_codes": [],
+      "manifest_id": "pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c",
+      "evidence_class": "ANALYTICAL_RESEARCH"
+    },
+    {
+      "metric_id": "metric_sha256_29ba00be62ad8dfc0a9e2a917afddcc6127fed8337d6839b57cdb3040fec2ead",
+      "metric_name": "MAV",
+      "status": "AVAILABLE",
+      "value": 3.5,
+      "units": "uV",
+      "reason_codes": [],
+      "manifest_id": "pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c",
+      "evidence_class": "ANALYTICAL_RESEARCH"
+    },
+    {
+      "metric_id": "metric_day47_mdf",
+      "metric_name": "MDF",
+      "status": "AVAILABLE",
+      "value": 127.99999999999999,
+      "units": "Hz",
+      "reason_codes": [],
+      "manifest_id": "pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c",
+      "evidence_class": "ANALYTICAL_RESEARCH"
+    },
+    {
+      "metric_id": "metric_day47_mnf",
+      "metric_name": "MNF",
+      "status": "AVAILABLE",
+      "value": 128.0,
+      "units": "Hz",
+      "reason_codes": [],
+      "manifest_id": "pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c",
+      "evidence_class": "ANALYTICAL_RESEARCH"
+    },
+    {
+      "metric_id": "metric_day48_activation",
+      "metric_name": "ACTIVATION_TIMING",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "units": "s",
+      "reason_codes": [
+        "REAL_ALIGNED_EVENT_COHORT_NOT_AVAILABLE"
+      ],
+      "manifest_id": "pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c",
+      "evidence_class": "NOT_VERIFIED"
+    },
+    {
+      "metric_id": "metric_day49_mfcv",
+      "metric_name": "MFCV",
+      "status": "UNSUPPORTED",
+      "value": null,
+      "units": "m/s",
+      "reason_codes": [
+        "SITE_GEOMETRY_NOT_VERIFIED"
+      ],
+      "manifest_id": "pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c",
+      "evidence_class": "NOT_VERIFIED"
+    }
+  ],
+  "distribution_support": {
+    "status": "UNKNOWN",
+    "method_status": "INFORMATIONAL_RESEARCH_ONLY",
+    "score": null,
+    "reason_codes": [
+      "NO_VALIDATED_OOD_METHOD"
+    ]
+  },
+  "uncertainty": {
+    "uncertainty_type": "RULE_CONFIDENCE",
+    "calibration_status": "NOT_APPLICABLE",
+    "rule_confidence_level": "UNKNOWN",
+    "calibrated_probability": null,
+    "conformal_set": null,
+    "calibration_ref": null,
+    "abstention": false,
+    "abstention_reason": null
+  },
+  "unsupported_capabilities": [
+    {
+      "capability": "ACTIVATION_TIMING_REAL_COHORT",
+      "status": "NOT_AVAILABLE",
+      "reason_codes": [
+        "REAL_ALIGNED_EVENT_COHORT_NOT_AVAILABLE"
+      ]
+    },
+    {
+      "capability": "MFCV_SITE",
+      "status": "NOT_VERIFIED",
+      "reason_codes": [
+        "SITE_GEOMETRY_NOT_VERIFIED"
+      ]
+    },
+    {
+      "capability": "CALIBRATED_PROBABILITY",
+      "status": "NOT_AVAILABLE",
+      "reason_codes": [
+        "NO_PROBABILISTIC_MODEL"
+      ]
+    },
+    {
+      "capability": "OOD_SCORE",
+      "status": "NOT_AVAILABLE",
+      "reason_codes": [
+        "NO_VALIDATED_OOD_METHOD"
+      ]
+    }
+  ],
+  "limitations": [
+    "Research-only evidence bundle; no clinical/site validation.",
+    "Activation timing synthetic mechanics are not a real session measurement.",
+    "MFCV synthetic known-delay mechanics are not a site measurement."
+  ],
+  "event_correlation_id": "corr_day45_evidence_v0_1",
+  "evidence_refs": [
+    "DAY45_PROCESSING_LINEAGE",
+    "DAY46_RMS_MAV",
+    "DAY47_MDF_MNF",
+    "DAY48_ACTIVATION_TIMING",
+    "DAY49_MFCV"
+  ]
+}

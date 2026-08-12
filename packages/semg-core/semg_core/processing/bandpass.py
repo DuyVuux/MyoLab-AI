@@ -83,6 +83,7 @@ def frequency_response(
     return frequencies, np.abs(response)
 
 
+
 def causal_group_delay_samples(
     spec: BandpassSpec,
     fs_hz: float,
@@ -98,7 +99,6 @@ def causal_group_delay_samples(
         w=[angular_frequency],
     )
     return float(delay[0])
-
 
 def _valid_segments(valid: np.ndarray):
     indexes = np.flatnonzero(valid)

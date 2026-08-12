@@ -1,0 +1,81 @@
+schema_version: 0.2-research
+claim_scope: RESEARCH_ONLY
+machine_id: human-review-state-machine.v0.2-research
+initial_state: NEW
+states:
+- NEW
+- NEEDS_REVIEW
+- REVIEWING
+- REPROCESS_REQUESTED
+- REMEASURE_SUGGESTED
+- INCONCLUSIVE
+- ACCEPTED_TECHNICAL
+- FINALIZED_DEMO
+non_diagnostic_state_names: true
+evidence_distinctions:
+  INSUFFICIENT_DATA: Data exists but is insufficient for the requested conclusion.
+  NO_EVIDENCE: No supporting evidence object is available.
+event_policy:
+  every_transition_emits_event: true
+  persistent_store: DEFERRED_TO_DAY53
+  event_contains_waveform: false
+  event_contains_phi: false
+transitions:
+- from: NEW
+  to: NEEDS_REVIEW
+  action: QUEUE_FOR_REVIEW
+  guards:
+  - evidence_bundle_present
+- from: NEEDS_REVIEW
+  to: REVIEWING
+  action: START_REVIEW
+  guards:
+  - reviewer_id_present
+- from: REVIEWING
+  to: REPROCESS_REQUESTED
+  action: REQUEST_REPROCESS
+  guards:
+  - reason_code_present
+- from: REVIEWING
+  to: REMEASURE_SUGGESTED
+  action: SUGGEST_REMEASURE
+  guards:
+  - reason_code_present
+- from: REVIEWING
+  to: INCONCLUSIVE
+  action: MARK_INCONCLUSIVE
+  guards:
+  - reason_code_present
+- from: REVIEWING
+  to: ACCEPTED_TECHNICAL
+  action: ACCEPT_TECHNICAL
+  guards:
+  - reviewer_id_present
+  - qc_not_fail
+  - no_blocked_metric_state
+- from: REPROCESS_REQUESTED
+  to: NEEDS_REVIEW
+  action: REPROCESS_COMPLETED
+  guards:
+  - new_evidence_bundle_ref_present
+- from: REMEASURE_SUGGESTED
+  to: INCONCLUSIVE
+  action: CLOSE_PENDING_REMEASUREMENT
+  guards:
+  - reason_code_present
+- from: ACCEPTED_TECHNICAL
+  to: FINALIZED_DEMO
+  action: FINALIZE_DEMO
+  guards:
+  - reviewer_approval_true
+  - reviewer_id_present
+  - qc_not_fail
+  - no_blocked_metric_state
+forbidden_transitions:
+- NEW->FINALIZED_DEMO
+- NEEDS_REVIEW->FINALIZED_DEMO
+- REVIEWING->FINALIZED_DEMO
+- REPROCESS_REQUESTED->FINALIZED_DEMO
+- REMEASURE_SUGGESTED->FINALIZED_DEMO
+- INCONCLUSIVE->FINALIZED_DEMO
+clinical_interpretation: false

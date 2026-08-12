@@ -1,0 +1,366 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/session-evidence-bundle.v0.1.schema.json",
+  "title": "Session Evidence Bundle v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "bundle_id",
+    "claim_scope",
+    "session_id",
+    "source_refs",
+    "qc",
+    "processing",
+    "metrics",
+    "distribution_support",
+    "uncertainty",
+    "unsupported_capabilities",
+    "limitations",
+    "event_correlation_id",
+    "evidence_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "bundle_id": {
+      "type": "string",
+      "pattern": "^seb_sha256_[0-9a-f]{64}$"
+    },
+    "claim_scope": {
+      "const": "RESEARCH_ONLY"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^src_sha256_[0-9a-f]{64}$"
+      }
+    },
+    "qc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signal_quality",
+        "supportability",
+        "evaluation_status",
+        "reason_codes",
+        "evidence_refs"
+      ],
+      "properties": {
+        "signal_quality": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "PASS",
+            "WARNING",
+            "FAIL",
+            null
+          ]
+        },
+        "supportability": {
+          "enum": [
+            "SUPPORTABLE",
+            "REVIEW_REQUIRED",
+            "BLOCKED",
+            "UNKNOWN",
+            "NOT_EVALUATED"
+          ]
+        },
+        "evaluation_status": {
+          "enum": [
+            "EVALUATED",
+            "NOT_EVALUATED",
+            "INSUFFICIENT_EVIDENCE"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "processing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_id",
+        "processing_run_id",
+        "processed_artifact_id",
+        "profile_id",
+        "profile_fingerprint",
+        "outcome"
+      ],
+      "properties": {
+        "manifest_id": {
+          "type": "string",
+          "pattern": "^pman_sha256_[0-9a-f]{64}$"
+        },
+        "processing_run_id": {
+          "type": "string",
+          "pattern": "^prun_sha256_[0-9a-f]{64}$"
+        },
+        "processed_artifact_id": {
+          "type": "string",
+          "pattern": "^part_sha256_[0-9a-f]{64}$"
+        },
+        "profile_id": {
+          "type": "string"
+        },
+        "profile_fingerprint": {
+          "type": "string"
+        },
+        "outcome": {
+          "const": "COMPLETED"
+        }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "metric_id",
+          "metric_name",
+          "status",
+          "value",
+          "units",
+          "reason_codes",
+          "manifest_id",
+          "evidence_class"
+        ],
+        "properties": {
+          "metric_id": {
+            "type": "string"
+          },
+          "metric_name": {
+            "enum": [
+              "RMS",
+              "MAV",
+              "MDF",
+              "MNF",
+              "ACTIVATION_TIMING",
+              "MFCV"
+            ]
+          },
+          "status": {
+            "enum": [
+              "AVAILABLE",
+              "NOT_AVAILABLE",
+              "UNSUPPORTED",
+              "RESEARCH_ONLY"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "units": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "manifest_id": {
+            "type": "string",
+            "pattern": "^pman_sha256_[0-9a-f]{64}$"
+          },
+          "evidence_class": {
+            "enum": [
+              "ANALYTICAL_RESEARCH",
+              "SYNTHETIC_MECHANICS_ONLY",
+              "NOT_VERIFIED"
+            ]
+          }
+        }
+      }
+    },
+    "distribution_support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "method_status",
+        "score",
+        "reason_codes"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "SUPPORTED",
+            "SHIFTED",
+            "UNKNOWN",
+            "NOT_EVALUATED"
+          ]
+        },
+        "method_status": {
+          "enum": [
+            "INFORMATIONAL_RESEARCH_ONLY",
+            "NOT_IMPLEMENTED",
+            "NOT_VALIDATED"
+          ]
+        },
+        "score": {
+          "type": "null"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uncertainty_type",
+        "calibration_status",
+        "rule_confidence_level",
+        "calibrated_probability",
+        "conformal_set",
+        "calibration_ref",
+        "abstention",
+        "abstention_reason"
+      ],
+      "properties": {
+        "uncertainty_type": {
+          "enum": [
+            "RULE_CONFIDENCE",
+            "CALIBRATED_PROBABILITY",
+            "CONFORMAL_SET",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "calibration_status": {
+          "enum": [
+            "NOT_APPLICABLE",
+            "CALIBRATED",
+            "NOT_VALIDATED"
+          ]
+        },
+        "rule_confidence_level": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "LOW",
+            "MODERATE",
+            "HIGH",
+            "UNKNOWN",
+            null
+          ]
+        },
+        "calibrated_probability": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "conformal_set": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "calibration_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "abstention": {
+          "type": "boolean"
+        },
+        "abstention_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "unsupported_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "capability",
+          "status",
+          "reason_codes"
+        ],
+        "properties": {
+          "capability": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "NOT_AVAILABLE",
+              "UNSUPPORTED",
+              "NOT_VERIFIED"
+            ]
+          },
+          "reason_codes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "event_correlation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

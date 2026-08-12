@@ -1,0 +1,11 @@
+capability,status,evidence,limitation
+DAY41_BANDPASS,PASS,analytical verification,research profile only
+DAY42_NOTCH,PASS,analytical verification,mains must be explicit
+DAY43_MASK_ENVELOPE,PASS,mask-not-delete tests,conservative whole-window exclusion
+DAY44_NORMALIZATION_ELIGIBILITY,PASS,eligibility tests,no numeric normalization
+DAY45_PROVENANCE,PASS,content-addressed lineage,persistent event store deferred
+DAY46_RMS_MAV,PASS,known-answer,no clinical interpretation
+DAY47_MDF_MNF,PASS,known spectral reference,no public raw distribution validation
+DAY48_ACTIVATION_TIMING,PASS_WITH_LIMITATIONS,synthetic known onset,no real aligned cohort
+DAY49_MFCV,PASS_WITH_LIMITATIONS,synthetic known delay,site geometry NOT_VERIFIED
+DAY50_EVIDENCE_BUNDLE,PASS,schema/referential integrity,no calibrated probability/OOD score
