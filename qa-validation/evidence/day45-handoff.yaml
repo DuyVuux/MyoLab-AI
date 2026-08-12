@@ -1,0 +1,31 @@
+current_day: DAY45
+next_day: DAY46
+dependency_type: HARD_HANDOFF
+day_status: PASS
+next_day_may_begin: true
+required_context:
+- path: packages/semg-core/semg_core/provenance/processing_manifest.py
+  purpose: processing lineage domain implementation
+  status: FOUND
+- path: packages/common-schemas/json/processing-manifest.schema.json
+  purpose: manifest schema
+  status: FOUND
+- path: qa-validation/evidence/day45-processing-lineage-evidence.json
+  purpose: reference convergence evidence
+  status: FOUND
+frozen_decisions:
+- RAW_IS_IMMUTABLE
+- MASK_NOT_DELETE
+- STEP_HASH_CHAIN_CONTIGUOUS
+- FAILED_NO_PROCESSED_ARTIFACT
+- EVENT_NO_SIGNAL_PAYLOAD
+- NO_LOCKED_SET_FITTING
+tests:
+  passed: 185
+  failed: 0
+blockers: []
+claim_boundaries:
+- PROCESSING_PROVENANCE_READY highest allowed
+- no clinical/site validation
+recommended_first_action: Define RMS/MAV registry so every metric stores DAY45 processing
+  manifest/run/window/unit provenance and refuses blocked/masked inputs.

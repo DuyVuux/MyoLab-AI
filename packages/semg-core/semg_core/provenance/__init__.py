@@ -1,0 +1,43 @@
+"""Provenance contracts for deterministic sEMG processing."""
+
+from .processing_manifest import (
+    BrokenLineageError,
+    CodeComponentRef,
+    CollectingProcessingEventSink,
+    ProcessingEvent,
+    ProcessingEventType,
+    ProcessingManifest,
+    ProcessingOutcome,
+    ProcessingProfileRef,
+    ProcessingStepRecord,
+    ProcessedArtifactRef,
+    RawSourceRef,
+    WindowRef,
+    build_lineage_graph,
+    build_processing_event,
+    build_processing_manifest,
+    canonical_sha256,
+    compute_processing_run_id,
+    validate_processing_manifest,
+)
+
+__all__ = [
+    'BrokenLineageError',
+    'CodeComponentRef',
+    'CollectingProcessingEventSink',
+    'ProcessingEvent',
+    'ProcessingEventType',
+    'ProcessingManifest',
+    'ProcessingOutcome',
+    'ProcessingProfileRef',
+    'ProcessingStepRecord',
+    'ProcessedArtifactRef',
+    'RawSourceRef',
+    'WindowRef',
+    'build_lineage_graph',
+    'build_processing_event',
+    'build_processing_manifest',
+    'canonical_sha256',
+    'compute_processing_run_id',
+    'validate_processing_manifest',
+]

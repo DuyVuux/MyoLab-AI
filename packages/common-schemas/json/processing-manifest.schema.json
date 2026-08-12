@@ -1,0 +1,435 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/processing-manifest.schema.json",
+  "title": "MyoLab-AI ProcessingManifest v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_contract_version",
+    "manifest_id",
+    "processing_run_id",
+    "outcome",
+    "correlation_id",
+    "source",
+    "window",
+    "profile",
+    "code_components",
+    "input_sha256",
+    "input_mask_sha256",
+    "native_fs_hz",
+    "processed_fs_hz",
+    "input_units",
+    "output_units",
+    "is_resampled",
+    "partition",
+    "evidence_tier",
+    "qc_eligibility_ref",
+    "normalization_eligibility_ref",
+    "fitting_performed",
+    "steps",
+    "final_artifact",
+    "reason_codes",
+    "reprocess_of_run_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "manifest_contract_version": {
+      "const": "0.1.0"
+    },
+    "manifest_id": {
+      "type": "string",
+      "pattern": "^pman_sha256_[0-9a-f]{64}$"
+    },
+    "processing_run_id": {
+      "type": "string",
+      "pattern": "^prun_sha256_[0-9a-f]{64}$"
+    },
+    "outcome": {
+      "enum": [
+        "COMPLETED",
+        "FAILED"
+      ]
+    },
+    "correlation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "window": {
+      "$ref": "#/$defs/window"
+    },
+    "profile": {
+      "$ref": "#/$defs/profile"
+    },
+    "code_components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/code"
+      }
+    },
+    "input_sha256": {
+      "$ref": "#/$defs/hash"
+    },
+    "input_mask_sha256": {
+      "$ref": "#/$defs/hash"
+    },
+    "native_fs_hz": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "processed_fs_hz": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "exclusiveMinimum": 0
+    },
+    "input_units": {
+      "type": "string",
+      "minLength": 1
+    },
+    "output_units": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "is_resampled": {
+      "type": "boolean"
+    },
+    "partition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_tier": {
+      "type": "string",
+      "minLength": 1
+    },
+    "qc_eligibility_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "normalization_eligibility_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fitting_performed": {
+      "const": false
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/step"
+      }
+    },
+    "final_artifact": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/artifact"
+        }
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "reprocess_of_run_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^prun_sha256_[0-9a-f]{64}$"
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "sha256",
+        "immutable_raw"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^src_sha256_[0-9a-f]{64}$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "immutable_raw": {
+          "const": true
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "window_id",
+        "session_id",
+        "channel_id",
+        "start_sample",
+        "end_sample_exclusive"
+      ],
+      "properties": {
+        "window_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_sample": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_sample_exclusive": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile_id",
+        "version",
+        "config_fingerprint",
+        "claim_scope",
+        "site_binding"
+      ],
+      "properties": {
+        "profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "config_fingerprint": {
+          "type": "string",
+          "pattern": "^(pprof|precipe)_sha256_[0-9a-f]{64}$"
+        },
+        "claim_scope": {
+          "const": "RESEARCH_ONLY"
+        },
+        "site_binding": {
+          "type": "null"
+        }
+      }
+    },
+    "code": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_id",
+        "version",
+        "artifact_sha256"
+      ],
+      "properties": {
+        "component_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sequence",
+        "step_id",
+        "processor",
+        "processor_version",
+        "method",
+        "parameters",
+        "config_sha256",
+        "input_sha256",
+        "output_sha256",
+        "input_mask_sha256",
+        "output_mask_sha256",
+        "status",
+        "effect",
+        "reference_ids"
+      ],
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "step_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "processor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "processor_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "config_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "input_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "output_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "input_mask_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "output_mask_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "status": {
+          "const": "COMPLETED"
+        },
+        "effect": {
+          "type": "object"
+        },
+        "reference_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "output_sha256",
+        "mask_sha256",
+        "sample_count",
+        "units"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^part_sha256_[0-9a-f]{64}$"
+        },
+        "output_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "mask_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "sample_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "units": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "FAILED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "processed_fs_hz": {
+            "type": "null"
+          },
+          "output_units": {
+            "type": "null"
+          },
+          "steps": {
+            "maxItems": 0
+          },
+          "final_artifact": {
+            "type": "null"
+          },
+          "reason_codes": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "COMPLETED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "processed_fs_hz": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "output_units": {
+            "type": "string",
+            "minLength": 1
+          },
+          "steps": {
+            "minItems": 1
+          },
+          "final_artifact": {
+            "$ref": "#/$defs/artifact"
+          },
+          "reason_codes": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}

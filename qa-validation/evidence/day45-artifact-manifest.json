@@ -1,0 +1,137 @@
+{
+  "artifacts": [
+    {
+      "path": "configs/processing/day45-convergence-recipe.v0.1.yaml",
+      "sha256": "ea741166151abe407837e31957b7d61ac30cbba50398d6c56c21facfbc533192",
+      "size_bytes": 1727
+    },
+    {
+      "path": "data-platform/contracts/processing-manifest.v0.1.yaml",
+      "sha256": "e903fc5b933c852fb2f05befe6abe611ecc72d63269e4e6d3f87787dd0089902",
+      "size_bytes": 2028
+    },
+    {
+      "path": "data-platform/events/processing-event-emission-contract.v0.1.yaml",
+      "sha256": "b36268b044061dfbcae30c9812340cb5054a1bc395ce44dbff0c3912d9dac834",
+      "size_bytes": 1499
+    },
+    {
+      "path": "packages/common-schemas/json/processing-manifest.schema.json",
+      "sha256": "791ec265e184165d27357905d0e909d653ea2d6c0b4315e9fbf5e6b5bbbb855d",
+      "size_bytes": 8891
+    },
+    {
+      "path": "packages/semg-core/semg_core/provenance/__init__.py",
+      "sha256": "7ae0cffbcf10bc83c75370dd5f71d273c778f4da3fe4a3ae2153177b3c9355df",
+      "size_bytes": 1063
+    },
+    {
+      "path": "packages/semg-core/semg_core/provenance/processing_manifest.py",
+      "sha256": "5f412f74bb961e1fc7854cf49ffd2cca29f1addf82ce7999583b1813b24c1616",
+      "size_bytes": 27353
+    },
+    {
+      "path": "qa-validation/automated-tests/processing/test_processing_lineage.py",
+      "sha256": "fa0ee951e1b357d21371520a54012c6d27d1480e3177985f1e7ab6d8436e048d",
+      "size_bytes": 24277
+    },
+    {
+      "path": "qa-validation/evidence/day45-processing-lineage-evidence.json",
+      "sha256": "11269393598d2ee0d035f9db13907c73c99c0580d1d03c7c27919fd1ba082d39",
+      "size_bytes": 17800
+    },
+    {
+      "path": "qa-validation/evidence/day45-input-manifest.yaml",
+      "sha256": "0e0fbdc730ef574265409d0fbbed901c1dfb758481cd08876551c564103377c9",
+      "size_bytes": 1341
+    },
+    {
+      "path": "qa-validation/evidence/day45-output-manifest.yaml",
+      "sha256": "12ea8c2713f0b3ebca41c43d63c81c34aba1ed13ad562236459b1ba3ad7dd522",
+      "size_bytes": 1559
+    },
+    {
+      "path": "qa-validation/evidence/day45-handoff.yaml",
+      "sha256": "46dd6ece1206bf127acac98b44324a8c321924e3ac5619aa6c6b8cb76a07f518",
+      "size_bytes": 972
+    },
+    {
+      "path": "qa-validation/evidence/day45-validation-report.json",
+      "sha256": "a66c2eb4a02141f2d0cfcc8dfacf455104b05ae57eeb8f917de63b5c875383db",
+      "size_bytes": 1032
+    },
+    {
+      "path": "qa-validation/evidence/day45-quality-self-audit.md",
+      "sha256": "589c73092bee877f8352de30468fe709912f40c23c107271e21d518c4e42a618",
+      "size_bytes": 1306
+    },
+    {
+      "path": "qa-validation/evidence/day45-peer-review.template.yaml",
+      "sha256": "12d2fb36452a70e6473a1a4ed13ed8609be12607d1a00fbaaf622377746fbebe",
+      "size_bytes": 497
+    },
+    {
+      "path": "qa-validation/requirements/day45-acceptance-criteria.md",
+      "sha256": "ade3c7d18d3339168192f627bfc1d9e87d6f5184e138b749cee4a6667650e7ec",
+      "size_bytes": 1053
+    },
+    {
+      "path": "qa-validation/traceability/day45-requirement-impact.yaml",
+      "sha256": "5aa1129c4550737ccafa2afe1cdd8e938a503cb0aff94945a7c3a12968568497",
+      "size_bytes": 1004
+    },
+    {
+      "path": "scripts/dev/day45_evidence_runner.py",
+      "sha256": "0feb440f2ccb2fdb9a5999f434ab59c5d531965fbe7e772e56d4bfa23b711561",
+      "size_bytes": 13367
+    },
+    {
+      "path": "scripts/dev/day45_contract_validator.py",
+      "sha256": "d3b03b0b31237256fbef2fdcbfde932e31cb10e382d9600a0ab4aabd79aa6677",
+      "size_bytes": 1971
+    },
+    {
+      "path": "scripts/dev/check_day45_artifacts.py",
+      "sha256": "f3bc423fa0e0c7f365d9dd180bfe2ce3204ae806b397a6e6035097835acd1b28",
+      "size_bytes": 1142
+    },
+    {
+      "path": "scripts/dev/run_day45_checks.sh",
+      "sha256": "934d2e85f196fa1b67a46d813c5d2e02781cad5f99b1a1a9c38ab7395af82b8e",
+      "size_bytes": 860
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_EXECUTION_PLAN.md",
+      "sha256": "737f7f1a5408012410b25e12b5cc9eb90a55e96cc6f7f0ceacb8766569d6016c",
+      "size_bytes": 36292
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_FEYNMAN_LEARNING_GUIDE.md",
+      "sha256": "5be88205f893ba6105ecd206fb925b11a846c2dadc6a3ac7e999a5b88dddf20c",
+      "size_bytes": 24907
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_CLAIM_BOUNDARY.md",
+      "sha256": "bb702fe975c96a3178e6271ccb699b0378278661e2d6f387ccdfc1d34d297c59",
+      "size_bytes": 535
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_INTEGRATION_NOTES.md",
+      "sha256": "fbac691d4adfaedf59793dbf9a36203f0e3a65487575f8b19d866a2003fbdd67",
+      "size_bytes": 642
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_OPEN_QUESTIONS_AND_DECISIONS.md",
+      "sha256": "32c50e736656c27ccfd0c2dbc7854a18fba9fcc323b0890e633741d687895a63",
+      "size_bytes": 544
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_TO_DAY46_HANDOFF.md",
+      "sha256": "5c5e0414f1ef16c9827b5c762377cf0dcb1ec7f48ae3560f6dc157331046424b",
+      "size_bytes": 3996
+    }
+  ],
+  "count": 26,
+  "day": "DAY45",
+  "scope": "MANAGED_DAY45_REPO_ARTIFACTS"
+}

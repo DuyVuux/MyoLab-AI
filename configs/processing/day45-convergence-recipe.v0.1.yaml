@@ -1,0 +1,47 @@
+schema_version: '0.1'
+recipe_id: day45-research-convergence-replay-v0.1
+version: 0.1.0
+status: RESEARCH_INTEGRATION_TEST_ONLY
+claim_scope: RESEARCH_ONLY
+site_binding: null
+base_contract:
+  profile_catalog: configs/processing/preprocessing-profiles.v0.1.yaml
+  profile_id: research-native-grid-preserve-v0.1
+  rule: additive convergence recipe; does not mutate or promote DAY40 active profile
+partition_policy:
+  fitting_allowed: false
+  benchmark_locked_fitting_allowed: false
+native_grid:
+  resampling_enabled: false
+step_order:
+- BANDPASS
+- NOTCH
+- METADATA_MASK
+- RECTIFICATION_SMOOTHING
+normalization:
+  compute_numeric_value: false
+  eligibility_only: true
+  method: NONE
+steps:
+  BANDPASS:
+    config_ref: configs/processing/bandpass.research-v0.1.yaml
+    profile_id: research-bandpass-analytical-20-400-v0.1
+    parameter_authority: DAY41_RESEARCH_ANALYTICAL
+  NOTCH:
+    config_ref: configs/processing/notch.v0.1.yaml
+    profile_id: research-notch-50hz-q30-v0.1
+    parameter_authority: SYNTHETIC_EXPLICIT_50HZ_CONTEXT_ONLY
+  METADATA_MASK:
+    config_ref: configs/processing/envelope.v0.1.yaml
+    policy: MASK_NOT_DELETE
+    parameter_authority: DAY43_FROZEN
+  RECTIFICATION_SMOOTHING:
+    config_ref: configs/processing/envelope.v0.1.yaml
+    profile_id: research-envelope-ma50-v0.1
+    parameter_authority: DAY43_RESEARCH_EXAMPLE
+provenance:
+  processing_manifest_contract: data-platform/contracts/processing-manifest.v0.1.yaml
+  event_contract: data-platform/events/processing-event-emission-contract.v0.1.yaml
+  source_ledger_contract: DAY11_SOURCE_LEDGER
+  event_style_ref: DAY19_INGESTION_EVENT_EMISSION_V0_1
+config_fingerprint: precipe_sha256_07dfd4b38537be69dd6d6435c92a1923f1b928a095f5de385cbb83bc1b9d7401

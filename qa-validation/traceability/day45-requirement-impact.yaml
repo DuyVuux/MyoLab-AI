@@ -1,0 +1,28 @@
+day: DAY45
+claim_scope: RESEARCH_ONLY
+requirements:
+  FR-051:
+    status: IMPLEMENTED_AND_VALIDATED_RESEARCH
+    evidence: processing step records include method, parameters, version, input/output hashes
+  FR-053:
+    status: REVALIDATED
+    evidence: integrated convergence test verifies raw input is unchanged
+  FR-057:
+    status: CONTRACT_READY
+    evidence: manifest preserves raw and processed linkage for later side-by-side viewer
+  NFR-001:
+    status: IMPLEMENTED_AND_VALIDATED_RESEARCH
+    evidence: content-addressed run/manifest IDs and deterministic replay
+  NFR-002:
+    status: IMPLEMENTED_AND_VALIDATED_RESEARCH
+    evidence: exact source/window/profile/code/step lineage
+  NFR-003:
+    status: REVALIDATED
+    evidence: immutable raw source and hash chain invariants
+  NFR-011:
+    status: IMPLEMENTED_AND_VALIDATED_RESEARCH
+    evidence: profile, processor and manifest versions recorded
+  ICR-005:
+    status: SATISFIED_FOR_DAY45_SCOPE
+  ICR-006:
+    status: SATISFIED_FOR_DAY45_SCOPE

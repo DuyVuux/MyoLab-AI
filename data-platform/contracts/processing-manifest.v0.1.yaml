@@ -1,0 +1,61 @@
+contract_id: PROCESSING_MANIFEST_V0_1
+version: 0.1.0
+scope: RESEARCH_PROCESSING_PROVENANCE
+claim_scope: RESEARCH_ONLY
+source_of_truth_module: packages/semg-core/semg_core/provenance/processing_manifest.py
+formal_schema: packages/common-schemas/json/processing-manifest.schema.json
+identity:
+  hash_algorithm: sha256
+  processing_run_id_prefix: prun_sha256_
+  processing_manifest_id_prefix: pman_sha256_
+  processed_artifact_id_prefix: part_sha256_
+  exact_retry_same_request_same_run_id: true
+required_lineage:
+  raw_source:
+    fields: [source_id, sha256, immutable_raw]
+    rule: source_id must equal src_sha256_<sha256>
+  window:
+    fields: [window_id, session_id, channel_id, start_sample, end_sample_exclusive]
+  profile:
+    fields: [profile_id, version, config_fingerprint, claim_scope, site_binding]
+  code_components:
+    fields: [component_id, version, artifact_sha256]
+  processing_step:
+    fields:
+      - sequence
+      - step_id
+      - processor
+      - processor_version
+      - method
+      - parameters
+      - config_sha256
+      - input_sha256
+      - output_sha256
+      - input_mask_sha256
+      - output_mask_sha256
+      - status
+      - effect
+  final_artifact:
+    fields: [artifact_id, output_sha256, mask_sha256, sample_count, units]
+invariants:
+  - RAW_IS_IMMUTABLE
+  - SOURCE_ID_HASH_MUST_MATCH
+  - STEP_HASH_CHAIN_MUST_BE_CONTIGUOUS
+  - STEP_MASK_HASH_CHAIN_MUST_BE_CONTIGUOUS
+  - STEP_CONFIG_HASH_EQUALS_CANONICAL_PARAMETER_HASH
+  - COMPLETED_REQUIRES_FINAL_ARTIFACT
+  - FAILED_MUST_NOT_HAVE_PROCESSED_LOOKING_ARTIFACT
+  - NO_LOCKED_SET_FITTING
+  - SITE_BINDING_MUST_BE_NULL
+  - CLAIM_SCOPE_RESEARCH_ONLY
+  - GRID_CHANGE_REQUIRES_RESAMPLING_DECLARATION
+privacy:
+  raw_waveform_in_manifest: forbidden
+  source_path_in_manifest: forbidden
+  patient_identifiers: forbidden
+reproducibility:
+  exact_config_parameters_recorded: true
+  code_component_hashes_recorded: true
+  input_output_hashes_recorded: true
+  mask_lineage_recorded: true
+  normalization_reference_or_eligibility_ref_recorded: true

@@ -1,0 +1,45 @@
+day: DAY45
+task: Raw-to-Processed Provenance Chain & Processing Events
+execution_allowed: true
+source_of_truth:
+- MyoLab-AI DAY32–90 roadmap v2.0 DAY45
+- DAY40 frozen processing contract
+- DAY11 source ledger
+- DAY19 event contract
+- DAY41–44 PASS outputs
+direct_dependencies:
+- day: DAY11
+  artifact: services/signal-ingestion-service/src/provenance/source_ledger.py
+  status: FOUND
+- day: DAY19
+  artifact: data-platform/events/ingestion-event-emission-contract.v0.1.yaml
+  status: FOUND
+- day: DAY40
+  artifact: packages/semg-core/semg_core/processing/profile_contract.py
+  status: FOUND
+- day: DAY41
+  artifact: packages/semg-core/semg_core/processing/bandpass.py
+  status: FOUND
+- day: DAY42
+  artifact: packages/semg-core/semg_core/processing/notch.py
+  status: FOUND
+- day: DAY43
+  artifact: packages/semg-core/semg_core/processing/masking.py + envelope.py
+  status: FOUND
+- day: DAY44
+  artifact: services/quality-gate-service/src/application/normalization_eligibility.py
+  status: FOUND
+frozen_contracts:
+- RAW_IS_IMMUTABLE
+- MASK_NOT_DELETE
+- NO_SILENT_DEFAULT_MAINS_FREQUENCY
+- NULL_WITH_REASON
+- NO_LOCKED_SET_FITTING
+- RESEARCH_ONLY
+known_limitations:
+- zero-phase is acausal
+- normalization eligibility only
+- persistent event store not implemented
+claim_boundaries:
+- research prototype only
+- no site/clinical validation

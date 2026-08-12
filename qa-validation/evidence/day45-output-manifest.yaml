@@ -1,0 +1,44 @@
+day: DAY45
+status: PASS
+highest_allowed_claim: PROCESSING_PROVENANCE_READY
+outputs:
+- data-platform/contracts/processing-manifest.v0.1.yaml
+- data-platform/events/processing-event-emission-contract.v0.1.yaml
+- packages/semg-core/semg_core/provenance/processing_manifest.py
+- packages/common-schemas/json/processing-manifest.schema.json
+- configs/processing/day45-convergence-recipe.v0.1.yaml
+tests:
+  day45_focused:
+    passed: 25
+    failed: 0
+  day40_44_processing_regression:
+    passed: 78
+    failed: 0
+  day11_day19_provenance_event_regression:
+    passed: 82
+    failed: 0
+  total_relevant_executed:
+    passed: 185
+    failed: 0
+evidence:
+  processing_run_id: prun_sha256_203ffa82c3769d184e1b7f92374e6483eae453a8d7d580704eae2df3860f3547
+  manifest_id: pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c
+  artifact_id: part_sha256_590f2f1296ba85d3254dfa22eca526c73fff486a95897e5c2eb39621467444b7
+  recipe_fingerprint: precipe_sha256_07dfd4b38537be69dd6d6435c92a1923f1b928a095f5de385cbb83bc1b9d7401
+  processing_event_types: 4
+frozen_decisions:
+- content-addressed run identity
+- unbroken step/mask hash lineage
+- failed manifest has no artifact
+- events carry references not waveform
+- persistent event store deferred DAY53
+provisional_decisions:
+- DAY45 convergence recipe remains RESEARCH_INTEGRATION_TEST_ONLY
+limitations:
+- no site/clinical validation
+- no numeric normalization
+- no persistent event store
+- zero-phase remains offline/acausal
+blockers: []
+downstream_ready_for:
+- DAY46 — Metric Registry v0.1 RMS & MAV

@@ -1,0 +1,33 @@
+{
+  "day": "DAY45",
+  "status": "PASS",
+  "claim": "PROCESSING_PROVENANCE_READY",
+  "tests": {
+    "focused": 25,
+    "processing_regression": 78,
+    "provenance_event_regression": 82,
+    "total": 185,
+    "failed": 0
+  },
+  "evidence": {
+    "processing_run_id": "prun_sha256_203ffa82c3769d184e1b7f92374e6483eae453a8d7d580704eae2df3860f3547",
+    "manifest_id": "pman_sha256_a5ff54249952f465a2df0d5a45bf2379f708bce4cc266cb2bc54732ca5e0b71c",
+    "artifact_id": "part_sha256_590f2f1296ba85d3254dfa22eca526c73fff486a95897e5c2eb39621467444b7",
+    "recipe_fingerprint": "precipe_sha256_07dfd4b38537be69dd6d6435c92a1923f1b928a095f5de385cbb83bc1b9d7401"
+  },
+  "safety": {
+    "raw_immutable": true,
+    "mask_lineage": true,
+    "failed_false_success_blocked": true,
+    "event_signal_payload_forbidden": true,
+    "locked_fitting": false
+  },
+  "not_performed": [
+    "clinical_validation",
+    "site_validation",
+    "expert_validation",
+    "public_raw_processing",
+    "persistent_event_store",
+    "numeric_normalization"
+  ]
+}

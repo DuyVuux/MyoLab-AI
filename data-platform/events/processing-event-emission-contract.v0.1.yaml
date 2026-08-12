@@ -1,0 +1,56 @@
+contract_id: PROCESSING_EVENT_EMISSION_V0_1
+version: 0.1.0
+scope: DAY45_PROCESSING_LINEAGE_EVENTS
+persistent_event_store_implemented: false
+persistent_event_store_target_day: 53
+allowed_event_types:
+  - PROCESSING_STARTED
+  - PROCESSING_COMPLETED
+  - PROCESSING_FAILED
+  - REPROCESS_TRIGGERED
+required_fields:
+  - event_id
+  - event_type
+  - processing_run_id
+  - manifest_contract_version
+  - correlation_id
+  - session_id
+  - source_refs
+  - profile_id
+  - profile_fingerprint
+  - emitted_at_utc
+  - sequence
+privacy:
+  raw_payload: forbidden
+  waveform_samples: forbidden
+  source_path: forbidden
+  patient_name: forbidden
+  mrn: forbidden
+  free_text_clinical_note: forbidden
+  source_reference: sha256_source_id_only
+semantics:
+  PROCESSING_STARTED:
+    terminal: false
+    processing_manifest_id: null
+    outcome_status: null
+  PROCESSING_COMPLETED:
+    terminal: true
+    requires_manifest: true
+    requires_status: COMPLETED
+    reason_code: null
+  PROCESSING_FAILED:
+    terminal: true
+    requires_manifest: true
+    requires_status: FAILED
+    reason_code_required: true
+  REPROCESS_TRIGGERED:
+    terminal: false
+    requires_reprocess_of_run_id: true
+idempotency:
+  event_id_deterministic_from_run_type_sequence_correlation: true
+  duplicate_event_id_forbidden_in_reference_sink: true
+safety:
+  failure_manifest_cannot_have_processed_artifact: true
+  event_must_not_embed_signal: true
+  event_must_reference_manifest_contract_version: true
+  persistent_storage_claim: NOT_IMPLEMENTED
