@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "target_freq_hz": 128.0,
+  "mdf_hz": 128.0,
+  "mnf_hz": 128.0,
+  "fs_hz": 2048.0,
+  "psd_fingerprint": "psd_sha256_e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "clinical_evidence": false
+}

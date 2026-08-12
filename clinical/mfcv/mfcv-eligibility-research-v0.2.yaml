@@ -1,0 +1,14 @@
+schema_version: "0.2"
+claim_scope: RESEARCH_ONLY
+prerequisites:
+  min_spatial_channels: 2
+  requires_known_ied: true
+  requires_known_order: true
+  requires_same_muscle_region: true
+  requires_verified_orientation: true
+  requires_verified_sync: true
+  requires_unrectified_signal: true
+research_fixture_thresholds:
+  min_peak_ncc: 0.5
+  max_pair_cv: 0.35
+  physical_sanity_range_m_per_s: [0.5, 20.0]

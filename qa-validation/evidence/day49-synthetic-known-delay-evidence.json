@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "mfcv_status": "MFCV_RESEARCH_SUPPORTED",
+  "velocity_m_per_s": 4.0,
+  "expected_velocity_m_per_s": 4.0,
+  "fs_hz": 2000.0,
+  "channel_count": 3,
+  "ied_m": 0.004,
+  "clinical_evidence": false
+}

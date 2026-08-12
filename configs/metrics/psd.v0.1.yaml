@@ -1,0 +1,14 @@
+schema_version: "0.1"
+claim_scope: RESEARCH_ONLY
+psd_defaults:
+  window: hann
+  detrend: constant
+  fmin_hz: 0.0
+  scaling: density
+metrics:
+  MDF:
+    definition: Median power frequency dividing Welch PSD integral into equal halves
+    unit_rule: Hz
+  MNF:
+    definition: Mean power frequency (spectral centroid of Welch PSD)
+    unit_rule: Hz

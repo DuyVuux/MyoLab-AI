@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "rms": 3.5355339059327378,
+  "mav": 3.5,
+  "units": "uV",
+  "metric_ids": [
+    "metric_sha256_24f061b7bbebbd85175c208ba365803055cf9be81aa7b0b660854bfa96912dca",
+    "metric_sha256_29ba00be62ad8dfc0a9e2a917afddcc6127fed8337d6839b57cdb3040fec2ead"
+  ],
+  "clinical_evidence": false,
+  "distribution_monitoring": "NOT_EVALUATED_NO_APPROVED_REFERENCE_COHORT"
+}

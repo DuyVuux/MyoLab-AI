@@ -1,0 +1,4 @@
+dataset_id,geometry_type,channel_count,ied_m,order_known,orientation_status,sync_status,mfcv_status
+ds_synthetic_1d,ORDERED_1D_PATH,3,0.004,true,VERIFIED,VERIFIED,MFCV_RESEARCH_SUPPORTED
+ds_single_pair,ORDERED_1D_PATH,2,0.004,true,VERIFIED,VERIFIED,MFCV_RESEARCH_SUPPORTED_WITH_WARNING
+ds_unverified_orientation,ORDERED_1D_PATH,3,0.004,true,UNKNOWN,VERIFIED,MFCV_UNSUPPORTED

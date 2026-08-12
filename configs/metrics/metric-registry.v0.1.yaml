@@ -1,0 +1,14 @@
+schema_version: "0.1"
+claim_scope: RESEARCH_ONLY
+metrics:
+  RMS:
+    formula_version: rms-v1
+    definition: sqrt(mean(x^2)) over an eligible fully-unmasked finite window
+    unit_rule: same_as_input_amplitude_unit
+  MAV:
+    formula_version: mav-v1
+    definition: mean(abs(x)) over an eligible fully-unmasked finite window
+    unit_rule: same_as_input_amplitude_unit
+distribution_monitoring:
+  status: INFORMATIONAL_RESEARCH_ONLY
+  diagnostic_thresholds: null

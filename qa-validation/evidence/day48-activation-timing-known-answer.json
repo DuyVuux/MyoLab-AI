@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "onset_sample": 150.0,
+  "onset_time_s": 0.15,
+  "relative_to_event_s": 0.05,
+  "fs_hz": 1000.0,
+  "event_sample": 100,
+  "threshold": 1.0,
+  "min_consecutive_samples": 5,
+  "filter_delay_samples": 0.0,
+  "clinical_evidence": false
+}

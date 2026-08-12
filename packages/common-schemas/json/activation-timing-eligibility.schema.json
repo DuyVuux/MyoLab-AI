@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semg-fatigue.org/schemas/activation-timing-eligibility.v0.1.json",
+  "title": "ActivationTimingEligibilityContract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "claim_scope",
+    "requires_explicit_threshold",
+    "requires_verified_sync"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "0.1" },
+    "claim_scope": { "type": "string", "const": "RESEARCH_ONLY" },
+    "requires_explicit_threshold": { "type": "boolean", "const": true },
+    "requires_verified_sync": { "type": "boolean", "const": true }
+  },
+  "additionalProperties": false
+}
