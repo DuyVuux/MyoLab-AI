@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "day": "DAY40",
+  "task": "Protocol-Specific Preprocessing Profile Contract",
+  "claim_scope": "RESEARCH_ONLY",
+  "engineering_validation": "PASS",
+  "focused_tests": {
+    "passed": 46,
+    "failed": 0
+  },
+  "upstream_regression": {
+    "passed": 863,
+    "failed": 0,
+    "deselected_historical_guards": 1
+  },
+  "day38_frozen_hashes": {
+    "verified": 15,
+    "total": 15
+  },
+  "active_research_profiles": 1,
+  "enabled_unverified_transforms": 0,
+  "site_specific_assumptions": 0,
+  "site_profile_status": "NOT_AVAILABLE",
+  "site_threshold_status": "NOT_VERIFIED",
+  "public_raw_processing": "NOT_PERFORMED",
+  "clinical_validation": "NOT_PERFORMED",
+  "expert_validation": "NOT_PERFORMED",
+  "bandpass_analytical_validation": "NOT_PERFORMED_DAY41",
+  "notch_analytical_validation": "NOT_PERFORMED_DAY42",
+  "final_status": "PASS",
+  "highest_allowed_claim": "PROCESSING_PROFILE_CONTRACT_READY",
+  "artifact_integrity": {
+    "passed": 21,
+    "failed": 0
+  },
+  "master_runner": "PASS"
+}

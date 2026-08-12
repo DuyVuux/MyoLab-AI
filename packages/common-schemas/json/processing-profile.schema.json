@@ -1,0 +1,385 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://myolab.local/schemas/processing-profile.schema.json",
+  "title": "MyoLab-AI DAY40 Processing Profile Catalog v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "catalog_id",
+    "catalog_version",
+    "claim_scope",
+    "fingerprint_algorithm",
+    "profiles"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "catalog_id": {"const": "myolab-processing-profiles"},
+    "catalog_version": {"type": "string", "pattern": "^0\\.[0-9]+\\.[0-9]+$"},
+    "claim_scope": {"const": "RESEARCH_ONLY"},
+    "fingerprint_algorithm": {"const": "sha256-canonical-json-v1"},
+    "profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/profile"}
+    }
+  },
+  "$defs": {
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sampling_grid", "spectral_content", "amplitude_scale", "timing", "mask"],
+      "properties": {
+        "sampling_grid": {"enum": ["NONE", "CHANGED"]},
+        "spectral_content": {"enum": ["NONE", "CHANGED"]},
+        "amplitude_scale": {"enum": ["NONE", "CHANGED"]},
+        "timing": {"enum": ["NONE", "CHANGED_OR_DELAYED"]},
+        "mask": {"enum": ["PRESERVED", "UPDATED_WITH_PROVENANCE"]}
+      }
+    },
+    "stepBase": {
+      "type": "object",
+      "required": [
+        "step_id", "step_version", "enabled", "implementation_status",
+        "parameter_origin", "effect"
+      ]
+    },
+    "bandpass": {
+      "allOf": [
+        {"$ref": "#/$defs/stepBase"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "step_id": {"const": "BANDPASS"},
+            "step_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+            "enabled": {"type": "boolean"},
+            "implementation_status": {"enum": ["CONTRACT_ONLY", "ANALYTICALLY_VERIFIED", "IMPLEMENTED"]},
+            "parameter_origin": {"enum": ["NOT_APPLICABLE", "EXPLICIT_PROFILE", "ANALYTICAL_RESEARCH"]},
+            "method": {"type": ["string", "null"], "enum": ["BUTTERWORTH_SOS", "FIR_LINEAR_PHASE", null]},
+            "low_cut_hz": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "high_cut_hz": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "filter_order": {"type": ["integer", "null"], "minimum": 1},
+            "phase_mode": {"type": ["string", "null"], "enum": ["CAUSAL", "ZERO_PHASE_OFFLINE", "LINEAR_PHASE", null]},
+            "effect": {"$ref": "#/$defs/effect"}
+          },
+          "allOf": [
+            {
+              "if": {"properties": {"enabled": {"const": true}}, "required": ["enabled"]},
+              "then": {
+                "required": ["method", "low_cut_hz", "high_cut_hz", "filter_order", "phase_mode"],
+                "properties": {
+                  "method": {"type": "string"},
+                  "low_cut_hz": {"type": "number"},
+                  "high_cut_hz": {"type": "number"},
+                  "filter_order": {"type": "integer"},
+                  "phase_mode": {"type": "string"}
+                }
+              }
+            },
+            {
+              "if": {"properties": {"enabled": {"const": false}}, "required": ["enabled"]},
+              "then": {
+                "properties": {
+                  "method": {"type": "null"},
+                  "low_cut_hz": {"type": "null"},
+                  "high_cut_hz": {"type": "null"},
+                  "filter_order": {"type": "null"},
+                  "phase_mode": {"type": "null"},
+                  "parameter_origin": {"const": "NOT_APPLICABLE"}
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "notch": {
+      "allOf": [
+        {"$ref": "#/$defs/stepBase"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "step_id": {"const": "NOTCH"},
+            "step_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+            "enabled": {"type": "boolean"},
+            "implementation_status": {"enum": ["CONTRACT_ONLY", "ANALYTICALLY_VERIFIED", "IMPLEMENTED"]},
+            "parameter_origin": {"enum": ["NOT_APPLICABLE", "EXPLICIT_PROFILE", "ANALYTICAL_RESEARCH"]},
+            "method": {"type": ["string", "null"], "enum": ["IIR_NOTCH", "FIR_BANDSTOP", null]},
+            "mains_frequency_hz": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "q_factor": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "bandwidth_hz": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "effect": {"$ref": "#/$defs/effect"}
+          },
+          "allOf": [
+            {
+              "if": {"properties": {"enabled": {"const": true}}, "required": ["enabled"]},
+              "then": {
+                "required": ["method", "mains_frequency_hz"],
+                "properties": {
+                  "method": {"type": "string"},
+                  "mains_frequency_hz": {"type": "number"}
+                },
+                "oneOf": [
+                  {"required": ["q_factor"], "properties": {"q_factor": {"type": "number"}, "bandwidth_hz": {"type": "null"}}},
+                  {"required": ["bandwidth_hz"], "properties": {"bandwidth_hz": {"type": "number"}, "q_factor": {"type": "null"}}}
+                ]
+              }
+            },
+            {
+              "if": {"properties": {"enabled": {"const": false}}, "required": ["enabled"]},
+              "then": {
+                "properties": {
+                  "method": {"type": "null"},
+                  "mains_frequency_hz": {"type": "null"},
+                  "q_factor": {"type": "null"},
+                  "bandwidth_hz": {"type": "null"},
+                  "parameter_origin": {"const": "NOT_APPLICABLE"}
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "resampling": {
+      "allOf": [
+        {"$ref": "#/$defs/stepBase"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "step_id": {"const": "RESAMPLE"},
+            "step_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+            "enabled": {"type": "boolean"},
+            "implementation_status": {"enum": ["CONTRACT_ONLY", "ANALYTICALLY_VERIFIED", "IMPLEMENTED"]},
+            "parameter_origin": {"enum": ["NOT_APPLICABLE", "EXPLICIT_PROFILE", "ANALYTICAL_RESEARCH"]},
+            "target_fs_hz": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "method": {"type": ["string", "null"], "enum": ["POLYPHASE_FIR", "FFT_RESAMPLE", null]},
+            "anti_aliasing_policy": {"type": ["string", "null"], "enum": ["EXPLICIT_FIR_REQUIRED_FOR_DECIMATION", "NOT_APPLICABLE_FOR_UPSAMPLING", null]},
+            "effect": {"$ref": "#/$defs/effect"}
+          },
+          "allOf": [
+            {
+              "if": {"properties": {"enabled": {"const": true}}, "required": ["enabled"]},
+              "then": {
+                "required": ["target_fs_hz", "method", "anti_aliasing_policy"],
+                "properties": {"target_fs_hz": {"type": "number"}, "method": {"type": "string"}, "anti_aliasing_policy": {"type": "string"}}
+              }
+            },
+            {
+              "if": {"properties": {"enabled": {"const": false}}, "required": ["enabled"]},
+              "then": {
+                "properties": {
+                  "target_fs_hz": {"type": "null"},
+                  "method": {"type": "null"},
+                  "anti_aliasing_policy": {"type": "null"},
+                  "parameter_origin": {"const": "NOT_APPLICABLE"}
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "rectification": {
+      "allOf": [
+        {"$ref": "#/$defs/stepBase"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "step_id": {"const": "RECTIFICATION"},
+            "step_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+            "enabled": {"type": "boolean"},
+            "implementation_status": {"enum": ["CONTRACT_ONLY", "ANALYTICALLY_VERIFIED", "IMPLEMENTED"]},
+            "parameter_origin": {"enum": ["NOT_APPLICABLE", "EXPLICIT_PROFILE", "ANALYTICAL_RESEARCH"]},
+            "method": {"enum": ["NONE", "FULL_WAVE", "HALF_WAVE"]},
+            "effect": {"$ref": "#/$defs/effect"}
+          },
+          "allOf": [
+            {"if": {"properties": {"enabled": {"const": true}}}, "then": {"properties": {"method": {"enum": ["FULL_WAVE", "HALF_WAVE"]}}}},
+            {"if": {"properties": {"enabled": {"const": false}}}, "then": {"properties": {"method": {"const": "NONE"}, "parameter_origin": {"const": "NOT_APPLICABLE"}}}}
+          ]
+        }
+      ]
+    },
+    "smoothing": {
+      "allOf": [
+        {"$ref": "#/$defs/stepBase"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "step_id": {"const": "SMOOTHING"},
+            "step_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+            "enabled": {"type": "boolean"},
+            "implementation_status": {"enum": ["CONTRACT_ONLY", "ANALYTICALLY_VERIFIED", "IMPLEMENTED"]},
+            "parameter_origin": {"enum": ["NOT_APPLICABLE", "EXPLICIT_PROFILE", "ANALYTICAL_RESEARCH"]},
+            "method": {"enum": ["NONE", "MOVING_AVERAGE", "BUTTERWORTH_LOWPASS"]},
+            "window_ms": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "cutoff_hz": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "filter_order": {"type": ["integer", "null"], "minimum": 1},
+            "effect": {"$ref": "#/$defs/effect"}
+          },
+          "allOf": [
+            {"if": {"properties": {"enabled": {"const": false}}}, "then": {"properties": {"method": {"const": "NONE"}, "window_ms": {"type": "null"}, "cutoff_hz": {"type": "null"}, "filter_order": {"type": "null"}, "parameter_origin": {"const": "NOT_APPLICABLE"}}}},
+            {"if": {"properties": {"enabled": {"const": true}, "method": {"const": "MOVING_AVERAGE"}}, "required": ["enabled", "method"]}, "then": {"properties": {"window_ms": {"type": "number"}, "cutoff_hz": {"type": "null"}, "filter_order": {"type": "null"}}}},
+            {"if": {"properties": {"enabled": {"const": true}, "method": {"const": "BUTTERWORTH_LOWPASS"}}, "required": ["enabled", "method"]}, "then": {"properties": {"window_ms": {"type": "null"}, "cutoff_hz": {"type": "number"}, "filter_order": {"type": "integer"}}}}
+          ]
+        }
+      ]
+    },
+    "normalization": {
+      "allOf": [
+        {"$ref": "#/$defs/stepBase"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "step_id": {"const": "NORMALIZATION"},
+            "step_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+            "enabled": {"type": "boolean"},
+            "implementation_status": {"enum": ["CONTRACT_ONLY", "ANALYTICALLY_VERIFIED", "IMPLEMENTED"]},
+            "parameter_origin": {"enum": ["NOT_APPLICABLE", "EXPLICIT_PROFILE", "ANALYTICAL_RESEARCH"]},
+            "method": {"enum": ["NONE", "MVC_REFERENCE", "REFERENCE_CONTRACTION"]},
+            "reference_id": {"type": ["string", "null"], "minLength": 1},
+            "fitting_allowed": {"const": false},
+            "effect": {"$ref": "#/$defs/effect"}
+          },
+          "allOf": [
+            {"if": {"properties": {"enabled": {"const": false}}}, "then": {"properties": {"method": {"const": "NONE"}, "reference_id": {"type": "null"}, "parameter_origin": {"const": "NOT_APPLICABLE"}}}},
+            {"if": {"properties": {"enabled": {"const": true}}}, "then": {"properties": {"method": {"enum": ["MVC_REFERENCE", "REFERENCE_CONTRACTION"]}, "reference_id": {"type": "string"}}}}
+          ]
+        }
+      ]
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile_id", "version", "status", "description", "claim_scope",
+        "site_binding", "protocol_binding", "input_contract", "execution_policy",
+        "grid", "steps", "mask_policy", "distribution_effect",
+        "required_output_metadata", "provenance", "config_fingerprint"
+      ],
+      "properties": {
+        "profile_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "status": {"enum": ["ACTIVE_RESEARCH", "TEMPLATE_NOT_EXECUTABLE", "DEPRECATED"]},
+        "description": {"type": "string", "minLength": 1},
+        "claim_scope": {"const": "RESEARCH_ONLY"},
+        "site_binding": {"type": "null"},
+        "protocol_binding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "modality", "required_runtime_fields"],
+          "properties": {
+            "mode": {"const": "RUNTIME_EXPLICIT"},
+            "modality": {"const": "SEMG"},
+            "required_runtime_fields": {
+              "type": "array",
+              "minItems": 4,
+              "uniqueItems": true,
+              "items": {"enum": ["sampling_rate_hz", "units", "source_window_id", "source_id", "protocol_context_ref", "domain_context_ref"]}
+            }
+          }
+        },
+        "input_contract": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sampling_rate_source", "unit_source", "allowed_units", "mask_required", "quality_eligibility_required"],
+          "properties": {
+            "sampling_rate_source": {"const": "RUNTIME_REQUIRED"},
+            "unit_source": {"const": "RUNTIME_REQUIRED"},
+            "allowed_units": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["V", "uV"]}},
+            "mask_required": {"const": true},
+            "quality_eligibility_required": {"const": true}
+          }
+        },
+        "execution_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["automatic_processing_permission", "locked_partition_fitting_allowed", "adaptive_processing_allowed", "distribution_support_required"],
+          "properties": {
+            "automatic_processing_permission": {"const": "ALLOW_PROFILED_PROCESSING"},
+            "locked_partition_fitting_allowed": {"const": false},
+            "adaptive_processing_allowed": {"const": false},
+            "distribution_support_required": {"type": "boolean"}
+          }
+        },
+        "grid": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["native_grid_policy", "resampling"],
+          "properties": {
+            "native_grid_policy": {"const": "PRESERVE_UNLESS_EXPLICITLY_RESAMPLED"},
+            "resampling": {"$ref": "#/$defs/resampling"}
+          }
+        },
+        "steps": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["execution_order", "bandpass", "notch", "rectification", "smoothing", "normalization"],
+          "properties": {
+            "execution_order": {
+              "const": ["BANDPASS", "NOTCH", "RECTIFICATION", "SMOOTHING", "NORMALIZATION"]
+            },
+            "bandpass": {"$ref": "#/$defs/bandpass"},
+            "notch": {"$ref": "#/$defs/notch"},
+            "rectification": {"$ref": "#/$defs/rectification"},
+            "smoothing": {"$ref": "#/$defs/smoothing"},
+            "normalization": {"$ref": "#/$defs/normalization"}
+          }
+        },
+        "mask_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["policy", "delete_masked_samples", "preserve_sample_alignment", "raw_deleted"],
+          "properties": {
+            "policy": {"const": "PRESERVE_MASK_NO_DELETION"},
+            "delete_masked_samples": {"const": false},
+            "preserve_sample_alignment": {"const": true},
+            "raw_deleted": {"const": false}
+          }
+        },
+        "distribution_effect": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sampling_grid", "spectral_content", "amplitude_scale", "timing", "support_reassessment_required"],
+          "properties": {
+            "sampling_grid": {"enum": ["UNCHANGED", "CHANGED"]},
+            "spectral_content": {"enum": ["UNCHANGED", "CHANGED"]},
+            "amplitude_scale": {"enum": ["UNCHANGED", "CHANGED"]},
+            "timing": {"enum": ["UNCHANGED", "CHANGED_OR_DELAYED"]},
+            "support_reassessment_required": {"type": "boolean"}
+          }
+        },
+        "required_output_metadata": {
+          "type": "array",
+          "minItems": 8,
+          "uniqueItems": true,
+          "items": {"enum": [
+            "source_window_id", "profile_id", "profile_version", "config_fingerprint",
+            "native_fs_hz", "processed_fs_hz", "is_resampled", "input_unit",
+            "output_unit", "input_hash", "output_hash", "mask_ref", "effect_summary"
+          ]}
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["contract_day", "qc_core_ref", "quality_gate_ref", "parameter_authority", "evidence_refs"],
+          "properties": {
+            "contract_day": {"const": "DAY40"},
+            "qc_core_ref": {"const": "qc-core-research-v0.1"},
+            "quality_gate_ref": {"const": "DAY31-v0.1"},
+            "parameter_authority": {"enum": ["CONTRACT_ONLY", "ANALYTICAL_RESEARCH", "RESEARCH_HEURISTIC"]},
+            "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+          }
+        },
+        "config_fingerprint": {"type": "string", "pattern": "^pprof_sha256_[a-f0-9]{64}$"}
+      }
+    }
+  }
+}

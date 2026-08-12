@@ -1,0 +1,59 @@
+current_day: DAY40
+next_day: DAY41
+dependency_type: HARD_HANDOFF
+day_status: PASS
+next_day_may_begin: true
+task: Protocol-Specific Preprocessing Profile Contract
+claim_scope: RESEARCH_ONLY
+highest_allowed_claim: PROCESSING_PROFILE_CONTRACT_READY
+inputs_consumed:
+  - docs/00-executive/gates/GATE-C-R-qc-research-readiness.md
+  - packages/common-schemas/json/quality-eligibility.schema.json
+  - services/quality-gate-service/src/application/quality_gate.py
+  - qa-validation/evidence/research-benchmark-corpus-v0.1.manifest.yaml
+  - configs/qc/thresholds.research-v0.1.yaml
+  - qa-validation/test-data/ood-challenge-set-manifest.v0.2-research.yaml
+  - qa-validation/evidence/day38-qc-freeze-manifest.v0.2.json
+actual_outputs:
+  - configs/processing/preprocessing-profiles.v0.1.yaml
+  - packages/common-schemas/json/processing-profile.schema.json
+  - packages/semg-core/semg_core/processing/profile_contract.py
+  - docs/03-architecture/processing-profile-contract.md
+  - qa-validation/automated-tests/processing/test_day40_processing_profile_contract.py
+  - qa-validation/evidence/day40-validation-report.json
+frozen_decisions:
+  active_profile: research-native-grid-preserve-v0.1
+  active_profile_transforms_enabled: 0
+  fingerprint_algorithm: sha256-canonical-json-v1
+  no_silent_default_fs: true
+  no_silent_default_mains_frequency: true
+  raw_immutable: true
+  mask_not_delete: true
+  locked_partition_fitting_allowed: false
+  adaptive_processing_allowed: false
+  site_binding: null
+  distribution_support_required_for_base_profile: false
+tests:
+  focused_passed: 46
+  upstream_regression_passed: 863
+  failed: 0
+  deselected_historical_guard: 1
+  day38_frozen_hashes_verified: 15
+limitations:
+  - No DSP transform is enabled or analytically verified on DAY40.
+  - Public raw benchmark processing is NOT_PERFORMED.
+  - Site-specific processing profile is NOT_AVAILABLE.
+  - Clinical/expert/site validation is NOT_PERFORMED.
+blockers: []
+claim_boundaries:
+  - PROCESSING_PROFILE_CONTRACT_READY is the highest allowed claim.
+  - BANDPASS_ANALYTICALLY_VERIFIED is not allowed before DAY41 evidence.
+  - NOTCH_ANALYTICALLY_VERIFIED is not allowed before DAY42 evidence.
+  - Site or clinical preprocessing validation is not allowed.
+downstream_required_context:
+  - configs/processing/preprocessing-profiles.v0.1.yaml
+  - packages/common-schemas/json/processing-profile.schema.json
+  - packages/semg-core/semg_core/processing/profile_contract.py
+  - qa-validation/evidence/day40-validation-report.json
+  - docs/03-architecture/processing-profile-contract.md
+recommended_day41_action: Create synthetic sinusoid/chirp/impulse analytical fixtures and verify a band-pass design before enabling a new profile version.

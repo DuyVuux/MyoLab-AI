@@ -1,0 +1,13 @@
+schema_version: '0.1'
+day: DAY40
+review_status: PENDING
+reviewer: null
+review_date: null
+checks:
+  architecture_boundary: PENDING
+  no_silent_defaults: PENDING
+  qc_permission_boundary: PENDING
+  fingerprint_reproducibility: PENDING
+  locked_set_governance: PENDING
+  claim_language: PENDING
+notes: []

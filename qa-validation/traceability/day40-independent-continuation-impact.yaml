@@ -1,0 +1,24 @@
+schema_version: '0.1'
+day: DAY40
+claim_scope: RESEARCH_ONLY
+roadmap_requirements:
+  ICR-005:
+    impact: IMPLEMENTED
+    evidence:
+      - configs/processing/preprocessing-profiles.v0.1.yaml
+      - packages/semg-core/semg_core/processing/profile_contract.py
+      - qa-validation/automated-tests/processing/test_day40_processing_profile_contract.py
+  ICR-006:
+    impact: IMPLEMENTED
+    evidence:
+      - packages/semg-core/semg_core/processing/profile_contract.py
+      - packages/common-schemas/json/processing-profile.schema.json
+upstream_contracts_preserved:
+  qc_core: qc-core-research-v0.1
+  quality_gate: DAY31-v0.1
+  raw_immutable: true
+  locked_set_fitting_allowed: false
+  site_threshold_status: NOT_VERIFIED
+new_public_contracts:
+  - configs/processing/preprocessing-profiles.v0.1.yaml
+  - packages/common-schemas/json/processing-profile.schema.json

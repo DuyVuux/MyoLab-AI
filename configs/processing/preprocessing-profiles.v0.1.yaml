@@ -1,0 +1,172 @@
+schema_version: '0.1'
+catalog_id: myolab-processing-profiles
+catalog_version: 0.1.0
+claim_scope: RESEARCH_ONLY
+fingerprint_algorithm: sha256-canonical-json-v1
+profiles:
+- profile_id: research-native-grid-preserve-v0.1
+  version: 0.1.0
+  status: ACTIVE_RESEARCH
+  description: 'Fail-closed Phase 3R entry profile: preserve native grid and physical
+    units; all DSP transforms remain explicitly disabled until analytically verified
+    in later days.'
+  claim_scope: RESEARCH_ONLY
+  site_binding: null
+  protocol_binding:
+    mode: RUNTIME_EXPLICIT
+    modality: SEMG
+    required_runtime_fields:
+    - sampling_rate_hz
+    - units
+    - source_window_id
+    - source_id
+  input_contract:
+    sampling_rate_source: RUNTIME_REQUIRED
+    unit_source: RUNTIME_REQUIRED
+    allowed_units:
+    - V
+    - uV
+    mask_required: true
+    quality_eligibility_required: true
+  execution_policy:
+    automatic_processing_permission: ALLOW_PROFILED_PROCESSING
+    locked_partition_fitting_allowed: false
+    adaptive_processing_allowed: false
+    distribution_support_required: false
+  grid:
+    native_grid_policy: PRESERVE_UNLESS_EXPLICITLY_RESAMPLED
+    resampling:
+      step_id: RESAMPLE
+      step_version: 0.1.0
+      enabled: false
+      implementation_status: CONTRACT_ONLY
+      parameter_origin: NOT_APPLICABLE
+      target_fs_hz: null
+      method: null
+      anti_aliasing_policy: null
+      effect:
+        sampling_grid: NONE
+        spectral_content: NONE
+        amplitude_scale: NONE
+        timing: NONE
+        mask: PRESERVED
+  steps:
+    execution_order:
+    - BANDPASS
+    - NOTCH
+    - RECTIFICATION
+    - SMOOTHING
+    - NORMALIZATION
+    bandpass:
+      step_id: BANDPASS
+      step_version: 0.1.0
+      enabled: false
+      implementation_status: CONTRACT_ONLY
+      parameter_origin: NOT_APPLICABLE
+      method: null
+      low_cut_hz: null
+      high_cut_hz: null
+      filter_order: null
+      phase_mode: null
+      effect:
+        sampling_grid: NONE
+        spectral_content: NONE
+        amplitude_scale: NONE
+        timing: NONE
+        mask: PRESERVED
+    notch:
+      step_id: NOTCH
+      step_version: 0.1.0
+      enabled: false
+      implementation_status: CONTRACT_ONLY
+      parameter_origin: NOT_APPLICABLE
+      method: null
+      mains_frequency_hz: null
+      q_factor: null
+      bandwidth_hz: null
+      effect:
+        sampling_grid: NONE
+        spectral_content: NONE
+        amplitude_scale: NONE
+        timing: NONE
+        mask: PRESERVED
+    rectification:
+      step_id: RECTIFICATION
+      step_version: 0.1.0
+      enabled: false
+      implementation_status: CONTRACT_ONLY
+      parameter_origin: NOT_APPLICABLE
+      method: NONE
+      effect:
+        sampling_grid: NONE
+        spectral_content: NONE
+        amplitude_scale: NONE
+        timing: NONE
+        mask: PRESERVED
+    smoothing:
+      step_id: SMOOTHING
+      step_version: 0.1.0
+      enabled: false
+      implementation_status: CONTRACT_ONLY
+      parameter_origin: NOT_APPLICABLE
+      method: NONE
+      window_ms: null
+      cutoff_hz: null
+      filter_order: null
+      effect:
+        sampling_grid: NONE
+        spectral_content: NONE
+        amplitude_scale: NONE
+        timing: NONE
+        mask: PRESERVED
+    normalization:
+      step_id: NORMALIZATION
+      step_version: 0.1.0
+      enabled: false
+      implementation_status: CONTRACT_ONLY
+      parameter_origin: NOT_APPLICABLE
+      method: NONE
+      reference_id: null
+      fitting_allowed: false
+      effect:
+        sampling_grid: NONE
+        spectral_content: NONE
+        amplitude_scale: NONE
+        timing: NONE
+        mask: PRESERVED
+  mask_policy:
+    policy: PRESERVE_MASK_NO_DELETION
+    delete_masked_samples: false
+    preserve_sample_alignment: true
+    raw_deleted: false
+  distribution_effect:
+    sampling_grid: UNCHANGED
+    spectral_content: UNCHANGED
+    amplitude_scale: UNCHANGED
+    timing: UNCHANGED
+    support_reassessment_required: false
+  required_output_metadata:
+  - source_window_id
+  - profile_id
+  - profile_version
+  - config_fingerprint
+  - native_fs_hz
+  - processed_fs_hz
+  - is_resampled
+  - input_unit
+  - output_unit
+  - input_hash
+  - output_hash
+  - mask_ref
+  - effect_summary
+  provenance:
+    contract_day: DAY40
+    qc_core_ref: qc-core-research-v0.1
+    quality_gate_ref: DAY31-v0.1
+    parameter_authority: CONTRACT_ONLY
+    evidence_refs:
+    - docs/00-executive/gates/GATE-C-R-qc-research-readiness.md
+    - packages/common-schemas/json/quality-eligibility.schema.json
+    - qa-validation/evidence/research-benchmark-corpus-v0.1.manifest.yaml
+    - qa-validation/evidence/day38-qc-freeze-manifest.v0.2.json
+  config_fingerprint: pprof_sha256_85ae16ff281251b32b7ede66ea82a955e26cb816e81cf04ffc7133612046cf51

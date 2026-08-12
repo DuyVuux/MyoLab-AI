@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1",
+  "day": "DAY40",
+  "claim_scope": "RESEARCH_ONLY",
+  "managed_scope": "DAY40_OWNED_REPO_PATCH_ONLY",
+  "artifacts": [
+    {
+      "path": "configs/processing/preprocessing-profiles.v0.1.yaml",
+      "sha256": "3a6800cf423ebc792b4d9e91e8e6a15f9abaee51d8e84c3535a12aadb4fa3ada",
+      "size_bytes": 4744
+    },
+    {
+      "path": "docs/00-executive/day40/DAY40_CLAIM_BOUNDARY.md",
+      "sha256": "e00f2b942ffa48df5dfcb564f48356e0c7bc820385f9abd854b45f96daff281a",
+      "size_bytes": 598
+    },
+    {
+      "path": "docs/00-executive/day40/DAY40_EXECUTION_PLAN.md",
+      "sha256": "b19d57890e414c97468432c0b68454726a3747660d883c5c41c539c1f54c9837",
+      "size_bytes": 13890
+    },
+    {
+      "path": "docs/00-executive/day40/DAY40_FEYNMAN_LEARNING_GUIDE.md",
+      "sha256": "182510783c7e66f35b8b0d3f94b35ee957358773c44ed925d915bf3f224cd702",
+      "size_bytes": 16828
+    },
+    {
+      "path": "docs/00-executive/day40/DAY40_INTEGRATION_NOTES.md",
+      "sha256": "973126dfc5cd685fceda5a8edd0cb7ae7f037662f5285f6daf25a4122e9d9394",
+      "size_bytes": 1029
+    },
+    {
+      "path": "docs/00-executive/day40/DAY40_OPEN_QUESTIONS_AND_DECISIONS.md",
+      "sha256": "cd3ca6a21917847cbc0a0216adc250c268953d0986b505f41ba4548c77a0f5d4",
+      "size_bytes": 928
+    },
+    {
+      "path": "docs/00-executive/day40/DAY40_TO_DAY41_HANDOFF.md",
+      "sha256": "b6333283d809d2c85ceb918c25ab9e891300610d7fc51be4a43c782424821def",
+      "size_bytes": 1502
+    },
+    {
+      "path": "docs/03-architecture/processing-profile-contract.md",
+      "sha256": "7102dac2bd000eafe9d6552735baed0c6ada41017902d6ea4a2bf16359cfd00a",
+      "size_bytes": 12772
+    },
+    {
+      "path": "packages/common-schemas/json/processing-profile.schema.json",
+      "sha256": "ebbe74d40f29d405fb8ec0e924d7f8edecb527cda335bede0379ca36db50e3ce",
+      "size_bytes": 17873
+    },
+    {
+      "path": "packages/semg-core/semg_core/processing/__init__.py",
+      "sha256": "8d632aeaa6bfc966ff92308fb0379a9839b2df74266e4b491fa94587228eb880",
+      "size_bytes": 73
+    },
+    {
+      "path": "packages/semg-core/semg_core/processing/profile_contract.py",
+      "sha256": "e7ee8ae18a82e8b3aaddc544ecff95113c4e20c70771d58c77a69c0407fce9c7",
+      "size_bytes": 13033
+    },
+    {
+      "path": "qa-validation/automated-tests/processing/test_day40_processing_profile_contract.py",
+      "sha256": "12250575384bfd24583ec2bcfd6704899f14d3af84d79e1e230ccefb4d89c7c5",
+      "size_bytes": 12983
+    },
+    {
+      "path": "qa-validation/evidence/day40-handoff.yaml",
+      "sha256": "be30f4a282a8af7e13358579f5b8c513b29d55fbb2572e4ce52f44519340f8f6",
+      "size_bytes": 2710
+    },
+    {
+      "path": "qa-validation/evidence/day40-peer-review.template.yaml",
+      "sha256": "49fd2ac574534d719cf3fb863aa03e807452ee056f81f8b764105e09b7cffa7a",
+      "size_bytes": 302
+    },
+    {
+      "path": "qa-validation/evidence/day40-quality-self-audit.md",
+      "sha256": "00613281ed1af569dcec3b290302b531b0573a2705881c9d78cb42cf5cf4ab26",
+      "size_bytes": 1263
+    },
+    {
+      "path": "qa-validation/evidence/day40-validation-report.json",
+      "sha256": "c6d0cee3df7f1cfbf5d16b2d46864fa42eb4438242f4dd947edc2e2d75b2a858",
+      "size_bytes": 1027
+    },
+    {
+      "path": "qa-validation/requirements/day40-acceptance-criteria.md",
+      "sha256": "01b0f289bfd2ae7fcf5e17872dc2db594e879a6bc60de40f44d2198a1e309005",
+      "size_bytes": 1209
+    },
+    {
+      "path": "qa-validation/traceability/day40-independent-continuation-impact.yaml",
+      "sha256": "b156ca7b8f7ff4090031df5d57811620b95426239369d9a71bb1711b3d705223",
+      "size_bytes": 863
+    },
+    {
+      "path": "scripts/dev/check_day40_artifacts.py",
+      "sha256": "ee07a5855953130630be1f814530699367d486874f1208706e485c1cc352c294",
+      "size_bytes": 1036
+    },
+    {
+      "path": "scripts/dev/day40_contract_validator.py",
+      "sha256": "9f9b9ec5a6c9a1ee668ba878189afbc75dc838a3e20eea8ceba02dc8e235d99f",
+      "size_bytes": 3643
+    },
+    {
+      "path": "scripts/dev/run_day40_checks.sh",
+      "sha256": "768417758c3c685eaffdb694e998780af68889ab7881ddde7a1732b09ae2c318",
+      "size_bytes": 1514
+    }
+  ]
+}
