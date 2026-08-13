@@ -1,0 +1,4 @@
+domain_a,domain_b,comparison_class,support_state,basis,n_a,n_b,ood_score,pathology_inference,reason_code
+VINMEC_MOTION_LAB_EXAMPLE_OUTPUT:LT,VINMEC_MOTION_LAB_EXAMPLE_OUTPUT:RT,CONDITIONALLY_COMPARABLE,SHIFTED,same acquisition family/Fs/unit/sample count; paired muscles; descriptive only,6,6,,False,WITHIN_SITE_LATERALITY_DESCRIPTIVE_ONLY
+VINMEC_MOTION_LAB_EXAMPLE_OUTPUT,GRABMYO_V1_1_0,INCOMPARABLE,UNKNOWN,DAY68 feature table contains no rows from requested public dataset,12,0,,False,NO_PUBLIC_FEATURE_ROWS_IN_DAY68_SUMMARY
+VINMEC_MOTION_LAB_EXAMPLE_OUTPUT,HYSER_V2_0_0,INCOMPARABLE,UNKNOWN,DAY68 feature table contains no rows from requested public dataset,12,0,,False,NO_PUBLIC_FEATURE_ROWS_IN_DAY68_SUMMARY

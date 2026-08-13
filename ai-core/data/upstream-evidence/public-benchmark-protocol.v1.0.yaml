@@ -1,0 +1,58 @@
+schema_version: 1.0.0
+protocol_id: public-benchmark-protocol.v1.0
+status: FROZEN_BEFORE_DAY67
+seed: 64066
+split_algorithm: SHA256_RANK_WITHIN_DATASET_70_30_SUBJECTWISE
+split_manifest_sha256: fbf63869c61f8acd0dde90327df51043d2fc7bbc424de023a4e893dd256c5255
+datasets:
+- dataset_id: GRABMYO_V1_1_0
+  version: 1.1.0
+  adapter: grabmyo-v1.0
+- dataset_id: HYSER_V2_0_0
+  version: 2.0.0
+  adapter: hyser-v1.0
+partitions:
+  DEVELOPMENT:
+    allowed:
+    - adapter_debug
+    - qc_engineering_analysis
+    - metric_engineering_analysis
+    forbidden: []
+  LOCKED_EVALUATION:
+    allowed:
+    - final_evaluation_after_freeze
+    forbidden:
+    - threshold_tuning
+    - algorithm_selection
+    - normalization_fit
+    - feature_selection
+    - model_training
+    - manual_outcome_driven_split_edits
+preregistered_qc_outputs:
+- coverage
+- abstention_rate
+- reason_code_distribution
+- eligibility_distribution
+- engineering_case_count
+forbidden_qc_outputs_without_reference:
+- accuracy
+- sensitivity
+- specificity
+- f1
+preregistered_metrics:
+- RMS
+- MAV
+- MDF
+- MNF
+metric_rule: QC_ELIGIBLE_AND_METRIC_ELIGIBLE_ONLY
+distribution_support_states:
+- SUPPORTED
+- SHIFTED
+- UNKNOWN
+- UNSUPPORTED
+environment:
+  python: 3.11+
+  numpy: version-locked-at-execution
+  scipy: version-locked-at-execution
+  claim_scope: RESEARCH_ONLY
+locked_outcomes_inspected_before_freeze: false

@@ -1,0 +1,30 @@
+{
+  "day67_status": "DAY67_COMPLETED_WITH_SITE_RAW_EVIDENCE",
+  "dataset_runtime_id": "VINMEC_MOTION_LAB_EXAMPLE_OUTPUT",
+  "csv_detected": 187,
+  "csv_qc_parseable": 183,
+  "metadata_csv_phi_excluded": 4,
+  "raw_bytes_hashed": 701342502,
+  "raw_payload_sha256": "2830b2523683e61938ec464fa557d0981e02acdeebfc2a3a2aca8763cfea9d6a",
+  "signal_family": {
+    "EMG": 14,
+    "PRESSURE_PLATFORM": 170,
+    "METADATA": 2,
+    "MOTION_LAB_EXPORT": 1
+  },
+  "coverage": 0.9786096256684492,
+  "abstention_rate": 0.0213903743315508,
+  "reason_code_distribution": {
+    "QC_PARSEABLE_RAW_CSV": 183,
+    "PHI_METADATA_EXCLUDED_FROM_QC": 4
+  },
+  "supervised_metrics": {
+    "accuracy": null,
+    "sensitivity": null,
+    "specificity": null,
+    "f1": null
+  },
+  "supervised_metrics_reason": "NO_FROZEN_REFERENCE_QC_TRUTH",
+  "downstream_day68_allowed": true,
+  "claim_scope": "TECHNICAL_QC_PORTABILITY_RESEARCH_ONLY"
+}

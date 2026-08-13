@@ -1,0 +1,204 @@
+{
+  "fingerprint": {
+    "domain_fingerprint_id": "dfp_sha256_32d71aaaf6fced592999a7e777aedd32e09faa06ea77df14be4ba659961f4350",
+    "feature_summary": {
+      "mav": {
+        "max": 0.00025149397228951164,
+        "mean": 6.818415376674289e-05,
+        "median": 5.276253065326557e-05,
+        "min": 2.402142932447268e-05,
+        "n": 12,
+        "std": 5.980008283842913e-05
+      },
+      "mdf_hz": {
+        "max": 125.90887887649176,
+        "mean": 69.86777276334648,
+        "median": 71.94563638192695,
+        "min": 30.650884054496892,
+        "n": 12,
+        "std": 28.340418769440973
+      },
+      "mnf_hz": {
+        "max": 147.32014933177342,
+        "mean": 83.82729859892778,
+        "median": 82.78336425854172,
+        "min": 40.15535907365362,
+        "n": 12,
+        "std": 30.773750049427633
+      },
+      "rms": {
+        "max": 0.0011683902528662382,
+        "mean": 0.0001855871861170519,
+        "median": 9.61668496840735e-05,
+        "min": 3.821450699927349e-05,
+        "n": 12,
+        "std": 0.0003108878920668642
+      }
+    },
+    "metadata": {
+      "benchmark_versions": [
+        "public-metric-benchmark-v1.1"
+      ],
+      "claim_scope": "RESEARCH_ONLY",
+      "dataset_id": "VINMEC_MOTION_LAB_EXAMPLE_OUTPUT",
+      "fs_hz": [
+        2000.0
+      ],
+      "origin": "VINMEC_SITE_RAW_TECHNICAL",
+      "rows": 12,
+      "sample_counts": [
+        33000
+      ],
+      "units": [
+        "V"
+      ]
+    },
+    "ood_score": null,
+    "pathology_inference": false,
+    "support_state": "SUPPORTED_FOR_SITE_TECHNICAL_DESCRIPTIVE_ANALYSIS"
+  },
+  "matched_pair_differences": [
+    {
+      "mav_abs_diff": 1.3773943904815798e-05,
+      "mav_relative_pair_difference": 0.26338562601291005,
+      "mdf_hz_abs_diff": 10.910820840176711,
+      "mdf_hz_relative_pair_difference": 0.16518626367244746,
+      "mnf_hz_abs_diff": 5.603725194024136,
+      "mnf_hz_relative_pair_difference": 0.0713381257818114,
+      "muscle": "BICEPS_FEM.",
+      "rms_abs_diff": 1.1528599903016154e-05,
+      "rms_relative_pair_difference": 0.1250261847670721
+    },
+    {
+      "mav_abs_diff": 4.3665024995074095e-07,
+      "mav_relative_pair_difference": 0.011461933413659142,
+      "mdf_hz_abs_diff": 18.587164056348442,
+      "mdf_hz_relative_pair_difference": 0.15938872994102066,
+      "mnf_hz_abs_diff": 22.435012210746947,
+      "mnf_hz_relative_pair_difference": 0.16483891626871217,
+      "muscle": "MED._GASTRO",
+      "rms_abs_diff": 6.03068102620778e-06,
+      "rms_relative_pair_difference": 0.06602122775091983
+    },
+    {
+      "mav_abs_diff": 4.316715022144222e-05,
+      "mav_relative_pair_difference": 0.946544151372338,
+      "mdf_hz_abs_diff": 11.365683034163936,
+      "mdf_hz_relative_pair_difference": 0.31281358724893477,
+      "mnf_hz_abs_diff": 19.294658839991477,
+      "mnf_hz_relative_pair_difference": 0.38742203329950464,
+      "muscle": "RECTUS_FEM.",
+      "rms_abs_diff": 6.553697809507473e-05,
+      "rms_relative_pair_difference": 0.9232771472741913
+    },
+    {
+      "mav_abs_diff": 0.00016670040365215146,
+      "mav_relative_pair_difference": 0.9914158769765525,
+      "mdf_hz_abs_diff": 55.008232380540036,
+      "mdf_hz_relative_pair_difference": 0.9255310523800513,
+      "mnf_hz_abs_diff": 56.55516970317461,
+      "mnf_hz_relative_pair_difference": 0.8180647671219828,
+      "muscle": "SEMITEND.",
+      "rms_abs_diff": 0.0010270989787612235,
+      "rms_relative_pair_difference": 1.5684713536984445
+    },
+    {
+      "mav_abs_diff": 9.212993707777352e-06,
+      "mav_relative_pair_difference": 0.1694276092493804,
+      "mdf_hz_abs_diff": 4.3128392593283,
+      "mdf_hz_relative_pair_difference": 0.057812899958780924,
+      "mnf_hz_abs_diff": 3.4409871488119137,
+      "mnf_hz_relative_pair_difference": 0.04004232892306467,
+      "muscle": "SOLEUS",
+      "rms_abs_diff": 3.188926633056335e-05,
+      "rms_relative_pair_difference": 0.24740490976802162
+    },
+    {
+      "mav_abs_diff": 1.033366122968623e-05,
+      "mav_relative_pair_difference": 0.20427277943874278,
+      "mdf_hz_abs_diff": 12.424864899169968,
+      "mdf_hz_relative_pair_difference": 0.18776674709937355,
+      "mnf_hz_abs_diff": 12.737818756923517,
+      "mnf_hz_relative_pair_difference": 0.1526580108893145,
+      "muscle": "TIB.ANT.",
+      "rms_abs_diff": 2.5004207622089504e-05,
+      "rms_relative_pair_difference": 0.33228069896788154
+    }
+  ],
+  "side_domains": {
+    "LT": {
+      "feature_summary": {
+        "mav": {
+          "max": 8.47935686373602e-05,
+          "mean": 5.190002104200791e-05,
+          "median": 5.276253065326557e-05,
+          "min": 2.402142932447268e-05,
+          "n": 6,
+          "std": 2.0631354812582875e-05
+        },
+        "mdf_hz": {
+          "max": 107.32171482014331,
+          "mean": 74.33557565306957,
+          "median": 74.57030278719495,
+          "min": 42.01656708866083,
+          "n": 6,
+          "std": 22.315338854500332
+        },
+        "mnf_hz": {
+          "max": 124.88513712102647,
+          "mean": 89.159790019272,
+          "median": 88.7316847377123,
+          "min": 59.4500179136451,
+          "n": 6,
+          "std": 21.952502914120927
+        },
+        "rms": {
+          "max": 0.00014129127410501466,
+          "mean": 9.441859472638824e-05,
+          "median": 9.31515091709696e-05,
+          "min": 3.821450699927349e-05,
+          "n": 6,
+          "std": 3.403978276816079e-05
+        }
+      },
+      "n": 6
+    },
+    "RT": {
+      "feature_summary": {
+        "mav": {
+          "max": 0.00025149397228951164,
+          "mean": 8.446828649147787e-05,
+          "median": 5.220219689231113e-05,
+          "min": 3.8314014062618873e-05,
+          "n": 6,
+          "std": 8.249388975207559e-05
+        },
+        "mdf_hz": {
+          "max": 125.90887887649176,
+          "mean": 65.39996987362339,
+          "median": 65.73320393234197,
+          "min": 30.650884054496892,
+          "n": 6,
+          "std": 34.944429608758035
+        },
+        "mnf_hz": {
+          "max": 147.32014933177342,
+          "mean": 78.49480717858359,
+          "median": 79.21239796597041,
+          "min": 40.15535907365362,
+          "n": 6,
+          "std": 39.1573061259381
+        },
+        "rms": {
+          "max": 0.0011683902528662382,
+          "mean": 0.00027675577750771555,
+          "median": 9.905570057880275e-05,
+          "min": 6.274815207127608e-05,
+          "n": 6,
+          "std": 0.000437636839638335
+        }
+      },
+      "n": 6
+    }
+  }
+}

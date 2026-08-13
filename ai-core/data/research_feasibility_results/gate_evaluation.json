@@ -1,0 +1,28 @@
+{
+  "blockers": [
+    "NO_PUBLIC_CROSS_DATASET_FEATURE_COMPARISON",
+    "PUBLIC_GENERALIZATION_NOT_ESTABLISHED",
+    "SITE_EVIDENCE_ORIGIN_IS_NOT_PUBLIC"
+  ],
+  "claim_scope": "RESEARCH_ONLY",
+  "frozen_input_hashes": {
+    "domain_shift_matrix_sha256": "bc3e4c18de18a2b7e050e2d41b4efe00736dcd50e20354de5b90babfac055288",
+    "generalization_summary_sha256": "577213b3db9fadf1d9dc804255eb4692706a3c61aa253720912fd9a725b9dc8c",
+    "ml_feasibility_decision_sha256": "ca9247757bb5fcd3d70c98e8c6fe1a42efff581cd84f4b901be98192b8f42648",
+    "protocol_sha256": "6e765d0f52d74291179c109259eaea24e812117f27a0bbda460ad0af5ec3aa23",
+    "public_acquisition_summary_sha256": "38589c631548673125f6cb2bccba41c5bd8b6e0e6f14f72d354eacc70e2c55d9",
+    "selection_sha256": "4f51b7a48cc5b07b3a86f4db1916f411fc825c79a3b23d5a208cdfc2f66a3b2d",
+    "site_feature_parquet_sha256": "4575223ace0b8ea6a24499666769b5dae3231e8b85c0505f7dc986062b5efee8",
+    "split_sha256": "fbf63869c61f8acd0dde90327df51043d2fc7bbc424de023a4e893dd256c5255"
+  },
+  "gate": "GATE-E-R",
+  "locked_outcome_tuning_detected": false,
+  "locked_policy_preserved": true,
+  "milestone": "M5-R",
+  "ml_status": "ML_NO_GO",
+  "next_stage_ready": false,
+  "public_benchmark_ready": false,
+  "public_raw_in_package": false,
+  "site_raw_in_package": false,
+  "status": "BLOCKED_WITH_EVIDENCE"
+}

@@ -1,0 +1,12 @@
+{
+  "record_id": "DAY69-SOURCE-ORIGIN-CORRECTION-001",
+  "upstream_filename": "public-feature-summary-v1.1.parquet",
+  "upstream_benchmark_version": "public-metric-benchmark-v1.1",
+  "actual_evidence_origin": "VINMEC_SITE_RAW_TECHNICAL",
+  "public_dataset_rows_present": 0,
+  "site_rows_present": 12,
+  "historical_name_preserved_for_provenance": true,
+  "public_benchmark_claim_eligible": false,
+  "reason": "DAY67/DAY68 execution context states the 12 metric rows were produced from Vinmec Motion Lab site raw evidence, not from GRABMyo/Hyser/Cerqueira/Mendeley payloads.",
+  "claim_scope": "RESEARCH_ONLY"
+}

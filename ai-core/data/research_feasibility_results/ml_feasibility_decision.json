@@ -1,0 +1,15 @@
+{
+  "calibration": "NOT_APPLICABLE",
+  "claim_scope": "RESEARCH_ONLY",
+  "conformal": "NOT_APPLICABLE",
+  "decision": "ML_NO_GO",
+  "locked_evaluation_consumed": false,
+  "model_artifact": null,
+  "reason_codes": [
+    "NO_DEFENSIBLE_SUPERVISED_TARGET",
+    "NO_INDEPENDENT_SUBJECT_LEVEL_SAMPLES",
+    "NO_REFERENCE_QC_LABELS",
+    "PUBLIC_CROSS_DATASET_ROWS_ABSENT"
+  ],
+  "training_executed": false
+}

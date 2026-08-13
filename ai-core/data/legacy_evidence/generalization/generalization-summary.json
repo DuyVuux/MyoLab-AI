@@ -1,0 +1,33 @@
+{
+  "claim_scope": "RESEARCH_ONLY",
+  "cross_dataset_generalization": "NOT_ESTABLISHED_NO_PUBLIC_FEATURE_ROWS",
+  "denominators": {
+    "public_acquisition_all_csv": 187,
+    "public_acquisition_parseable_csv": 183,
+    "public_acquisition_phi_metadata_excluded": 4,
+    "public_comparable_domain_pairs": 0,
+    "site_metric_available": 12,
+    "site_metric_rows": 12
+  },
+  "false_block_proxy": "NOT_EVALUATED_NO_REFERENCE_LABELS",
+  "ml_question": {
+    "decision_recommendation": "ML_NO_GO",
+    "deterministic_system_insufficient": false,
+    "reason_codes": [
+      "NO_DEFENSIBLE_SUPERVISED_TARGET",
+      "NO_INDEPENDENT_SUBJECT_LEVEL_SAMPLES",
+      "NO_REFERENCE_QC_LABELS",
+      "PUBLIC_CROSS_DATASET_ROWS_ABSENT"
+    ]
+  },
+  "rates": {
+    "governance_abstention_rate": 0.0213903743315508,
+    "metric_availability_rate": 1.0,
+    "technical_parse_coverage": 0.9786096256684492
+  },
+  "session_generalization": "NOT_EVALUATED_SESSION_IDENTIFIERS_ABSENT",
+  "site_technical_portability": "SUPPORTED_FOR_CURRENT_EXAMPLE_EXPORT_ONLY",
+  "status": "GENERALIZATION_ANALYSIS_READY_WITH_LIMITATIONS",
+  "subject_generalization": "NOT_EVALUATED_SUBJECT_IDENTIFIERS_ABSENT",
+  "supervised_qc_performance": "NOT_EVALUATED_NO_REFERENCE_LABELS"
+}

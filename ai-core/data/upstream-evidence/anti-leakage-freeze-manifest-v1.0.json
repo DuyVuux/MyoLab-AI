@@ -1,0 +1,8 @@
+{
+  "freeze_id": "day66-public-benchmark-freeze-v1.0",
+  "selection_sha256": "4f51b7a48cc5b07b3a86f4db1916f411fc825c79a3b23d5a208cdfc2f66a3b2d",
+  "adapter_mapping_sha256": "d7c9ccad07e734370204e571fdc10bacc5936f28e920d2b232134522e92fb870",
+  "protocol_sha256": "6e765d0f52d74291179c109259eaea24e812117f27a0bbda460ad0af5ec3aa23",
+  "split_manifest_sha256": "fbf63869c61f8acd0dde90327df51043d2fc7bbc424de023a4e893dd256c5255",
+  "frozen_before_day67": true
+}

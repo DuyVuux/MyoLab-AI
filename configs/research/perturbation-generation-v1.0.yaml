@@ -1,0 +1,34 @@
+schema_version: 1.0.0
+config_id: perturbation-generation-v1.0
+claim_scope: RESEARCH_ONLY
+source_split: DEVELOPMENT
+locked_evaluation_allowed: false
+root_seed: 260826
+target:
+  primary_experiment: BINARY_SUPPORTABILITY
+  labels:
+    - NO_INJECTED_CORRUPTION
+    - INJECTED_CORRUPTION
+  label_semantics:
+    NO_INJECTED_CORRUPTION: "No project-injected corruption; not a clean clinical signal claim."
+registered_perturbations:
+  - DROPOUT
+  - CLIPPING
+  - POWERLINE_INTERFERENCE
+  - LOW_FREQUENCY_CONTAMINATION
+leakage_controls:
+  group_unit: subject_id
+  derived_examples_inherit_source_split: true
+  source_window_derivatives_must_not_cross_split: true
+model_ladder:
+  - DETERMINISTIC_QC_RULES
+  - LOGISTIC_REGRESSION
+  - RANDOM_FOREST
+ml_go_principle:
+  - TARGET_VALID
+  - SUBJECT_LEVEL_SPLIT_VALID
+  - NO_SOURCE_DERIVATIVE_LEAKAGE
+  - LOCKED_SET_UNTOUCHED
+  - REPRODUCIBILITY_PASS
+  - PUBLIC_DATASET_COVERAGE_PASS
+  - ML_INCREMENTAL_VALUE_OVER_DETERMINISTIC_BASELINE
