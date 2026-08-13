@@ -1,0 +1,20 @@
+{
+  "attempt_date": "2026-08-12",
+  "status": "RESOLVED_WITH_SITE_RAW_EVIDENCE",
+  "selected_runtime_dataset": "VINMEC_MOTION_LAB_EXAMPLE_OUTPUT",
+  "raw_root": "data-platform/raw/Vinmec/Motion Lab Example Output csv files",
+  "raw_files_committed": false,
+  "raw_payload_sha256": "2830b2523683e61938ec464fa557d0981e02acdeebfc2a3a2aca8763cfea9d6a",
+  "csv_files_total": 187,
+  "csv_files_qc_parseable": 183,
+  "phi_metadata_files_excluded_from_qc": 4,
+  "total_bytes": 701342502,
+  "coverage": 0.9786096256684492,
+  "abstention_rate": 0.0213903743315508,
+  "supervised_metrics_reported": false,
+  "blocked_public_datasets_retained_for_traceability": [
+    "GRABMYO_V1_1_0",
+    "HYSER_V2_0_0"
+  ],
+  "remediation": "DAY67 replay completed on materialized Vinmec Motion Lab CSV exports. Continue only with technical QC/portability claims unless reference truth is formally registered."
+}

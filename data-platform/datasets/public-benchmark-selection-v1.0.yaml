@@ -1,0 +1,108 @@
+schema_version: 1.0.0
+selection_id: public-benchmark-selection-v1.0
+generated_at_utc: '2026-08-12T10:30:00Z'
+claim_scope: RESEARCH_ONLY
+raw_storage_policy: EXTERNAL_CONFIGURED_ROOT_ONLY_NOT_COMMITTED
+selected_core_datasets:
+- GRABMYO_V1_1_0
+- HYSER_V2_0_0
+datasets:
+- dataset_id: GRABMYO_V1_1_0
+  version: 1.1.0
+  repository: PhysioNet
+  doi: 10.13026/89dm-f662
+  license_id: CC-BY-4.0
+  license_status: VERIFIED_USABLE
+  access_status: VERIFY_CURRENT
+  selection_decision: INCLUDE_CORE
+  subjects: 43
+  sessions_per_subject: 3
+  fs_hz: 2048.0
+  channels_recorded: 32
+  channels_semg_used: 28
+  source_unit_observed: mV
+  protocol_summary: 16 hand/finger gestures plus rest; seven trials; forearm and wrist
+    rings
+  layout_summary: 16 forearm + 12 wrist sEMG channels; 4 unused channels
+  evidence_tier: PUBLIC_EXTERNAL
+  raw_payload_acquired_in_runtime: false
+  official_checksum_manifest: PUBLISHED_NOT_ACQUIRED
+  citation_required: true
+  limitations:
+  - healthy cohort
+  - not site representative
+  - mV requires explicit SI conversion before canonical V
+- dataset_id: HYSER_V2_0_0
+  version: 2.0.0
+  repository: PhysioNet
+  doi: 10.13026/hxan-pe94
+  license_id: ODC-By-1.0
+  license_status: VERIFIED_USABLE
+  access_status: VERIFY_CURRENT
+  selection_decision: INCLUDE_CORE
+  subjects: 20
+  sessions_per_subject: 2
+  fs_hz: 2048.0
+  channels_recorded: 256
+  channels_semg_used: 256
+  source_unit_observed: V
+  protocol_summary: HD-sEMG; pattern recognition plus MVC/force-related subdatasets
+  layout_summary: 256-channel HD-sEMG
+  evidence_tier: PUBLIC_EXTERNAL
+  raw_payload_acquired_in_runtime: false
+  official_checksum_manifest: NOT_ACQUIRED
+  citation_required: true
+  limitations:
+  - healthy cohort
+  - HD layout differs from sparse MotionLab acquisition
+- dataset_id: CERQUEIRA_FATIGUE_V2
+  version: v2
+  repository: Zenodo
+  doi: 10.5281/zenodo.14182446
+  license_id: CC-BY-4.0
+  license_status: VERIFIED_USABLE
+  access_status: VERIFY_CURRENT
+  selection_decision: DEFER_FROM_CORE
+  subjects: 13
+  sessions_per_subject: null
+  fs_hz: 1259.0
+  channels_recorded: 8
+  channels_semg_used: 8
+  source_unit_observed: null
+  protocol_summary: 12 upper-body dynamic movements with self-perceived fatigue ratings
+  layout_summary: 8 muscles, four per arm
+  evidence_tier: PUBLIC_EXTERNAL
+  raw_payload_acquired_in_runtime: false
+  official_raw_archive_md5: ea7338b95543ada98b1ddc65d4b6aabc
+  citation_required: true
+  limitations:
+  - self-perceived fatigue is not clinical fatigue truth
+  - bulk raw archive 3.3 GB
+- dataset_id: MENDELEY_4CH_HAND_GESTURE_V2
+  version: '2'
+  repository: Mendeley Data
+  doi: 10.17632/ckwc76xr2z.2
+  license_id: CC-BY-4.0
+  license_status: VERIFIED_USABLE
+  access_status: VERIFY_CURRENT
+  selection_decision: DEFER_FROM_CORE
+  subjects: 40
+  sessions_per_subject: null
+  fs_hz: null
+  channels_recorded: 4
+  channels_semg_used: 4
+  source_unit_observed: null
+  protocol_summary: 10 hand/wrist gestures, five repeated cycles, 4 forearm channels
+  layout_summary: 4 sparse bipolar forearm channels
+  evidence_tier: PUBLIC_EXTERNAL
+  raw_payload_acquired_in_runtime: false
+  citation_required: true
+  limitations:
+  - sampling rate intentionally not promoted from non-card assumptions in core selection
+  - not clinical cohort
+conflicts_resolved:
+- id: D64-CONFLICT-001
+  field: HYSER_V2_0_0.license
+  starting_context_value: CC BY 4.0
+  authoritative_reverified_value: Open Data Commons Attribution License v1.0
+  resolution: AUTHORITATIVE_PRIMARY_RECORD_WINS

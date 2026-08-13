@@ -1,0 +1,39 @@
+schema_version: 1.0.0
+mapping_id: public-adapter-mapping-v1.0
+claim_scope: RESEARCH_ONLY
+datasets:
+  GRABMYO_V1_1_0:
+    adapter: data-platform/adapters/public/grabmyo.py
+    source_format: WFDB 16-bit interleaved
+    fs_source: WFDB header
+    unit_source: WFDB header
+    unit_mapping:
+      mV:
+        canonical_unit: V
+        factor: 0.001
+        operation: multiply
+        provenance_required: true
+    task_mapping: PRESERVE_SOURCE_CODE_ONLY
+    unknown_fields:
+    - canonical_muscle_mapping
+    - canonical_side_mapping
+  HYSER_V2_0_0:
+    adapter: data-platform/adapters/public/hyser.py
+    source_format: WFDB 16-bit interleaved
+    fs_source: WFDB header
+    unit_source: WFDB header
+    unit_mapping:
+      V:
+        canonical_unit: V
+        factor: 1.0
+        operation: identity
+    task_mapping: PRESERVE_RECORD_NAME_ONLY_WITHOUT_LABEL_FILE
+    unknown_fields:
+    - canonical_muscle_mapping
+    - canonical_side_mapping
+    - task_semantics
+forbidden:
+- infer anatomy from channel names
+- default Fs
+- default units
+- modify raw bytes

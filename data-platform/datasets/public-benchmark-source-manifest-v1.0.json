@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "note": "Catalog/source metadata fingerprints are not substitutes for raw payload hashes. Vinmec site raw evidence is tracked as runtime/site data, not as public benchmark redistribution permission.",
+  "datasets": [
+    {
+      "dataset_id": "GRABMYO_V1_1_0",
+      "catalog_metadata_sha256": "1fcb29b0cb10d4c625e26de3266718594f1e3cf3d28bee6c1f045f252575395c",
+      "raw_payload_sha256": null,
+      "raw_payload_hash_status": "NOT_ACQUIRED_IN_RUNTIME",
+      "redistribution_in_repository": "FORBIDDEN_BY_PROJECT_POLICY_EVEN_WHEN_LICENSE_ALLOWS"
+    },
+    {
+      "dataset_id": "HYSER_V2_0_0",
+      "catalog_metadata_sha256": "1ea7d8acd49ba371e2990baa1679fcfd0131d36c1288381495379b27e3957853",
+      "raw_payload_sha256": null,
+      "raw_payload_hash_status": "NOT_ACQUIRED_IN_RUNTIME",
+      "redistribution_in_repository": "FORBIDDEN_BY_PROJECT_POLICY_EVEN_WHEN_LICENSE_ALLOWS"
+    },
+    {
+      "dataset_id": "CERQUEIRA_FATIGUE_V2",
+      "catalog_metadata_sha256": "d090abd821752a34867326b5100b78bb8618e13917b2b965855b4c312bf84b3d",
+      "raw_payload_sha256": null,
+      "raw_payload_hash_status": "NOT_ACQUIRED_IN_RUNTIME",
+      "redistribution_in_repository": "FORBIDDEN_BY_PROJECT_POLICY_EVEN_WHEN_LICENSE_ALLOWS"
+    },
+    {
+      "dataset_id": "MENDELEY_4CH_HAND_GESTURE_V2",
+      "catalog_metadata_sha256": "9f39e5dd5d660bbf98d5a53c08970aa85b976c63681b81c6839e7d704b40af37",
+      "raw_payload_sha256": null,
+      "raw_payload_hash_status": "NOT_ACQUIRED_IN_RUNTIME",
+      "redistribution_in_repository": "FORBIDDEN_BY_PROJECT_POLICY_EVEN_WHEN_LICENSE_ALLOWS"
+    },
+    {
+      "dataset_id": "VINMEC_MOTION_LAB_EXAMPLE_OUTPUT",
+      "catalog_metadata_sha256": null,
+      "raw_payload_sha256": "2830b2523683e61938ec464fa557d0981e02acdeebfc2a3a2aca8763cfea9d6a",
+      "raw_payload_hash_status": "ACQUIRED_IN_RUNTIME_AND_HASHED",
+      "source_root": "data-platform/raw/Vinmec/Motion Lab Example Output csv files",
+      "csv_files_total": 187,
+      "csv_files_qc_parseable": 183,
+      "phi_metadata_files_excluded_from_qc": 4,
+      "total_bytes": 701342502,
+      "redistribution_in_repository": "FORBIDDEN_PRIVATE_SITE_DATA",
+      "claim_scope": "RAW_ACQUISITION_AND_TECHNICAL_QC_ONLY_NO_CLINICAL_VALIDATION"
+    }
+  ]
+}

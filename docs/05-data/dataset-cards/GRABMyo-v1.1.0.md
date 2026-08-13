@@ -1,30 +1,18 @@
 # Dataset Card — GRABMyo v1.1.0
 
-## Identity
 - Dataset ID: `GRABMYO_V1_1_0`
 - Repository: PhysioNet
 - DOI: `10.13026/89dm-f662`
-- License: **CC BY 4.0 — VERIFIED**
-- DAY33 role: public external source for multi-day/cross-session research.
+- License: `CC BY 4.0` — reverified for DAY64
+- Status: `VERIFIED_USABLE`
+- Phase 5R selection: `INCLUDE_CORE`
 
-## Observed acquisition facts
-The official PhysioNet record describes 43 healthy participants recorded across three
-sessions/days with a 2048 Hz amplifier. The protocol uses forearm and wrist electrode
-rings and records hand/wrist gestures plus rest. DAY33 treats these as external-source
-facts, not as MotionLab/Noraxon equivalence.
+Authoritative release facts used by the adapter contract: 43 healthy participants, three
+sessions/days, 2048 Hz acquisition, 32 recorded channels per file of which 28 are sEMG
+channels and four are unused. Header examples declare physical units in `mV`.
 
-## Allowed use in this roadmap
-- validate public-data acquisition and provenance workflow;
-- later adapter/windowing research;
-- cross-day domain challenge;
-- engineering benchmark context.
+The adapter must preserve the original raw hash and source unit. If canonical output uses
+`V`, the exact `mV → V` conversion is explicit with factor `1e-3` and transform provenance.
+No anatomy, gesture name, or site equivalence is inferred from channel names alone.
 
-## Forbidden claims
-- no Vinmec/site representativeness;
-- no clinical efficacy;
-- no pathology ground truth;
-- no assumption that GRABMyo electrode geometry equals Ultium layout.
-
-## Storage policy
-Raw files must live under an external configured data root. The repository stores only
-catalog metadata, hashes/ledgers, adapters and synthetic fixtures.
+Raw payload policy: external configured root only; not redistributed in this package.

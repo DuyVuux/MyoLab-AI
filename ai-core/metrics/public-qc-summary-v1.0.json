@@ -1,0 +1,2849 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_id": "public-qc-benchmark-v1.0",
+  "status": "DAY67_COMPLETED_WITH_SITE_RAW_EVIDENCE",
+  "reason_code": null,
+  "datasets_required": [
+    "VINMEC_MOTION_LAB_EXAMPLE_OUTPUT"
+  ],
+  "datasets_evaluated": 1,
+  "public_format_fixture_smoke_tests_passed": true,
+  "public_format_fixtures_count_as_public_benchmark": false,
+  "accuracy": null,
+  "sensitivity": null,
+  "specificity": null,
+  "f1": null,
+  "coverage": 0.9786096256684492,
+  "abstention_rate": 0.0213903743315508,
+  "reason_code_distribution": {
+    "QC_PARSEABLE_RAW_CSV": 183,
+    "PHI_METADATA_EXCLUDED_FROM_QC": 4
+  },
+  "raw_payload_sha256": "2830b2523683e61938ec464fa557d0981e02acdeebfc2a3a2aca8763cfea9d6a",
+  "vinmec_qc": {
+    "dataset_id": "VINMEC_MOTION_LAB_EXAMPLE_OUTPUT",
+    "status": "DAY67_COMPLETED_WITH_SITE_RAW_EVIDENCE",
+    "raw_root": "data-platform/raw/Vinmec/Motion Lab Example Output csv files",
+    "csv_files_total": 187,
+    "csv_files_qc_parseable": 183,
+    "phi_metadata_files_excluded": 4,
+    "total_bytes": 701342502,
+    "raw_payload_sha256": "2830b2523683e61938ec464fa557d0981e02acdeebfc2a3a2aca8763cfea9d6a",
+    "signal_family_counts": {
+      "EMG": 14,
+      "METADATA": 2,
+      "MOTION_LAB_EXPORT": 1,
+      "PRESSURE_PLATFORM": 170
+    },
+    "coverage": 0.9786096256684492,
+    "abstention_rate": 0.0213903743315508,
+    "reason_code_distribution": {
+      "QC_PARSEABLE_RAW_CSV": 183,
+      "PHI_METADATA_EXCLUDED_FROM_QC": 4
+    },
+    "files": [
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 29265,
+        "sha256": "65ad2990ee6f99c67acca670352108507562876cc2fbf022d71a06eae1138030",
+        "rows": 1654,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1651,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 21832,
+        "sha256": "2e45fac6c6531b063191453f47625de9fbb5ba4518b1bb801e8cd4085c012c4b",
+        "rows": 1654,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1651,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 29257,
+        "sha256": "1f99ae5b60056168c58ca9a9d2dc752edfac4f9cd11a58b3f3cc9b152d14d8b8",
+        "rows": 1654,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1651,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1800262,
+        "sha256": "1272208853327eff507e829c3749c13cfda27397ae17303143c8ec382b7664ba",
+        "rows": 47854,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "18": 46201,
+          "0": 1651,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1736375,
+        "sha256": "c6d1c1b04da55934109ce22f43831c2ff415f33e79a2c7538cebf108fc0d9bc2",
+        "rows": 47854,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "18": 46201,
+          "0": 1651,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 21852,
+        "sha256": "3bc15c42bfcec0642e04af5001d184f599942c269a292ae9dbdf2a40c6477839",
+        "rows": 1654,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1651,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 29753,
+        "sha256": "182d341c5ca034c9889a49ddf4ae543cd04ea3cca7d9fe6dcc48a980a5eccd18",
+        "rows": 1654,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1651,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 22089,
+        "sha256": "b68b760c238a269a5cf49ca56a287dc3996b7a23e8b3b634eff1267d93cc1020",
+        "rows": 1654,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1651,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 29759,
+        "sha256": "21ac0062d36e3ac4ba00c8d60f440f8b27539c02018e50f11343ed2cb3556ad0",
+        "rows": 1654,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1651,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1802754,
+        "sha256": "16c8a216ab407bd4e853d83bb0c2549cc1eb047285bc847bd9c5866125862839",
+        "rows": 47854,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "18": 46201,
+          "0": 1651,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1738640,
+        "sha256": "811d60ec1228dcc34afa0b0ffb9361273e21f476e8b4fce9588f0f9a8215743a",
+        "rows": 47854,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "18": 46201,
+          "0": 1651,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 22091,
+        "sha256": "f626195bc6d62958c9eabf34fa33a672c760994dff53136a4cc5789084e134d5",
+        "rows": 1654,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1651,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 15567488,
+        "sha256": "789c6a5045ad1390aa619028fc7342e99e48f3f4d4567ff3c24cafbe338ed507",
+        "rows": 173254,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "45": 171601,
+          "0": 1651,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-LT_BICEPS_FEM..csv",
+        "bytes": 718173,
+        "sha256": "f8f9bd6d4dd59a58319446da2ccc9bb9987f41eabc0c3514dff6ea7eb7c65c5d",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-LT_MED._GASTRO.csv",
+        "bytes": 719244,
+        "sha256": "51e1c0e33e51d69f986a0072b8a6459b521cda3c81dc34a4b9dc3441e109bd31",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-LT_RECTUS_FEM..csv",
+        "bytes": 720461,
+        "sha256": "b3982974ac5bc42c19848df814450a059473bc299ed02c741690751db9fca1b2",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-LT_SEMITEND..csv",
+        "bytes": 720680,
+        "sha256": "f8dd3b617e5330edca601484477a89fd78b2dea111dc097f339a125f54aca508",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-LT_SOLEUS.csv",
+        "bytes": 719855,
+        "sha256": "937e89b7b294bfadcbca7198be6aea597e491fb28a6bdcb9a30fbc47848e57ca",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-LT_TIB.ANT..csv",
+        "bytes": 722362,
+        "sha256": "a441f46e88517a802e3edf1fad0c64a5171b2097f0fde875e271a8946f8ed8bf",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-RT_BICEPS_FEM..csv",
+        "bytes": 722028,
+        "sha256": "96ab2a21d5402f9d6e05e27cc03fa7f3854070960cc6824a2d437e246797c16a",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-RT_MED._GASTRO.csv",
+        "bytes": 722394,
+        "sha256": "3180d12e7680dfe78a417096a18740ca266c94551a59800b4e58100c3efd795b",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-RT_RECTUS_FEM..csv",
+        "bytes": 720131,
+        "sha256": "e6e1b502509de5f5f42fc168ba8276ca9942e10b79a199d54a7b12483962add9",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-RT_SEMITEND..csv",
+        "bytes": 718328,
+        "sha256": "ba1241edced28e6b67b8b5bd0b1f47a38742d14de38d86bef48fe942ea9a2e80",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-RT_SOLEUS.csv",
+        "bytes": 721505,
+        "sha256": "8d9aeaadd28ebd6d3922ef6c364931cbfe4229b0c432366eaccddabedb59b08d",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/Ultium_EMG-RT_TIB.ANT..csv",
+        "bytes": 719903,
+        "sha256": "535ce141e8c4ab83f6f3274333d01578ed5f8b54125b21f74f41c47fd196b8b9",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "2": 33001,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_separated_csv_file/info.csv",
+        "bytes": 243,
+        "sha256": "ada67509ed1dcaa41372992d291a47283f561af700fd27a3a9cbe02003b89155",
+        "rows": 2,
+        "delimiter": ",",
+        "header_column_count": 10,
+        "has_phi_header": true,
+        "signal_family": "METADATA",
+        "width_counts": {
+          "9": 1,
+          "10": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Running on instrumented treadmill with EMG/MR4_treadmill_running_pressure_and_EMG_single_csv_file.csv",
+        "bytes": 7849688,
+        "sha256": "c223b6bd6df2b0425cdc95bd6ffc15f6621d6288ed70906b3932d7f90ed7c69e",
+        "rows": 33004,
+        "delimiter": ",",
+        "header_column_count": 12,
+        "has_phi_header": true,
+        "signal_family": "EMG",
+        "width_counts": {
+          "28": 33001,
+          "12": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 16129,
+        "sha256": "5a704b185258b4137ef1b6e0e7abc3a863fbd1f1285af9ec5e767aaa41c0b8ac",
+        "rows": 1035,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1032,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 13085,
+        "sha256": "fe2d4e93ff4392fd2df5a267e330918c023880e05a196be01fb312c527160074",
+        "rows": 1035,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1032,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 16104,
+        "sha256": "fe398e25f04f8710f650eeaa541c0ea01dccbf63c1f364060ebabc62f5d39c9a",
+        "rows": 1035,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1032,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1673255,
+        "sha256": "80b33cfe792af89d7f054edacfd5c2707f8568fad606923d1e890e6ed70db246",
+        "rows": 37120,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36086,
+          "0": 1032,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1634528,
+        "sha256": "d05dad6d72f2d6e5220c88027cc0d73d3bb9584828d6d9335764e7f3c77975b0",
+        "rows": 37120,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36086,
+          "0": 1032,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 15052,
+        "sha256": "f6346d25d0fe5c459234a6367aba3de79a1ff44a733e0f07001d1855b5a5c5b1",
+        "rows": 1035,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1032,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 16352,
+        "sha256": "b35cbf942c2a172f8aa7b8da936df67fbfbabe1afc0f02510153403578ece321",
+        "rows": 1035,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1032,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 13201,
+        "sha256": "7340f9c13305aa21094cf6d0cf0cf4479ba79e0b47d374a7f5030c5c0b60c518",
+        "rows": 1035,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1032,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 16352,
+        "sha256": "34a0263426be34ebd3670bd690a697b49ba4efced8fc6ca312bfd8e4bb54244a",
+        "rows": 1035,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1032,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1679077,
+        "sha256": "a9e9fb1b1ab413b87bce51f61f26100de3044528742db94bec65e71d3df64bec",
+        "rows": 37120,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36086,
+          "0": 1032,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1637805,
+        "sha256": "c41001a374830d8ddb7b8be10718d8f4073a925fd0d5adf09f8e361796c8b870",
+        "rows": 37120,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36086,
+          "0": 1032,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 15015,
+        "sha256": "f359f085efae62ac0b00a7c566708fc2ec05912b9dc054a7c811909f7dd3c162",
+        "rows": 1035,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1032,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/10_backward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 47266950,
+        "sha256": "84edce9fafda7694721f26c5273a87628d583465135211f0d6499ca09e8ff74d",
+        "rows": 363947,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 362913,
+          "0": 1032,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 17396,
+        "sha256": "7ad41b024815a712da99b0b43ca4e9d1f1e8c8f8744d16663c3b0fc26178234a",
+        "rows": 1077,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1074,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 14430,
+        "sha256": "6e5d8660a0d180b45a619c25c867ac2ef4532550a60004be8f3e9a37a469d1d9",
+        "rows": 1077,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1074,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 17388,
+        "sha256": "8ff1cd76519c0e63d9772907b2134fc4fd9bfa1d7885d794f1d6d519db91520f",
+        "rows": 1077,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1074,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1736825,
+        "sha256": "183f5422df0c195725f0f0c5c5e03cb01bd9cd957b2162376d8f54decf4d8ba8",
+        "rows": 38632,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37556,
+          "0": 1074,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1699282,
+        "sha256": "46d893d25371c1074d39c8cf34ba70e2c136c7b7aaba9b84ca088b438011d91d",
+        "rows": 38632,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37556,
+          "0": 1074,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 16462,
+        "sha256": "b64a64ab94326b14393fd90a926aa5c2c604a628eaa36f59dd6b0595ec00ce3d",
+        "rows": 1077,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1074,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 17657,
+        "sha256": "04f90514a1964099533e5c4773e805f4f481417088b45f457af3823c4e6afa1d",
+        "rows": 1077,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1074,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 14553,
+        "sha256": "45b83cb81d6d01ea3216b7841a7b1dd195922968280ff98e5bd5a1888ce101eb",
+        "rows": 1077,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1074,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 17652,
+        "sha256": "f37032ad5e4ebfed91be3bdfbaff74771e3482528b54e5dfe60c408ae04c2fad",
+        "rows": 1077,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1074,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1746916,
+        "sha256": "3128c1043cb53690398202106c4a59cd9da761d87e9a5ed6fb246c7abf47e150",
+        "rows": 38632,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37556,
+          "0": 1074,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1702625,
+        "sha256": "1a8f9af7034d872764bbe124ca4838db0706be41e629bba7e4cf4e2ff003b03b",
+        "rows": 38632,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37556,
+          "0": 1074,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 16415,
+        "sha256": "eb55719a5774cde575c012be7c9681985d3426a00c1f98d78eef12507b58382f",
+        "rows": 1077,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1074,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/11_forward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 49187758,
+        "sha256": "10b03377dcd71ffc9ede5ed22db8d3806bada195900b738e259b963db112c2dd",
+        "rows": 378773,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 377697,
+          "0": 1074,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 19579,
+        "sha256": "1b414b547d29a77c80a6f22144107aae1f508c79e9eafcc40976ff6515fb9fa4",
+        "rows": 1284,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1281,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 16665,
+        "sha256": "301fe5aedbecc117599c87738cbc0eb30cd4041c2c46d5f8dbac3d3ae83688f3",
+        "rows": 1284,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1281,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 19594,
+        "sha256": "b73d4be28edeb64c9dd59a6b1ee8e0de8546bbb6a2d15aa809efa7fd3104e3d7",
+        "rows": 1284,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1281,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 2059888,
+        "sha256": "02d65dd5a149580dbb92700e0ccc9abd3aa8719dd09fbb923efc2a6f8bc92009",
+        "rows": 46084,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 44801,
+          "0": 1281,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 2020708,
+        "sha256": "377b9314e317133dba4e31bc780a160a04f462a0ecba0082ce192b496ef02372",
+        "rows": 46084,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 44801,
+          "0": 1281,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 18706,
+        "sha256": "3b01953e9cde756ae1f579fe52d0d7c2fed66be03ba49014fd8c9b19feaa2196",
+        "rows": 1284,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1281,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 19863,
+        "sha256": "0b51e92971b59a7785a8d541b48aee86b53aab7e4b710025aaff5154416b5337",
+        "rows": 1284,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1281,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 16802,
+        "sha256": "097fe8133e26ce6c13a37363e698a0a7db28b83cf67054b721c57b7ae5f8a79f",
+        "rows": 1284,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1281,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 19870,
+        "sha256": "1caae6af54c9e588d0a3906a2554b7f5ad1fa4d56f2ad884dc1d652188242183",
+        "rows": 1284,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1281,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 2065678,
+        "sha256": "51c958a85be4a2e61dd9252258fb8cace3b99a55f09f56ab7694c16244eb2e4f",
+        "rows": 46084,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 44801,
+          "0": 1281,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 2022048,
+        "sha256": "2c3a0120fe62b3ee7a1cb65873b115c9afca5c62f1b5f9ae7ab958eff090e4cb",
+        "rows": 46084,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 44801,
+          "0": 1281,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 18651,
+        "sha256": "420936641ce104e57052670dfb3395c25cfc5f17ada7e08e91110efa010d5f66",
+        "rows": 1284,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1281,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/12_backward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 58661504,
+        "sha256": "55f518c75c45d8890f1a15e99023631367402fa929a19027ff40f9dc3d7cc532",
+        "rows": 451844,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 450561,
+          "0": 1281,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 8551,
+        "sha256": "70d9d8bb2ec43b640c76db40256da86e76d5976040ea411c5b1c11fa6e89eafe",
+        "rows": 560,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 557,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 6706,
+        "sha256": "e1d50d300da16ad5aa64e71f2428ae1bb9d9f098467db62538ba40289260d90f",
+        "rows": 560,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 557,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 8556,
+        "sha256": "de82e2afe83e07474a0b75d0c9e677eeeec8d1d78e806585a67e483428a010e9",
+        "rows": 560,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 557,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 908466,
+        "sha256": "5ba2f49e5130ea30ad83224ba5c9f67ec60c74087893d8ae8457a25a6f732583",
+        "rows": 20020,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 19461,
+          "0": 557,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 883613,
+        "sha256": "d9bd70dcab6f75e23164995a89870291bb2d50119f71b2bb1e620bec9d5c4ea5",
+        "rows": 20020,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 19461,
+          "0": 557,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 9285,
+        "sha256": "52f69541f2936ab8eb658524d43bc9790c34b70bd553a90c0d74f6f4b5129f8c",
+        "rows": 560,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 557,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 10397,
+        "sha256": "e4d6248f8a564f7969c337cb2afc856c8e066ab6d851b751dcbde542ffcc75bf",
+        "rows": 560,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 557,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 7549,
+        "sha256": "8074a48da029623df9f99f355b4ca8c0a5aab5608c20a94990c89d18380b5098",
+        "rows": 560,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 557,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 10381,
+        "sha256": "e86ec751d169dcdaa0a2e90936a6f4483f3935a31f2889032e6939ced7ebf507",
+        "rows": 560,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 557,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 937098,
+        "sha256": "199587a43fd40088b98186eb373f80f1655ffc5e765c4c4a83596194d4549b8a",
+        "rows": 20020,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 19461,
+          "0": 557,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 897187,
+        "sha256": "c779f6e4de0a9b4cec543df2c633039d0dbc6f5c08a55a2adc1eb8fd8c237863",
+        "rows": 20020,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 19461,
+          "0": 557,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 8932,
+        "sha256": "f69cd42bedcce9f0ba92041611d54f51bc084062e7eae0ad5bd13d593c72229a",
+        "rows": 560,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 557,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/1_forward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 25507871,
+        "sha256": "f704e1bb53c7a69c016bbdce90884e0c06f6b7b7b8da84bcf5e44c4c21e23ec7",
+        "rows": 196272,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 195713,
+          "0": 557,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 13654,
+        "sha256": "a1d530081c09064e0da77db4130c6d64c269d16654ea847a7221a64f16a2b3c4",
+        "rows": 1053,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1050,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 11782,
+        "sha256": "13f644197d4e162e00412cb45c5e41732c548fb5a434cbc945a3c64b7ddb6ed7",
+        "rows": 1053,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1050,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 13664,
+        "sha256": "525c7bb64033f04847e296a38de20c7cf210312babdff9c224112200ec37bb38",
+        "rows": 1053,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1050,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1674112,
+        "sha256": "919185152f6a409ead699cdfdc187ee497cb62b60731323bdfbd0db605d4e9f9",
+        "rows": 37768,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36716,
+          "0": 1050,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1647619,
+        "sha256": "a0312e1356f6d9f450d0faa57b91b6b6403002bb62440deabc20db009761d0bb",
+        "rows": 37768,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36716,
+          "0": 1050,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 14678,
+        "sha256": "183838f21cf76b123fa1b66c3bf63d0ed2794b594d6986e3acf126261eebe3cf",
+        "rows": 1053,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1050,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 15440,
+        "sha256": "ddf258f84c359b045fb10759fcf31448fd0730cb1c38d300311a465f7575de90",
+        "rows": 1053,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1050,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 12583,
+        "sha256": "093a9e10e0d77e599ed0aed3437c09369b9cc16d0728d202f345f32fc682ecbc",
+        "rows": 1053,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1050,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 15440,
+        "sha256": "439687533aeaac5ebe9bafdab03faca01939aea74cd1d1a887a49262f5669510",
+        "rows": 1053,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1050,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1703969,
+        "sha256": "6feca059421b6ab6e50f4ef9c2f5419fa2993dc345444cfc5df0f37e2f3e1c2a",
+        "rows": 37768,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36716,
+          "0": 1050,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1660250,
+        "sha256": "ea6cb6b6f07e14aaaecf074b7ff7b137f9d9ac4fa452f16658b6b2dddf9cb6ea",
+        "rows": 37768,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36716,
+          "0": 1050,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 14340,
+        "sha256": "bb24432b1fabda4a6dce4f84afd20d24117011ed6a5eeda917e3f24c96f2b7f6",
+        "rows": 1053,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1050,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/2_backward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 48079663,
+        "sha256": "0e7d4ed1be796bc36913905fe46b7f2400ddda1a5a4058201210060776fac478",
+        "rows": 370301,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 369249,
+          "0": 1050,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 15915,
+        "sha256": "777badde7120d24f3de525e799a1c31b6a5c362e48b1dbf9319a4b0d738a3014",
+        "rows": 1057,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1054,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 13065,
+        "sha256": "88c3cd5d32567253d4313121e3e7c46124112d323a8ad5e11e6fb426e3a6695d",
+        "rows": 1057,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1054,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 15919,
+        "sha256": "6f313cd1198860c18dff8b6aa8e4d5dd00c2c370d10838b194cdfe91a6431675",
+        "rows": 1057,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1054,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1707419,
+        "sha256": "e191d67bf855d2d4a04e2a9ad7779172cac30f5765c005ec06f686a9bed09d62",
+        "rows": 37912,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36856,
+          "0": 1054,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1666785,
+        "sha256": "f1d4879274a079dfa781b8ebb08a2074be9495a686298ad53223bf34d946e933",
+        "rows": 37912,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36856,
+          "0": 1054,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 14778,
+        "sha256": "8495a5067e6dead26620f592487757acdb7865170700b7ebe911cbe5bcacfc3b",
+        "rows": 1057,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1054,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 14345,
+        "sha256": "5d38205fe4fee83928a210d0e059b07a2fb2c030d52b77abd0d0af083cacd915",
+        "rows": 1057,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1054,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 12344,
+        "sha256": "d5efafb6adeb08535e1e465c22d4c783cea18f42bbb9d0b27090451d73dc4533",
+        "rows": 1057,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1054,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 14344,
+        "sha256": "09d492733ad8b8fcaf264210171853dc7932ac0d881eaea30b2993b3f4cd7ad1",
+        "rows": 1057,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1054,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1682842,
+        "sha256": "8aea5e428ba7077a73d83f66a8b0337f87fbf524d6dfc12abcbe83c36b918843",
+        "rows": 37912,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36856,
+          "0": 1054,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1656028,
+        "sha256": "1729aadd458ad983e894d9fac99daa0af8f721d41f59342f239075b5bc45d1d2",
+        "rows": 37912,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36856,
+          "0": 1054,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 15089,
+        "sha256": "abcd86b4d043e5ce9d1fb150cb10ea9b00e989e7202c92aa64effaa478ec0358",
+        "rows": 1057,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1054,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/3_forward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 48261488,
+        "sha256": "3fc5299af93bb57b32a0197447bddfee51311b4eced1e5d207612c8604119202",
+        "rows": 371713,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 370657,
+          "0": 1054,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 13653,
+        "sha256": "a0bd2d27812afbea9d1da230c9d7b7223094e45704e5cb1ba422aa0d7a68a292",
+        "rows": 1007,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1004,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 11765,
+        "sha256": "5764ba09a467303c343fe85583c3f3b44a2197799178b1ed9685b15fa1e31881",
+        "rows": 1007,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1004,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 13650,
+        "sha256": "b87791f066a5aef6dee1c5a8a5f59a071c4ced86222831398e0c2fb8fc88a516",
+        "rows": 1007,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1004,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1598456,
+        "sha256": "c2f5f86eb1562bd408cda9ac9cf0737d79d274dcfda712c2fd8651426ab3d574",
+        "rows": 36112,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 35106,
+          "0": 1004,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1576840,
+        "sha256": "6bd88b369b88483924b794bbbf969db7e6dfc8f4737db017dd48931ad418d367",
+        "rows": 36112,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 35106,
+          "0": 1004,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 14825,
+        "sha256": "ad420323111908a0b0f4900e2c8442d1a4ce3f0ec1450d39a247f0ebf0666c42",
+        "rows": 1007,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1004,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 15579,
+        "sha256": "61a9072d68c6ce28e6fd7a96565f92763b2b691a413ba9ccbe0e2639c57dc1fb",
+        "rows": 1007,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1004,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 12649,
+        "sha256": "1ee8c4c77616c6e4179ba3f72fc066b922fe90d8475e26a012cc6f9b2963838e",
+        "rows": 1007,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1004,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 15576,
+        "sha256": "e8db4b066370ba1de51ba3b1d72eb18f779b152bec0a0043aa9d4be17371ced5",
+        "rows": 1007,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1004,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1636448,
+        "sha256": "8e3c100e2b79a3ed0e95b9fa2ae849b2c772baebdee92c0b9f924f97e7cbbeca",
+        "rows": 36112,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 35106,
+          "0": 1004,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1590327,
+        "sha256": "d04ece7ac62375615849fe7be991470cc428d2005c3ae56384162d30869af377",
+        "rows": 36112,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 35106,
+          "0": 1004,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 14450,
+        "sha256": "eeea682f70d15de60c28bd7a0c4474481011ec631e1926c00b66233fc66c9585",
+        "rows": 1007,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1004,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/4_backward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 45978519,
+        "sha256": "a65e5442f04466671f21d540a7009ba937adc94813de2c3c3a938610fd0af7cc",
+        "rows": 354063,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 353057,
+          "0": 1004,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 16079,
+        "sha256": "73c52402a8bfdc644539555d09c05e5a7d4fdfaefba026526949b136ed92d072",
+        "rows": 1055,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1052,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 13121,
+        "sha256": "c6a25dcc90f0b69992fafe50d730872e8e01ca39044813ad16bf38b0de6634ef",
+        "rows": 1055,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1052,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 16054,
+        "sha256": "a2d0cd8bf23216e28cec91c03718a24338e00fb079a33102219ab00f2be31c63",
+        "rows": 1055,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1052,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1702984,
+        "sha256": "4e4360f9169062f2c5ac537e227c2d0e6a5b6e1106998118b314d41984dc7d76",
+        "rows": 37840,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36786,
+          "0": 1052,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1663733,
+        "sha256": "400a352111f27cb0ce4ccfbee823a6b0b42414cf347cc320302311d0f8476a1d",
+        "rows": 37840,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36786,
+          "0": 1052,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 14961,
+        "sha256": "17c76e06982a9e952ff03e97180fc859914026a79d94c40bf7229ff323557a5f",
+        "rows": 1055,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1052,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 14272,
+        "sha256": "bbdb8835d4cbf0188427f825a4af4cb5401a884c6476851385fa4430963ed622",
+        "rows": 1055,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1052,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 12309,
+        "sha256": "8515d13a3b1d2caacd731ee9ff55c334979a67dd5044f3833231e38d66936a14",
+        "rows": 1055,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1052,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 14285,
+        "sha256": "e825a75f5a904cdaad3a54efc35ce4d975672123f34b90254a925fad679ca9ea",
+        "rows": 1055,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1052,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1679384,
+        "sha256": "757d2ad63a359bfbb9a5e8a205849dc6affafaff84e62d557c5c248bdf03b402",
+        "rows": 37840,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36786,
+          "0": 1052,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1652321,
+        "sha256": "3151e50b30157d7e2e6a499cdccfe21c90e320f1209a86c92326effb3a12a2d8",
+        "rows": 37840,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36786,
+          "0": 1052,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 15300,
+        "sha256": "2c550ad62ed69183b3a977af2877704fc0c14a82dc3a8b279384cf9a0d4e7c55",
+        "rows": 1055,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1052,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/5_forward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 48177191,
+        "sha256": "8a5e4445c1ec29c0cb2d080ee98404360b4ce5db06d266d1302efc37b5ba8822",
+        "rows": 371007,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 369953,
+          "0": 1052,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 14188,
+        "sha256": "fc49fd4538a8bd832fa063428a185435e176b737a97ee4693f814c423c56a756",
+        "rows": 1051,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1048,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 12250,
+        "sha256": "ebc00bf52872cc4daa9977b15f05c8f65f8472b1e7f61faa7f1dc4495ac0960d",
+        "rows": 1051,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1048,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 14195,
+        "sha256": "5a3958ad19af261d77a23289423b0925b7f30a2caa6fe9ba131fe46aee6ae307",
+        "rows": 1051,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1048,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1670513,
+        "sha256": "4a99a52bed5266688c72edfce3308b5026f4fa14db76b2a1e6cc55f84b8456e3",
+        "rows": 37696,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36646,
+          "0": 1048,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1645649,
+        "sha256": "7889f19cef3bf65e4b863ca980e4bbdb5563a07312d90076ec844cff87ac9891",
+        "rows": 37696,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36646,
+          "0": 1048,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 15257,
+        "sha256": "1192e73f13276656379446ed188d918ec1d0b850369b08f8f0f9e52b2a0ad640",
+        "rows": 1051,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1048,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 16119,
+        "sha256": "66d3dc523a6da80ee29a00d760a676575c0227edee1e4406939bcf6944d736b0",
+        "rows": 1051,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1048,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 13127,
+        "sha256": "66d846ae46d6de980a6f5ecbff5a08b41702eac030dda94e2fd15a21270ee1d5",
+        "rows": 1051,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1048,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 16114,
+        "sha256": "460c6f5b1f4fe96fcd19a6af1608fd8a6783e3e7c648918eee7f0d2660412b04",
+        "rows": 1051,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1048,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1702144,
+        "sha256": "8b1fadcf6a97c371d151f752a4beaf51a6e1aa0aa4887d7cd43cf66e4970c33b",
+        "rows": 37696,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36646,
+          "0": 1048,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1659452,
+        "sha256": "40b5bba03c14a3a0fc39ea1e1e57168f74033d5f422f4421dca73dfb4dd7f021",
+        "rows": 37696,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 36646,
+          "0": 1048,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 14895,
+        "sha256": "5fab3a97c51223670a30475af79bbeb11ada6e02d6044a641ee8d6a65044aeb7",
+        "rows": 1051,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1048,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/6_backward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 47994147,
+        "sha256": "32661e46a068be5094327a5d19242e9b18daba95211a4f345c6b4abeb1e1fc4c",
+        "rows": 369595,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 368545,
+          "0": 1048,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 17105,
+        "sha256": "b20f84381e4c899e834c2fe51962fbaf751329364265d83b1b0738b1b283f0f1",
+        "rows": 1160,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1157,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 14177,
+        "sha256": "73dda86284020b1c70724012fbd9fd2666cb83affbd5b4a1cfc7a0c3a17f2231",
+        "rows": 1160,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1157,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 17110,
+        "sha256": "d562a5ace5f09ae426a30d2c9d1b12e7385af4957e8f2fac9f5464580b092044",
+        "rows": 1160,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1157,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1865028,
+        "sha256": "4212475e9a0b19c9bcac71c6afacd7e84c154e1448fc75bff91091cbe8863d4c",
+        "rows": 41620,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 40461,
+          "0": 1157,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1828284,
+        "sha256": "69e3f46e52f319a2a6cccb939e9c6a80d794993aac0d541c660a15c42b9ecf64",
+        "rows": 41620,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 40461,
+          "0": 1157,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 16065,
+        "sha256": "445aed612d30b658619f899a8c86941f3578eb490944d15d3501f8ddb592e9b4",
+        "rows": 1160,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1157,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 17228,
+        "sha256": "586c634909defdd6765619d8723b56131e5a3144fb3c26b039d668beb246f12c",
+        "rows": 1160,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1157,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 14232,
+        "sha256": "fadc5289f8856860dc1feea0c65fc43f6288b37b9762243c5b68c24bff010464",
+        "rows": 1160,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1157,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 17235,
+        "sha256": "a9346b3c72ac50bb919ad1a927ccf1889b813c9dc52374b242a2f02b919cd093",
+        "rows": 1160,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1157,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1866551,
+        "sha256": "9c25f62d4f54a4c43ebee0f7646c9deab52c6eb89c7030d815963980b9297578",
+        "rows": 41620,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 40461,
+          "0": 1157,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1827185,
+        "sha256": "4c2d35e251a77086ccceeea63814930cc427a719c79d2ffae4a839586dbe0eac",
+        "rows": 41620,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 40461,
+          "0": 1157,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 16043,
+        "sha256": "36c459f09c67d7db451570d743dbc682fa59490429dc0606b663180b0de62f93",
+        "rows": 1160,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1157,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/7_forward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 52984690,
+        "sha256": "7604a091cf212d135533764677208592f1598212af9423979dec6c4469f18a1a",
+        "rows": 408072,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 406913,
+          "0": 1157,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 16059,
+        "sha256": "4f02d103813403526529e5e044b2f7b4740e11679b8301058b21f760300e1441",
+        "rows": 1073,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1070,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 13226,
+        "sha256": "8c78bfa073dd55db6107989a10eabd08fb02906e1635279a105392969bd72191",
+        "rows": 1073,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1070,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 16045,
+        "sha256": "8a4c7dba4fae57a8604a4345f5301b2ea23abac9bda23c341f0120f45b7b2108",
+        "rows": 1073,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1070,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1723980,
+        "sha256": "1a6d91811fa64ae6205f474b410ebc7462350aef23092be813747a81e2d26bcc",
+        "rows": 38488,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37416,
+          "0": 1070,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1691250,
+        "sha256": "41aa936518018cb1e08d06742db99cb5e92d6cf4679d052f8e8ca946536bab24",
+        "rows": 38488,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37416,
+          "0": 1070,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 15822,
+        "sha256": "e87f062963a05623aa53a6f23d6b1b5b8e0db389c632a5b0e93946142d5948f3",
+        "rows": 1073,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1070,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 14464,
+        "sha256": "4e6e59447fba88572732e74525a1596fcae8f3c29d3780d2094f14b2f66ba3a4",
+        "rows": 1073,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1070,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 12499,
+        "sha256": "4613e3a1e4016b394932b2b720ad52431b3c033cf6e0cfb413ded7ed213a58a1",
+        "rows": 1073,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1070,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 14476,
+        "sha256": "c54577e09011ff0b3ee5d9bef747d004f556e76b325addbfb7344342c618230c",
+        "rows": 1073,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1070,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1706252,
+        "sha256": "73101f3d0b7a21d362a11f79e1256d5abb99d4ebdaaa3295da3af50323ee971b",
+        "rows": 38488,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37416,
+          "0": 1070,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1680656,
+        "sha256": "25be0337ae1dc792d1b7836b71f86a8db286eb5a1413e6ec4fd9a44bbd323a2c",
+        "rows": 38488,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37416,
+          "0": 1070,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 16189,
+        "sha256": "dae86f9bf9820fc6418ceb7137eab116541dfa858107bb7c145efd65d84a09bb",
+        "rows": 1073,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1070,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/8_backward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 49005651,
+        "sha256": "04511066164fed512f376321919cbe13530cf7555af837c07113535daa6a9380",
+        "rows": 377361,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 376289,
+          "0": 1070,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_LT-LT_COP.csv",
+        "bytes": 14357,
+        "sha256": "e16674005a9dcd945403863dea91ed61e9fc82b85156aa980af459ac251afbc1",
+        "rows": 1079,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1076,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_LT-LT_Force.csv",
+        "bytes": 12492,
+        "sha256": "aea02459d5612c7756ea051c6bc70aa1ffe3eb930f87ab3949826f887b1c9915",
+        "rows": 1079,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1076,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_COP.csv",
+        "bytes": 14360,
+        "sha256": "8940b366cd8fb0b08a8361ab1ffb40d2e4ff48d1e056817e2e377682168d2476",
+        "rows": 1079,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1076,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Max_Load.csv",
+        "bytes": 1712914,
+        "sha256": "18e1a596266beebbb1c3d3e86eb64862add4ea5d6033a24c0775803f08b08c4f",
+        "rows": 38704,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37626,
+          "0": 1076,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_LT-LT_Local_Pressure.csv",
+        "bytes": 1688882,
+        "sha256": "15a5ff4f8ec2e3ab906920da0324e3812ea5ffe8a06e4c870f0406a70bd20a31",
+        "rows": 38704,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37626,
+          "0": 1076,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_LT-LT_Max_Pressure.csv",
+        "bytes": 15506,
+        "sha256": "e4a32ee0daf9162a275720853123670fc89ae9fdafda358e87c6fedc8a7b3bcc",
+        "rows": 1079,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1076,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_RT-RT_COP.csv",
+        "bytes": 16320,
+        "sha256": "efe1e52af1c0f5cd44606da8ebcdb4428782c0871ad6a748d7959c3cae8b9799",
+        "rows": 1079,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1076,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_RT-RT_Force.csv",
+        "bytes": 13378,
+        "sha256": "8962c24bd476aaa4fbabdde06f36fbf361682c8869daf9b216e715c3affa246f",
+        "rows": 1079,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1076,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_COP.csv",
+        "bytes": 16326,
+        "sha256": "a69446cd099597dc95087abc717a251bdee94378be27ba97843d222a1794f20f",
+        "rows": 1079,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "3": 1076,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Max_Load.csv",
+        "bytes": 1743448,
+        "sha256": "eb82c419fe3ae583243c345e9e67c8c4e4541240437c02bfd83c3c990cd76dc9",
+        "rows": 38704,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37626,
+          "0": 1076,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_RT-RT_Local_Pressure.csv",
+        "bytes": 1701900,
+        "sha256": "47cd0bd51eae544ee27c152f471236ed67ca7e105f173fb71bebba50b59e4f3a",
+        "rows": 38704,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "22": 37626,
+          "0": 1076,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Contacts-Foot_RT-RT_Max_Pressure.csv",
+        "bytes": 15159,
+        "sha256": "8d2be0a6df3bb5f3d5d98b712fb66af7e717fffeeac18a1fa26bacfd5ccea451",
+        "rows": 1079,
+        "delimiter": ",",
+        "header_column_count": 7,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "2": 1076,
+          "7": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/9_forward_Pressure_Platform-Pressure,_Gait_Mode.csv",
+        "bytes": 49274014,
+        "sha256": "f91704e43091435af3146488c894ae4a7f6ac5ef0d42d79062173f90615ac042",
+        "rows": 379479,
+        "delimiter": ",",
+        "header_column_count": 11,
+        "has_phi_header": false,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "65": 378401,
+          "0": 1076,
+          "11": 2
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_separated_csv_files/info.csv",
+        "bytes": 233,
+        "sha256": "8ddd1bb6c1b423a27a61629f622bfd36225b4590bf4ffb1d510a436dba9c35c3",
+        "rows": 2,
+        "delimiter": ",",
+        "header_column_count": 10,
+        "has_phi_header": true,
+        "signal_family": "METADATA",
+        "width_counts": {
+          "9": 1,
+          "10": 1
+        }
+      },
+      {
+        "relative_path": "Noraxon MR4 csv exports/Walking on pressure plateform/MR4_free_gait_pressure_platform_single_csv_files.csv",
+        "bytes": 713387,
+        "sha256": "96d8ca5309653b5a4b25d61a258cc3e297460fdd8ef0a2dcdaf89c4e080ab65b",
+        "rows": 12447,
+        "delimiter": ",",
+        "header_column_count": 12,
+        "has_phi_header": true,
+        "signal_family": "PRESSURE_PLATFORM",
+        "width_counts": {
+          "15": 12444,
+          "12": 2,
+          "0": 1
+        }
+      },
+      {
+        "relative_path": "Vicon Nexus csv exports/Nexus walking trial with EMG.csv",
+        "bytes": 6841552,
+        "sha256": "036bd6cb909bbc6eb8092285ef79c5caaa305be1091e97202c0b3894b9b30a2a",
+        "rows": 11423,
+        "delimiter": ",",
+        "header_column_count": 191,
+        "has_phi_header": false,
+        "signal_family": "EMG",
+        "width_counts": {
+          "191": 11423
+        }
+      },
+      {
+        "relative_path": "Vicon Nexus csv exports/Nexus walking trial.csv",
+        "bytes": 3131612,
+        "sha256": "325154d886dc5ee2a4082ac1252a48e6f78c109a4bce91f1476d680d58fa8a1d",
+        "rows": 8439,
+        "delimiter": ",",
+        "header_column_count": 191,
+        "has_phi_header": false,
+        "signal_family": "MOTION_LAB_EXPORT",
+        "width_counts": {
+          "191": 8439
+        }
+      }
+    ]
+  },
+  "downstream_day68_allowed": true,
+  "locked_protocol_hash": "6e765d0f52d74291179c109259eaea24e812117f27a0bbda460ad0af5ec3aa23",
+  "split_manifest_sha256": "fbf63869c61f8acd0dde90327df51043d2fc7bbc424de023a4e893dd256c5255"
+}
