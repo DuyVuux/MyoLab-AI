@@ -114,6 +114,8 @@ day*_eda_data_quality_audit_pack/
 day*_grabmyo_eda_data_quality_pack/
 pre_day30_remote_eda_execution_pack/
 day30_dual_dataset_harmonization_pack/
+phase7r-accelerated-critical-path/
+
 
 # ZONE 2 safety — raw data / cache / model artifacts must never enter Git
 **/acquired/
