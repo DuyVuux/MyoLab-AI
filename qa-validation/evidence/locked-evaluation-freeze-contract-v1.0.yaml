@@ -1,0 +1,21 @@
+contract: LockedEvaluationFreeze v1.0
+phase: Phase 7R
+requirements:
+  immutable_after_freeze: true
+  no_retune_after_outcome_inspection: true
+  development_evaluation_separation: required
+  subject_overlap: zero_when_subject_identity_available
+  source_derivative_overlap: zero
+  evidence_tier_preservation: required
+  source_hashes: required_via_manifest_or_source_record
+  split_hashes: required
+  config_hashes: required
+  claim_scope: RESEARCH_ONLY
+invalidating_events:
+  - post_lock_threshold_change
+  - post_lock_feature_selection
+  - post_lock_normalization_fit
+  - post_lock_model_selection
+  - evaluation_outcome_used_for_tuning
+  - source_or_split_hash_change_without_refreeze
+on_invalidation: BLOCKED_WITH_EVIDENCE_AND_REFREEZE_REQUIRED

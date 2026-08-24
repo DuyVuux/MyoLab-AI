@@ -1,0 +1,40 @@
+{
+  "allowed": true,
+  "checks": [
+    {
+      "detail": "/home/duykhongngu28/massive/MyoLab-AI/docs/00-executive/milestones/m6-r-research-ml.md",
+      "name": "m6_r",
+      "status": "PASS"
+    },
+    {
+      "detail": "/home/duykhongngu28/massive/MyoLab-AI/docs/00-executive/gates/gate-f-r-research-ml-decision.md",
+      "name": "gate_f_r",
+      "status": "PASS"
+    },
+    {
+      "detail": "PASS",
+      "name": "phase6r_leakage",
+      "status": "PASS"
+    },
+    {
+      "detail": "status=PASS blocking=0",
+      "name": "phase6r_claims",
+      "status": "PASS"
+    },
+    {
+      "detail": "RESEARCH_ML_NOT_JUSTIFIED",
+      "name": "phase6r_branch",
+      "status": "PASS"
+    },
+    {
+      "detail": "/home/duykhongngu28/massive/MyoLab-AI/ai-core/research/phase6r/governance/phase6r-to-locked-validation-handoff.yaml",
+      "name": "ml_default_off",
+      "status": "PASS"
+    },
+    {
+      "detail": "all required paths exist",
+      "name": "required_phase6r_artifacts",
+      "status": "PASS"
+    }
+  ]
+}

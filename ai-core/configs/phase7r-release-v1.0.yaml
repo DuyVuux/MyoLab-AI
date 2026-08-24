@@ -1,0 +1,35 @@
+phase: Phase 7R
+program: MyoLab-AI / sEMG Quality Intelligence
+claim_scope: RESEARCH_ONLY
+clinical_status: NOT_CLINICALLY_VALIDATED
+clinical_use: NOT_FOR_CLINICAL_USE
+upstream_required_milestone: RESEARCH_ML_NOT_JUSTIFIED
+ml:
+  default_enabled: false
+  representation_learning: EXCLUDED
+  embedding_supportability: NOT_RUN
+  calibration: NOT_APPLICABLE
+  conformal: NOT_APPLICABLE
+  domain_adaptation_tta: DISABLED
+  offline_rl_bandit: DATA_READINESS_ONLY
+  grounded_llm: RESEARCH_ONLY_DEFAULT_OFF
+locked_evaluation:
+  retune_allowed: false
+  allowed_post_lock_actions:
+    - execute_pre_registered_pipeline
+    - compute_pre_registered_metrics
+    - generate_reports_from_frozen_results
+    - record_failures_without_tuning
+forbidden_post_lock_actions:
+  - select_architecture
+  - select_features
+  - select_thresholds
+  - fit_normalization
+  - fit_calibration
+  - tune_hyperparameters
+  - select_checkpoint
+  - change_augmentation
+final_status_vocabulary:
+  - PORTFOLIO_RESEARCH_READY
+  - READY_WITH_LIMITATIONS
+  - BLOCKED_WITH_EVIDENCE

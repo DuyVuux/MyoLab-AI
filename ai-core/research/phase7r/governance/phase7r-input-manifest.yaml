@@ -1,0 +1,22 @@
+phase: Phase 7R
+workstream: phase_entry_and_locked_validation
+formal_inputs:
+  - docs/00-executive/milestones/m6-r-research-ml.md
+  - docs/00-executive/gates/gate-f-r-research-ml-decision.md
+  - qa-validation/evidence/phase6r-leakage-audit.json
+  - qa-validation/evidence/phase6r-claim-audit-contextual.json
+  - qa-validation/evidence/phase6r-branch-decision.json
+  - ai-core/research/phase6r/governance/phase6r-to-locked-validation-handoff.yaml
+upstream_expected:
+  m6_r: RESEARCH_ML_NOT_JUSTIFIED
+  leakage: PASS
+  claims: PASS
+  ml_default: OFF
+claim_boundaries:
+  - RESEARCH_ONLY
+  - NOT_CLINICALLY_VALIDATED
+  - NOT_FOR_CLINICAL_USE
+  - PUBLIC_DATA != CLINICAL_VALIDATION
+  - SYNTHETIC_KNOWN_TRUTH != CLINICAL_TRUTH
+  - CORE_SYSTEM_MUST_RUN_WITH_ML_OFF
+execution_allowed: CONDITIONAL_ON_LIVE_REPO_EVIDENCE
