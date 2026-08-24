@@ -1,0 +1,20 @@
+{
+  "allowed_changes_only": "BUG_FIXES_REVEALED_BY_UI_INTEGRATION_ONLY",
+  "final_r": "READY_WITH_LIMITATIONS",
+  "forbidden_features": [
+    "ssl",
+    "transformer",
+    "new_classifier",
+    "calibration",
+    "conformal",
+    "ood_model",
+    "rl",
+    "mfcv_without_eligibility",
+    "clinical_prediction"
+  ],
+  "m6_r": "RESEARCH_ML_NOT_JUSTIFIED",
+  "ml_default": "OFF",
+  "phase7r_tests_passed": 13,
+  "phase7r_tests_total": 13,
+  "status": "CORE_FEATURE_FREEZE"
+}

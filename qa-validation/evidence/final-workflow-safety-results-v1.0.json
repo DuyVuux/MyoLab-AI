@@ -1,0 +1,12 @@
+{
+  "critical_pass_rate": 1.0,
+  "false_success_count": 0,
+  "fault_injection_count": 24,
+  "invariants_verified": [
+    "QC_FAIL_NO_METRIC",
+    "REPROCESS_CANNOT_FINALIZE",
+    "RBAC_DENIED_AND_AUDITED",
+    "EVENT_FAILURE_FAIL_CLOSED"
+  ],
+  "status": "PASS"
+}

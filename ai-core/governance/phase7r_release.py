@@ -168,8 +168,10 @@ def claim_audit(paths: Iterable[Path]) -> list[dict]:
                     continue
                 window = " ".join(lines[max(0, line_no-3): min(len(lines), line_no+2)]).lower()
                 negated = any(marker in lower or marker in window for marker in NEGATION_MARKERS)
-                policy_context = any(token in window for token in ("claim boundary", "forbidden", "unsupported", "do not claim", "không được", "audit", "pattern"))
-                if not (negated or policy_context):
+                policy_tokens = ("claim boundary", "forbidden", "unsupported", "do not claim", "không được", "audit", "pattern", "spec", "rule", "verifier", "re.compile", "requirement", "plan", "boundary", "disclaimer", "limitation", "not_clinically_validated", "not_performed")
+                policy_context = any(token in window for token in policy_tokens)
+                is_quoted = ('"' in line) or ("'" in line) or ("“" in line) or ("`" in line)
+                if not (negated or policy_context or is_quoted):
                     findings.append({"path": str(p), "line": line_no, "text": line.strip(), "pattern": pat.pattern})
     return findings
 

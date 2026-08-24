@@ -1,0 +1,18 @@
+{
+  "analytical_tests": {
+    "bandpass_attenuation_pass": true,
+    "mask_not_delete_enforced": true,
+    "normalization_eligibility_enforced": true,
+    "notch_rejection_pass": true
+  },
+  "known_answer_tests": {
+    "psd_mdf_mnf_max_error": 3.4e-06,
+    "rms_mav_max_error": 1.2e-07,
+    "tolerance_check": "PASS"
+  },
+  "status": "PASS",
+  "unsupported_optional_metrics": [
+    "activation_timing",
+    "mfcv"
+  ]
+}

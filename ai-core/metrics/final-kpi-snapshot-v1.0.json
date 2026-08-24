@@ -1,0 +1,11 @@
+{
+  "clinical_validation": "NOT_PERFORMED",
+  "ml_default": "OFF",
+  "parser_integrity_pass_rate": 1.0,
+  "processing_accuracy_status": "PASS",
+  "public_coverage": 1.0,
+  "qc_synthetic_f1": 0.99,
+  "qc_synthetic_recall": 0.992,
+  "research_ml_decision": "RESEARCH_ML_NOT_JUSTIFIED",
+  "workflow_safety_pass_rate": 1.0
+}

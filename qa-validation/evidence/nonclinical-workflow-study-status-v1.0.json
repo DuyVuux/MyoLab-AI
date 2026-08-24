@@ -1,0 +1,7 @@
+{
+  "clinical_claims_made": false,
+  "participant_count": 0,
+  "reproducible_simulations": 100,
+  "scripted_scenarios": 3,
+  "status": "SIMULATED_WORKFLOW_ONLY"
+}

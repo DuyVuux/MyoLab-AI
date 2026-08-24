@@ -1,0 +1,4 @@
+variant_id,variant_name,case_count,percentage,mean_simulated_duration_sec
+1,Standard_Review,85,85.0,1.2
+2,Abstention_Review,12,12.0,3.5
+3,Rejection,3,3.0,0.8

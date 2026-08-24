@@ -536,6 +536,11 @@
       "status": "PASS"
     },
     {
+      "detail": "b21123285e7fa287b710a913c6aa19167c8c6e4dc76598643d56d7c2c6b24d34",
+      "name": "qa-validation/evidence/final-processing-metric-results-v1.0.json",
+      "status": "PASS"
+    },
+    {
       "detail": "e7bfe00e6ef659a842b7bd962302113116413a537a54d5a0efe9306e1e72364e",
       "name": "qa-validation/evidence/leakage-audit-contract-v0.1.yaml",
       "status": "PASS"

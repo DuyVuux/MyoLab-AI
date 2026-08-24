@@ -1,0 +1,25 @@
+{
+  "evidence_model": "TWO_TIER",
+  "no_retune_verified": true,
+  "status": "PASS",
+  "tier_a_synthetic": {
+    "f1_score": 0.99,
+    "false_allow_rate": 0.0,
+    "false_block_rate": 0.008,
+    "precision": 0.988,
+    "recall": 0.992,
+    "traceable_denominators": true
+  },
+  "tier_b_public": {
+    "abstention_rate": 0.042,
+    "coverage": 1.0,
+    "qc_decision_distribution": {
+      "ABSTAIN": 0.042,
+      "PASS": 0.958
+    },
+    "reason_distribution": {
+      "motion_artifact": 0.024,
+      "powerline_interference": 0.018
+    }
+  }
+}

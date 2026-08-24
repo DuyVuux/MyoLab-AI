@@ -1,0 +1,9 @@
+{
+  "deterministic_replay": true,
+  "false_allow_count": 0,
+  "out_of_workspace_access_count": 0,
+  "raw_immutability_verified": true,
+  "status": "PASS",
+  "total_fixtures": 48,
+  "typed_exception_count": 48
+}

@@ -537,6 +537,11 @@
       "sha256": "740eddfbcf31f1445e272a4c70b8ae9d71badc3beedb3824d32eb6382f3b40a5"
     },
     {
+      "bytes": 420,
+      "path": "qa-validation/evidence/final-processing-metric-results-v1.0.json",
+      "sha256": "b21123285e7fa287b710a913c6aa19167c8c6e4dc76598643d56d7c2c6b24d34"
+    },
+    {
       "bytes": 262,
       "path": "qa-validation/evidence/leakage-audit-contract-v0.1.yaml",
       "sha256": "e7bfe00e6ef659a842b7bd962302113116413a537a54d5a0efe9306e1e72364e"
@@ -582,5 +587,5 @@
       "sha256": "031aed7f2501c5a8f4f613b51d6cb0cea98fd8cf03482687f90f202220d1c4f5"
     }
   ],
-  "lock_sha256": "fcd7b655d3efc3efa21bbf08b918461bf62c4f6f31a03a49f74bb3d7f47f2c4e"
+  "lock_sha256": "b90cefce1b136b29d20dda19bf535e0c4086eda415a407a99326b8bfab71a993"
 }

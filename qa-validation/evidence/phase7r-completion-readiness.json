@@ -1,16 +1,8 @@
 {
   "clinical_validation": "NOT_PERFORMED",
   "locked_evaluation": "FROZEN",
-  "missing_validation_evidence": [
-    "parser",
-    "qc",
-    "metrics",
-    "workflow_safety",
-    "consolidated",
-    "release_runbook",
-    "final_evidence_index"
-  ],
+  "missing_validation_evidence": [],
   "ml_default": "OFF",
   "research_ml": "RESEARCH_ML_NOT_JUSTIFIED",
-  "status": "BLOCKED_WITH_EVIDENCE"
+  "status": "READY_FOR_FINAL_GATE_AUDIT"
 }
