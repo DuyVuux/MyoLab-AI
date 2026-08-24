@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "records_scanned": 126,
+  "split_sources": [
+    "ai-core/data/upstream-evidence/public-benchmark-splits-v1.0.csv",
+    "qa-validation/evidence/public-benchmark-splits-v1.0.csv"
+  ],
+  "findings": [
+    {
+      "check": "subject_overlap",
+      "status": "PASS",
+      "reason": "No subject overlap between TRAIN and EVALUATION.",
+      "details": {
+        "identities_checked": 63
+      }
+    },
+    {
+      "check": "source_derivative_leakage",
+      "status": "NOT_APPLICABLE",
+      "reason": "source_window identity not present in discovered manifests.",
+      "details": {}
+    },
+    {
+      "check": "example_overlap",
+      "status": "NOT_APPLICABLE",
+      "reason": "Example identity not available.",
+      "details": {}
+    },
+    {
+      "check": "feature_leakage",
+      "status": "PASS",
+      "reason": "No forbidden identity/target-like feature registration detected.",
+      "details": {
+        "registries": [
+          "qa-validation/evidence/day31/day31-feature-registry.json"
+        ]
+      }
+    },
+    {
+      "check": "locked_evaluation_guard",
+      "status": "PASS",
+      "reason": "Evidence explicitly states locked evaluation remained untouched/excluded from tuning.",
+      "details": {
+        "files": [
+          "qa-validation/evidence/phase6r-leakage-audit.json"
+        ]
+      }
+    }
+  ],
+  "pass_condition": "All mandatory leakage checks PASS or are explicitly NOT_APPLICABLE with reason.",
+  "claim_boundary": "Leakage safety only; no clinical/site validity inference."
+}

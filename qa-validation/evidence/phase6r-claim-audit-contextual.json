@@ -1,0 +1,1007 @@
+{
+  "status": "PASS",
+  "blocking_count": 0,
+  "reviewed_hit_count": 142,
+  "blocking_unsupported_assertions": [],
+  "nonblocking_context_mentions": [
+    {
+      "path": "ai-core/governance/phase6r_verifier.py",
+      "line": 10,
+      "claim_id": "clinically_validated",
+      "classification": "TEST_OR_SCANNER_LITERAL",
+      "excerpt": "re.compile(r'\\b(?:is|are|was|were|has been) clinically validated\\b', re.I),"
+    },
+    {
+      "path": "qa-validation/evidence/day4-qc-evidence.md",
+      "line": 38,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "- [x] No threshold is claimed clinically validated."
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 11,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- “clinically validated”;\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 18,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"> “Gesture model regression PASS nên pipeline đã clinically validated.”\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 25,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- clinically validated Active Learning.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 32,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- clinically validated threshold\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 39,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- validated at Vinmec\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 46,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- clinically validated processing;\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 53,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- validated at Vinmec/MotionLab;\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 60,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- “clinically validated”;\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 67,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 67,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 74,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 74,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 81,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 81,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 88,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 88,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 95,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"\\\\\\\"clinically validated\\\\\\\",\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 102,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"\\\\\\\"clinically validated\\\\\\\",\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 109,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"\\\\\\\"validated at vinmec\\\\\\\",\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 116,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"# silently masquerade as a clinically validated threshold set.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 123,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"re.compile(r'\\\\\\\\b(?:is|are|was|were|has been) clinically validated\\\\\\\\b', re.I),\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 130,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"(docs_dir / 'invalid_claim.md').write_text('This feature is validated at Vinmec in production.')\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 137,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"file_path.write_text('This system is clinically validated.\\\\\\\\n', encoding='utf-8')\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 144,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"\\\\\\\"clinically validated detector\\\\\\\",\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 151,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"\\\\\\\"validated at Vinmec\\\\\\\",\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 158,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"clinically validated\\\",\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 165,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"validated at vinmec\\\",\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 172,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"- “clinically validated”;\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 179,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"> “Gesture model regression PASS nên pipeline đã clinically validated.”\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 186,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"- clinically validated Active Learning.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 193,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"- clinically validated threshold\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 200,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"- validated at Vinmec\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 207,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"- clinically validated processing;\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 214,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"- validated at Vinmec/MotionLab;\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 221,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"- “clinically validated”;\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 228,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 228,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 235,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 235,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 242,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"clinically validated\\\",\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 251,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"re.compile(r'\\\\b(?:is|are|was|were|has been) clinically validated\\\\b', re.I),\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 258,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"- [x] No threshold is claimed clinically validated.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 265,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"| `candidate` | Completed prespecified engineering evaluation and ready for independent review | Not clinically validated |\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 272,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"These are not clinically validated thresholds.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 279,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"`VERIFIED_DOCUMENTED` means the statement/requirement is explicitly present in an authoritative document. It does **not** mean the feature is implemented, clinically validated, or site validated. Those are captured separately by implementation lifecycle and site evidence.\\"
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 286,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"A correct DAY31 closes the unsafe gap between “we know QC failed” and “some later code computed the metric anyway.” It does not claim that Phase 2 QC is clinically validated, that OOD detection exists, or that uncertainty models exist. It establishes a contract into which "
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 293,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- **Clinical status:** NOT CLINICALLY VALIDATED\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 300,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"**Negative check:** Card language must not say `clinically validated` or site-equivalent.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 307,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"Record automated results, peer-review status, any contract changes, public-data open questions and exact final status. Never close with `clinically validated`.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 314,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"**Status:** NOT CLINICALLY VALIDATED. `site_threshold_status=NOT_VERIFIED`.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 321,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"10. No threshold result is described as diagnostic or clinically validated.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 328,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"> **Clinical status:** NOT CLINICALLY VALIDATED / NOT FOR CLINICAL USE\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 335,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"Could provenance make an analytically verified offline filter appear clinically validated? **No.** Claim scope and recipe status remain research-only; provenance records what happened, not whether it is clinically appropriate.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 342,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"| `candidate` | Completed prespecified engineering evaluation and ready for independent review | Not clinically validated |\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 349,
+      "claim_id": "production_ood",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"No SSL/representation encoder was trained. Embedding distance is therefore not computed and no OOD probability or production OOD score is created. Existing non-probabilistic metadata/rule supportability remains unchanged.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 356,
+      "claim_id": "production_ood",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"| OOD | NOT_STARTED | No production OOD semantics |\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 363,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"forbidden=['validated at vinmec','deployed at vinmec','hospital-ready','pilot-ready','clinically proven','diagnostic accuracy']\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 370,
+      "claim_id": "pathology_detector",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- Không coi OOD readiness là QC hoặc pathology detector.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 377,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- [x] No threshold is claimed clinically validated.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 384,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- [ ] No threshold is claimed clinically validated.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 391,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"\\\\\\\"pattern\\\\\\\": \\\\\\\"\\\\\\\\\\\\\\\\b(?:is|are|was|were|has been) clinically validated\\\\\\\\\\\\\\\\b\\\\\\\"\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 398,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"\\\\\\\"pattern\\\\\\\": \\\\\\\"\\\\\\\\\\\\\\\\b(?:is|are|was|were|has been) clinically validated\\\\\\\\\\\\\\\\b\\\\\\\"\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 405,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"file_path.write_text('Status: NOT CLINICALLY VALIDATED\\\\\\\\n', encoding='utf-8')\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 412,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"file_path.write_text('Forbidden claim: validated at Vinmec\\\\\\\\n', encoding='utf-8')\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 419,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- [ ] QC thresholds are labelled provisional and not clinically validated.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 426,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"- [ ] `preprocess_v0.1` vẫn frozen/not clinically validated.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 433,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"assert \\\\\\\"clinically validated\\\\\\\" not in text\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 440,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"def test_30_claim_boundary_doc(): assert 'NOT CLINICALLY VALIDATED' in (ROOT/'docs/00-executive/day35/DAY35_CLAIM_BOUNDARY.md').read_text()\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 447,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"\\\"excerpt\\\": \\\"Passing these fixtures means **contract tooling is coherent**, not that a site export has been clinically validated. Actual approved exports are rechecked later at Gate B/retrospective validation.\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 454,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"- [ ] No threshold is claimed clinically validated.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 461,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"pattern\\\": \\\"\\\\\\\\b(?:is|are|was|were|has been) clinically validated\\\\\\\\b\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 468,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"pattern\\\": \\\"\\\\\\\\b(?:is|are|was|were|has been) clinically validated\\\\\\\\b\\\"\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 475,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"(docs_dir / 'invalid_claim.md').write_text('This feature is validated at Vinmec in production.')\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 482,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"file_path.write_text('Status: NOT CLINICALLY VALIDATED\\\\n', encoding='utf-8')\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 489,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"file_path.write_text('Forbidden claim: validated at Vinmec\\\\n', encoding='utf-8')\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 496,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"file_path.write_text('This system is clinically validated.\\\\n', encoding='utf-8')\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 503,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"- [ ] QC thresholds are labelled provisional and not clinically validated.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 510,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"- [ ] `preprocess_v0.1` vẫn frozen/not clinically validated.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 517,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"assert \\\"clinically validated\\\" not in text\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 524,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"clinically validated detector\\\",\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 531,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"\\\"validated at Vinmec\\\",\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 538,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"def test_30_claim_boundary_doc(): assert 'NOT CLINICALLY VALIDATED' in (ROOT/'docs/00-executive/day35/DAY35_CLAIM_BOUNDARY.md').read_text()\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 545,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"Passing these fixtures means **contract tooling is coherent**, not that a site export has been clinically validated. Actual approved exports are rechecked later at Gate B/retrospective validation.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 552,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"| `candidate` | Completed prespecified engineering evaluation and ready for independent review | Not clinically validated |\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 559,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"These are not clinically validated thresholds.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 566,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"`VERIFIED_DOCUMENTED` means the statement/requirement is explicitly present in an authoritative document. It does **not** mean the feature is implemented, clinically validated, or site validated. Those are captured separately by implementation lifecycle and site evidence.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 573,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"A correct DAY31 closes the unsafe gap between “we know QC failed” and “some later code computed the metric anyway.” It does not claim that Phase 2 QC is clinically validated, that OOD detection exists, or that uncertainty models exist. It establishes a contract into which those capabilit"
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 580,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"- **Clinical status:** NOT CLINICALLY VALIDATED\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 587,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"**Negative check:** Card language must not say `clinically validated` or site-equivalent.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 594,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"Record automated results, peer-review status, any contract changes, public-data open questions and exact final status. Never close with `clinically validated`.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 601,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"**Status:** NOT CLINICALLY VALIDATED. `site_threshold_status=NOT_VERIFIED`.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 608,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"10. No threshold result is described as diagnostic or clinically validated.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 615,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"> **Clinical status:** NOT CLINICALLY VALIDATED / NOT FOR CLINICAL USE\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 622,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"Could provenance make an analytically verified offline filter appear clinically validated? **No.** Claim scope and recipe status remain research-only; provenance records what happened, not whether it is clinically appropriate.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 629,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"| `candidate` | Completed prespecified engineering evaluation and ready for independent review | Not clinically validated |\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 636,
+      "claim_id": "production_ood",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"No SSL/representation encoder was trained. Embedding distance is therefore not computed and no OOD probability or production OOD score is created. Existing non-probabilistic metadata/rule supportability remains unchanged.\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 643,
+      "claim_id": "production_ood",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "\"excerpt\": \"| OOD | NOT_STARTED | No production OOD semantics |\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "line": 650,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"excerpt\": \"forbidden=['validated at vinmec','deployed at vinmec','hospital-ready','pilot-ready','clinically proven','diagnostic accuracy']\""
+    },
+    {
+      "path": "qa-validation/evidence/day4-qc-evidence.template.md",
+      "line": 37,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "- [ ] No threshold is claimed clinically validated."
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-entry-preflight.json",
+      "line": 13,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"pattern\": \"\\\\b(?:is|are|was|were|has been) clinically validated\\\\b\""
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-entry-preflight.json",
+      "line": 29,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"pattern\": \"\\\\b(?:is|are|was|were|has been) clinically validated\\\\b\""
+    },
+    {
+      "path": "qa-validation/automated-tests/test_phase6r_entry_gate.py",
+      "line": 45,
+      "claim_id": "validated_at_vinmec",
+      "classification": "TEST_OR_SCANNER_LITERAL",
+      "excerpt": "(docs_dir / 'invalid_claim.md').write_text('This feature is validated at Vinmec in production.')"
+    },
+    {
+      "path": "qa-validation/automated-tests/test_phase6r_claim_context.py",
+      "line": 16,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "file_path.write_text('Status: NOT CLINICALLY VALIDATED\\n', encoding='utf-8')"
+    },
+    {
+      "path": "qa-validation/automated-tests/test_phase6r_claim_context.py",
+      "line": 24,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "file_path.write_text('Forbidden claim: validated at Vinmec\\n', encoding='utf-8')"
+    },
+    {
+      "path": "qa-validation/automated-tests/test_phase6r_claim_context.py",
+      "line": 31,
+      "claim_id": "clinically_validated",
+      "classification": "TEST_OR_SCANNER_LITERAL",
+      "excerpt": "file_path.write_text('This system is clinically validated.\\n', encoding='utf-8')"
+    },
+    {
+      "path": "qa-validation/requirements/day2-acceptance-criteria.md",
+      "line": 17,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "- [ ] QC thresholds are labelled provisional and not clinically validated."
+    },
+    {
+      "path": "qa-validation/requirements/day7-acceptance-criteria.md",
+      "line": 6,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "- [ ] `preprocess_v0.1` vẫn frozen/not clinically validated."
+    },
+    {
+      "path": "qa-validation/lib/day34_weak_label_analysis.py",
+      "line": 63,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"clinically validated\","
+    },
+    {
+      "path": "qa-validation/lib/day34_weak_label_analysis.py",
+      "line": 64,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"validated at vinmec\","
+    },
+    {
+      "path": "qa-validation/automated-tests/research/test_day33_research_corpus.py",
+      "line": 289,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "assert \"clinically validated\" not in text"
+    },
+    {
+      "path": "qa-validation/automated-tests/research/test_day34_weak_label_analysis.py",
+      "line": 428,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"clinically validated detector\","
+    },
+    {
+      "path": "qa-validation/automated-tests/research/test_day34_weak_label_analysis.py",
+      "line": 429,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"validated at Vinmec\","
+    },
+    {
+      "path": "qa-validation/automated-tests/research/test_day35_threshold_sensitivity.py",
+      "line": 100,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "def test_30_claim_boundary_doc(): assert 'NOT CLINICALLY VALIDATED' in (ROOT/'docs/00-executive/day35/DAY35_CLAIM_BOUNDARY.md').read_text()"
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/single_csv/README.md",
+      "line": 12,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "Passing these fixtures means **contract tooling is coherent**, not that a site export has been clinically validated. Actual approved exports are rechecked later at Gate B/retrospective validation."
+    },
+    {
+      "path": "docs/09-mlops-devops/model-registry-spec.md",
+      "line": 70,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "| `candidate` | Completed prespecified engineering evaluation and ready for independent review | Not clinically validated |"
+    },
+    {
+      "path": "docs/09-mlops-devops/model-registry-spec.md",
+      "line": 345,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "- “clinically validated”;"
+    },
+    {
+      "path": "docs/06-ai-signal-processing/signal-validation-spec.md",
+      "line": 984,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "These are not clinically validated thresholds."
+    },
+    {
+      "path": "docs/00-executive/day01/requirements-rebaseline-summary.v0.1.md",
+      "line": 34,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "`VERIFIED_DOCUMENTED` means the statement/requirement is explicitly present in an authoritative document. It does **not** mean the feature is implemented, clinically validated, or site validated. Those are captured separately by implementation lifecycle and site evidence."
+    },
+    {
+      "path": "docs/00-executive/day31/DAY31_EXECUTION_PLAN.md",
+      "line": 565,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "A correct DAY31 closes the unsafe gap between “we know QC failed” and “some later code computed the metric anyway.” It does not claim that Phase 2 QC is clinically validated, that OOD detection exists, or that uncertainty models exist. It establishes a contract into which those capabilities may late"
+    },
+    {
+      "path": "docs/00-executive/day07/DAY07_FEYNMAN_LEARNING_GUIDE.md",
+      "line": 336,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "> “Gesture model regression PASS nên pipeline đã clinically validated.”"
+    },
+    {
+      "path": "docs/00-executive/day33/DAY33_EXECUTION_PLAN.md",
+      "line": 9,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "- **Clinical status:** NOT CLINICALLY VALIDATED"
+    },
+    {
+      "path": "docs/00-executive/day33/DAY33_EXECUTION_PLAN.md",
+      "line": 230,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "**Negative check:** Card language must not say `clinically validated` or site-equivalent."
+    },
+    {
+      "path": "docs/00-executive/day32/DAY32_EXECUTION_PLAN.md",
+      "line": 441,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "Record automated results, peer-review status, any contract changes, public-data open questions and exact final status. Never close with `clinically validated`."
+    },
+    {
+      "path": "docs/00-executive/day32/DAY32_EXECUTION_PLAN.md",
+      "line": 712,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "- clinically validated Active Learning."
+    },
+    {
+      "path": "docs/00-executive/day35/DAY35_CLAIM_BOUNDARY.md",
+      "line": 11,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "- clinically validated threshold"
+    },
+    {
+      "path": "docs/00-executive/day35/DAY35_CLAIM_BOUNDARY.md",
+      "line": 13,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "- validated at Vinmec"
+    },
+    {
+      "path": "docs/00-executive/day35/DAY35_CLAIM_BOUNDARY.md",
+      "line": 19,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "**Status:** NOT CLINICALLY VALIDATED. `site_threshold_status=NOT_VERIFIED`."
+    },
+    {
+      "path": "docs/00-executive/day35/DAY35_EXECUTION_PLAN.md",
+      "line": 203,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "10. No threshold result is described as diagnostic or clinically validated."
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_CLAIM_BOUNDARY.md",
+      "line": 12,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "- clinically validated processing;"
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_CLAIM_BOUNDARY.md",
+      "line": 13,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "- validated at Vinmec/MotionLab;"
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_EXECUTION_PLAN.md",
+      "line": 8,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "> **Clinical status:** NOT CLINICALLY VALIDATED / NOT FOR CLINICAL USE"
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_EXECUTION_PLAN.md",
+      "line": 1137,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "Could provenance make an analytically verified offline filter appear clinically validated? **No.** Claim scope and recipe status remain research-only; provenance records what happened, not whether it is clinically appropriate."
+    },
+    {
+      "path": "docs/research/day26/day26_deep_research/model-registry-spec.md",
+      "line": 70,
+      "claim_id": "clinically_validated",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "| `candidate` | Completed prespecified engineering evaluation and ready for independent review | Not clinically validated |"
+    },
+    {
+      "path": "docs/research/day26/day26_deep_research/model-registry-spec.md",
+      "line": 345,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "- “clinically validated”;"
+    },
+    {
+      "path": "scripts/dev/day35_contract_validator.py",
+      "line": 30,
+      "claim_id": "clinically_validated",
+      "classification": "TEST_OR_SCANNER_LITERAL",
+      "excerpt": "for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):"
+    },
+    {
+      "path": "scripts/dev/day35_contract_validator.py",
+      "line": 30,
+      "claim_id": "validated_at_vinmec",
+      "classification": "TEST_OR_SCANNER_LITERAL",
+      "excerpt": "for bad in ('clinically validated threshold','validated at vinmec','clinical optimum'):"
+    },
+    {
+      "path": "scripts/dev/continue_phase6r_ml_no_go.py",
+      "line": 102,
+      "claim_id": "production_ood",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "No SSL/representation encoder was trained. Embedding distance is therefore not computed and no OOD probability or production OOD score is created. Existing non-probabilistic metadata/rule supportability remains unchanged."
+    },
+    {
+      "path": "scripts/dev/continue_phase6r_ml_no_go.py",
+      "line": 171,
+      "claim_id": "production_ood",
+      "classification": "NEGATED_OR_BOUNDARY",
+      "excerpt": "| OOD | NOT_STARTED | No production OOD semantics |"
+    },
+    {
+      "path": "scripts/dev/validate_day08_requirements_gate.py",
+      "line": 85,
+      "claim_id": "clinically_validated",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "\"clinically validated\","
+    },
+    {
+      "path": "scripts/dev/day39_claim_linter.py",
+      "line": 4,
+      "claim_id": "validated_at_vinmec",
+      "classification": "POLICY_OR_EXAMPLE_MENTION",
+      "excerpt": "forbidden=['validated at vinmec','deployed at vinmec','hospital-ready','pilot-ready','clinically proven','diagnostic accuracy']"
+    }
+  ],
+  "semantics": {
+    "negated_boundary_is_not_violation": true,
+    "policy_or_test_literal_is_not_violation": true,
+    "positive_unsupported_assertion_blocks": true
+  }
+}

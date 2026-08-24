@@ -1,0 +1,38 @@
+phase: Phase 6R
+roadmap_day_reference:
+  number: 73
+  authoritative_definition: Research ML Question & Representation-Learning Protocol
+workstream: phase_entry
+formal_inputs:
+  - latest valid post-remediation M5-R milestone
+  - latest Gate E-R decision
+  - latest ML feasibility decision
+  - public benchmark evidence index
+  - public dataset/source manifests
+  - frozen split manifests
+  - leakage audit
+  - reproducibility evidence
+  - PublicFeatureWindowRecord v1.2 or approved successor
+  - ResearchExampleRecord v1.0 or approved successor when synthetic ML_GO is active
+actual_inputs:
+  - path: EXTERNAL_LIVE_REPOSITORY_REQUIRED
+    source: live repository
+    hash: null
+    status: NOT_AVAILABLE_IN_SUPPLIED_SOURCE_SET
+upstream_decision: UNRESOLVED
+phase_branch: UNRESOLVED
+feature_contract_version: UNVERIFIED
+research_example_contract_version: UNVERIFIED
+split_versions: UNVERIFIED
+locked_eval_status: UNVERIFIED
+frozen_contracts: []
+active_limitations:
+  - No live repository snapshot was supplied.
+  - Active post-remediation M5-R generation cannot be verified from summaries alone.
+claim_boundaries:
+  - RESEARCH_ONLY
+  - NOT_CLINICALLY_VALIDATED
+  - NOT_FOR_CLINICAL_USE
+  - CORE_SYSTEM_MUST_RUN_WITH_ML_OFF
+applicability: PHASE_ENTRY_ONLY
+execution_allowed: false

@@ -1,0 +1,14 @@
+phase: Phase 6R Continuation
+workstream: leakage_and_claim_remediation
+status: ACTIVE
+prerequisites:
+  - Phase 6R Entry Gate: PASS
+  - Public Feature Contract v1.2: PASS
+  - Reproducibility: PASS
+required_audits:
+  - subject_overlap
+  - source_derivative_leakage
+  - example_overlap
+  - feature_leakage
+  - locked_evaluation_guard
+  - contextual_claim_audit

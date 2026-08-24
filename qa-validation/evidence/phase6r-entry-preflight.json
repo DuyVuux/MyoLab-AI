@@ -1,0 +1,48 @@
+{
+  "repository_root": "/home/duykhongngu28/massive/MyoLab-AI",
+  "repository_shape": "PASS",
+  "m5r_public_benchmark_ready": "PASS",
+  "gate_e_r_evidence": "PASS",
+  "public_feature_contract_v1_2": "PASS",
+  "leakage_audit": "PASS",
+  "reproducibility": "PASS",
+  "starting_ml_decision": "ML_NO_GO",
+  "claim_boundary_violations": [
+    {
+      "path": "docs/00-executive/day31/DAY31_EXECUTION_PLAN.md",
+      "pattern": "\\b(?:is|are|was|were|has been) clinically validated\\b"
+    },
+    {
+      "path": "docs/00-executive/day35/DAY35_CLAIM_BOUNDARY.md",
+      "pattern": "\\bvalidated at vinmec\\b"
+    },
+    {
+      "path": "docs/00-executive/day45/DAY45_CLAIM_BOUNDARY.md",
+      "pattern": "\\bvalidated at vinmec\\b"
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "pattern": "\\b(?:is|are|was|were|has been) clinically validated\\b"
+    },
+    {
+      "path": "qa-validation/evidence/phase6r-claim-audit-contextual.json",
+      "pattern": "\\bvalidated at vinmec\\b"
+    },
+    {
+      "path": "qa-validation/lib/day34_weak_label_analysis.py",
+      "pattern": "\\bvalidated at vinmec\\b"
+    },
+    {
+      "path": "qa-validation/test-data/golden/noraxon/single_csv/README.md",
+      "pattern": "\\b(?:is|are|was|were|has been) clinically validated\\b"
+    }
+  ],
+  "claim_boundaries": [
+    "RESEARCH_ONLY",
+    "NOT_CLINICALLY_VALIDATED",
+    "NOT_FOR_CLINICAL_USE",
+    "CORE_SYSTEM_MUST_RUN_WITH_ML_OFF"
+  ],
+  "execution_allowed": false,
+  "phase_entry_status": "BLOCKED_WITH_EVIDENCE"
+}

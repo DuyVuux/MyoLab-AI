@@ -1,0 +1,9 @@
+contract: LeakageAuditContract
+version: 0.1
+mandatory_checks:
+  - subject_overlap
+  - source_derivative_leakage
+  - example_overlap
+  - feature_leakage
+  - locked_evaluation_guard
+pass_condition: All mandatory checks PASS or NOT_APPLICABLE with explicit reason.

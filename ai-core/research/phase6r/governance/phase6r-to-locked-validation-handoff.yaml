@@ -1,0 +1,15 @@
+phase: Phase 6R
+m6_r_decision: RESEARCH_ML_NOT_JUSTIFIED
+model_inclusion_status: EXCLUDED
+model_hashes: []
+ml_go_scope: NOT_APPLICABLE
+calibration_applicable: false
+representation_learning_status: SKIPPED_BY_GOVERNANCE
+embedding_supportability_status: NOT_RUN
+core_ml_default: OFF
+next_phase: Locked Validation / Portfolio Release
+next_phase_readiness: YES
+claim_boundary:
+  - RESEARCH_ONLY
+  - NOT_CLINICALLY_VALIDATED
+  - NOT_FOR_CLINICAL_USE

@@ -1,13 +1,16 @@
-# Technology Maturity Register v0.2 — DAY39
+# Technology Maturity Register v0.2
 
-| Capability | Maturity at Gate C-R | Production default | Evidence |
-|---|---|---|---|
-| Deterministic QC core | `QC_RESEARCH_CORE_READY` | research/offline | DAY21–38 tests + freeze |
-| Weak supervision | `RESEARCH_ONLY` | no autonomous truth | DAY21/30/34 |
-| Annotation aid | `NOT_VALIDATED` | OFF | no expert study |
-| Distribution support | `INFORMATIONAL_RESEARCH_ONLY` | informational | DAY31 + DAY36 |
-| OOD scoring | `NOT_IMPLEMENTED` | OFF | no validated method |
-| Calibration/conformal | `NOT_APPLICABLE_CURRENT_QC` | OFF | no probabilistic QC model |
-| Property/metamorphic safety | `ENGINEERING_VERIFIED_RESEARCH` | CI/research | DAY38 |
-| Public QC benchmark | `NOT_PERFORMED` | N/A | planned later |
-| Clinical/site validation | `NOT_PERFORMED` | N/A | unavailable |
+| Capability | Maturity | Decision |
+|---|---|---|
+| Deterministic QC | REPRODUCIBLE_RESEARCH | Core research capability |
+| Handcrafted ML | EXCLUDED | Active feasibility decision `ML_NO_GO` |
+| Synthetic perturbation ML | NOT_APPLICABLE | No active ML_GO scope |
+| SSL representation | EXCLUDED | Not justified under current evidence |
+| Embedding supportability | NOT_STARTED | No embeddings created |
+| Calibration | NOT_APPLICABLE | No probabilistic head |
+| Selective prediction | NOT_APPLICABLE | No calibrated probabilistic head |
+| Conformal | NOT_APPLICABLE | Preconditions absent |
+| OOD | NOT_STARTED | No production OOD semantics |
+| Domain adaptation / TTA | RESEARCH_ONLY | Future watch item; default OFF |
+
+Claim boundary: RESEARCH_ONLY / NOT_CLINICALLY_VALIDATED / NOT_FOR_CLINICAL_USE.
