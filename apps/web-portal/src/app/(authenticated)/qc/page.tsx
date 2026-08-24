@@ -1,5 +1,5 @@
 import React from 'react';
-import { QCDashboard } from '@/features/qc-dashboard';
+import { QCDashboard } from '@/features/qc-dashboard/components/QCDashboard';
 import { buildQueueSummary } from '@/features/qc-dashboard/utils/qc-semantics';
 import type { CaseRecord } from '@/features/qc-dashboard/types/qc-semantics';
 

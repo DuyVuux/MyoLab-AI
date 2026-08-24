@@ -49,6 +49,8 @@ apps/web-portal/src/lib/*
 !apps/web-portal/src/lib/latencyMetrics.ts
 !apps/web-portal/src/lib/uc1-replay-client.ts
 !apps/web-portal/src/lib/review-report-client.ts
+!apps/web-portal/src/lib/uc2-assessment-client.ts
+!apps/web-portal/src/lib/uc2-assessment-client.test.ts
 parts/
 sdist/
 var/

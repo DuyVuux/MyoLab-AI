@@ -1,5 +1,15 @@
 import { WindowIdentity, Series, Point, MaskInterval, SignalViewerModel } from './types';
 
+export type BuiltSeries = Omit<
+  Required<Series>,
+  'mask' | 'units' | 'manifest_id' | 'profile_id'
+> & {
+  readonly units: string;
+  readonly manifest_id: string | null;
+  readonly profile_id: string | null;
+  readonly mask: boolean[];
+};
+
 export function finiteOrNull(v: number | null | undefined): number | null {
   return typeof v === 'number' && Number.isFinite(v) ? v : null;
 }
@@ -25,7 +35,7 @@ export function validateWindowIdentity(w: Partial<WindowIdentity>): boolean {
   return true;
 }
 
-export function buildSeries(params: Series): Required<Series> {
+export function buildSeries(params: Series): BuiltSeries {
   const { kind, values, fs_hz, units, source_ref, manifest_id = null, profile_id = null, mask = null, start_time_s = 0 } = params;
   
   if (!['RAW', 'PROCESSED'].includes(kind)) throw new Error('SERIES_KIND_REQUIRED_RAW_OR_PROCESSED');
@@ -47,7 +57,7 @@ export function buildSeries(params: Series): Required<Series> {
   };
 }
 
-export function toPoints(series: Required<Series>): Point[] {
+export function toPoints(series: BuiltSeries): Point[] {
   return series.values.map((y, i) => ({
     x: series.start_time_s + i / series.fs_hz,
     y: y as number,
@@ -80,7 +90,7 @@ export function decimateMinMax(points: Point[], maxPoints: number = 2000): Point
   return out.slice(0, maxPoints);
 }
 
-export function maskIntervals(series: Required<Series>): MaskInterval[] {
+export function maskIntervals(series: BuiltSeries): MaskInterval[] {
   const intervals: MaskInterval[] = [];
   let start: number | null = null;
   
@@ -99,7 +109,7 @@ export function maskIntervals(series: Required<Series>): MaskInterval[] {
   return intervals;
 }
 
-export function buildSignalViewerModel({ window_identity, raw, processed, max_points = 2000 }: { window_identity: WindowIdentity, raw: Required<Series>, processed: Required<Series>, max_points?: number }): SignalViewerModel {
+export function buildSignalViewerModel({ window_identity, raw, processed, max_points = 2000 }: { window_identity: WindowIdentity, raw: BuiltSeries, processed: BuiltSeries, max_points?: number }): SignalViewerModel {
   validateWindowIdentity(window_identity);
   if (raw.kind !== 'RAW') throw new Error('RAW_PANEL_REQUIRES_RAW_SERIES');
   if (processed.kind !== 'PROCESSED') throw new Error('PROCESSED_PANEL_REQUIRES_PROCESSED_SERIES');
