@@ -1,0 +1,29 @@
+{
+  "status": "NOT_EXECUTED",
+  "canonical_bindings": {
+    "signal_read_model": null,
+    "processed_signal_store": null,
+    "processing_manifest_store": null,
+    "metric_read_model": null,
+    "review_state_machine": null,
+    "audit_event_store": null
+  },
+  "real_mode_smoke": {
+    "executed": false,
+    "mock_or_demo_backend_used": null,
+    "session_id": null,
+    "channel_id": null,
+    "raw_window_observed": false,
+    "raw_source_identity_present": false,
+    "processed_window_observed": false,
+    "processed_manifest_present": false,
+    "metric_evidence_observed": false,
+    "ineligible_metric_null_with_reason_observed": false,
+    "review_case_id": null,
+    "review_action_observed": false,
+    "review_revision_advanced": false,
+    "audit_event_id": null,
+    "audit_event_read_back": false
+  },
+  "limitations": []
+}

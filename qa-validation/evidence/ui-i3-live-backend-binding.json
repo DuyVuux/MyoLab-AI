@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "backend_adapter": "services/api-server/src/ui_i3/live_backend.py::CanonicalAutoDataEvidenceBackend",
+  "canonical_bindings": {
+    "signal_read_model": "services/signal-ingestion-service/src/importers/csv_importer.py::CSVImporter",
+    "processed_signal_store": "services/preprocessing-service/src/pipeline.py::PreprocessingPipeline",
+    "processing_manifest_store": "services/api-server/src/ui_i3/live_backend.py::_ensure_processing",
+    "metric_read_model": "packages/semg-core/semg_core/metrics/amplitude.py::evaluate_amplitude_metric",
+    "review_state_machine": "services/api-server/src/ui_i3/live_backend.py::submit_review_action",
+    "audit_event_store": "services/api-server/src/ui_i3/live_backend.py::get_audit_trail"
+  },
+  "real_mode_smoke": {
+    "executed": true,
+    "mock_or_demo_backend_used": false,
+    "session_id": "SYNTH_D3_GOLDEN_001",
+    "channel_id": "VL_R_01",
+    "raw_window_observed": true,
+    "raw_source_identity_present": true,
+    "processed_window_observed": true,
+    "processed_manifest_present": true,
+    "metric_evidence_observed": true,
+    "ineligible_metric_null_with_reason_observed": true,
+    "review_case_id": "case_3b5b8d0a66c552896e809fd26cc14f7b",
+    "review_action_observed": true,
+    "review_revision_advanced": true,
+    "audit_event_id": "evt_339dfe544f3cf6481f89cee909ebcf11",
+    "audit_event_read_back": true
+  },
+  "limitations": [
+    "Synthetic engineering session is used only as a deterministic smoke fixture; it is not clinical validation.",
+    "UI-I3 adapter serves bounded signal windows and does not store signal samples in audit events.",
+    "MFCV remains NOT_ELIGIBLE unless electrode geometry/supportability is verified."
+  ]
+}

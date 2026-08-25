@@ -7,13 +7,19 @@ import type {
   MetricEvidence,
   PageResult,
   PipelineJob,
+  ProcessingManifestEvidence,
   QualityAssessment,
+  ReviewActionReceipt,
+  ReviewActionRequest,
   ReviewCase,
+  ReviewCaseDetail,
   SessionDetail,
+  SessionEvidenceDetail,
   SessionEvidenceBundle,
   SessionMappingState,
   SessionPreflight,
   SessionSummary,
+  SignalIndex,
   SignalWindow,
   SignalWindowRequest,
   UploadImportRequest,
@@ -36,9 +42,15 @@ export interface AutomationRepository {
 
   getQuality(sessionId: string): Promise<QualityAssessment>;
 
+  getSignalIndex(sessionId: string): Promise<SignalIndex>;
   getSignalWindow(request: SignalWindowRequest): Promise<SignalWindow>;
+  getProcessingManifest(manifestId: string): Promise<ProcessingManifestEvidence>;
   getMetrics(sessionId: string): Promise<MetricEvidence[]>;
   getEvidence(sessionId: string): Promise<SessionEvidenceBundle>;
+  getSessionEvidenceDetail(sessionId: string): Promise<SessionEvidenceDetail>;
   listReviewCases(): Promise<ReviewCase[]>;
+  listReviewCaseDetails(sessionId?: string): Promise<ReviewCaseDetail[]>;
+  getReviewCase(caseId: string): Promise<ReviewCaseDetail>;
+  submitReviewAction(caseId: string, request: ReviewActionRequest): Promise<ReviewActionReceipt>;
   getAuditTrail(sessionId: string): Promise<AuditEvent[]>;
 }

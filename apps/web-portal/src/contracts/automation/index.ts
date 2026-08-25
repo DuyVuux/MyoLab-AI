@@ -11,4 +11,7 @@ export * from "./audit";
 export * from "./problem";
 export * from "./preflight";
 export * from "./mapping";
+export * from "./evidence-detail";
+export * from "./review-actions";
 export * from "./validators";
+export * from "./ui-i3-validators";

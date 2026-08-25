@@ -1,0 +1,16 @@
+package: UI-I3
+gate: AUTO_DATA_EVIDENCE_READY
+protected: [/use-cases/**, /uc1/**, /uc2/**, /uc3/**, /uc4/**, fatigue_use_case_logic]
+targets:
+  signal:
+    action: bind existing SignalViewer to bounded RAW/PROCESSED real windows
+    add: [time-axis-if-missing, qc-mask-overlay, processing-manifest-details, decimation-disclosure]
+  metrics:
+    action: bind existing MetricEvidenceCard to canonical RMS/MAV/MDF/MNF evidence
+    rule: NOT_ELIGIBLE => null + reason
+  review:
+    action: replace review-queue fixtures with real exception cases
+    allowed_actions: [ACCEPTED_TECHNICAL, REPROCESS_REQUESTED, REMEASURE_SUGGESTED, INCONCLUSIVE]
+  audit:
+    action: replace mock audit with event-store read model
+deferred_to_ui_i4: [dashboard_operational_kpi, final_golden_auto_data_e2e, release_polish]

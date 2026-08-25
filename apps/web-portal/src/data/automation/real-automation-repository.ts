@@ -8,13 +8,19 @@ import type {
   MetricEvidence,
   PageResult,
   PipelineJob,
+  ProcessingManifestEvidence,
   QualityAssessment,
+  ReviewActionReceipt,
+  ReviewActionRequest,
   ReviewCase,
+  ReviewCaseDetail,
   SessionDetail,
+  SessionEvidenceDetail,
   SessionEvidenceBundle,
   SessionMappingState,
   SessionPreflight,
   SessionSummary,
+  SignalIndex,
   SignalWindow,
   SignalWindowRequest,
   UploadImportRequest,
@@ -35,6 +41,14 @@ import {
   parseSignalWindow,
   unwrapItems,
 } from "../../contracts/automation/validators";
+import {
+  parseProcessingManifestEvidence,
+  parseReviewActionReceipt,
+  parseReviewCaseDetail,
+  parseScientificSignalWindow,
+  parseSessionEvidenceDetail,
+  parseSignalIndex,
+} from "../../contracts/automation/ui-i3-validators";
 import { AutomationHttpClient } from "../../lib/api/automation/http";
 import {
   type AutomationEndpointCatalog,
@@ -122,6 +136,13 @@ export class RealAutomationRepository implements AutomationRepository {
     );
   }
 
+  async getSignalIndex(sessionId: string): Promise<SignalIndex> {
+    const tpl = requireVerifiedEndpoint(this.endpoints.signal_index, "signal_index");
+    return parseSignalIndex(
+      await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })),
+    );
+  }
+
   async getSignalWindow(request: SignalWindowRequest): Promise<SignalWindow> {
     const tpl = requireVerifiedEndpoint(this.endpoints.signal_window, "signal_window");
     const base = resolveTemplate(tpl, {
@@ -133,7 +154,14 @@ export class RealAutomationRepository implements AutomationRepository {
       end: String(request.end_s),
       representation: request.representation,
     });
-    return parseSignalWindow(await this.http.json<unknown>(`${base}?${qs}`));
+    return parseScientificSignalWindow(await this.http.json<unknown>(`${base}?${qs}`));
+  }
+
+  async getProcessingManifest(manifestId: string): Promise<ProcessingManifestEvidence> {
+    const tpl = requireVerifiedEndpoint(this.endpoints.processing_manifest, "processing_manifest");
+    return parseProcessingManifestEvidence(
+      await this.http.json<unknown>(resolveTemplate(tpl, { manifestId })),
+    );
   }
 
   async getMetrics(sessionId: string): Promise<MetricEvidence[]> {
@@ -143,15 +171,51 @@ export class RealAutomationRepository implements AutomationRepository {
   }
 
   async getEvidence(sessionId: string): Promise<SessionEvidenceBundle> {
+    const detail = await this.getSessionEvidenceDetail(sessionId);
+    return parseSessionEvidenceBundle({
+      session_id: detail.session_id,
+      provenance: detail.provenance ?? { source_hash: detail.source_hash },
+      quality: detail.quality,
+      metrics: detail.metrics,
+      limitations: detail.limitations,
+      review_case_ids: detail.review_case_ids,
+      evidence_refs: detail.evidence_refs,
+    });
+  }
+
+  async getSessionEvidenceDetail(sessionId: string): Promise<SessionEvidenceDetail> {
     const tpl = requireVerifiedEndpoint(this.endpoints.session_evidence, "session_evidence");
-    return parseSessionEvidenceBundle(
+    return parseSessionEvidenceDetail(
       await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })),
     );
   }
 
   async listReviewCases(): Promise<ReviewCase[]> {
+    return (await this.listReviewCaseDetails()).map(parseReviewCase);
+  }
+
+  async listReviewCaseDetails(sessionId?: string): Promise<ReviewCaseDetail[]> {
     const path = requireVerifiedEndpoint(this.endpoints.review_cases, "review_cases");
-    return unwrapItems(await this.http.json<unknown>(path)).map(parseReviewCase);
+    const qs = sessionId ? `?${new URLSearchParams({ session_id: sessionId })}` : "";
+    return unwrapItems(await this.http.json<unknown>(`${path}${qs}`)).map(parseReviewCaseDetail);
+  }
+
+  async getReviewCase(caseId: string): Promise<ReviewCaseDetail> {
+    const tpl = requireVerifiedEndpoint(this.endpoints.review_case, "review_case");
+    return parseReviewCaseDetail(
+      await this.http.json<unknown>(resolveTemplate(tpl, { caseId })),
+    );
+  }
+
+  async submitReviewAction(
+    caseId: string,
+    request: ReviewActionRequest,
+  ): Promise<ReviewActionReceipt> {
+    const tpl = requireVerifiedEndpoint(this.endpoints.review_action, "review_action");
+    return parseReviewActionReceipt(await this.http.json<unknown>(
+      resolveTemplate(tpl, { caseId }),
+      { method: "POST", body: JSON.stringify(request) },
+    ));
   }
 
   async getAuditTrail(sessionId: string): Promise<AuditEvent[]> {

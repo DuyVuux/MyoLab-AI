@@ -17,10 +17,14 @@ export interface AutomationEndpointCatalog {
   session_mapping: EndpointTemplate;
   session_mapping_resolve: EndpointTemplate;
   session_quality: EndpointTemplate;
+  signal_index: EndpointTemplate;
   signal_window: EndpointTemplate;
+  processing_manifest: EndpointTemplate;
   session_metrics: EndpointTemplate;
   session_evidence: EndpointTemplate;
   review_cases: EndpointTemplate;
+  review_case: EndpointTemplate;
+  review_action: EndpointTemplate;
   session_audit: EndpointTemplate;
 }
 
@@ -79,31 +83,58 @@ export const SOURCE_CANDIDATE_AUTOMATION_ENDPOINTS: AutomationEndpointCatalog = 
     verification: "CANDIDATE",
     evidence: "source-supported API candidate; live binding required",
   },
+  signal_index: {
+    template: "/v1/sessions/{sessionId}/signals",
+    method: "GET",
+    verification: "CANDIDATE",
+    evidence: "UI-I3 evidence adapter contract; live binding required",
+  },
   signal_window: {
-    template: null,
-    verification: "UNAVAILABLE",
-    evidence: "deferred to UI-I3",
+    template: "/v1/sessions/{sessionId}/signals/{channelId}/window",
+    method: "GET",
+    verification: "CANDIDATE",
+    evidence: "UI-I3 evidence adapter contract; live binding required",
+  },
+  processing_manifest: {
+    template: "/v1/processing-manifests/{manifestId}",
+    method: "GET",
+    verification: "CANDIDATE",
+    evidence: "UI-I3 evidence adapter contract; live binding required",
   },
   session_metrics: {
     template: null,
     verification: "UNAVAILABLE",
-    evidence: "deferred to UI-I3 evidence integration",
+    evidence: "UI-I3 exposes canonical metric evidence through session_evidence; no standalone live metric route verified",
   },
   session_evidence: {
-    template: null,
-    verification: "UNAVAILABLE",
-    evidence: "deferred to UI-I3 evidence integration",
+    template: "/v1/sessions/{sessionId}/evidence",
+    method: "GET",
+    verification: "CANDIDATE",
+    evidence: "UI-I3 evidence adapter contract; live binding required",
   },
   review_cases: {
     template: "/v1/review-cases",
     method: "GET",
     verification: "CANDIDATE",
-    evidence: "existing ReviewReportClient; deferred consumer migration to UI-I3",
+    evidence: "UI-I3 evidence adapter contract; live binding required",
+  },
+  review_case: {
+    template: "/v1/review-cases/{caseId}",
+    method: "GET",
+    verification: "CANDIDATE",
+    evidence: "UI-I3 evidence adapter contract; live binding required",
+  },
+  review_action: {
+    template: "/v1/review-cases/{caseId}/actions",
+    method: "POST",
+    verification: "CANDIDATE",
+    evidence: "UI-I3 evidence adapter contract; live binding required",
   },
   session_audit: {
-    template: null,
-    verification: "UNAVAILABLE",
-    evidence: "deferred to UI-I3",
+    template: "/v1/sessions/{sessionId}/audit",
+    method: "GET",
+    verification: "CANDIDATE",
+    evidence: "UI-I3 evidence adapter contract; live binding required",
   },
 };
 
