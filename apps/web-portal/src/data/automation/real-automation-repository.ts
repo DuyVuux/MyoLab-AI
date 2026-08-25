@@ -1,13 +1,39 @@
 import type { AutomationRepository } from "./automation-repository";
 import type {
-  AuditEvent, CreateImportRequest, ImportJob, MetricEvidence, PageResult, PipelineJob,
-  QualityAssessment, ReviewCase, SessionDetail, SessionEvidenceBundle, SessionSummary,
-  SignalWindow, SignalWindowRequest,
+  AuditEvent,
+  CreateImportRequest,
+  ImportJob,
+  MappingResolutionReceipt,
+  MappingResolutionRequest,
+  MetricEvidence,
+  PageResult,
+  PipelineJob,
+  QualityAssessment,
+  ReviewCase,
+  SessionDetail,
+  SessionEvidenceBundle,
+  SessionMappingState,
+  SessionPreflight,
+  SessionSummary,
+  SignalWindow,
+  SignalWindowRequest,
+  UploadImportRequest,
 } from "../../contracts/automation";
 import {
-  parseAuditEvent, parseImportJob, parseMetricEvidence, parsePipelineJob,
-  parseQualityAssessment, parseReviewCase, parseSessionDetail, parseSessionEvidenceBundle,
-  parseSessionSummary, parseSignalWindow, unwrapItems,
+  parseAuditEvent,
+  parseImportJob,
+  parseMappingResolutionReceipt,
+  parseMetricEvidence,
+  parsePipelineJob,
+  parseQualityAssessment,
+  parseReviewCase,
+  parseSessionDetail,
+  parseSessionEvidenceBundle,
+  parseSessionMappingState,
+  parseSessionPreflight,
+  parseSessionSummary,
+  parseSignalWindow,
+  unwrapItems,
 } from "../../contracts/automation/validators";
 import { AutomationHttpClient } from "../../lib/api/automation/http";
 import {
@@ -30,7 +56,9 @@ export class RealAutomationRepository implements AutomationRepository {
 
   async getSession(sessionId: string): Promise<SessionDetail> {
     const tpl = requireVerifiedEndpoint(this.endpoints.session_detail, "session_detail");
-    return parseSessionDetail(await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })));
+    return parseSessionDetail(
+      await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })),
+    );
   }
 
   async createImport(request: CreateImportRequest): Promise<ImportJob> {
@@ -41,21 +69,69 @@ export class RealAutomationRepository implements AutomationRepository {
     }));
   }
 
+  async uploadImport(request: UploadImportRequest): Promise<ImportJob> {
+    const path = requireVerifiedEndpoint(
+      this.endpoints.session_import_upload,
+      "session_import_upload",
+    );
+    const form = new FormData();
+    form.set("file", request.file);
+    if (request.expected_format) form.set("expected_format", request.expected_format);
+    return parseImportJob(await this.http.form<unknown>(path, form));
+  }
+
   async getPipelineJob(jobId: string): Promise<PipelineJob> {
     const tpl = requireVerifiedEndpoint(this.endpoints.pipeline_job, "pipeline_job");
-    return parsePipelineJob(await this.http.json<unknown>(resolveTemplate(tpl, { jobId })));
+    return parsePipelineJob(
+      await this.http.json<unknown>(resolveTemplate(tpl, { jobId })),
+    );
+  }
+
+  async getPreflight(sessionId: string): Promise<SessionPreflight> {
+    const tpl = requireVerifiedEndpoint(this.endpoints.session_preflight, "session_preflight");
+    return parseSessionPreflight(
+      await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })),
+    );
+  }
+
+  async getMapping(sessionId: string): Promise<SessionMappingState> {
+    const tpl = requireVerifiedEndpoint(this.endpoints.session_mapping, "session_mapping");
+    return parseSessionMappingState(
+      await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })),
+    );
+  }
+
+  async resolveMapping(
+    sessionId: string,
+    request: MappingResolutionRequest,
+  ): Promise<MappingResolutionReceipt> {
+    const tpl = requireVerifiedEndpoint(
+      this.endpoints.session_mapping_resolve,
+      "session_mapping_resolve",
+    );
+    return parseMappingResolutionReceipt(await this.http.json<unknown>(
+      resolveTemplate(tpl, { sessionId }),
+      { method: "POST", body: JSON.stringify(request) },
+    ));
   }
 
   async getQuality(sessionId: string): Promise<QualityAssessment> {
     const tpl = requireVerifiedEndpoint(this.endpoints.session_quality, "session_quality");
-    return parseQualityAssessment(await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })));
+    return parseQualityAssessment(
+      await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })),
+    );
   }
 
   async getSignalWindow(request: SignalWindowRequest): Promise<SignalWindow> {
     const tpl = requireVerifiedEndpoint(this.endpoints.signal_window, "signal_window");
-    const base = resolveTemplate(tpl, { sessionId: request.session_id, channelId: request.channel_id });
+    const base = resolveTemplate(tpl, {
+      sessionId: request.session_id,
+      channelId: request.channel_id,
+    });
     const qs = new URLSearchParams({
-      start: String(request.start_s), end: String(request.end_s), representation: request.representation,
+      start: String(request.start_s),
+      end: String(request.end_s),
+      representation: request.representation,
     });
     return parseSignalWindow(await this.http.json<unknown>(`${base}?${qs}`));
   }
@@ -68,7 +144,9 @@ export class RealAutomationRepository implements AutomationRepository {
 
   async getEvidence(sessionId: string): Promise<SessionEvidenceBundle> {
     const tpl = requireVerifiedEndpoint(this.endpoints.session_evidence, "session_evidence");
-    return parseSessionEvidenceBundle(await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })));
+    return parseSessionEvidenceBundle(
+      await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })),
+    );
   }
 
   async listReviewCases(): Promise<ReviewCase[]> {
@@ -78,6 +156,8 @@ export class RealAutomationRepository implements AutomationRepository {
 
   async getAuditTrail(sessionId: string): Promise<AuditEvent[]> {
     const tpl = requireVerifiedEndpoint(this.endpoints.session_audit, "session_audit");
-    return unwrapItems(await this.http.json<unknown>(resolveTemplate(tpl, { sessionId }))).map(parseAuditEvent);
+    return unwrapItems(
+      await this.http.json<unknown>(resolveTemplate(tpl, { sessionId })),
+    ).map(parseAuditEvent);
   }
 }

@@ -1,6 +1,6 @@
 import { AutomationProblemError, contractProblem } from "./problem";
 import type { SessionSummary, SessionDetail } from "./session";
-import type { PipelineJob } from "./pipeline-job";
+import type { PipelineJob, PipelineStage } from "./pipeline-job";
 import type { QualityAssessment, QCFinding } from "./quality";
 import type { SignalWindow } from "./signal";
 import type { MetricEvidence } from "./metric";
@@ -8,6 +8,12 @@ import type { ReviewCase } from "./review";
 import type { AuditEvent } from "./audit";
 import type { ImportJob } from "./import";
 import type { SessionEvidenceBundle } from "./evidence";
+import type { SessionPreflight, PreflightCheck } from "./preflight";
+import type {
+  ChannelMappingCandidate,
+  MappingResolutionReceipt,
+  SessionMappingState,
+} from "./mapping";
 
 export type UnknownRecord = Record<string, unknown>;
 
@@ -44,10 +50,39 @@ function numberValue(obj: UnknownRecord, key: string, required = true): number |
   return value;
 }
 
+
+function firstStringValue(obj: UnknownRecord, keys: string[], required = true): string | undefined {
+  for (const key of keys) {
+    const value = stringValue(obj, key, false);
+    if (value !== undefined) return value;
+  }
+  if (required) fail(`${keys[0]} is required`);
+  return undefined;
+}
+
+function normalizePipelineStatus(value: string): PipelineJob["status"] {
+  const normalized = value.toUpperCase();
+  if (normalized === "COMPLETED_WITH_WARNINGS") return "COMPLETED";
+  if (normalized === "ABSTAINED" || normalized === "CANCELLED") return "BLOCKED";
+  return normalized as PipelineJob["status"];
+}
+
+function booleanValue(obj: UnknownRecord, key: string, required = true): boolean | undefined {
+  const value = obj[key];
+  if (value === undefined || value === null) {
+    if (required) fail(`${key} is required`);
+    return undefined;
+  }
+  if (typeof value !== "boolean") fail(`${key} must be a boolean`);
+  return value;
+}
+
 function stringArray(obj: UnknownRecord, key: string): string[] | undefined {
   const value = obj[key];
   if (value === undefined || value === null) return undefined;
-  if (!Array.isArray(value) || !value.every((x) => typeof x === "string")) fail(`${key} must be string[]`);
+  if (!Array.isArray(value) || !value.every((x) => typeof x === "string")) {
+    fail(`${key} must be string[]`);
+  }
   return value as string[];
 }
 
@@ -65,7 +100,8 @@ export function parseSessionSummary(value: unknown): SessionSummary {
     session_id: stringValue(obj, "session_id")!,
     display_name: stringValue(obj, "display_name", false),
     source_type: stringValue(obj, "source_type", false),
-    automation_state: (stringValue(obj, "automation_state", false) ?? "UNKNOWN") as SessionSummary["automation_state"],
+    automation_state:
+      (stringValue(obj, "automation_state", false) ?? "UNKNOWN") as SessionSummary["automation_state"],
     qc_status: stringValue(obj, "qc_status", false) as SessionSummary["qc_status"],
     created_at: stringValue(obj, "created_at", false),
     updated_at: stringValue(obj, "updated_at", false),
@@ -94,32 +130,54 @@ export function parseImportJob(value: unknown): ImportJob {
     source_hash: stringValue(obj, "source_hash", false),
     signal_count: numberValue(obj, "signal_count", false),
     reason_codes: stringArray(obj, "reason_codes"),
+    created_at: stringValue(obj, "created_at", false),
+    updated_at: stringValue(obj, "updated_at", false),
+  };
+}
+
+function parsePipelineStage(value: unknown): PipelineStage {
+  const obj = record(value, "pipeline stage");
+  return {
+    name: stringValue(obj, "name")!,
+    status: stringValue(obj, "status")! as PipelineStage["status"],
+    started_at: stringValue(obj, "started_at", false),
+    finished_at: stringValue(obj, "finished_at", false),
+    reason_codes: stringArray(obj, "reason_codes"),
   };
 }
 
 export function parsePipelineJob(value: unknown): PipelineJob {
   const obj = record(value, "pipeline job");
+  const stages = obj.stages;
+  const reasonCodes = stringArray(obj, "reason_codes") ?? stringArray(obj, "reasonCodes");
+  const warningCodes = stringArray(obj, "warningCodes");
   return {
-    job_id: stringValue(obj, "job_id")!,
-    session_id: stringValue(obj, "session_id", false),
-    status: stringValue(obj, "status")! as PipelineJob["status"],
-    current_stage: stringValue(obj, "current_stage", false),
-    reason_codes: stringArray(obj, "reason_codes"),
-    evidence_ref: stringValue(obj, "evidence_ref", false),
-    updated_at: stringValue(obj, "updated_at", false),
+    job_id: firstStringValue(obj, ["job_id", "analysisId"])!,
+    session_id: firstStringValue(obj, ["session_id", "sessionId"], false),
+    status: normalizePipelineStatus(stringValue(obj, "status")!),
+    current_stage: firstStringValue(obj, ["current_stage", "currentStage"], false),
+    stages: Array.isArray(stages) ? stages.map(parsePipelineStage) : undefined,
+    reason_codes: reasonCodes ?? warningCodes,
+    evidence_ref: firstStringValue(obj, ["evidence_ref"], false),
+    updated_at: firstStringValue(obj, ["updated_at", "updatedAt"], false),
   };
 }
 
 function parseQCFinding(value: unknown): QCFinding {
   const obj = record(value, "QC finding");
+  const start = numberValue(obj, "start_s", false);
+  const end = numberValue(obj, "end_s", false);
+  if (start !== undefined && end !== undefined && end <= start) {
+    fail("QC finding end_s must be greater than start_s");
+  }
   return {
     finding_id: stringValue(obj, "finding_id", false),
     scope: stringValue(obj, "scope")! as QCFinding["scope"],
     status: stringValue(obj, "status")! as QCFinding["status"],
     reason_code: stringValue(obj, "reason_code")!,
     channel_id: stringValue(obj, "channel_id", false),
-    start_s: numberValue(obj, "start_s", false),
-    end_s: numberValue(obj, "end_s", false),
+    start_s: start,
+    end_s: end,
     message: stringValue(obj, "message", false),
   };
 }
@@ -129,7 +187,11 @@ export function parseQualityAssessment(value: unknown): QualityAssessment {
   const findings = obj.findings;
   if (!Array.isArray(findings)) fail("quality findings must be an array");
   const eligible = obj.eligible_window_fraction;
-  if (eligible !== undefined && eligible !== null && (typeof eligible !== "number" || eligible < 0 || eligible > 1)) {
+  if (
+    eligible !== undefined &&
+    eligible !== null &&
+    (typeof eligible !== "number" || eligible < 0 || eligible > 1)
+  ) {
     fail("eligible_window_fraction must be within [0,1] or null");
   }
   return {
@@ -138,6 +200,79 @@ export function parseQualityAssessment(value: unknown): QualityAssessment {
     eligible_window_fraction: eligible as number | null | undefined,
     findings: findings.map(parseQCFinding),
     ruleset_version: stringValue(obj, "ruleset_version", false),
+    evidence_ref: stringValue(obj, "evidence_ref", false),
+  };
+}
+
+export function parsePreflightCheck(value: unknown): PreflightCheck {
+  const obj = record(value, "preflight check");
+  return {
+    check_id: stringValue(obj, "check_id")!,
+    label: stringValue(obj, "label")!,
+    status: stringValue(obj, "status")! as PreflightCheck["status"],
+    reason_code: stringValue(obj, "reason_code", false),
+    message: stringValue(obj, "message", false),
+  };
+}
+
+export function parseSessionPreflight(value: unknown): SessionPreflight {
+  const obj = record(value, "session preflight");
+  if (!Array.isArray(obj.checks)) fail("preflight checks must be an array");
+  const overall = stringValue(obj, "overall_status")! as SessionPreflight["overall_status"];
+  const canProceed = booleanValue(obj, "can_proceed")!;
+  if (overall === "FAIL" && canProceed) {
+    fail("preflight FAIL cannot have can_proceed=true");
+  }
+  return {
+    session_id: stringValue(obj, "session_id")!,
+    overall_status: overall,
+    can_proceed: canProceed,
+    checks: obj.checks.map(parsePreflightCheck),
+    evidence_ref: stringValue(obj, "evidence_ref", false),
+  };
+}
+
+export function parseMappingCandidate(value: unknown): ChannelMappingCandidate {
+  const obj = record(value, "mapping candidate");
+  const confidence = obj.confidence;
+  if (
+    confidence !== undefined &&
+    confidence !== null &&
+    (typeof confidence !== "number" || confidence < 0 || confidence > 1)
+  ) {
+    fail("mapping confidence must be within [0,1] or null");
+  }
+  return {
+    vendor_signal_name: stringValue(obj, "vendor_signal_name")!,
+    canonical_channel_id: stringValue(obj, "canonical_channel_id", false),
+    canonical_label: stringValue(obj, "canonical_label", false),
+    confidence: confidence as number | null | undefined,
+    decision: stringValue(obj, "decision")! as ChannelMappingCandidate["decision"],
+    reason_code: stringValue(obj, "reason_code", false),
+  };
+}
+
+export function parseSessionMappingState(value: unknown): SessionMappingState {
+  const obj = record(value, "mapping state");
+  if (!Array.isArray(obj.candidates)) fail("mapping candidates must be an array");
+  return {
+    session_id: stringValue(obj, "session_id")!,
+    ontology_version: stringValue(obj, "ontology_version", false),
+    resolved_count: numberValue(obj, "resolved_count")!,
+    unresolved_count: numberValue(obj, "unresolved_count")!,
+    candidates: obj.candidates.map(parseMappingCandidate),
+    evidence_ref: stringValue(obj, "evidence_ref", false),
+  };
+}
+
+export function parseMappingResolutionReceipt(value: unknown): MappingResolutionReceipt {
+  const obj = record(value, "mapping resolution receipt");
+  return {
+    session_id: stringValue(obj, "session_id")!,
+    vendor_signal_name: stringValue(obj, "vendor_signal_name")!,
+    canonical_channel_id: stringValue(obj, "canonical_channel_id")!,
+    accepted: booleanValue(obj, "accepted")!,
+    revision: numberValue(obj, "revision", false),
     evidence_ref: stringValue(obj, "evidence_ref", false),
   };
 }
@@ -181,9 +316,17 @@ export function parseMetricEvidence(value: unknown): MetricEvidence {
   const obj = record(value, "metric evidence");
   const eligibility = stringValue(obj, "eligibility")! as MetricEvidence["eligibility"];
   const raw = obj.value;
-  if (raw !== null && raw !== undefined && (typeof raw !== "number" || !Number.isFinite(raw))) fail("metric value must be finite number or null");
-  if (eligibility !== "AVAILABLE" && raw !== null) fail("non-AVAILABLE metric must use value=null");
-  if (eligibility !== "AVAILABLE" && typeof obj.reason_code !== "string") fail("non-AVAILABLE metric requires reason_code");
+  if (
+    raw !== null &&
+    raw !== undefined &&
+    (typeof raw !== "number" || !Number.isFinite(raw))
+  ) fail("metric value must be finite number or null");
+  if (eligibility !== "AVAILABLE" && raw !== null) {
+    fail("non-AVAILABLE metric must use value=null");
+  }
+  if (eligibility !== "AVAILABLE" && typeof obj.reason_code !== "string") {
+    fail("non-AVAILABLE metric requires reason_code");
+  }
   return {
     metric_id: stringValue(obj, "metric_id")!,
     metric_name: stringValue(obj, "metric_name")!,

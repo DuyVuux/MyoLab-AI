@@ -6,7 +6,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Plus, Search, Filter } from 'lucide-react';
+import { Plus, Search, UploadCloud } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
@@ -84,6 +84,9 @@ export default function SessionsPage() {
           <p className="page-subtitle">Quản lý và theo dõi tất cả các phiên đánh giá sEMG.</p>
         </div>
         <div className="page-header__right">
+          <Link href="/sessions/auto-intake">
+            <Button variant="secondary" icon={<UploadCloud size={16} />}>Auto intake</Button>
+          </Link>
           <Link href={ROUTES.SESSION_NEW}>
             <Button icon={<Plus size={16} />}>Tạo phiên mới</Button>
           </Link>

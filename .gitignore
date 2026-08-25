@@ -51,6 +51,9 @@ apps/web-portal/src/lib/*
 !apps/web-portal/src/lib/review-report-client.ts
 !apps/web-portal/src/lib/uc2-assessment-client.ts
 !apps/web-portal/src/lib/uc2-assessment-client.test.ts
+!apps/web-portal/src/lib/api/
+!apps/web-portal/src/lib/api/automation/
+!apps/web-portal/src/lib/api/automation/*.ts
 parts/
 sdist/
 var/

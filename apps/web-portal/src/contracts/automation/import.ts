@@ -1,6 +1,11 @@
 import type { Identifier, IsoDateTime, ProvenanceRef } from "./common";
 
-export type ImportFormat = "NORAXON_SINGLE_CSV" | "NORAXON_SEPARATED_CSV" | "VICON_CSV" | "UNKNOWN";
+export type ImportFormat =
+  | "NORAXON_SINGLE_CSV"
+  | "NORAXON_SEPARATED_CSV"
+  | "VICON_CSV"
+  | "UNKNOWN";
+
 export type ImportStatus =
   | "WAITING"
   | "HASHING"
@@ -16,6 +21,11 @@ export interface CreateImportRequest {
   source_name: string;
   source_kind: "UPLOAD" | "WORKSPACE_PATH" | "DEMO_FIXTURE";
   workspace_path?: string;
+  expected_format?: ImportFormat;
+}
+
+export interface UploadImportRequest {
+  file: File;
   expected_format?: ImportFormat;
 }
 

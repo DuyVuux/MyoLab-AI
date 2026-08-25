@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "backend_adapter": "services/api-server/src/ui_i2/live_backend.py::CanonicalAutoDataBackend",
+  "canonical_bindings": {
+    "sessions": true,
+    "ingestion": true,
+    "preflight": true,
+    "mapping": true,
+    "quality": true,
+    "pipeline_job": true
+  },
+  "route_registration": {
+    "adapter_router": "services/api-server/src/ui_i2/routes.py",
+    "installer": "services/api-server/src/ui_i2/install.py",
+    "generated_catalog": "apps/web-portal/src/lib/api/automation/live-endpoints.generated.ts"
+  },
+  "real_mode_smoke": {
+    "executed": true,
+    "source_type": "WORKSPACE_PATH_CANONICAL_MANIFEST",
+    "source_hash_present": true,
+    "preflight_observed": true,
+    "mapping_observed": true,
+    "quality_observed": true,
+    "mock_or_demo_backend_used": false
+  },
+  "tests": [
+    {
+      "name": "canonical_ingestion_import",
+      "status": "READY_FOR_QC",
+      "import_id": "I2-6f5bbb02d3e1"
+    },
+    {
+      "name": "canonical_quality_gate",
+      "status": "PASS",
+      "evidence_ref": "qc://session/SYNTH_D3_GOLDEN_001"
+    },
+    {
+      "name": "analysis_pipeline_service",
+      "analysis_id": "AN21-1b4ea06c1825",
+      "status": "queued",
+      "source_hash_present": true
+    }
+  ],
+  "limitations": [
+    "Smoke fixture is synthetic engineering data, but execution uses canonical importer/QC/pipeline services rather than mock API or demo backend.",
+    "Browser raw Noraxon single CSV normalization remains fail-closed unless provided as a canonical manifest-backed workspace import."
+  ]
+}

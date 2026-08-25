@@ -1,0 +1,24 @@
+{
+  "status": "NOT_EXECUTED",
+  "backend_adapter": null,
+  "canonical_bindings": {
+    "sessions": null,
+    "ingestion": null,
+    "preflight": null,
+    "mapping": null,
+    "quality": null,
+    "pipeline_job": null
+  },
+  "route_registration": null,
+  "real_mode_smoke": {
+    "executed": false,
+    "source_type": null,
+    "source_hash_present": false,
+    "preflight_observed": false,
+    "mapping_observed": false,
+    "quality_observed": false,
+    "mock_or_demo_backend_used": null
+  },
+  "tests": [],
+  "limitations": []
+}

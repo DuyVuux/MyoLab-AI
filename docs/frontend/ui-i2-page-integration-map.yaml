@@ -1,0 +1,39 @@
+package: UI-I2
+gate: AUTO_DATA_INGEST_QC_READY
+
+protected:
+  - /use-cases/**
+  - /uc1/**
+  - /uc2/**
+  - /uc3/**
+  - /uc4/**
+
+consumer_targets:
+  /sessions:
+    objective: "Use AutomationRepository.listSessions in real mode."
+    migration: "Preserve existing page shell; replace critical mock data source only."
+  /sessions/new:
+    objective: "Mount AutoDataIntakeWorkspace or equivalent within existing design."
+    migration: "One primary action: import and run automatically."
+  /sessions/[sessionId]/import:
+    objective: "Show live ImportJob/PipelineJob state and provenance."
+    migration: "Keep route as evidence/detail screen; not mandatory wizard step."
+  /sessions/[sessionId]/mapping:
+    objective: "Show only unresolved mapping exceptions."
+    migration: "Auto-matched channels do not require user confirmation."
+  /sessions/[sessionId]/preflight:
+    objective: "Render live validation checks and can_proceed."
+  /sessions/[sessionId]/quality:
+    objective: "Render live session/channel/window QC evidence."
+
+do_not_migrate_yet:
+  - signal viewer real payloads
+  - metrics evidence
+  - review queue backend
+  - audit event store
+  - dashboard operational KPI
+
+integration_note: >
+  The package supplies the feature/controller/API boundary. The live integration
+  agent should merge these into existing pages rather than replacing mature page
+  structure blindly.
