@@ -4,6 +4,7 @@
  */
 'use client';
 
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
   Plus,
@@ -21,7 +22,14 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { useAuth } from '@/lib/auth';
 import { ROUTES } from '@/config/useCaseRoutes';
+import type { OperationsSummary } from '@/contracts/automation';
+import { RealOperationsRepository } from '@/data/automation';
+import { OperationalSummaryPanel } from '@/features/operations-dashboard';
+import { AutomationHttpClient } from '@/lib/api/automation/http';
+import { LIVE_UI_I4_ENDPOINTS } from '@/lib/api/automation/live-ui-i4-endpoints.generated';
 import styles from './dashboard.module.css';
+
+const apiBaseUrl = process.env.NEXT_PUBLIC_AUTOMATION_API_BASE_URL ?? '';
 
 // ASSUMPTION: Mock data — will be replaced by API calls
 const MOCK_STATS = {
@@ -44,6 +52,11 @@ interface RecentSession {
   reviewState: string | null;
   updatedAt: string;
 }
+
+type OperationsState =
+  | { status: 'idle' | 'loading' }
+  | { status: 'ready'; summary: OperationsSummary }
+  | { status: 'unavailable'; message: string };
 
 const MOCK_RECENT_SESSIONS: RecentSession[] = [
   {
@@ -105,6 +118,43 @@ function getStateBadgeVariant(state: string | null): 'success' | 'warning' | 'er
 
 export default function DashboardPage() {
   const { user } = useAuth();
+  const operationsRepository = useMemo(() => {
+    if (!apiBaseUrl) return null;
+    return new RealOperationsRepository(
+      new AutomationHttpClient({ baseUrl: apiBaseUrl }),
+      LIVE_UI_I4_ENDPOINTS,
+    );
+  }, []);
+  const [operationsState, setOperationsState] = useState<OperationsState>({ status: 'idle' });
+
+  useEffect(() => {
+    let cancelled = false;
+    if (!operationsRepository) {
+      setOperationsState({
+        status: 'unavailable',
+        message: 'Operations backend is not configured. No operational counts are fabricated.',
+      });
+      return;
+    }
+
+    setOperationsState({ status: 'loading' });
+    void operationsRepository.getOperationsSummary()
+      .then((summary) => {
+        if (!cancelled) setOperationsState({ status: 'ready', summary });
+      })
+      .catch((error: unknown) => {
+        if (!cancelled) {
+          setOperationsState({
+            status: 'unavailable',
+            message: error instanceof Error ? error.message : 'Operations summary unavailable.',
+          });
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [operationsRepository]);
 
   return (
     <div className="page-container">
@@ -167,6 +217,8 @@ export default function DashboardPage() {
         />
       </div>
 
+      <OperationsSummarySection state={operationsState} />
+
       {/* Recent sessions */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
@@ -207,6 +259,23 @@ export default function DashboardPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+function OperationsSummarySection({ state }: { state: OperationsState }) {
+  if (state.status === 'ready') {
+    return <OperationalSummaryPanel summary={state.summary} />;
+  }
+
+  return (
+    <section className={styles.operationsStatus} aria-live="polite">
+      <strong>Operational summary</strong>
+      <span>
+        {state.status === 'unavailable'
+          ? state.message
+          : 'Loading canonical operational counts.'}
+      </span>
+    </section>
   );
 }
 

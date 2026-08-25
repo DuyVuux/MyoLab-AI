@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "browser_flow": "NORAXON_SINGLE_CSV_TO_QUALITY_EVIDENCE",
+  "mock_route_interception": false,
+  "fixture_path_recorded_as_basename": "valid_minimal.csv",
+  "fixture_sha256": "01b4befe1d408d3d4fd94c7b34e12b8b7ef2c1d59b42620f3ca0d191b5a21812",
+  "command": "pnpm --dir apps/web-portal exec playwright test e2e/auto-data-golden-real.spec.ts",
+  "api_base_url": "http://127.0.0.1:8040",
+  "exit_code": 0,
+  "stdout_tail": "\nRunning 1 test using 1 worker\n\n  \u2713  1 [chromium] \u203a e2e/auto-data-golden-real.spec.ts:3:5 \u203a real auto-data browser path: Noraxon single CSV -> quality evidence (1.4s)\n\n  1 passed (5.4s)\n",
+  "stderr_tail": "[WebServer] (node:93347) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `pnpm --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:93370) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:93406) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:93515) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer]  \u26a0 Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure \"allowedDevOrigins\" in next.config to allow this.\n[WebServer] Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins\n"
+}

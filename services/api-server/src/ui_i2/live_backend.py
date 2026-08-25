@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from hashlib import sha256
 from pathlib import Path
 from typing import BinaryIO
+import re
 import sys
 import tempfile
 
@@ -47,6 +48,45 @@ def _ui_status(status: str) -> str:
         "fail": "FAIL",
         "import_rejected": "FAIL",
     }.get(status, "UNKNOWN")
+
+
+def _safe_channel_id(value: str, index: int) -> str:
+    stem = re.sub(r"[^A-Za-z0-9]+", "_", value).strip("_").upper()
+    return f"{stem or 'MR4_SEMG'}_{index:02d}"
+
+
+def _unit_hint_for_vendor_name(value: str) -> str | None:
+    match = re.search(r"\(([^()]*)\)\s*$", value)
+    if not match:
+        return None
+    raw = match.group(1).strip()
+    normalized = raw.replace("µ", "u").replace("μ", "u")
+    return normalized or None
+
+
+def _is_mr4_semg_signal(signal: object) -> bool:
+    if getattr(signal, "semantic_role", None) != "SEMG_VENDOR_CHANNEL":
+        return False
+    unit_hint = _unit_hint_for_vendor_name(getattr(signal, "vendor_name", ""))
+    if unit_hint is not None:
+        return unit_hint == "uV"
+    return getattr(signal, "unit", None) == "uV"
+
+
+def _side_for_vendor_name(value: str) -> str:
+    if value.startswith("LT "):
+        return "left"
+    if value.startswith("RT "):
+        return "right"
+    return "unknown"
+
+
+def _muscle_for_vendor_name(value: str) -> str:
+    label = re.sub(r"^(LT|RT)\s+", "", value).strip(" .")
+    label = re.sub(r"\s*\([^()]*\)\s*$", "", label).strip(" .")
+    label = label.replace("FEM", "femoris")
+    normalized = re.sub(r"[^A-Za-z0-9]+", "_", label).strip("_").lower()
+    return normalized or "unknown_muscle"
 
 
 @dataclass
@@ -134,21 +174,21 @@ class CanonicalAutoDataBackend(AutoDataBackend):
         stream: BinaryIO,
         expected_format: str | None,
     ) -> ImportJobOut:
-        # Browser upload is accepted only for canonical manifest JSON in this
-        # real binding. Raw Noraxon single-file QC remains gated until a
-        # canonical normalizer exists for that parser output.
         suffix = Path(filename).suffix or ".json"
         with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as handle:
             path = Path(handle.name)
             handle.write(stream.read())
         try:
-            if suffix.lower() != ".json":
-                return ImportJobOut(
-                    import_id="I2-BLOCKED-UPLOAD",
-                    status="BLOCKED",
-                    reason_codes=["CANONICAL_MANIFEST_UPLOAD_REQUIRED"],
-                )
-            return self._ingest_manifest(path)
+            normalized_suffix = suffix.lower()
+            if normalized_suffix == ".json":
+                return self._ingest_manifest(path)
+            if normalized_suffix == ".csv" and expected_format in {None, "UNKNOWN", "NORAXON_SINGLE_CSV"}:
+                return self._ingest_mr4_single_csv(path, source_name=filename)
+            return ImportJobOut(
+                import_id="I2-BLOCKED-UPLOAD",
+                status="BLOCKED",
+                reason_codes=["SUPPORTED_CANONICAL_OR_NORAXON_SINGLE_CSV_REQUIRED"],
+            )
         finally:
             path.unlink(missing_ok=True)
 
@@ -269,6 +309,177 @@ class CanonicalAutoDataBackend(AutoDataBackend):
         mapping = SessionMappingOut(
             session_id=signal.session_id,
             ontology_version="canonical-signal-manifest.v0.1",
+            resolved_count=len(candidates),
+            unresolved_count=0,
+            candidates=candidates,
+            evidence_ref=f"mapping://session/{signal.session_id}",
+        )
+        self._sessions[signal.session_id] = _ImportedSession(
+            import_job=job,
+            signal=signal,
+            preflight=preflight,
+            mapping=mapping,
+        )
+        self._import_to_session[import_id] = signal.session_id
+        return job
+
+    def _ingest_mr4_single_csv(self, csv_path: Path, *, source_name: str) -> ImportJobOut:
+        from adapters.mr4.models import Mr4ParseError  # type: ignore
+        from adapters.mr4.parser import parse_single_csv  # type: ignore
+        from importers.base_importer import ImportResult  # type: ignore
+        import numpy as np
+        from semg_core.io import NormalizedChannel, NormalizedSignal, PhaseMarker, ProtocolRef
+        from semg_core.validation import ValidationIssue, has_blocking_issues, validate_normalized_signal
+
+        try:
+            record = parse_single_csv(csv_path)
+        except Mr4ParseError as exc:
+            return ImportJobOut(
+                import_id="I2-BLOCKED-UPLOAD",
+                status="BLOCKED",
+                reason_codes=[exc.code],
+            )
+
+        semg_signals = [
+            signal for signal in record.signals
+            if _is_mr4_semg_signal(signal)
+        ]
+        issues: list[ValidationIssue] = []
+        if not semg_signals:
+            issues.append(ValidationIssue(
+                "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+                "Noraxon single CSV contains no contract-supported sEMG vendor channels.",
+            ))
+
+        try:
+            sampling_rate = float(record.metadata_value("frequency") or semg_signals[0].sampling_rate_hz or 0)
+            time_s = np.asarray(record.timestamps_seconds, dtype=np.float64)
+            channels = {}
+            for index, signal in enumerate(semg_signals, start=1):
+                samples = np.asarray(
+                    [
+                        float(row[0]) if row and row[0] not in {None, ""} else np.nan
+                        for row in signal.raw_values
+                    ],
+                    dtype=np.float64,
+                )
+                channel_id = _safe_channel_id(signal.vendor_name, index)
+                channels[channel_id] = NormalizedChannel(
+                    channel_id=channel_id,
+                    samples_uV=samples,
+                    muscle=_muscle_for_vendor_name(signal.vendor_name),
+                    side=_side_for_vendor_name(signal.vendor_name),
+                    role="bipolar_semg",
+                    source_column=signal.vendor_name,
+                    source_unit="uV",
+                )
+
+            recording_start = float(time_s[0]) if time_s.size else 0.0
+            recording_end = recording_start + (float(time_s.size) / sampling_rate if sampling_rate > 0 else 0.0)
+            session_id = "MR4-" + record.source.sha256[:12]
+            normalized = NormalizedSignal(
+                session_id=session_id,
+                sampling_rate_hz=sampling_rate,
+                time_s=time_s,
+                channels=channels,
+                protocol_ref=ProtocolRef("quad-isometric-60s", "0.1.0"),
+                phase_markers=(
+                    PhaseMarker(
+                        "active_contraction",
+                        recording_start,
+                        max(recording_start + (1.0 / sampling_rate), recording_end),
+                    ),
+                ),
+                data_source="noraxon_mr4_single_csv",
+                source_file_name=source_name,
+                source_hash_sha256=record.source.sha256,
+                processing_history={
+                    "raw_export": True,
+                    "parser_id": record.provenance.parser_id,
+                    "parser_version": record.provenance.parser_version,
+                    "contract_id": record.provenance.contract_id,
+                    "contract_version": record.provenance.contract_version,
+                    "clinical_use_allowed": False,
+                },
+                source_manifest={
+                    "schema_version": "ui-i4-mr4-single-csv-derived.v0.1",
+                    "session_id": session_id,
+                    "data_source": "noraxon_mr4_single_csv",
+                    "signal_file": source_name,
+                    "source_hash_sha256": record.source.sha256,
+                    "sampling_rate_hz": sampling_rate,
+                    "protocol": {"id": "quad-isometric-60s", "version": "0.1.0"},
+                    "session_parameters": {
+                        "target_mvc_percent": 30,
+                        "parameter_status": "technical_demo_default_not_prescription",
+                    },
+                    "limitations": [
+                        "RESEARCH ONLY",
+                        "NOT CLINICALLY VALIDATED",
+                        "NOT FOR CLINICAL USE",
+                        "Noraxon single CSV parser preserves vendor semantics; unsupported columns are not treated as sEMG.",
+                    ],
+                },
+            )
+            issues.extend(validate_normalized_signal(normalized))
+            result = ImportResult(signal=None if has_blocking_issues(issues) else normalized, issues=tuple(issues))
+        except (TypeError, ValueError, IndexError) as exc:
+            issues.append(ValidationIssue("MR4_CANONICALIZATION_FAILED", str(exc)))
+            result = ImportResult(signal=None, issues=tuple(issues))
+
+        import_id = "I2-" + record.source.sha256[:12]
+        if not result.ok or result.signal is None:
+            return ImportJobOut(
+                import_id=import_id,
+                status="FAILED",
+                detected_format="NORAXON_SINGLE_CSV",
+                source_hash=record.source.sha256,
+                reason_codes=list(result.blocking_codes),
+            )
+
+        signal = result.signal
+        job = ImportJobOut(
+            import_id=import_id,
+            session_id=signal.session_id,
+            status="READY_FOR_QC",
+            detected_format="NORAXON_SINGLE_CSV",
+            source_hash=signal.source_hash_sha256,
+            signal_count=signal.channel_count,
+            reason_codes=list(result.warning_codes),
+        )
+        preflight = SessionPreflightOut(
+            session_id=signal.session_id,
+            overall_status="PASS",
+            can_proceed=True,
+            checks=[
+                PreflightCheckOut(
+                    check_id="mr4_single_csv_parse",
+                    label="Noraxon single CSV parsed",
+                    status="PASS",
+                    message="Signal parsed by services/signal-ingestion-service/src/adapters/mr4/parser.py.",
+                ),
+                PreflightCheckOut(
+                    check_id="source_hash",
+                    label="Source hash present",
+                    status="PASS",
+                    message=signal.source_hash_sha256,
+                ),
+            ],
+            evidence_ref=f"ingestion://{import_id}",
+        )
+        candidates = [
+            MappingCandidateOut(
+                vendor_signal_name=channel.source_column,
+                canonical_channel_id=channel.channel_id,
+                canonical_label=f"{channel.muscle}:{channel.side}",
+                confidence=1.0,
+                decision="AUTO_MATCHED",
+            )
+            for channel in signal.channels.values()
+        ]
+        mapping = SessionMappingOut(
+            session_id=signal.session_id,
+            ontology_version="MR4_SINGLE_CSV_V0_1",
             resolved_count=len(candidates),
             unresolved_count=0,
             candidates=candidates,

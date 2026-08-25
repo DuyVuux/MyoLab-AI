@@ -1,0 +1,20 @@
+package: UI-I4
+gate: UI_PORTFOLIO_READY
+requires: [AUTO_DATA_CONTRACT_READY, AUTO_DATA_INGEST_QC_READY, AUTO_DATA_EVIDENCE_READY]
+protected: [/use-cases/**, /uc1/**, /uc2/**, /uc3/**, /uc4/**, fatigue_use_case_logic]
+targets:
+  dashboard:
+    action: replace static operational cards with canonical OperationsSummary
+    metrics: [sessions_total, imports_running, qc_warning, blocked, awaiting_review, completed]
+    forbidden: [fatigue_prevalence, disease_risk, patient_risk_score]
+  browser_single_csv:
+    action: prove real upload -> canonical ingestion -> preflight/mapping/QC -> quality evidence
+  final_e2e:
+    action: real Playwright flow with no route interception
+  freeze:
+    action: hash frontend source/e2e/package lock after final PASS
+deferred_future_research:
+  - fatigue_use_case_completion
+  - advanced_signal_explorer
+  - cross-browser expansion if not already available
+  - clinical validation

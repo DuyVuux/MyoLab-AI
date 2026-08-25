@@ -1,0 +1,17 @@
+{
+  "status": "NOT_EXECUTED",
+  "canonical_bindings": {
+    "session_read_model": null,
+    "pipeline_job_read_model": null,
+    "qc_read_model": null,
+    "review_queue_read_model": null
+  },
+  "real_mode_smoke": {
+    "executed": false,
+    "mock_or_demo_backend_used": null,
+    "operations_summary_observed": false,
+    "source_is_canonical_read_model": false,
+    "counts_non_negative": false
+  },
+  "limitations": []
+}

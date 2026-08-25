@@ -55,9 +55,12 @@ def test_raw_hash_changes_if_and_only_if_bytes_change(tmp_path):
     assert r1.source_sha256 != r2.source_sha256
 
 def test_day13_semantics_validate_canonical_v_sampling():
-    modpath=ROOT/'DAYS_64_72_PHASE5R_EXECUTION/DAYS_64_72_EXECUTION/upstream-evidence/day13/time_count_unit.py'
-    spec=importlib.util.spec_from_file_location('day13_validator',modpath); m=importlib.util.module_from_spec(spec); sys.modules['day13_validator']=m; spec.loader.exec_module(m)
-    reg=m.load_unit_registry(ROOT/'DAYS_64_72_PHASE5R_EXECUTION/DAYS_64_72_EXECUTION/upstream-evidence/day13/unit-registry.v0.1.yaml')
+    modpath = ROOT / 'services/signal-ingestion-service/src/validation/time_count_unit.py'
+    spec = importlib.util.spec_from_file_location('day13_validator', modpath)
+    m = importlib.util.module_from_spec(spec)
+    sys.modules['day13_validator'] = m
+    spec.loader.exec_module(m)
+    reg = m.load_unit_registry(ROOT / 'data-platform/contracts/unit-registry.v0.1.yaml')
     r=grab(FIX/'session1_participant1_gesture10_trial1.hea',FIX/'session1_participant1_gesture10_trial1.dat')
     n=len(r.values); ts=tuple(i/r.fs_hz for i in range(n)); sig='sig_'+hashlib.sha256(b'F1').hexdigest()[:32]
     inp=m.SignalValidationInput(source_record_id='src_sha256_'+r.source_sha256,signal_id=sig,timestamps_seconds=ts,metadata_count=n,begin_time_seconds=0.0,sampling_rate_hz=r.fs_hz,unit='V')

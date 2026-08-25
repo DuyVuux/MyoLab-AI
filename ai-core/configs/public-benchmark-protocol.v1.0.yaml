@@ -3,7 +3,7 @@ protocol_id: public-benchmark-protocol.v1.0
 status: FROZEN_BEFORE_DAY67
 seed: 64066
 split_algorithm: SHA256_RANK_WITHIN_DATASET_70_30_SUBJECTWISE
-split_manifest_sha256: fbf63869c61f8acd0dde90327df51043d2fc7bbc424de023a4e893dd256c5255
+split_manifest_sha256: 4814f0c370c77012fddd1b156801fe1664d67c3128e101a9afbaa3a6ad1128b4
 datasets:
 - dataset_id: GRABMYO_V1_1_0
   version: 1.1.0

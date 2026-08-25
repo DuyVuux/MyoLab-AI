@@ -7,6 +7,21 @@
   margin-bottom: var(--space-8);
 }
 
+.operationsStatus {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-8);
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+}
+
+.operationsStatus strong {
+  display: block;
+  margin-bottom: var(--space-1);
+  color: var(--color-text-primary);
+}
+
 .statLink {
   text-decoration: none;
   color: inherit;

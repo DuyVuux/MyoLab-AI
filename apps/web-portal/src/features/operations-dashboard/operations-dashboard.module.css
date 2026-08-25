@@ -1,0 +1,9 @@
+.panel { display:grid; gap:16px; }
+.header { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
+.eyebrow { margin:0 0 4px; font-size:.75rem; font-weight:700; letter-spacing:.08em; }
+.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.card { border:1px solid var(--color-border,#d5dae0); border-radius:8px; padding:16px; background:var(--color-surface,#fff); display:grid; gap:6px; }
+.card span { color:var(--color-text-secondary,#5d6672); font-size:.85rem; }
+.card strong { font-size:1.65rem; font-variant-numeric:tabular-nums; }
+@media(max-width:768px){ .header{display:grid}.grid{grid-template-columns:1fr 1fr} }
+@media(max-width:420px){ .grid{grid-template-columns:1fr} }

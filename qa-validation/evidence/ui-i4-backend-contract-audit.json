@@ -1,0 +1,666 @@
+{
+  "status": "PASS",
+  "operations_summary": "VERIFIED",
+  "evidence": {
+    "method": "GET",
+    "path": "/v1/operations/summary",
+    "file": "services/api-server/src/ui_i4/routes.py",
+    "line": 21
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 16
+    },
+    {
+      "method": "GET",
+      "path": "/v1/use-cases",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 21
+    },
+    {
+      "method": "GET",
+      "path": "/v1/dashboard",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 26
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 31
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyses",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 36
+    },
+    {
+      "method": "GET",
+      "path": "/v1/feedback",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 41
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 38
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 46
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/imports",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 53
+    },
+    {
+      "method": "GET",
+      "path": "/v1/imports/{import_id}",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 60
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/imports/{import_id}/mapping",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 67
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/preflight",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 77
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/calibrations",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 85
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/quality",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 93
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/quality/acknowledgements",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 101
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/analyses",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 109
+    },
+    {
+      "method": "POST",
+      "path": "/v1/uc2/assessments",
+      "file": "services/api-server/src/mock_api/day23_app.py",
+      "line": 20
+    },
+    {
+      "method": "GET",
+      "path": "/v1/uc2/assessments/{assessment_id}",
+      "file": "services/api-server/src/mock_api/day23_app.py",
+      "line": 34
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 33
+    },
+    {
+      "method": "POST",
+      "path": "/v1/review-cases",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 43
+    },
+    {
+      "method": "GET",
+      "path": "/v1/review-cases/{case_id}",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 62
+    },
+    {
+      "method": "POST",
+      "path": "/v1/review-cases/{case_id}/events",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 77
+    },
+    {
+      "method": "POST",
+      "path": "/v1/reports/preview",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 98
+    },
+    {
+      "method": "POST",
+      "path": "/v1/reports/finalize",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 106
+    },
+    {
+      "method": "GET",
+      "path": "/v1/reports/{report_id}",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 122
+    },
+    {
+      "method": "POST",
+      "path": "/v1/feedback/adjudications",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 136
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 40
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 44
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/import",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 48
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/import/upload",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 99
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/preflight",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 112
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/mapping",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 116
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/mapping/resolve",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 123
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/quality",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 131
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/signals",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 14
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/signals/{channel_id}/window",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 17
+    },
+    {
+      "method": "GET",
+      "path": "/v1/processing-manifests/{manifest_id}",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 23
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/evidence",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 26
+    },
+    {
+      "method": "GET",
+      "path": "/v1/review-cases",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 29
+    },
+    {
+      "method": "GET",
+      "path": "/v1/review-cases/{case_id}",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 32
+    },
+    {
+      "method": "POST",
+      "path": "/v1/review-cases/{case_id}/actions",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 35
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/audit",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 39
+    },
+    {
+      "method": "POST",
+      "path": "/v1/uc1/sessions/{session_id}/replays",
+      "file": "services/api-server/src/routes/uc1_replays.py",
+      "line": 105
+    },
+    {
+      "method": "GET",
+      "path": "/v1/uc1/replays/{replay_id}",
+      "file": "services/api-server/src/routes/uc1_replays.py",
+      "line": 140
+    },
+    {
+      "method": "POST",
+      "path": "/v1/uc1/replays/{replay_id}/advance",
+      "file": "services/api-server/src/routes/uc1_replays.py",
+      "line": 159
+    },
+    {
+      "method": "POST",
+      "path": "/v1/uc1/replays/{replay_id}/feedback",
+      "file": "services/api-server/src/routes/uc1_replays.py",
+      "line": 185
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/analysis-jobs",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 19
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 35
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyses/{analysis_id}/advance",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 42
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyses/{analysis_id}/cancel",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 51
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}/summary",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 60
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}/manifest",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 67
+    },
+    {
+      "method": "GET",
+      "path": "/v1/operations/summary",
+      "file": "services/api-server/src/ui_i4/routes.py",
+      "line": 21
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "file": "services/feature-extraction-service/src/app.py",
+      "line": 24
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/features/time-domain",
+      "file": "services/feature-extraction-service/src/routers/extraction.py",
+      "line": 23
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/features/frequency-domain",
+      "file": "services/feature-extraction-service/src/routers/extraction.py",
+      "line": 51
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 16
+    },
+    {
+      "method": "GET",
+      "path": "/v1/use-cases",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 21
+    },
+    {
+      "method": "GET",
+      "path": "/v1/dashboard",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 26
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 31
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyses",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 36
+    },
+    {
+      "method": "GET",
+      "path": "/v1/feedback",
+      "file": "services/api-server/src/mock_api/day19_app.py",
+      "line": 41
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 38
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 46
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/imports",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 53
+    },
+    {
+      "method": "GET",
+      "path": "/v1/imports/{import_id}",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 60
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/imports/{import_id}/mapping",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 67
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/preflight",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 77
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/calibrations",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 85
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/quality",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 93
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/quality/acknowledgements",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 101
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/analyses",
+      "file": "services/api-server/src/mock_api/day20_app.py",
+      "line": 109
+    },
+    {
+      "method": "POST",
+      "path": "/v1/uc2/assessments",
+      "file": "services/api-server/src/mock_api/day23_app.py",
+      "line": 20
+    },
+    {
+      "method": "GET",
+      "path": "/v1/uc2/assessments/{assessment_id}",
+      "file": "services/api-server/src/mock_api/day23_app.py",
+      "line": 34
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 33
+    },
+    {
+      "method": "POST",
+      "path": "/v1/review-cases",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 43
+    },
+    {
+      "method": "GET",
+      "path": "/v1/review-cases/{case_id}",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 62
+    },
+    {
+      "method": "POST",
+      "path": "/v1/review-cases/{case_id}/events",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 77
+    },
+    {
+      "method": "POST",
+      "path": "/v1/reports/preview",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 98
+    },
+    {
+      "method": "POST",
+      "path": "/v1/reports/finalize",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 106
+    },
+    {
+      "method": "GET",
+      "path": "/v1/reports/{report_id}",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 122
+    },
+    {
+      "method": "POST",
+      "path": "/v1/feedback/adjudications",
+      "file": "services/api-server/src/mock_api/day24_app.py",
+      "line": 136
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 40
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 44
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/import",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 48
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/import/upload",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 99
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/preflight",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 112
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/mapping",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 116
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/mapping/resolve",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 123
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/quality",
+      "file": "services/api-server/src/ui_i2/routes.py",
+      "line": 131
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/signals",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 14
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/signals/{channel_id}/window",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 17
+    },
+    {
+      "method": "GET",
+      "path": "/v1/processing-manifests/{manifest_id}",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 23
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/evidence",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 26
+    },
+    {
+      "method": "GET",
+      "path": "/v1/review-cases",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 29
+    },
+    {
+      "method": "GET",
+      "path": "/v1/review-cases/{case_id}",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 32
+    },
+    {
+      "method": "POST",
+      "path": "/v1/review-cases/{case_id}/actions",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 35
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/audit",
+      "file": "services/api-server/src/ui_i3/routes.py",
+      "line": 39
+    },
+    {
+      "method": "POST",
+      "path": "/v1/uc1/sessions/{session_id}/replays",
+      "file": "services/api-server/src/routes/uc1_replays.py",
+      "line": 105
+    },
+    {
+      "method": "GET",
+      "path": "/v1/uc1/replays/{replay_id}",
+      "file": "services/api-server/src/routes/uc1_replays.py",
+      "line": 140
+    },
+    {
+      "method": "POST",
+      "path": "/v1/uc1/replays/{replay_id}/advance",
+      "file": "services/api-server/src/routes/uc1_replays.py",
+      "line": 159
+    },
+    {
+      "method": "POST",
+      "path": "/v1/uc1/replays/{replay_id}/feedback",
+      "file": "services/api-server/src/routes/uc1_replays.py",
+      "line": 185
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/analysis-jobs",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 19
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 35
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyses/{analysis_id}/advance",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 42
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyses/{analysis_id}/cancel",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 51
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}/summary",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 60
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}/manifest",
+      "file": "services/api-server/src/routes/analysis_jobs.py",
+      "line": 67
+    },
+    {
+      "method": "GET",
+      "path": "/v1/operations/summary",
+      "file": "services/api-server/src/ui_i4/routes.py",
+      "line": 21
+    }
+  ]
+}

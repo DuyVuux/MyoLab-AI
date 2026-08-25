@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "backend_adapter": "services/api-server/src/ui_i4/live_backend.py::CanonicalAutoDataOperationsBackend",
+  "canonical_bindings": {
+    "session_read_model": "services/api-server/src/ui_i2/live_backend.py::CanonicalAutoDataBackend.list_sessions",
+    "pipeline_job_read_model": "qa-validation/evidence/ui-i2-live-backend-binding.json::pipeline_job",
+    "qc_read_model": "services/api-server/src/ui_i2/live_backend.py::CanonicalAutoDataBackend.get_quality",
+    "review_queue_read_model": "services/api-server/src/ui_i3/live_backend.py::CanonicalAutoDataEvidenceBackend.list_review_cases"
+  },
+  "real_mode_smoke": {
+    "executed": true,
+    "mock_or_demo_backend_used": false,
+    "session_id": "SYNTH_D3_GOLDEN_001",
+    "operations_summary_observed": true,
+    "source_is_canonical_read_model": true,
+    "counts_non_negative": true
+  },
+  "operations_summary": {
+    "generated_at": "2026-08-25T09:22:00Z",
+    "sessions_total": 1,
+    "imports_running": 0,
+    "qc_warning": 0,
+    "blocked": 0,
+    "awaiting_review": 0,
+    "completed": 1,
+    "unknown": 0,
+    "source": "CANONICAL_READ_MODEL",
+    "limitations": [
+      "RESEARCH ONLY",
+      "NOT CLINICALLY VALIDATED",
+      "NOT FOR CLINICAL USE",
+      "Operational counts are workflow status, not clinical risk or fatigue metrics."
+    ]
+  },
+  "limitations": [
+    "Synthetic engineering session is used only as a deterministic smoke fixture; it is not clinical validation.",
+    "Operations summary reports workflow status only and excludes fatigue/clinical risk KPIs."
+  ]
+}

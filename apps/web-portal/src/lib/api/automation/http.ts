@@ -39,7 +39,7 @@ export class AutomationHttpClient {
   private readonly defaultHeaders: Record<string, string>;
 
   constructor(options: AutomationHttpClientOptions) {
-    this.fetchImpl = options.fetchImpl ?? fetch;
+    this.fetchImpl = options.fetchImpl ?? ((input, init) => fetch(input, init));
     this.baseUrl = options.baseUrl;
     this.defaultHeaders = options.defaultHeaders ?? {};
   }
