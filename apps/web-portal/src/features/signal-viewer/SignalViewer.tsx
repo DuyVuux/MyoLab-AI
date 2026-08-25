@@ -25,10 +25,13 @@ export function SignalPanel({ panel }: SignalPanelProps) {
   const mask = panel.mask_intervals.map((m, i) => (
     <li key={i}>{m.start_s.toFixed(6)}–{m.end_s.toFixed(6)} s</li>
   ));
+  const isVisuallyDecimated = panel.points.length < panel.source_sample_count;
 
   return (
     <figure data-series-kind={panel.kind} aria-label={`${panel.kind} waveform`} className={styles.panel}>
-      <figcaption className={styles.panelTitle}>{panel.kind} waveform — unit: {panel.units}</figcaption>
+      <figcaption className={styles.panelTitle}>
+        {panel.kind} waveform — unit: {panel.units} · fs: {panel.fs_hz} Hz
+      </figcaption>
       
       <div className={styles.plotContainer}>
         <svg viewBox="0 0 800 180" className={styles.svgPlot} role="img" aria-label={`${panel.kind} signal plot`}>
@@ -38,6 +41,12 @@ export function SignalPanel({ panel }: SignalPanelProps) {
 
       <div className={styles.metaInfo}>
         <p>Source ref: <a href={`#evidence-${panel.source_ref}`} className={styles.link}>{panel.source_ref}</a></p>
+        <p>Rendered points: {panel.points.length} / source samples: {panel.source_sample_count}</p>
+        {isVisuallyDecimated && (
+          <p className={styles.decimationNote}>
+            Visual decimation only; analysis data and sample identity are unchanged.
+          </p>
+        )}
         
         {panel.kind === 'PROCESSED' && (
           <>

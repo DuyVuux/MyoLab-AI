@@ -59,7 +59,7 @@ export const ROUTES = {
   UC3_REPLAY: (sessionId: string) => `/uc3/replay/${sessionId}` as const,
   UC3_EXPERT_REVIEW: (analysisId: string) => `/uc3/expert-review/${analysisId}` as const,
 
-  // UC4 — Medical HMI Feasibility (Tier 2 Research)
+  // UC4 — Sterile-environment HMI feasibility (Tier 2 Research)
   UC4_INTRO: '/uc4/intro',
   UC4_FEASIBILITY: '/uc4/feasibility',
   UC4_STERILE_COMMAND: '/uc4/sterile-command',
@@ -116,7 +116,7 @@ export const USE_CASE_CONFIGS: UseCaseConfig[] = [
     hardware: 'Noraxon Ultium sEMG (4–8 kênh)',
     hardwareBoundary: 'Import/replay theo protocol; chưa claim live SDK.',
     status: 'Thiết kế và triển khai chi tiết',
-    disclaimer: 'Kết quả hỗ trợ kỹ thuật — cần KTV/bác sĩ xem xét.',
+    disclaimer: 'Kết quả hỗ trợ kỹ thuật — research only, cần human review.',
     cta: 'Mở use case',
     introRoute: ROUTES.UC1_INTRO,
     primaryRoute: ROUTES.UC1_INTRO,
@@ -132,7 +132,7 @@ export const USE_CASE_CONFIGS: UseCaseConfig[] = [
     hardware: 'Noraxon Ultium sEMG (4–8 kênh)',
     hardwareBoundary: 'Import/replay theo protocol; chưa claim live SDK.',
     status: 'Thiết kế và triển khai chi tiết',
-    disclaimer: 'Chỉ số kỹ thuật — không thay thế đánh giá lâm sàng tổng thể.',
+    disclaimer: 'Chỉ số kỹ thuật — không dùng cho chẩn đoán, điều trị hoặc quyết định lâm sàng.',
     cta: 'Mở use case',
     introRoute: ROUTES.UC2_INTRO,
     primaryRoute: ROUTES.UC2_INTRO,

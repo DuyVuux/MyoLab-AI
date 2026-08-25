@@ -38,10 +38,12 @@ export interface Point {
 export interface PanelModel {
   kind: SeriesKind;
   units: string;
+  fs_hz: number;
   source_ref: string;
   manifest_id: string | null;
   profile_id: string | null;
   points: Point[];
+  source_sample_count: number;
   mask_intervals: MaskInterval[];
 }
 

@@ -56,7 +56,7 @@ export default function FeedbackInboxPage() {
         <div className="page-header">
           <div className="page-header__left">
             <h1 className="page-title">ML Feedback Inbox</h1>
-            <p className="page-subtitle">Danh sách phản hồi từ bộ phận lâm sàng.</p>
+            <p className="page-subtitle">Danh sách phản hồi research-demo từ reviewer và người vận hành.</p>
           </div>
         </div>
 

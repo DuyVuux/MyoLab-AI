@@ -1,0 +1,30 @@
+phase: UI-I1
+policy: PRESERVE_NO_BEHAVIOR_CHANGE
+purpose: Preserve fatigue/gesture/use-case work while auto-data foundation is integrated.
+
+protected_routes:
+  - /use-cases/**
+  - /uc1/**
+  - /uc2/**
+  - /uc3/**
+  - /uc4/**
+
+protected_concerns:
+  - fatigue_calculation_logic
+  - fatigue_probability_or_context_logic
+  - gesture_logic
+  - endurance_trend_logic
+  - use_case_specific_thresholds
+  - use_case_specific_model_code
+  - use_case_specific_visualizations
+
+allowed_changes:
+  - shared_compile_fix_only_if_required
+  - non_behavioral_import_path_adjustment_only_if_required
+  - preservation_tests
+
+forbidden_in_ui_i1:
+  - redesign_use_cases
+  - migrate_use_case_business_logic
+  - delete_use_case_routes
+  - reinterpret_fatigue_semantics

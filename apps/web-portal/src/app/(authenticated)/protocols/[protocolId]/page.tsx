@@ -19,7 +19,7 @@ export default function ProtocolDetailPage() {
       <div className="page-header">
         <div className="page-header__left">
           <h1 className="page-title">Chi tiết Giao thức ({protocolId})</h1>
-          <p className="page-subtitle">Quy trình đo lâm sàng và vị trí dán điện cực chuẩn hóa</p>
+          <p className="page-subtitle">Quy trình đo research-demo và vị trí dán điện cực chuẩn hóa</p>
         </div>
         <div className="page-header__right">
           <Badge variant="info">APPROVED SPEC v2.0</Badge>

@@ -1,0 +1,157 @@
+gaps:
+  - id: FE-P0-001
+    severity: P0_CRITICAL
+    area: claim_safety
+    route: multiple
+    component: RootLayout, LoginPage, AppShell, session review/report, Day24 signoff/report panels
+    issue: Visible UI copy implies clinical intelligence, clinical conclusion, clinical sign-off, or clinical report despite research-only project boundary.
+    evidence: rg hits in app layout, login, AppShell, sessions/[sessionId]/review, sessions/[sessionId]/report, ClinicalSignoffPanel, ReportPreviewPanel.
+    user_impact: Users may mistake technical evidence for clinically validated output.
+    safety_impact: Violates "RESEARCH ONLY / NOT CLINICALLY VALIDATED / NOT FOR CLINICAL USE" boundary.
+    recommended_action: Replace visible copy with research demo, technical evidence, human review, and not-for-clinical-use wording. Keep internal type names unless a local rename is low-risk.
+    estimated_scope: small_local_copy_patch
+    acceptance_test: Build passes and Playwright verifies no forbidden clinical-use wording in golden flow.
+    status: fixed
+  - id: FE-P1-001
+    severity: P1_RELEASE_BLOCKER
+    area: golden_demo
+    route: /uc1/session/[sessionId]
+    component: UC1SessionWorkspace
+    issue: No single golden demo E2E proves launch to QC/signal/metric/review/provenance/audit path.
+    evidence: Existing Playwright specs are day-specific; prompt requires exactly one golden demo E2E.
+    user_impact: Reviewer cannot validate final UI through one deterministic path.
+    safety_impact: Demo readiness uncertainty.
+    recommended_action: Add `golden-research-session.spec.ts` using established Playwright UC1 mock pattern and review-queue evidence pages.
+    estimated_scope: small_test
+    acceptance_test: Golden demo E2E passes.
+    status: fixed
+  - id: FE-P1-002
+    severity: P1_RELEASE_BLOCKER
+    area: route_integrity
+    route: /dashboard/exceptions
+    component: day59-cross-feature.stress.spec.ts
+    issue: Stress test references a route not present in Next build output.
+    evidence: Next build route list has no `/dashboard/exceptions`.
+    user_impact: Cross-feature stress verification is not trustworthy.
+    safety_impact: Could hide broken review drill-down path.
+    recommended_action: Replace with live `/qc` or `/review-queue` route or exclude from final golden set.
+    estimated_scope: small_test_patch
+    acceptance_test: Updated stress route opens a live page.
+    status: fixed
+  - id: FE-P2-001
+    severity: P2_DEMO_QUALITY
+    area: styling
+    route: /qc, /review-queue
+    component: QCDashboard/QCCard/ReviewQueue
+    issue: Tailwind-like utility classes are used without Tailwind dependency/config.
+    evidence: package.json has no Tailwind/PostCSS config; components contain `max-w-4xl`, `text-gray-600`, etc.
+    user_impact: Partial pages look unstyled.
+    safety_impact: Status hierarchy may be less scannable.
+    recommended_action: Convert critical feature components to CSS Modules or global token classes if used in golden flow.
+    estimated_scope: medium_local_css
+    acceptance_test: Screenshot/manual smoke shows styled QC/review pages.
+    status: open
+  - id: FE-P2-002
+    severity: P2_DEMO_QUALITY
+    area: accessibility
+    route: authenticated shell
+    component: AppShell/global CSS
+    issue: No skip-to-content link.
+    evidence: No skip link found in layout/AppShell.
+    user_impact: Keyboard users traverse sidebar before content on every page.
+    safety_impact: Slower access to critical content.
+    recommended_action: Add visually hidden skip link targeting main.
+    estimated_scope: small_css_markup
+    acceptance_test: Tab from page top reveals skip link and moves focus to main.
+    status: fixed
+  - id: FE-P2-003
+    severity: P2_DEMO_QUALITY
+    area: signal_correctness
+    route: signal viewer / review queue signal
+    component: SignalViewer
+    issue: Visual decimation, sampling rate, and axes are not visible in the rendered chart UI.
+    evidence: SignalViewer caption shows only kind/unit; utils decimate min/max by default.
+    user_impact: Reviewer cannot fully inspect timebase/rendering semantics.
+    safety_impact: Possible confusion between visual representation and analysis data.
+    recommended_action: Display sampling rate and "visual decimation only" note when max point reduction applies.
+    estimated_scope: small_local_component
+    acceptance_test: Signal viewer renders sampling rate/decimation disclosure.
+    status: fixed
+  - id: FE-P2-004
+    severity: P2_DEMO_QUALITY
+    area: error_handling
+    route: /reviews/[caseId], /reports/[reportId]
+    component: ReviewReportClient
+    issue: Raw HTTP response text is shown as an error string.
+    evidence: `throw new Error(HTTP_${status}: ${detail})`.
+    user_impact: Users receive backend-shaped errors without recovery guidance.
+    safety_impact: Could disclose implementation detail.
+    recommended_action: Map API problems to safe UI messages and reason codes.
+    estimated_scope: small_client_patch
+    acceptance_test: Route mock 500 shows safe message.
+    status: open
+  - id: FE-P2-005
+    severity: P2_DEMO_QUALITY
+    area: testing
+    route: all
+    component: Jest config
+    issue: Root `tests/**/*.test` files are outside Jest `testMatch`.
+    evidence: Jest config only matches `<rootDir>/src/**/*.test.{ts,tsx}`.
+    user_impact: Some feature tests may not run in default command.
+    safety_impact: False confidence in test pass count.
+    recommended_action: Update testMatch or document alternate runner.
+    estimated_scope: small_config
+    acceptance_test: Default Jest includes intended tests.
+    status: open
+  - id: FE-P2-006
+    severity: P2_DEMO_QUALITY
+    area: responsive
+    route: all
+    component: AppShell/pages
+    issue: Responsive behavior is implemented but not screenshot-verified across prompt widths.
+    evidence: CSS media query at 768 px; no screenshot artifacts found.
+    user_impact: Unknown 320/375 usability.
+    safety_impact: Mobile demo may be broken.
+    recommended_action: Run Playwright screenshots at 375, 768, 1280; document limitation for other widths.
+    estimated_scope: manual_smoke
+    acceptance_test: No major overlap in screenshots.
+    status: open
+  - id: FE-P2-007
+    severity: P2_DEMO_QUALITY
+    area: performance
+    route: signal-heavy routes
+    component: SignalViewer/UC1
+    issue: No measured signal-heavy performance smoke captured.
+    evidence: tests validate utility behavior but not browser render metrics.
+    user_impact: Unknown responsiveness with 100k+ samples.
+    safety_impact: Could impair review of signal evidence.
+    recommended_action: Add or document performance smoke for golden-size fixture.
+    estimated_scope: small_manual_or_e2e
+    acceptance_test: Golden E2E captures basic load/interaction without stalls.
+    status: partially_fixed
+  - id: FE-P3-001
+    severity: P3_OPTIONAL_POLISH
+    area: accessibility
+    route: all
+    component: Badge
+    issue: Static badges use `role=status`.
+    evidence: Badge component always sets `role="status"`.
+    user_impact: Potential screen-reader verbosity.
+    safety_impact: low
+    recommended_action: Make live role optional.
+    estimated_scope: small_component_patch
+    acceptance_test: Badge snapshots/query expectations updated.
+    status: open
+  - id: FE-P3-002
+    severity: P3_OPTIONAL_POLISH
+    area: design
+    route: all
+    component: tokens
+    issue: Typography uses system UI and lacks tabular numeric convention.
+    evidence: tokens define system font; no global `font-variant-numeric`.
+    user_impact: Dense numeric screens less polished.
+    safety_impact: low
+    recommended_action: Add tabular numerals for metric/provenance numeric elements later.
+    estimated_scope: small_css
+    acceptance_test: numeric tables retain stable width.
+    status: open

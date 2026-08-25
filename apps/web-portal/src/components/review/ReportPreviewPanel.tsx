@@ -16,7 +16,7 @@ export function ReportPreviewPanel({
       <p>
         Report hash: <code>{report.reportHashSha256}</code>
       </p>
-      <p>Kết quả cần human review và không thay thế quyết định lâm sàng.</p>
+      <p>Research-only report: không dùng cho chẩn đoán, điều trị hoặc quyết định lâm sàng.</p>
     </article>
   );
 }

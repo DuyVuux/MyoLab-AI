@@ -10,7 +10,7 @@ export function Day24ReportPreviewPage({
 }: Day24ReportPreviewPageProps): JSX.Element {
   return (
     <main>
-      <h1>Báo cáo sEMG</h1>
+      <h1>Báo cáo bằng chứng sEMG</h1>
       <ReportPreviewPanel report={report} />
     </main>
   );

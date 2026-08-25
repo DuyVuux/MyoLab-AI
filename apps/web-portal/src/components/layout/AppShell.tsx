@@ -67,7 +67,7 @@ const NAV_GROUPS: NavGroup[] = [
       { label: 'UC1 · Biofeedback cử chỉ', href: ROUTES.UC1_INTRO, icon: Activity, tier: 1 },
       { label: 'UC2 · Đánh giá định lượng', href: ROUTES.UC2_INTRO, icon: Stethoscope, tier: 1 },
       { label: 'UC3 · Chi giả — Nghiên cứu', href: ROUTES.UC3_INTRO, icon: FlaskConical, tier: 2 },
-      { label: 'UC4 · Medical HMI — Nghiên cứu', href: ROUTES.UC4_INTRO, icon: Monitor, tier: 2 },
+      { label: 'UC4 · HMI vô trùng — Nghiên cứu', href: ROUTES.UC4_INTRO, icon: Monitor, tier: 2 },
     ],
   },
   {
@@ -93,6 +93,10 @@ export function AppShell({ children }: AppShellProps) {
 
   return (
     <div className={styles.layout}>
+      <a className={styles.skipLink} href="#main-content">
+        Chuyển tới nội dung chính
+      </a>
+
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
@@ -119,7 +123,7 @@ export function AppShell({ children }: AppShellProps) {
               <Image src="/VINMEC_logo.png" alt="Vinmec Logo" width={54} height={32} className={styles.brandIcon} style={{ objectFit: 'contain', backgroundColor: 'white', padding: '4px', borderRadius: '6px' }} />
               <div>
                 <div className={styles.brandName}>MyoLab-AI</div>
-                <div className={styles.brandSubtitle}>sEMG Clinical Intelligence</div>
+                <div className={styles.brandSubtitle}>sEMG Quality Research</div>
               </div>
             </div>
           )}
@@ -193,7 +197,7 @@ export function AppShell({ children }: AppShellProps) {
         {!collapsed && (
           <div className={styles.disclaimer}>
             <p>Dữ liệu prototype / mô phỏng.</p>
-            <p>Kết quả không thay thế quyết định bác sĩ hoặc KTV.</p>
+            <p>Không dùng cho quyết định lâm sàng.</p>
             <p>Human review bắt buộc.</p>
           </div>
         )}
@@ -210,6 +214,8 @@ export function AppShell({ children }: AppShellProps) {
 
       {/* Main Content */}
       <main
+        id="main-content"
+        tabIndex={-1}
         className={[styles.main, collapsed ? styles['main--expanded'] : ''].filter(Boolean).join(' ')}
       >
         {/* Mobile header */}

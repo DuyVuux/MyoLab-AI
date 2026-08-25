@@ -91,6 +91,7 @@ describe('Signal Viewer Rendering', () => {
     
     const { container } = render(<SignalViewer model={m} />);
     expect(container.textContent).toMatch(/UNKNOWN_UNIT/);
+    expect(container.textContent).toMatch(/fs: 1000 Hz/);
     expect(container.textContent).not.toMatch(/unit: uV/);
   });
 
@@ -100,6 +101,16 @@ describe('Signal Viewer Rendering', () => {
     expect(container.querySelector('a[href="#evidence-src_sha256_demo"]')).not.toBeNull();
     expect(container.querySelector('a[href="#manifest-pman_sha256_demo"]')).not.toBeNull();
     expect(container.textContent).toMatch(/research-v0.1/);
+  });
+
+  it('discloses visual decimation without changing analysis semantics', () => {
+    const values = Array.from({ length: 50 }, (_, i) => Math.sin(i));
+    const r = buildSeries({ kind: 'RAW', values, fs_hz: 1000, units: 'uV', source_ref: 'r' });
+    const p = buildSeries({ kind: 'PROCESSED', values, fs_hz: 1000, units: 'uV', source_ref: 'p', manifest_id: 'm' });
+    const { container } = render(<SignalViewer model={buildSignalViewerModel({ window_identity: { ...wi, start_sample: 0, end_sample_exclusive: 50, context_start_sample: 0, context_end_sample_exclusive: 50, sampling_rate_hz: 1000 }, raw: r, processed: p, max_points: 10 })} />);
+
+    expect(container.textContent).toMatch(/Rendered points:/);
+    expect(container.textContent).toMatch(/Visual decimation only/);
   });
 
   it('rendered figures label series kind explicitly', () => {

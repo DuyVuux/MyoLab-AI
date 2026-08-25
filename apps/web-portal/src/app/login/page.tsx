@@ -37,9 +37,9 @@ const ROLE_OPTIONS: RoleOption[] = [
   {
     role: 'doctor',
     label: 'Bác sĩ PHCN',
-    description: 'Xem tổng hợp, trend, review kết quả và clinical sign-off.',
+    description: 'Xem tổng hợp, trend và ghi chú human review trong phạm vi research demo.',
     icon: Stethoscope,
-    permissions: ['Xem summary/trend', 'Clinical review', 'Sign-off', 'Override QC (theo policy)'],
+    permissions: ['Xem summary/trend', 'Human review', 'Xác nhận đã xem', 'Override kỹ thuật (theo policy)'],
   },
   {
     role: 'patient',
@@ -78,9 +78,9 @@ export default function LoginPage() {
       <div className={styles.header}>
         <Image src="/VINMEC_logo.png" alt="Vinmec Logo" width={80} height={48} className={styles.logo} style={{ objectFit: 'contain', backgroundColor: 'white', padding: '6px', borderRadius: '8px' }} />
         <h1 className={styles.title}>MyoLab-AI</h1>
-        <p className={styles.subtitle}>sEMG Clinical Intelligence Platform</p>
+        <p className={styles.subtitle}>sEMG Quality Intelligence Research Portal</p>
         <p className={styles.note}>
-          Prototype với dữ liệu mô phỏng — Chọn vai trò để đăng nhập
+          Research-only prototype với dữ liệu mô phỏng — Chọn vai trò để đăng nhập
         </p>
       </div>
 
@@ -112,7 +112,7 @@ export default function LoginPage() {
       </div>
 
       <footer className={styles.footer}>
-        <p>Dữ liệu prototype / mô phỏng. Kết quả không thay thế quyết định bác sĩ hoặc KTV.</p>
+        <p>Dữ liệu prototype / mô phỏng. Không dùng cho chẩn đoán, điều trị hoặc quyết định lâm sàng.</p>
         <p>Human review bắt buộc. Không có dữ liệu bệnh nhân thật.</p>
       </footer>
     </div>

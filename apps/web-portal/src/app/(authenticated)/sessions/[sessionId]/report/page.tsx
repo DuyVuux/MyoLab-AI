@@ -1,6 +1,6 @@
 /**
  * Report Page — `/sessions/[sessionId]/report`
- * PDF-like view. Strict separation of AI vs Clinical output. Immutable after finalized.
+ * PDF-like view. Strict separation of AI output vs human review note. Immutable after finalized.
  */
 'use client';
 
@@ -54,9 +54,9 @@ export default function ReportPage() {
     return (
       <div className="page-container">
         <Alert variant="warning" title="Không tìm thấy Report">
-          Phiên {sessionId} chưa tạo Report Draft. Bạn cần hoàn thành Clinical Sign-off trước.
+          Phiên {sessionId} chưa tạo Report Draft. Bạn cần hoàn thành Human Review trước.
         </Alert>
-        <Button onClick={() => router.push(`/sessions/${sessionId}/review`)}>Đi tới Clinical Review</Button>
+        <Button onClick={() => router.push(`/sessions/${sessionId}/review`)}>Đi tới Human Review</Button>
       </div>
     );
   }
@@ -68,13 +68,13 @@ export default function ReportPage() {
       <div className="page-container">
         <div className="page-header">
         <div className="page-header__left">
-          <h1 className="page-title">Clinical Report</h1>
-          <p className="page-subtitle">Báo cáo kết quả lâm sàng (Template v{report.templateVersion})</p>
+          <h1 className="page-title">Research Evidence Report</h1>
+          <p className="page-subtitle">Báo cáo bằng chứng kỹ thuật research-only (Template v{report.templateVersion})</p>
         </div>
         <div className="page-header__right">
           {!isFinalized && clinicalReview && (
             <Button onClick={handleFinalize} icon={<FileSignature size={16} />} variant="primary">
-              Ký & Phát hành (Finalize)
+              Finalize demo report
             </Button>
           )}
           <Button variant="secondary" icon={<Printer size={16} />}>In ấn</Button>
@@ -88,11 +88,11 @@ export default function ReportPage() {
 
         <div className={styles.headerRow}>
           <div className={styles.hospitalInfo}>
-            <h2>MyoLab-AI Medical Center</h2>
-            <p>123 Medical Boulevard, City</p>
+            <h2>MyoLab-AI Research Demo</h2>
+            <p>Research-only technical evidence package</p>
           </div>
           <div className={styles.reportMeta}>
-            <p><strong>Bệnh nhân:</strong> {session?.subjectRef}</p>
+            <p><strong>Subject ref:</strong> {session?.subjectRef}</p>
             <p><strong>Session ID:</strong> {sessionId}</p>
             <p><strong>Ngày tạo:</strong> {new Date(report.createdAt).toLocaleDateString('vi-VN')}</p>
             <Badge variant={isFinalized ? 'success' : 'warning'}>{report.state.toUpperCase()}</Badge>
@@ -110,7 +110,7 @@ export default function ReportPage() {
                 <td><strong>Phiên:</strong> {session?.sessionType}</td>
               </tr>
               <tr>
-                <td><strong>Bên tổn thương:</strong> {session?.affectedSide}</td>
+                <td><strong>Affected-side metadata:</strong> {session?.affectedSide}</td>
                 <td><strong>Nhóm cơ:</strong> {session?.targetMuscles.join(', ')}</td>
               </tr>
             </tbody>
@@ -118,7 +118,7 @@ export default function ReportPage() {
         </div>
 
         <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>2. Kết luận Lâm sàng (Bác sĩ chuyên khoa)</h3>
+          <h3 className={styles.sectionTitle}>2. Ghi chú human review</h3>
           <div className={styles.clinicalConclusion}>
             {report.clinicianApprovedConclusion}
           </div>
@@ -132,7 +132,7 @@ export default function ReportPage() {
         <div className={styles.section}>
           <h3 className={styles.sectionTitle}>3. Tóm tắt Kỹ thuật AI (Tham khảo)</h3>
           <Alert variant="info" title="Khuyến cáo (Disclaimer)">
-            Kết quả kỹ thuật dưới đây sinh ra từ mô hình AI, không thay thế chẩn đoán y khoa.
+            Kết quả kỹ thuật dưới đây không dùng cho chẩn đoán, điều trị hoặc quyết định lâm sàng.
           </Alert>
           <div className={styles.aiSummary}>
             {report.aiTechnicalSummary}
@@ -148,8 +148,8 @@ export default function ReportPage() {
               <p className={styles.sigName}>{session?.operator}</p>
             </div>
             <div className={styles.sigBlock}>
-              <p><strong>Bác sĩ chuyên khoa</strong></p>
-              <p className={styles.sigName}>{clinicalReview ? 'Bác sĩ Đã duyệt' : 'Chưa ký'}</p>
+              <p><strong>Human reviewer</strong></p>
+              <p className={styles.sigName}>{clinicalReview ? 'Đã review' : 'Chưa review'}</p>
               {clinicalReview?.signOffHash && <span className={styles.hashLine}><FileKey size={12}/> {clinicalReview.signOffHash.substring(0, 16)}</span>}
             </div>
           </div>

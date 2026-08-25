@@ -3,9 +3,9 @@ import { AuthProvider } from '@/lib/auth';
 import '@/styles/global.css';
 
 export const metadata: Metadata = {
-  title: 'MyoLab-AI — sEMG Clinical Intelligence Platform',
+  title: 'MyoLab-AI — sEMG Quality Intelligence Research Portal',
   description:
-    'Nền tảng Clinical Intelligence phân tích tín hiệu điện cơ bề mặt sEMG, phục vụ phục hồi chức năng sau đột quỵ và đánh giá vận động chi trên. Prototype với dữ liệu mô phỏng.',
+    'Cổng nghiên cứu phân tích chất lượng tín hiệu điện cơ bề mặt sEMG. Research-only prototype với dữ liệu mô phỏng, không dùng cho mục đích lâm sàng.',
   robots: 'noindex, nofollow',
 };
 

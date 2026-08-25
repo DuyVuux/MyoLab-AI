@@ -1,6 +1,6 @@
 /**
- * Clinical Review Page — `/sessions/[sessionId]/review`
- * Clinician signs off on the AI result. Includes Guardrails for low confidence/QC fail.
+ * Human Review Page — `/sessions/[sessionId]/review`
+ * Reviewer records research-demo notes. Includes guardrails for low confidence/QC fail.
  */
 'use client';
 
@@ -58,7 +58,7 @@ export default function ClinicalReviewPage() {
 
   const handleSignOff = () => {
     if (!conclusion.trim()) {
-      setError('Vui lòng nhập kết luận lâm sàng.');
+      setError('Vui lòng nhập ghi chú human review.');
       return;
     }
     
@@ -74,7 +74,7 @@ export default function ClinicalReviewPage() {
       }
       // Guardrail: no positive on QC fail (we simulate this by checking if conclusion contains 'bình thường' etc, but simple alert here)
       if (isQCFail && conclusion.toLowerCase().includes('bình thường')) {
-        setError('Không được kết luận "bình thường" khi QC FAILED. Vui lòng giải thích ngoại lệ rõ ràng.');
+        setError('Không được ghi "bình thường" khi QC FAILED. Vui lòng giải thích ngoại lệ kỹ thuật rõ ràng.');
         return;
       }
     }
@@ -121,8 +121,8 @@ export default function ClinicalReviewPage() {
       <div className="page-container">
         <div className="page-header">
           <div className="page-header__left">
-            <h1 className="page-title">Clinical Review & Sign-off</h1>
-            <p className="page-subtitle">Duyệt kết quả lâm sàng (Chỉ dành cho Bác sĩ).</p>
+            <h1 className="page-title">Human Review Research Check</h1>
+            <p className="page-subtitle">Ghi nhận phần review của bác sĩ trong phạm vi research-only demo.</p>
           </div>
         </div>
 
@@ -171,14 +171,14 @@ export default function ClinicalReviewPage() {
           </Card>
         </div>
 
-        {/* Right Column: Clinical Input */}
+        {/* Right Column: Human review input */}
         <div className={styles.inputColumn}>
           <Card padding="md">
-            <CardHeader><h3 className={styles.cardTitle}>Kết luận Lâm sàng (Clinical Conclusion)</h3></CardHeader>
+            <CardHeader><h3 className={styles.cardTitle}>Ghi chú human review</h3></CardHeader>
             <CardContent>
               <textarea 
                 className={styles.textarea}
-                placeholder="Nhập kết luận chuyên môn. Kết luận này ĐỘC LẬP với nhận định của AI..."
+                placeholder="Nhập ghi chú chuyên môn trong phạm vi research demo. Đây không phải kết luận lâm sàng..."
                 value={conclusion}
                 onChange={(e) => { setConclusion(e.target.value); setError(null); }}
                 rows={6}
@@ -198,10 +198,10 @@ export default function ClinicalReviewPage() {
                       onChange={(e) => setOverrideCode(e.target.value as OverridePolicyCode)}
                     >
                       <option value="">-- Chọn mã ghi đè --</option>
-                      <option value="OVR_ARTIFACT">Bỏ qua Artifact không ảnh hưởng chẩn đoán</option>
-                      <option value="OVR_FATIGUE_MASK">Tín hiệu nhiễu do mỏi cơ, chấp nhận được</option>
-                      <option value="OVR_CROSSTALK">Crosstalk đã được ngoại trừ qua khám lâm sàng</option>
-                      <option value="OVR_CLINICAL_CORRELATION">Phù hợp bệnh sử lâm sàng, dù AI confidence thấp</option>
+                      <option value="OVR_ARTIFACT">Artifact đã có giải thích kỹ thuật kèm reason code</option>
+                      <option value="OVR_FATIGUE_MASK">Tín hiệu nhiễu đã được ghi nhận, chỉ dùng trong demo kỹ thuật</option>
+                      <option value="OVR_CROSSTALK">Crosstalk đã được kiểm tra bằng bằng chứng kỹ thuật</option>
+                      <option value="OVR_CLINICAL_CORRELATION">Phù hợp hồ sơ kỹ thuật quan sát được, không phải clinical claim</option>
                       <option value="OVR_OTHER">Lý do khác</option>
                     </select>
                   </div>
@@ -222,7 +222,7 @@ export default function ClinicalReviewPage() {
 
               <div className={styles.actions}>
                 <Button onClick={handleSignOff} icon={<FileSignature size={16} />} iconPosition="left">
-                  Sign-off & Chuyển sang Report
+                  Ghi nhận review & chuyển sang report
                 </Button>
               </div>
             </CardContent>

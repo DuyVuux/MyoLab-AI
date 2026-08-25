@@ -6,26 +6,22 @@ test.describe('DAY 59: Cross-Feature Integration Stress Test (Days 56-58)', () =
     // We expect the browser's heap not to crash or leak severely.
     test.setTimeout(60000); // 1 minute timeout for stress testing
 
-    // In a real test, we'd mock all 3 APIs (Exceptions, Signals, Metrics) 
-    // to return large payloads instantly.
+    await page.addInitScript(() => {
+      window.sessionStorage.setItem('myolab-ai.mock-role', 'ktv');
+    });
 
     for (let i = 0; i < 5; i++) {
-      // Step 1: Open Exception Dashboard
-      await page.goto('/dashboard/exceptions');
-      await expect(page.locator('table')).toBeVisible();
+      await page.goto('/review-queue');
+      await expect(page.getByRole('heading', { name: /Review queue/i })).toBeVisible();
 
-      // Step 2: Click into a case (which loads Signal Viewer + Metric Cards)
-      // Assuming a link to review page
-      await page.goto(`/sessions/CASE_${i}/review`);
-      
-      // Step 3: Ensure Signal Viewer loads
-      const chartContainer = page.locator('.signal-chart-container');
-      // If it exists in the DOM, wait for it
-      // await expect(chartContainer).toBeVisible();
+      await page.goto(`/review-queue/CASE_${i}/signal`);
+      await expect(page.getByRole('heading', { name: /Signal Viewer/i })).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'RAW' })).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'PROCESSED' })).toBeVisible();
 
-      // Step 4: Ensure Metric Evidence loads
-      const metricCards = page.locator('.metric-evidence');
-      // await expect(metricCards.first()).toBeVisible();
+      await page.goto(`/review-queue/CASE_${i}/metrics`);
+      await expect(page.getByRole('heading', { name: /Metric Evidence/i })).toBeVisible();
+      await expect(page.getByText(/ELECTRODE_GEOMETRY_NOT_VERIFIED/i)).toBeVisible();
     }
     
     // If the loop completes without the page crashing (Page Crashed error), 

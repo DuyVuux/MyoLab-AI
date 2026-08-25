@@ -1,0 +1,31 @@
+package: ui-i1-integration-foundation
+strategy: canonical_repo_overlay
+change_type: ADDITIVE_FOUNDATION
+
+protected_existing_areas:
+  - apps/web-portal/src/app/**/uc1/**
+  - apps/web-portal/src/app/**/uc2/**
+  - apps/web-portal/src/app/**/uc3/**
+  - apps/web-portal/src/app/**/uc4/**
+  - apps/web-portal/src/components/uc1/**
+  - apps/web-portal/src/components/uc2/**
+
+new_domains:
+  - apps/web-portal/src/contracts/automation/**
+  - apps/web-portal/src/data/automation/**
+  - apps/web-portal/src/lib/api/automation/**
+  - apps/web-portal/src/hooks/usePipelineJob.ts
+  - docs/frontend/ui-i1-integration-foundation.md
+  - docs/frontend/frontend-backend-contract-map.yaml
+  - docs/frontend/uc-use-case-preservation-contract.yaml
+  - scripts/dev/audit_ui_i1_backend_contracts.py
+  - scripts/dev/verify_ui_i1_foundation.sh
+  - qa-validation/automated-tests/test_ui_i1_integration_foundation.py
+
+intentional_non_changes:
+  - no AppShell navigation rewrite
+  - no page migration from MockWorkflowRepository yet
+  - no dashboard rewrite
+  - no fatigue/use-case logic modification
+  - no new frontend dependency
+  - no backend endpoint fabricated as VERIFIED

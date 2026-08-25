@@ -49,8 +49,8 @@ export default function UC1IntroPage() {
 
       {/* Disclaimers — mandatory per spec */}
       <Alert variant="warning" title="Lưu ý quan trọng">
-        Prototype với dữ liệu mô phỏng. Kết quả hỗ trợ kỹ thuật — cần KTV/bác sĩ xem xét.
-        Human review bắt buộc trước bất kỳ quyết định lâm sàng nào.
+        Research-only prototype với dữ liệu mô phỏng. Kết quả hỗ trợ kỹ thuật và không dùng cho quyết định lâm sàng.
+        Human review bắt buộc để ghi nhận giới hạn bằng chứng.
       </Alert>
 
       {/* Use case overview */}
@@ -62,7 +62,7 @@ export default function UC1IntroPage() {
             </div>
             <h3 className={styles.cardTitle}>Đối tượng</h3>
             <p className={styles.cardText}>
-              KTV Phục hồi chức năng (thao tác chính), Bệnh nhân đột quỵ (biofeedback thụ động), Bác sĩ PHCN (review, sign-off).
+              KTV Phục hồi chức năng (thao tác chính), người tham gia demo (biofeedback thụ động), bác sĩ PHCN (human review research-only).
             </p>
           </CardContent>
         </Card>
@@ -115,7 +115,7 @@ export default function UC1IntroPage() {
             { step: 4, label: 'QC Signal', desc: 'SNR, baseline noise, saturation check', icon: AlertTriangle },
             { step: 5, label: 'AI Analysis', desc: 'Gesture recognition + confidence', icon: Activity },
             { step: 6, label: 'Biofeedback', desc: 'Hiển thị kết quả thời gian thực', icon: Activity },
-            { step: 7, label: 'Review & Sign-off', desc: 'KTV/BS xem xét, ký xác nhận', icon: CheckCircle },
+            { step: 7, label: 'Human review', desc: 'KTV/BS xem xét và ghi nhận giới hạn', icon: CheckCircle },
           ].map((item) => {
             const Icon = item.icon;
             return (

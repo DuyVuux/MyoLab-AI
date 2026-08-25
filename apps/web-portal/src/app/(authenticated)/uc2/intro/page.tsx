@@ -58,7 +58,7 @@ export default function UC2IntroPage() {
       </div>
 
       <Alert variant="warning" title="Lưu ý quan trọng">
-        Chỉ số kỹ thuật — không thay thế đánh giá lâm sàng tổng thể.
+        Chỉ số kỹ thuật — không dùng cho chẩn đoán, điều trị hoặc quyết định lâm sàng.
         Human review bắt buộc.
       </Alert>
 
@@ -93,7 +93,7 @@ export default function UC2IntroPage() {
             { step: 3, label: 'QC & Calibration', desc: 'Kiểm tra chất lượng + tham chiếu MVC' },
             { step: 4, label: 'Phân tích định lượng', desc: '5 KPI + envelope, spectrum, fatigue' },
             { step: 5, label: 'So sánh dọc', desc: 'Longitudinal trend qua nhiều phiên' },
-            { step: 6, label: 'Review & Sign-off', desc: 'Technical → Clinical → Report' },
+            { step: 6, label: 'Human review', desc: 'Technical evidence → research report' },
           ].map((item) => (
             <div key={item.step} className={styles.pipelineStep}>
               <div className={styles.pipelineNumber}>{item.step}</div>

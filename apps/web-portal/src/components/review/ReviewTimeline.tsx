@@ -14,7 +14,7 @@ export function ReviewTimeline({
           <strong>
             {event.reviewType === "technical"
               ? "Review kỹ thuật"
-              : "Review lâm sàng"}
+              : "Human review phạm vi nghiên cứu"}
           </strong>
           <div>
             {event.action} · {event.reviewerRole}

@@ -6,7 +6,7 @@ export interface ReviewStatusBadgeProps {
 
 const LABELS: Record<ReviewState, string> = {
   pending_technical_review: "Chờ review kỹ thuật",
-  pending_clinical_review: "Chờ review lâm sàng",
+  pending_clinical_review: "Chờ human review",
   approved: "Đã phê duyệt",
   rejected: "Đã từ chối",
   remeasure_requested: "Yêu cầu đo lại",

@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 const HASH = "a".repeat(64);
 const REVIEWER_HASH = "b".repeat(64);
-const FORBIDDEN_WORDING = /chẩn đoán mỏi cơ|bắt buộc dừng tập|đủ điều kiện thi đấu|xác suất bệnh nhân bị mỏi/i;
+const FORBIDDEN_WORDING = /chẩn đoán mỏi cơ|bắt buộc dừng tập|đủ điều kiện thi đấu|xác suất bệnh nhân bị mỏi|clinical sign-off|clinical report|kết luận lâm sàng|báo cáo kết quả lâm sàng/i;
 
 function reviewCase(state = "pending_technical_review") {
   return {
@@ -116,18 +116,18 @@ test.describe("Day 24 review and report UI regression", () => {
     await installDay24Api(page);
   });
 
-  test("shows review governance and blocks KTV clinical sign-off", async ({ page }) => {
+  test("shows review governance and blocks KTV human review confirmation", async ({ page }) => {
     await page.goto("/reviews/AN-DAY24-E2E");
-    await expect(page.getByRole("heading", { name: /Human Review/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Human Review", exact: true })).toBeVisible();
     await expect(page.getByText(HASH)).toBeVisible();
-    await expect(page.getByText(/Chỉ bác sĩ được thực hiện clinical sign-off/i)).toBeVisible();
-    await expect(page.getByRole("button", { name: /Phê duyệt/i })).toBeDisabled();
+    await expect(page.getByText(/Chỉ reviewer có vai trò bác sĩ/i)).toBeVisible();
+    await expect(page.getByRole("button", { name: /Xác nhận đã review/i })).toBeDisabled();
     await expect(page.locator("body")).not.toContainText(FORBIDDEN_WORDING);
   });
 
   test("shows draft watermark and final hash states", async ({ page }) => {
     await page.goto("/reports/day24-draft");
-    await expect(page.getByRole("heading", { name: /Báo cáo sEMG/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: /Báo cáo bằng chứng sEMG/i })).toBeVisible();
     await expect(page.getByRole("status")).toContainText(/BẢN NHÁP/i);
     await expect(page.locator("body")).not.toContainText(FORBIDDEN_WORDING);
 

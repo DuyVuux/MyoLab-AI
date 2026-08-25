@@ -82,6 +82,11 @@
   margin-bottom: 0.25rem;
 }
 
+.decimationNote {
+  color: #92400e;
+  font-weight: 600;
+}
+
 .link {
   color: #3b82f6;
   text-decoration: none;

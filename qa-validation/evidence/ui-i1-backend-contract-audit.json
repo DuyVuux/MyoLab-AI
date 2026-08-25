@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "purpose": "UI-I1 live backend route discovery; discovered decorators are evidence, not inferred API guarantees",
+  "files": {
+    "sessions": {
+      "path": "services/api-server/src/routes/sessions.py",
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "routes_found": 0
+    },
+    "quality": {
+      "path": "services/api-server/src/routes/quality.py",
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "routes_found": 0
+    },
+    "signals": {
+      "path": "services/api-server/src/routes/signals.py",
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "routes_found": 0
+    },
+    "analysis_jobs": {
+      "path": "services/api-server/src/routes/analysis_jobs.py",
+      "exists": true,
+      "sha256": "8cfe011ce96bb55eab21a07b4ce778ee8e273a905758c77161bc3eb83dfa810d",
+      "routes_found": 6
+    },
+    "audit": {
+      "path": "services/api-server/src/routes/audit.py",
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "routes_found": 0
+    },
+    "reviews": {
+      "path": "services/api-server/src/routes/reviews.py",
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "routes_found": 0
+    }
+  },
+  "routes": [
+    {
+      "module": "analysis_jobs",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/analysis-jobs"
+    },
+    {
+      "module": "analysis_jobs",
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}"
+    },
+    {
+      "module": "analysis_jobs",
+      "method": "POST",
+      "path": "/v1/analyses/{analysis_id}/advance"
+    },
+    {
+      "module": "analysis_jobs",
+      "method": "POST",
+      "path": "/v1/analyses/{analysis_id}/cancel"
+    },
+    {
+      "module": "analysis_jobs",
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}/summary"
+    },
+    {
+      "module": "analysis_jobs",
+      "method": "GET",
+      "path": "/v1/analyses/{analysis_id}/manifest"
+    }
+  ],
+  "required_live_verification": [
+    "payload schema",
+    "auth requirements",
+    "pagination",
+    "signal-window query shape",
+    "metric evidence semantics"
+  ]
+}

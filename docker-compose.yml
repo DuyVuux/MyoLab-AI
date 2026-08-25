@@ -1,0 +1,36 @@
+services:
+  api-server:
+    build:
+      context: .
+      dockerfile: services/api-server/Dockerfile
+    container_name: myolab-api-server
+    ports:
+      - "8019:8019"
+    environment:
+      - API_PORT=8019
+      - API_HOST=0.0.0.0
+      - SEMG_DATA_ROOT=/workspace/projects/MyoLab-AI/data-platform
+    volumes:
+      - ./data-platform:/workspace/projects/MyoLab-AI/data-platform:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8019/health')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  web-portal:
+    build:
+      context: .
+      dockerfile: apps/web-portal/Dockerfile
+    container_name: myolab-web-portal
+    ports:
+      - "3100:3100"
+    environment:
+      - PORT=3100
+      - NEXT_PUBLIC_API_URL=http://localhost:8019
+      - NODE_ENV=production
+    depends_on:
+      api-server:
+        condition: service_healthy
+    restart: unless-stopped

@@ -6,7 +6,7 @@ export default function UC4FeasibilityPage() {
     <div className="page-container">
       <div className="page-header">
         <div className="page-header__left">
-          <h1 className="page-title">UC4 — Medical HMI</h1>
+          <h1 className="page-title">UC4 — HMI vô trùng research demo</h1>
           <p className="page-subtitle">Nghiên cứu vocabulary và sequence task bằng dữ liệu mô phỏng.</p>
         </div>
       </div>

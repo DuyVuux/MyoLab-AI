@@ -37,7 +37,7 @@ export default function UseCasesPage() {
         <div className="page-header__left">
           <h1 className="page-title">Danh mục Use Case</h1>
           <p className="page-subtitle">
-            Bốn use case canonical của MyoLab-AI — từ biofeedback lâm sàng đến nghiên cứu khả thi.
+            Bốn use case canonical của MyoLab-AI — từ biofeedback kỹ thuật đến nghiên cứu khả thi.
           </p>
         </div>
       </div>
