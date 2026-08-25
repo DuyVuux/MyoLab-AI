@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local XLSX Schema"
+  short_description: "Infer schemas from local Excel workbooks"
+  default_prompt: "Use $local-xlsx-schema to inspect this local XLSX workbook and generate the necessary database schema."

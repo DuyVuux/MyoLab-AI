@@ -98,10 +98,10 @@ logs/
 # ==============================================================================
 # Custom / Requested Exclusions
 # ==============================================================================
-**/.agents/
+# **/.agents/
 **/docs/repo_skeleton/
 
-.agents/
+# .agents/
 qa-validation/evidence/day5-preprocess-golden.npz
 docs/plans/
 
