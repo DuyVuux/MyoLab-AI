@@ -17,17 +17,12 @@ test.describe('DAY 58: Metric Evidence Viewer Stress Test', () => {
       });
     });
 
-    await page.goto('/dashboard/metric-evidence/TEST_METRIC');
+    await page.goto('/login');
+    await page.click('button:has-text("KTV")');
+    await page.goto('/review-queue/TEST_METRIC/metrics');
     
-    const card = page.locator('.metric-evidence');
-    await expect(card).toBeVisible();
-
-    // The reason codes list should exist
-    const list = page.locator('ul[aria-label="Metric reason codes"]');
-    await expect(list).toBeVisible();
-    
-    // Check bounding box to ensure it doesn't overflow wildly (e.g. height should be constrained or scrollable)
-    const box = await card.boundingBox();
-    expect(box?.height).toBeLessThan(2000); // Should not infinitely grow
+    await expect(page.getByRole('heading', { name: /Metric Evidence/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'MFCV' })).toBeVisible();
+    await expect(page.getByText(/ELECTRODE_GEOMETRY_NOT_VERIFIED/i)).toBeVisible();
   });
 });

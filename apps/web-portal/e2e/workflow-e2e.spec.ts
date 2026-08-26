@@ -6,11 +6,10 @@ import { test, expect } from '@playwright/test';
 test.describe('MyoLab-AI End-to-End Clinical Workflows', () => {
   test('E2E-01: Happy Path — Session Creation to Report Generation', async ({ page }: any) => {
     await page.goto('/login');
-    await expect(page.locator('h1')).toContainText(/Đăng nhập/i);
+    await expect(page.locator('h1')).toContainText(/MyoLab-AI/i);
 
-    // Select Doctor role and login
-    await page.click('button:has-text("Bác sĩ")');
-    await page.click('button:has-text("Đăng nhập")');
+    // Select KTV role and login
+    await page.click('button:has-text("KTV")');
     await expect(page).toHaveURL(/\/dashboard/);
 
     // Navigate to Create Session
@@ -19,6 +18,8 @@ test.describe('MyoLab-AI End-to-End Clinical Workflows', () => {
   });
 
   test('E2E-04: QC Fail Blocks Analysis', async ({ page }: any) => {
+    await page.goto('/login');
+    await page.click('button:has-text("KTV")');
     await page.goto('/sessions/S-QC-FAIL/quality');
     // If QC Verdict is Fail, continue button should be hidden or disabled
     const continueBtn = page.locator('button:has-text("Tiếp tục sang Analysis")');
@@ -28,7 +29,7 @@ test.describe('MyoLab-AI End-to-End Clinical Workflows', () => {
   test('E2E-12: Role-Based Access Control Route Defense', async ({ page }: any) => {
     await page.goto('/login');
     await page.click('button:has-text("Bệnh nhân")');
-    await page.click('button:has-text("Đăng nhập")');
+    await expect(page).toHaveURL(/\/dashboard/);
 
     // Attempt direct URL navigation to Admin route
     await page.goto('/admin/users');

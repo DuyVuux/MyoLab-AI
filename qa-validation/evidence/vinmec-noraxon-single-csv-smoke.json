@@ -1,0 +1,1975 @@
+{
+  "status": "PASS",
+  "source_dir": "data-platform/raw/Vinmec/Motion Lab Example Output csv files",
+  "records": [
+    {
+      "sha256_12": "65ad2990ee6f",
+      "bytes": 29265,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "2e45fac6c653",
+      "bytes": 21832,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "1f99ae5b6005",
+      "bytes": 29257,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "127220885332",
+      "bytes": 1800262,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "c6d1c1b04da5",
+      "bytes": 1736375,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "3bc15c42bfce",
+      "bytes": 21852,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "182d341c5ca0",
+      "bytes": 29753,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "b68b760c238a",
+      "bytes": 22089,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "21ac0062d36e",
+      "bytes": 29759,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "16c8a216ab40",
+      "bytes": 1802754,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "811d60ec1228",
+      "bytes": 1738640,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "f626195bc6d6",
+      "bytes": 22091,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "789c6a5045ad",
+      "bytes": 15567488,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "f8f9bd6d4dd5",
+      "bytes": 718173,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "51e1c0e33e51",
+      "bytes": 719244,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "b3982974ac5b",
+      "bytes": 720461,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "f8dd3b617e53",
+      "bytes": 720680,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "937e89b7b294",
+      "bytes": 719855,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "a441f46e8851",
+      "bytes": 722362,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "96ab2a21d540",
+      "bytes": 722028,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "3180d12e7680",
+      "bytes": 722394,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "e6e1b502509d",
+      "bytes": 720131,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "ba1241edced2",
+      "bytes": 718328,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8d9aeaadd28e",
+      "bytes": 721505,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "535ce141e8c4",
+      "bytes": 719903,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "c223b6bd6df2",
+      "bytes": 7849688,
+      "status": "READY_FOR_QC",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": 12,
+      "reason_codes": [],
+      "qc_status": "FAIL",
+      "qc_reason_codes": [
+        "TARGET_MUSCLE_MISMATCH",
+        "ACTIVE_DURATION_TOO_SHORT",
+        "FLATLINE",
+        "CLIPPING_SATURATION",
+        "POWERLINE_NOISE",
+        "LOW_FREQUENCY_MOTION_ARTIFACT",
+        "BASELINE_NOISE",
+        "MFCV_LINEAR_ARRAY_NOT_CONFIRMED"
+      ],
+      "qc_finding_count": 8
+    },
+    {
+      "sha256_12": "5a704b185258",
+      "bytes": 16129,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "fe2d4e93ff43",
+      "bytes": 13085,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "fe398e25f04f",
+      "bytes": 16104,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "80b33cfe792a",
+      "bytes": 1673255,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "d05dad6d72f2",
+      "bytes": 1634528,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "f6346d25d0fe",
+      "bytes": 15052,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "b35cbf942c2a",
+      "bytes": 16352,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "7340f9c13305",
+      "bytes": 13201,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "34a0263426be",
+      "bytes": 16352,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "a9e9fb1b1ab4",
+      "bytes": 1679077,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "c41001a37483",
+      "bytes": 1637805,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "f359f085efae",
+      "bytes": 15015,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "84edce9fafda",
+      "bytes": 47266950,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "7ad41b024815",
+      "bytes": 17396,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "6e5d8660a0d1",
+      "bytes": 14430,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8ff1cd76519c",
+      "bytes": 17388,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "183f5422df0c",
+      "bytes": 1736825,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "46d893d25371",
+      "bytes": 1699282,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "b64a64ab9432",
+      "bytes": 16462,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "04f90514a196",
+      "bytes": 17657,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "45b83cb81d6d",
+      "bytes": 14553,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "f37032ad5e4e",
+      "bytes": 17652,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "3128c1043cb5",
+      "bytes": 1746916,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "1a8f9af7034d",
+      "bytes": 1702625,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "eb55719a5774",
+      "bytes": 16415,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "10b03377dcd7",
+      "bytes": 49187758,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "1b414b547d29",
+      "bytes": 19579,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "301fe5aedbec",
+      "bytes": 16665,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "b73d4be28ede",
+      "bytes": 19594,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "02d65dd5a149",
+      "bytes": 2059888,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "377b9314e317",
+      "bytes": 2020708,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "3b01953e9cde",
+      "bytes": 18706,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "0b51e92971b5",
+      "bytes": 19863,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "097fe8133e26",
+      "bytes": 16802,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "1caae6af54c9",
+      "bytes": 19870,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "51c958a85be4",
+      "bytes": 2065678,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "2c3a0120fe62",
+      "bytes": 2022048,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "420936641ce1",
+      "bytes": 18651,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "55f518c75c45",
+      "bytes": 58661504,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "70d9d8bb2ec4",
+      "bytes": 8551,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "e1d50d300da1",
+      "bytes": 6706,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "de82e2afe83e",
+      "bytes": 8556,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "5ba2f49e5130",
+      "bytes": 908466,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "d9bd70dcab6f",
+      "bytes": 883613,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "52f69541f293",
+      "bytes": 9285,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "e4d6248f8a56",
+      "bytes": 10397,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8074a48da029",
+      "bytes": 7549,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "e86ec751d169",
+      "bytes": 10381,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "199587a43fd4",
+      "bytes": 937098,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "c779f6e4de0a",
+      "bytes": 897187,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "f69cd42bedcc",
+      "bytes": 8932,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "f704e1bb53c7",
+      "bytes": 25507871,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "a1d530081c09",
+      "bytes": 13654,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "13f644197d4e",
+      "bytes": 11782,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "525c7bb64033",
+      "bytes": 13664,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "919185152f6a",
+      "bytes": 1674112,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "a0312e1356f6",
+      "bytes": 1647619,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "183838f21cf7",
+      "bytes": 14678,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "ddf258f84c35",
+      "bytes": 15440,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "093a9e10e0d7",
+      "bytes": 12583,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "439687533aea",
+      "bytes": 15440,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "6feca059421b",
+      "bytes": 1703969,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "ea6cb6b6f07e",
+      "bytes": 1660250,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "bb24432b1fab",
+      "bytes": 14340,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "0e7d4ed1be79",
+      "bytes": 48079663,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "777badde7120",
+      "bytes": 15915,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "88c3cd5d3256",
+      "bytes": 13065,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "6f313cd11988",
+      "bytes": 15919,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "e191d67bf855",
+      "bytes": 1707419,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "f1d4879274a0",
+      "bytes": 1666785,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "8495a5067e6d",
+      "bytes": 14778,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "5d38205fe4fe",
+      "bytes": 14345,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "d5efafb6adeb",
+      "bytes": 12344,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "09d492733ad8",
+      "bytes": 14344,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8aea5e428ba7",
+      "bytes": 1682842,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "1729aadd458a",
+      "bytes": 1656028,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "abcd86b4d043",
+      "bytes": 15089,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "3fc5299af93b",
+      "bytes": 48261488,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "a0bd2d27812a",
+      "bytes": 13653,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "5764ba09a467",
+      "bytes": 11765,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "b87791f066a5",
+      "bytes": 13650,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "c2f5f86eb156",
+      "bytes": 1598456,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "6bd88b369b88",
+      "bytes": 1576840,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "ad4203231119",
+      "bytes": 14825,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "61a9072d68c6",
+      "bytes": 15579,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "1ee8c4c77616",
+      "bytes": 12649,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "e8db4b066370",
+      "bytes": 15576,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8e3c100e2b79",
+      "bytes": 1636448,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "d04ece7ac623",
+      "bytes": 1590327,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "eeea682f70d1",
+      "bytes": 14450,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "a65e5442f044",
+      "bytes": 45978519,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "73c52402a8bf",
+      "bytes": 16079,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "c6a25dcc90f0",
+      "bytes": 13121,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "a2d0cd8bf232",
+      "bytes": 16054,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "4e4360f91690",
+      "bytes": 1702984,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "400a352111f2",
+      "bytes": 1663733,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "17c76e06982a",
+      "bytes": 14961,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "bbdb8835d4cb",
+      "bytes": 14272,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8515d13a3b1d",
+      "bytes": 12309,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "e825a75f5a90",
+      "bytes": 14285,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "757d2ad63a35",
+      "bytes": 1679384,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "3151e50b3015",
+      "bytes": 1652321,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "2c550ad62ed6",
+      "bytes": 15300,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8a5e4445c1ec",
+      "bytes": 48177191,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "fc49fd4538a8",
+      "bytes": 14188,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "ebc00bf52872",
+      "bytes": 12250,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "5a3958ad19af",
+      "bytes": 14195,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "4a99a52bed52",
+      "bytes": 1670513,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "7889f19cef3b",
+      "bytes": 1645649,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "1192e73f1327",
+      "bytes": 15257,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "66d3dc523a6d",
+      "bytes": 16119,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "66d846ae46d6",
+      "bytes": 13127,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "460c6f5b1f4f",
+      "bytes": 16114,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8b1fadcf6a97",
+      "bytes": 1702144,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "40b5bba03c14",
+      "bytes": 1659452,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "5fab3a97c512",
+      "bytes": 14895,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "32661e46a068",
+      "bytes": 47994147,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "b20f84381e4c",
+      "bytes": 17105,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "73dda8628402",
+      "bytes": 14177,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "d562a5ace5f0",
+      "bytes": 17110,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "4212475e9a0b",
+      "bytes": 1865028,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "69e3f46e52f3",
+      "bytes": 1828284,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "445aed612d30",
+      "bytes": 16065,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "586c634909de",
+      "bytes": 17228,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "fadc5289f885",
+      "bytes": 14232,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "a9346b3c72ac",
+      "bytes": 17235,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "9c25f62d4f54",
+      "bytes": 1866551,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "4c2d35e251a7",
+      "bytes": 1827185,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "36c459f09c67",
+      "bytes": 16043,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "7604a091cf21",
+      "bytes": 52984690,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "4f02d1038134",
+      "bytes": 16059,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8c78bfa073dd",
+      "bytes": 13226,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8a4c7dba4fae",
+      "bytes": 16045,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "1a6d91811fa6",
+      "bytes": 1723980,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "41aa93651801",
+      "bytes": 1691250,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "e87f062963a0",
+      "bytes": 15822,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "4e6e59447fba",
+      "bytes": 14464,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "4613e3a1e401",
+      "bytes": 12499,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "c54577e09011",
+      "bytes": 14476,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "73101f3d0b7a",
+      "bytes": 1706252,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "25be0337ae1d",
+      "bytes": 1680656,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "dae86f9bf982",
+      "bytes": 16189,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "04511066164f",
+      "bytes": 49005651,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "e16674005a9d",
+      "bytes": 14357,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "aea02459d561",
+      "bytes": 12492,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8940b366cd8f",
+      "bytes": 14360,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "18e1a596266b",
+      "bytes": 1712914,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "15a5ff4f8ec2",
+      "bytes": 1688882,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "e4a32ee0daf9",
+      "bytes": 15506,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "efe1e52af1c0",
+      "bytes": 16320,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "8962c24bd476",
+      "bytes": 13378,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "a69446cd0995",
+      "bytes": 16326,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "eb82c419fe3a",
+      "bytes": 1743448,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "47cd0bd51eae",
+      "bytes": 1701900,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "8d2be0a6df3b",
+      "bytes": 15159,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    },
+    {
+      "sha256_12": "f91704e43091",
+      "bytes": 49274014,
+      "status": "BLOCKED",
+      "detected_format": null,
+      "signal_count": null,
+      "reason_codes": [
+        "INGEST_SCHEMA_ERROR"
+      ]
+    },
+    {
+      "sha256_12": "96d8ca530965",
+      "bytes": 713387,
+      "status": "FAILED",
+      "detected_format": "NORAXON_SINGLE_CSV",
+      "signal_count": null,
+      "reason_codes": [
+        "NO_SEMG_CHANNEL_IN_MR4_UPLOAD",
+        "NO_USABLE_SIGNAL_CHANNEL"
+      ]
+    }
+  ],
+  "summary": {
+    "record_count": 183,
+    "import_status_counts": {
+      "FAILED": 117,
+      "BLOCKED": 65,
+      "READY_FOR_QC": 1
+    },
+    "qc_status_counts": {
+      "<none>": 182,
+      "FAIL": 1
+    }
+  }
+}

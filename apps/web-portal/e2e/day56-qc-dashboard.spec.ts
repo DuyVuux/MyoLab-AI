@@ -2,7 +2,9 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Exception-first QC Dashboard', () => {
   test('should render dashboard with correct safe labels and ordering', async ({ page }) => {
-    // Navigate to the QC page we just created
+    // Authenticate as KTV then navigate to QC page
+    await page.goto('/login');
+    await page.click('button:has-text("KTV")');
     await page.goto('/qc');
 
     // Verify Title and Research Notice

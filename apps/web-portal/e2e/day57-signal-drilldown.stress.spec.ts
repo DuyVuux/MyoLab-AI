@@ -18,11 +18,15 @@ test.describe('DAY 57: Signal Drilldown Performance Stress Test', () => {
       });
     });
 
-    await page.goto('/dashboard/signal-viewer/TEST_CASE');
+    await page.goto('/login');
+    await page.click('button:has-text("KTV")');
+    await page.goto('/review-queue/TEST_CASE/signal');
 
-    // Wait for canvas or chart container to render
-    const chartContainer = page.locator('.signal-chart-container');
-    await expect(chartContainer).toBeVisible({ timeout: 15000 });
+    // Wait for signal viewer container to render
+    const heading = page.getByRole('heading', { name: /Signal Viewer/i });
+    await expect(heading).toBeVisible({ timeout: 15000 });
+    await expect(page.getByRole('heading', { name: 'RAW' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'PROCESSED' })).toBeVisible();
 
     // Use Chrome DevTools Protocol (CDP) to measure FPS and layout shifts
     const client = await page.context().newCDPSession(page);
@@ -31,7 +35,7 @@ test.describe('DAY 57: Signal Drilldown Performance Stress Test', () => {
     const metricsBefore = await client.send('Performance.getMetrics');
     
     // Simulate rapid zooming / panning (e.g. wheel events)
-    const boundingBox = await chartContainer.boundingBox();
+    const boundingBox = await heading.boundingBox();
     if (boundingBox) {
       for (let i = 0; i < 20; i++) {
         await page.mouse.move(boundingBox.x + boundingBox.width / 2, boundingBox.y + boundingBox.height / 2);
